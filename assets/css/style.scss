@@ -1,0 +1,51 @@
+@import "./variables";
+@import "./fontiran.css";
+@import "./monarpe.css";
+
+body {
+  min-width: 400px !important;
+}
+
+.splash_page {
+  background-color: $splash_background_color;
+}
+
+.page {
+  background-color: $page_background_color;
+}
+
+* {
+  font-family: $font_family;
+}
+
+.main-title {
+  color: $main_title_color;
+  font-size: $title_font_size;
+  font-weight: $title_font_weight;
+  line-height: $title_line_height;
+}
+
+.search-input::placeholder {
+  font-size: $search_input_placeholder_font_size;
+  font-weight: $search_input_placeholder_font_weight;
+  line-height: $search_input_placeholder_line_height;
+}
+.select-location {
+  .en-title {
+    font-family: $en_font_family;
+    font-size: $search_input_placeholder_font_size;
+    font-weight: $search_input_placeholder_font_weight;
+    line-height: $search_input_placeholder_line_height;
+    color: $sub_title_color;
+  }
+  .city-name {
+    font-size: $title_font_size;
+    font-weight: $title_font_weight;
+    line-height: $title_line_height;
+    color: $main_title_color;
+  }
+}
+
+.near-artist-view-box {
+  background: linear-gradient(260.22deg, #B2550F -20.62%, rgba(255, 255, 255, 0) 95.26%);
+}
