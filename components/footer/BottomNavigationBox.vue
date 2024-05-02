@@ -1,32 +1,52 @@
 <template>
-  <div class="flex flex-col justify-center text-xs font-medium text-right w-full fixed bottom-0 left-0 right-0">
-    <nav class="flex justify-between px-4 bg-pink-600 rounded-tl-3xl rounded-tr-3xl">
-      <div class="flex justify-between text-white w-full">
-        <div class="flex flex-col items-center pt-2">
-<!--          <div class="shrink-0 bg-yellow-300 rounded-2xl h-[3px] w-[45px]"></div>-->
-          <div class="cursor-pointer flex overflow-hidden relative flex-col px-2 py-2 aspect-[1.36] fill-[linear-gradient(180deg,)] w-[72px]">
-            <HomeIcon class="object-cover absolute inset-0 size-full" />
-            <div class="text-center mt-2">صفحه اصلی</div>
-          </div>
-        </div>
-        <div class="cursor-pointer flex flex-col items-center pt-2">
-          <FavouriteIcon class="object-cover absolute inset-0 size-full" />
-          <div class="text-center mt-2">علاقه مندی</div>
-        </div>
-        <div class="cursor-pointer flex flex-col items-center pt-2">
-          <ChangePanelIcon class="object-cover absolute inset-0 size-full" />
-          <div class="text-center mt-2">تغییر پنل</div>
-        </div>
-          <div class="cursor-pointer flex flex-col items-center pt-2">
-            <CategoryIcon class="object-cover absolute inset-0 size-full" />
-            <div class="text-center mt-2">دسته بندی</div>
-          </div>
-          <div class="cursor-pointer flex flex-col items-center pt-2">
-            <ProfileIcon class="object-cover absolute inset-0 size-full" />
-            <div class="text-center mt-2">پروفایل</div>
-          </div>
-      </div>
-    </nav>
+  <div class="text-xs font-medium w-full text-center fixed bottom-0 right-0 left-0">
+    <div class="flex flex-row items-center justify-evenly bg-pink-600 rounded-tl-3xl rounded-tr-3xl h-[58px]">
+      <BottomNavigationButton
+          @click="selectItem(1)"
+          :selected="index == 1"
+      >
+        <HomeIcon />
+        <template #text>
+          بیوتی مپ
+        </template>
+      </BottomNavigationButton>
+      <BottomNavigationButton
+          @click="selectItem(2)"
+          :selected="index == 2"
+      >
+        <CategoryIcon />
+        <template #text>
+          دسته بندی
+        </template>
+      </BottomNavigationButton>
+      <BottomNavigationButton
+          @click="selectItem(3)"
+          :selected="index == 3"
+      >
+        <ChangePanelIcon />
+        <template #text>
+          تغییر پلن
+        </template>
+      </BottomNavigationButton>
+      <BottomNavigationButton
+          @click="selectItem(4)"
+          :selected="index == 4"
+      >
+        <FavouriteIcon />
+        <template #text>
+          علاقه مندی
+        </template>
+      </BottomNavigationButton>
+      <BottomNavigationButton
+          @click="selectItem(5)"
+          :selected="index == 5"
+      >
+        <ProfileIcon />
+        <template #text>
+          پروفایل
+        </template>
+      </BottomNavigationButton>
+    </div>
   </div>
 </template>
 
@@ -37,6 +57,57 @@ import FavouriteIcon from "~/components/icons/BottomNavigation/FavouriteIcon.vue
 import ChangePanelIcon from "~/components/icons/BottomNavigation/ChangePanelIcon.vue";
 import CategoryIcon from "~/components/icons/BottomNavigation/CategoryIcon.vue";
 import ProfileIcon from "~/components/icons/BottomNavigation/ProfileIcon.vue";
+import BottomNavigationButton from "~/components/button/BottomNavigationButton.vue";
+
+const router = useRouter()
+const index = ref<Number>(1)
+
+const selectItem = (i: Number) => {
+  index.value = i
+  switch (i) {
+    case 1:
+      openMainPage()
+      break
+
+    case 2:
+      openServicePage()
+      break
+
+    case 3:
+      openChangePlanPage()
+      break
+
+    case 4:
+      openFavouritePage()
+      break
+
+    case 5:
+      openProfilePage()
+      break
+
+  }
+}
+
+const openMainPage = () => {
+  router.push('/')
+}
+
+const openServicePage = () => {
+  router.push('/services')
+}
+
+const openChangePlanPage = () => {
+  router.push('/plan')
+}
+
+const openFavouritePage = () => {
+  router.push('/favourites')
+}
+
+const openProfilePage = () => {
+  router.push('/profile')
+}
+
 </script>
 
 <style scoped>
