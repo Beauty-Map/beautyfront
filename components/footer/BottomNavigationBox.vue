@@ -1,5 +1,5 @@
 <template>
-  <div class="text-xs font-medium w-full text-center fixed bottom-0 right-0 left-0">
+  <div class="text-xs font-medium w-full text-center fixed bottom-0 right-0 left-0 z-[9999999]">
     <div class="flex flex-row items-center justify-evenly bg-pink-600 rounded-tl-3xl rounded-tr-3xl h-[58px]">
       <BottomNavigationButton
           @click="selectItem(1)"
@@ -58,11 +58,14 @@ import ChangePanelIcon from "~/components/icons/BottomNavigation/ChangePanelIcon
 import CategoryIcon from "~/components/icons/BottomNavigation/CategoryIcon.vue";
 import ProfileIcon from "~/components/icons/BottomNavigation/ProfileIcon.vue";
 import BottomNavigationButton from "~/components/button/BottomNavigationButton.vue";
+import {useDrawerStore} from "~/store/Drawer";
 
 const router = useRouter()
+const store = useDrawerStore()
 const index = ref<Number>(1)
 
 const selectItem = (i: Number) => {
+  store.closeAllDrawers()
   index.value = i
   switch (i) {
     case 1:
@@ -105,7 +108,7 @@ const openFavouritePage = () => {
 }
 
 const openProfilePage = () => {
-  router.push('/profile')
+  store.openProfileDrawer()
 }
 
 </script>
