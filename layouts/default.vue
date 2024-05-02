@@ -2,7 +2,7 @@
   <div class="page h-full w-full flex flex-col pt-[21px] pb-[79px] relative">
     <PageLoading v-if="loading"/>
     <slot />
-    <BottomNavigationBox />
+    <BottomNavigationBox class="md:hidden"/>
   </div>
 </template>
 
