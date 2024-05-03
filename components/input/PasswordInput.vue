@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-start justify-start">
+  <div class="flex flex-col items-start justify-start w-full">
     <div v-if="title" class="text-[14px] leading-[16px] text-right mb-1 font-medium"
          :class="[hasError ? 'text-[#F44336]' : 'text-[#141414]']"
     >

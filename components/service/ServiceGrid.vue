@@ -22,7 +22,7 @@ const serviceArray = ref([])
 
 const getServiceList = async () => {
   const {data: data} = await useFetch('http://localhost:8000/api/services')
-  serviceArray.value = data.value.data
+  serviceArray.value = data.value?.data
 }
 getServiceList()
 

@@ -11,7 +11,7 @@ const introArray = ref([])
 
 const getIntroList = async () => {
   const {data: data} = await useFetch('http://localhost:8000/api/intros')
-  introArray.value = (data.data as [])
+  introArray.value = data.value?.data
 }
 getIntroList()
 </script>

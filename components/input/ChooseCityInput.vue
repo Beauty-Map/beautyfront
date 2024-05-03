@@ -7,26 +7,24 @@
     </div>
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
+         @click="openDrawerClicked"
     >
-      <input type="number" class="text-left h-[38px] w-full rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
-             @input="validateTelNumberDebounce"
-             v-model="value"
-             pattern= "[0-9]"
-      >
-      <ContactRedIcon v-if="hasError" class="absolute left-[10px] top-[10px]"/>
-      <ContactIcon v-else class="absolute left-[10px] top-[10px]"/>
+      <div class="flex flex-row justify-start items-center text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]" v-if="province && city">
+        {{ province.name }} - {{ city.name }}
+      </div>
     </div>
     <div class="w-full flex flex-row justify-start items-center" v-if="hasError">
       <ErrorRedIcon />
       <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText}}</span>
     </div>
+    <ChooseCityDrawer :is-open="openDrawer" @close="closeDrawerClicked" @choose="chooseProvinceAndCity"/>
   </div>
 </template>
 
 <script setup lang="ts">
-import ContactIcon from "~/components/icons/ContactIcon.vue";
-import ContactRedIcon from "~/components/icons/ContactRedIcon.vue";
 import ErrorRedIcon from "~/components/icons/ErrorRedIcon.vue";
+import ChooseCityDrawer from "~/components/drawer/ChooseCityDrawer.vue";
+import {useDrawerStore} from "~/store/Drawer";
 
 const emits = defineEmits(['update:modelValue'])
 const props = defineProps({
@@ -35,19 +33,33 @@ const props = defineProps({
     default: ''
   },
   modelValue: {
-    type: String,
-    default: ''
+    type: Number,
+    default: 0
   }
 })
-const value = ref<String>(props.modelValue)
+
+const store = useDrawerStore()
+
+const value = ref<Number>(props.modelValue)
 const errorText = ref<String>('')
 const hasError = ref<Boolean>(false)
+const openDrawer = ref<Boolean>(false)
 
-const validateTelNumber = ($event: Event) => {
-  emits('update:modelValue', $event.target?.value)
+const province = ref<IProvince>(null)
+const city = ref<ICity>(null)
+
+const openDrawerClicked = () => {
+  openDrawer.value = true
 }
 
-const validateTelNumberDebounce = useDebounce(validateTelNumber, 500)
+const closeDrawerClicked = () => {
+  openDrawer.value = false
+}
+
+const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
+  province.value = p
+  city.value = c
+}
 
 </script>
 

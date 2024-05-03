@@ -8,13 +8,11 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="number" class="text-left h-[38px] w-full rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
-             @input="validateTelNumberDebounce"
+      <input type="number" class="text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
+             @input="validateTextNumberDebounce"
              v-model="value"
              pattern= "[0-9]"
       >
-      <ContactRedIcon v-if="hasError" class="absolute left-[10px] top-[10px]"/>
-      <ContactIcon v-else class="absolute left-[10px] top-[10px]"/>
     </div>
     <div class="w-full flex flex-row justify-start items-center" v-if="hasError">
       <ErrorRedIcon />
@@ -24,8 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import ContactIcon from "~/components/icons/ContactIcon.vue";
-import ContactRedIcon from "~/components/icons/ContactRedIcon.vue";
 import ErrorRedIcon from "~/components/icons/ErrorRedIcon.vue";
 
 const emits = defineEmits(['update:modelValue'])
@@ -43,11 +39,11 @@ const value = ref<String>(props.modelValue)
 const errorText = ref<String>('')
 const hasError = ref<Boolean>(false)
 
-const validateTelNumber = ($event: Event) => {
+const validateTextNumber = ($event: Event) => {
   emits('update:modelValue', $event.target?.value)
 }
 
-const validateTelNumberDebounce = useDebounce(validateTelNumber, 500)
+const validateTextNumberDebounce = useDebounce(validateTextNumber, 500)
 
 </script>
 

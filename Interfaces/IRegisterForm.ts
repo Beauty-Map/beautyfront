@@ -12,3 +12,9 @@ interface ISetPasswordRegisterForm {
     password: string
     password_confirmation: string
 }
+
+interface ICompleteProfileForm {
+    full_name: string
+    city_id: number
+    birth_date: string
+}
