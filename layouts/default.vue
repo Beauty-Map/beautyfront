@@ -3,6 +3,7 @@
     <PageLoading v-if="loading"/>
     <ProfileDrawer />
     <LoginDrawer />
+    <RegisterDrawer />
     <slot />
     <BottomNavigationBox class="md:hidden"/>
   </div>
@@ -15,6 +16,7 @@ import MainHeader from "~/components/header/MainHeader.vue";
 import BottomNavigationBox from "~/components/footer/BottomNavigationBox.vue";
 import ProfileDrawer from "~/components/drawer/ProfileDrawer.vue";
 import LoginDrawer from "~/components/drawer/LoginDrawer.vue";
+import RegisterDrawer from "~/components/drawer/RegisterDrawer.vue";
 const nuxt = useNuxtApp()
 const loading = ref<boolean>(true)
 nuxt.hook('page:loading:start', () => {

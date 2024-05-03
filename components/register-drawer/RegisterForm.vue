@@ -1,13 +1,11 @@
 <template>
   <div class="w-full overflow-y-scroll">
     <TelInput title="شماره موبایل" v-model="form.phone_number"/>
-    <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
-    <ResetPasswordLink class="mt-[18]"/>
-    <PolicyAndRulesButton class="mt-[18px]" v-model="form.accept_policy"/>
-    <MainActionButton class="mt-[18px]" @click="doLogin">
-      <div class="text-white text-center text-[20px] leading-[30px]">ورود</div>
+    <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
+    <MainActionButton class="mt-[24px]" @click="doRegister">
+      <div class="text-white text-center text-[20px] leading-[30px]">ثبت نام</div>
     </MainActionButton>
-    <BottomText class="mt-[18px]" @click="openRegisterModal" title="ثبت نام"/>
+    <BottomText class="mt-[18px]" @click="openLoginModal" title="ورود"/>
   </div>
 </template>
 
@@ -23,19 +21,18 @@ import {useDrawerStore} from "~/store/Drawer";
 
 const store = useDrawerStore()
 
-const form = ref<ILoginForm>({
+const form = ref<IRegisterForm>({
   phone_number: '',
-  password: '',
-  accept_policy: false,
+  accept_policy: false
 })
 
-const doLogin = () => {
+const doRegister = () => {
   console.log('do login')
 }
 
-const openRegisterModal = () => {
+const openLoginModal = () => {
   store.closeAllDrawers()
-  store.openRegisterDrawer()
+  store.openLoginDrawer()
 }
 
 </script>

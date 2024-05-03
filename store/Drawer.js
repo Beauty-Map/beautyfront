@@ -41,6 +41,7 @@ export const useDrawerStore = defineStore('drawer', {
         closeAllDrawers() {
             this.closeProfileDrawer()
             this.closeLoginDrawer()
+            this.closeRegisterDrawer()
             this.closeResetPasswordDrawer()
         },
     },
