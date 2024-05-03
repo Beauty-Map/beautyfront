@@ -8,6 +8,7 @@
   </div>
   <div class="flex flex-col justify-start items-center mt-[15px]">
     <Header :phone-number="phoneNumber"/>
+    <OtpForm v-if="store.isOpenOtp"/>
   </div>
 </div>
 </template>
@@ -17,6 +18,7 @@
 import BackIcon from "~/components/icons/BackIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import Header from "~/components/otp-drawer/Header.vue";
+import OtpForm from "~/components/otp-drawer/OtpForm.vue";
 
 const store = useDrawerStore()
 
@@ -24,6 +26,7 @@ const phoneNumber = ref<String>('09381412419')
 
 const goBack = () => {
   store.closeAllDrawers()
+  store.openRegisterDrawer()
 }
 </script>
 
