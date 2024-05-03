@@ -27,8 +27,7 @@ const form = ref<IRegisterForm>({
 })
 
 const doRegister = () => {
-  store.closeAllDrawers()
-  store.openOtpDrawer()
+  console.log('do login')
 }
 
 const openLoginModal = () => {
