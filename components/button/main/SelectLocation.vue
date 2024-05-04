@@ -1,16 +1,35 @@
 <template>
   <div class="select-location flex gap-0.5 flex-row items-center cursor-pointer">
-    <div class="flex flex-col ml-2 text-left">
+    <div class="flex flex-col ml-2 text-left" @click="openDrawerClicked">
       <p class="text-xs text-zinc-500 en-title">Location</p>
-      <p class="mt-1.5 text-sm text-neutral-900 city-name">Hamedan , همدان</p>
+      <p class="mt-1.5 text-sm text-neutral-900 city-name" v-if="province && city">{{ `${province.name} - ${city.name}` }}</p>
     </div>
-    <HeaderLocationIcon />
+    <HeaderLocationIcon @click="openDrawerClicked"/>
+    <ChooseCityDrawer :is-open="openDrawer" @close="closeDrawerClicked" @choose="chooseProvinceAndCity"/>
   </div>
 </template>
 
 <script setup lang="ts">
 
 import HeaderLocationIcon from "~/components/icons/HeaderLocationIcon.vue";
+import ChooseCityDrawer from "~/components/drawer/ChooseCityDrawer.vue";
+
+const openDrawer = ref<Boolean>(false)
+const province = ref<IProvince>(null)
+const city = ref<ICity>(null)
+
+const openDrawerClicked = () => {
+  openDrawer.value = true
+}
+
+const closeDrawerClicked = () => {
+  openDrawer.value = false
+}
+
+const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
+  province.value = p
+  city.value = c
+}
 </script>
 
 <style scoped>
