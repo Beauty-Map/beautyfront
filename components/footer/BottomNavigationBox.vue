@@ -59,8 +59,10 @@ import CategoryIcon from "~/components/icons/BottomNavigation/CategoryIcon.vue";
 import ProfileIcon from "~/components/icons/BottomNavigation/ProfileIcon.vue";
 import BottomNavigationButton from "~/components/button/BottomNavigationButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {algorithms} from "iron-webcrypto";
 
 const router = useRouter()
+const route = useRoute()
 const store = useDrawerStore()
 const index = ref<Number>(1)
 
@@ -110,6 +112,16 @@ const openFavouritePage = () => {
 const openProfilePage = () => {
   store.openProfileDrawer()
 }
+
+const onRouteChanged = (route: string) => {
+  if (route.startsWith('/services')) {
+    index.value = 2
+  } else if (route.startsWith('/profile')) {
+    index.value = 5
+  }
+}
+
+watch(() => route.path, onRouteChanged)
 
 </script>
 
