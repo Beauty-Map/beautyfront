@@ -1,5 +1,5 @@
 <template>
-  <div ref="container" class="flex flex-row gap-2 items-center justify-center py-4 ltr-dir w-full">
+  <div ref="container" class="flex flex-row gap-2 items-center justify-center py-4 ltr-dir w-full px-1">
     <input
         type="text"
         class="text-center h-[46px] w-[40px] rounded-[8px] outline-none duration-300 border text-[#141414] placeholder:text-[#141414]"
