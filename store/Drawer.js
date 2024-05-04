@@ -9,7 +9,7 @@ export const useDrawerStore = defineStore('drawer', {
         openOtp: false,
         openSetPassword: false,
         openCompleteProfile: false,
-        openNotification: true,
+        openNotification: false,
     }),
     getters: {
         isOpenProfile: (state) => state.openProfile,

@@ -5,11 +5,11 @@
         <div class="flex gap-px justify-between px-1 w-full">
           <div class="flex gap-px text-sm font-medium text-right text-amber-700">
             <div>میترا سرمندی</div>
-            <BoronzeTick class="shrink-0 my-auto w-3.5 aspect-square" />
+            <BronzeTick class="shrink-0 my-auto w-3.5 aspect-square" />
           </div>
           <div class="near-artist-view-box flex justify-center items-center h-[16px] w-[45px] my-auto text-xs text-center whitespace-nowrap rounded-[10px] text-neutral-900">
             <div class="text-[#141414] font-medium text-[8px] text-center leading-[10px]">14.5k</div>
-            <BoronzeView class="shrink-0 aspect-square w-[11px]" />
+            <BronzeView class="shrink-0 aspect-square w-[11px]" />
           </div>
         </div>
         <div class="flex gap-3.5 justify-end pb-1.5 pl-3.5 mt-2 font-medium text-right">
@@ -47,8 +47,8 @@
 
 <script setup lang="ts">
 
-import BoronzeTick from "~/components/icons/BoronzeTick.vue";
-import BoronzeView from "~/components/icons/BoronzeView.vue";
+import BronzeTick from "~/components/icons/BronzeTick.vue";
+import BronzeView from "~/components/icons/BronzeView.vue";
 import LocationGreenIcon from "~/components/icons/LocationGreenIcon.vue";
 import TimeGreenIcon from "~/components/icons/TimeGreenIcon.vue";
 import DistanceGreenIcon from "~/components/icons/DistanceGreenIcon.vue";

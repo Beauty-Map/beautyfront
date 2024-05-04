@@ -53,3 +53,7 @@ body {
 .ltr-dir {
   direction: ltr !important;
 }
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
