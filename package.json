@@ -17,7 +17,8 @@
     "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0",
-    "vue-spinner": "^1.0.4"
+    "vue-spinner": "^1.0.4",
+    "vue3-persian-datetime-picker": "^1.2.2"
   },
   "devDependencies": {
     "@nuxtjs/device": "^3.1.1",

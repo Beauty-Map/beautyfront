@@ -8,7 +8,8 @@ export const useDrawerStore = defineStore('drawer', {
         openResetPassword: false,
         openOtp: false,
         openSetPassword: false,
-        openCompleteProfile: true,
+        openCompleteProfile: false,
+        openNotification: true,
     }),
     getters: {
         isOpenProfile: (state) => state.openProfile,
@@ -18,6 +19,7 @@ export const useDrawerStore = defineStore('drawer', {
         isOpenOtp: (state) => state.openOtp,
         isOpenSetPassword: (state) => state.openSetPassword,
         isOpenCompleteProfile: (state) => state.openCompleteProfile,
+        isOpenNotification: (state) => state.openNotification,
     },
     actions: {
         closeProfileDrawer() {
@@ -62,6 +64,12 @@ export const useDrawerStore = defineStore('drawer', {
         openCompleteProfileDrawer() {
             this.openCompleteProfile = true
         },
+        closeNotificationDrawer() {
+            this.openNotification = false
+        },
+        openNotificationDrawer() {
+            this.openNotification = true
+        },
         closeAllDrawers() {
             this.closeProfileDrawer()
             this.closeLoginDrawer()
@@ -70,6 +78,7 @@ export const useDrawerStore = defineStore('drawer', {
             this.closeOtpDrawer()
             this.closeSetPasswordDrawer()
             this.closeCompleteProfileDrawer()
+            this.closeNotificationDrawer()
         },
     },
 })

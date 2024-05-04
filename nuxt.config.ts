@@ -31,4 +31,15 @@ export default defineNuxtConfig({
     config: {},
     viewer: true,
   },
+  vite: {
+    resolve: {
+      mainFields: [
+        'browser',
+        'module',
+        'main',
+        'jsnext:main',
+        'jsnext'
+      ]
+    }
+  }
 })

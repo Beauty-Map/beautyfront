@@ -4,7 +4,7 @@
     <ChooseCityInput title="استان و شهر" v-model="form.city_id" class="mt-[27px]"/>
     <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px]"/>
     <MainActionButton class="mt-[100px]" @click="doSaveProfile">
-      <div class="text-white text-center text-[20px] leading-[30px]">ذخیره اطلاعات</div>
+      <div class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
     </MainActionButton>
   </div>
 </template>
