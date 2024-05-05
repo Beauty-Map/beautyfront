@@ -62,3 +62,7 @@ body {
 .carousel__pagination-button::after {
   background-color: #A9A7A7;
 }
+
+.fancybox__container {
+  z-index: 9999999999 !important;
+}
