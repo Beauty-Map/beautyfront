@@ -12,10 +12,22 @@
         <span v-format-price>{{ portfolio.discount_price }}</span>
       </div>
     </div>
+    <Modal :open="showCallModal" @close="closeCallModal">
+      <div class="w-full h-full flex flex-col gap-[13px] justify-center items-center">
+        <div class="cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]">
+          تلفن ثابت
+        </div>
+        <div class="cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]">
+          تلفن همراه
+        </div>
+      </div>
+    </Modal>
   </div>
 </template>
 
 <script setup lang="ts">
+import Modal from "~/components/modal/Modal.vue";
+
 const props = defineProps({
   portfolio: {
     type: Object,
