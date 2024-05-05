@@ -10,16 +10,16 @@
       </div>
       <div class="w-full flex flex-col justify-start items-start" v-if="portfolio.discount_price > 0">
         <div class="text-[#ED2C25] text-[12px] leading-[18px] font-medium line-through">
-          <span v-format-number>{{ portfolio.price }}</span>
+          <span v-format-price>{{ portfolio.price }}</span>
         </div>
         <div class="text-[#133C3E] text-[12px] leading-[18px] font-medium">
-          <span v-format-number>{{ portfolio.discount_price }}</span>
+          <span v-format-price>{{ portfolio.discount_price }}</span>
           <span class="mr-[22px] px-[12px] py-[3px] bg-[#FFEA2E61] rounded-[20px]">{{calcDiscountPercent(portfolio.price, portfolio.discount_price)}}</span>
         </div>
       </div>
       <div class="w-full flex flex-col justify-start items-start" v-else-if="portfolio.price > 0">
         <div class="text-[#133C3E] text-[12px] leading-[18px] font-medium">
-          <span v-format-number>{{ portfolio.price }}</span>
+          <span v-format-price>{{ portfolio.price }}</span>
         </div>
       </div>
       <div class="w-full flex flex-col justify-start items-start" v-else>

@@ -14,5 +14,11 @@ interface IPortfolio {
     user_id: number
     user: IUser
     images: string[]
-    work_hours: []
+    work_hours: IWorkHour[]
+}
+
+interface IWorkHour {
+    day_index: number
+    start_hour: string
+    end_hour: string
 }

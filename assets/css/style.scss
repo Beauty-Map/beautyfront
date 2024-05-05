@@ -57,3 +57,8 @@ body {
 .rotate-y-180 {
   transform: rotateY(180deg);
 }
+
+
+.carousel__pagination-button::after {
+  background-color: #A9A7A7;
+}

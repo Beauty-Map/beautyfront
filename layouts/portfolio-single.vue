@@ -1,0 +1,34 @@
+<template>
+  <div class="page h-full w-full flex flex-col relative">
+    <PageLoading v-if="loading"/>
+    <slot />
+  </div>
+</template>
+
+<script setup lang="ts">
+
+import PageLoading from "~/components/loading/PageLoading.vue";
+import MainHeader from "~/components/header/MainHeader.vue";
+import BottomNavigationBox from "~/components/footer/BottomNavigationBox.vue";
+import ProfileDrawer from "~/components/drawer/ProfileDrawer.vue";
+import LoginDrawer from "~/components/drawer/LoginDrawer.vue";
+import RegisterDrawer from "~/components/drawer/RegisterDrawer.vue";
+import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
+import SetPasswordDrawer from "~/components/drawer/SetPasswordDrawer.vue";
+import CompleteProfileDrawer from "~/components/drawer/CompleteProfileDrawer.vue";
+import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";
+const nuxt = useNuxtApp()
+const loading = ref<boolean>(true)
+nuxt.hook('page:loading:start', () => {
+  loading.value = true
+})
+nuxt.hook('page:loading:end', () => {
+  setTimeout(() => {
+    loading.value = false
+  }, 500)
+})
+</script>
+
+<style scoped>
+
+</style>

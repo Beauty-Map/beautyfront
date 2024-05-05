@@ -26,6 +26,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -56,6 +58,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -86,6 +90,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -116,6 +122,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -146,6 +154,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -176,6 +186,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -206,6 +218,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -236,6 +250,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []
@@ -266,6 +282,8 @@ export default defineEventHandler((event) => {
                 id: 1,
                 full_name: "زیبا اعظمی",
                 phone_number: '09381412419',
+                avatar: '/images/artist/2.png',
+                has_blue_tick: true
             },
             images: ['/images/artist/1.jpg', '/images/artist/1.jpg'],
             work_hours: []

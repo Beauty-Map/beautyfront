@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg">
     <rect width="39" height="39" transform="matrix(-1 0 0 -1 39 39)" fill="white"/>
@@ -22,7 +18,3 @@
     </defs>
   </svg>
 </template>
-
-<style scoped>
-
-</style>
