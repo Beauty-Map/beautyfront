@@ -1,7 +1,7 @@
 <template>
-  <div @click="goToPage" class="w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
+  <div @click="goToPage" class="min-h-[165px] min-w-[323px] w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
     <div class="w-full flex flex-col relative">
-      <div class="w-full flex flex-row justify-start items-start">
+      <div class="w-full flex flex-row justify-start items-center">
         <BlueTick v-if="artist.has_blue_tick"/>
         <h1 class="text-right font-medium text-[18px] leading-[28px] text-[#141414]">{{ artist.full_name }}</h1>
       </div>
@@ -10,11 +10,11 @@
       </div>
       <div class="flex flex-row gap-[8px] items-center justify-start mt-[10px]">
         <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[10px] py-[4px] rounded-[25px]">
-          <span>نمونه کار</span>
+          <span class="whitespace-nowrap">نمونه کار</span>
           <span class="mr-1">({{ artist.portfolios_count }})</span>
         </div>
         <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[10px] py-[4px] rounded-[25px]">
-          <span>تخصص</span>
+          <span class="whitespace-nowrap">تخصص</span>
           <span class="mr-1">({{ artist.services_count }})</span>
         </div>
       </div>
@@ -61,7 +61,7 @@ const getThumbnail = () => {
 }
 
 const goToPage = () => {
-  router.push('/')
+  router.push(`/artists/${props.artist.id}`)
 }
 
 const toggleBookmark = (bookmarked: boolean) => {

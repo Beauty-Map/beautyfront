@@ -22,7 +22,6 @@ const form = ref<ISetPasswordRegisterForm>({
 })
 
 const doSetPassword = () => {
-  console.log('do doSetPassword')
   store.closeAllDrawers()
   store.openCompleteProfileDrawer()
 }

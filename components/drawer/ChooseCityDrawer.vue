@@ -28,7 +28,7 @@ const props = defineProps({
 
 const provinces = ref([])
 
-const ownCity = ref<ICity>(null)
+const ownCity = ref<ICity|null>(null)
 
 const store = useDrawerStore()
 

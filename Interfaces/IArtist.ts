@@ -2,6 +2,8 @@ interface IArtist {
     id: number
     full_name: string
     address: string
+    phone_number: string
+    bio: string|null
     distance: string
     avatar: string
     has_blue_tick: boolean
@@ -10,4 +12,9 @@ interface IArtist {
     portfolios_count: number
     services_count: number
     rating: number
+    services: IService[]
+    banners: string[]
+    portfolios: IPortfolio[]
+    work_hours: IWorkHour[]
+    licenses: string[]
 }

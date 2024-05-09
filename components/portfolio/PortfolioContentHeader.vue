@@ -4,7 +4,7 @@
       <h1 class="font-medium text-[#141414] text-right text-[22px] leading-[34px]">{{ title }}</h1>
       <div v-if="service" class="flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]">
         <span class="text-[#828282]">دسته بندی:</span>
-        <span class="mr-1 text-[#2920D9]">{{ getCategories() }}</span>
+        <span class="mr-1 text-[#2920D9]">{{ getServices() }}</span>
       </div>
     </div>
     <div class="flex flex-row justify-end gap-4">
@@ -36,7 +36,7 @@ const props = defineProps({
   }
 })
 
-const getCategories = () => {
+const getServices = () => {
   let services = []
   let s = props.service
   while (s) {

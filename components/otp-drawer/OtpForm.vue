@@ -36,7 +36,6 @@ const checkOtpCode = () => {
 }
 
 const resendOtp = () => {
-  console.log('resend 111')
 }
 
 watch(() => form.value.code, () => hasOtpError.value = false)

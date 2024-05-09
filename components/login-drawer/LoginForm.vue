@@ -30,7 +30,6 @@ const form = ref<ILoginForm>({
 })
 
 const doLogin = () => {
-  console.log('do login')
 }
 
 const openRegisterModal = () => {
