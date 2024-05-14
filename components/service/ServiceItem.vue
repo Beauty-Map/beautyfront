@@ -1,8 +1,8 @@
 <template>
-  <nuxt-link :to="`/services/${id}`" class="flex flex-col items-center justify-start">
-    <img :src="image" alt="" class="w-[57px] h-[57px] mb-2" :class="{'rounded-[50%]': circle, 'rounded-[8px]': !circle}">
-    <div class="text-center leading-[18px] text-xs">{{ title }}</div>
-  </nuxt-link>
+  <div @click="onClick" class="flex flex-col items-center justify-start">
+    <img :src="image" alt="" class="w-[57px] h-[57px] mb-2" :class="[circle ? 'rounded-[50%]' : 'rounded-[8px]']">
+    <div class="text-center leading-[18px] text-xs whitespace-nowrap">{{ title }}</div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -22,8 +22,21 @@ const props = defineProps({
   circle: {
     type: Boolean,
     default: true
+  },
+  isLink: {
+    type: Boolean,
+    default: true
   }
 })
+const router = useRouter()
+
+const onClick = () => {
+  if (props.isLink) {
+    router.push(`/services/${props.id}`)
+  } else {
+    router.push(`/search?service=${props.id}`)
+  }
+}
 </script>
 
 <style scoped>

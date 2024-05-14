@@ -67,10 +67,6 @@ const goToPage = () => {
 const toggleBookmark = (bookmarked: boolean) => {
   props.artist.is_bookmarked = bookmarked
 }
-
-const calcDiscountPercent = (p: number, d: number) => {
-  return ((p - d) / p * 100) + '%';
-}
 </script>
 
 <style scoped>

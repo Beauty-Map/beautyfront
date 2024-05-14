@@ -6,7 +6,7 @@
         <Tick />
       </div>
       <div class="w-full flex flex-row justify-start items-start">
-        <h1 class="text-right font-medium text-[18px] leading-[28px] text-[#141414]">{{ portfolio.title }}</h1>
+        <h1 class="text-right font-medium text-[18px] leading-[28px] text-[#141414]">{{ portfolio.title }} - {{ portfolio.id }}</h1>
       </div>
       <div class="w-full flex flex-col justify-start items-start" v-if="portfolio.discount_price > 0">
         <div class="text-[#ED2C25] text-[12px] leading-[18px] font-medium line-through">
@@ -58,7 +58,7 @@ const getThumbnail = () => {
 }
 
 const goToPage = () => {
-  router.push('/')
+  router.push(`/portfolios/${props.portfolio.id}`)
 }
 
 const toggleBookmark = (bookmarked: boolean) => {
@@ -66,7 +66,7 @@ const toggleBookmark = (bookmarked: boolean) => {
 }
 
 const calcDiscountPercent = (p: number, d: number) => {
-  return ((p - d) / p * 100) + '%';
+  return Math.ceil(((p - d) / p * 100)) + '%';
 }
 </script>
 

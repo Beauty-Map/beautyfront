@@ -1,10 +1,13 @@
 <template>
   <div class="flex flex-col px-[23px] py-[10px] h-full">
-    {{service}}
+    <PageHeader :title="service.title" class="mb-[60px]"/>
+    <ServiceGrid :services="service.children" :circle="false" :is-link="false"/>
   </div>
 </template>
 
 <script setup lang="ts">
+
+import PageHeader from "~/components/header/PageHeader.vue";
 
 definePageMeta({
   layout: 'default'

@@ -36,6 +36,8 @@ const props = defineProps({
   }
 })
 
+const route = useRoute()
+
 const close = () => {
   emits('close')
 }
@@ -67,11 +69,31 @@ const selectedSort = ref<ISort|null>({
   title: 'پر بازدیدترین'
 })
 
+const initSelectedSort = () => {
+  const orderBy = route.query.order_by
+  const sortBy = route.query.sort_by
+  if (!orderBy || orderBy == 'view') {
+    selectedSort.value = sortArray.value[0]
+  } else if (orderBy == 'created_at') {
+    selectedSort.value = sortArray.value[1]
+  } else if (orderBy == 'price') {
+    if (sortBy == 'asc') {
+      selectedSort.value = sortArray.value[2]
+    } else if (sortBy == 'desc') {
+      selectedSort.value = sortArray.value[3]
+    } else if (sortBy == 'discount') {
+      selectedSort.value = sortArray.value[4]
+    }
+  }
+}
 const selectSort = (s: ISort) => {
   selectedSort.value = s
   emits('choose', s)
   emits('close')
 }
+watch(() => route.query, initSelectedSort)
+
+initSelectedSort()
 </script>
 
 <style scoped>

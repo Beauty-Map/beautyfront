@@ -10,7 +10,7 @@
     >
       <input type="text" class="text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[30px] pl-[20px] placeholder:text-[#828282] placeholder:text-[11px] placeholder:leading-[16px] font-medium"
              @input="validateSearchDebounce"
-             placeholder="جستجو در لیست شهر ها"
+             :placeholder="placeholder"
       >
       <SearchIcon class="absolute top-[14px] right-[10px]"/>
     </div>
@@ -30,6 +30,10 @@ const props = defineProps({
   title: {
     type: String,
     default: ''
+  },
+  placeholder: {
+    type: String,
+    default: 'جستجو در لیست شهر ها'
   },
   modelValue: {
     type: String,

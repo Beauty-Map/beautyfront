@@ -27,6 +27,7 @@
 
 <script setup lang="ts">
 import Modal from "~/components/modal/Modal.vue";
+import {ceil} from "lodash-es";
 
 const props = defineProps({
   portfolio: {
@@ -46,7 +47,7 @@ const closeCallModal = () => {
 }
 
 const calcDiscountPercent = (p: number, d: number) => {
-  return ((p - d) / p * 100) + '%';
+  return Math.ceil((p - d) / p * 100) + '%';
 }
 </script>
 

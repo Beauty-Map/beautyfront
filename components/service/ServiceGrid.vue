@@ -1,12 +1,13 @@
 <template>
   <div class="grid grid-cols-4 gap-8 w-full">
     <ServiceItem
-      v-for="(s, i) in serviceArray"
+      v-for="(s, i) in services"
       :key="i"
       :id="s.id"
       :title="s.title"
       :image="s.image"
-      :cicle="circle"
+      :circle="circle"
+      :is-link="isLink"
     />
   </div>
 </template>
@@ -16,15 +17,16 @@ const props = defineProps({
   circle: {
     type: Boolean,
     default: true
+  },
+  services: {
+    type: Array,
+    default: () => []
+  },
+  isLink: {
+    type: Boolean,
+    default: true
   }
 })
-const serviceArray = ref([])
-
-const getServiceList = async () => {
-  const {data: data} = await useFetch('http://localhost:8000/api/services')
-  serviceArray.value = data.value?.data
-}
-getServiceList()
 
 </script>
 
