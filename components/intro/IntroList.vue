@@ -1,7 +1,7 @@
 <template>
   <div class="max-w-[322px] flex flex-col justify-start items-center relative">
     <client-only>
-      <carousel ref="carouselRef" :items-to-show="1" :autoplay="false" @slide-end="handleSlideChange" :options="slickOptions" class=" h-full">
+      <carousel ref="carouselRef" :items-to-show="1" @slide-end="handleSlideChange" :options="slickOptions" class=" h-full">
         <slide class="relative h-full" v-for="(s, n) in slides" :key="n">
           <IntroItem
               :intro="s"
@@ -27,6 +27,7 @@
 <script setup lang="ts">
 import IntroItem from "~/components/intro/IntroItem.vue";
 import {Carousel, Slide} from "vue3-carousel";
+import 'vue3-carousel/dist/carousel.css'
 
 const props = defineProps({
   slides: {
