@@ -66,3 +66,15 @@ body {
 .fancybox__container {
   z-index: 9999999999 !important;
 }
+
+.vpd-input-group {
+  label {
+    display: none !important;
+  }
+  input {
+    height: 38px;
+    outline: none;
+    border: none !important;
+    border-radius: 8px !important;
+  }
+}

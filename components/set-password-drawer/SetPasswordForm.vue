@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full overflow-y-scroll">
+  <div class="w-full overflow-y-auto">
     <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
     <PasswordInput title="تکرار کلمه عبور" v-model="form.password_confirmation" class="mt-[27px]"/>
     <MainActionButton class="mt-[48px]" @click="doSetPassword">

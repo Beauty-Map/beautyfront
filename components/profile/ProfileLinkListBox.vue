@@ -24,19 +24,19 @@
       </template>
       <template #title>معرفی به دوستان</template>
     </ProfileLink>
-    <ProfileLink :to="'/security'">
+    <ProfileLink :is-link="false" @click="openSecurityDrawer">
       <template #icon>
         <SecurityIcon />
       </template>
       <template #title>امنیت و سیاست حفظ حریم خصوصی</template>
     </ProfileLink>
-    <ProfileLink :to="'/contact'">
+    <ProfileLink :to="'/support'">
       <template #icon>
         <ContactIcon />
       </template>
       <template #title>تماس باما</template>
     </ProfileLink>
-    <ButtonExit  v-if="user"/>
+    <ButtonExit @click="exit" v-if="user"/>
   </div>
 </template>
 
@@ -47,8 +47,28 @@ import ArtistPanelIcon from "~/components/icons/ArtistPanelIcon.vue";
 import ReferralIcon from "~/components/icons/ReferralIcon.vue";
 import ContactIcon from "~/components/icons/ContactIcon.vue";
 import SecurityIcon from "~/components/icons/SecurityIcon.vue";
+import {useDrawerStore} from "~/store/Drawer";
+
 
 const user = useSanctumUser()
+const auth = useSanctumAuth()
+const store = useDrawerStore()
+
+const exit = () => {
+  auth.logout()
+      .then(res => {
+        console.log(res, "res")
+      })
+      .catch(err => {
+        console.log(err, "err")
+      })
+  // window.location.reload()
+}
+
+const openSecurityDrawer = () => {
+  store.closeAllDrawers()
+  store.openSecurityDrawer()
+}
 </script>
 
 <style scoped>

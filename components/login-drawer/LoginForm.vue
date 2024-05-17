@@ -29,7 +29,16 @@ const form = ref<ILoginForm>({
   accept_policy: false,
 })
 
+const auth = useSanctumAuth()
+
 const doLogin = () => {
+  auth.login(form.value)
+      .then(() => {
+        store.closeAllDrawers()
+      })
+      .catch(err => {
+        console.log(err, "err")
+      })
 }
 
 const openRegisterModal = () => {

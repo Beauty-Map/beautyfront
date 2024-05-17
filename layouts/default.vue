@@ -4,10 +4,12 @@
     <ProfileDrawer />
     <LoginDrawer />
     <RegisterDrawer />
-    <OtpDrawer />
     <SetPasswordDrawer />
     <CompleteProfileDrawer />
     <NotificationDrawer />
+    <SecurityDrawer />
+    <SetNewPasswordDrawer />
+    <AltPhoneNumberDrawer />
     <slot />
     <BottomNavigationBox class="md:hidden"/>
   </div>
@@ -25,6 +27,9 @@ import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
 import SetPasswordDrawer from "~/components/drawer/SetPasswordDrawer.vue";
 import CompleteProfileDrawer from "~/components/drawer/CompleteProfileDrawer.vue";
 import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";
+import SecurityDrawer from "~/components/drawer/SecurityDrawer.vue";
+import SetNewPasswordDrawer from "~/components/drawer/SetNewPasswordDrawer.vue";
+import AltPhoneNumberDrawer from "~/components/drawer/AltPhoneNumberDrawer.vue";
 const nuxt = useNuxtApp()
 const loading = ref<boolean>(true)
 nuxt.hook('page:loading:start', () => {

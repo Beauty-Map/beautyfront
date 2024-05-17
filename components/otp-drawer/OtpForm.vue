@@ -15,6 +15,7 @@ import {useDrawerStore} from "~/store/Drawer";
 import OtpInput from "~/components/input/OtpInput.vue";
 import OtpResendButton from "~/components/otp-drawer/OtpResendButton.vue";
 
+const emits = defineEmits(['changePhoneNumber', 'resend', 'validate'])
 const store = useDrawerStore()
 
 const form = ref<IVerifyRegisterForm>({
@@ -26,16 +27,16 @@ const resetOtp = ref<Boolean>(false)
 const hasOtpError = ref<Boolean>(false)
 
 const checkOtpCode = () => {
-  hasOtpError.value = false
-  if (form.value.code.length != 4) {
-    hasOtpError.value = true;
+  if (!form.value.code) {
+    //TODO: Alert
     return
   }
-  store.closeAllDrawers()
-  store.openSetPasswordDrawer()
+  emits('validate', form.value.code)
 }
 
 const resendOtp = () => {
+  emits('resend')
+  resetOtp.value = !resetOtp.value
 }
 
 watch(() => form.value.code, () => hasOtpError.value = false)

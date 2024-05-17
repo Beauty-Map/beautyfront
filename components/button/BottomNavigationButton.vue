@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col text-center justify-center items-center relative">
+  <div class="cursor-pointer flex flex-col text-center justify-center items-center relative">
     <SelectedHover class="absolute -top-[8px]" v-if="selected"/>
     <slot></slot>
     <div class="text-center text-white text-[12px] leading-[18px] mt-1">

@@ -45,9 +45,15 @@ const errorText = ref<String>('')
 const hasError = ref<Boolean>(false)
 const openDrawer = ref<Boolean>(false)
 
-const province = ref<IProvince>(null)
-const city = ref<ICity>(null)
-
+const user = useSanctumUser()
+const province = ref<IProvince>()
+const city = ref<ICity>()
+if (user.value?.province) {
+  province.value = user.value.province
+}
+if (user.value?.city) {
+  city.value = user.value.city
+}
 const openDrawerClicked = () => {
   openDrawer.value = true
 }

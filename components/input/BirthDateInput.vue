@@ -9,18 +9,12 @@
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
        <client-only>
-         <input
-             type="text"
-             class="custom-input flex flex-row justify-start items-center text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
-             placeholder="1374/23/11"
-         />
          <CustomDatePicker
              ref="datePicker"
              format="YYYY-MM-DD"
              display-format="jYYYY/jMM/jDD"
              type="date"
              simple
-             custom-input=".custom-input"
              @change="validateBirthDateDebounce"
              v-model="value"
          />

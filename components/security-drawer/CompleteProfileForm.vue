@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full overflow-y-auto">
+  <div class="w-full overflow-y-scroll">
     <TextInput title="نام و نام خانوادگی" v-model="form.full_name" class="mt-[27px]"/>
     <ChooseCityInput title="استان و شهر" v-model="form.city_id" class="mt-[27px]"/>
     <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px]"/>
-    <MainActionButton class="mt-[80px]" @click="doSaveProfile">
-      <div class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
+    <MainActionButton class="mt-[27px]" @click="doSaveProfile">
+      <div class="text-white text-center text-[20px] leading-[30px]">ذخیره تغییرات</div>
     </MainActionButton>
   </div>
 </template>
@@ -16,17 +16,28 @@ import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import ChooseCityInput from "~/components/input/ChooseCityInput.vue";
 import BirthDateInput from "~/components/input/BirthDateInput.vue";
+import {useCustomFetch} from "~/composables/useCustomFetch";
 
 const store = useDrawerStore()
+const user = useSanctumUser()
 
 const form = ref<ICompleteProfileForm>({
-  full_name: '',
-  birth_date: '',
-  city_id: 0,
+  full_name: user.value?.full_name,
+  birth_date: user.value?.birth_date,
+  city_id: user.value?.city_id,
 })
 
-const doSaveProfile = () => {
-  store.closeAllDrawers()
+const doSaveProfile = async () => {
+  useCustomFetch('/own', {
+    method: "PUT",
+    body: form.value,
+  })
+      .then(res => {
+
+      })
+      .catch(err => {
+
+      })
 }
 
 </script>

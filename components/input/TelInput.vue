@@ -8,7 +8,7 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="number" class="text-left h-[38px] w-full rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
+      <input type="tel" class="text-left h-[38px] w-full rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
              @input="validateTelNumberDebounce"
              v-model="value"
              pattern= "[0-9]"
@@ -16,9 +16,9 @@
       <ContactRedIcon v-if="hasError" class="absolute left-[10px] top-[10px]"/>
       <ContactIcon v-else class="absolute left-[10px] top-[10px]"/>
     </div>
-    <div class="w-full flex flex-row justify-start items-center" v-if="hasError">
+    <div class="w-full flex flex-row justify-start items-center" v-if="hasError || error">
       <ErrorRedIcon />
-      <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText}}</span>
+      <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText || props.error}}</span>
     </div>
   </div>
 </template>
@@ -35,6 +35,10 @@ const props = defineProps({
     default: ''
   },
   modelValue: {
+    type: String,
+    default: ''
+  },
+  error: {
     type: String,
     default: ''
   }

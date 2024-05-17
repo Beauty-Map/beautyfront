@@ -14,13 +14,16 @@ export default defineNuxtConfig({
     "nuxt-lodash",
   ],
   sanctum: {
-    baseUrl: 'http://127.0.0.1:8000/api',
-    redirectIfAuthenticated: false,
+    baseUrl: 'http://localhost:8000', // Laravel API
     endpoints: {
-      login: '/auth/login',
-      logout: '/auth/logout',
-      user: '/own',
-    }
+      user: '/api/own',
+      login: '/api/auth/login',
+      logout: '/api/auth/logout',
+    },
+    client: {
+      retry: 1,
+    },
+    redirectIfAuthenticated: false,
   },
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.scss', {injectPosition: 'first'},],
@@ -40,6 +43,11 @@ export default defineNuxtConfig({
         'jsnext:main',
         'jsnext'
       ]
+    }
+  },
+  runtimeConfig: {
+    public: {
+      baseURL: 'http://localhost:8000/api'
     }
   }
 })

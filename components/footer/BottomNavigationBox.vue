@@ -118,6 +118,8 @@ const onRouteChanged = (route: string) => {
     index.value = 2
   } else if (route.startsWith('/profile')) {
     index.value = 5
+  } else if (route.startsWith('/panel')) {
+    index.value = 5
   }
 }
 

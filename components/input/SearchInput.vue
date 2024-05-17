@@ -8,7 +8,7 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="text" class="text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[30px] pl-[20px] placeholder:text-[#828282] placeholder:text-[11px] placeholder:leading-[16px] font-medium"
+      <input type="text" class="text-right h-[38px] w-[98%] rounded-[8px] outline-none focus:outline-none pr-[30px] pl-[20px] placeholder:text-[#828282] placeholder:text-[11px] placeholder:leading-[16px] font-medium"
              @input="validateSearchDebounce"
              :placeholder="placeholder"
       >

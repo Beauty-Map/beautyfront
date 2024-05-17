@@ -40,6 +40,7 @@
 
 <script setup lang="ts">
 import Bookmark from "~/components/bookmark/Bookmark.vue";
+import {useDrawerStore} from "~/store/Drawer";
 
 const props = defineProps({
   portfolio: {
@@ -49,6 +50,9 @@ const props = defineProps({
 })
 
 const router = useRouter()
+const drawerStore = useDrawerStore()
+
+const user = useSanctumUser()
 
 const getThumbnail = () => {
   if (props.portfolio.images.length > 0) {
@@ -62,6 +66,10 @@ const goToPage = () => {
 }
 
 const toggleBookmark = (bookmarked: boolean) => {
+  if (!user.value) {
+    drawerStore.openLoginDrawer()
+    return
+  }
   props.portfolio.is_bookmarked = bookmarked
 }
 

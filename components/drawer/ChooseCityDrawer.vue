@@ -6,7 +6,7 @@
   <div class="flex flex-col justify-start items-center">
     <SearchInput v-model="searchTerm" class="mt-[30px]"/>
     <OwnProvince v-if="ownCity" :city="ownCity" class="mt-[23px]"/>
-    <ChooseCityList @choose="chooseProvinceAndCity" :provinces="provinces" class="mt-[15px]"/>
+    <ChooseCityList v-if="isOpen" @choose="chooseProvinceAndCity" :provinces="provinces" class="mt-[15px]"/>
   </div>
 </div>
 </template>
