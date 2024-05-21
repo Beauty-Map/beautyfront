@@ -1,7 +1,8 @@
 <template>
-  <div class="page h-full w-full flex flex-col relative">
+  <div class="flex flex-col px-[33px] w-full h-full relative">
     <PageLoading v-if="loading"/>
     <slot />
+    <LazySupportTicketBottomBox />
   </div>
 </template>
 

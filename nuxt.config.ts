@@ -12,6 +12,8 @@ export default defineNuxtConfig({
     'nuxt-auth-sanctum',
     '@pinia/nuxt',
     "nuxt-lodash",
+    'nuxt3-leaflet',
+    'dayjs-nuxt',
   ],
   sanctum: {
     baseUrl: 'http://localhost:8000', // Laravel API

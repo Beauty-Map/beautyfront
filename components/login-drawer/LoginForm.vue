@@ -21,7 +21,9 @@ import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";
 import {useDrawerStore} from "~/store/Drawer";
 
+const app = useNuxtApp()
 const store = useDrawerStore()
+const auth = useSanctumAuth()
 
 const form = ref<ILoginForm>({
   phone_number: '',
@@ -29,14 +31,14 @@ const form = ref<ILoginForm>({
   accept_policy: false,
 })
 
-const auth = useSanctumAuth()
-
 const doLogin = () => {
   auth.login(form.value)
       .then(() => {
+        app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
         store.closeAllDrawers()
       })
       .catch(err => {
+        app.$toast.success('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
         console.log(err, "err")
       })
 }
