@@ -49,7 +49,6 @@ import ContactIcon from "~/components/icons/ContactIcon.vue";
 import SecurityIcon from "~/components/icons/SecurityIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
 
-
 const user = useSanctumUser()
 const auth = useSanctumAuth()
 const store = useDrawerStore()

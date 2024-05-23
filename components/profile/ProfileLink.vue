@@ -5,7 +5,10 @@
     </div>
     <div class="flex flex-row justify-between items-center w-full mr-4 border-b border-[#A9A7A7] pb-4">
       <div class="text-[#133C3E] text-[12px] leading-[18px] font-medium"><slot name="title"></slot></div>
-      <LeftArrow />
+      <div class="flex flex-row gap-[20px]">
+        <slot name="sub-icon"></slot>
+        <LeftArrow />
+      </div>
     </div>
   </div>
 </template>

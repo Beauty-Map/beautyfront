@@ -13,6 +13,7 @@ export const useDrawerStore = defineStore('drawer', {
         openSecurity: false,
         openSetNewPassword: false,
         openSetAltNumber: false,
+        openArtistProfile: true,
     }),
     getters: {
         isOpenProfile: (state) => state.openProfile,
@@ -26,6 +27,7 @@ export const useDrawerStore = defineStore('drawer', {
         isOpenSecurity: (state) => state.openSecurity,
         isOpenSetNewPassword: (state) => state.openSetNewPassword,
         isOpenSetAltNumber: (state) => state.openSetAltNumber,
+        isOpenArtistProfile: (state) => state.openArtistProfile,
     },
     actions: {
         closeProfileDrawer() {
@@ -94,6 +96,12 @@ export const useDrawerStore = defineStore('drawer', {
         openSetAltNumberDrawer() {
             this.openSetAltNumber = true
         },
+        closeArtistProfileDrawer() {
+            this.openArtistProfile = false
+        },
+        openArtistProfileDrawer() {
+            this.openArtistProfile = true
+        },
         closeAllDrawers() {
             this.closeProfileDrawer()
             this.closeLoginDrawer()
@@ -106,6 +114,7 @@ export const useDrawerStore = defineStore('drawer', {
             this.closeSecurityDrawer()
             this.closeSetNewPasswordDrawer()
             this.closeSetAltNumberDrawer()
+            this.closeArtistProfileDrawer()
         },
     },
 })
