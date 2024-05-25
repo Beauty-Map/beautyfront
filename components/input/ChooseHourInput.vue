@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex flex-col items-start justify-start w-full px-1">
+  <div class="relative flex flex-col items-start justify-start w-full px-1" @click="openChooseHourDrawer">
     <div v-if="title" class="absolute top-[-8px] right-[10px] bg-white z-[1] text-[14px] leading-[16px] text-right mb-1 font-medium"
          :class="[hasError ? 'text-[#F44336]' : 'text-[#141414]']"
     >
@@ -8,10 +8,7 @@
     <div class="h-[40px] w-full rounded-[3px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#A9A7A7]']"
     >
-      <input  @click="openChooseHourDrawer" type="text" class="text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
-             disabled
-             :value="value"
-      >
+      <div class="flex items-center text-right h-[38px] w-full rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]">{{ showValue }}</div>
     </div>
     <div class="w-full flex flex-row justify-start items-center" v-if="hasError">
       <ErrorRedIcon />
@@ -104,6 +101,7 @@ const selectInput = (input: string) => {
 }
 
 const openChooseHourDrawer = () => {
+  console.log('dsds')
   showChooseHourDrawer.value = true
 }
 const closeChooseHourDrawer = () => {
@@ -140,6 +138,10 @@ const getLinePosition = (n) => {
 const handleClick = (n) => {
   selectedHour.value = n
 }
+
+const showValue = computed(() => {
+  return value.value
+})
 
 const validateWorkHours = ($event: Event) => {
   emits('update:modelValue', $event.target?.value)
