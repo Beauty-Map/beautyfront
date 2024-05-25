@@ -3,7 +3,7 @@
       :class="[open ? 'flex' : 'hidden']"
   >
     <div class="bg-white relative rounded-[12px] px-[30px] py-[30px] min-w-[150px] min-h-[150px] shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
-      <CloseIcon @click="closeModal" class="absolute top-[5px] right-[5px]"/>
+      <CloseIcon v-if="showClose" @click="closeModal" class="absolute top-[5px] right-[5px]"/>
       <slot></slot>
     </div>
   </div>
@@ -18,6 +18,10 @@ const props = defineProps({
   open: {
     type: Boolean,
     default: false,
+  },
+  showClose: {
+    type: Boolean,
+    default: true,
   }
 })
 

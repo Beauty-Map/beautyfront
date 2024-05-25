@@ -45,7 +45,6 @@ import ChooseWorkHourInput from "~/components/input/ChooseWorkHourInput.vue";
 
 const store = useDrawerStore()
 const user = useSanctumUser()
-console.log(user.value)
 const form = ref({
   full_name: user.value?.full_name,
   phone_number: user.value?.phone_number,
