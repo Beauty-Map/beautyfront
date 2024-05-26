@@ -1,6 +1,6 @@
 <template>
 <div
-    class="fixed flex flex-col h-fullpy-[30px] md:hide top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]"
+    class="fixed flex flex-col h-full py-[30px] md:hide top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]"
     :class="[isOpen ? 'left-0 scale-1' : 'left-[-100%] hidden scale-0']"
 >
   <div class="flex flex-row items-center px-[28px] justify-between">
@@ -31,7 +31,7 @@
       ویرایش ساعات
     </div>
     <div
-        @click="openDayModal"
+        @click="openDaysModal"
         class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
     >
       ویرایش روز
@@ -41,31 +41,42 @@
     <p>تعطیلات رسمی آماده ارائه خدمات هستم</p>
     <CheckBox v-model="workOnHolidays"/>
   </div>
-  <Modal :show-close="false" :open="showItemModal">
-    <div class="w-full flex flex-col justify-start items-center max-w-[340px] min-w-[300px]">
-      <div class="font-semibold text-center text-[#133C3E] text-[18px] leading-[28px]">انتخاب روز و ساعت</div>
-      <div class="flex flex-row items-center justify-start gap-[5px] mt-[10px]">
-        <div v-for="(d, i) in days" @click="selectDay(i)"
-             :class="[isDaySelected(i) ? 'bg-[#5CB3FF33] border-none' : 'border border-[#A9A7A7]  bg-white']"
-             class="w-[35px] h-[35px] flex justify-center items-center rounded-full
-             text-center text-[#133C3E] font-semibold text-[14px] leading-[21px] cursor-pointer">
-          {{ d[0] }}
-        </div>
-      </div>
-      <div class="w-full flex flex-row justify-start items-center mt-[30px]">
-        <CheckBox />
-        <span>24 ساعته باز است</span>
-      </div>
-      <div class="w-full flex flex-row justify-start items-center mt-[20px]">
-        <CheckBox />
-        <span>بسته است</span>
-      </div>
-      <div class="w-full flex flex-row justify-start items-center mt-[20px]">
-        <ChooseHourInput :title="'از ساعت'"/>
-        <ChooseHourInput :title="'تا ساعت'"/>
-      </div>
-    </div>
-  </Modal>
+  <div class="mt-[80px] px-[22px] w-full flex flex-row items-center justify-center">
+    <MainActionButton @click="doSave">
+      <div class="text-white text-center text-[20px] leading-[30px] py-[11px]">ذخیره اطلاعات</div>
+    </MainActionButton>
+  </div>
+  <ChooseHoursModal
+      v-if="showHoursModal"
+      :is-open="showHoursModal"
+      @save="saveHoursModal"
+      @close="closeHoursModal"
+      :start-hour="startHour"
+      :end-hour="endHour"
+  />
+  <ChooseDaysModal
+      v-if="showDaysModal"
+      :is-open="showDaysModal"
+      @save="saveDaysModal"
+      @close="closeDaysModal"
+      :work-hours="workHours"
+  />
+  <ChooseItemModal
+      v-if="showItemModal"
+      :is-open="showItemModal"
+      @save="saveItemModal"
+      @close="closeItemModal"
+      :work-hour="item"
+  />
+  <ChooseAllModal
+      v-if="showAllModal"
+      :is-open="showAllModal"
+      @save="saveAllModal"
+      @close="closeAllModal"
+      :work-hours="workHours"
+      :is-closed="isClosed"
+      :is-all-day-open="isAllDayOpen"
+  />
 </div>
 </template>
 
@@ -74,9 +85,13 @@
 import BackIcon from "~/components/icons/BackIcon.vue";
 import WorkHourItem from "~/components/work-hour-drawer/WorkHourItem.vue";
 import CheckBox from "~/components/input/CheckBox.vue";
-import ChooseHourInput from "~/components/input/ChooseHourInput.vue";
+import ChooseAllModal from "~/components/choose-work-hour/ChooseAllModal.vue";
+import MainActionButton from "~/components/button/form/MainActionButton.vue";
+import ChooseItemModal from "~/components/choose-work-hour/ChooseItemModal.vue";
+import ChooseHoursModal from "~/components/choose-work-hour/ChooseHoursModal.vue";
+import ChooseDaysModal from "~/components/choose-work-hour/ChooseDaysModal.vue";
 
-const emits = defineEmits(['close', 'update:modelValue'])
+const emits = defineEmits(['close', 'update:modelValue', 'update:isClosed', 'update:isAllDayOpen'])
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -85,42 +100,43 @@ const props = defineProps({
   modelValue: {
     type: Array<IWorkHour>,
     default: () => []
+  },
+  isAllDayOpen: {
+    type: Boolean,
+    default: false
+  },
+  isClosed: {
+    type: Boolean,
+    default: false
   }
 })
-const days = ref([
-  'شنبه',
-  'یک شنبه',
-  'دو شنبه',
-  'سه شنبه',
-  'چهار شنبه',
-  'پنج شنبه',
-  'جمعه',
-])
 const workHours = ref<IWorkHour[]>(props.modelValue)
-const showItemModal = ref(true)
+const showItemModal = ref(false)
 const showAllModal = ref(false)
 const showHoursModal = ref(false)
-const showDayModal = ref(false)
+const showDaysModal = ref(false)
 const workOnHolidays = ref(false)
 const index = ref<number>(0)
 const item = ref<IWorkHour|null>(null)
-const selectedDays = ref<number[]>([1,2])
-const isDaySelected = (index: number) => {
-  return selectedDays.value.includes(index)
-}
-const selectDay = (index: number) => {
-  const i = selectedDays.value.indexOf(index)
-  if (i != -1) {
-    selectedDays.value.splice(i, 1)
-  } else {
-    selectedDays.value.push(index)
-    selectedDays.value.sort((a,b) => a - b)
-  }
-}
+const isClosed = ref<boolean>(props.isClosed)
+const isAllDayOpen = ref<boolean>(props.isAllDayOpen)
+const startHour = ref('')
+const endHour = ref('')
 
 const openItemModal = (w: IWorkHour, i: number) => {
   item.value = w
   index.value = i
+  showItemModal.value = true
+}
+const closeItemModal = () => {
+  showItemModal.value = false
+  item.value = null
+  index.value = 0
+}
+
+const saveItemModal = (w: IWorkHour) => {
+  workHours.value[index.value] = w
+  closeItemModal()
 }
 
 const close = () => {
@@ -135,17 +151,68 @@ const closeAllModal = () => {
 }
 
 const openHoursModal = () => {
+  startHour.value = workHours.value.length > 0 ? workHours.value[0].start_hour : '08:00'
+  endHour.value = workHours.value.length > 0 ? workHours.value[0].end_hour : '20:00'
   showHoursModal.value = true
 }
 const closeHoursModal = () => {
   showHoursModal.value = false
+  startHour.value = ''
+  endHour.value = ''
 }
 
-const openDayModal = () => {
-  showDayModal.value = true
+const saveHoursModal = (hours: Object) => {
+  for (let i = 0; i < workHours.value.length; i++) {
+    workHours.value[i].start_hour = hours.start_hour
+    workHours.value[i].end_hour = hours.end_hour
+  }
+  closeHoursModal()
 }
-const closeDayModal = () => {
-  showDayModal.value = false
+
+const openDaysModal = () => {
+  showDaysModal.value = true
+}
+const closeDaysModal = () => {
+  showDaysModal.value = false
+}
+const saveDaysModal = (wh: number[]) => {
+  let whList: IWorkHour[] = []
+  let start_hour = workHours.value.length > 0 ? workHours.value[0].start_hour : '08:00'
+  let end_hour = workHours.value.length > 0 ? workHours.value[0].end_hour : '20:00'
+  const commonItems = workHours.value.filter(item => wh.includes(item.day_index));
+  const uniqueNewItems = wh
+      .filter(index => !workHours.value.some(item => item.day_index === index))
+      .map(index => (<IWorkHour>{ start_hour: start_hour, end_hour: end_hour, day_index: index }));
+
+  whList.push(...commonItems, ...uniqueNewItems);
+  whList.sort((a, b) => a.day_index - b.day_index);
+  workHours.value = whList
+  closeDaysModal()
+}
+
+const saveAllModal = (data: Object) => {
+  let whList:IWorkHour[] = []
+  for (let i = 0; i < data.selected_days.length; i++) {
+    let w: IWorkHour = {
+      day_index: data.selected_days[i],
+      end_hour: data.end_hour,
+      start_hour: data.start_hour,
+    }
+    whList.push(w)
+  }
+  workHours.value = whList
+  closeAllModal()
+  isClosed.value = data.is_closed
+  isAllDayOpen.value = data.is_all_day_open
+}
+
+const doSave = () => {
+  emits('update:modelValue', workHours.value)
+  emits('update:isClosed', isClosed.value)
+  emits('update:isAllDayOpen', isAllDayOpen.value)
+  setTimeout(() => {
+    close()
+  }, 500)
 }
 
 const goBack = () => {

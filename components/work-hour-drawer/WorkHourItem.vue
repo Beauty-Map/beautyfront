@@ -2,7 +2,7 @@
   <div @click="onUpdateClicked" class="cursor-pointer mb-[25px] w-full text-[#133C3E] font-medium leading-[23px] text-[15px] flex flex-row items-center justify-between">
     <div class="flex flex-row gap-[4px] justify-start items-center">
       <EditPenIcon />
-      <span>{{ days[workHour.day_index] }}</span>
+      <span>{{ days[workHour.day_index - 1] }}</span>
     </div>
     <div class="flex flex-row gap-[4px] justify-end items-center">
       <span>{{ toAMorPM(workHour.start_hour) }}</span>
@@ -16,6 +16,7 @@
 
 import EditPenIcon from "~/components/icons/EditPenIcon.vue";
 
+const emits = defineEmits(['update'])
 const props = defineProps({
   index: {
     type: Number,
@@ -28,7 +29,7 @@ const props = defineProps({
 })
 
 const onUpdateClicked = () => {
-
+  emits('update', props.index)
 }
 
 const days = ref([

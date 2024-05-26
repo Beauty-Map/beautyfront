@@ -20,7 +20,15 @@
       <ChooseCityInput title="شهر محل فعالیت" v-model="form.city_id" class="mt-[27px]"/>
       <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
       <ChooseLocationInput title="انتخاب لوکیشن" v-model="form.location" class="mt-[27px]"/>
-      <ChooseWorkHourInput title="ساعت کاری" v-model="form.work_hours" class="mt-[27px]"/>
+      <ChooseWorkHourInput
+          title="ساعت کاری"
+          :is-all-day-open="form.is_all_day_open"
+          :is-closed="form.is_closed"
+          v-model="form.work_hours"
+          @update:is-closed="open => form.is_closed = open"
+          @update:is-all-day-open="open => form.is_all_day_open = open"
+          class="mt-[27px]"
+      />
       <MainActionButton class="mt-[80px]" @click="doSaveProfile">
         <div class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
       </MainActionButton>
@@ -56,6 +64,8 @@ const form = ref({
   avatar: user.value?.avatar,
   location: user.value?.location,
   work_hours: user.value?.work_hours,
+  is_all_day_open: user.value?.is_all_day_open,
+  is_closed: user.value?.is_closed,
 })
 const goBack = () => {
   store.closeAllDrawers()
