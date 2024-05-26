@@ -18,3 +18,13 @@ interface IArtist {
     work_hours: IWorkHour[]
     licenses: string[]
 }
+
+interface ISocialMedia {
+    telegram: string
+    instagram: string
+    bale: string
+    web: string
+    whatsapp: string
+    eita: string
+    rubika: string
+}

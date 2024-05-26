@@ -29,6 +29,8 @@
           @update:is-all-day-open="open => form.is_all_day_open = open"
           class="mt-[27px]"
       />
+      <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px]"/>
+      <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
       <MainActionButton class="mt-[80px]" @click="doSaveProfile">
         <div class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
       </MainActionButton>
@@ -50,6 +52,8 @@ import TelInput from "~/components/input/TelInput.vue";
 import NationalCodeInput from "~/components/input/NationalCodeInput.vue";
 import ChooseLocationInput from "~/components/input/ChooseLocationInput.vue";
 import ChooseWorkHourInput from "~/components/input/ChooseWorkHourInput.vue";
+import TextAreaInput from "~/components/input/TextAreaInput.vue";
+import ChooseSocialMediaInput from "~/components/input/ChooseSocialMediaInput.vue";
 
 const store = useDrawerStore()
 const user = useSanctumUser()
@@ -66,6 +70,8 @@ const form = ref({
   work_hours: user.value?.work_hours,
   is_all_day_open: user.value?.is_all_day_open,
   is_closed: user.value?.is_closed,
+  bio: user.value?.bio,
+  social_media: user.value?.social_media,
 })
 const goBack = () => {
   store.closeAllDrawers()
