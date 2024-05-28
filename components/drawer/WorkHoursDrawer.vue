@@ -91,7 +91,7 @@ import ChooseItemModal from "~/components/choose-work-hour/ChooseItemModal.vue";
 import ChooseHoursModal from "~/components/choose-work-hour/ChooseHoursModal.vue";
 import ChooseDaysModal from "~/components/choose-work-hour/ChooseDaysModal.vue";
 
-const emits = defineEmits(['close', 'update:modelValue', 'update:isClosed', 'update:isAllDayOpen'])
+const emits = defineEmits(['close', 'update:modelValue', 'update:isClosed', 'update:isAllDayOpen', 'update:workOnHolidays'])
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -108,6 +108,10 @@ const props = defineProps({
   isClosed: {
     type: Boolean,
     default: false
+  },
+  workOnHolidays: {
+    type: Boolean,
+    default: false
   }
 })
 const workHours = ref<IWorkHour[]>(props.modelValue)
@@ -115,10 +119,10 @@ const showItemModal = ref(false)
 const showAllModal = ref(false)
 const showHoursModal = ref(false)
 const showDaysModal = ref(false)
-const workOnHolidays = ref(false)
 const index = ref<number>(0)
 const item = ref<IWorkHour|null>(null)
 const isClosed = ref<boolean>(props.isClosed)
+const workOnHolidays = ref<boolean>(props.workOnHolidays)
 const isAllDayOpen = ref<boolean>(props.isAllDayOpen)
 const startHour = ref('')
 const endHour = ref('')
@@ -210,6 +214,7 @@ const doSave = () => {
   emits('update:modelValue', workHours.value)
   emits('update:isClosed', isClosed.value)
   emits('update:isAllDayOpen', isAllDayOpen.value)
+  emits('update:workOnHolidays', workOnHolidays.value)
   setTimeout(() => {
     close()
   }, 500)

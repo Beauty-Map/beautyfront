@@ -1,6 +1,6 @@
 <template>
 <div
-    class="flex flex-col fixed md:hide top-0 bottom-0 px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999999999]"
+    class="flex flex-col fixed md:hide top-0 bottom-0 pb-[45px] px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999999999]"
     :class="[store.isOpenArtistProfile ? 'left-0' : 'left-[-100%]']"
 >
   <div class="flex flex-row items-center justify-between pt-[23px] pl-[3px]">
@@ -24,6 +24,7 @@
           title="ساعت کاری"
           :is-all-day-open="form.is_all_day_open"
           :is-closed="form.is_closed"
+          :work-on-holidays="form.work_on_holidays"
           v-model="form.work_hours"
           @update:is-closed="open => form.is_closed = open"
           @update:is-all-day-open="open => form.is_all_day_open = open"
@@ -54,9 +55,14 @@ import ChooseLocationInput from "~/components/input/ChooseLocationInput.vue";
 import ChooseWorkHourInput from "~/components/input/ChooseWorkHourInput.vue";
 import TextAreaInput from "~/components/input/TextAreaInput.vue";
 import ChooseSocialMediaInput from "~/components/input/ChooseSocialMediaInput.vue";
+import {useCustomFetch} from "~/composables/useCustomFetch";
 
 const store = useDrawerStore()
 const user = useSanctumUser()
+const auth = useSanctumAuth()
+const app = useNuxtApp()
+
+auth.refreshIdentity()
 const form = ref({
   full_name: user.value?.full_name,
   phone_number: user.value?.phone_number,
@@ -69,6 +75,7 @@ const form = ref({
   location: user.value?.location,
   work_hours: user.value?.work_hours,
   is_all_day_open: user.value?.is_all_day_open,
+  work_on_holidays: user.value?.work_on_holidays,
   is_closed: user.value?.is_closed,
   bio: user.value?.bio,
   social_media: user.value?.social_media,
@@ -79,7 +86,35 @@ const goBack = () => {
 const onUserAvatarChanged = (newAvatar: string) => {
   form.value.avatar = newAvatar
 }
-const doSaveProfile = () => {
+const doSaveProfile = async () => {
+  const data = {
+    full_name: form.value.full_name,
+    national_code: form.value.national_code.toString(),
+    tel_number: form.value.tel_number,
+    address: form.value.address,
+    avatar: form.value.avatar,
+    bio: form.value.bio,
+    location: form.value.location,
+    social_media: form.value.social_media,
+    is_all_day_open: form.value.is_all_day_open,
+    is_closed: form.value.is_closed,
+    work_on_holidays: form.value.work_on_holidays,
+    city_id: form.value.city_id,
+    birth_date: form.value.birth_date,
+    work_hours: form.value.work_hours,
+  }
+  const res = await useCustomFetch('/own/artist', {
+    method: "PUT",
+    body: data,
+  })
+  if (res.error.value != null) {
+
+  }
+  if (res.data.value != null) {
+    await auth.refreshIdentity()
+    app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
+
+  }
 }
 </script>
 

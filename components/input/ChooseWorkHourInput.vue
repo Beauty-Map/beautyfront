@@ -24,6 +24,7 @@
         v-if="showChooseWorkHoursDrawer"
         :is-all-day-open="isAllDayOpen"
         :is-closed="isClosed"
+        :work-on-holidays="workOnHolidays"
         @update:is-all-day-open="updateIsAllDayOpen"
         @update:is-closed="updateIsClosed"
     />
@@ -49,6 +50,10 @@ const props = defineProps({
     default: false
   },
   isClosed: {
+    type: Boolean,
+    default: false
+  },
+  workOnHolidays: {
     type: Boolean,
     default: false
   }

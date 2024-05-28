@@ -33,6 +33,7 @@
               :class="[showAtSign ? ' pl-[30px] ' : showWWW ? 'pl-[50px]' : ' pl-[10px] ']"
               @input="validateTextDebounce"
               ref="inputs"
+              :value="value[type]"
           >
           <span v-if="showWWW"  class="absolute left-[8px] top-[30%]">www</span>
           <AtSignIcon v-if="showAtSign" class="absolute left-[8px] top-[35%]"/>
@@ -75,7 +76,7 @@ const props = defineProps({
 const value = ref<ISocialMedia>(props.modelValue as ISocialMedia)
 const errorText = ref<String>('')
 const hasError = ref<Boolean>(false)
-const showModal = ref<Boolean>(true)
+const showModal = ref<Boolean>(false)
 const type = ref<string>('rubika')
 const inputs = ref()
 
@@ -93,6 +94,7 @@ const closeModal = () => {
 const saveModal = () => {
   emits('update:modelValue', value.value)
   closeModal()
+  value.value = props.modelValue as ISocialMedia
 }
 
 const getHeaderText = computed(() => {
