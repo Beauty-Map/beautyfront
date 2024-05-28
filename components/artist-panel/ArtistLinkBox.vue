@@ -9,7 +9,7 @@
         <DangerIcon @click="openArtistProfileDrawer"/>
       </template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/portfolio'">
+    <ProfileLink :to="'/panel/artist/portfolios'">
       <template #icon>
         <PortfolioIcon />
       </template>

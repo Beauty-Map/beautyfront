@@ -27,6 +27,8 @@ const form = ref<ICompleteProfileForm>({
 
 const doSaveProfile = () => {
   store.closeAllDrawers()
+  const app = useNuxtApp()
+  app.$toast.success('اطلاعات شما با موفقیت ثبت شد!', {rtl: true})
 }
 
 </script>

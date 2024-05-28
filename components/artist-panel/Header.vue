@@ -17,17 +17,17 @@
     <div class="absolute bottom-[12px] left-[35px] right-[35px] px-[9px] py-[9px]
      flex flex-row justify-between items-center
      bg-white rounded-[17px] border border-[#A9A7A7]">
-      <div class="w-full flex flex-row justify-between items-center">
+      <div class="w-full flex flex-row justify-between  flex-wrap items-center">
         <div class="flex flex-row justify-start items-center">
           <img :alt="full_name" :src="getAvatar"
                class="w-[55px] h-[55px] rounded-[100%] border border-[#B2550F]">
           <div class="py-[5px] flex flex-col items-start justify-start mr-[6px] h-[55px]">
-            <div class="w-full flex flex-row gap-[8px] text-[#133C3E] font-medium text-[14px] leading-[21px]">
-              <span>{{ full_name }}</span>
+            <div class="w-full flex flex-row gap-[2px] text-[#133C3E] font-medium text-[14px] leading-[21px]">
+              <span class="whitespace-nowrap text-ellipsis overflow-hidden max-w-[80px]">{{ full_name }}</span>
               <Rating :star-count="5" v-model="rates"/>
             </div>
             <div class="mt-[5px] text-[#133C3E] font-light text-[14px] leading-[21px]">
-              {{ full_name }}
+              {{ planTitle }}
             </div>
           </div>
         </div>
@@ -50,6 +50,10 @@ const props = defineProps({
   full_name: {
     type: String,
     default: ''
+  },
+  planTitle: {
+    type: String,
+    default: 'عادی'
   },
   banner: {
     type: String,

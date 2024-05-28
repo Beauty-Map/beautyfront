@@ -8,7 +8,7 @@
     <div class="w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <textarea type="text" class="text-right w-full rounded-[8px] outline-none focus:outline-none py-[10px] pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
+      <textarea type="text" class="text-right w-[calc(100%-2px)] mr-[2px] rounded-[8px] outline-none focus:outline-none py-[10px] pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
                 @input="validateTextDebounce"
                 v-model="value"
                 rows="5"

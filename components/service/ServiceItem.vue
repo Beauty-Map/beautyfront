@@ -6,6 +6,7 @@
 </template>
 
 <script setup lang="ts">
+const emits = defineEmits(['click'])
 const props = defineProps({
   id: {
     type: Number,
@@ -26,11 +27,19 @@ const props = defineProps({
   isLink: {
     type: Boolean,
     default: true
+  },
+  callParent: {
+    type: Boolean,
+    default: false
   }
 })
 const router = useRouter()
 
 const onClick = () => {
+  if (props.callParent) {
+    emits('click')
+    return
+  }
   if (props.isLink) {
     router.push(`/services/${props.id}`)
   } else {

@@ -2,6 +2,7 @@ interface IPortfolio {
     id: number
     title: string
     description: string
+    maintenance: string
     rating: number
     price: number
     discount_price: number

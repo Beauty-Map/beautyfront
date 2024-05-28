@@ -18,6 +18,7 @@ import ChooseCityInput from "~/components/input/ChooseCityInput.vue";
 import BirthDateInput from "~/components/input/BirthDateInput.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
 
+const app = useNuxtApp()
 const store = useDrawerStore()
 const user = useSanctumUser()
 
@@ -33,10 +34,9 @@ const doSaveProfile = async () => {
     body: form.value,
   })
       .then(res => {
-
+        app.$toast.success('تغییرات با موفقیت ثبت شد!', {rtl: true})
       })
       .catch(err => {
-
       })
 }
 

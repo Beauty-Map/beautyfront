@@ -1,6 +1,5 @@
 <template>
   <div class="w-full flex flex-col items-start justify-start">
-    <MainTitle :title="'نزدیک ترین ها'" class="mb-[8px]"/>
     <div class="grid grid-cols-1 md:grid-cols-2 w-full">
       <ArtistItem
           v-for="(a, i) in artists"

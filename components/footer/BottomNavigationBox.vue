@@ -124,7 +124,9 @@ const onRouteChanged = (route: string) => {
 }
 
 watch(() => route.path, onRouteChanged)
-
+onMounted(() => {
+  onRouteChanged(route.path)
+})
 </script>
 
 <style scoped>

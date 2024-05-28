@@ -5,7 +5,7 @@
 >
   <div class="flex flex-col justify-start items-center">
     <div class="w-full flex flex-row items-center justify-between text-right font-medium text-[#141414] text-[18px] leading-[27px]">
-      <span>فیلتر</span>
+      <span>{{ title }}</span>
       <ArrowUpIcon />
     </div>
     <div class="w-full flex flex-col gap-[10px] mt-4 items-start justify-start text-right font-medium text-[#141414] text-[14px] leading-[21px]">
@@ -33,6 +33,10 @@ const props = defineProps({
   isOpen: {
     type: Boolean,
     required: true
+  },
+  title: {
+    type: String,
+    default: 'فیلتر'
   }
 })
 

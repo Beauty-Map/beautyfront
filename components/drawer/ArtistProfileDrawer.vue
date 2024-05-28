@@ -113,7 +113,8 @@ const doSaveProfile = async () => {
   if (res.data.value != null) {
     await auth.refreshIdentity()
     app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
-
+    store.closeAllDrawers()
+    store.openArtistAgreementDrawer()
   }
 }
 </script>

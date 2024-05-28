@@ -7,4 +7,5 @@ interface IService {
     created_at: string
     updated_at: string
     children: IService[]
+    parent: IService | null
 }
