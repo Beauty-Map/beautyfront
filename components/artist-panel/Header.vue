@@ -8,7 +8,7 @@
       <div class="flex flex-row justify-end items-center">
         <div class="cursor-pointer px-[8px] h-[37px] ml-[17px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
           <AddMoneyIcon />
-          <span class="font-medium text-[18px] leading-[28px] mx-[8px]">5000</span>
+          <span class="font-medium text-[18px] leading-[28px] mx-[8px]">{{ user.coins }}</span>
           <DollarIcon />
         </div>
         <BackTransparentIcon class="cursor-pointer" @click="goBack"/>
@@ -68,6 +68,8 @@ const props = defineProps({
     default: 0
   },
 })
+const user = useSanctumUser()
+
 const getBanner = computed(() => props.banner ? props.banner : '/panel/header.png')
 const getAvatar = computed(() => props.avatar ? props.avatar : '/panel/header.png')
 

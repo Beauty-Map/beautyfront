@@ -15,13 +15,13 @@
       </template>
       <template #title>نمونه کار</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/advertisement'">
+    <ProfileLink :to="'/panel/artist/advertisements'">
       <template #icon>
         <AdvIcon />
       </template>
       <template #title>تبلیغات ویژه</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/advertisement'">
+    <ProfileLink :to="'/panel/artist/support'">
       <template #icon>
         <ContactIcon />
       </template>
