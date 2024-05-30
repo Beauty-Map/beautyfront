@@ -23,7 +23,6 @@ import BottomNavigationBox from "~/components/footer/BottomNavigationBox.vue";
 import ProfileDrawer from "~/components/drawer/ProfileDrawer.vue";
 import LoginDrawer from "~/components/drawer/LoginDrawer.vue";
 import RegisterDrawer from "~/components/drawer/RegisterDrawer.vue";
-import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
 import SetPasswordDrawer from "~/components/drawer/SetPasswordDrawer.vue";
 import CompleteProfileDrawer from "~/components/drawer/CompleteProfileDrawer.vue";
 import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";

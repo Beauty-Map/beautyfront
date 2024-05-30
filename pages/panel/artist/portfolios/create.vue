@@ -1,5 +1,5 @@
 <template>
-<div class="mt-[20px] w-full flex flex-col items-start justify-start pb-[108px]">
+<div class="mt-[20px] w-full flex flex-col items-start justify-start pb-[108px] relative">
   <div class="w-full relative flex flex-row items-center justify-center py-[23px]">
     <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">نمونه کار</div>
     <BackIcon @click="goBack" class="absolute left-[30px]"/>
@@ -51,8 +51,27 @@
     <div class="w-full flex flex-col">
       <ChooseServiceInput v-model="form.service" />
       <ChooseMaintenanceInput v-model="form.maintenance" />
+      <ChooseCallNumberInput
+          :has-tel="form.has_tel"
+          :has-phone-number="form.has_phone_number"
+          :second-phone-number="form.second_phone_number"
+          @update:has-tel="updateHasTel"
+          @update:has-phone-number="updateHasPhoneNumber"
+          @update:second-phone-number="updateSecondPhoneNumber"
+      />
+      <ChoosePriceInput
+          :price="form.price"
+          :discount-price="form.discount_price"
+          @update:price="updatePrice"
+          @update:discount-price="updateDiscountPrice"
+      />
     </div>
   </div>
+  <button
+      @click="doSave"
+      class="absolute bottom-[30px] left-[22px] right-[22px] cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
+    انتشار
+  </button>
 </div>
 </template>
 
@@ -62,12 +81,16 @@ import BackIcon from "~/components/icons/BackIcon.vue";
 import CloseIcon from "~/components/icons/CloseIcon.vue";
 import ChooseServiceInput from "~/components/input/ChooseServiceInput.vue";
 import ChooseMaintenanceInput from "~/components/input/ChooseMaintenanceInput.vue";
+import ChoosePriceInput from "~/components/input/ChoosePriceInput.vue";
+import ChooseCallNumberInput from "~/components/input/ChooseCallNumberInput.vue";
+import {useCustomFetch} from "~/composables/useCustomFetch";
 
 definePageMeta({
   layout: 'artist-panel',
   middleware: 'auth'
 })
 
+const app = useNuxtApp()
 const router = useRouter()
 
 const galleryChooser = ref()
@@ -79,6 +102,9 @@ const form = ref({
   service: null,
   price: 0,
   discount_price: 0,
+  has_tel: false,
+  has_phone_number: false,
+  second_phone_number: '',
   images: []
 })
 
@@ -90,6 +116,26 @@ const uploading = ref([])
 
 const goBack = () => {
   router.replace('/panel/artist/portfolios')
+}
+
+const updatePrice = (number: string) => {
+  form.value.price = number
+}
+
+const updateDiscountPrice = (number: string) => {
+  form.value.discount_price = number
+}
+
+const updateSecondPhoneNumber = (number: string) => {
+  form.value.second_phone_number = number
+}
+
+const updateHasPhoneNumber = (has: boolean) => {
+  form.value.has_phone_number = has
+}
+
+const updateHasTel = (has: boolean) => {
+  form.value.has_tel = has
 }
 
 const openImageChooser = () => {
@@ -112,11 +158,12 @@ const onChooseImage = async (e) => {
     reader.readAsDataURL(files[i]);
   }
   selectedFiles.value = files
-  uploadImages()
+  await uploadImages()
 }
 
 const removeImage = (index) => {
   selectedImages.value.splice(index, 1)
+  uploadedFiles.value.splice(index, 1)
 }
 
 const showRemoveImage = (index) => {
@@ -170,6 +217,32 @@ const uploadImage = async (image, index) => {
 const getThumbnail = computed(() => {
   return form.value.images.length > 0 ? form.value.images[0] : '/panel/choose-image.png'
 })
+
+const doSave = async () => {
+  const data = {
+    title: form.value.title,
+    description: form.value.description,
+    maintenance: form.value.maintenance,
+    service_id: form.value.service?.id,
+    price: form.value.price,
+    discount_price: form.value.discount_price,
+    has_tel: form.value.has_tel,
+    has_phone_number: form.value.has_phone_number,
+    second_phone_number: form.value.second_phone_number,
+    images: uploadedFiles.value.map(i => i.url),
+  }
+  const res = await useCustomFetch('/own/portfolios', {
+    method: "POST",
+    body: data,
+  })
+  if (res.error.value) {
+    app.$toast.error('متاسفانه خطایی رخ داده است')
+  }
+  if (res.data.value) {
+    app.$toast.success('نمونه کار با موفقیت ثبت شد')
+    router.push('/panel/artist/portfolios')
+  }
+}
 </script>
 
 <style scoped>

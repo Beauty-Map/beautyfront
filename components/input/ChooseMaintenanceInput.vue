@@ -38,7 +38,7 @@ const props = defineProps({
   }
 })
 
-const showModal = ref(true)
+const showModal = ref(false)
 
 const maintenance = ref<string>(props.modelValue)
 
