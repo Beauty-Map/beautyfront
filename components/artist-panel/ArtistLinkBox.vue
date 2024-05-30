@@ -5,7 +5,7 @@
         <ArtistPanelIcon />
       </template>
       <template #title>پروفایل</template>
-      <template #sub-icon>
+      <template #sub-icon v-if="!user.is_artist_profile_completed">
         <DangerIcon @click="openArtistProfileDrawer"/>
       </template>
     </ProfileLink>
@@ -61,6 +61,7 @@ const props = defineProps({
 })
 
 const store = useDrawerStore()
+const user = useSanctumUser()
 
 const openArtistProfileDrawer = () => {
   store.openArtistProfileDrawer()

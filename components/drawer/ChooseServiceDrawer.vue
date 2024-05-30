@@ -46,17 +46,19 @@ const props = defineProps({
   service: {
     type: Object,
     required: true
+  },
+  selected: {
+    type: Object,
+    default: null
   }
 })
-
-const route = useRoute()
 
 const close = () => {
   emits('close')
 }
 
 const serviceArray = ref<IService[]>([])
-const selectedService = ref<IService|null>(null)
+const selectedService = ref<IService|null>(props.selected as IService)
 
 const selectService = (s: IService) => {
   selectedService.value = s
@@ -78,6 +80,7 @@ watch(() => props.isOpen, () => {
   if (props.isOpen) {
     getServiceList()
   }
+  selectedService.value = props.selected as IService
 })
 </script>
 

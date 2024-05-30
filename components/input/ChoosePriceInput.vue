@@ -127,6 +127,14 @@ const saveModal = () => {
   }, 300)
 }
 
+const setValues = () => {
+  price.value = props.price
+  discountPrice.value = props.discountPrice
+  showDiscountPrice.value = props.discountPrice != 0
+}
+
+watch(() => props.price, () => setValues())
+watch(() => props.discountPrice, () => setValues())
 </script>
 
 <style scoped>

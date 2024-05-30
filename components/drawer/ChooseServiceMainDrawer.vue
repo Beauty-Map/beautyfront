@@ -24,7 +24,7 @@
         />
       </div>
     </div>
-    <ChooseServiceDrawer :title="selectedService ? selectedService.title : ''" :service="selectedService" @close="closeServiceDrawer" @choose="chooseService" :is-open="showServiceDrawer" />
+    <ChooseServiceDrawer :selected="service" :title="selectedService ? selectedService.title : ''" :service="selectedService" @close="closeServiceDrawer" @choose="chooseService" :is-open="showServiceDrawer" />
   </div>
 </template>
 

@@ -17,6 +17,7 @@
             v-for="(p, i) in portfolios"
             :key="i"
             :portfolio="p"
+            :is-panel="true"
         />
         <InfiniteLoading :firstload="true" v-if="showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
       </div>

@@ -109,6 +109,17 @@ const getPhoneNumber = computed(() => {
   }
 })
 
+const setValues = () => {
+  hasTel.value = props.hasTel
+  hasPhoneNumber.value = props.hasPhoneNumber
+  secondPhoneNumber.value = props.secondPhoneNumber
+  showSecondPhoneNumber.value = props.secondPhoneNumber != ''
+}
+
+watch(() => props.hasTel, () => setValues())
+watch(() => props.hasPhoneNumber, () => setValues())
+watch(() => props.secondPhoneNumber, () => setValues())
+
 </script>
 
 <style scoped>

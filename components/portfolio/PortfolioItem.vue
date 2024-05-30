@@ -46,6 +46,10 @@ const props = defineProps({
   portfolio: {
     type: Object,
     required: true,
+  },
+  isPanel: {
+    type: Object,
+    required: false,
   }
 })
 
@@ -62,7 +66,11 @@ const getThumbnail = () => {
 }
 
 const goToPage = () => {
-  router.push(`/portfolios/${props.portfolio.id}`)
+  if (props.isPanel) {
+    router.push(`/panel/artist/portfolios/${props.portfolio.id}`)
+  } else {
+    router.push(`/portfolios/${props.portfolio.id}`)
+  }
 }
 
 const toggleBookmark = (bookmarked: boolean) => {

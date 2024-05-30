@@ -57,6 +57,9 @@ const saveModal = () => {
   }, 300)
 }
 
+watch(() => props.modelValue, () => {
+  maintenance.value = props.modelValue
+})
 </script>
 
 <style scoped>

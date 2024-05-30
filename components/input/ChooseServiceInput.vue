@@ -8,7 +8,7 @@
         {{ getServiceName }}
       </span>
     </div>
-    <ChooseServiceMainDrawer :is-open="showServiceDrawer" @close="closeServiceDrawer" @choose="chooseService"/>
+    <ChooseServiceMainDrawer :service="service" :is-open="showServiceDrawer" @close="closeServiceDrawer" @choose="chooseService"/>
   </div>
 </template>
 
@@ -48,6 +48,14 @@ const getServiceName = computed(() => {
     title = `${service.value.title},${service.value.parent?.title}`
   }
   return title
+})
+
+const setService = (s: IService) => {
+  service.value = s
+}
+
+watch(() => props.modelValue, () => {
+  setService(props.modelValue as IService)
 })
 </script>
 

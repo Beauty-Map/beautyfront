@@ -21,9 +21,13 @@
         <input @change="onChooseImage" type="file" hidden multiple accept="image/png, images/jpeg" ref="galleryChooser">
       </div>
       <div class="w-full flex flex-row justify-start items-start gap-[12px] mt-[7px] flex-wrap">
+        <div class="relative" v-for="(img, i) in prevImages" :key="i">
+          <CloseIcon @click="removePrevImage(i)" class="absolute top-[-12px] right-[-12px] z-10"/>
+          <img class="w-[80px] h-[80px]" :src="img" alt="">
+        </div>
         <div class="relative" v-for="(img, i) in selectedImages" :key="i">
           <CloseIcon v-if="showRemoveImage(i)" @click="removeImage(i)" class="absolute top-[-12px] right-[-12px] z-10"/>
-          <img class="w-[80px] h-[80px]" :src="img" alt="" @click="">
+          <img class="w-[80px] h-[80px]" :src="img" alt="">
           <div v-show="uploading[i]" class="w-[80px] h-[80px] flex flex-col justify-center items-center px-[10px] absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,.5)]">
             <div class="h-[5px] w-full ltr-dir bg-white rounded-[5px] relative">
               <div :class="`bg-green-300 rounded-[5px] h-[5px] w-[${uploadedFilesPercentages[i]}]`"></div>
@@ -39,7 +43,7 @@
           <textarea
               v-model="form.description"
               class="w-full px-[10px] py-[4px] mx-[10px] mt-[10px] outline-none focus:outline-none text-[16px]"
-              placeholder="کراتینه مو یک روش موثر برای صافی، درخشندگی و شادابی موهای فر ..."
+              placeholder="کراتینه مو یک روش موثر برای صافی، درخشندگی و شادابی موهای فر ..."
               maxlength="200"
               rows="2"
           >
@@ -92,6 +96,9 @@ definePageMeta({
 
 const app = useNuxtApp()
 const router = useRouter()
+const route = useRoute()
+
+const id = route.params.id
 
 const galleryChooser = ref()
 
@@ -108,6 +115,7 @@ const form = ref({
   images: []
 })
 
+const prevImages = ref<string[]>([])
 const selectedImages = ref<string[]|ArrayBuffer[]|null[]>([])
 const selectedFiles = ref([])
 const uploadedFilesPercentages = ref([])
@@ -166,8 +174,12 @@ const removeImage = (index) => {
   uploadedFiles.value.splice(index, 1)
 }
 
+const removePrevImage = (index) => {
+  prevImages.value.splice(index, 1)
+}
+
 const showRemoveImage = (index) => {
-  return true
+  return !uploading.value[index]
 }
 
 const uploadImages = async () => {
@@ -229,10 +241,13 @@ const doSave = async () => {
     has_tel: form.value.has_tel,
     has_phone_number: form.value.has_phone_number,
     second_phone_number: form.value.second_phone_number,
-    images: uploadedFiles.value.map(i => i.url),
+    images: [
+        ...prevImages.value,
+        ...uploadedFiles.value.map(i => i.url)
+    ],
   }
-  const res = await useCustomFetch('/own/portfolios', {
-    method: "POST",
+  const res = await useCustomFetch(`/own/portfolios/${id}`, {
+    method: "PUT",
     body: data,
   })
   if (res.error.value) {
@@ -243,6 +258,31 @@ const doSave = async () => {
     await router.push('/panel/artist/portfolios')
   }
 }
+
+const getPortfolio = async () => {
+  const res = await useCustomFetch(`/own/portfolios/${id}`, {
+    method: "GET"
+  })
+  if (res.data.value) {
+    const data = res.data.value.data
+    form.value.title = data.title
+    form.value.description = data.description
+    form.value.maintenance = data.maintenance
+    form.value.price = data.price
+    form.value.discount_price = data.discount_price
+    form.value.has_tel = data.has_tel
+    form.value.has_phone_number = data.has_phone_number
+    form.value.second_phone_number = data.showing_phone_number
+    form.value.service = data.service
+    prevImages.value = data.images
+  }
+}
+
+onMounted(() => {
+  nextTick(()=>{
+    getPortfolio()
+  })
+})
 </script>
 
 <style scoped>

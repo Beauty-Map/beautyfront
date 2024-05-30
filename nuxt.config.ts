@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
   ],
   sanctum: {
-    baseUrl: 'http://localhost:8000', // Laravel API
+    baseUrl: process.env.BASE_URL, // Laravel API
     endpoints: {
       user: '/api/own',
       login: '/api/auth/login',
