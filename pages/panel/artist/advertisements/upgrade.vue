@@ -1,7 +1,7 @@
 <template>
   <div class="pt-[20px] w-full flex flex-col items-start justify-start">
     <div class="relative w-full flex flex-row items-center justify-center py-[23px]">
-      <div class="absolute right-[10px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
+      <div @click="goToWalletPage" class="absolute right-[10px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
         <AddMoneyIcon />
         <span class="font-medium text-[18px] leading-[28px] mx-[8px]">{{ user.coins }}</span>
         <DollarIcon />
@@ -65,7 +65,7 @@
       <div class="w-full h-full flex flex-col justify-start items-start">
         <div class="w-full gap-x-[40px] flex flex-row justify-between items-center">
           <span class="text-[#133C3E] font-medium text-[18px] leading-[27px] text-right">موجودی سکه</span>
-          <div class="w-[112px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
+          <div @click="goToWalletPage" class="w-[112px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
             <AddMoneyIcon />
             <span class="font-medium text-[18px] leading-[28px] mx-[8px]">{{ user.coins }}</span>
             <DollarIcon />
@@ -134,7 +134,7 @@ const doSelectPlan = () => {
     console.log(selectedPlan.value, "p")
   }
   if (selectedPlan.value?.coins < user.value?.coins) {
-    console.log('yes')
+
   } else {
     closeSelectPlanModal()
     router.push('/panel/artist/wallet')
@@ -149,6 +149,10 @@ const getPlans = async () => {
     plans.value = res.data.value?.data as (IPlan[])
     selectedPlan.value = plans.value[0]
   }
+}
+
+const goToWalletPage = () => {
+  router.push('/panel/artist/wallet')
 }
 
 onMounted(() => {

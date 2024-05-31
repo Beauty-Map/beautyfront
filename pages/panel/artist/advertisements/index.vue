@@ -1,7 +1,7 @@
 <template>
   <div class="pt-[20px] w-full flex flex-col items-start justify-start">
     <div class="relative w-full flex flex-row items-center justify-center py-[23px]">
-      <div class="absolute right-[10px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
+      <div @click="goToWalletPage" class="absolute right-[10px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
         <AddMoneyIcon />
         <span class="font-medium text-[18px] leading-[28px] mx-[8px]">{{ user.coins }}</span>
         <DollarIcon />
@@ -57,6 +57,10 @@ const user = useSanctumUser()
 
 const goBack = () => {
   router.back()
+}
+
+const goToWalletPage = () => {
+  router.push('/panel/artist/wallet')
 }
 </script>
 

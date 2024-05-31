@@ -6,7 +6,7 @@
         <EditPenIcon class="cursor-pointer" @click="openArtistProfileDrawer"/>
       </div>
       <div class="flex flex-row justify-end items-center">
-        <div class="cursor-pointer px-[8px] h-[37px] ml-[17px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
+        <div @click="goToWalletPage" class="cursor-pointer px-[8px] h-[37px] ml-[17px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
           <AddMoneyIcon />
           <span class="font-medium text-[18px] leading-[28px] mx-[8px]">{{ user.coins }}</span>
           <DollarIcon />
@@ -89,6 +89,10 @@ const openArtistProfileDrawer = () => {
 
 const openNotificationDrawer = () => {
 
+}
+
+const goToWalletPage = () => {
+  router.push('/panel/artist/wallet')
 }
 </script>
 
