@@ -44,6 +44,10 @@ const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
 
 onMounted(() => {
   nextTick(async () => {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      console.log(position, "position")
+
+    })
     if (!locationCookie.value) {
       openDrawerClicked()
     } else {
