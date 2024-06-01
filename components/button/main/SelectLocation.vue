@@ -15,8 +15,9 @@ import HeaderLocationIcon from "~/components/icons/HeaderLocationIcon.vue";
 import ChooseCityDrawer from "~/components/drawer/ChooseCityDrawer.vue";
 
 const openDrawer = ref<Boolean>(false)
-const province = ref<IProvince>(null)
-const city = ref<ICity>(null)
+const province = ref<IProvince|null>(null)
+const city = ref<ICity|null>(null)
+const locationCookie = useCookie('selectedLocation')
 
 const openDrawerClicked = () => {
   openDrawer.value = true
@@ -29,7 +30,29 @@ const closeDrawerClicked = () => {
 const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
   province.value = p
   city.value = c
+  locationCookie.value = JSON.stringify({
+    province: {
+      id: p.id,
+      name: p.name
+    },
+    city: {
+      id: c.id,
+      name: c.name
+    }
+  })
 }
+
+onMounted(() => {
+  nextTick(async () => {
+    if (!locationCookie.value) {
+      openDrawerClicked()
+    } else {
+      const province = locationCookie.value.province
+      const city = locationCookie.value.city
+      chooseProvinceAndCity(province, city)
+    }
+  })
+})
 </script>
 
 <style scoped>

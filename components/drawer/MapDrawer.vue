@@ -58,6 +58,7 @@ const close = () => {
 onMounted(() => {
   l.value = window.L
   navigator.geolocation.getCurrentPosition(function(position) {
+    console.log(position, "position")
     lat.value = position.coords.latitude
     lng.value = position.coords.longitude
   })
