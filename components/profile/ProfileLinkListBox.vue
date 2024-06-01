@@ -52,11 +52,13 @@ import {useDrawerStore} from "~/store/Drawer";
 const user = useSanctumUser()
 const auth = useSanctumAuth()
 const store = useDrawerStore()
+const router = useRouter()
 
 const exit = () => {
   auth.logout()
       .then(res => {
-        console.log(res, "res")
+        store.closeAllDrawers()
+        router.replace('/')
       })
       .catch(err => {
         console.log(err, "err")

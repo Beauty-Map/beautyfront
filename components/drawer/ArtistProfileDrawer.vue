@@ -32,6 +32,7 @@
       />
       <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px]"/>
       <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
+      <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.documents" class="mt-[27px]"/>
       <MainActionButton class="mt-[80px]" @click="doSaveProfile">
         <div class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
       </MainActionButton>
@@ -56,6 +57,7 @@ import ChooseWorkHourInput from "~/components/input/ChooseWorkHourInput.vue";
 import TextAreaInput from "~/components/input/TextAreaInput.vue";
 import ChooseSocialMediaInput from "~/components/input/ChooseSocialMediaInput.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
+import InsertDocumentsInput from "~/components/input/InsertDocumentsInput.vue";
 
 const store = useDrawerStore()
 const user = useSanctumUser()
@@ -79,6 +81,7 @@ const form = ref({
   is_closed: user.value?.is_closed,
   bio: user.value?.bio,
   social_media: user.value?.social_media,
+  documents: user.value?.documents,
 })
 const goBack = () => {
   store.closeAllDrawers()
@@ -102,6 +105,7 @@ const doSaveProfile = async () => {
     city_id: form.value.city_id,
     birth_date: form.value.birth_date,
     work_hours: form.value.work_hours,
+    documents: form.value.documents,
   }
   const res = await useCustomFetch('/own/artist', {
     method: "PUT",

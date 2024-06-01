@@ -88,7 +88,7 @@ const openArtistProfileDrawer = () => {
 }
 
 const openNotificationDrawer = () => {
-
+  store.openNotificationDrawer()
 }
 
 const goToWalletPage = () => {
