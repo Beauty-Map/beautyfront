@@ -5,13 +5,16 @@ export const useSearchStore = defineStore('search', {
         portfolios: [],
         page: 1,
         lastPage: 1,
-        showInfiniteScroll: false
+        showInfiniteScroll: false,
+        lat: null,
+        lng: null,
     }),
     getters: {
         getPortfolios: (state) => state.portfolios,
         getPage: (state) => state.page,
         getLastPage: (state) => state.lastPage,
         getShowInfiniteScroll: (state) => state.showInfiniteScroll,
+        getUserCurrentLocation: (state) => ({lat: state.lat, lng: state.lng}),
     },
     actions: {
         paginate() {
@@ -22,6 +25,10 @@ export const useSearchStore = defineStore('search', {
             this.page = 1
             this.lastPage = 1
             this.portfolios = []
+        },
+        setUserCurrentLocation(lat, lng) {
+            this.lat = lat
+            this.lng = lng
         }
     },
 })

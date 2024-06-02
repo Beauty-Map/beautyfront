@@ -13,10 +13,12 @@
 
 import HeaderLocationIcon from "~/components/icons/HeaderLocationIcon.vue";
 import ChooseCityDrawer from "~/components/drawer/ChooseCityDrawer.vue";
+import {useSearchStore} from "~/store/Search";
 
 const openDrawer = ref<Boolean>(false)
 const province = ref<IProvince|null>(null)
 const city = ref<ICity|null>(null)
+const search = useSearchStore()
 const locationCookie = useCookie('selectedLocation')
 
 const openDrawerClicked = () => {
@@ -41,13 +43,14 @@ const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
     }
   })
 }
-
+const getPositionSucceed = (position) => {
+  search.setUserCurrentLocation(position.coords.latitude, position.coords.longitude)
+}
+const getPositionError = (error) => {
+}
 onMounted(() => {
   nextTick(async () => {
-    navigator.geolocation.getCurrentPosition(function(position) {
-      console.log(position, "position")
-
-    })
+    navigator.geolocation.getCurrentPosition(getPositionSucceed, getPositionError)
     if (!locationCookie.value) {
       openDrawerClicked()
     } else {

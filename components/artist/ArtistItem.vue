@@ -6,7 +6,7 @@
         <h1 class="text-right font-medium text-[18px] leading-[28px] text-[#141414]">{{ artist.full_name }}</h1>
       </div>
       <div class="font-medium text-[#141414] text-[7px] leading-[11px] text-right">
-        {{ artist.created_at_ago_fa }}
+        {{ getCreatedAtAgoFa }}
       </div>
       <div class="flex flex-row gap-[8px] items-center justify-start mt-[10px]">
         <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[10px] py-[4px] rounded-[25px]">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="w-full flex flex-col relative rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]">
-      <img :src="getThumbnail()" :alt="artist.full_name" class="w-full h-full min-h-[125px] min-w-[125px] rounded-[8px]"/>
+      <img :src="getThumbnail" :alt="artist.full_name" class="w-full h-full min-h-[125px] min-w-[125px] rounded-[8px]"/>
     </div>
   </div>
 </template>
@@ -46,7 +46,9 @@
 import Bookmark from "~/components/bookmark/Bookmark.vue";
 import BlueTick from "~/components/icons/BlueTick.vue";
 import ArtistLocationIcon from "~/components/icons/ArtistLocationIcon.vue";
-
+import 'dayjs/locale/fa'
+import localizedFormat from 'dayjs/plugin/localizedFormat'
+import jalaliday from 'jalaliday'
 const props = defineProps({
   artist: {
     type: Object,
@@ -55,10 +57,13 @@ const props = defineProps({
 })
 
 const router = useRouter()
-
-const getThumbnail = () => {
-  return props.artist.avatar ?? '/images/artist/2.png'
-}
+const dayjs = useDayjs()
+dayjs.locale('fa')
+dayjs.extend(localizedFormat)
+dayjs.extend(jalaliday)
+const getThumbnail = computed(() => {
+  return props.artist.avatar ? props.artist.avatar : '/images/artist/2.png'
+})
 
 const goToPage = () => {
   router.push(`/artists/${props.artist.id}`)
@@ -67,6 +72,13 @@ const goToPage = () => {
 const toggleBookmark = (bookmarked: boolean) => {
   props.artist.is_bookmarked = bookmarked
 }
+
+const getCreatedAtAgoFa = computed(() => {
+  if (props.artist.created_at == '')
+    return '-'
+  return dayjs(props.artist.created_at).locale('fa').fromNow()
+})
+
 </script>
 
 <style scoped>
