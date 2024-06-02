@@ -78,7 +78,7 @@ const paginate = async () => {
 
 const paginateDebounce = useDebounce(paginate, 500)
 const getPortfolios = async () => {
-  const res = await useCustomFetch(`http://localhost:8000/api/own/portfolios?limit=10&page=${page.value}`, {
+  const res = await useCustomFetch(`/own/portfolios?limit=10&page=${page.value}`, {
     method: "get"
   })
   if (res.data.value) {

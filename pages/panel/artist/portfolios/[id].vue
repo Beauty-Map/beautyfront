@@ -193,12 +193,13 @@ const uploadImages = async () => {
 }
 
 const uploadImage = async (image, index) => {
+  const config = useRuntimeConfig()
   const form = new FormData()
   form.append('file', image)
   form.append('type', 'portfolio')
   const xhr = new XMLHttpRequest()
   const xsrf = useCookie('XSRF-TOKEN')
-  xhr.open('post', 'http://localhost:8000/api/upload', true)
+  xhr.open('post', config.public.uploadURL, true)
   xhr.withCredentials = true
   xhr.setRequestHeader('accept', `application/json`)
   xhr.setRequestHeader('X-Xsrf-Token', xsrf.value)

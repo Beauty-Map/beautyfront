@@ -106,22 +106,25 @@ const doSearch = async () => {
     delete query.page
   }
   query.page = searchStore.page.toString()
-  const {data: data} = await useFetch('http://localhost:8000/api/search', {
+  const res = await useCustomFetch('/search', {
+    method: "GET",
     query: query,
   })
-  let list = data.value ? data.value?.data as [] : []
-  if (list.length == 0) {
-    searchStore.showInfiniteScroll = false
-    return
+  if (res.data.value) {
+    let list = res.data.value ? res.data.value?.data as [] : []
+    if (list.length == 0) {
+      searchStore.showInfiniteScroll = false
+      return
+    }
+    searchStore.portfolios = [
+      ...searchStore.portfolios,
+      ...list
+    ]
+    searchStore.lastPage = res.data.value?.last_page
+    setTimeout(() => {
+      searchStore.showInfiniteScroll = true
+    }, 300)
   }
-  searchStore.portfolios = [
-    ...searchStore.portfolios,
-    ...list
-  ]
-  searchStore.lastPage = data.value?.last_page
-  setTimeout(() => {
-    searchStore.showInfiniteScroll = true
-  }, 300)
 }
 
 const doChangeTerm = async () => {

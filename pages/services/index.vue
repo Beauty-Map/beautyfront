@@ -6,16 +6,21 @@
 </template>
 
 <script setup lang="ts">
-import PageHeader from "~/components/header/PageHeader.vue";
+import PageHeader from "../../components/header/PageHeader.vue";
+import ServiceGrid from "../../components/service/ServiceGrid.vue";
 
 definePageMeta({
   layout: 'default'
 })
-const serviceArray = ref([])
+const serviceArray = ref<IService[]>([])
 
 const getServiceList = async () => {
-  const {data: data} = await useFetch('http://localhost:8000/api/services')
-  serviceArray.value = data.value?.data
+  const res = await useCustomFetch('/services', {
+    method: "GET"
+  })
+  if (res.data.value) {
+    serviceArray.value = res.data.value.data as IService[]
+  }
 }
 
 getServiceList()

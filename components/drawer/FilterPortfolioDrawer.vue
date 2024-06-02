@@ -27,6 +27,7 @@
 
 import ArrowUpIcon from "~/components/icons/ArrowUpIcon.vue";
 import DoneCheckIcon from "~/components/icons/DoneCheckIcon.vue";
+import {useCustomFetch} from "../../composables/useCustomFetch";
 
 const emits = defineEmits(['close', 'choose'])
 const props = defineProps({
@@ -65,14 +66,25 @@ const selectService = (s: IService) => {
 }
 
 const getServiceList = async () => {
-  const {data: data} = await useFetch('http://localhost:8000/api/services')
-  serviceArray.value = [
-    {
-      id: -1,
-      title: 'همه خدمات',
-    },
-    ...data.value?.data
-  ]
+  const res = await useCustomFetch('/services', {
+    method: "GET"
+  })
+  if (res.data.value) {
+    serviceArray.value = [
+      {
+        id: -1,
+        title: 'همه خدمات',
+      },
+      ...res.data.value?.data
+    ]
+  } else {
+    serviceArray.value = [
+      {
+        id: -1,
+        title: 'همه خدمات',
+      },
+    ]
+  }
   initSelectedService()
 }
 

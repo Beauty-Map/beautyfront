@@ -50,8 +50,10 @@ const selectedSubService = ref<IService|null>(null)
 const serviceArray = ref([])
 
 const getServiceList = async () => {
-  const {data: data} = await useFetch('http://localhost:8000/api/services')
-  serviceArray.value = data.value?.data
+  const res = await useCustomFetch('/services')
+  if (res.data.value) {
+    serviceArray.value = res.data.value?.data
+  }
 }
 
 

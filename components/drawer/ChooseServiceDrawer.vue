@@ -65,10 +65,14 @@ const selectService = (s: IService) => {
 }
 
 const getServiceList = async () => {
-  const {data: data} = await useFetch(`http://localhost:8000/api/services/${props.service.id}/children`)
-  serviceArray.value = [
-    ...data.value?.data
-  ]
+  const res = await useCustomFetch(`/services/${props.service.id}/children`, {
+    method: "GET"
+  })
+  if (res.data.value) {
+    serviceArray.value = [
+      ...res.data.value?.data
+    ]
+  }
 }
 
 const doAccept = () => {

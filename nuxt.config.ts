@@ -16,7 +16,7 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
   ],
   sanctum: {
-    baseUrl: process.env.BASE_URL, // Laravel API
+    baseUrl: 'https://api.beautymap.ir', // Laravel API
     endpoints: {
       user: '/api/own',
       login: '/api/auth/login',
@@ -49,10 +49,11 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: process.env.BASE_URL + '/api'
+      baseURL: 'https://api.beautymap.ir/api',
+      uploadURL: 'https://api.beautymap.ir/api/upload'
     }
   },
-  server: {
+  devServer: {
     host: '0.0.0.0',
     port: 3000
   }

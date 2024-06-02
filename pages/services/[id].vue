@@ -8,6 +8,7 @@
 <script setup lang="ts">
 
 import PageHeader from "~/components/header/PageHeader.vue";
+import {useCustomFetch} from "../../composables/useCustomFetch";
 
 definePageMeta({
   layout: 'default'
@@ -17,8 +18,12 @@ const route = useRoute()
 const service = ref<IService>()
 const id = route.params.id
 const getService = async () => {
-  const {data: data} = await useFetch(`http://localhost:8000/api/services/${id}`)
-  service.value = data.value?.data as IService
+  const res = await useCustomFetch(`/services/${id}`,{
+    method: "GET"
+  })
+  if (res.data.value) {
+    service.value = res.data.value?.data as IService
+  }
 }
 
 await getService()

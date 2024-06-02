@@ -39,8 +39,12 @@ const close = () => {
 }
 
 const getProvinces = async () => {
-  const {data: data} = await useFetch('http://localhost:8000/api/provinces')
-  provinces.value = data.value?.data
+  const res = await useCustomFetch('/provinces', {
+    method: "GET"
+  })
+  if (res.data.value) {
+    provinces.value = res.data.value?.data
+  }
 }
 
 const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
