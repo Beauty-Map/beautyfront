@@ -20,10 +20,12 @@ import PolicyAndRulesButton from "~/components/icons/AuthDrawer/PolicyAndRulesBu
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const app = useNuxtApp()
 const store = useDrawerStore()
 const auth = useSanctumAuth()
+const authStore = useAuthStore()
 
 const form = ref<ILoginForm>({
   phone_number: '',
@@ -31,16 +33,33 @@ const form = ref<ILoginForm>({
   accept_policy: false,
 })
 
-const doLogin = () => {
-  auth.login(form.value)
-      .then(() => {
-        app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
-        store.closeAllDrawers()
+const doLogin = async () => {
+//   auth.login(form.value)
+//       .then(() => {
+//         app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
+//         store.closeAllDrawers()
+//       })
+//       .catch(err => {
+//         app.$toast.success('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
+//         console.log(err, "err")
+//       })
+  const res = await authStore.login(form.value)
+  if (res.data.value) {
+    const data = res.data.value?.data
+    const xsrfToken = useCookie('XSRF-TOKEN')
+    xsrfToken.value = data.token
+    const conf = useRuntimeConfig()
+    setTimeout(() => {
+      const own = useFetch(conf.public.baseURL + '/own', {
+        headers: {
+          "X-Xsrf-Token": data.token,
+          "accept": "application/json"
+        }
       })
-      .catch(err => {
-        app.$toast.success('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
-        console.log(err, "err")
-      })
+      console.log(own, "ownd")
+    },200)
+  }
+  console.log(res, "res")
 }
 
 const openRegisterModal = () => {
