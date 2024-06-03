@@ -80,7 +80,7 @@
           </div>
         </div>
         <div class="w-full gap-x-[40px] flex flex-row justify-between items-center mt-[18px]">
-          <span class="text-black font-medium text-[12px] leading-[17px] text-right">پروفایل شما نردبان میشود. آیا تایید میکنید ؟</span>
+          <span class="text-black font-medium text-[12px] leading-[17px] text-right">پنل مورد نظر شما خریداری میشود. آیا تایید میکنید ؟</span>
         </div>
         <div class="w-full gap-x-[20px] flex flex-row justify-end items-center mt-[18px]">
           <button @click="doSelectPlan" class="text-[#133C3E] text-center font-normal text-[15px] leading-[18px]">تایید نهایی</button>

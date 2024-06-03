@@ -34,13 +34,21 @@ const goBack = () => {
 }
 
 const getPortfolios = async () => {
-  const {data: data} = await useFetch('/api/portfolios')
-  portfolios.value = (data.value as IPortfolio[])
+  const res = await useCustomFetch('/api/portfolios', {
+    method: "GET"
+  })
+  if (res.data.value) {
+    portfolios.value = (res.data.value?.data as IPortfolio[])
+  }
 }
 
 const getArtists = async () => {
-  const {data: data} = await useFetch('/api/artists')
-  artists.value = (data.value as IArtist[])
+  const res = await useCustomFetch('/api/artists', {
+    method: "GET"
+  })
+  if (res.data.value) {
+    artists.value = (res.data.value?.data as IArtist[])
+  }
 }
 
 const selectTab = (i: number) => {

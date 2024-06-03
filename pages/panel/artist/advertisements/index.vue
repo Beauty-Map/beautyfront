@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-[20px] w-full flex flex-col items-start justify-start">
+  <div class=" w-full flex flex-col items-start justify-start">
     <div class="relative w-full flex flex-row items-center justify-center py-[23px]">
       <div @click="goToWalletPage" class="absolute right-[10px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white">
         <AddMoneyIcon />
@@ -10,7 +10,7 @@
       <BackIcon @click="goBack" class="absolute left-[10px]"/>
     </div>
     <div class="flex flex-col justify-start items-start w-full px-[20px] py-[20px]">
-      <ProfileLink :to="'/panel/artist/advertisements/upgrade'">
+      <ProfileLink :to="'/panel/upgrade'">
         <template #icon>
           <AdvIcon />
         </template>
@@ -18,7 +18,7 @@
           <span class="text-[16px] leading-[25px]">ارتقا حساب کاربری</span>
         </template>
       </ProfileLink>
-      <ProfileLink :to="'/panel/artist/advertisements/laddering'">
+      <ProfileLink :to="'/panel/artist/laddering'">
         <template #icon>
           <CharpIcon />
         </template>

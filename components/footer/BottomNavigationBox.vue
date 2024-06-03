@@ -64,6 +64,7 @@ import {algorithms} from "iron-webcrypto";
 const router = useRouter()
 const route = useRoute()
 const store = useDrawerStore()
+const user = useSanctumUser()
 const index = ref<Number>(1)
 
 const selectItem = (i: Number) => {
@@ -102,7 +103,11 @@ const openServicePage = () => {
 }
 
 const openChangePlanPage = () => {
-  router.push('/plan')
+  if (user.value) {
+    router.push('/upgrade')
+  } else {
+    store.openLoginDrawer()
+  }
 }
 
 const openFavouritePage = () => {

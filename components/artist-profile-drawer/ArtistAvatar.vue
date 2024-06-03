@@ -62,12 +62,13 @@ const onChooseImage = (e) => {
   uploadAvatar(file)
 }
 const uploadAvatar = async (file) => {
+  const config = useRuntimeConfig()
   uploading.value = true
   const form = new FormData()
   form.append('file', file)
   const xhr = new XMLHttpRequest()
   const xsrf = useCookie('XSRF-TOKEN')
-  xhr.open('post', 'https://api.beautymap.ir/api/upload', true)
+  xhr.open('post', config.public.uploadURL, true)
   xhr.withCredentials = true
   xhr.setRequestHeader('accept', `application/json`)
   xhr.setRequestHeader('X-Xsrf-Token', xsrf.value)

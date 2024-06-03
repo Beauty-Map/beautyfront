@@ -1,5 +1,5 @@
 <template>
-  <div @click="goToPage" class="w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
+  <div @click="goToPage" :class="selected ? 'opacity-[1]' : 'opacity-[.7]'" class="w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
     <div class="w-full flex flex-col relative">
       <div class="w-full flex flex-row justify-start items-start">
         <Rating v-model="portfolio.rating"/>
@@ -28,8 +28,9 @@
         </div>
       </div>
       <div class="flex flex-row items-center justify-start absolute right-0 bottom-0 z-[9999]">
-        <Bookmark @bookmark="toggleBookmark" :bookmarked="portfolio.is_bookmarked" />
-        <nuxt-link to="/" class="bg-[#085EC2] mr-[20px] rounded-[10px] px-[10px] py-[4px] text-white text-[8px] leading-[12px] cursor-pointer font-medium text-center">جزئیات دقیق</nuxt-link>
+        <button class="cursor-pointer bg-[#2920D9] rounded-[20px] font-medium text-center text-[12px] flex justify-center items-center h-[25px] leading-[18px] py-[7px] px-[12px] text-white min-w-[88px]">
+          نردبان
+        </button>
       </div>
     </div>
     <div class="w-full flex flex-col relative rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]">
@@ -39,26 +40,19 @@
 </template>
 
 <script setup lang="ts">
-import Bookmark from "~/components/bookmark/Bookmark.vue";
-import {useDrawerStore} from "~/store/Drawer";
 const emits = defineEmits(['click'])
 const props = defineProps({
   portfolio: {
     type: Object,
     required: true,
   },
-  isPanel: {
-    type: Object,
+  selected: {
+    type: Boolean,
     required: false,
   },
-  isLink: {
-    type: Boolean,
-    default: true,
-  }
 })
 
 const router = useRouter()
-const drawerStore = useDrawerStore()
 
 const user = useSanctumUser()
 
@@ -70,23 +64,7 @@ const getThumbnail = () => {
 }
 
 const goToPage = () => {
-  if (props.isLink) {
-    if (props.isPanel) {
-      router.push(`/panel/artist/portfolios/${props.portfolio.id}`)
-    } else {
-      router.push(`/portfolios/${props.portfolio.id}`)
-    }
-  } else {
-    emits('click')
-  }
-}
-
-const toggleBookmark = (bookmarked: boolean) => {
-  if (!user.value) {
-    drawerStore.openLoginDrawer()
-    return
-  }
-  props.portfolio.is_bookmarked = bookmarked
+  emits('click')
 }
 
 const calcDiscountPercent = (p: number, d: number) => {
