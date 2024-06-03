@@ -25,7 +25,6 @@ import {useAuthStore} from "~/store/Auth";
 const app = useNuxtApp()
 const store = useDrawerStore()
 const auth = useSanctumAuth()
-const authStore = useAuthStore()
 
 const form = ref<ILoginForm>({
   phone_number: '',
@@ -34,32 +33,15 @@ const form = ref<ILoginForm>({
 })
 
 const doLogin = async () => {
-//   auth.login(form.value)
-//       .then(() => {
-//         app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
-//         store.closeAllDrawers()
-//       })
-//       .catch(err => {
-//         app.$toast.success('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
-//         console.log(err, "err")
-//       })
-  const res = await authStore.login(form.value)
-  if (res.data.value) {
-    const data = res.data.value?.data
-    const xsrfToken = useCookie('XSRF-TOKEN')
-    xsrfToken.value = data.token
-    const conf = useRuntimeConfig()
-    setTimeout(() => {
-      const own = useFetch(conf.public.baseURL + '/own', {
-        headers: {
-          "X-Xsrf-Token": data.token,
-          "accept": "application/json"
-        }
+  auth.login(form.value)
+      .then(() => {
+        app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
+        store.closeAllDrawers()
       })
-      console.log(own, "ownd")
-    },200)
-  }
-  console.log(res, "res")
+      .catch(err => {
+        app.$toast.error('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
+        console.log(err, "err")
+      })
 }
 
 const openRegisterModal = () => {
