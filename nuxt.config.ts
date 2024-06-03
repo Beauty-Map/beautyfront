@@ -51,7 +51,6 @@ export default defineNuxtConfig({
     public: {
       baseURL: 'https://api.beautymap.ir/api',
       uploadURL: 'https://api.beautymap.ir/api/upload',
-      limooApi: ' 4fbcef21-f8e7-4cc9-b334-359602621486'
     }
   },
   devServer: {
