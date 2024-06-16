@@ -12,8 +12,6 @@
 <script setup lang="ts">
 
 import TelInput from "~/components/input/TelInput.vue";
-import PasswordInput from "~/components/input/PasswordInput.vue";
-import ResetPasswordLink from "~/components/icons/AuthDrawer/ResetPasswordLink.vue";
 import PolicyAndRulesButton from "~/components/icons/AuthDrawer/PolicyAndRulesButton.vue";
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";

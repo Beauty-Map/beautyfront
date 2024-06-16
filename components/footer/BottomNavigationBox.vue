@@ -59,7 +59,6 @@ import CategoryIcon from "~/components/icons/BottomNavigation/CategoryIcon.vue";
 import ProfileIcon from "~/components/icons/BottomNavigation/ProfileIcon.vue";
 import BottomNavigationButton from "~/components/button/BottomNavigationButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
-import {algorithms} from "iron-webcrypto";
 
 const router = useRouter()
 const route = useRoute()
