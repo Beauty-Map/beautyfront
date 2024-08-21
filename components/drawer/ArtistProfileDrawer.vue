@@ -13,7 +13,8 @@
     <ArtistAvatar @choose="onUserAvatarChanged" :avatar="user.avatar" class="mt-[35px] mb-[22px]"/>
     <div class="w-full overflow-y-auto">
       <TextInput title="نام و نام خانوادگی" v-model="form.full_name" class="mt-[27px]"/>
-      <TelInput title="شماره موبایل" v-model="form.phone_number" :disabled="true" class="mt-[27px]"/>
+      <EmailInput title="ایمیل" v-model="form.email" :disabled="true" class="mt-[27px]"/>
+      <TelInput title="شماره موبایل" v-model="form.phone_number" class="mt-[27px]"/>
       <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>
       <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px]"/>
       <TelInput title="تلفن ثابت" v-model="form.tel_number" class="mt-[27px]"/>
@@ -58,6 +59,7 @@ import TextAreaInput from "~/components/input/TextAreaInput.vue";
 import ChooseSocialMediaInput from "~/components/input/ChooseSocialMediaInput.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
 import InsertDocumentsInput from "~/components/input/InsertDocumentsInput.vue";
+import EmailInput from "~/components/input/EmailInput.vue";
 
 const store = useDrawerStore()
 const user = useSanctumUser()
@@ -67,6 +69,7 @@ const app = useNuxtApp()
 auth.refreshIdentity()
 const form = ref({
   full_name: user.value?.full_name,
+  email: user.value?.email,
   phone_number: user.value?.phone_number,
   national_code: user.value?.national_code,
   tel_number: user.value?.tel_number,
@@ -91,6 +94,7 @@ const onUserAvatarChanged = (newAvatar: string) => {
 }
 const doSaveProfile = async () => {
   const data = {
+    phone_number: form.value.phone_number,
     full_name: form.value.full_name,
     national_code: form.value.national_code.toString(),
     tel_number: form.value.tel_number,
