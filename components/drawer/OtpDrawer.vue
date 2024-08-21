@@ -4,7 +4,7 @@
     :class="[isOpen ? 'left-0' : 'left-[-100%]']"
 >
   <div class="flex flex-col justify-start items-center mt-[40px]">
-    <Header :phone-number="phoneNumber" @change-phone-number="goBack"/>
+    <Header :email="email" @change-email="goBack"/>
     <OtpForm @resend="resendOtp" @validate="validate" v-if="isOpen"/>
   </div>
 </div>
@@ -16,7 +16,7 @@ import {useDrawerStore} from "~/store/Drawer";
 import Header from "~/components/otp-drawer/Header.vue";
 import OtpForm from "~/components/otp-drawer/OtpForm.vue";
 
-const emits = defineEmits(['changePhoneNumber', 'resend', 'validate', 'close'])
+const emits = defineEmits(['changeEmail', 'resend', 'validate', 'close'])
 const props = defineProps({
   isOpen: {
     type: Boolean,
@@ -25,7 +25,7 @@ const props = defineProps({
 })
 const store = useDrawerStore()
 
-const phoneNumber = ref<String>('09381412419')
+const email = ref<String>('')
 
 const goBack = () => {
   emits('close')

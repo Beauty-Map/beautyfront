@@ -1,5 +1,5 @@
 <template>
-<div class="flex flex-row items-center justify-center">
+<div class="cursor-pointer flex flex-row items-center justify-center">
   <LineIcon />
   <span class="mx-[7px] text-nowrap text-[#828282] text-[16px] leading-[25px]">{{ title }}</span>
   <LineIcon />

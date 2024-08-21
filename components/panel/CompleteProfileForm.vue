@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full overflow-y-scroll">
+  <div class="w-full overflow-y-auto">
     <TextInput title="نام و نام خانوادگی" v-model="form.full_name" class="mt-[27px]"/>
     <ChooseCityInput title="استان و شهر" v-model="form.city_id" class="mt-[27px]"/>
     <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px]"/>

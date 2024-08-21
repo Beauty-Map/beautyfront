@@ -40,7 +40,6 @@ import FilterIcon from "~/components/icons/FilterIcon.vue";
 import BackIcon from "~/components/icons/BackIcon.vue";
 import PlusButtonIcon from "~/components/icons/PlusButtonIcon.vue";
 import InfiniteLoading from "v3-infinite-loading";
-import {useSearchStore} from "~/store/Search";
 
 definePageMeta({
   layout: 'artist-panel',

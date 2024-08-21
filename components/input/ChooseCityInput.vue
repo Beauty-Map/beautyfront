@@ -65,6 +65,7 @@ const closeDrawerClicked = () => {
 const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
   province.value = p
   city.value = c
+  emits('update:modelValue', c.id)
 }
 
 </script>

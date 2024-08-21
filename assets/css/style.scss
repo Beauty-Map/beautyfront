@@ -81,3 +81,17 @@ body {
 .Toastify__toast-container {
   z-index: 9999999999 !important;
 }
+
+.main-desktop-slider {
+  width: 100%;
+  min-height: 70vh;
+  & > div {
+    height: 100%;
+    min-height: 70vh;
+    .main-desktop-slider-left-box {
+      width: 100%;
+      max-width: 75%;
+      background: linear-gradient(89.61deg, #133C3E 55.75%, rgba(19, 60, 62, 0.85) 66.03%, rgba(19, 60, 62, 0.8) 75.96%, rgba(19, 60, 62, 0.31) 84.81%, rgba(19, 60, 62, 0) 99.7%);
+    }
+  }
+}

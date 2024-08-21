@@ -8,7 +8,7 @@
     </MainActionButton>
     <OtpDrawer :is-open="openDrawer"
                @close="closeDrawerClicked"
-               @change-phone-number="changePhoneNumber"
+               @change-email="changePhoneNumber"
                @validate="validate"
     />
   </div>
@@ -34,10 +34,10 @@ const openDrawer = ref(false)
 
 const doSendCode = async () => {
   if (!form.value.alt_number) {
-    errors.value.alt_number = 'شماره تماس را وارد کنید'
+    errors.value.alt_number = 'ایمیل را وارد کنید'
     return
   }
-  const res = await useCustomFetch('/own/alt-number', {
+  `const res = await useCustomFetch('/own/alt-number', {
     method: "POST",
     body: form.value,
   })
@@ -46,7 +46,7 @@ const doSendCode = async () => {
   }
   if (res.data.value) {
     openDrawerClicked()
-  }
+  }`
 }
 
 const validate = async (code: string) => {

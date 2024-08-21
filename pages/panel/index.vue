@@ -6,7 +6,7 @@
 import UserPanel from "~/components/panel/UserPanel.vue";
 
 definePageMeta({
-  layout: 'default',
+  layout: 'panel',
   middleware: 'auth'
 })
 

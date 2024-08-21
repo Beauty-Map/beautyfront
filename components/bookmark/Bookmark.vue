@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggleBookmark">
+  <div @click="toggleBookmark" class="cursor-pointer">
     <FullBookmarkIcon v-if="bookmarked"/>
     <EmptyBookmarkIcon v-else/>
   </div>

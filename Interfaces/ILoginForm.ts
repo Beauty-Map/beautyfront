@@ -1,5 +1,5 @@
 interface ILoginForm {
-    phone_number: string
+    email: string
     password: string
     accept_policy: boolean
 }

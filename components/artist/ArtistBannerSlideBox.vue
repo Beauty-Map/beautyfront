@@ -2,7 +2,7 @@
   <div class=" w-full h-full">
     <client-only>
       <carousel ref="carouselRef" :items-to-show="1" :autoplay-timeout="2000" @slide-end="handleSlideChange" :options="slickOptions" class=" h-full">
-        <slide class="relative h-full" v-for="(img, n) in images" :key="n" data-fancybox="gallery" @click="openImageModal(n)">
+        <slide class="relative h-full" v-for="(img, n) in getImages" :key="n" data-fancybox="gallery" @click="openImageModal(n)">
           <img :src="img" alt="" class="h-full w-full" />
         </slide>
         <template #addons>
@@ -58,6 +58,12 @@ const openImageModal = (n:number) => {
     startIndex: n,
   });
 }
+const getImages = computed(() => {
+  if (props.images?.length > 0) {
+    return props.images?.length
+  }
+  return ['/images/artist/banner.png']
+})
 </script>
 
 <style scoped>

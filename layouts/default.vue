@@ -1,16 +1,21 @@
 <template>
-  <div class="page h-full w-full flex flex-col pt-[21px] pb-[79px] relative">
+  <div class="page h-full w-full flex flex-col pt-[21px] pb-[79px] md:pt-0 md:pb-0 relative">
     <PageLoading v-if="loading"/>
-    <ProfileDrawer />
-    <LoginDrawer />
-    <RegisterDrawer />
-    <SetPasswordDrawer />
-    <CompleteProfileDrawer />
-    <NotificationDrawer />
-    <SecurityDrawer />
-    <SetNewPasswordDrawer />
-    <AltPhoneNumberDrawer />
-    <slot />
+    <ProfileDrawer class="md:hidden flex"/>
+    <LoginDrawer class="md:hidden flex"/>
+    <RegisterDrawer class="md:hidden flex"/>
+    <SetPasswordDrawer class="md:hidden flex"/>
+    <CompleteProfileDrawer class="md:hidden flex"/>
+    <NotificationDrawer class="md:hidden flex"/>
+    <SecurityDrawer class="md:hidden flex"/>
+    <SetNewPasswordDrawer class="md:hidden flex"/>
+    <AltPhoneNumberDrawer class="md:hidden flex"/>
+    <MainHeaderDesktop class="md:flex hidden"/>
+<!--    <div class="w-full min-h-screen px-[34px] py-[20px] flex flex-row justify-start items-start">-->
+    <div class="w-full min-h-screen flex flex-col justify-start items-start">
+      <slot />
+    </div>
+    <Footer class="hidden md:flex" />
     <BottomNavigationBox class="md:hidden"/>
   </div>
 </template>
@@ -28,6 +33,7 @@ import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";
 import SecurityDrawer from "~/components/drawer/SecurityDrawer.vue";
 import SetNewPasswordDrawer from "~/components/drawer/SetNewPasswordDrawer.vue";
 import AltPhoneNumberDrawer from "~/components/drawer/AltPhoneNumberDrawer.vue";
+import MainHeaderDesktop from "~/components/header/MainHeaderDesktop.vue";
 const nuxt = useNuxtApp()
 const loading = ref<boolean>(true)
 nuxt.hook('page:loading:start', () => {

@@ -1,10 +1,11 @@
 interface IRegisterForm {
-    phone_number: string
+    email: string
+    password: string
     accept_policy: boolean
 }
 
 interface IVerifyRegisterForm {
-    phone_number: string
+    email: string
     code: string
 }
 

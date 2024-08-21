@@ -1,10 +1,10 @@
 <template>
-  <div class="h-full flex flex-col justify-start items-start mt-[17px] mb-[110px]">
+  <div class="h-full w-full flex flex-col justify-start items-start mt-[17px] md:mb-0 mb-[110px] px-[33px]">
     <div class="w-full flex flex-row justify-start items-center">
       <Header />
       <BackIcon @click="goBack" />
     </div>
-    <div class="w-full flex-col justify-start items-start mt-[35px]">
+    <div class="w-full flex-col justify-start items-start mt-[35px] md:border md:border-gray-500 md:rounded-[50px] md:py-[25px] px-[20px]">
       <CreateTicketForm />
     </div>
   </div>

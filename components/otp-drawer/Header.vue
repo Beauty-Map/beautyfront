@@ -5,26 +5,26 @@
     </div>
     <div class="font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7 mt-[15px]">
       <span>
-      لطفا کد تاییدی را که به شماره <span>{{ phoneNumber }}</span> پیامک شده
+      لطفا کد تاییدی را که به ایمیل <span>{{ email }}</span> ارسال شده
       را وارد کنید.
-        <span class="text-[#400842] font-medium underline cursor-pointer" @click="changePhoneNumber">ویرایش شماره</span>
+        <span class="text-[#400842] font-medium underline cursor-pointer" @click="changeEmail">ویرایش ایمیل</span>
       </span>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const emits = defineEmits(['changePhoneNumber'])
+const emits = defineEmits(['changeEmail'])
 const props = defineProps({
-  phoneNumber: {
+  email: {
     type: String,
     default: '',
     required: true
   }
 })
 
-const changePhoneNumber = () => {
-  emits('changePhoneNumber')
+const changeEmail = () => {
+  emits('changeEmail')
 }
 </script>
 

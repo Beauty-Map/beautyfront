@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full overflow-y-scroll">
-    <OtpInput v-model="form.code" :has-error="hasOtpError" class="mt-[70px] mb-[30px]" />
+  <div class="w-full overflow-y-auto">
+    <OtpInput :length="6" v-model="form.code" :has-error="hasOtpError" class="mt-[70px] mb-[30px]" />
     <OtpResendButton ref="otpContainer" :reset="resetOtp" @resend="resendOtp"/>
     <MainActionButton class="mt-[24px]" @click="checkOtpCode">
       <div class="text-white text-center text-[20px] leading-[30px]">تایید</div>
@@ -19,7 +19,7 @@ const emits = defineEmits(['changePhoneNumber', 'resend', 'validate'])
 const store = useDrawerStore()
 
 const form = ref<IVerifyRegisterForm>({
-  phone_number: '',
+  email: '',
   code: '',
 })
 

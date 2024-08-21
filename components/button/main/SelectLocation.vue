@@ -1,7 +1,7 @@
 <template>
   <div class="select-location flex gap-0.5 flex-row items-center cursor-pointer">
     <div class="flex flex-col ml-2 text-left" @click="openDrawerClicked">
-      <p class="text-xs text-zinc-500 en-title">Location</p>
+      <p class="text-xs text-zinc-500 en-title">انتخاب شهر</p>
       <p class="mt-1.5 text-sm text-neutral-900 city-name" v-if="province && city">{{ `${province.name} - ${city.name}` }}</p>
     </div>
     <HeaderLocationIcon @click="openDrawerClicked"/>
@@ -52,7 +52,7 @@ onMounted(() => {
   nextTick(async () => {
     navigator.geolocation.getCurrentPosition(getPositionSucceed, getPositionError)
     if (!locationCookie.value) {
-      openDrawerClicked()
+      // openDrawerClicked()
     } else {
       const province = locationCookie.value.province
       const city = locationCookie.value.city
