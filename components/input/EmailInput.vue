@@ -8,10 +8,9 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="tel" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-left rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
+      <input type="email" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-left rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
              @input="validateEmailDebounce"
              v-model="value"
-             pattern= "[0-9]"
              :disabled="disabled"
       >
       <span class="absolute left-[10px] top-[4px] text-2xl text-[#A9A7A7]">
