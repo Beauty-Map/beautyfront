@@ -105,6 +105,7 @@ const validate = async (code: string) => {
 const resend = async (code: string) => {
   const data = {
     email: form.value.email,
+    password: form.value.password,
   }
   const res = await useCustomFetch('/auth/register', {
     method: "POST",
