@@ -1,1 +1,0 @@
-import{at as o,al as s,ae as n,a7 as i}from"./entry.BZBDKKIU.js";import{u as c}from"./useSanctumAuth.D_ZKC7qp.js";const l=o(a=>{const e=s(),{isAuthenticated:u}=c();if(u.value===!0)return;const t=e.redirect.onAuthOnly;if(t===!1)throw n({statusCode:403});const r={path:t};return e.redirect.keepRequestedRoute&&(r.query={redirect:a.fullPath}),i(r,{replace:!0})});export{l as default};
