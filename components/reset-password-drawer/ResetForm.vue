@@ -1,7 +1,6 @@
 <template>
   <div class="w-full overflow-y-auto">
     <EmailInput title="ایمیل" v-model="form.email"/>
-    <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
     <MainActionButton class="mt-[24px]" @click="doRegister">
       <div class="text-white text-center text-[20px] leading-[30px]">ارسال کد تایید</div>
@@ -53,24 +52,19 @@ const changeEmail = () => {
 const doRegister = async () => {
   const data = {
     email: form.value.email,
-    password: form.value.password,
   }
-  const res = await useCustomFetch('/auth/register', {
+  const res = await useCustomFetch('/auth/password/forgot', {
     method: "POST",
     body: data
   })
   if (res.error.value != null) {
-    app.$toast.error('این ایمیل پیشتر ثبت نام کرده است', {rtl: true})
+    app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
   }
   if (res.data.value != null) {
     const email = useCookie('email')
     email.value = form.value.email
     app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
-    if (isMd) {
-      await router.push('/register/validate')
-    } else {
-      openDrawerClicked()
-    }
+    openDrawerClicked()
   }
 }
 
@@ -84,7 +78,7 @@ const validate = async (code: string) => {
     email: form.value.email,
     code: code,
   }
-  const res = await useCustomFetch('/auth/register/otp', {
+  const res = await useCustomFetch('/auth/password/otp', {
     method: "POST",
     body: data
   })
@@ -98,6 +92,7 @@ const validate = async (code: string) => {
     } else {
       closeDrawerClicked()
       store.closeAllDrawers()
+
     }
   }
 }
@@ -106,22 +101,18 @@ const resend = async (code: string) => {
   const data = {
     email: form.value.email,
   }
-  const res = await useCustomFetch('/auth/register', {
+  const res = await useCustomFetch('/auth/password/forgot', {
     method: "POST",
     body: data
   })
   if (res.error.value != null) {
-    app.$toast.error('این ایمیل پیشتر ثبت نام کرده است', {rtl: true})
+    app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
   }
   if (res.data.value != null) {
     const email = useCookie('email')
     email.value = form.value.email
     app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
-    if (isMd) {
-      await router.push('/register/validate')
-    } else {
-      openDrawerClicked()
-    }
+    openDrawerClicked()
   }
 }
 

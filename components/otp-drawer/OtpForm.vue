@@ -15,7 +15,7 @@ import {useDrawerStore} from "~/store/Drawer";
 import OtpInput from "~/components/input/OtpInput.vue";
 import OtpResendButton from "~/components/otp-drawer/OtpResendButton.vue";
 
-const emits = defineEmits(['changePhoneNumber', 'resend', 'validate'])
+const emits = defineEmits(['changeEmail', 'resend', 'validate'])
 const store = useDrawerStore()
 
 const form = ref<IVerifyRegisterForm>({
@@ -37,6 +37,7 @@ const checkOtpCode = () => {
 const resendOtp = () => {
   emits('resend')
   resetOtp.value = !resetOtp.value
+  form.value.code = ''
 }
 
 watch(() => form.value.code, () => hasOtpError.value = false)

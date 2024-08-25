@@ -1,6 +1,7 @@
 <template>
   <div class="w-full overflow-y-auto">
     <EmailInput @input="onInput" title="ایمیل" v-model="form.email"/>
+    <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
     <MainActionButton class="mt-[24px]" @click="doRegister">
       <div class="text-white text-center text-[20px] leading-[30px]">ارسال کد تایید</div>
@@ -11,12 +12,12 @@
 
 <script setup lang="ts">
 
-import TelInput from "~/components/input/TelInput.vue";
 import PolicyAndRulesButton from "~/components/icons/AuthDrawer/PolicyAndRulesButton.vue";
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import EmailInput from "~/components/input/EmailInput.vue";
+import PasswordInput from "~/components/input/PasswordInput.vue";
 
 const emits = defineEmits(['sent', 'update:modelValue'])
 const app = useNuxtApp()
@@ -32,19 +33,21 @@ const props = defineProps({
 
 const form = ref<IRegisterForm>({
   email: '',
+  password: '',
   accept_policy: false
 })
 
 const doRegister = async () => {
   const data = {
     email: form.value.email,
+    password: form.value.password,
   }
   const res = await useCustomFetch('/auth/register', {
     method: "POST",
     body: data
   })
   if (res.error.value != null) {
-    app.$toast.error('این شماره پیشتر ثبت نام کرده است', {rtl: true})
+    app.$toast.error('این ایمیل پیشتر ثبت نام کرده است', {rtl: true})
   }
   if (res.data.value != null) {
     app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
@@ -68,7 +71,7 @@ const onInput = (e: Event) => {
 const isMd = false
 
 onMounted(() => nextTick(() => {
-  form.value.phone_number = props.modelValue
+  form.value.email = props.modelValue
 }))
 </script>
 

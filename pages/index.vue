@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col px-[23px] py-[10px] h-full md:hidden">
+  <div class="flex w-full flex-col px-[23px] py-[10px] h-full md:hidden">
     <MainHeader class="mb-15"/>
     <MainSearchBox class="mb-15"/>
     <PopularArtistSlider class="mb-10"/>

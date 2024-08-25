@@ -4,7 +4,7 @@
       عضویت
     </div>
     <div class="font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7">
-      برای ثبت نام در بیوتی مپ  شماره خود را وارد کنید
+      برای ثبت نام در بیوتی مپ ایمیل خود را وارد کنید
     </div>
   </div>
 </template>

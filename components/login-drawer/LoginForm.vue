@@ -41,7 +41,6 @@ const doLogin = async () => {
         } else {
           store.closeAllDrawers()
         }
-
       })
       .catch(err => {
         app.$toast.error('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})

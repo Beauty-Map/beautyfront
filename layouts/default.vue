@@ -9,6 +9,7 @@
     <NotificationDrawer class="md:hidden flex"/>
     <SecurityDrawer class="md:hidden flex"/>
     <SetNewPasswordDrawer class="md:hidden flex"/>
+    <ResetPasswordDrawer class="md:hidden flex"/>
     <AltPhoneNumberDrawer class="md:hidden flex"/>
     <MainHeaderDesktop class="md:flex hidden"/>
 <!--    <div class="w-full min-h-screen px-[34px] py-[20px] flex flex-row justify-start items-start">-->
@@ -34,6 +35,7 @@ import SecurityDrawer from "~/components/drawer/SecurityDrawer.vue";
 import SetNewPasswordDrawer from "~/components/drawer/SetNewPasswordDrawer.vue";
 import AltPhoneNumberDrawer from "~/components/drawer/AltPhoneNumberDrawer.vue";
 import MainHeaderDesktop from "~/components/header/MainHeaderDesktop.vue";
+import ResetPasswordDrawer from "~/components/drawer/ResetPasswordDrawer.vue";
 const nuxt = useNuxtApp()
 const loading = ref<boolean>(true)
 nuxt.hook('page:loading:start', () => {
