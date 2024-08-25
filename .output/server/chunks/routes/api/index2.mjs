@@ -1,0 +1,30 @@
+import { d as defineEventHandler } from '../../runtime.mjs';
+import 'node:http';
+import 'node:https';
+import 'fs';
+import 'path';
+import 'node:fs';
+import 'node:url';
+
+const index = defineEventHandler((event) => {
+  return [
+    {
+      id: 1,
+      text: "\u0646\u0645\u0648\u0646\u0647 \u06A9\u0627\u0631\u0647\u0627\u06CC \u0627\u0641\u0631\u0627\u062F \u0641\u0639\u0627\u0644 \u062F\u0631 \u062D\u0648\u0632\u0647 \u0632\u06CC\u0628\u0627\u06CC\u06CC \u0631\u0648 \u0628\u0628\u06CC\u0646 \u0648 \u0647\u0646\u0631\u0645\u0646\u062F\u0627\u0646 \u0645\u062D\u0628\u0648\u0628 \u0631\u0648 \u0628\u0634\u0646\u0627\u0633",
+      image: "/intro/intro_1.png"
+    },
+    {
+      id: 2,
+      text: "\u0628\u0647 \u0639\u0646\u0648\u0627\u0646 \u0647\u0646\u0631\u0645\u0646\u062F \u0646\u0645\u0648\u0646\u0647 \u06A9\u0627\u0631\u0647\u0627\u06CC \u062E\u0648\u062F\u062A \u0631\u0648 \u062A\u0628\u0644\u06CC\u063A \u06A9\u0646 \u0648 \u0645\u0634\u062A\u0631\u06CC \u062C\u0630\u0628 \u06A9\u0646",
+      image: "/intro/intro_2.png"
+    },
+    {
+      id: 3,
+      text: "\u0628\u0627 \u0645\u0639\u0631\u0641\u06CC \u062F\u06CC\u06AF\u0631\u0627\u0646 \u0628\u0647 \u0628\u06CC\u0648\u062A\u06CC \u0645\u067E \u062F\u0631\u0622\u0645\u062F \u0628\u0627\u0644\u0627\u06CC\u06CC \u0628\u062F\u0633\u062A \u0628\u06CC\u0627\u0631",
+      image: "/intro/intro_3.png"
+    }
+  ];
+});
+
+export { index as default };
+//# sourceMappingURL=index2.mjs.map

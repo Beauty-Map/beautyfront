@@ -1,0 +1,1 @@
+import{C as c,R as u}from"./entry.BZBDKKIU.js";import{u as r}from"./fetch.BsvUWtk-.js";const l=async(i,e)=>{const n=u(),a=c("XSRF-TOKEN");let s={accept:"application/json",...e==null?void 0:e.headers};return a&&a.value!==null&&(s["X-XSRF-TOKEN"]=a),await r(i,{baseURL:n.public.baseURL,headers:s,credentials:"include",...e},"$sC22i8rhLA")};export{l as u};
