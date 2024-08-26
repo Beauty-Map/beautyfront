@@ -1,0 +1,1 @@
+import{_ as o}from"./_plugin-vue_export-helper.DlAUqK2U.js";import{o as t,c as r,K as n}from"./entry.BhzJJFkY.js";const s={},c={class:"cursor-pointer flex flex-row justify-center items-center rounded-[20px] bg-[#FF3CA0] h-[48px] w-full"};function a(e,f){return t(),r("div",c,[n(e.$slots,"default")])}const _=o(s,[["render",a]]);export{_ as M};

@@ -1,5 +1,5 @@
 import { hasInjectionContext, inject, version, ref, watchEffect, watch, getCurrentInstance, defineComponent, provide, createElementBlock, defineAsyncComponent, h, computed, unref, shallowReactive, Suspense, nextTick, Transition, useSSRContext, toRef, isRef, mergeProps, withCtx, createVNode, createApp, effectScope, reactive, isReactive, toRaw, getCurrentScope, onScopeDispose, onErrorCaptured, onServerPrefetch, resolveDynamicComponent, shallowRef, isReadonly, toRefs, markRaw, isShallow } from 'vue';
-import { f as useRuntimeConfig$1, $ as $fetch$1, w as withQuery, m as hasProtocol, p as parseURL, n as isScriptProtocol, j as joinURL, i as createError$1, o as getRequestHeaders, q as klona, r as parse, t as getRequestHeader, v as defu, x as sanitizeStatusCode, y as destr, z as isEqual, A as setCookie, B as getCookie, C as deleteCookie, D as createHooks, E as splitCookiesString, F as appendResponseHeader, G as FetchError, H as getRequestURL } from '../runtime.mjs';
+import { f as useRuntimeConfig$1, $ as $fetch$1, w as withQuery, m as hasProtocol, p as parseURL, n as isScriptProtocol, j as joinURL, i as createError$1, o as getRequestHeaders, q as klona, r as parse, t as getRequestHeader, v as defu, x as sanitizeStatusCode, y as destr, z as isEqual, A as setCookie, B as getCookie, C as deleteCookie, D as createHooks, E as splitCookiesString, F as appendResponseHeader, G as FetchError, H as ofetch, I as getRequestURL } from '../runtime.mjs';
 import { getActiveHead } from 'unhead';
 import { defineHeadPlugin, composableNames } from '@unhead/shared';
 import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter, START_LOCATION } from 'vue-router';
@@ -778,12 +778,20 @@ const __nuxt_page_meta = {
 };
 const _routes = [
   {
+    name: "aboutus",
+    path: "/aboutus",
+    meta: {},
+    alias: [],
+    redirect: void 0 ,
+    component: () => import('./aboutus-DE3Anxex.mjs').then((m) => m.default || m)
+  },
+  {
     name: (__nuxt_page_meta$u == null ? void 0 : __nuxt_page_meta$u.name) ?? "artists-id",
     path: (__nuxt_page_meta$u == null ? void 0 : __nuxt_page_meta$u.path) ?? "/artists/:id()",
     meta: __nuxt_page_meta$u || {},
     alias: (__nuxt_page_meta$u == null ? void 0 : __nuxt_page_meta$u.alias) || [],
     redirect: __nuxt_page_meta$u == null ? void 0 : __nuxt_page_meta$u.redirect,
-    component: () => import('./_id_-D7RYlszN.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-C8DJJ3uT.mjs').then((m) => m.default || m)
   },
   {
     name: "favourites",
@@ -791,7 +799,7 @@ const _routes = [
     meta: {},
     alias: [],
     redirect: void 0 ,
-    component: () => import('./index-CGR2f-ys.mjs').then((m) => m.default || m)
+    component: () => import('./index-CjPPsiWO.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$s == null ? void 0 : __nuxt_page_meta$s.name) ?? "index",
@@ -799,7 +807,7 @@ const _routes = [
     meta: __nuxt_page_meta$s || {},
     alias: (__nuxt_page_meta$s == null ? void 0 : __nuxt_page_meta$s.alias) || [],
     redirect: __nuxt_page_meta$s == null ? void 0 : __nuxt_page_meta$s.redirect,
-    component: () => import('./index-CRem_-Aq.mjs').then((m) => m.default || m)
+    component: () => import('./index-CcSt2uez.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$r == null ? void 0 : __nuxt_page_meta$r.name) ?? "intro",
@@ -815,7 +823,7 @@ const _routes = [
     meta: __nuxt_page_meta$q || {},
     alias: (__nuxt_page_meta$q == null ? void 0 : __nuxt_page_meta$q.alias) || [],
     redirect: __nuxt_page_meta$q == null ? void 0 : __nuxt_page_meta$q.redirect,
-    component: () => import('./index-Z7Os8q1Z.mjs').then((m) => m.default || m)
+    component: () => import('./index-CZgPUppL.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$p == null ? void 0 : __nuxt_page_meta$p.name) ?? "panel-artist-advertisements",
@@ -823,7 +831,7 @@ const _routes = [
     meta: __nuxt_page_meta$p || {},
     alias: (__nuxt_page_meta$p == null ? void 0 : __nuxt_page_meta$p.alias) || [],
     redirect: __nuxt_page_meta$p == null ? void 0 : __nuxt_page_meta$p.redirect,
-    component: () => import('./index-C51W0DMB.mjs').then((m) => m.default || m)
+    component: () => import('./index-CV8xj6Mk.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$o == null ? void 0 : __nuxt_page_meta$o.name) ?? "panel-artist-banners",
@@ -831,7 +839,7 @@ const _routes = [
     meta: __nuxt_page_meta$o || {},
     alias: (__nuxt_page_meta$o == null ? void 0 : __nuxt_page_meta$o.alias) || [],
     redirect: __nuxt_page_meta$o == null ? void 0 : __nuxt_page_meta$o.redirect,
-    component: () => import('./index-Cw-Prlto.mjs').then((m) => m.default || m)
+    component: () => import('./index-WJdTSDN2.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$n == null ? void 0 : __nuxt_page_meta$n.name) ?? "panel-artist",
@@ -839,7 +847,7 @@ const _routes = [
     meta: __nuxt_page_meta$n || {},
     alias: (__nuxt_page_meta$n == null ? void 0 : __nuxt_page_meta$n.alias) || [],
     redirect: __nuxt_page_meta$n == null ? void 0 : __nuxt_page_meta$n.redirect,
-    component: () => import('./index-70jotrpO.mjs').then((m) => m.default || m)
+    component: () => import('./index-CvnSu8no.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$m == null ? void 0 : __nuxt_page_meta$m.name) ?? "panel-artist-laddering",
@@ -847,7 +855,7 @@ const _routes = [
     meta: __nuxt_page_meta$m || {},
     alias: (__nuxt_page_meta$m == null ? void 0 : __nuxt_page_meta$m.alias) || [],
     redirect: __nuxt_page_meta$m == null ? void 0 : __nuxt_page_meta$m.redirect,
-    component: () => import('./index-ChA3zu_p.mjs').then((m) => m.default || m)
+    component: () => import('./index-DwJ1sGeo.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$l == null ? void 0 : __nuxt_page_meta$l.name) ?? "panel-artist-portfolios-id",
@@ -855,7 +863,7 @@ const _routes = [
     meta: __nuxt_page_meta$l || {},
     alias: (__nuxt_page_meta$l == null ? void 0 : __nuxt_page_meta$l.alias) || [],
     redirect: __nuxt_page_meta$l == null ? void 0 : __nuxt_page_meta$l.redirect,
-    component: () => import('./_id_-B9FxcZK-.mjs').then((m) => m.default || m)
+    component: () => import('./_id_-CMZR_X1x.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$k == null ? void 0 : __nuxt_page_meta$k.name) ?? "panel-artist-portfolios-create",
@@ -863,7 +871,7 @@ const _routes = [
     meta: __nuxt_page_meta$k || {},
     alias: (__nuxt_page_meta$k == null ? void 0 : __nuxt_page_meta$k.alias) || [],
     redirect: __nuxt_page_meta$k == null ? void 0 : __nuxt_page_meta$k.redirect,
-    component: () => import('./create-Ceb3hOaE.mjs').then((m) => m.default || m)
+    component: () => import('./create-BUjW3sSQ.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$j == null ? void 0 : __nuxt_page_meta$j.name) ?? "panel-artist-portfolios",
@@ -871,7 +879,7 @@ const _routes = [
     meta: __nuxt_page_meta$j || {},
     alias: (__nuxt_page_meta$j == null ? void 0 : __nuxt_page_meta$j.alias) || [],
     redirect: __nuxt_page_meta$j == null ? void 0 : __nuxt_page_meta$j.redirect,
-    component: () => import('./index-6M2Lynm3.mjs').then((m) => m.default || m)
+    component: () => import('./index-B2PwrMjU.mjs').then((m) => m.default || m)
   },
   {
     name: "panel-artist-support",
@@ -903,7 +911,7 @@ const _routes = [
     meta: __nuxt_page_meta$f || {},
     alias: (__nuxt_page_meta$f == null ? void 0 : __nuxt_page_meta$f.alias) || [],
     redirect: __nuxt_page_meta$f == null ? void 0 : __nuxt_page_meta$f.redirect,
-    component: () => import('./index-CfFoRWzG.mjs').then((m) => m.default || m)
+    component: () => import('./index-8pKoAouV.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$e == null ? void 0 : __nuxt_page_meta$e.name) ?? "panel-artist-wallet",
@@ -911,7 +919,7 @@ const _routes = [
     meta: __nuxt_page_meta$e || {},
     alias: (__nuxt_page_meta$e == null ? void 0 : __nuxt_page_meta$e.alias) || [],
     redirect: __nuxt_page_meta$e == null ? void 0 : __nuxt_page_meta$e.redirect,
-    component: () => import('./index-DJQsfDMq.mjs').then((m) => m.default || m)
+    component: () => import('./index-Dem51rQ4.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$d == null ? void 0 : __nuxt_page_meta$d.name) ?? "panel-artist-wallet-pay",
@@ -919,7 +927,7 @@ const _routes = [
     meta: __nuxt_page_meta$d || {},
     alias: (__nuxt_page_meta$d == null ? void 0 : __nuxt_page_meta$d.alias) || [],
     redirect: __nuxt_page_meta$d == null ? void 0 : __nuxt_page_meta$d.redirect,
-    component: () => import('./pay-ClKBeCfq.mjs').then((m) => m.default || m)
+    component: () => import('./pay-D2fbuSdk.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$c == null ? void 0 : __nuxt_page_meta$c.name) ?? "panel",
@@ -927,7 +935,7 @@ const _routes = [
     meta: __nuxt_page_meta$c || {},
     alias: (__nuxt_page_meta$c == null ? void 0 : __nuxt_page_meta$c.alias) || [],
     redirect: __nuxt_page_meta$c == null ? void 0 : __nuxt_page_meta$c.redirect,
-    component: () => import('./index-I4Ol98up.mjs').then((m) => m.default || m)
+    component: () => import('./index-DooJahRU.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$b == null ? void 0 : __nuxt_page_meta$b.name) ?? "panel-upgrade",
@@ -935,7 +943,7 @@ const _routes = [
     meta: __nuxt_page_meta$b || {},
     alias: (__nuxt_page_meta$b == null ? void 0 : __nuxt_page_meta$b.alias) || [],
     redirect: __nuxt_page_meta$b == null ? void 0 : __nuxt_page_meta$b.redirect,
-    component: () => import('./upgrade-Djgk6YNj.mjs').then((m) => m.default || m)
+    component: () => import('./upgrade-KgkpVqK7.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$a == null ? void 0 : __nuxt_page_meta$a.name) ?? "portfolios-id",
@@ -951,7 +959,7 @@ const _routes = [
     meta: __nuxt_page_meta$9 || {},
     alias: (__nuxt_page_meta$9 == null ? void 0 : __nuxt_page_meta$9.alias) || [],
     redirect: __nuxt_page_meta$9 == null ? void 0 : __nuxt_page_meta$9.redirect,
-    component: () => import('./index-CIC8I92u.mjs').then((m) => m.default || m)
+    component: () => import('./index-Do2ww1zl.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.name) ?? "search",
@@ -959,7 +967,7 @@ const _routes = [
     meta: __nuxt_page_meta$8 || {},
     alias: (__nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.alias) || [],
     redirect: __nuxt_page_meta$8 == null ? void 0 : __nuxt_page_meta$8.redirect,
-    component: () => import('./index-Bf3JO4hr.mjs').then((m) => m.default || m)
+    component: () => import('./index-5pRoSZlj.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$7 == null ? void 0 : __nuxt_page_meta$7.name) ?? "security-alt-number",
@@ -967,7 +975,7 @@ const _routes = [
     meta: __nuxt_page_meta$7 || {},
     alias: (__nuxt_page_meta$7 == null ? void 0 : __nuxt_page_meta$7.alias) || [],
     redirect: __nuxt_page_meta$7 == null ? void 0 : __nuxt_page_meta$7.redirect,
-    component: () => import('./alt-number-BwldrOen.mjs').then((m) => m.default || m)
+    component: () => import('./alt-number-3TucBq9d.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.name) ?? "security",
@@ -975,7 +983,7 @@ const _routes = [
     meta: __nuxt_page_meta$6 || {},
     alias: (__nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.alias) || [],
     redirect: __nuxt_page_meta$6 == null ? void 0 : __nuxt_page_meta$6.redirect,
-    component: () => import('./index-5nJuZlWr.mjs').then((m) => m.default || m)
+    component: () => import('./index-Ds3fuUBt.mjs').then((m) => m.default || m)
   },
   {
     name: (__nuxt_page_meta$5 == null ? void 0 : __nuxt_page_meta$5.name) ?? "security-password",
@@ -1139,11 +1147,11 @@ const globalMiddleware = [
   manifest_45route_45rule
 ];
 const namedMiddleware = {
-  "artist-auth": () => import('./artist-auth-C-daQ151.mjs'),
-  auth: () => import('./auth-DdMkEiFn.mjs'),
-  guest: () => import('./guest--4VfvSKy.mjs'),
-  "sanctum:auth": () => import('./sanctum.auth-B_OzM3dz.mjs'),
-  "sanctum:guest": () => import('./sanctum.guest-Cou4oICH.mjs')
+  "artist-auth": () => import('./artist-auth-BEJwrlcr.mjs'),
+  auth: () => import('./auth-MCubyHc7.mjs'),
+  guest: () => import('./guest-W_FzrKFE.mjs'),
+  "sanctum:auth": () => import('./sanctum.auth-DBBPHErA.mjs'),
+  "sanctum:guest": () => import('./sanctum.guest-f2yf2ARr.mjs')
 };
 const plugin$1 = /* @__PURE__ */ defineNuxtPlugin({
   name: "nuxt:router",
@@ -2140,7 +2148,60 @@ const plugin_t2GMTTFnMT = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
     }
   };
 });
-const format_number_server_GxsvIbpYln = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
+const useAuthStore = defineStore("auth", {
+  state: () => ({
+    user: null,
+    token: null
+  }),
+  getters: {
+    getUser: (state) => state.user
+  },
+  actions: {
+    setUser(user) {
+      this.user = user;
+    },
+    setToken(token) {
+      this.token = token;
+    }
+  }
+});
+const _1__32init_server_gKlKKoGKta = /* @__PURE__ */ defineNuxtPlugin(async (nuxtApp) => {
+  let __temp, __restore;
+  {
+    const token = useCookie("token");
+    if (token.value) {
+      const auth = useAuthStore();
+      [__temp, __restore] = executeAsync(() => ofetch(
+        "/own",
+        {
+          // baseURL: 'http://127.0.0.1:8000/api',
+          baseURL: "https://api.beautymap.ir/api",
+          method: "GET",
+          parseResponse: JSON.parse,
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "Authorization": `Bearer ${token.value ?? ""}`
+          }
+        }
+      ).then((res) => {
+        var _a;
+        auth.user = res == null ? void 0 : res.data;
+        auth.token = ((_a = token.value) == null ? void 0 : _a.toString()) ?? "";
+      }).catch((err) => {
+        auth.user = null;
+        auth.token = null;
+        token.value = "";
+      })), await __temp, __restore();
+    }
+  }
+  return {
+    provide: {
+      injected: () => "my injected function"
+    }
+  };
+});
+const _2__32format_number_server_SU12687R8r = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.directive("format-price", {
     mounted(el) {
       const value = el.innerText;
@@ -2162,7 +2223,7 @@ const format_number_server_GxsvIbpYln = /* @__PURE__ */ defineNuxtPlugin((nuxtAp
     }
   });
 });
-const vue3_toastify_OGYNDsiW9E = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
+const _4__32vue3_toastify_RWyzTrO980 = /* @__PURE__ */ defineNuxtPlugin((nuxtApp) => {
   nuxtApp.vueApp.use(Vue3Toastify, { autoClose: 2e3 });
   return {
     provide: {
@@ -2179,18 +2240,19 @@ const plugins = [
   plugin_8SbxDRbG6Y,
   plugin_mYqpUg2ioW,
   plugin_t2GMTTFnMT,
-  format_number_server_GxsvIbpYln,
-  vue3_toastify_OGYNDsiW9E
+  _1__32init_server_gKlKKoGKta,
+  _2__32format_number_server_SU12687R8r,
+  _4__32vue3_toastify_RWyzTrO980
 ];
 const layouts = {
-  "artist-panel": () => import('./artist-panel-DFc0QvlF.mjs').then((m) => m.default || m),
-  "artist-single": () => import('./artist-single-R_otuWgo.mjs').then((m) => m.default || m),
-  default: () => import('./default-Dt9Pl6oA.mjs').then((m) => m.default || m),
+  "artist-panel": () => import('./artist-panel-DubrPXh1.mjs').then((m) => m.default || m),
+  "artist-single": () => import('./artist-single-D3qqoqa-.mjs').then((m) => m.default || m),
+  default: () => import('./default-BukZ16El.mjs').then((m) => m.default || m),
   intro: () => import('./intro-BNjov8JP.mjs').then((m) => m.default || m),
-  panel: () => import('./panel-CdWgVKl2.mjs').then((m) => m.default || m),
+  panel: () => import('./panel-6yF6iNxn.mjs').then((m) => m.default || m),
   "portfolio-single": () => import('./portfolio-single-Dj7ciGWy.mjs').then((m) => m.default || m),
-  security: () => import('./security-B33x4v11.mjs').then((m) => m.default || m),
-  ticket: () => import('./ticket-B2hUSSH6.mjs').then(function(n) {
+  security: () => import('./security-DHPCHK3M.mjs').then((m) => m.default || m),
+  ticket: () => import('./ticket-Dfj_badE.mjs').then(function(n) {
     return n.t;
   }).then((m) => m.default || m)
 };
@@ -2685,5 +2747,5 @@ let entry;
 }
 const entry$1 = (ssrContext) => entry(ssrContext);
 
-export { __nuxt_component_0$1 as _, useRouter as a, useRoute as b, createError as c, useCookie as d, entry$1 as default, useSanctumUser as e, useNuxtApp as f, useRuntimeConfig as g, navigateTo as h, useRequestHeaders as i, asyncDataDefaults as j, fetchDefaults as k, useRequestFetch as l, useSanctumConfig as m, nuxtLinkDefaults as n, defineStore as o, defineNuxtRouteMiddleware as p, useHead as u };
+export { __nuxt_component_0$1 as _, useRouter as a, useRoute as b, createError as c, useCookie as d, entry$1 as default, useAuthStore as e, useNuxtApp as f, useRuntimeConfig as g, navigateTo as h, useRequestHeaders as i, asyncDataDefaults as j, fetchDefaults as k, useRequestFetch as l, useSanctumUser as m, nuxtLinkDefaults as n, useSanctumConfig as o, defineStore as p, defineNuxtRouteMiddleware as q, useHead as u };
 //# sourceMappingURL=server.mjs.map
