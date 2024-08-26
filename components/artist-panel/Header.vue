@@ -45,6 +45,7 @@ import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import DollarIcon from "~/components/icons/DollarIcon.vue";
 import NotificationIcon from "~/components/icons/NotificationIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const props = defineProps({
   full_name: {
@@ -68,7 +69,6 @@ const props = defineProps({
     default: 0
   },
 })
-const user =
 const auth = useAuthStore()
 const user = ref(auth.user)
 
