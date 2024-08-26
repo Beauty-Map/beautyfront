@@ -68,7 +68,9 @@ const props = defineProps({
     default: 0
   },
 })
-const user = useSanctumUser()
+const user =
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const getBanner = computed(() => props.banner ? props.banner : '/panel/header.png')
 const getAvatar = computed(() => props.avatar ? props.avatar : '/panel/header.png')

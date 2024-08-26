@@ -10,6 +10,7 @@
 import ArtistIntroDrawer from "~/components/drawer/ArtistIntroDrawer.vue";
 import Header from "~/components/artist-panel/Header.vue";
 import ArtistLinkBox from "~/components/artist-panel/ArtistLinkBox.vue";
+import {useAuthStore} from "~/store/Auth";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -19,7 +20,8 @@ const { isMobile } = useDevice();
 const seenIntro = useCookie<boolean>('seenArtistIntro')
 const router = useRouter()
 const nuxt = useNuxtApp()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 const showArtistIntro = ref(false)
 nuxt.hook('page:finish', () => {
   if (isMobile && (!seenIntro || !seenIntro.value)) {

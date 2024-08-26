@@ -46,6 +46,7 @@ import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import AdvIcon from "~/components/icons/AdvIcon.vue";
 import CharpIcon from "~/components/icons/CharpIcon.vue";
 import CoinBlackIcon from "~/components/icons/CoinBlackIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -53,7 +54,8 @@ definePageMeta({
 })
 
 const router = useRouter()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const goBack = () => {
   router.back()

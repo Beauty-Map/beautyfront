@@ -25,6 +25,7 @@
 import ErrorRedIcon from "~/components/icons/ErrorRedIcon.vue";
 import ChooseCityDrawer from "~/components/drawer/ChooseCityDrawer.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const emits = defineEmits(['update:modelValue'])
 const props = defineProps({
@@ -45,7 +46,9 @@ const errorText = ref<String>('')
 const hasError = ref<Boolean>(false)
 const openDrawer = ref<Boolean>(false)
 
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 const province = ref<IProvince>()
 const city = ref<ICity>()
 if (user.value?.province) {

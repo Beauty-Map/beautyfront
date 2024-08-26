@@ -34,6 +34,7 @@
 import BackIcon from "~/components/icons/BackIcon.vue";
 import InfiniteLoading from "v3-infinite-loading";
 import PortfolioLadderingItem from "~/components/portfolio/PortfolioLadderingItem.vue";
+import {useAuthStore} from "~/store/Auth";
 
 const emits = defineEmits(['close', 'choose'])
 const props = defineProps({
@@ -46,7 +47,9 @@ const props = defineProps({
     default: 'فیلتر'
   },
 })
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const portfolios = ref<IPortfolio[]>([])
 const selectedItems = ref<IPortfolio[]>([])

@@ -9,9 +9,12 @@
 
 import NotificationIcon from "~/components/icons/NotificationIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const store = useDrawerStore()
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const openNotificationDrawer = () => {
   store.closeAllDrawers()

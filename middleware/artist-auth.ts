@@ -1,6 +1,9 @@
+import {useAuthStore} from "~/store/Auth";
+
 export default defineNuxtRouteMiddleware((to, from) => {
-    const user = useSanctumUser()
-    if (!user.value || !user.value.is_artist) {
+    const auth = useAuthStore()
+    const user = auth.getUser
+    if (!user || !user.is_artist) {
         return navigateTo('/')
     }
 })

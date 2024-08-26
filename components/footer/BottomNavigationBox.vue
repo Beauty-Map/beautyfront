@@ -59,11 +59,14 @@ import CategoryIcon from "~/components/icons/BottomNavigation/CategoryIcon.vue";
 import ProfileIcon from "~/components/icons/BottomNavigation/ProfileIcon.vue";
 import BottomNavigationButton from "~/components/button/BottomNavigationButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const router = useRouter()
 const route = useRoute()
 const store = useDrawerStore()
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 const index = ref<Number>(1)
 
 const selectItem = (i: Number) => {

@@ -27,13 +27,15 @@ import DollarIcon from "~/components/icons/DollarIcon.vue";
 import BackIcon from "~/components/icons/BackIcon.vue";
 import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import PaymentOptionItem from "~/components/wallet/PaymentOptionItem.vue";
+import {useAuthStore} from "~/store/Auth";
 
 definePageMeta({
   layout: 'artist-panel',
   middleware: 'auth'
 })
 const router = useRouter()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 const options = ref<IPaymentOption[]>([])
 
 const goBack = () => {

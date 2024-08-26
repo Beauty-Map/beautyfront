@@ -40,6 +40,7 @@
 <script setup lang="ts">
 
 import CheckBox from "~/components/input/CheckBox.vue";
+import {useAuthStore} from "~/store/Auth";
 
 const emits = defineEmits(['update:hasTel', 'update:hasPhoneNumber', 'update:secondPhoneNumber'])
 const props = defineProps({
@@ -62,7 +63,9 @@ const hasTel = ref(props.hasTel)
 const hasPhoneNumber = ref(props.hasPhoneNumber)
 const showSecondPhoneNumber = ref(props.secondPhoneNumber != '')
 const secondPhoneNumber = ref(props.secondPhoneNumber)
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const openModal = () => {
   showModal.value = true

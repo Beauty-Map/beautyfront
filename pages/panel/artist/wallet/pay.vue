@@ -40,6 +40,7 @@ import DollarIcon from "~/components/icons/DollarIcon.vue";
 import BackIcon from "~/components/icons/BackIcon.vue";
 import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import PaymentOptionDescIcon from "~/components/icons/PaymentOptionDescIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -47,7 +48,8 @@ definePageMeta({
 })
 const router = useRouter()
 const route = useRoute()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 const option = ref<IPaymentOption|null>(null)
 const showPayResultModal = ref<boolean>(false)
 

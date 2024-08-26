@@ -20,12 +20,12 @@ import PolicyAndRulesButton from "~/components/icons/AuthDrawer/PolicyAndRulesBu
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const app = useNuxtApp()
 const store = useDrawerStore()
-const auth = useSanctumAuth()
 const router = useRouter()
-
+const auth = useAuthStore()
 const form = ref<ILoginForm>({
   email: '',
   password: '',
@@ -33,18 +33,18 @@ const form = ref<ILoginForm>({
 })
 
 const doLogin = async () => {
-  auth.login(form.value)
-      .then(() => {
+  const {$postRequest: postRequest}=app
+  postRequest('/auth/login', form.value)
+      .then((res) => {
+        auth.user = res.data
+        auth.token = res.data.token
+        const token = useCookie("token")
+        token.value = res.data.token
         app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
-        if (isMd) {
-          router.push('/panel')
-        } else {
-          store.closeAllDrawers()
-        }
+        store.closeAllDrawers()
       })
-      .catch(err => {
+      .catch(() => {
         app.$toast.error('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
-        console.log(err, "err")
       })
 }
 

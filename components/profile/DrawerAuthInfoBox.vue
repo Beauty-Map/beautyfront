@@ -16,14 +16,20 @@
 
 import ProfileIcon from "~/components/icons/ProfileIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
+const auth = useAuthStore()
 const store = useDrawerStore()
-const user = useSanctumUser()
+const user = ref(auth.user)
 const openLoginRegisterModal = () => {
   store.closeAllDrawers()
   store.openLoginDrawer()
 }
 
+watch(() => auth.user, () => {
+  console.log(auth.user, "i")
+  user.value = auth.user
+})
 </script>
 
 <style scoped>

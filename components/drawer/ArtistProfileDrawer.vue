@@ -60,13 +60,14 @@ import ChooseSocialMediaInput from "~/components/input/ChooseSocialMediaInput.vu
 import {useCustomFetch} from "~/composables/useCustomFetch";
 import InsertDocumentsInput from "~/components/input/InsertDocumentsInput.vue";
 import EmailInput from "~/components/input/EmailInput.vue";
+import {useAuthStore} from "~/store/Auth";
 
 const store = useDrawerStore()
-const user = useSanctumUser()
-const auth = useSanctumAuth()
+const auth = useAuthStore()
+const user = ref(auth.user)
 const app = useNuxtApp()
+const route = useRoute()
 
-auth.refreshIdentity()
 const form = ref({
   full_name: user.value?.full_name,
   email: user.value?.email,
@@ -119,10 +120,10 @@ const doSaveProfile = async () => {
 
   }
   if (res.data.value != null) {
-    await auth.refreshIdentity()
     app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
     store.closeAllDrawers()
     store.openArtistAgreementDrawer()
+    window.location.reload()
   }
 }
 </script>

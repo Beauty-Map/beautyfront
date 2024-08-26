@@ -97,13 +97,15 @@ import DollarIcon from "~/components/icons/DollarIcon.vue";
 import BackIcon from "~/components/icons/BackIcon.vue";
 import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import ArrowUpIcon from "~/components/icons/ArrowUpIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
 definePageMeta({
   layout: 'artist-panel',
   middleware: 'auth'
 })
 const router = useRouter()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const plans = ref<IPlan[]>([])
 const selectedPlan = ref<IPlan|null>(null)

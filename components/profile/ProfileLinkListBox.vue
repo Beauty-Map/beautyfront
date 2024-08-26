@@ -48,22 +48,20 @@ import ReferralIcon from "~/components/icons/ReferralIcon.vue";
 import ContactIcon from "~/components/icons/ContactIcon.vue";
 import SecurityIcon from "~/components/icons/SecurityIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
-const user = useSanctumUser()
-const auth = useSanctumAuth()
+const auth = useAuthStore()
+const user = ref(auth.user)
 const store = useDrawerStore()
 const router = useRouter()
 
 const exit = () => {
-  auth.logout()
-      .then(res => {
-        store.closeAllDrawers()
-        router.replace('/')
-      })
-      .catch(err => {
-        console.log(err, "err")
-      })
-  // window.location.reload()
+  auth.setUser(null)
+  auth.setToken(null)
+  const token = useCookie('token')
+  token.value = ''
+  store.closeAllDrawers()
+  router.replace('/')
 }
 
 const openSecurityDrawer = () => {

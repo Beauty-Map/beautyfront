@@ -17,10 +17,13 @@ import {useDrawerStore} from "~/store/Drawer";
 import ChooseCityInput from "~/components/input/ChooseCityInput.vue";
 import BirthDateInput from "~/components/input/BirthDateInput.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
+import {useAuthStore} from "~/store/Auth";
 
 const app = useNuxtApp()
 const store = useDrawerStore()
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const form = ref<ICompleteProfileForm>({
   full_name: user.value?.full_name,

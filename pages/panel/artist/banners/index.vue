@@ -17,6 +17,7 @@
 <script setup lang="ts">
 
 import BackIcon from "~/components/icons/BackIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -24,7 +25,8 @@ definePageMeta({
 })
 
 const router = useRouter()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const banners = ref([
   {

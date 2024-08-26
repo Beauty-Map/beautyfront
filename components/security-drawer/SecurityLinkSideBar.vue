@@ -42,8 +42,11 @@ import UserBox from "~/components/sidebar/UserBox.vue";
 import SideBarLinkBox from "~/components/sidebar/SideBarLinkBox.vue";
 import SideBarLink from "~/components/sidebar/SideBarLink.vue";
 import ProfileSmallIcon from "~/components/icons/ProfileSmallIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 const store = useDrawerStore()
 const showDeleteAccount = ref<Boolean>(false)
 

@@ -8,13 +8,6 @@ export const useAuthStore = defineStore('auth', {
         getUser: (state) => state.user,
     },
     actions: {
-        async login(credentials = {}) {
-            const conf = useRuntimeConfig()
-            return useFetch(conf.public.baseURL + '/auth/login', {
-                body: credentials,
-                method: "POST"
-            })
-        },
         setUser(user) {
             this.user = user
         },

@@ -1,6 +1,3 @@
-import type { FetchContext } from 'ofetch'
-import type { ConsolaInstance } from 'consola'
-import type { NuxtApp } from '#app'
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {

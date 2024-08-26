@@ -40,8 +40,11 @@ import {useDrawerStore} from "~/store/Drawer";
 import DeleteAccountIcon from "~/components/icons/DeleteAccountIcon.vue";
 import AltPhoneNumberIcon from "~/components/icons/AltPhoneNumberIcon.vue";
 import DeleteAccountModal from "~/components/modal/DeleteAccountModal.vue";
+import {useAuthStore} from "~/store/Auth";
 
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 const store = useDrawerStore()
 const showDeleteAccount = ref<Boolean>(false)
 

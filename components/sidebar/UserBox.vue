@@ -15,8 +15,11 @@
 <script setup lang="ts">
 import NotificationIcon from "~/components/icons/NotificationIcon.vue";
 import ProfileIcon from "~/components/icons/SideBar/ProfileIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const goToNotificationPage = () => {
 

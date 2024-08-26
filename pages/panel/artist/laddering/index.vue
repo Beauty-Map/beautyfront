@@ -78,6 +78,7 @@ import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import DoneBlackCheckIcon from "~/components/icons/DoneBlackCheckIcon.vue";
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import ChooseLadderingPortfoliosDrawer from "~/components/drawer/ChooseLadderingPortfoliosDrawer.vue";
+import {useAuthStore} from "~/store/Auth";
 definePageMeta({
   layout: 'artist-panel',
   middleware: 'auth'
@@ -85,7 +86,8 @@ definePageMeta({
 
 const app = useNuxtApp()
 const router = useRouter()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const showAcceptModal = ref(false)
 const showLadderSomeDrawer = ref(false)

@@ -40,6 +40,8 @@
 </template>
 
 <script setup lang="ts">
+import {useAuthStore} from "~/store/Auth";
+
 const emits = defineEmits(['click'])
 const props = defineProps({
   portfolio: {
@@ -54,7 +56,9 @@ const props = defineProps({
 
 const router = useRouter()
 
-const user = useSanctumUser()
+
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const getThumbnail = () => {
   if (props.portfolio.images.length > 0) {

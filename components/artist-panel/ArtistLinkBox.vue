@@ -52,6 +52,7 @@ import ContactIcon from "~/components/icons/ContactIcon.vue";
 import BannerIcon from "~/components/icons/BannerIcon.vue";
 import ViewIcon from "~/components/icons/ViewIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
+import {useAuthStore} from "~/store/Auth";
 
 const props = defineProps({
   isProfileCompleted: {
@@ -61,7 +62,8 @@ const props = defineProps({
 })
 
 const store = useDrawerStore()
-const user = useSanctumUser()
+const auth = useAuthStore()
+const user = ref(auth.user)
 
 const openArtistProfileDrawer = () => {
   store.openArtistProfileDrawer()
