@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col items-center justify-between px-[27px] py-[18px]">
-    <div class="flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
+    <div class="w-full flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="font-semibold text-[#141414] text-right text-[16px] leading-[23px]">جزئیات بیشتر</h1>
       <div class="mt-[10px] font-normal text-right text-[#133C3E] text-[9px] leading-[12px]" v-html="description"></div>
     </div>

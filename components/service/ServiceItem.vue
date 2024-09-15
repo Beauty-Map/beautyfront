@@ -1,7 +1,6 @@
 <template>
-  <div @click="onClick" class="flex flex-col items-center justify-start">
-    <img :src="image" alt="" class="w-[57px] h-[57px] mb-2" :class="[circle ? 'rounded-[50%]' : 'rounded-[8px]']">
-    <div class="text-center leading-[18px] text-xs whitespace-nowrap">{{ title }}</div>
+  <div @click="onClick" class=" flex flex-col border-b-[#000000] border-b-[1px] items-center overflow-hidden justify-center bg-[#57FF094D] py-[10px] px-[20px] rounded-[20px]">
+    <div class="w-full text-center leading-[18px] text-xs whitespace-nowrap overflow-hidden text-ellipsis">{{ title }}</div>
   </div>
 </template>
 

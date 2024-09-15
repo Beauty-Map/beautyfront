@@ -15,6 +15,7 @@
             :zoom="zoom"
             :center="getLatLng"
             :options="options"
+            v-if="loaded"
         >
           <LTileLayer
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -45,8 +46,15 @@ const props = defineProps({
     default: ''
   },
   modelValue: {
-    type: String,
-    default: ''
+    type: Object,
+    default: {
+      lat: 34.7999968,
+      lng: 48.5166646
+    }
+  },
+  point: {
+    type: Object,
+    default: null
   },
   error: {
     type: String,
@@ -61,14 +69,15 @@ const props = defineProps({
     default: { zoomControl: false, dragging: false, doubleClickZoom: false, scrollWheelZoom: false }
   }
 })
-const lat = ref(props.modelValue?.lat ?? 47.21322)
-const lng = ref(props.modelValue?.lng ?? -1.559482)
+const lat = ref(props.modelValue?.lat)
+const lng = ref(props.modelValue?.lng)
 const errorText = ref<String>('')
 const hasError = ref<Boolean>(false)
+const loaded = ref<Boolean>(false)
 const zoom = ref(13)
 const map = ref()
 const showMapDrawer = ref(false)
-const point = ref()
+const point = ref(props.point)
 
 const getLatLng = computed(() => [lat.value, lng.value])
 
@@ -93,6 +102,7 @@ const validateLocation = (latLng) => {
 
 const validateLocationDebounce = useDebounce(validateLocation, 500)
 
+setTimeout(()=>loaded.value=true, 500)
 </script>
 
 <style scoped>

@@ -5,7 +5,7 @@
     <div v-if="!user" @click="openLoginRegisterModal" class="cursor-pointer mr-[13px] text-black text-[20px] leading-[30px] text-right">ثبت نام / ورود</div>
     <div v-else class="flex flex-col justify-start items-start w-full cursor-pointer mr-[13px] text-black text-[20px] leading-[30px] text-right">
       <div class="font-medium mb-[10px] text-[14px] leading-[21px] text-[#000000]">
-        {{ user.full_name }}
+        {{ user.full_name ? user.full_name : user.email }}
       </div>
       <div></div>
     </div>

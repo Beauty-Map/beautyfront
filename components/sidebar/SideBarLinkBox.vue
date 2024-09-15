@@ -10,11 +10,11 @@
         <ArtistPanelIcon />
       </template>
     </SideBarLink>
-    <SideBarLink to="http://127.0.0.1:5000" title="ورود به پنل بازاریاب">
-      <template #icon>
-        <ArtistPanelIcon />
-      </template>
-    </SideBarLink>
+<!--    <SideBarLink to="http://127.0.0.1:5000" title="ورود به پنل بازاریاب">-->
+<!--      <template #icon>-->
+<!--        <ArtistPanelIcon />-->
+<!--      </template>-->
+<!--    </SideBarLink>-->
     <SideBarLink to="/panel/referral" title="معرفی به دوستان">
       <template #icon>
         <ReferralIcon />

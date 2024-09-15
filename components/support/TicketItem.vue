@@ -25,7 +25,6 @@ const props = defineProps({
     required: true
   }
 })
-console.log(props.ticket, "ticket")
 </script>
 
 <style scoped>

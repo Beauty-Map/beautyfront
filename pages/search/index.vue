@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col px-[23px] py-[10px] h-full">
+  <div class="flex flex-col px-[23px] py-[10px] h-full w-full">
     <PageHeader class="mb-4"/>
     <PortfolioSearchList/>
   </div>

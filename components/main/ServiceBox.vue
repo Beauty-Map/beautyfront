@@ -8,12 +8,11 @@
 <script setup lang="ts">
 const services = ref<IService[]>([])
 const getServices = async () => {
-  const res = await useCustomFetch('/services', {
-    method: "GET",
-  })
-  if (res.data.value) {
-    services.value = res.data.value?.data as IService[]
-  }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest('/services')
+      .then(res => {
+        services.value = res.data.data as IService[]
+      })
 }
 
 onMounted(() => {

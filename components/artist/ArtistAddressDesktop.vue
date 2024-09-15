@@ -16,6 +16,7 @@
               :zoom="zoom"
               :center="getLatLng"
               :options="options"
+              v-if="hasLocation"
           >
             <LTileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -43,6 +44,7 @@ const props = defineProps({
 })
 const zoom = ref(13)
 const map = ref()
+const hasLocation = computed(() => !!props.user.location)
 const getLatLng = computed(() => [props.user.location?.lat, props.user.location?.lng])
 const point = computed(() => props.user.location)
 const options = { zoomControl: false, dragging: false, doubleClickZoom: false, scrollWheelZoom: false }

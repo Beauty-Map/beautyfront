@@ -53,19 +53,17 @@ const doRegister = async () => {
   const data = {
     email: form.value.email,
   }
-  const res = await useCustomFetch('/auth/password/forgot', {
-    method: "POST",
-    body: data
-  })
-  if (res.error.value != null) {
-    app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
-  }
-  if (res.data.value != null) {
-    const email = useCookie('email')
-    email.value = form.value.email
-    app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
-    openDrawerClicked()
-  }
+  const {$postRequest: postRequest}=app
+  postRequest('/auth/password/forgot', data)
+      .then(res => {
+        const email = useCookie('email')
+        email.value = form.value.email
+        app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
+        openDrawerClicked()
+      })
+      .catch(err => {
+        app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
+      })
 }
 
 const openLoginModal = () => {

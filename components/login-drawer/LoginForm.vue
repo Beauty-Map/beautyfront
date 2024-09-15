@@ -4,8 +4,11 @@
     <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
     <ResetPasswordLink class="mt-[18]"/>
     <PolicyAndRulesButton class="mt-[18px]" v-model="form.accept_policy"/>
-    <MainActionButton class="mt-[18px]" @click="doLogin">
-      <div class="text-white text-center text-[20px] leading-[30px]">ورود</div>
+    <MainActionButton :disabled="loading" class="mt-[18px]" @click="doLogin">
+      <div v-if="loading">
+        <LoadingComponent />
+      </div>
+      <div v-else class="text-white text-center text-[20px] leading-[30px]">ورود</div>
     </MainActionButton>
     <BottomText class="mt-[18px]" @click="openRegisterModal" title="ثبت نام"/>
   </div>
@@ -19,6 +22,7 @@ import ResetPasswordLink from "~/components/icons/AuthDrawer/ResetPasswordLink.v
 import PolicyAndRulesButton from "~/components/icons/AuthDrawer/PolicyAndRulesButton.vue";
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";
+import LoadingComponent from "~/components/global/Loading.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import {useAuthStore} from "~/store/Auth";
 
@@ -26,13 +30,37 @@ const app = useNuxtApp()
 const store = useDrawerStore()
 const router = useRouter()
 const auth = useAuthStore()
+const loading = ref(false)
 const form = ref<ILoginForm>({
   email: '',
   password: '',
   accept_policy: false,
 })
 
+const validated = () => {
+  let validated = true
+  if (!form.value.email) {
+    app.$toast.error('لطفا ایمیل خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.password) {
+    app.$toast.error('لطفا پسورد خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.accept_policy) {
+    app.$toast.error('لطفا تیک گزینه تایید قوانین را بزنید', {rtl: true})
+    validated = false
+  }
+
+  return validated
+}
+
 const doLogin = async () => {
+  if (loading.value) return
+  if (!validated()) {
+    return
+  }
+  loading.value = true
   const {$postRequest: postRequest}=app
   postRequest('/auth/login', form.value)
       .then((res) => {
@@ -45,6 +73,11 @@ const doLogin = async () => {
       })
       .catch(() => {
         app.$toast.error('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
+      })
+      .finally(() => {
+        setTimeout(()=>{
+          loading.value = false
+        }, 500)
       })
 }
 

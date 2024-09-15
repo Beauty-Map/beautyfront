@@ -199,14 +199,14 @@ const showValue = computed(() => {
 
 const doSave = () => {
   let h = type.value == 'pm' && parseInt(hour.value) < 12 ? (parseInt(hour.value) + 12).toString() : parseInt(hour.value).toString()
-  h = parseInt(h) > 10 ? h : `0${h}`
-  let m = parseInt(minute.value) > 10 ? minute.value : `0${parseInt(minute.value)}`
+  h = parseInt(h) >= 10 ? h : `0${h}`
+  let m = parseInt(minute.value) >= 10 ? minute.value : `0${parseInt(minute.value)}`
   let time = `${h}:${m}`
   emits('update:modelValue', time)
   closeModal()
 }
 
-watch(() => props.modelValue, () => reset())
+watch(() => props.modelValue, () => nextTick(() => reset()))
 const reset = () => {
   hour.value = props.modelValue.split(':')[0]
   type.value = hour.value && parseInt(hour.value) >= 12 ? 'pm' : 'am'
@@ -215,6 +215,8 @@ const reset = () => {
   minute.value = props.modelValue.split(':')[1]
   selectedMinute.value = parseInt(minute.value)
 }
+
+onMounted(() => nextTick(() => reset()))
 </script>
 
 <style scoped>

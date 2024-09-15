@@ -1,1 +1,0 @@
-import{_ as o}from"./_plugin-vue_export-helper.DlAUqK2U.js";import{o as r,c as t,K as s}from"./entry.BhzJJFkY.js";const c={},n={class:"intro_page w-full h-screen"};function a(e,_){return r(),t("div",n,[s(e.$slots,"default")])}const i=o(c,[["render",a]]);export{i as default};

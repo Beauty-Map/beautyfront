@@ -20,7 +20,7 @@
       <TelInput title="تلفن ثابت" v-model="form.tel_number" class="mt-[27px]"/>
       <ChooseCityInput title="شهر محل فعالیت" v-model="form.city_id" class="mt-[27px]"/>
       <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
-      <ChooseLocationInput title="انتخاب لوکیشن" v-model="form.location" class="mt-[27px]"/>
+      <ChooseLocationInput title="انتخاب لوکیشن" v-model="form.location" :point="form.location" class="mt-[27px]"/>
       <ChooseWorkHourInput
           title="ساعت کاری"
           :is-all-day-open="form.is_all_day_open"
@@ -34,8 +34,11 @@
       <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px]"/>
       <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
       <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.documents" class="mt-[27px]"/>
-      <MainActionButton class="mt-[80px]" @click="doSaveProfile">
-        <div class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
+      <MainActionButton :disabled="loading" class="mt-[80px]" @click="doSaveProfile">
+        <div v-if="loading">
+          <LoadingComponent />
+        </div>
+        <div v-else class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
       </MainActionButton>
     </div>
   </div>
@@ -61,12 +64,14 @@ import {useCustomFetch} from "~/composables/useCustomFetch";
 import InsertDocumentsInput from "~/components/input/InsertDocumentsInput.vue";
 import EmailInput from "~/components/input/EmailInput.vue";
 import {useAuthStore} from "~/store/Auth";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 const store = useDrawerStore()
 const auth = useAuthStore()
 const user = ref(auth.user)
 const app = useNuxtApp()
 const route = useRoute()
+const loading = ref(false)
 
 const form = ref({
   full_name: user.value?.full_name,
@@ -93,11 +98,43 @@ const goBack = () => {
 const onUserAvatarChanged = (newAvatar: string) => {
   form.value.avatar = newAvatar
 }
+
+const validated = () => {
+  let validated = true
+  if (!form.value.full_name) {
+    app.$toast.error('لطفا نام و نام خانوادگی خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.phone_number) {
+    app.$toast.error('لطفا شماره تماس خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.national_code) {
+    app.$toast.error('لطفا کد ملی خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.birth_date) {
+    app.$toast.error('لطفا تاریخ تولد خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.city_id) {
+    app.$toast.error('لطفا شهر محل فعالیت خود را انتخاب کنید', {rtl: true})
+    validated = false
+  }
+
+  return validated
+}
+
 const doSaveProfile = async () => {
+  if (loading.value) return
+  if (!validated()) {
+    return
+  }
+  loading.value = true
   const data = {
     phone_number: form.value.phone_number,
     full_name: form.value.full_name,
-    national_code: form.value.national_code.toString(),
+    national_code: form.value.national_code?.toString(),
     tel_number: form.value.tel_number,
     address: form.value.address,
     avatar: form.value.avatar,
@@ -112,19 +149,25 @@ const doSaveProfile = async () => {
     work_hours: form.value.work_hours,
     documents: form.value.documents,
   }
-  const res = await useCustomFetch('/own/artist', {
-    method: "PUT",
-    body: data,
-  })
-  if (res.error.value != null) {
-
-  }
-  if (res.data.value != null) {
-    app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
-    store.closeAllDrawers()
-    store.openArtistAgreementDrawer()
-    window.location.reload()
-  }
+  const {$putRequest: putRequest}=app
+  putRequest('/own/artist', data)
+      .then(res => {
+        app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
+        store.closeAllDrawers()
+        store.openArtistAgreementDrawer()
+        // window.location.reload()
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
+      .finally(() => {
+        setTimeout(() =>loading.value = false, 500)
+      })
 }
 </script>
 

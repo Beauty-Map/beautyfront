@@ -64,8 +64,8 @@ const days = ref([
   'جمعه',
 ])
 const selectedDays = ref<number[]>([])
-const startHour = ref('')
-const endHour = ref('')
+const startHour = ref('08:00')
+const endHour = ref('18:00')
 const isAllDayOpen = ref<Boolean>(props.isAllDayOpen)
 const isClosed = ref<Boolean>(props.isClosed)
 const isDaySelected = (index: number) => {

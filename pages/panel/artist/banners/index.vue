@@ -39,8 +39,8 @@ const goBack = () => {
   router.replace('/panel/artist')
 }
 
-const shareLink = (link: string) => {
-  navigator.share({
+const shareLink = async (link: string) => {
+  await navigator.share({
     url: link,   // URL to be shared
   })
 }

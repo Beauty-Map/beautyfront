@@ -16,10 +16,17 @@ export const useCustomFetch = async (url: string, opts: Object) => {
             referer: config.public.baseURL
         }
     }
-    return await useFetch(url, {
+    const token = useCookie('token')
+    if (token.value) {
+        headers = {
+            ...headers,
+            'Authorization': `Bearer ${token.value}`,
+        }
+    }
+    return useFetch(url, {
         baseURL: config.public.baseURL,
         headers,
         credentials: 'include',
         ...opts,
-    })
+    });
 }

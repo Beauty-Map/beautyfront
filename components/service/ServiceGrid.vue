@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 gap-x-2 gap-y-8 w-full">
+  <div class="grid grid-cols-3 gap-x-2 gap-y-8 w-full">
     <ServiceItem
       v-for="(s, i) in services"
       :key="i"

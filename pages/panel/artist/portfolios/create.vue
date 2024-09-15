@@ -69,8 +69,15 @@
   </div>
   <button
       @click="doSave"
+      :disabled="loading"
+      :class="[loading ? ' bg-[rgb(177,177,177)]' : ' bg-[#FF3CA0]']"
       class="absolute bottom-[30px] left-[22px] right-[22px] cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
-    انتشار
+    <span v-if="loading">
+      <LoadingComponent />
+    </span>
+    <span v-else>
+      انتشار
+    </span>
   </button>
 </div>
 </template>
@@ -83,7 +90,7 @@ import ChooseServiceInput from "~/components/input/ChooseServiceInput.vue";
 import ChooseMaintenanceInput from "~/components/input/ChooseMaintenanceInput.vue";
 import ChoosePriceInput from "~/components/input/ChoosePriceInput.vue";
 import ChooseCallNumberInput from "~/components/input/ChooseCallNumberInput.vue";
-import {useCustomFetch} from "~/composables/useCustomFetch";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -93,8 +100,10 @@ definePageMeta({
 const app = useNuxtApp()
 const router = useRouter()
 
-const galleryChooser = ref()
+const {$postRequest: postRequest} = useNuxtApp()
 
+const galleryChooser = ref()
+const loading = ref(false)
 const form = ref({
   title: '',
   description: '',
@@ -187,10 +196,12 @@ const uploadImage = async (image, index) => {
   form.append('type', 'portfolio')
   const xhr = new XMLHttpRequest()
   const xsrf = useCookie('XSRF-TOKEN')
+  const token = useCookie('token')
   xhr.open('post', config.public.uploadURL, true)
   xhr.withCredentials = true
   xhr.setRequestHeader('accept', `application/json`)
   xhr.setRequestHeader('X-Xsrf-Token', xsrf.value)
+  xhr.setRequestHeader('Authorization', `Bearer ${token.value}`)
   xhr.upload.onprogress = function (ev) {
     const percentComplete = (ev.loaded / ev.total) * 100;
     // uploadPercentage.value.style.width = percentComplete + '%'
@@ -219,7 +230,38 @@ const getThumbnail = computed(() => {
   return form.value.images.length > 0 ? form.value.images[0] : '/panel/choose-image.png'
 })
 
+const validated = () => {
+  let validated = true
+  if (!form.value.title) {
+    app.$toast.error('لطفا عنوان نمونه کار را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.description) {
+    app.$toast.error('لطفا توضیحات نمونه کار را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.service) {
+    app.$toast.error('لطفا دسته بندی نمونه کار را انتخاب کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.price) {
+    app.$toast.error('لطفا قیمت نمونه کار را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (selectedImages.value.length == 0) {
+    app.$toast.error('لطفا عکس های نمونه کار را انتخاب کنید', {rtl: true})
+    validated = false
+  }
+
+  return validated
+}
+
 const doSave = async () => {
+  if (loading.value) return
+  if (!validated()) {
+    return
+  }
+  loading.value = true
   const data = {
     title: form.value.title,
     description: form.value.description,
@@ -232,17 +274,23 @@ const doSave = async () => {
     second_phone_number: form.value.second_phone_number,
     images: uploadedFiles.value.map(i => i.url),
   }
-  const res = await useCustomFetch('/own/portfolios', {
-    method: "POST",
-    body: data,
-  })
-  if (res.error.value) {
-    app.$toast.error('متاسفانه خطایی رخ داده است')
-  }
-  if (res.data.value) {
-    app.$toast.success('نمونه کار با موفقیت ثبت شد')
-    await router.push('/panel/artist/portfolios')
-  }
+
+  postRequest('/own/portfolios', data)
+      .then(async res => {
+        app.$toast.success('نمونه کار با موفقیت ثبت شد')
+        await router.push('/panel/artist/portfolios')
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
+      .finally(() => {
+        loading.value = false
+      })
 }
 </script>
 

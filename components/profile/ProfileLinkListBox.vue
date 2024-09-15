@@ -12,12 +12,12 @@
       </template>
       <template #title>ورود به پنل هنرمندان</template>
     </ProfileLink>
-    <ProfileLink :to="'http://127.0.0.1:5000'">
-      <template #icon>
-        <ArtistPanelIcon />
-      </template>
-      <template #title>ورود به پنل بازاریاب</template>
-    </ProfileLink>
+<!--    <ProfileLink :to="'http://127.0.0.1:5000'">-->
+<!--      <template #icon>-->
+<!--        <ArtistPanelIcon />-->
+<!--      </template>-->
+<!--      <template #title>ورود به پنل بازاریاب</template>-->
+<!--    </ProfileLink>-->
     <ProfileLink :to="'/panel/referral'">
       <template #icon>
         <ReferralIcon />

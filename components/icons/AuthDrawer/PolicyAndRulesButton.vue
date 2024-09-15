@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-row items-start justify-start">
-    <CheckBox v-model="value" @input="onToggleCheckBox"/>
+    <CheckBox v-model="value" @click="onToggleCheckBox"/>
     <div class="mr-2 text-[#141414] font-light text-[13px] leading-[20px] text-right"><span class="text-[#085EC2]">شرایط و قوانین استفاده</span> و <span class="text-[#085EC2]">سیاست نامه حریم خصوصی</span> بیوتی مپ را می پذیرم.</div>
   </div>
 </template>
@@ -15,9 +15,10 @@ const props = defineProps({
     default: false,
   }
 })
-const value = ref<Boolean>(false)
+const value = ref<Boolean>(props.modelValue)
 
 const onToggleCheckBox = () => {
+  value.value = !value.value
   emits('update:modelValue', value.value)
 }
 </script>

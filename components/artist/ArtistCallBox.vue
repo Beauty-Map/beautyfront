@@ -1,6 +1,6 @@
 <template>
   <div class="fixed z-[99999] bg-white bottom-0 left-0 right-0 px-[15px] pt-[30px] pb-[22px] border-t border-t-[#FFEA2E] w-full flex flex-row items-center justify-between">
-    <div class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
+    <div @click="openNavigation" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
       مسیریابی
     </div>
     <div @click="openCallModal" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#157F3D] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
@@ -22,6 +22,9 @@
 <script setup lang="ts">
 
 import Modal from "~/components/modal/Modal.vue";
+import {useAuthStore} from "~/store/Auth";
+const auth = useAuthStore()
+const user = ref(auth.user)
 const showCallModal = ref<boolean>(false)
 
 const openCallModal = () => {
@@ -30,6 +33,13 @@ const openCallModal = () => {
 
 const closeCallModal = () => {
   showCallModal.value = false
+}
+
+const openNavigation = () => {
+  if (!user.value?.location) {
+    return
+  }
+  window.location.href = `geo:${user.value?.location.lat},${user.value?.location.lng}`;
 }
 </script>
 

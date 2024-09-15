@@ -28,7 +28,9 @@ definePageMeta({
   layout: 'default'
 })
 const { isMobile } = useDevice();
-const seenIntro = useCookie<boolean>('seenIntro')
+const seenIntro = useCookie<boolean>('seenIntro', {
+  maxAge: 60 * 60 * 24 * 10000
+})
 const router = useRouter()
 const nuxt = useNuxtApp()
 nuxt.hook('page:finish', () => {

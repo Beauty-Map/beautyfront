@@ -32,6 +32,7 @@ const props = defineProps({
 
 const form = ref<IRegisterForm>({
   email: '',
+  password: '',
   accept_policy: false
 })
 
@@ -39,17 +40,17 @@ const doRegister = async () => {
   const data = {
     email: form.value.email,
   }
-  const res = await useCustomFetch('/auth/register', {
-    method: "POST",
-    body: data
-  })
-  if (res.error.value != null) {
-    app.$toast.error('این ایمیل پیشتر ثبت نام کرده است', {rtl: true})
-  }
-  if (res.data.value != null) {
-    app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
-    emits('sent')
-  }
+  const {$postRequest: postRequest}=app
+  postRequest('/auth/password/forgot', data)
+      .then(res => {
+        const email = useCookie('email')
+        email.value = form.value.email
+        app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
+        emits('sent')
+      })
+      .catch(err => {
+        app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
+      })
 }
 
 const openLoginModal = () => {

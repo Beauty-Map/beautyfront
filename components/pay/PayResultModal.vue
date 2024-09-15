@@ -8,7 +8,7 @@
         <span class="text-[16px] leading-[24px]">سکه ها به اکانت کاربری شما اضافه شد</span>
       </h3>
       <div class="w-full flex flex-col justify-start items-start py-[13px] px-[20px]">
-        <img src="/panel/artist_agree_result.png" />
+        <img alt="" class="mx-[70%]" src="/panel/artist_agree_result.png" />
       </div>
       <button @click="closeModal" class="min-w-[300px] mt-4 mx-[30px] mb-[10px] bg-[#FF3CA0] rounded-full h-[48px] text-white cursor-pointer flex flex-row justify-center items-center">
         <span>متوجه شدم</span>

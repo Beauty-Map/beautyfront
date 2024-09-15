@@ -106,7 +106,7 @@ const openServicePage = () => {
 
 const openChangePlanPage = () => {
   if (user.value) {
-    router.push('/upgrade')
+    router.push('/panel/upgrade')
   } else {
     store.openLoginDrawer()
   }

@@ -15,7 +15,6 @@
       <slot />
     </div>
     <Footer class="hidden md:flex" />
-    <BottomNavigationBox class="md:hidden"/>
   </div>
 </template>
 

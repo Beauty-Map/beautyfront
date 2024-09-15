@@ -34,8 +34,8 @@ const props = defineProps({
     required: true
   },
 })
-const startHour = ref('')
-const endHour = ref('')
+const startHour = ref('08:00')
+const endHour = ref('18:00')
 const closeModal = () => {
   emits('close')
 }
