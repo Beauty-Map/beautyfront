@@ -68,6 +68,9 @@
       "#tailwind-config": [
         "./tailwind.config"
       ],
+      "#tailwind-config/*": [
+        "./tailwind.config/*"
+      ],
       "pinia": [
         "../node_modules/pinia/dist/pinia"
       ],

@@ -298,6 +298,7 @@ declare global {
   const useNthArg: typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['nthArg']
   const useNuxtApp: typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']
   const useNuxtData: typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']
+  const useNuxtDevTools: typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']
   const useOmit: typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['omit']
   const useOmitBy: typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['omitBy']
   const useOnce: typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['once']
@@ -759,6 +760,7 @@ declare module 'vue' {
     readonly useNthArg: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['nthArg']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
+    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly useOmit: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['omit']>
     readonly useOmitBy: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['omitBy']>
     readonly useOnce: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['once']>
@@ -1213,6 +1215,7 @@ declare module '@vue/runtime-core' {
     readonly useNthArg: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['nthArg']>
     readonly useNuxtApp: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/nuxt')['useNuxtApp']>
     readonly useNuxtData: UnwrapRef<typeof import('../../node_modules/nuxt/dist/app/composables/asyncData')['useNuxtData']>
+    readonly useNuxtDevTools: UnwrapRef<typeof import('../../node_modules/@nuxt/devtools/dist/runtime/use-nuxt-devtools')['useNuxtDevTools']>
     readonly useOmit: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['omit']>
     readonly useOmitBy: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['omitBy']>
     readonly useOnce: UnwrapRef<typeof import('../../node_modules/nuxt-lodash/dist/runtime/lodash')['once']>

@@ -46,6 +46,7 @@ const handleEnter = (e: any, n: number) => {
     }, 50)
   } else {
     const matched = pressedKey.match(/^[0-9]$/)
+    alert(matched, "match")
     if (!matched) {
       otpArray.value[n] = ''
       return
