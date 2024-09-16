@@ -38,7 +38,7 @@ const container = ref()
 
 const handleEnter = (e: any, n: number) => {
   const children = container.value.children
-  const pressedKey = e.key;
+  const pressedKey = e.key.toString();
   if (n > 0 && (pressedKey == 'Backspace' || pressedKey == 'Delete')) {
     otpArray.value[n] = ''
     setTimeout(() => {
@@ -46,7 +46,7 @@ const handleEnter = (e: any, n: number) => {
     }, 50)
   } else {
     const matched = pressedKey.match(/^[0-9]$/)
-    alert(matched, "match")
+    alert(matched)
     if (!matched) {
       otpArray.value[n] = ''
       return
