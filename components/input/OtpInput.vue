@@ -9,7 +9,8 @@
         :key="n"
         v-model="otpArray[n-1]"
         maxlength="1"
-        @keyup="(e) => handleEnter(e, n-1)"
+        @input="(e) => handleInput(e, n-1)"
+        @keydown.backspace.prevent="handleBackspace(n-1)"
     >
   </div>
 </template>
@@ -35,6 +36,39 @@ const props = defineProps({
 const otpArray = ref<String[]>([])
 
 const container = ref()
+
+const handleInput = (e: any, n: number) => {
+  const input = e.target.value;
+
+  // بررسی اینکه ورودی فقط عدد بین ۰ تا ۹ باشد
+  if (/^[0-9]$/.test(input)) {
+    otpArray.value[n] = input;
+
+    // اگر کاراکتر صحیح وارد شد، به فیلد بعدی برو
+    if (n < props.length - 1) {
+      setTimeout(() => {
+        container.value.children[n + 1].focus();
+      }, 50);
+    }
+  } else {
+    otpArray.value[n] = '';  // اگر ورودی نامعتبر بود پاک شود
+  }
+
+  // به‌روزرسانی مقدار اصلی
+  setTimeout(() => {
+    emits('update:modelValue', otpArray.value.join(''));
+  }, 100);
+}
+
+// مدیریت پاک کردن
+const handleBackspace = (n: number) => {
+  if (n > 0) {
+    otpArray.value[n] = '';
+    setTimeout(() => {
+      container.value.children[n - 1].focus();
+    }, 50);
+  }
+}
 
 const handleEnter = (e: any, n: number) => {
   const children = container.value.children
