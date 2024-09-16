@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as s,a as c}from"./entry.BwfMk_n7.js";const o={},n={class:"w-full flex flex-col justify-center items-center"},r=c("div",{class:"w-full font-semibold text-[16px] leading-[24px] text-[#141414] text-center"}," شماره جایگزین ",-1),a=[r];function _(l,i){return t(),s("div",n,a)}const f=e(o,[["render",_]]);export{f as H};
