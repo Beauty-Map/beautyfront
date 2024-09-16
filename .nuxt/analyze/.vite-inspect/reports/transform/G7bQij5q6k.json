@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/input/ChooseTicketSubjectInput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"flex flex-col items-start justify-start w-full\">\r\n    <div @click=\"openChooseSubjectModal\" class=\"w-full text-[#133C3E] rounded-[12px] font-medium text-[15px] text-right leading-[23px] border border-[#A9A7A7] bg-[#F7F5C4] py-[20px] px-[20px] cursor-pointer flex flex-row justify-start items-center\">\r\n      <TicketSubjectIcon />\r\n      <div class=\"flex flex-row grow mr-[10px]\">\r\n        <span v-if=\"subject\">{{ subject.title }}</span>\r\n        <span v-else>انتخاب موضوع</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"w-full flex flex-row justify-start items-center\" v-if=\"hasError\">\r\n      <ErrorRedIcon />\r\n      <span class=\"mr-1 text-[#F44336] text-[10px] leading-[12px]\">{{errorText}}</span>\r\n    </div>\r\n    <SubjectModal :open=\"showChooseSubject\" @close=\"closeChooseSubjectModal\">\r\n      <div class=\" w-full h-full min-h-[293px] justify-center items-start gap-x-[5px] gap-y-[5px] px-[28px] py-[28px] flex flex-row flex-wrap\">\r\n        <div @click.stop=\"chooseSubject(s)\" class=\"min-h-[45px] flex justify-center items-center border border-[#133C3E] text-[#133C3E] font-medium text-[12px] leading-[18px] text-center bg-[#F7F5C4] w-[125px] py-[8px] px-[16px] rounded-[10px]\" v-for=\"(s, i) in subjects\" :key=\"i\">\r\n          {{ s.title }}\r\n        </div>\r\n      </div>\r\n    </SubjectModal>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport TicketSubjectIcon from \"~/components/icons/TicketSubjectIcon.vue\";\r\nimport ErrorRedIcon from \"~/components/icons/ErrorRedIcon.vue\";\r\nimport {useCustomFetch} from \"~/composables/useCustomFetch\";\r\nimport SubjectModal from \"~/components/modal/SubjectModal.vue\";\r\n\r\nconst emits = defineEmits(['update:modelValue'])\r\nconst props = defineProps({\r\n  modelValue: {\r\n    type: Object,\r\n    default: ''\r\n  }\r\n})\r\nconst subject = ref<ISubject|null>(props.modelValue as (ISubject | null))\r\nconst errorText = ref<String>('')\r\nconst hasError = ref<Boolean>(false)\r\nconst showChooseSubject = ref<Boolean>(false)\r\nconst subjects = ref<ISubject[]>([])\r\n\r\nconst getSubjects = async () => {\r\n  const res = await useCustomFetch('/subjects', {\r\n    method: \"get\",\r\n  })\r\n  if (res.data.value) {\r\n    subjects.value = res.data.value?.data as ISubject[]\r\n  }\r\n}\r\n\r\nconst openChooseSubjectModal = () => {\r\n  showChooseSubject.value = true\r\n}\r\n\r\nconst closeChooseSubjectModal = () => {\r\n  showChooseSubject.value = false\r\n}\r\n\r\nconst chooseSubject = (s: ISubject|null) => {\r\n  subject.value = s\r\n  emits('update:modelValue', s)\r\n  closeChooseSubjectModal()\r\n}\r\n\r\ngetSubjects()\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488542671,
+      "end": 1726488542729,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488542729,
+      "end": 1726488542729,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/ChooseTicketSubjectInput.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/ChooseTicketSubjectInput.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488542729,
+      "end": 1726488542789,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542790,
+      "end": 1726488542791,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542791,
+      "end": 1726488542791,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542791,
+      "end": 1726488542791,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542793,
+      "end": 1726488542793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542793,
+      "end": 1726488542793,
+      "order": "normal"
+    }
+  ]
+}

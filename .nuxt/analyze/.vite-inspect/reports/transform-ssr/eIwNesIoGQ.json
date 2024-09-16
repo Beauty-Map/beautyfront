@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioContentHeader.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\r\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PortfolioContentHeader',\n  __ssrInlineRender: true,\n  props: {\r\n  id: {\r\n    type: Number,\r\n    default: '',\r\n    required: true\r\n  },\r\n  title: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  },\r\n  service: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\r\nconst getServices = () => {\r\n  let services = []\r\n  let s = props.service\r\n  while (s) {\r\n    services.push(s.title)\r\n    s = s.parent\r\n  }\r\n  return services.reverse().join(',')\r\n}\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\" }, _attrs))\n  }><div class=\"flex flex-col items-center justify-start\"><h1 class=\"font-medium text-[#141414] text-right text-[22px] leading-[34px]\">${\n    _ssrInterpolate(__props.title)\n  }</h1>`)\n  if (__props.service) {\n    _push(`<div class=\"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\"><span class=\"text-[#828282]\">دسته بندی:</span><span class=\"mr-1 text-[#2920D9]\">${_ssrInterpolate(getServices())}</span></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"flex flex-row justify-end gap-4\">`)\n  _push(_ssrRenderComponent(LikeIcon, null, null, _parent))\n  _push(_ssrRenderComponent(ShareIcon, null, null, _parent))\n  _push(`</div></div>`)\n}\n}\n\n})",
+      "start": 1726488555446,
+      "end": 1726488555447,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioContentHeader.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\">\r\n    <div class=\"flex flex-col items-center justify-start\">\r\n      <h1 class=\"font-medium text-[#141414] text-right text-[22px] leading-[34px]\">{{ title }}</h1>\r\n      <div v-if=\"service\" class=\"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\">\r\n        <span class=\"text-[#828282]\">دسته بندی:</span>\r\n        <span class=\"mr-1 text-[#2920D9]\">{{ getServices() }}</span>\r\n      </div>\r\n    </div>\r\n    <div class=\"flex flex-row justify-end gap-4\">\r\n      <LikeIcon />\r\n      <ShareIcon />\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\r\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\r\n\r\nconst props = defineProps({\r\n  id: {\r\n    type: Number,\r\n    default: '',\r\n    required: true\r\n  },\r\n  title: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  },\r\n  service: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n})\r\n\r\nconst getServices = () => {\r\n  let services = []\r\n  let s = props.service\r\n  while (s) {\r\n    services.push(s.title)\r\n    s = s.parent\r\n  }\r\n  return services.reverse().join(',')\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAkBA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC;;;;;;;;;;;;;;;;;;;;;;AAJuB,CAAC;AACzB,CAAC;AAID,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAeZ,CAAC;AACH,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC;AACJ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtC,CAAC,CAAC;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555447,
+      "end": 1726488555447,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555447,
+      "end": 1726488555447,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555447,
+      "end": 1726488555447,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555447,
+      "end": 1726488555447,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555447,
+      "end": 1726488555447,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555447,
+      "end": 1726488555447,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"PortfolioContentHeader\",\n  __ssrInlineRender: true,\n  props: {\n    id: {\n      type: Number,\n      default: \"\",\n      required: true\n    },\n    title: {\n      type: String,\n      default: \"\",\n      required: true\n    },\n    service: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const getServices = () => {\n      let services = [];\n      let s = props.service;\n      while (s) {\n        services.push(s.title);\n        s = s.parent;\n      }\n      return services.reverse().join(\",\");\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\" }, _attrs))}><div class=\"flex flex-col items-center justify-start\"><h1 class=\"font-medium text-[#141414] text-right text-[22px] leading-[34px]\">${_ssrInterpolate(__props.title)}</h1>`);\n      if (__props.service) {\n        _push(`<div class=\"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\"><span class=\"text-[#828282]\">دسته بندی:</span><span class=\"mr-1 text-[#2920D9]\">${_ssrInterpolate(getServices())}</span></div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`</div><div class=\"flex flex-row justify-end gap-4\">`);\n      _push(_ssrRenderComponent(LikeIcon, null, null, _parent));\n      _push(_ssrRenderComponent(ShareIcon, null, null, _parent));\n      _push(`</div></div>`);\n    };\n  }\n});\n",
+      "start": 1726488555447,
+      "end": 1726488555464,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioContentHeader.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\r\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PortfolioContentHeader',\n  __ssrInlineRender: true,\n  props: {\r\n  id: {\r\n    type: Number,\r\n    default: '',\r\n    required: true\r\n  },\r\n  title: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  },\r\n  service: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\r\nconst getServices = () => {\r\n  let services = []\r\n  let s = props.service\r\n  while (s) {\r\n    services.push(s.title)\r\n    s = s.parent\r\n  }\r\n  return services.reverse().join(',')\r\n}\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\" }, _attrs))\n  }><div class=\"flex flex-col items-center justify-start\"><h1 class=\"font-medium text-[#141414] text-right text-[22px] leading-[34px]\">${\n    _ssrInterpolate(__props.title)\n  }</h1>`)\n  if (__props.service) {\n    _push(`<div class=\"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\"><span class=\"text-[#828282]\">دسته بندی:</span><span class=\"mr-1 text-[#2920D9]\">${_ssrInterpolate(getServices())}</span></div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`</div><div class=\"flex flex-row justify-end gap-4\">`)\n  _push(_ssrRenderComponent(LikeIcon, null, null, _parent))\n  _push(_ssrRenderComponent(ShareIcon, null, null, _parent))\n  _push(`</div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,kBAAkB,iBAAiB,kBAAkB,uBAAuB;AAEhI,OAAO,cAAc;AACrB,OAAO,eAAe;AAGtB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,IAAI;AAAA,MACF,MAAM;AAAA,MACN,SAAS;AAAA,MACT,UAAU;AAAA,IACZ;AAAA,IACA,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS;AAAA,MACT,UAAU;AAAA,IACZ;AAAA,IACA,SAAS;AAAA,MACP,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ;AAEd,UAAM,cAAc,MAAM;AACxB,UAAI,WAAW,CAAC;AAChB,UAAI,IAAI,MAAM;AACd,aAAO,GAAG;AACR,iBAAS,KAAK,EAAE,KAAK;AACrB,YAAI,EAAE;AAAA,MACR;AACA,aAAO,SAAS,QAAQ,EAAE,KAAK,GAAG;AAAA,IACpC;AAEA,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OACJ,gBAAgB,YAAY,EAAE,OAAO,oGAAoG,GAAG,MAAM,CAAC,CACrJ,uIACE,gBAAgB,QAAQ,KAAK,CAC/B,OAAO;AACP,UAAI,QAAQ,SAAS;AACnB,cAAM,0LAA0L,gBAAgB,YAAY,CAAC,CAAC,eAAe;AAAA,MAC/O,OAAO;AACL,cAAM,SAAS;AAAA,MACjB;AACA,YAAM,qDAAqD;AAC3D,YAAM,oBAAoB,UAAU,MAAM,MAAM,OAAO,CAAC;AACxD,YAAM,oBAAoB,WAAW,MAAM,MAAM,OAAO,CAAC;AACzD,YAAM,cAAc;AAAA,IACtB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555464,
+      "end": 1726488555464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555464,
+      "end": 1726488555464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488555464,
+      "end": 1726488555464,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555465,
+      "end": 1726488555465,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555465,
+      "end": 1726488555465,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555465,
+      "end": 1726488555465,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555465,
+      "end": 1726488555465,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555465,
+      "end": 1726488555465,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555466,
+      "end": 1726488555466,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555466,
+      "end": 1726488555466,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555469,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555470,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555470,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555470,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555470,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555470,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555470,
+      "end": 1726488555470,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555471,
+      "end": 1726488555471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555472,
+      "end": 1726488555472,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555472,
+      "end": 1726488555473,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555472,
+      "end": 1726488555473,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555473,
+      "end": 1726488555480,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555473,
+      "end": 1726488555482,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555486,
+      "end": 1726488555486,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555486,
+      "end": 1726488555486,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555486,
+      "end": 1726488555487,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555486,
+      "end": 1726488555487,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555487,
+      "end": 1726488555487,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555487,
+      "end": 1726488555487,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555488,
+      "end": 1726488555488,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555489,
+      "end": 1726488555489,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555490,
+      "end": 1726488555490,
+      "order": "normal"
+    }
+  ]
+}

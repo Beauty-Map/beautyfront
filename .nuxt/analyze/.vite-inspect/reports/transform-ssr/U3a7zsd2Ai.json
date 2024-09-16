@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"pt-[20px] w-full flex flex-col items-start justify-start\">\r\n    <div class=\"relative w-full flex flex-row items-center justify-center py-[23px]\">\r\n      <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">آمار بازدید</div>\r\n      <BackIcon @click=\"goBack\" class=\"absolute left-[10px]\"/>\r\n    </div>\r\n    <div class=\"w-full gap-[20px] text-center flex flex-col justify-start items-center px-[10px] mt-[45px]\">\r\n      <div class=\"bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-[25px] px-[5px] py-[10px]\">\r\n        <client-only>\r\n          <LazyViewsChart :height=\"240\" :chart-options=\"chartOptions\" :series=\"series\"/>\r\n        </client-only>\r\n      </div>\r\n      <div class=\"bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-[25px] px-[5px] py-[10px]\">\r\n        <client-only>\r\n          <LazyViewsChart :height=\"240\" :chart-options=\"chartOptions\" :series=\"series\"/>\r\n        </client-only>\r\n      </div>\r\n      <div class=\"bg-gradient-to-r from-red-500 to-orange-500 rounded-[25px] px-[5px] py-[10px]\">\r\n        <client-only>\r\n          <LazyViewsChart :height=\"240\" :chart-options=\"chartOptions\" :series=\"series\"/>\r\n        </client-only>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\ndefinePageMeta({\r\n  layout: 'artist-panel',\r\n  middleware: 'auth'\r\n})\r\n\r\nconst router = useRouter()\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\n\r\nconst series = [{\r\n  name: \"STOCK ABC\",\r\n  data: [30, 40, 35, 50, 49, 60, 70, 91],\r\n}]\r\nconst chartOptions = {\r\n  chart: {\r\n    type: 'area',\r\n    height: 350,\r\n    zoom: {\r\n      enabled: false\r\n    }\r\n  },\r\n  xaxis: {\r\n    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],\r\n  },\r\n}\r\n\r\nconst goBack = () => {\r\n  router.replace('/panel/artist')\r\n}\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488552576,
+      "end": 1726488552618,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488552618,
+      "end": 1726488552618,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"pages/panel/artist/views/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726488552618,
+      "end": 1726488552621,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488552621,
+      "end": 1726488552621,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488552621,
+      "end": 1726488552621,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488552621,
+      "end": 1726488552621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488552621,
+      "end": 1726488552621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488552621,
+      "end": 1726488552621,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488552622,
+      "end": 1726488552622,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488552622,
+      "end": 1726488552622,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488552623,
+      "end": 1726488552623,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488552624,
+      "end": 1726488552626,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488552624,
+      "end": 1726488552626,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488552626,
+      "end": 1726488552626,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488552626,
+      "end": 1726488552626,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488552626,
+      "end": 1726488552626,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488552626,
+      "end": 1726488552626,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488552627,
+      "end": 1726488552627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488552627,
+      "end": 1726488552627,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488552627,
+      "end": 1726488552627,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488552627,
+      "end": 1726488552627,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488552627,
+      "end": 1726488552627,
+      "order": "normal"
+    }
+  ]
+}

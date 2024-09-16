@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/intro/IntroList.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"max-w-[322px] flex flex-col justify-start items-center relative\">\r\n    <client-only>\r\n      <carousel ref=\"carouselRef\" :items-to-show=\"1\" @slide-end=\"handleSlideChange\" :options=\"slickOptions\" class=\" h-full\">\r\n        <slide class=\"relative h-full\" v-for=\"(s, n) in slides\" :key=\"n\">\r\n          <IntroItem\r\n              :intro=\"s\"\r\n          />\r\n        </slide>\r\n      </carousel>\r\n    </client-only>\r\n    <div class=\"absolute bottom-[-75px] right-[25px] left-[25px]\">\r\n      <button v-if=\"currentIndex == 2\" class=\"w-full bg-[#FF3CA0] rounded-[15px] py-[6px] px-[60px] text-white cursor-pointer flex flex-row justify-center items-center gap-[10px]\" @click=\"goNext\">\r\n        <span>شروع</span>\r\n      </button>\r\n      <button v-else class=\"cursor-pointer flex flex-row justify-start items-center gap-[10px]\" @click=\"goNext\">\r\n        <svg width=\"50\" height=\"41\" viewBox=\"0 0 50 41\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n          <rect width=\"50\" height=\"41\" rx=\"15\" fill=\"#FF3CA0\"/>\r\n          <path d=\"M21.025 30.5L19.25 28.725L27.475 20.5L19.25 12.275L21.025 10.5L31.025 20.5L21.025 30.5Z\" fill=\"white\"/>\r\n        </svg>\r\n        <span>برو بعدی</span>\r\n      </button>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport IntroItem from \"~/components/intro/IntroItem.vue\";\r\nimport {Carousel, Slide} from \"vue3-carousel\";\r\nimport 'vue3-carousel/dist/carousel.css'\r\n\r\nconst props = defineProps({\r\n  slides: {\r\n    type: Array,\r\n    default: () => []\r\n  },\r\n})\r\n\r\nconst router = useRouter()\r\n\r\nconst slickOptions = {\r\n  autoplay: false,\r\n  arrows: false,\r\n  infinite: true,\r\n  lazyLoad: 'progressive',\r\n};\r\nconst carouselRef = ref()\r\nconst currentIndex = ref<number>(0)\r\n\r\nconst handleSlideChange = (index: Object) => {\r\n  currentIndex.value = index.currentSlideIndex;\r\n}\r\nconst goNext = () => {\r\n  if (currentIndex.value < 2) {\r\n    currentIndex.value += 1\r\n    carouselRef.value?.slideTo(currentIndex.value);\r\n    return\r\n  }\r\n  router.replace('/')\r\n}\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488541023,
+      "end": 1726488541104,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488541104,
+      "end": 1726488541104,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/intro/IntroList.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/intro/IntroList.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488541104,
+      "end": 1726488541267,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488541271,
+      "end": 1726488541271,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488541271,
+      "end": 1726488541271,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488541271,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488541272,
+      "end": 1726488541273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488541273,
+      "end": 1726488541273,
+      "order": "normal"
+    }
+  ]
+}

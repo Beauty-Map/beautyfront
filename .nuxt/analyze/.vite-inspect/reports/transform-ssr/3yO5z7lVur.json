@@ -1,0 +1,258 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/ContactRedIcon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<template>\r\n  <svg width=\"19\" height=\"18\" viewBox=\"0 0 19 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M17.45 18C15.3667 18 13.3083 17.5458 11.275 16.6375C9.24167 15.7292 7.39167 14.4417 5.725 12.775C4.05833 11.1083 2.77083 9.25833 1.8625 7.225C0.954167 5.19167 0.5 3.13333 0.5 1.05C0.5 0.75 0.6 0.5 0.8 0.3C1 0.1 1.25 0 1.55 0H5.6C5.83333 0 6.04167 0.0791667 6.225 0.2375C6.40833 0.395833 6.51667 0.583333 6.55 0.8L7.2 4.3C7.23333 4.56667 7.225 4.79167 7.175 4.975C7.125 5.15833 7.03333 5.31667 6.9 5.45L4.475 7.9C4.80833 8.51667 5.20417 9.1125 5.6625 9.6875C6.12083 10.2625 6.625 10.8167 7.175 11.35C7.69167 11.8667 8.23333 12.3458 8.8 12.7875C9.36667 13.2292 9.96667 13.6333 10.6 14L12.95 11.65C13.1 11.5 13.2958 11.3875 13.5375 11.3125C13.7792 11.2375 14.0167 11.2167 14.25 11.25L17.7 11.95C17.9333 12.0167 18.125 12.1375 18.275 12.3125C18.425 12.4875 18.5 12.6833 18.5 12.9V16.95C18.5 17.25 18.4 17.5 18.2 17.7C18 17.9 17.75 18 17.45 18ZM3.525 6L5.175 4.35L4.75 2H2.525C2.60833 2.68333 2.725 3.35833 2.875 4.025C3.025 4.69167 3.24167 5.35 3.525 6ZM12.475 14.95C13.125 15.2333 13.7875 15.4583 14.4625 15.625C15.1375 15.7917 15.8167 15.9 16.5 15.95V13.75L14.15 13.275L12.475 14.95Z\" fill=\"#F44336\"/>\r\n  </svg>\r\n</template>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488554725,
+      "end": 1726488555191,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555191,
+      "end": 1726488555191,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<svg${_ssrRenderAttrs(_mergeProps({\n    width: \"19\",\n    height: \"18\",\n    viewBox: \"0 0 19 18\",\n    fill: \"none\",\n    xmlns: \"http://www.w3.org/2000/svg\"\n  }, _attrs))}><path d=\"M17.45 18C15.3667 18 13.3083 17.5458 11.275 16.6375C9.24167 15.7292 7.39167 14.4417 5.725 12.775C4.05833 11.1083 2.77083 9.25833 1.8625 7.225C0.954167 5.19167 0.5 3.13333 0.5 1.05C0.5 0.75 0.6 0.5 0.8 0.3C1 0.1 1.25 0 1.55 0H5.6C5.83333 0 6.04167 0.0791667 6.225 0.2375C6.40833 0.395833 6.51667 0.583333 6.55 0.8L7.2 4.3C7.23333 4.56667 7.225 4.79167 7.175 4.975C7.125 5.15833 7.03333 5.31667 6.9 5.45L4.475 7.9C4.80833 8.51667 5.20417 9.1125 5.6625 9.6875C6.12083 10.2625 6.625 10.8167 7.175 11.35C7.69167 11.8667 8.23333 12.3458 8.8 12.7875C9.36667 13.2292 9.96667 13.6333 10.6 14L12.95 11.65C13.1 11.5 13.2958 11.3875 13.5375 11.3125C13.7792 11.2375 14.0167 11.2167 14.25 11.25L17.7 11.95C17.9333 12.0167 18.125 12.1375 18.275 12.3125C18.425 12.4875 18.5 12.6833 18.5 12.9V16.95C18.5 17.25 18.4 17.5 18.2 17.7C18 17.9 17.75 18 17.45 18ZM3.525 6L5.175 4.35L4.75 2H2.525C2.60833 2.68333 2.725 3.35833 2.875 4.025C3.025 4.69167 3.24167 5.35 3.525 6ZM12.475 14.95C13.125 15.2333 13.7875 15.4583 14.4625 15.625C15.1375 15.7917 15.8167 15.9 16.5 15.95V13.75L14.15 13.275L12.475 14.95Z\" fill=\"#F44336\"></path></svg>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/icons/ContactRedIcon.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726488555191,
+      "end": 1726488555192,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/icons/ContactRedIcon.vue"
+        ],
+        "names": [],
+        "mappings": ";;;;EAAA,aAAA,gBAAA;IAKO,KAAK,EAAC,IAAI;IAAC,MAAM,EAAC,IAAI;IAAC,OAAO,EAAC,WAAW;IAAC,IAAI,EAAC,MAAM;IAAC,KAAK,EAAC,4BAA4B;KALhG",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<template>\r\n  <svg width=\"19\" height=\"18\" viewBox=\"0 0 19 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M17.45 18C15.3667 18 13.3083 17.5458 11.275 16.6375C9.24167 15.7292 7.39167 14.4417 5.725 12.775C4.05833 11.1083 2.77083 9.25833 1.8625 7.225C0.954167 5.19167 0.5 3.13333 0.5 1.05C0.5 0.75 0.6 0.5 0.8 0.3C1 0.1 1.25 0 1.55 0H5.6C5.83333 0 6.04167 0.0791667 6.225 0.2375C6.40833 0.395833 6.51667 0.583333 6.55 0.8L7.2 4.3C7.23333 4.56667 7.225 4.79167 7.175 4.975C7.125 5.15833 7.03333 5.31667 6.9 5.45L4.475 7.9C4.80833 8.51667 5.20417 9.1125 5.6625 9.6875C6.12083 10.2625 6.625 10.8167 7.175 11.35C7.69167 11.8667 8.23333 12.3458 8.8 12.7875C9.36667 13.2292 9.96667 13.6333 10.6 14L12.95 11.65C13.1 11.5 13.2958 11.3875 13.5375 11.3125C13.7792 11.2375 14.0167 11.2167 14.25 11.25L17.7 11.95C17.9333 12.0167 18.125 12.1375 18.275 12.3125C18.425 12.4875 18.5 12.6833 18.5 12.9V16.95C18.5 17.25 18.4 17.5 18.2 17.7C18 17.9 17.75 18 17.45 18ZM3.525 6L5.175 4.35L4.75 2H2.525C2.60833 2.68333 2.725 3.35833 2.875 4.025C3.025 4.69167 3.24167 5.35 3.525 6ZM12.475 14.95C13.125 15.2333 13.7875 15.4583 14.4625 15.625C15.1375 15.7917 15.8167 15.9 16.5 15.95V13.75L14.15 13.275L12.475 14.95Z\" fill=\"#F44336\"/>\r\n  </svg>\r\n</template>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555192,
+      "end": 1726488555192,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555192,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555193,
+      "end": 1726488555193,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555193,
+      "end": 1726488555194,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555194,
+      "end": 1726488555194,
+      "order": "normal"
+    }
+  ]
+}

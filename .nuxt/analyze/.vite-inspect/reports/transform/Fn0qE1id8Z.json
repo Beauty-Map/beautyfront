@@ -1,0 +1,222 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/service/ServiceGrid.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid grid-cols-3 gap-x-2 gap-y-8 w-full\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ServiceGrid',\n  props: {\r\n  circle: {\r\n    type: Boolean,\r\n    default: true\r\n  },\r\n  services: {\r\n    type: Array,\r\n    default: () => []\r\n  },\r\n  isLink: {\r\n    type: Boolean,\r\n    default: true\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_ServiceItem = _resolveComponent(\"ServiceItem\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.services, (s, i) => {\n      return (_openBlock(), _createBlock(_component_ServiceItem, {\n        key: i,\n        id: s.id,\n        title: s.title,\n        image: s.image,\n        circle: __props.circle,\n        \"is-link\": __props.isLink\n      }, null, 8, [\"id\", \"title\", \"image\", \"circle\", \"is-link\"]))\n    }), 128))\n  ]))\n}\n}\n\n})",
+      "start": 1726488541821,
+      "end": 1726488541821
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541821,
+      "end": 1726488541821,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541821,
+      "end": 1726488541821,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541821,
+      "end": 1726488541821,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541821,
+      "end": 1726488541821,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"grid grid-cols-3 gap-x-2 gap-y-8 w-full\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ServiceGrid\",\n  props: {\n    circle: {\n      type: Boolean,\n      default: true\n    },\n    services: {\n      type: Array,\n      default: () => []\n    },\n    isLink: {\n      type: Boolean,\n      default: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      const _component_ServiceItem = _resolveComponent(\"ServiceItem\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.services, (s, i) => {\n          return _openBlock(), _createBlock(_component_ServiceItem, {\n            key: i,\n            id: s.id,\n            title: s.title,\n            image: s.image,\n            circle: __props.circle,\n            \"is-link\": __props.isLink\n          }, null, 8, [\"id\", \"title\", \"image\", \"circle\", \"is-link\"]);\n        }), 128))\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488541821,
+      "end": 1726488542037,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/service/ServiceGrid.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"grid grid-cols-3 gap-x-2 gap-y-8 w-full\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ServiceGrid',\n  props: {\r\n  circle: {\r\n    type: Boolean,\r\n    default: true\r\n  },\r\n  services: {\r\n    type: Array,\r\n    default: () => []\r\n  },\r\n  isLink: {\r\n    type: Boolean,\r\n    default: true\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_ServiceItem = _resolveComponent(\"ServiceItem\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.services, (s, i) => {\n      return (_openBlock(), _createBlock(_component_ServiceItem, {\n        key: i,\n        id: s.id,\n        title: s.title,\n        image: s.image,\n        circle: __props.circle,\n        \"is-link\": __props.isLink\n      }, null, 8, [\"id\", \"title\", \"image\", \"circle\", \"is-link\"]))\n    }), 128))\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,aAAa,YAAY,WAAW,aAAa,YAAY,sBAAsB,qBAAqB,oBAAoB,mBAAmB,eAAe,oBAAoB;AAEzM,MAAM,aAAa,EAAE,OAAO,0CAA0C;AAGtE,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,UAAU;AAAA,MACR,MAAM;AAAA,MACN,SAAS,MAAM,CAAC;AAAA,IAClB;AAAA,IACA,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAGd,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,yBAAyB,kBAAkB,aAAa;AAE9D,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,SAC1D,WAAW,IAAI,GAAG,oBAAoB,WAAW,MAAM,YAAY,QAAQ,UAAU,CAAC,GAAG,MAAM;AAC9F,iBAAQ,WAAW,GAAG,aAAa,wBAAwB;AAAA,YACzD,KAAK;AAAA,YACL,IAAI,EAAE;AAAA,YACN,OAAO,EAAE;AAAA,YACT,OAAO,EAAE;AAAA,YACT,QAAQ,QAAQ;AAAA,YAChB,WAAW,QAAQ;AAAA,UACrB,GAAG,MAAM,GAAG,CAAC,MAAM,SAAS,SAAS,UAAU,SAAS,CAAC;AAAA,QAC3D,CAAC,GAAG,GAAG;AAAA,MACT,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542037,
+      "end": 1726488542037,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488542038,
+      "end": 1726488542038,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542038,
+      "end": 1726488542039,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542039,
+      "end": 1726488542039,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542039,
+      "end": 1726488542039,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542039,
+      "end": 1726488542047,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542049,
+      "end": 1726488542049,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542049,
+      "end": 1726488542049,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542049,
+      "end": 1726488542050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542050,
+      "end": 1726488542050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/home/saeed/w/projects/beautymap/beautyfront/components/service/ServiceItem.vue\";\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"grid grid-cols-3 gap-x-2 gap-y-8 w-full\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ServiceGrid\",\n  props: {\n    circle: {\n      type: Boolean,\n      default: true\n    },\n    services: {\n      type: Array,\n      default: () => []\n    },\n    isLink: {\n      type: Boolean,\n      default: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      const _component_ServiceItem = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.services, (s, i) => {\n          return _openBlock(), _createBlock(_component_ServiceItem, {\n            key: i,\n            id: s.id,\n            title: s.title,\n            image: s.image,\n            circle: __props.circle,\n            \"is-link\": __props.isLink\n          }, null, 8, [\"id\", \"title\", \"image\", \"circle\", \"is-link\"]);\n        }), 128))\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488542050,
+      "end": 1726488542050,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542051,
+      "end": 1726488542051,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542051,
+      "end": 1726488542051,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542052,
+      "end": 1726488542052,
+      "order": "normal"
+    }
+  ]
+}

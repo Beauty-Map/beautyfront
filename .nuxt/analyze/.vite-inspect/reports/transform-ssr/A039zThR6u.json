@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/drawer/MapDrawer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div\r\n      class=\"fixed flex flex-col h-full md:hide top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]\"\r\n      :class=\"[isOpen ? 'left-0 scale-1' : 'left-[-100%] hidden scale-0']\"\r\n  >\r\n    <div class=\"w-full h-screen\">\r\n      <LMap\r\n          ref=\"map\"\r\n          :zoom=\"zoom\"\r\n          :center=\"getLatLng\"\r\n          :options=\"options\"\r\n          class=\"w-full h-full\"\r\n          @click=\"onMapClicked\"\r\n      >\r\n        <LTileLayer\r\n            url=\"https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png\"\r\n            attribution=\"&amp;copy; <a href=&quot;https://www.SaeedHeydari.ir/&quot;>SaeedHeydari.ir</a> contributors\"\r\n            layer-type=\"base\"\r\n            name=\"OpenStreetMap\"\r\n        />\r\n        <LMarker :draggable=\"true\" :lat-lng=\"point\" v-if=\"point\"/>\r\n      </LMap>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nconst emits = defineEmits(['close', 'choose'])\r\nconst props = defineProps({\r\n  isOpen: {\r\n    type: Boolean,\r\n    required: true\r\n  },\r\n  showPoint: {\r\n    type: Boolean,\r\n    required: false\r\n  },\r\n  options: {\r\n    type: Object,\r\n    default: { zoomControl: true, dragging: true, doubleClickZoom: true, scrollWheelZoom: true }\r\n  }\r\n})\r\n\r\nconst lat = ref(47.21322)\r\nconst lng = ref(-1.559482)\r\nconst zoom = ref(13)\r\nconst map = ref()\r\nconst getLatLng = computed(() => [lat.value, lng.value])\r\nconst showPoint = ref(props.showPoint)\r\nconst point = ref()\r\nconst l = ref()\r\n\r\nconst close = () => {\r\n  emits('close')\r\n}\r\n\r\nonMounted(() => {\r\n  l.value = window.L\r\n  navigator.geolocation.getCurrentPosition(function(position) {\r\n    lat.value = position.coords.latitude\r\n    lng.value = position.coords.longitude\r\n  })\r\n})\r\n\r\nconst onMapClicked = (event) => {\r\n  lat.value = event.latlng.lat\r\n  lng.value = event.latlng.lng\r\n  point.value = l.value.latLng(lat.value, lng.value)\r\n  showPoint.value = true\r\n  emits('choose', event.latlng)\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488556258,
+      "end": 1726488556388,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488556388,
+      "end": 1726488556388,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/MapDrawer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/MapDrawer.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/drawer/MapDrawer.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726488556388,
+      "end": 1726488556432,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556433,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556433,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556434,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556434,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556434,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556434,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "normal"
+    }
+  ]
+}

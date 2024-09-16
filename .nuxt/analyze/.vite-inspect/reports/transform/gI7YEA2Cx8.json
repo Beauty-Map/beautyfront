@@ -1,0 +1,218 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/global/main/Title.vue?nuxt_component=async&nuxt_component_name=MainTitle",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <h1 class=\"main-title text-right\">{{ title }}</h1>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nconst props = defineProps({\r\n  title: {\r\n    type: String,\r\n    default: ''\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488536765,
+      "end": 1726488537226,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488537226,
+      "end": 1726488537226,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/global/main/Title.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/global/main/Title.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488537226,
+      "end": 1726488539574,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488539574,
+      "end": 1726488539574,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488539574,
+      "end": 1726488539575,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488539575,
+      "end": 1726488539576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488539576,
+      "end": 1726488539576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "result": "import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/components/global/main/Title.vue\").then(r => r.default))",
+      "start": 1726488539576,
+      "end": 1726488539578,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "replace",
+      "start": 1726488539578,
+      "end": 1726488539578,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488539581,
+      "end": 1726488539581,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488539583,
+      "end": 1726488539584,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488539586,
+      "end": 1726488539587,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488539587,
+      "end": 1726488539587,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488539588,
+      "end": 1726488539588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488539593,
+      "end": 1726488539593,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488539593,
+      "end": 1726488539593,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488539594,
+      "end": 1726488539594,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { defineAsyncComponent } from \"vue\"\nexport default defineAsyncComponent(() => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/components/global/main/Title.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(r => r.default))",
+      "start": 1726488539596,
+      "end": 1726488539596,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488539596,
+      "end": 1726488539597,
+      "order": "normal"
+    }
+  ]
+}

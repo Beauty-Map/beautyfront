@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/favourite/TabHeader.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full flex flex-row justify-evenly items-center px-[17px]\">\r\n    <div class=\"text-center text-[#141414] font-medium text-[13px] transition-all duration-500 leading-[20px] px-[15px] py-[7px] border-b-[4px]\"\r\n         @click=\"doSelect(1)\"\r\n         :class=\"[index == 1 ? ' border-b-[#1BD4CA]' : 'border-b-white']\"\r\n    >\r\n      نمونه کار\r\n    </div>\r\n    <div class=\"text-center text-[#141414] font-medium text-[13px] transition-all duration-500 leading-[20px] px-[15px] py-[7px] border-b-[4px]\"\r\n         @click=\"doSelect(2)\"\r\n         :class=\"[index == 2 ? 'border-b-[#1BD4CA]' : 'border-b-white']\"\r\n    >\r\n      هنرمندان\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nconst emits = defineEmits(['select'])\r\n\r\nconst index = ref<number>(1)\r\n\r\nconst doSelect = (i: number) => {\r\n  index.value = i\r\n  emits('select', i)\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488541061,
+      "end": 1726488541122,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488541122,
+      "end": 1726488541122,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/favourite/TabHeader.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/favourite/TabHeader.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488541122,
+      "end": 1726488541267,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488541268,
+      "end": 1726488541268,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488541271,
+      "end": 1726488541271,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488541271,
+      "end": 1726488541271,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488541272,
+      "end": 1726488541272,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488541272,
+      "end": 1726488541273,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488541273,
+      "end": 1726488541273,
+      "order": "normal"
+    }
+  ]
+}

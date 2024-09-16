@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\r\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\r\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItem',\n  __ssrInlineRender: true,\n  props: {\r\n  ticket: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(TicketItemHeader, {\n    id: __props.ticket.id,\n    \"created-at\": __props.ticket.created_at\n  }, null, _parent))\n  _push(_ssrRenderComponent(TicketItemContent, {\n    status: __props.ticket.status,\n    subject: __props.ticket.subject\n  }, null, _parent))\n  _push(_ssrRenderComponent(TicketItemFooter, {\n    status: __props.ticket.status,\n    subject: __props.ticket.subject\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n})",
+      "start": 1726488553886,
+      "end": 1726488553886,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\">\r\n    <TicketItemHeader\r\n        :id=\"ticket.id\"\r\n        :created-at=\"ticket.created_at\"\r\n    />\r\n    <TicketItemContent\r\n        :status=\"ticket.status\"\r\n        :subject=\"ticket.subject\"\r\n    />\r\n    <TicketItemFooter\r\n        :status=\"ticket.status\"\r\n        :subject=\"ticket.subject\"\r\n    />\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\r\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\r\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\r\nconst props = defineProps({\r\n  ticket: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAkBA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;;;;;;;AAHlD,CAAC;AAIzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAKZ,CAAC;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488553886,
+      "end": 1726488553886,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488553886,
+      "end": 1726488553886,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488553886,
+      "end": 1726488553887,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488553886,
+      "end": 1726488553887,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488553887,
+      "end": 1726488553887,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488553887,
+      "end": 1726488553887,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"TicketItem\",\n  __ssrInlineRender: true,\n  props: {\n    ticket: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\" }, _attrs))}>`);\n      _push(_ssrRenderComponent(TicketItemHeader, {\n        id: __props.ticket.id,\n        \"created-at\": __props.ticket.created_at\n      }, null, _parent));\n      _push(_ssrRenderComponent(TicketItemContent, {\n        status: __props.ticket.status,\n        subject: __props.ticket.subject\n      }, null, _parent));\n      _push(_ssrRenderComponent(TicketItemFooter, {\n        status: __props.ticket.status,\n        subject: __props.ticket.subject\n      }, null, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
+      "start": 1726488553887,
+      "end": 1726488553994,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\r\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\r\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItem',\n  __ssrInlineRender: true,\n  props: {\r\n  ticket: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(TicketItemHeader, {\n    id: __props.ticket.id,\n    \"created-at\": __props.ticket.created_at\n  }, null, _parent))\n  _push(_ssrRenderComponent(TicketItemContent, {\n    status: __props.ticket.status,\n    subject: __props.ticket.subject\n  }, null, _parent))\n  _push(_ssrRenderComponent(TicketItemFooter, {\n    status: __props.ticket.status,\n    subject: __props.ticket.subject\n  }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,kBAAkB,uBAAuB;AAE7F,OAAO,sBAAsB;AAC7B,OAAO,uBAAuB;AAC9B,OAAO,sBAAsB;AAE7B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY,EAAE,OAAO,+GAA+G,GAAG,MAAM,CAAC,CAAC,GAAG;AAC/K,YAAM,oBAAoB,kBAAkB;AAAA,QAC1C,IAAI,QAAQ,OAAO;AAAA,QACnB,cAAc,QAAQ,OAAO;AAAA,MAC/B,GAAG,MAAM,OAAO,CAAC;AACjB,YAAM,oBAAoB,mBAAmB;AAAA,QAC3C,QAAQ,QAAQ,OAAO;AAAA,QACvB,SAAS,QAAQ,OAAO;AAAA,MAC1B,GAAG,MAAM,OAAO,CAAC;AACjB,YAAM,oBAAoB,kBAAkB;AAAA,QAC1C,QAAQ,QAAQ,OAAO;AAAA,QACvB,SAAS,QAAQ,OAAO;AAAA,MAC1B,GAAG,MAAM,OAAO,CAAC;AACjB,YAAM,QAAQ;AAAA,IAChB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488553994,
+      "end": 1726488553994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488553994,
+      "end": 1726488553994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488553994,
+      "end": 1726488553994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488553994,
+      "end": 1726488553994,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488553994,
+      "end": 1726488553995,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488553994,
+      "end": 1726488553995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488553995,
+      "end": 1726488553995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488553995,
+      "end": 1726488553995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488553995,
+      "end": 1726488553995,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488553995,
+      "end": 1726488553995,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488553996,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488553997,
+      "end": 1726488553997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488553998,
+      "end": 1726488554001,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488553998,
+      "end": 1726488554001,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488554001,
+      "end": 1726488554001,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488554001,
+      "end": 1726488554001,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488554001,
+      "end": 1726488554001,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488554001,
+      "end": 1726488554001,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488554002,
+      "end": 1726488554002,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488554002,
+      "end": 1726488554002,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488554002,
+      "end": 1726488554002,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488554002,
+      "end": 1726488554002,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488554002,
+      "end": 1726488554002,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\" }\n\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\r\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\r\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItem',\n  props: {\r\n  ticket: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(TicketItemHeader, {\n      id: __props.ticket.id,\n      \"created-at\": __props.ticket.created_at\n    }, null, 8, [\"id\", \"created-at\"]),\n    _createVNode(TicketItemContent, {\n      status: __props.ticket.status,\n      subject: __props.ticket.subject\n    }, null, 8, [\"status\", \"subject\"]),\n    _createVNode(TicketItemFooter, {\n      status: __props.ticket.status,\n      subject: __props.ticket.subject\n    }, null, 8, [\"status\", \"subject\"])\n  ]))\n}\n}\n\n})",
+      "start": 1726488541814,
+      "end": 1726488541814
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541814,
+      "end": 1726488541814,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541814,
+      "end": 1726488541814,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541814,
+      "end": 1726488541814,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541814,
+      "end": 1726488541814,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\" };\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"TicketItem\",\n  props: {\n    ticket: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(TicketItemHeader, {\n          id: __props.ticket.id,\n          \"created-at\": __props.ticket.created_at\n        }, null, 8, [\"id\", \"created-at\"]),\n        _createVNode(TicketItemContent, {\n          status: __props.ticket.status,\n          subject: __props.ticket.subject\n        }, null, 8, [\"status\", \"subject\"]),\n        _createVNode(TicketItemFooter, {\n          status: __props.ticket.status,\n          subject: __props.ticket.subject\n        }, null, 8, [\"status\", \"subject\"])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488541814,
+      "end": 1726488541944,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\" }\n\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\r\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\r\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItem',\n  props: {\r\n  ticket: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(TicketItemHeader, {\n      id: __props.ticket.id,\n      \"created-at\": __props.ticket.created_at\n    }, null, 8, [\"id\", \"created-at\"]),\n    _createVNode(TicketItemContent, {\n      status: __props.ticket.status,\n      subject: __props.ticket.subject\n    }, null, 8, [\"status\", \"subject\"]),\n    _createVNode(TicketItemFooter, {\n      status: __props.ticket.status,\n      subject: __props.ticket.subject\n    }, null, 8, [\"status\", \"subject\"])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,aAAa,YAAY,sBAAsB,2BAA2B;AAEhH,MAAM,aAAa,EAAE,OAAO,+GAA+G;AAE3I,OAAO,sBAAsB;AAC7B,OAAO,uBAAuB;AAC9B,OAAO,sBAAsB;AAE7B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,aAAa,kBAAkB;AAAA,UAC7B,IAAI,QAAQ,OAAO;AAAA,UACnB,cAAc,QAAQ,OAAO;AAAA,QAC/B,GAAG,MAAM,GAAG,CAAC,MAAM,YAAY,CAAC;AAAA,QAChC,aAAa,mBAAmB;AAAA,UAC9B,QAAQ,QAAQ,OAAO;AAAA,UACvB,SAAS,QAAQ,OAAO;AAAA,QAC1B,GAAG,MAAM,GAAG,CAAC,UAAU,SAAS,CAAC;AAAA,QACjC,aAAa,kBAAkB;AAAA,UAC7B,QAAQ,QAAQ,OAAO;AAAA,UACvB,SAAS,QAAQ,OAAO;AAAA,QAC1B,GAAG,MAAM,GAAG,CAAC,UAAU,SAAS,CAAC;AAAA,MACnC,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488541944,
+      "end": 1726488541944,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488541944,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488541945,
+      "end": 1726488541945,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488541946,
+      "end": 1726488541953,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488541954,
+      "end": 1726488541954,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488541955,
+      "end": 1726488541955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488541955,
+      "end": 1726488541955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488541955,
+      "end": 1726488541955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488541955,
+      "end": 1726488541955,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488541956,
+      "end": 1726488541956,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488541956,
+      "end": 1726488541956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488541957,
+      "end": 1726488541957,
+      "order": "normal"
+    }
+  ]
+}

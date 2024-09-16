@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/drawer/AltPhoneNumberDrawer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n<div\r\n    class=\"flex flex-col fixed md:hide top-0 bottom-0 px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999]\"\r\n    :class=\"[store.isOpenSetAltNumber ? 'left-0' : 'left-[-100%]']\"\r\n>\r\n  <div class=\"flex flex-col justify-start items-center mt-[40px]\">\r\n    <div class=\"w-full flex flex-row justify-start items-center\">\r\n      <Header />\r\n      <BackIcon @click=\"goBack\" />\r\n    </div>\r\n    <div class=\"w-full flex flex-row justify-start items-center mt-[40px]\">\r\n      <div class=\"font-medium text-[13px] leading-[20px] text-[#A9A7A7] text-center mx-7\">\r\n        شما میتوانید جهت بالا بردن امنیت حساب کاربری خود و برای دسترسی همیشگی به حساب کاربری خود یک شماره به عنوان جایگزین به حساب کاربری خود اضافه کنید\r\n      </div>\r\n    </div>\r\n    <SetAltNumberForm class=\"mt-[17px]\" />\r\n  </div>\r\n</div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport {useDrawerStore} from \"~/store/Drawer\";\r\nimport Header from \"~/components/alt-phone-number-drawer/Header.vue\";\r\nimport SetAltNumberForm from \"~/components/alt-phone-number-drawer/SetAltNumberForm.vue\";\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\n\r\nconst store = useDrawerStore()\r\n\r\nconst goBack = () => {\r\n  store.closeAllDrawers()\r\n  store.openSecurityDrawer()\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488555278,
+      "end": 1726488555387,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555387,
+      "end": 1726488555387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/AltPhoneNumberDrawer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/AltPhoneNumberDrawer.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/drawer/AltPhoneNumberDrawer.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726488555387,
+      "end": 1726488555408,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555408,
+      "end": 1726488555408,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555408,
+      "end": 1726488555408,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555408,
+      "end": 1726488555408,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555408,
+      "end": 1726488555408,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555408,
+      "end": 1726488555408,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555408,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555409,
+      "end": 1726488555409,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555409,
+      "end": 1726488555412,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555409,
+      "end": 1726488555412,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555412,
+      "end": 1726488555412,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555412,
+      "end": 1726488555412,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555412,
+      "end": 1726488555413,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555412,
+      "end": 1726488555413,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555413,
+      "end": 1726488555413,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555413,
+      "end": 1726488555413,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555413,
+      "end": 1726488555414,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555414,
+      "end": 1726488555414,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555414,
+      "end": 1726488555414,
+      "order": "normal"
+    }
+  ]
+}

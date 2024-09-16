@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/input/ChooseServiceInput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"cursor-pointer w-full px-[14px] py-[20px] border-b border-b-[#A9A7A7] flex flex-row justify-between items-center\">\r\n    <div class=\"w-full h-full flex flex-row justify-between items-center\" @click=\"openServiceDrawer\">\r\n      <span class=\"text-black text-right font-medium text-[16px] leading-[21px]\">\r\n        دسته بندی\r\n      </span>\r\n      <span class=\"text-[#828282] font-light text-[10px] leading-[15px]\">\r\n        {{ getServiceName }}\r\n      </span>\r\n    </div>\r\n    <ChooseServiceMainDrawer :service=\"service\" :is-open=\"showServiceDrawer\" @close=\"closeServiceDrawer\" @choose=\"chooseService\"/>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport ChooseServiceMainDrawer from \"~/components/drawer/ChooseServiceMainDrawer.vue\";\r\n\r\nconst emits = defineEmits(['update:modelValue'])\r\nconst props = defineProps({\r\n  modelValue: {\r\n    type: Object,\r\n    default: null,\r\n  }\r\n})\r\n\r\nconst service = ref<IService>(props.modelValue as IService)\r\nconst showServiceDrawer = ref(false)\r\n\r\nconst openServiceDrawer = () => {\r\n  showServiceDrawer.value = true\r\n}\r\n\r\nconst closeServiceDrawer = () => {\r\n  showServiceDrawer.value = false\r\n}\r\n\r\nconst chooseService = async (s: IService) => {\r\n  service.value = s\r\n  emits('update:modelValue', service.value)\r\n  setTimeout(() => {\r\n    closeServiceDrawer()\r\n  }, 200)\r\n}\r\n\r\nconst getServiceName = computed(() => {\r\n  let title = ''\r\n  if (service.value) {\r\n    title = `${service.value.title},${service.value.parent?.title}`\r\n  }\r\n  return title\r\n})\r\n\r\nconst setService = (s: IService) => {\r\n  service.value = s\r\n}\r\n\r\nwatch(() => props.modelValue, () => {\r\n  setService(props.modelValue as IService)\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488541283,
+      "end": 1726488541367,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488541367,
+      "end": 1726488541367,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/ChooseServiceInput.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/ChooseServiceInput.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488541367,
+      "end": 1726488541559,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488541559,
+      "end": 1726488541559,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541559,
+      "end": 1726488541559,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488541559,
+      "end": 1726488541559,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488541560,
+      "end": 1726488541560,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488541560,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488541562,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488541562,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488541562,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488541562,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488541562,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488541562,
+      "end": 1726488541562,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488541562,
+      "end": 1726488541563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488541563,
+      "end": 1726488541563,
+      "order": "normal"
+    }
+  ]
+}

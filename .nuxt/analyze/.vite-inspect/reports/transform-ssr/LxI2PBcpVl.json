@@ -1,0 +1,258 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/FullBookmarkIcon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <svg class=\"block md:hidden\" width=\"23\" height=\"23\" viewBox=\"0 0 23 23\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M5.08325 19.75V5.08333C5.08325 4.57917 5.26277 4.14757 5.62179 3.78854C5.98082 3.42951 6.41242 3.25 6.91659 3.25H16.0833C16.5874 3.25 17.019 3.42951 17.378 3.78854C17.7371 4.14757 17.9166 4.57917 17.9166 5.08333V19.75L11.4999 17L5.08325 19.75ZM6.91659 16.9542L11.4999 14.9833L16.0833 16.9542V5.08333H6.91659V16.9542Z\" fill=\"#141414\"/>\r\n    <rect x=\"6\" y=\"5\" width=\"11\" height=\"12\" fill=\"none\"/>\r\n  </svg>\r\n  <svg class=\"md:block hidden\" width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M11.958 48.625V11.9583C11.958 10.6979 12.4068 9.61892 13.3044 8.72135C14.2019 7.82378 15.2809 7.375 16.5413 7.375H39.458C40.7184 7.375 41.7974 7.82378 42.695 8.72135C43.5926 9.61892 44.0413 10.6979 44.0413 11.9583V48.625L27.9997 41.75L11.958 48.625ZM16.5413 41.6354L27.9997 36.7083L39.458 41.6354V11.9583H16.5413V41.6354Z\" fill=\"#141414\"/>\r\n    <rect x=\"14.25\" y=\"11.75\" width=\"27.5\" height=\"30\" fill=\"#141414\"/>\r\n  </svg>\r\n</template>\r\n",
+      "start": 1726488555558,
+      "end": 1726488555693,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555693,
+      "end": 1726488555693,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<!--[--><svg class=\"block md:hidden\" width=\"23\" height=\"23\" viewBox=\"0 0 23 23\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M5.08325 19.75V5.08333C5.08325 4.57917 5.26277 4.14757 5.62179 3.78854C5.98082 3.42951 6.41242 3.25 6.91659 3.25H16.0833C16.5874 3.25 17.019 3.42951 17.378 3.78854C17.7371 4.14757 17.9166 4.57917 17.9166 5.08333V19.75L11.4999 17L5.08325 19.75ZM6.91659 16.9542L11.4999 14.9833L16.0833 16.9542V5.08333H6.91659V16.9542Z\" fill=\"#141414\"></path><rect x=\"6\" y=\"5\" width=\"11\" height=\"12\" fill=\"none\"></rect></svg><svg class=\"md:block hidden\" width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M11.958 48.625V11.9583C11.958 10.6979 12.4068 9.61892 13.3044 8.72135C14.2019 7.82378 15.2809 7.375 16.5413 7.375H39.458C40.7184 7.375 41.7974 7.82378 42.695 8.72135C43.5926 9.61892 44.0413 10.6979 44.0413 11.9583V48.625L27.9997 41.75L11.958 48.625ZM16.5413 41.6354L27.9997 36.7083L39.458 41.6354V11.9583H16.5413V41.6354Z\" fill=\"#141414\"></path><rect x=\"14.25\" y=\"11.75\" width=\"27.5\" height=\"30\" fill=\"#141414\"></rect></svg><!--]-->`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/icons/FullBookmarkIcon.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726488555693,
+      "end": 1726488555694,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/icons/FullBookmarkIcon.vue"
+        ],
+        "names": [],
+        "mappings": ";;EAAA",
+        "sourcesContent": [
+          "<template>\r\n  <svg class=\"block md:hidden\" width=\"23\" height=\"23\" viewBox=\"0 0 23 23\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M5.08325 19.75V5.08333C5.08325 4.57917 5.26277 4.14757 5.62179 3.78854C5.98082 3.42951 6.41242 3.25 6.91659 3.25H16.0833C16.5874 3.25 17.019 3.42951 17.378 3.78854C17.7371 4.14757 17.9166 4.57917 17.9166 5.08333V19.75L11.4999 17L5.08325 19.75ZM6.91659 16.9542L11.4999 14.9833L16.0833 16.9542V5.08333H6.91659V16.9542Z\" fill=\"#141414\"/>\r\n    <rect x=\"6\" y=\"5\" width=\"11\" height=\"12\" fill=\"none\"/>\r\n  </svg>\r\n  <svg class=\"md:block hidden\" width=\"56\" height=\"56\" viewBox=\"0 0 56 56\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M11.958 48.625V11.9583C11.958 10.6979 12.4068 9.61892 13.3044 8.72135C14.2019 7.82378 15.2809 7.375 16.5413 7.375H39.458C40.7184 7.375 41.7974 7.82378 42.695 8.72135C43.5926 9.61892 44.0413 10.6979 44.0413 11.9583V48.625L27.9997 41.75L11.958 48.625ZM16.5413 41.6354L27.9997 36.7083L39.458 41.6354V11.9583H16.5413V41.6354Z\" fill=\"#141414\"/>\r\n    <rect x=\"14.25\" y=\"11.75\" width=\"27.5\" height=\"30\" fill=\"#141414\"/>\r\n  </svg>\r\n</template>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555694,
+      "end": 1726488555694,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555695,
+      "end": 1726488555695,
+      "order": "normal"
+    }
+  ]
+}

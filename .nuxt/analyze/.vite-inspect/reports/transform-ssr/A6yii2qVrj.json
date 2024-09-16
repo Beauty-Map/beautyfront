@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioLadderingItem.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div @click=\"goToPage\" :class=\"selected ? 'opacity-[1]' : 'opacity-[.7]'\" class=\"w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]\">\r\n    <div class=\"w-full flex flex-col relative\">\r\n      <div class=\"w-full flex flex-row justify-start items-start\">\r\n        <Rating v-model=\"portfolio.rating\"/>\r\n        <Tick />\r\n      </div>\r\n      <div class=\"w-full flex flex-row justify-start items-start\">\r\n        <h1 class=\"text-right font-medium text-[18px] leading-[28px] text-[#141414]\">{{ portfolio.title }} - {{ portfolio.id }}</h1>\r\n      </div>\r\n      <div class=\"w-full flex flex-col justify-start items-start\" v-if=\"portfolio.discount_price > 0\">\r\n        <div class=\"text-[#ED2C25] text-[12px] leading-[18px] font-medium line-through\">\r\n          <span v-format-price>{{ portfolio.price }}</span>\r\n        </div>\r\n        <div class=\"text-[#133C3E] text-[12px] leading-[18px] font-medium\">\r\n          <span v-format-price>{{ portfolio.discount_price }}</span>\r\n          <span class=\"mr-[22px] px-[12px] py-[3px] bg-[#FFEA2E61] rounded-[20px]\">{{calcDiscountPercent(portfolio.price, portfolio.discount_price)}}</span>\r\n        </div>\r\n      </div>\r\n      <div class=\"w-full flex flex-col justify-start items-start\" v-else-if=\"portfolio.price > 0\">\r\n        <div class=\"text-[#133C3E] text-[12px] leading-[18px] font-medium\">\r\n          <span v-format-price>{{ portfolio.price }}</span>\r\n        </div>\r\n      </div>\r\n      <div class=\"w-full flex flex-col justify-start items-start\" v-else>\r\n        <div class=\"text-[#133C3E] text-[12px] leading-[18px] font-medium\">\r\n          رایگان\r\n        </div>\r\n      </div>\r\n      <div class=\"flex flex-row items-center justify-start absolute right-0 bottom-0 z-[9999]\">\r\n        <button class=\"cursor-pointer bg-[#2920D9] rounded-[20px] font-medium text-center text-[12px] flex justify-center items-center h-[25px] leading-[18px] py-[7px] px-[12px] text-white min-w-[88px]\">\r\n          نردبان\r\n        </button>\r\n      </div>\r\n    </div>\r\n    <div class=\"w-full flex flex-col relative rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]\">\r\n      <img :src=\"getThumbnail()\" :alt=\"portfolio.title\" class=\"w-full h-full min-h-[125px] min-w-[125px] rounded-[8px]\"/>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\nconst emits = defineEmits(['click'])\r\nconst props = defineProps({\r\n  portfolio: {\r\n    type: Object,\r\n    required: true,\r\n  },\r\n  selected: {\r\n    type: Boolean,\r\n    required: false,\r\n  },\r\n})\r\n\r\nconst router = useRouter()\r\n\r\n\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\n\r\nconst getThumbnail = () => {\r\n  if (props.portfolio.images.length > 0) {\r\n    return props.portfolio.images[0]\r\n  }\r\n  return '/images/artist/1.jpg'\r\n}\r\n\r\nconst goToPage = () => {\r\n  emits('click')\r\n}\r\n\r\nconst calcDiscountPercent = (p: number, d: number) => {\r\n  return Math.ceil(((p - d) / p * 100)) + '%';\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488554755,
+      "end": 1726488555208,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555208,
+      "end": 1726488555208,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioLadderingItem.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioLadderingItem.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/portfolio/PortfolioLadderingItem.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726488555208,
+      "end": 1726488555265,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555265,
+      "end": 1726488555265,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555266,
+      "end": 1726488555266,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555266,
+      "end": 1726488555266,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555266,
+      "end": 1726488555266,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555266,
+      "end": 1726488555266,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555266,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555266,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555267,
+      "end": 1726488555267,
+      "order": "normal"
+    }
+  ]
+}

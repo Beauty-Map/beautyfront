@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItemContent.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItemContent',\n  props: {\r\n  status: {\r\n    type: String,\r\n    required: true\r\n  },\r\n  subject: {\r\n    type: Object,\r\n    required: true\r\n  },\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\r\nconst getStatusIsOpen = () => {\r\n  switch (props.status) {\r\n    case 'created':\r\n    case 'open':\r\n    case 'answered':\r\n      return true;\r\n    default:\r\n      return false\r\n  }\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"font-semibold text-lg text-center px-[17px] py-[17px] bg-[#FDF4FF] flex flex-col justify-center items-center w-full\", [getStatusIsOpen ? 'text-[#157F3D]' : 'text-[#F44336]']])\n  }, _toDisplayString(__props.subject.title), 3))\n}\n}\n\n})",
+      "start": 1726488543395,
+      "end": 1726488543395
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488543395,
+      "end": 1726488543395,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488543395,
+      "end": 1726488543395,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488543395,
+      "end": 1726488543395,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488543395,
+      "end": 1726488543395,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"TicketItemContent\",\n  props: {\n    status: {\n      type: String,\n      required: true\n    },\n    subject: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const getStatusIsOpen = () => {\n      switch (props.status) {\n        case \"created\":\n        case \"open\":\n        case \"answered\":\n          return true;\n        default:\n          return false;\n      }\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", {\n        class: _normalizeClass([\"font-semibold text-lg text-center px-[17px] py-[17px] bg-[#FDF4FF] flex flex-col justify-center items-center w-full\", [getStatusIsOpen ? \"text-[#157F3D]\" : \"text-[#F44336]\"]])\n      }, _toDisplayString(__props.subject.title), 3);\n    };\n  }\n});\n",
+      "start": 1726488543395,
+      "end": 1726488543457,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItemContent.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItemContent',\n  props: {\r\n  status: {\r\n    type: String,\r\n    required: true\r\n  },\r\n  subject: {\r\n    type: Object,\r\n    required: true\r\n  },\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\r\nconst getStatusIsOpen = () => {\r\n  switch (props.status) {\r\n    case 'created':\r\n    case 'open':\r\n    case 'answered':\r\n      return true;\r\n    default:\r\n      return false\r\n  }\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"font-semibold text-lg text-center px-[17px] py-[17px] bg-[#FDF4FF] flex flex-col justify-center items-center w-full\", [getStatusIsOpen ? 'text-[#157F3D]' : 'text-[#F44336]']])\n  }, _toDisplayString(__props.subject.title), 3))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,mBAAmB,kBAAkB,kBAAkB,iBAAiB,aAAa,YAAY,sBAAsB,2BAA2B;AAG3J,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,SAAS;AAAA,MACP,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,UAAM,kBAAkB,MAAM;AAC5B,cAAQ,MAAM,QAAQ;AAAA,QACpB,KAAK;AAAA,QACL,KAAK;AAAA,QACL,KAAK;AACH,iBAAO;AAAA,QACT;AACE,iBAAO;AAAA,MACX;AAAA,IACF;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO;AAAA,QAC/C,OAAO,gBAAgB,CAAC,uHAAuH,CAAC,kBAAkB,mBAAmB,gBAAgB,CAAC,CAAC;AAAA,MACzM,GAAG,iBAAiB,QAAQ,QAAQ,KAAK,GAAG,CAAC;AAAA,IAC/C;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488543457,
+      "end": 1726488543457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488543457,
+      "end": 1726488543457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488543457,
+      "end": 1726488543457,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488543457,
+      "end": 1726488543457,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488543458,
+      "end": 1726488543458,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488543459,
+      "end": 1726488543459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488543459,
+      "end": 1726488543459,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488543459,
+      "end": 1726488543459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488543459,
+      "end": 1726488543459,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488543459,
+      "end": 1726488543459,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488543459,
+      "end": 1726488543459,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488543459,
+      "end": 1726488543468,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488543470,
+      "end": 1726488543470,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488543470,
+      "end": 1726488543470,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488543470,
+      "end": 1726488543471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488543471,
+      "end": 1726488543471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488543471,
+      "end": 1726488543471,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488543471,
+      "end": 1726488543471,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488543472,
+      "end": 1726488543472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488543472,
+      "end": 1726488543472,
+      "order": "normal"
+    }
+  ]
+}

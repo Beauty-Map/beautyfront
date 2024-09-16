@@ -1,0 +1,258 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/SecurityIcon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<template>\r\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <g clip-path=\"url(#clip0_428_3413)\">\r\n      <path d=\"M10 20C4.47059 20 0 15.5294 0 10C0 4.47059 4.47059 0 10 0C15.5294 0 20 4.47059 20 10C20 15.5294 15.5294 20 10 20ZM10 1.17647C5.11765 1.17647 1.17647 5.11765 1.17647 10C1.17647 14.8824 5.11765 18.8235 10 18.8235C14.8824 18.8235 18.8235 14.8824 18.8235 10C18.8235 5.11765 14.8824 1.17647 10 1.17647Z\" fill=\"#133C3E\"/>\r\n      <path d=\"M7.75 13C7.54375 13 7.36713 12.9347 7.22013 12.804C7.07313 12.6733 6.99975 12.5164 7 12.3333V9C7 8.81667 7.0735 8.65967 7.2205 8.529C7.3675 8.39833 7.544 8.33311 7.75 8.33333H8.125V7.66667C8.125 7.20556 8.30788 6.81244 8.67363 6.48733C9.03938 6.16222 9.4815 5.99978 10 6C10.5187 6 10.961 6.16256 11.3267 6.48767C11.6925 6.81278 11.8752 7.20578 11.875 7.66667V8.33333H12.25C12.4562 8.33333 12.6329 8.39867 12.7799 8.52933C12.9269 8.66 13.0002 8.81689 13 9V12.3333C13 12.5167 12.9265 12.6737 12.7795 12.8043C12.6325 12.935 12.456 13.0002 12.25 13H7.75ZM10 11.3333C10.2062 11.3333 10.3829 11.268 10.5299 11.1373C10.6769 11.0067 10.7502 10.8498 10.75 10.6667C10.75 10.4833 10.6765 10.3263 10.5295 10.1957C10.3825 10.065 10.206 9.99978 10 10C9.79375 10 9.61713 10.0653 9.47013 10.196C9.32313 10.3267 9.24975 10.4836 9.25 10.6667C9.25 10.85 9.3235 11.007 9.4705 11.1377C9.6175 11.2683 9.794 11.3336 10 11.3333ZM8.875 8.33333H11.125V7.66667C11.125 7.38889 11.0156 7.15278 10.7969 6.95833C10.5781 6.76389 10.3125 6.66667 10 6.66667C9.6875 6.66667 9.42188 6.76389 9.20313 6.95833C8.98438 7.15278 8.875 7.38889 8.875 7.66667V8.33333Z\" fill=\"#133C3E\"/>\r\n    </g>\r\n    <defs>\r\n      <clipPath id=\"clip0_428_3413\">\r\n        <rect width=\"20\" height=\"20\" fill=\"white\"/>\r\n      </clipPath>\r\n    </defs>\r\n  </svg>\r\n</template>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488556133,
+      "end": 1726488556307,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488556307,
+      "end": 1726488556307,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<svg${_ssrRenderAttrs(_mergeProps({\n    width: \"20\",\n    height: \"20\",\n    viewBox: \"0 0 20 20\",\n    fill: \"none\",\n    xmlns: \"http://www.w3.org/2000/svg\"\n  }, _attrs))}><g clip-path=\"url(#clip0_428_3413)\"><path d=\"M10 20C4.47059 20 0 15.5294 0 10C0 4.47059 4.47059 0 10 0C15.5294 0 20 4.47059 20 10C20 15.5294 15.5294 20 10 20ZM10 1.17647C5.11765 1.17647 1.17647 5.11765 1.17647 10C1.17647 14.8824 5.11765 18.8235 10 18.8235C14.8824 18.8235 18.8235 14.8824 18.8235 10C18.8235 5.11765 14.8824 1.17647 10 1.17647Z\" fill=\"#133C3E\"></path><path d=\"M7.75 13C7.54375 13 7.36713 12.9347 7.22013 12.804C7.07313 12.6733 6.99975 12.5164 7 12.3333V9C7 8.81667 7.0735 8.65967 7.2205 8.529C7.3675 8.39833 7.544 8.33311 7.75 8.33333H8.125V7.66667C8.125 7.20556 8.30788 6.81244 8.67363 6.48733C9.03938 6.16222 9.4815 5.99978 10 6C10.5187 6 10.961 6.16256 11.3267 6.48767C11.6925 6.81278 11.8752 7.20578 11.875 7.66667V8.33333H12.25C12.4562 8.33333 12.6329 8.39867 12.7799 8.52933C12.9269 8.66 13.0002 8.81689 13 9V12.3333C13 12.5167 12.9265 12.6737 12.7795 12.8043C12.6325 12.935 12.456 13.0002 12.25 13H7.75ZM10 11.3333C10.2062 11.3333 10.3829 11.268 10.5299 11.1373C10.6769 11.0067 10.7502 10.8498 10.75 10.6667C10.75 10.4833 10.6765 10.3263 10.5295 10.1957C10.3825 10.065 10.206 9.99978 10 10C9.79375 10 9.61713 10.0653 9.47013 10.196C9.32313 10.3267 9.24975 10.4836 9.25 10.6667C9.25 10.85 9.3235 11.007 9.4705 11.1377C9.6175 11.2683 9.794 11.3336 10 11.3333ZM8.875 8.33333H11.125V7.66667C11.125 7.38889 11.0156 7.15278 10.7969 6.95833C10.5781 6.76389 10.3125 6.66667 10 6.66667C9.6875 6.66667 9.42188 6.76389 9.20313 6.95833C8.98438 7.15278 8.875 7.38889 8.875 7.66667V8.33333Z\" fill=\"#133C3E\"></path></g><defs><clipPath id=\"clip0_428_3413\"><rect width=\"20\" height=\"20\" fill=\"white\"></rect></clipPath></defs></svg>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/icons/SecurityIcon.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726488556307,
+      "end": 1726488556308,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/icons/SecurityIcon.vue"
+        ],
+        "names": [],
+        "mappings": ";;;;EAAA,aAAA,gBAAA;IAKO,KAAK,EAAC,IAAI;IAAC,MAAM,EAAC,IAAI;IAAC,OAAO,EAAC,WAAW;IAAC,IAAI,EAAC,MAAM;IAAC,KAAK,EAAC,4BAA4B;KALhG",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<template>\r\n  <svg width=\"20\" height=\"20\" viewBox=\"0 0 20 20\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <g clip-path=\"url(#clip0_428_3413)\">\r\n      <path d=\"M10 20C4.47059 20 0 15.5294 0 10C0 4.47059 4.47059 0 10 0C15.5294 0 20 4.47059 20 10C20 15.5294 15.5294 20 10 20ZM10 1.17647C5.11765 1.17647 1.17647 5.11765 1.17647 10C1.17647 14.8824 5.11765 18.8235 10 18.8235C14.8824 18.8235 18.8235 14.8824 18.8235 10C18.8235 5.11765 14.8824 1.17647 10 1.17647Z\" fill=\"#133C3E\"/>\r\n      <path d=\"M7.75 13C7.54375 13 7.36713 12.9347 7.22013 12.804C7.07313 12.6733 6.99975 12.5164 7 12.3333V9C7 8.81667 7.0735 8.65967 7.2205 8.529C7.3675 8.39833 7.544 8.33311 7.75 8.33333H8.125V7.66667C8.125 7.20556 8.30788 6.81244 8.67363 6.48733C9.03938 6.16222 9.4815 5.99978 10 6C10.5187 6 10.961 6.16256 11.3267 6.48767C11.6925 6.81278 11.8752 7.20578 11.875 7.66667V8.33333H12.25C12.4562 8.33333 12.6329 8.39867 12.7799 8.52933C12.9269 8.66 13.0002 8.81689 13 9V12.3333C13 12.5167 12.9265 12.6737 12.7795 12.8043C12.6325 12.935 12.456 13.0002 12.25 13H7.75ZM10 11.3333C10.2062 11.3333 10.3829 11.268 10.5299 11.1373C10.6769 11.0067 10.7502 10.8498 10.75 10.6667C10.75 10.4833 10.6765 10.3263 10.5295 10.1957C10.3825 10.065 10.206 9.99978 10 10C9.79375 10 9.61713 10.0653 9.47013 10.196C9.32313 10.3267 9.24975 10.4836 9.25 10.6667C9.25 10.85 9.3235 11.007 9.4705 11.1377C9.6175 11.2683 9.794 11.3336 10 11.3333ZM8.875 8.33333H11.125V7.66667C11.125 7.38889 11.0156 7.15278 10.7969 6.95833C10.5781 6.76389 10.3125 6.66667 10 6.66667C9.6875 6.66667 9.42188 6.76389 9.20313 6.95833C8.98438 7.15278 8.875 7.38889 8.875 7.66667V8.33333Z\" fill=\"#133C3E\"/>\r\n    </g>\r\n    <defs>\r\n      <clipPath id=\"clip0_428_3413\">\r\n        <rect width=\"20\" height=\"20\" fill=\"white\"/>\r\n      </clipPath>\r\n    </defs>\r\n  </svg>\r\n</template>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556308,
+      "end": 1726488556308,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556308,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556308,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488556309,
+      "end": 1726488556309,
+      "order": "normal"
+    }
+  ]
+}

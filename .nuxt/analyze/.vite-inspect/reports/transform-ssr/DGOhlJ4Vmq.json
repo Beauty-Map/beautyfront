@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/otp-drawer/Header.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Header',\n  __ssrInlineRender: true,\n  props: {\r\n  email: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  }\r\n},\n  emits: ['changeEmail'],\n  setup(__props, { emit: __emit }) {\n\r\nconst emits = __emit\r\nconst props = __props\r\n\r\nconst changeEmail = () => {\r\n  emits('changeEmail')\r\n}\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"flex flex-col justify-center items-center\" }, _attrs))\n  }><div class=\"font-medium text-[24px] leading-[37px] text-[#141414] text-center\"> کد تایید را وارد کنید </div><div class=\"font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7 mt-[15px]\"><span> لطفا کد تاییدی را که به ایمیل <span>${\n    _ssrInterpolate(__props.email)\n  }</span> ارسال شده را وارد کنید. <span class=\"text-[#400842] font-medium underline cursor-pointer\">ویرایش ایمیل</span></span></div></div>`)\n}\n}\n\n})",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/otp-drawer/Header.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"flex flex-col justify-center items-center\">\r\n    <div class=\"font-medium text-[24px] leading-[37px] text-[#141414] text-center\">\r\n      کد تایید را وارد کنید\r\n    </div>\r\n    <div class=\"font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7 mt-[15px]\">\r\n      <span>\r\n      لطفا کد تاییدی را که به ایمیل <span>{{ email }}</span> ارسال شده\r\n      را وارد کنید.\r\n        <span class=\"text-[#400842] font-medium underline cursor-pointer\" @click=\"changeEmail\">ویرایش ایمیل</span>\r\n      </span>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nconst emits = defineEmits(['changeEmail'])\r\nconst props = defineProps({\r\n  email: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  }\r\n})\r\n\r\nconst changeEmail = () => {\r\n  emits('changeEmail')\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;;AAewB,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,MAA4B,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAMZ,CAAC;AACH,CAAC;AACD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488556032,
+      "end": 1726488556032,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Header\",\n  __ssrInlineRender: true,\n  props: {\n    email: {\n      type: String,\n      default: \"\",\n      required: true\n    }\n  },\n  emits: [\"changeEmail\"],\n  setup(__props, { emit: __emit }) {\n    const emits = __emit;\n    const props = __props;\n    const changeEmail = () => {\n      emits(\"changeEmail\");\n    };\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"flex flex-col justify-center items-center\" }, _attrs))}><div class=\"font-medium text-[24px] leading-[37px] text-[#141414] text-center\"> کد تایید را وارد کنید </div><div class=\"font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7 mt-[15px]\"><span> لطفا کد تاییدی را که به ایمیل <span>${_ssrInterpolate(__props.email)}</span> ارسال شده را وارد کنید. <span class=\"text-[#400842] font-medium underline cursor-pointer\">ویرایش ایمیل</span></span></div></div>`);\n    };\n  }\n});\n",
+      "start": 1726488556032,
+      "end": 1726488556054,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/otp-drawer/Header.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Header',\n  __ssrInlineRender: true,\n  props: {\r\n  email: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  }\r\n},\n  emits: ['changeEmail'],\n  setup(__props, { emit: __emit }) {\n\r\nconst emits = __emit\r\nconst props = __props\r\n\r\nconst changeEmail = () => {\r\n  emits('changeEmail')\r\n}\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({ class: \"flex flex-col justify-center items-center\" }, _attrs))\n  }><div class=\"font-medium text-[24px] leading-[37px] text-[#141414] text-center\"> کد تایید را وارد کنید </div><div class=\"font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7 mt-[15px]\"><span> لطفا کد تاییدی را که به ایمیل <span>${\n    _ssrInterpolate(__props.email)\n  }</span> ارسال شده را وارد کنید. <span class=\"text-[#400842] font-medium underline cursor-pointer\">ویرایش ایمیل</span></span></div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,kBAAkB,iBAAiB,kBAAkB,uBAAuB;AAGrF,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS;AAAA,MACT,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,OAAO,CAAC,aAAa;AAAA,EACrB,MAAM,SAAS,EAAE,MAAM,OAAO,GAAG;AAEnC,UAAM,QAAQ;AACd,UAAM,QAAQ;AAEd,UAAM,cAAc,MAAM;AACxB,YAAM,aAAa;AAAA,IACrB;AAEA,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OACJ,gBAAgB,YAAY,EAAE,OAAO,4CAA4C,GAAG,MAAM,CAAC,CAC7F,yPACE,gBAAgB,QAAQ,KAAK,CAC/B,0IAA0I;AAAA,IAC5I;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488556054,
+      "end": 1726488556054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488556054,
+      "end": 1726488556054,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488556054,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556055,
+      "end": 1726488556055,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488556056,
+      "end": 1726488556057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488556058,
+      "end": 1726488556058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488556058,
+      "end": 1726488556058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488556058,
+      "end": 1726488556058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488556058,
+      "end": 1726488556058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488556058,
+      "end": 1726488556058,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488556058,
+      "end": 1726488556058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488556058,
+      "end": 1726488556060,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488556061,
+      "end": 1726488556061,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556062,
+      "end": 1726488556062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556062,
+      "end": 1726488556062,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556062,
+      "end": 1726488556069,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556062,
+      "end": 1726488556070,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556071,
+      "end": 1726488556071,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556071,
+      "end": 1726488556071,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556071,
+      "end": 1726488556071,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556071,
+      "end": 1726488556072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488556072,
+      "end": 1726488556072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488556074,
+      "end": 1726488556074,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488556076,
+      "end": 1726488556076,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488556076,
+      "end": 1726488556076,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488556077,
+      "end": 1726488556077,
+      "order": "normal"
+    }
+  ]
+}

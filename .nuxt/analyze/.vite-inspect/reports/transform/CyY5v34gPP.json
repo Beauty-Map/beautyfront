@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/artist-agreement-result-drawer/Header.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full flex flex-col justify-center items-start px-[50px] pt-[96px]\">\r\n    <h3 class=\"text-[#141414] text-center font-semibold text-[18px] leading-[28px]\">اطلاعات شما با موفقیت دریافت شد</h3>\r\n    <div class=\"w-full text-right font-medium text-[#828282] text-[14px] leading-[21px] mt-[18px] -mb-[10px]\">\r\n      <p>\r\n        بعد بازبینی پشتیبان و تاییدیه شما به عنوان هنرمند حساب کاربری شما فعال میشود.\r\n        <br>\r\n        نکته: این عمل ممکن است تا 72 ساعت زمان بر باشد.\r\n      </p>\r\n    </div>\r\n  </div>\r\n</template>\r\n<script setup lang=\"ts\">\r\n</script>",
+      "start": 1726488542788,
+      "end": 1726488542894,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488542894,
+      "end": 1726488542894,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col justify-center items-start px-[50px] pt-[96px]\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-[#141414] text-center font-semibold text-[18px] leading-[28px]\" }, \"اطلاعات شما با موفقیت دریافت شد\", -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"w-full text-right font-medium text-[#828282] text-[14px] leading-[21px] mt-[18px] -mb-[10px]\" }, [\n  /*#__PURE__*/_createElementVNode(\"p\", null, [\n    /*#__PURE__*/_createTextVNode(\" بعد بازبینی پشتیبان و تاییدیه شما به عنوان هنرمند حساب کاربری شما فعال میشود. \"),\n    /*#__PURE__*/_createElementVNode(\"br\"),\n    /*#__PURE__*/_createTextVNode(\" نکته: این عمل ممکن است تا 72 ساعت زمان بر باشد. \")\n  ])\n], -1)\nconst _hoisted_4 = [\n  _hoisted_2,\n  _hoisted_3\n]\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, _hoisted_4))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1726488542894,
+      "end": 1726488542895,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542895,
+      "end": 1726488542895,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542895,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542896,
+      "end": 1726488542896,
+      "order": "normal"
+    }
+  ]
+}

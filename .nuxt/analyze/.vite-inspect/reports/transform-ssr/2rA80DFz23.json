@@ -1,0 +1,259 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/SyncLoader.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SyncLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-syncStretchDelay',\n        animationDuration: '0.6s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease-in-out',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.07s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.14s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.21s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n</style>",
+      "start": 1726488555676,
+      "end": 1726488555739,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555739,
+      "end": 1726488555739,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\nconst _sfc_main = {\n  \n  name: 'SyncLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-syncStretchDelay',\n        animationDuration: '0.6s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease-in-out',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.07s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.14s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.21s'\n      }\n    }\n  }\n\n}\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: \"v-spinner\",\n      style: ($props.loading) ? null : { display: \"none\" }\n    }, _attrs))\n  }><div class=\"v-sync v-sync1\" style=\"${\n    _ssrRenderStyle([$data.spinnerStyle,$data.spinnerDelay1])\n  }\"></div><div class=\"v-sync v-sync2\" style=\"${\n    _ssrRenderStyle([$data.spinnerStyle,$data.spinnerDelay2])\n  }\"></div><div class=\"v-sync v-sync3\" style=\"${\n    _ssrRenderStyle([$data.spinnerStyle,$data.spinnerDelay3])\n  }\"></div></div>`)\n}\n\nimport \"/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/SyncLoader.vue?vue&type=style&index=0&lang.css\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/vue-spinner/src/SyncLoader.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726488555739,
+      "end": 1726488555744,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/SyncLoader.vue",
+        "names": [],
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/SyncLoader.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-sync v-sync1\" v-bind:style=\"[spinnerStyle,spinnerDelay1]\">\n    </div><div class=\"v-sync v-sync2\" v-bind:style=\"[spinnerStyle,spinnerDelay2]\">\n    </div><div class=\"v-sync v-sync3\" v-bind:style=\"[spinnerStyle,spinnerDelay3]\">\n    </div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'SyncLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '15px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n      \tbackgroundColor: this.color,\n      \theight: this.size,\n     \t\twidth: this.size,\n      \tmargin: this.margin,\n      \tborderRadius: this.radius,\n        display: 'inline-block',\n        animationName: 'v-syncStretchDelay',\n        animationDuration: '0.6s',\n        animationIterationCount: 'infinite',\n        animationTimingFunction: 'ease-in-out',\n        animationFillMode: 'both'\n      },\n      spinnerDelay1: {\n        animationDelay: '0.07s'\n      },\n      spinnerDelay2: {\n        animationDelay: '0.14s'\n      },\n      spinnerDelay3: {\n        animationDelay: '0.21s'\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n@-webkit-keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n\n@keyframes v-syncStretchDelay\n{\n    33%\n    {\n        -webkit-transform: translateY(10px);\n                transform: translateY(10px);\n    }\n    66%\n    {\n        -webkit-transform: translateY(-10px);\n                transform: translateY(-10px);\n    }\n    100%\n    {\n        -webkit-transform: translateY(0);\n                transform: translateY(0);\n    }\n}\n</style>"
+        ],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555745,
+      "end": 1726488555745,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555745,
+      "end": 1726488555746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555746,
+      "end": 1726488555746,
+      "order": "normal"
+    }
+  ]
+}

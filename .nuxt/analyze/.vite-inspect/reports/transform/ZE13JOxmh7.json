@@ -1,0 +1,212 @@
+{
+  "resolvedId": "virtual:nuxt:/home/saeed/w/projects/beautymap/beautyfront/.nuxt/routes.mjs",
+  "transforms": [
+    {
+      "name": "virtual",
+      "result": "import { default as aboutusuIbaDBIid1Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/aboutus.vue?macro=true\";\nimport { default as _91id_93YjHx4uDlu8Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/artists/[id].vue?macro=true\";\nimport { default as indexxm6ZZy6joIMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/favourites/index.vue?macro=true\";\nimport { default as indexqjw6Exag1KMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/index.vue?macro=true\";\nimport { default as introNtxjQt8JiFMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/intro.vue?macro=true\";\nimport { default as index3x0RGL2uVxMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/login/index.vue?macro=true\";\nimport { default as indexwwlyI7pFcZMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue?macro=true\";\nimport { default as indexcKOBPlgJ4rMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue?macro=true\";\nimport { default as indexppWnRuqJyvMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?macro=true\";\nimport { default as index8WkN3qpb2HMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/laddering/index.vue?macro=true\";\nimport { default as _91id_93KS3ZByP4HAMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/[id].vue?macro=true\";\nimport { default as createVeaNumi2KoMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/create.vue?macro=true\";\nimport { default as indexeOZM1vvjkhMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue?macro=true\";\nimport { default as indexz9HjbYtORTMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/index.vue?macro=true\";\nimport { default as ticketif1nJsLbV3Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/ticket.vue?macro=true\";\nimport { default as indexFTehvWCWHtMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue?macro=true\";\nimport { default as indexU3a7zsd2AiMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue?macro=true\";\nimport { default as indexbZEygHT8sPMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/index.vue?macro=true\";\nimport { default as payNb4JVCYFCTMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/pay.vue?macro=true\";\nimport { default as indexctrkswnj7LMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/index.vue?macro=true\";\nimport { default as upgradeyAe25Q3HyUMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/upgrade.vue?macro=true\";\nimport { default as _91id_936QgpxitWfuMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/portfolios/[id].vue?macro=true\";\nimport { default as indexBSc41za0MbMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/register/index.vue?macro=true\";\nimport { default as indexI12lCtPEzuMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/search/index.vue?macro=true\";\nimport { default as alt_45numberSfiQAHe9QxMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/security/alt-number.vue?macro=true\";\nimport { default as indexM85ZOxLwxOMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/security/index.vue?macro=true\";\nimport { default as passwordJqB38Ih7IbMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/security/password.vue?macro=true\";\nimport { default as _91id_93VzVNyE74M8Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/services/[id].vue?macro=true\";\nimport { default as index43tE29Hea8Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/services/index.vue?macro=true\";\nimport { default as indexSY5E0hlRZJMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/support/index.vue?macro=true\";\nimport { default as ticketjqIkZN7XkaMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/support/ticket.vue?macro=true\";\nimport { default as indexsn889hTN13Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/support/tickets/index.vue?macro=true\";\nexport default [\n  {\n    name: aboutusuIbaDBIid1Meta?.name ?? \"aboutus\",\n    path: aboutusuIbaDBIid1Meta?.path ?? \"/aboutus\",\n    meta: aboutusuIbaDBIid1Meta || {},\n    alias: aboutusuIbaDBIid1Meta?.alias || [],\n    redirect: aboutusuIbaDBIid1Meta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/aboutus.vue\").then(m => m.default || m)\n  },\n  {\n    name: _91id_93YjHx4uDlu8Meta?.name ?? \"artists-id\",\n    path: _91id_93YjHx4uDlu8Meta?.path ?? \"/artists/:id()\",\n    meta: _91id_93YjHx4uDlu8Meta || {},\n    alias: _91id_93YjHx4uDlu8Meta?.alias || [],\n    redirect: _91id_93YjHx4uDlu8Meta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/artists/[id].vue\").then(m => m.default || m)\n  },\n  {\n    name: indexxm6ZZy6joIMeta?.name ?? \"favourites\",\n    path: indexxm6ZZy6joIMeta?.path ?? \"/favourites\",\n    meta: indexxm6ZZy6joIMeta || {},\n    alias: indexxm6ZZy6joIMeta?.alias || [],\n    redirect: indexxm6ZZy6joIMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/favourites/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexqjw6Exag1KMeta?.name ?? \"index\",\n    path: indexqjw6Exag1KMeta?.path ?? \"/\",\n    meta: indexqjw6Exag1KMeta || {},\n    alias: indexqjw6Exag1KMeta?.alias || [],\n    redirect: indexqjw6Exag1KMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: introNtxjQt8JiFMeta?.name ?? \"intro\",\n    path: introNtxjQt8JiFMeta?.path ?? \"/intro\",\n    meta: introNtxjQt8JiFMeta || {},\n    alias: introNtxjQt8JiFMeta?.alias || [],\n    redirect: introNtxjQt8JiFMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/intro.vue\").then(m => m.default || m)\n  },\n  {\n    name: index3x0RGL2uVxMeta?.name ?? \"login\",\n    path: index3x0RGL2uVxMeta?.path ?? \"/login\",\n    meta: index3x0RGL2uVxMeta || {},\n    alias: index3x0RGL2uVxMeta?.alias || [],\n    redirect: index3x0RGL2uVxMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/login/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexwwlyI7pFcZMeta?.name ?? \"panel-artist-advertisements\",\n    path: indexwwlyI7pFcZMeta?.path ?? \"/panel/artist/advertisements\",\n    meta: indexwwlyI7pFcZMeta || {},\n    alias: indexwwlyI7pFcZMeta?.alias || [],\n    redirect: indexwwlyI7pFcZMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexcKOBPlgJ4rMeta?.name ?? \"panel-artist-banners\",\n    path: indexcKOBPlgJ4rMeta?.path ?? \"/panel/artist/banners\",\n    meta: indexcKOBPlgJ4rMeta || {},\n    alias: indexcKOBPlgJ4rMeta?.alias || [],\n    redirect: indexcKOBPlgJ4rMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexppWnRuqJyvMeta?.name ?? \"panel-artist\",\n    path: indexppWnRuqJyvMeta?.path ?? \"/panel/artist\",\n    meta: indexppWnRuqJyvMeta || {},\n    alias: indexppWnRuqJyvMeta?.alias || [],\n    redirect: indexppWnRuqJyvMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: index8WkN3qpb2HMeta?.name ?? \"panel-artist-laddering\",\n    path: index8WkN3qpb2HMeta?.path ?? \"/panel/artist/laddering\",\n    meta: index8WkN3qpb2HMeta || {},\n    alias: index8WkN3qpb2HMeta?.alias || [],\n    redirect: index8WkN3qpb2HMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/laddering/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: _91id_93KS3ZByP4HAMeta?.name ?? \"panel-artist-portfolios-id\",\n    path: _91id_93KS3ZByP4HAMeta?.path ?? \"/panel/artist/portfolios/:id()\",\n    meta: _91id_93KS3ZByP4HAMeta || {},\n    alias: _91id_93KS3ZByP4HAMeta?.alias || [],\n    redirect: _91id_93KS3ZByP4HAMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/[id].vue\").then(m => m.default || m)\n  },\n  {\n    name: createVeaNumi2KoMeta?.name ?? \"panel-artist-portfolios-create\",\n    path: createVeaNumi2KoMeta?.path ?? \"/panel/artist/portfolios/create\",\n    meta: createVeaNumi2KoMeta || {},\n    alias: createVeaNumi2KoMeta?.alias || [],\n    redirect: createVeaNumi2KoMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/create.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexeOZM1vvjkhMeta?.name ?? \"panel-artist-portfolios\",\n    path: indexeOZM1vvjkhMeta?.path ?? \"/panel/artist/portfolios\",\n    meta: indexeOZM1vvjkhMeta || {},\n    alias: indexeOZM1vvjkhMeta?.alias || [],\n    redirect: indexeOZM1vvjkhMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexz9HjbYtORTMeta?.name ?? \"panel-artist-support\",\n    path: indexz9HjbYtORTMeta?.path ?? \"/panel/artist/support\",\n    meta: indexz9HjbYtORTMeta || {},\n    alias: indexz9HjbYtORTMeta?.alias || [],\n    redirect: indexz9HjbYtORTMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: ticketif1nJsLbV3Meta?.name ?? \"panel-artist-support-ticket\",\n    path: ticketif1nJsLbV3Meta?.path ?? \"/panel/artist/support/ticket\",\n    meta: ticketif1nJsLbV3Meta || {},\n    alias: ticketif1nJsLbV3Meta?.alias || [],\n    redirect: ticketif1nJsLbV3Meta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/ticket.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexFTehvWCWHtMeta?.name ?? \"panel-artist-support-tickets\",\n    path: indexFTehvWCWHtMeta?.path ?? \"/panel/artist/support/tickets\",\n    meta: indexFTehvWCWHtMeta || {},\n    alias: indexFTehvWCWHtMeta?.alias || [],\n    redirect: indexFTehvWCWHtMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexU3a7zsd2AiMeta?.name ?? \"panel-artist-views\",\n    path: indexU3a7zsd2AiMeta?.path ?? \"/panel/artist/views\",\n    meta: indexU3a7zsd2AiMeta || {},\n    alias: indexU3a7zsd2AiMeta?.alias || [],\n    redirect: indexU3a7zsd2AiMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexbZEygHT8sPMeta?.name ?? \"panel-artist-wallet\",\n    path: indexbZEygHT8sPMeta?.path ?? \"/panel/artist/wallet\",\n    meta: indexbZEygHT8sPMeta || {},\n    alias: indexbZEygHT8sPMeta?.alias || [],\n    redirect: indexbZEygHT8sPMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: payNb4JVCYFCTMeta?.name ?? \"panel-artist-wallet-pay\",\n    path: payNb4JVCYFCTMeta?.path ?? \"/panel/artist/wallet/pay\",\n    meta: payNb4JVCYFCTMeta || {},\n    alias: payNb4JVCYFCTMeta?.alias || [],\n    redirect: payNb4JVCYFCTMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/pay.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexctrkswnj7LMeta?.name ?? \"panel\",\n    path: indexctrkswnj7LMeta?.path ?? \"/panel\",\n    meta: indexctrkswnj7LMeta || {},\n    alias: indexctrkswnj7LMeta?.alias || [],\n    redirect: indexctrkswnj7LMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: upgradeyAe25Q3HyUMeta?.name ?? \"panel-upgrade\",\n    path: upgradeyAe25Q3HyUMeta?.path ?? \"/panel/upgrade\",\n    meta: upgradeyAe25Q3HyUMeta || {},\n    alias: upgradeyAe25Q3HyUMeta?.alias || [],\n    redirect: upgradeyAe25Q3HyUMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/upgrade.vue\").then(m => m.default || m)\n  },\n  {\n    name: _91id_936QgpxitWfuMeta?.name ?? \"portfolios-id\",\n    path: _91id_936QgpxitWfuMeta?.path ?? \"/portfolios/:id()\",\n    meta: _91id_936QgpxitWfuMeta || {},\n    alias: _91id_936QgpxitWfuMeta?.alias || [],\n    redirect: _91id_936QgpxitWfuMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/portfolios/[id].vue\").then(m => m.default || m)\n  },\n  {\n    name: indexBSc41za0MbMeta?.name ?? \"register\",\n    path: indexBSc41za0MbMeta?.path ?? \"/register\",\n    meta: indexBSc41za0MbMeta || {},\n    alias: indexBSc41za0MbMeta?.alias || [],\n    redirect: indexBSc41za0MbMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/register/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexI12lCtPEzuMeta?.name ?? \"search\",\n    path: indexI12lCtPEzuMeta?.path ?? \"/search\",\n    meta: indexI12lCtPEzuMeta || {},\n    alias: indexI12lCtPEzuMeta?.alias || [],\n    redirect: indexI12lCtPEzuMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/search/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: alt_45numberSfiQAHe9QxMeta?.name ?? \"security-alt-number\",\n    path: alt_45numberSfiQAHe9QxMeta?.path ?? \"/security/alt-number\",\n    meta: alt_45numberSfiQAHe9QxMeta || {},\n    alias: alt_45numberSfiQAHe9QxMeta?.alias || [],\n    redirect: alt_45numberSfiQAHe9QxMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/security/alt-number.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexM85ZOxLwxOMeta?.name ?? \"security\",\n    path: indexM85ZOxLwxOMeta?.path ?? \"/security\",\n    meta: indexM85ZOxLwxOMeta || {},\n    alias: indexM85ZOxLwxOMeta?.alias || [],\n    redirect: indexM85ZOxLwxOMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/security/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: passwordJqB38Ih7IbMeta?.name ?? \"security-password\",\n    path: passwordJqB38Ih7IbMeta?.path ?? \"/security/password\",\n    meta: passwordJqB38Ih7IbMeta || {},\n    alias: passwordJqB38Ih7IbMeta?.alias || [],\n    redirect: passwordJqB38Ih7IbMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/security/password.vue\").then(m => m.default || m)\n  },\n  {\n    name: _91id_93VzVNyE74M8Meta?.name ?? \"services-id\",\n    path: _91id_93VzVNyE74M8Meta?.path ?? \"/services/:id()\",\n    meta: _91id_93VzVNyE74M8Meta || {},\n    alias: _91id_93VzVNyE74M8Meta?.alias || [],\n    redirect: _91id_93VzVNyE74M8Meta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/services/[id].vue\").then(m => m.default || m)\n  },\n  {\n    name: index43tE29Hea8Meta?.name ?? \"services\",\n    path: index43tE29Hea8Meta?.path ?? \"/services\",\n    meta: index43tE29Hea8Meta || {},\n    alias: index43tE29Hea8Meta?.alias || [],\n    redirect: index43tE29Hea8Meta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/services/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexSY5E0hlRZJMeta?.name ?? \"support\",\n    path: indexSY5E0hlRZJMeta?.path ?? \"/support\",\n    meta: indexSY5E0hlRZJMeta || {},\n    alias: indexSY5E0hlRZJMeta?.alias || [],\n    redirect: indexSY5E0hlRZJMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/support/index.vue\").then(m => m.default || m)\n  },\n  {\n    name: ticketjqIkZN7XkaMeta?.name ?? \"support-ticket\",\n    path: ticketjqIkZN7XkaMeta?.path ?? \"/support/ticket\",\n    meta: ticketjqIkZN7XkaMeta || {},\n    alias: ticketjqIkZN7XkaMeta?.alias || [],\n    redirect: ticketjqIkZN7XkaMeta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/support/ticket.vue\").then(m => m.default || m)\n  },\n  {\n    name: indexsn889hTN13Meta?.name ?? \"support-tickets\",\n    path: indexsn889hTN13Meta?.path ?? \"/support/tickets\",\n    meta: indexsn889hTN13Meta || {},\n    alias: indexsn889hTN13Meta?.alias || [],\n    redirect: indexsn889hTN13Meta?.redirect,\n    component: () => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/support/tickets/index.vue\").then(m => m.default || m)\n  }\n]",
+      "start": 1726488536821,
+      "end": 1726488536821,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488536822,
+      "end": 1726488536822,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488536823,
+      "end": 1726488536823,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488536824,
+      "end": 1726488536824,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488536824,
+      "end": 1726488536824,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488536824,
+      "end": 1726488536824,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488536824,
+      "end": 1726488536824,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488536824,
+      "end": 1726488536825,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488536825,
+      "end": 1726488536825,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488536825,
+      "end": 1726488536825,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488536825,
+      "end": 1726488536830,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488536831,
+      "end": 1726488536831,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488536831,
+      "end": 1726488536831,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488536831,
+      "end": 1726488536831,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488536831,
+      "end": 1726488536831,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488536831,
+      "end": 1726488536831,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488536831,
+      "end": 1726488536831,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "result": "import { __vitePreload } from \"\u0000vite/preload-helper.js\";import { default as aboutusuIbaDBIid1Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/aboutus.vue?macro=true\";\nimport { default as _91id_93YjHx4uDlu8Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/artists/[id].vue?macro=true\";\nimport { default as indexxm6ZZy6joIMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/favourites/index.vue?macro=true\";\nimport { default as indexqjw6Exag1KMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/index.vue?macro=true\";\nimport { default as introNtxjQt8JiFMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/intro.vue?macro=true\";\nimport { default as index3x0RGL2uVxMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/login/index.vue?macro=true\";\nimport { default as indexwwlyI7pFcZMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue?macro=true\";\nimport { default as indexcKOBPlgJ4rMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue?macro=true\";\nimport { default as indexppWnRuqJyvMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?macro=true\";\nimport { default as index8WkN3qpb2HMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/laddering/index.vue?macro=true\";\nimport { default as _91id_93KS3ZByP4HAMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/[id].vue?macro=true\";\nimport { default as createVeaNumi2KoMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/create.vue?macro=true\";\nimport { default as indexeOZM1vvjkhMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue?macro=true\";\nimport { default as indexz9HjbYtORTMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/index.vue?macro=true\";\nimport { default as ticketif1nJsLbV3Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/ticket.vue?macro=true\";\nimport { default as indexFTehvWCWHtMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue?macro=true\";\nimport { default as indexU3a7zsd2AiMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue?macro=true\";\nimport { default as indexbZEygHT8sPMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/index.vue?macro=true\";\nimport { default as payNb4JVCYFCTMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/pay.vue?macro=true\";\nimport { default as indexctrkswnj7LMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/index.vue?macro=true\";\nimport { default as upgradeyAe25Q3HyUMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/upgrade.vue?macro=true\";\nimport { default as _91id_936QgpxitWfuMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/portfolios/[id].vue?macro=true\";\nimport { default as indexBSc41za0MbMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/register/index.vue?macro=true\";\nimport { default as indexI12lCtPEzuMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/search/index.vue?macro=true\";\nimport { default as alt_45numberSfiQAHe9QxMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/security/alt-number.vue?macro=true\";\nimport { default as indexM85ZOxLwxOMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/security/index.vue?macro=true\";\nimport { default as passwordJqB38Ih7IbMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/security/password.vue?macro=true\";\nimport { default as _91id_93VzVNyE74M8Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/services/[id].vue?macro=true\";\nimport { default as index43tE29Hea8Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/services/index.vue?macro=true\";\nimport { default as indexSY5E0hlRZJMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/support/index.vue?macro=true\";\nimport { default as ticketjqIkZN7XkaMeta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/support/ticket.vue?macro=true\";\nimport { default as indexsn889hTN13Meta } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/support/tickets/index.vue?macro=true\";\nexport default [\n  {\n    name: aboutusuIbaDBIid1Meta?.name ?? \"aboutus\",\n    path: aboutusuIbaDBIid1Meta?.path ?? \"/aboutus\",\n    meta: aboutusuIbaDBIid1Meta || {},\n    alias: aboutusuIbaDBIid1Meta?.alias || [],\n    redirect: aboutusuIbaDBIid1Meta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/aboutus.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: _91id_93YjHx4uDlu8Meta?.name ?? \"artists-id\",\n    path: _91id_93YjHx4uDlu8Meta?.path ?? \"/artists/:id()\",\n    meta: _91id_93YjHx4uDlu8Meta || {},\n    alias: _91id_93YjHx4uDlu8Meta?.alias || [],\n    redirect: _91id_93YjHx4uDlu8Meta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/artists/[id].vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexxm6ZZy6joIMeta?.name ?? \"favourites\",\n    path: indexxm6ZZy6joIMeta?.path ?? \"/favourites\",\n    meta: indexxm6ZZy6joIMeta || {},\n    alias: indexxm6ZZy6joIMeta?.alias || [],\n    redirect: indexxm6ZZy6joIMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/favourites/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexqjw6Exag1KMeta?.name ?? \"index\",\n    path: indexqjw6Exag1KMeta?.path ?? \"/\",\n    meta: indexqjw6Exag1KMeta || {},\n    alias: indexqjw6Exag1KMeta?.alias || [],\n    redirect: indexqjw6Exag1KMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: introNtxjQt8JiFMeta?.name ?? \"intro\",\n    path: introNtxjQt8JiFMeta?.path ?? \"/intro\",\n    meta: introNtxjQt8JiFMeta || {},\n    alias: introNtxjQt8JiFMeta?.alias || [],\n    redirect: introNtxjQt8JiFMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/intro.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: index3x0RGL2uVxMeta?.name ?? \"login\",\n    path: index3x0RGL2uVxMeta?.path ?? \"/login\",\n    meta: index3x0RGL2uVxMeta || {},\n    alias: index3x0RGL2uVxMeta?.alias || [],\n    redirect: index3x0RGL2uVxMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/login/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexwwlyI7pFcZMeta?.name ?? \"panel-artist-advertisements\",\n    path: indexwwlyI7pFcZMeta?.path ?? \"/panel/artist/advertisements\",\n    meta: indexwwlyI7pFcZMeta || {},\n    alias: indexwwlyI7pFcZMeta?.alias || [],\n    redirect: indexwwlyI7pFcZMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexcKOBPlgJ4rMeta?.name ?? \"panel-artist-banners\",\n    path: indexcKOBPlgJ4rMeta?.path ?? \"/panel/artist/banners\",\n    meta: indexcKOBPlgJ4rMeta || {},\n    alias: indexcKOBPlgJ4rMeta?.alias || [],\n    redirect: indexcKOBPlgJ4rMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexppWnRuqJyvMeta?.name ?? \"panel-artist\",\n    path: indexppWnRuqJyvMeta?.path ?? \"/panel/artist\",\n    meta: indexppWnRuqJyvMeta || {},\n    alias: indexppWnRuqJyvMeta?.alias || [],\n    redirect: indexppWnRuqJyvMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: index8WkN3qpb2HMeta?.name ?? \"panel-artist-laddering\",\n    path: index8WkN3qpb2HMeta?.path ?? \"/panel/artist/laddering\",\n    meta: index8WkN3qpb2HMeta || {},\n    alias: index8WkN3qpb2HMeta?.alias || [],\n    redirect: index8WkN3qpb2HMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/laddering/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: _91id_93KS3ZByP4HAMeta?.name ?? \"panel-artist-portfolios-id\",\n    path: _91id_93KS3ZByP4HAMeta?.path ?? \"/panel/artist/portfolios/:id()\",\n    meta: _91id_93KS3ZByP4HAMeta || {},\n    alias: _91id_93KS3ZByP4HAMeta?.alias || [],\n    redirect: _91id_93KS3ZByP4HAMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/[id].vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: createVeaNumi2KoMeta?.name ?? \"panel-artist-portfolios-create\",\n    path: createVeaNumi2KoMeta?.path ?? \"/panel/artist/portfolios/create\",\n    meta: createVeaNumi2KoMeta || {},\n    alias: createVeaNumi2KoMeta?.alias || [],\n    redirect: createVeaNumi2KoMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/create.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexeOZM1vvjkhMeta?.name ?? \"panel-artist-portfolios\",\n    path: indexeOZM1vvjkhMeta?.path ?? \"/panel/artist/portfolios\",\n    meta: indexeOZM1vvjkhMeta || {},\n    alias: indexeOZM1vvjkhMeta?.alias || [],\n    redirect: indexeOZM1vvjkhMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexz9HjbYtORTMeta?.name ?? \"panel-artist-support\",\n    path: indexz9HjbYtORTMeta?.path ?? \"/panel/artist/support\",\n    meta: indexz9HjbYtORTMeta || {},\n    alias: indexz9HjbYtORTMeta?.alias || [],\n    redirect: indexz9HjbYtORTMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: ticketif1nJsLbV3Meta?.name ?? \"panel-artist-support-ticket\",\n    path: ticketif1nJsLbV3Meta?.path ?? \"/panel/artist/support/ticket\",\n    meta: ticketif1nJsLbV3Meta || {},\n    alias: ticketif1nJsLbV3Meta?.alias || [],\n    redirect: ticketif1nJsLbV3Meta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/ticket.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexFTehvWCWHtMeta?.name ?? \"panel-artist-support-tickets\",\n    path: indexFTehvWCWHtMeta?.path ?? \"/panel/artist/support/tickets\",\n    meta: indexFTehvWCWHtMeta || {},\n    alias: indexFTehvWCWHtMeta?.alias || [],\n    redirect: indexFTehvWCWHtMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexU3a7zsd2AiMeta?.name ?? \"panel-artist-views\",\n    path: indexU3a7zsd2AiMeta?.path ?? \"/panel/artist/views\",\n    meta: indexU3a7zsd2AiMeta || {},\n    alias: indexU3a7zsd2AiMeta?.alias || [],\n    redirect: indexU3a7zsd2AiMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/views/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexbZEygHT8sPMeta?.name ?? \"panel-artist-wallet\",\n    path: indexbZEygHT8sPMeta?.path ?? \"/panel/artist/wallet\",\n    meta: indexbZEygHT8sPMeta || {},\n    alias: indexbZEygHT8sPMeta?.alias || [],\n    redirect: indexbZEygHT8sPMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: payNb4JVCYFCTMeta?.name ?? \"panel-artist-wallet-pay\",\n    path: payNb4JVCYFCTMeta?.path ?? \"/panel/artist/wallet/pay\",\n    meta: payNb4JVCYFCTMeta || {},\n    alias: payNb4JVCYFCTMeta?.alias || [],\n    redirect: payNb4JVCYFCTMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/wallet/pay.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexctrkswnj7LMeta?.name ?? \"panel\",\n    path: indexctrkswnj7LMeta?.path ?? \"/panel\",\n    meta: indexctrkswnj7LMeta || {},\n    alias: indexctrkswnj7LMeta?.alias || [],\n    redirect: indexctrkswnj7LMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: upgradeyAe25Q3HyUMeta?.name ?? \"panel-upgrade\",\n    path: upgradeyAe25Q3HyUMeta?.path ?? \"/panel/upgrade\",\n    meta: upgradeyAe25Q3HyUMeta || {},\n    alias: upgradeyAe25Q3HyUMeta?.alias || [],\n    redirect: upgradeyAe25Q3HyUMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/upgrade.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: _91id_936QgpxitWfuMeta?.name ?? \"portfolios-id\",\n    path: _91id_936QgpxitWfuMeta?.path ?? \"/portfolios/:id()\",\n    meta: _91id_936QgpxitWfuMeta || {},\n    alias: _91id_936QgpxitWfuMeta?.alias || [],\n    redirect: _91id_936QgpxitWfuMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/portfolios/[id].vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexBSc41za0MbMeta?.name ?? \"register\",\n    path: indexBSc41za0MbMeta?.path ?? \"/register\",\n    meta: indexBSc41za0MbMeta || {},\n    alias: indexBSc41za0MbMeta?.alias || [],\n    redirect: indexBSc41za0MbMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/register/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexI12lCtPEzuMeta?.name ?? \"search\",\n    path: indexI12lCtPEzuMeta?.path ?? \"/search\",\n    meta: indexI12lCtPEzuMeta || {},\n    alias: indexI12lCtPEzuMeta?.alias || [],\n    redirect: indexI12lCtPEzuMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/search/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: alt_45numberSfiQAHe9QxMeta?.name ?? \"security-alt-number\",\n    path: alt_45numberSfiQAHe9QxMeta?.path ?? \"/security/alt-number\",\n    meta: alt_45numberSfiQAHe9QxMeta || {},\n    alias: alt_45numberSfiQAHe9QxMeta?.alias || [],\n    redirect: alt_45numberSfiQAHe9QxMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/security/alt-number.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexM85ZOxLwxOMeta?.name ?? \"security\",\n    path: indexM85ZOxLwxOMeta?.path ?? \"/security\",\n    meta: indexM85ZOxLwxOMeta || {},\n    alias: indexM85ZOxLwxOMeta?.alias || [],\n    redirect: indexM85ZOxLwxOMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/security/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: passwordJqB38Ih7IbMeta?.name ?? \"security-password\",\n    path: passwordJqB38Ih7IbMeta?.path ?? \"/security/password\",\n    meta: passwordJqB38Ih7IbMeta || {},\n    alias: passwordJqB38Ih7IbMeta?.alias || [],\n    redirect: passwordJqB38Ih7IbMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/security/password.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: _91id_93VzVNyE74M8Meta?.name ?? \"services-id\",\n    path: _91id_93VzVNyE74M8Meta?.path ?? \"/services/:id()\",\n    meta: _91id_93VzVNyE74M8Meta || {},\n    alias: _91id_93VzVNyE74M8Meta?.alias || [],\n    redirect: _91id_93VzVNyE74M8Meta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/services/[id].vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: index43tE29Hea8Meta?.name ?? \"services\",\n    path: index43tE29Hea8Meta?.path ?? \"/services\",\n    meta: index43tE29Hea8Meta || {},\n    alias: index43tE29Hea8Meta?.alias || [],\n    redirect: index43tE29Hea8Meta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/services/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexSY5E0hlRZJMeta?.name ?? \"support\",\n    path: indexSY5E0hlRZJMeta?.path ?? \"/support\",\n    meta: indexSY5E0hlRZJMeta || {},\n    alias: indexSY5E0hlRZJMeta?.alias || [],\n    redirect: indexSY5E0hlRZJMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/support/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: ticketjqIkZN7XkaMeta?.name ?? \"support-ticket\",\n    path: ticketjqIkZN7XkaMeta?.path ?? \"/support/ticket\",\n    meta: ticketjqIkZN7XkaMeta || {},\n    alias: ticketjqIkZN7XkaMeta?.alias || [],\n    redirect: ticketjqIkZN7XkaMeta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/support/ticket.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  },\n  {\n    name: indexsn889hTN13Meta?.name ?? \"support-tickets\",\n    path: indexsn889hTN13Meta?.path ?? \"/support/tickets\",\n    meta: indexsn889hTN13Meta || {},\n    alias: indexsn889hTN13Meta?.alias || [],\n    redirect: indexsn889hTN13Meta?.redirect,\n    component: () => __vitePreload(() => import(\"/home/saeed/w/projects/beautymap/beautyfront/pages/support/tickets/index.vue\"),__VITE_IS_MODERN__?\"__VITE_PRELOAD__\":void 0,import.meta.url).then(m => m.default || m)\n  }\n]",
+      "start": 1726488536831,
+      "end": 1726488536832,
+      "order": "normal",
+      "sourcemaps": null
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488536833,
+      "end": 1726488536833,
+      "order": "normal"
+    }
+  ]
+}

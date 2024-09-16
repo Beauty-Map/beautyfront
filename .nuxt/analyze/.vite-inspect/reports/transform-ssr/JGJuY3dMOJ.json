@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSliderItem.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PopularArtistDesktopSliderItem',\n  __ssrInlineRender: true,\n  props: {\r\n  image: {\r\n    type: String,\r\n    default: '/images/artist-slider/1.png'\r\n  },\r\n  mainTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  subTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  description: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  linkUrl: {\r\n    type: String,\r\n    default: '/'\r\n  },\r\n  linkTitle: {\r\n    type: String,\r\n    default: ''\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: \"flex flex-col w-full relative bg-center bg-no-repeat bg-cover\",\n    style: `background-image: url(${__props.image})`\n  }, _attrs))}><div class=\"main-desktop-slider-left-box pt-[10px] px-[15px] md:pt-[25px] md:px-[30px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center\">`)\n  if (__props.mainTitle) {\n    _push(`<div class=\"text-base font-medium text-right text-[40px] leading-[60px] text-white mb-2\">${_ssrInterpolate(__props.mainTitle)}</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.subTitle) {\n    _push(`<div class=\"text-sm font-normal text-right text-[24px] leading-[40px] text-white mb-2\">${_ssrInterpolate(__props.subTitle)}</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.description) {\n    _push(`<div class=\"text-xs font-normal text-right text-white mb-2\">${_ssrInterpolate(__props.description)}</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<a${\n    _ssrRenderAttr(\"href\", __props.linkUrl)\n  } target=\"_blank\" class=\"rounded-3xl mt-[20px] py-[7px] px-[35px] flex justify-center items-center text-center bg-[#FF3CA0] text-[28px] min-h-[44px] text-white text-sm\">${\n    _ssrInterpolate(__props.linkTitle ?? 'مشاهده')\n  }</a></div></div>`)\n}\n}\n\n})",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSliderItem.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"flex flex-col w-full relative bg-center\tbg-no-repeat bg-cover\" :style=\"`background-image: url(${image})`\">\r\n<!--    <img class=\"min-h-[144px]\" :src=\"image\" alt=\"\">-->\r\n    <div class=\"main-desktop-slider-left-box pt-[10px] px-[15px] md:pt-[25px] md:px-[30px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center\">\r\n      <div v-if=\"mainTitle\" class=\"text-base font-medium text-right text-[40px] leading-[60px] text-white mb-2\">{{ mainTitle }}</div>\r\n      <div v-if=\"subTitle\" class=\"text-sm font-normal text-right text-[24px] leading-[40px] text-white mb-2\">{{ subTitle }}</div>\r\n      <div v-if=\"description\" class=\"text-xs font-normal text-right text-white mb-2\">{{ description }}</div>\r\n      <a :href=\"linkUrl\" target=\"_blank\" class=\"rounded-3xl mt-[20px] py-[7px] px-[35px] flex justify-center items-center text-center bg-[#FF3CA0] text-[28px] min-h-[44px] text-white text-sm\">\r\n        {{ linkTitle ?? 'مشاهده' }}\r\n      </a>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nconst props = defineProps({\r\n  image: {\r\n    type: String,\r\n    default: '/images/artist-slider/1.png'\r\n  },\r\n  mainTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  subTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  description: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  linkUrl: {\r\n    type: String,\r\n    default: '/'\r\n  },\r\n  linkTitle: {\r\n    type: String,\r\n    default: ''\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;AAcwB,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAyBZ,CAAC;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488554763,
+      "end": 1726488554763,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"PopularArtistDesktopSliderItem\",\n  __ssrInlineRender: true,\n  props: {\n    image: {\n      type: String,\n      default: \"/images/artist-slider/1.png\"\n    },\n    mainTitle: {\n      type: String,\n      default: \"\"\n    },\n    subTitle: {\n      type: String,\n      default: \"\"\n    },\n    description: {\n      type: String,\n      default: \"\"\n    },\n    linkUrl: {\n      type: String,\n      default: \"/\"\n    },\n    linkTitle: {\n      type: String,\n      default: \"\"\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({\n        class: \"flex flex-col w-full relative bg-center bg-no-repeat bg-cover\",\n        style: `background-image: url(${__props.image})`\n      }, _attrs))}><div class=\"main-desktop-slider-left-box pt-[10px] px-[15px] md:pt-[25px] md:px-[30px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center\">`);\n      if (__props.mainTitle) {\n        _push(`<div class=\"text-base font-medium text-right text-[40px] leading-[60px] text-white mb-2\">${_ssrInterpolate(__props.mainTitle)}</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.subTitle) {\n        _push(`<div class=\"text-sm font-normal text-right text-[24px] leading-[40px] text-white mb-2\">${_ssrInterpolate(__props.subTitle)}</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      if (__props.description) {\n        _push(`<div class=\"text-xs font-normal text-right text-white mb-2\">${_ssrInterpolate(__props.description)}</div>`);\n      } else {\n        _push(`<!---->`);\n      }\n      _push(`<a${_ssrRenderAttr(\"href\", __props.linkUrl)} target=\"_blank\" class=\"rounded-3xl mt-[20px] py-[7px] px-[35px] flex justify-center items-center text-center bg-[#FF3CA0] text-[28px] min-h-[44px] text-white text-sm\">${_ssrInterpolate(__props.linkTitle ?? \"مشاهده\")}</a></div></div>`);\n    };\n  }\n});\n",
+      "start": 1726488554763,
+      "end": 1726488554805,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSliderItem.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttr as _ssrRenderAttr, ssrRenderAttrs as _ssrRenderAttrs, ssrInterpolate as _ssrInterpolate } from \"vue/server-renderer\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PopularArtistDesktopSliderItem',\n  __ssrInlineRender: true,\n  props: {\r\n  image: {\r\n    type: String,\r\n    default: '/images/artist-slider/1.png'\r\n  },\r\n  mainTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  subTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  description: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  linkUrl: {\r\n    type: String,\r\n    default: '/'\r\n  },\r\n  linkTitle: {\r\n    type: String,\r\n    default: ''\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({\n    class: \"flex flex-col w-full relative bg-center bg-no-repeat bg-cover\",\n    style: `background-image: url(${__props.image})`\n  }, _attrs))}><div class=\"main-desktop-slider-left-box pt-[10px] px-[15px] md:pt-[25px] md:px-[30px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center\">`)\n  if (__props.mainTitle) {\n    _push(`<div class=\"text-base font-medium text-right text-[40px] leading-[60px] text-white mb-2\">${_ssrInterpolate(__props.mainTitle)}</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.subTitle) {\n    _push(`<div class=\"text-sm font-normal text-right text-[24px] leading-[40px] text-white mb-2\">${_ssrInterpolate(__props.subTitle)}</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  if (__props.description) {\n    _push(`<div class=\"text-xs font-normal text-right text-white mb-2\">${_ssrInterpolate(__props.description)}</div>`)\n  } else {\n    _push(`<!---->`)\n  }\n  _push(`<a${\n    _ssrRenderAttr(\"href\", __props.linkUrl)\n  } target=\"_blank\" class=\"rounded-3xl mt-[20px] py-[7px] px-[35px] flex justify-center items-center text-center bg-[#FF3CA0] text-[28px] min-h-[44px] text-white text-sm\">${\n    _ssrInterpolate(__props.linkTitle ?? 'مشاهده')\n  }</a></div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,iBAAiB,gBAAgB,kBAAkB,iBAAiB,kBAAkB,uBAAuB;AAGtH,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,WAAW;AAAA,MACT,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,UAAU;AAAA,MACR,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,aAAa;AAAA,MACX,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,SAAS;AAAA,MACP,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,WAAW;AAAA,MACT,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY;AAAA,QACvC,OAAO;AAAA,QACP,OAAO,yBAAyB,QAAQ,KAAK;AAAA,MAC/C,GAAG,MAAM,CAAC,CAAC,oKAAoK;AAC/K,UAAI,QAAQ,WAAW;AACrB,cAAM,4FAA4F,gBAAgB,QAAQ,SAAS,CAAC,QAAQ;AAAA,MAC9I,OAAO;AACL,cAAM,SAAS;AAAA,MACjB;AACA,UAAI,QAAQ,UAAU;AACpB,cAAM,0FAA0F,gBAAgB,QAAQ,QAAQ,CAAC,QAAQ;AAAA,MAC3I,OAAO;AACL,cAAM,SAAS;AAAA,MACjB;AACA,UAAI,QAAQ,aAAa;AACvB,cAAM,+DAA+D,gBAAgB,QAAQ,WAAW,CAAC,QAAQ;AAAA,MACnH,OAAO;AACL,cAAM,SAAS;AAAA,MACjB;AACA,YAAM,KACJ,eAAe,QAAQ,QAAQ,OAAO,CACxC,2KACE,gBAAgB,QAAQ,aAAa,QAAQ,CAC/C,kBAAkB;AAAA,IACpB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488554805,
+      "end": 1726488554805,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488554805,
+      "end": 1726488554805,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488554805,
+      "end": 1726488554805,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488554805,
+      "end": 1726488554805,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488554806,
+      "end": 1726488554806,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488554806,
+      "end": 1726488554806,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488554806,
+      "end": 1726488554806,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488554806,
+      "end": 1726488554806,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488554806,
+      "end": 1726488554806,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488554806,
+      "end": 1726488554806,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488554807,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488554808,
+      "end": 1726488554808,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488554808,
+      "end": 1726488554813,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488554808,
+      "end": 1726488554814,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488554815,
+      "end": 1726488554815,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488554815,
+      "end": 1726488554815,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488554815,
+      "end": 1726488554815,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488554815,
+      "end": 1726488554815,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488554815,
+      "end": 1726488554815,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488554815,
+      "end": 1726488554815,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488554817,
+      "end": 1726488554817,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488554817,
+      "end": 1726488554817,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488554817,
+      "end": 1726488554817,
+      "order": "normal"
+    }
+  ]
+}

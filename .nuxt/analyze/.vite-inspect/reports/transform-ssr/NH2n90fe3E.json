@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/header/MainHeaderDesktop.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport MainLogo from \"~/components/icons/MainLogo.vue\";\r\nimport AuthButtonBox from \"~/components/header/auth/AuthButtonBox.vue\";\r\nimport HeaderNavbar from \"~/components/header/navbar/HeaderNavbar.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'MainHeaderDesktop',\n  __ssrInlineRender: true,\n  setup(__props) {\n\r\n\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"bg-[#F0FFF7] gap-x-[60px] gap-y-[10px] flex-wrap w-full py-[12px] px-[40px] flex flex-row justify-between items-center\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(MainLogo, null, null, _parent))\n  _push(`<div class=\"hidden md:flex flex-row justify-end items-center gap-[48px]\">`)\n  _push(_ssrRenderComponent(HeaderNavbar, null, null, _parent))\n  _push(_ssrRenderComponent(AuthButtonBox, null, null, _parent))\n  _push(`</div></div>`)\n}\n}\n\n})",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/header/MainHeaderDesktop.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n<div class=\"bg-[#F0FFF7] gap-x-[60px] gap-y-[10px] flex-wrap w-full py-[12px] px-[40px] flex flex-row justify-between items-center\">\r\n  <MainLogo />\r\n  <div class=\"hidden md:flex flex-row justify-end items-center gap-[48px]\">\r\n    <HeaderNavbar />\r\n    <AuthButtonBox />\r\n  </div>\r\n</div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport MainLogo from \"~/components/icons/MainLogo.vue\";\r\nimport AuthButtonBox from \"~/components/header/auth/AuthButtonBox.vue\";\r\nimport HeaderNavbar from \"~/components/header/navbar/HeaderNavbar.vue\";\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAYA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;AAJhD,CAAC;AACzB,CAAC;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488555449,
+      "end": 1726488555449,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport MainLogo from \"~/components/icons/MainLogo.vue\";\nimport AuthButtonBox from \"~/components/header/auth/AuthButtonBox.vue\";\nimport HeaderNavbar from \"~/components/header/navbar/HeaderNavbar.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"MainHeaderDesktop\",\n  __ssrInlineRender: true,\n  setup(__props) {\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"bg-[#F0FFF7] gap-x-[60px] gap-y-[10px] flex-wrap w-full py-[12px] px-[40px] flex flex-row justify-between items-center\" }, _attrs))}>`);\n      _push(_ssrRenderComponent(MainLogo, null, null, _parent));\n      _push(`<div class=\"hidden md:flex flex-row justify-end items-center gap-[48px]\">`);\n      _push(_ssrRenderComponent(HeaderNavbar, null, null, _parent));\n      _push(_ssrRenderComponent(AuthButtonBox, null, null, _parent));\n      _push(`</div></div>`);\n    };\n  }\n});\n",
+      "start": 1726488555449,
+      "end": 1726488555495,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/header/MainHeaderDesktop.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport MainLogo from \"~/components/icons/MainLogo.vue\";\r\nimport AuthButtonBox from \"~/components/header/auth/AuthButtonBox.vue\";\r\nimport HeaderNavbar from \"~/components/header/navbar/HeaderNavbar.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'MainHeaderDesktop',\n  __ssrInlineRender: true,\n  setup(__props) {\n\r\n\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"bg-[#F0FFF7] gap-x-[60px] gap-y-[10px] flex-wrap w-full py-[12px] px-[40px] flex flex-row justify-between items-center\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(MainLogo, null, null, _parent))\n  _push(`<div class=\"hidden md:flex flex-row justify-end items-center gap-[48px]\">`)\n  _push(_ssrRenderComponent(HeaderNavbar, null, null, _parent))\n  _push(_ssrRenderComponent(AuthButtonBox, null, null, _parent))\n  _push(`</div></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,kBAAkB,uBAAuB;AAE7F,OAAO,cAAc;AACrB,OAAO,mBAAmB;AAC1B,OAAO,kBAAkB;AAEzB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,MAAM,SAAS;AAIjB,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY,EAAE,OAAO,yHAAyH,GAAG,MAAM,CAAC,CAAC,GAAG;AACzL,YAAM,oBAAoB,UAAU,MAAM,MAAM,OAAO,CAAC;AACxD,YAAM,2EAA2E;AACjF,YAAM,oBAAoB,cAAc,MAAM,MAAM,OAAO,CAAC;AAC5D,YAAM,oBAAoB,eAAe,MAAM,MAAM,OAAO,CAAC;AAC7D,YAAM,cAAc;AAAA,IACtB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488555495,
+      "end": 1726488555495,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488555496,
+      "end": 1726488555496,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488555496,
+      "end": 1726488555496,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488555497,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488555498,
+      "end": 1726488555498,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488555499,
+      "end": 1726488555499,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555499,
+      "end": 1726488555499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488555499,
+      "end": 1726488555499,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555499,
+      "end": 1726488555506,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488555499,
+      "end": 1726488555507,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555507,
+      "end": 1726488555507,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488555507,
+      "end": 1726488555507,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555508,
+      "end": 1726488555508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488555508,
+      "end": 1726488555508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488555508,
+      "end": 1726488555508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488555508,
+      "end": 1726488555509,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488555510,
+      "end": 1726488555510,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488555510,
+      "end": 1726488555510,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488555511,
+      "end": 1726488555511,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/header/navbar/HeaderNavbar.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-row justify-end whitespace-nowrap items-center gap-[48px] text-center text-[#141414] font-medium text-[16px] leading-[24px]\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'HeaderNavbar',\n  setup(__props) {\n\r\nconst auth = useSanctumAuth()\r\nconst isLoggedIn = computed(() => auth.isAuthenticated.value)\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_unref(isLoggedIn))\n      ? (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: 0,\n          to: \"/panel\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" داشبورد \")\n          ]),\n          _: 1\n        }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_nuxt_link, { to: \"/aboutus\" }, {\n      default: _withCtx(() => [\n        _createTextVNode(\" درباره ما \")\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_nuxt_link, { to: \"/support\" }, {\n      default: _withCtx(() => [\n        _createTextVNode(\" تماس با ما \")\n      ]),\n      _: 1\n    })\n  ]))\n}\n}\n\n})",
+      "start": 1726488543589,
+      "end": 1726488543589
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488543589,
+      "end": 1726488543589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488543589,
+      "end": 1726488543589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488543589,
+      "end": 1726488543589,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488543589,
+      "end": 1726488543589,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-row justify-end whitespace-nowrap items-center gap-[48px] text-center text-[#141414] font-medium text-[16px] leading-[24px]\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"HeaderNavbar\",\n  setup(__props) {\n    const auth = useSanctumAuth();\n    const isLoggedIn = computed(() => auth.isAuthenticated.value);\n    return (_ctx, _cache) => {\n      const _component_nuxt_link = _resolveComponent(\"nuxt-link\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _unref(isLoggedIn) ? (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: 0,\n          to: \"/panel\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" داشبورد \")\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true),\n        _createVNode(_component_nuxt_link, { to: \"/aboutus\" }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" درباره ما \")\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_nuxt_link, { to: \"/support\" }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" تماس با ما \")\n          ]),\n          _: 1\n        })\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488543589,
+      "end": 1726488543636,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/header/navbar/HeaderNavbar.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { unref as _unref, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-row justify-end whitespace-nowrap items-center gap-[48px] text-center text-[#141414] font-medium text-[16px] leading-[24px]\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'HeaderNavbar',\n  setup(__props) {\n\r\nconst auth = useSanctumAuth()\r\nconst isLoggedIn = computed(() => auth.isAuthenticated.value)\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    (_unref(isLoggedIn))\n      ? (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: 0,\n          to: \"/panel\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" داشبورد \")\n          ]),\n          _: 1\n        }))\n      : _createCommentVNode(\"\", true),\n    _createVNode(_component_nuxt_link, { to: \"/aboutus\" }, {\n      default: _withCtx(() => [\n        _createTextVNode(\" درباره ما \")\n      ]),\n      _: 1\n    }),\n    _createVNode(_component_nuxt_link, { to: \"/support\" }, {\n      default: _withCtx(() => [\n        _createTextVNode(\" تماس با ما \")\n      ]),\n      _: 1\n    })\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,SAAS,QAAQ,mBAAmB,kBAAkB,oBAAoB,mBAAmB,WAAW,UAAU,aAAa,YAAY,eAAe,cAAc,sBAAsB,qBAAqB,eAAe,cAAc,sBAAsB,2BAA2B;AAE1S,MAAM,aAAa,EAAE,OAAO,wIAAwI;AAGpK,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,OAAO,eAAe;AAC5B,UAAM,aAAa,SAAS,MAAM,KAAK,gBAAgB,KAAK;AAE5D,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,uBAAuB,kBAAkB,WAAW;AAE1D,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC1D,OAAO,UAAU,KACb,WAAW,GAAG,aAAa,sBAAsB;AAAA,UAChD,KAAK;AAAA,UACL,IAAI;AAAA,QACN,GAAG;AAAA,UACD,SAAS,SAAS,MAAM;AAAA,YACtB,iBAAiB,WAAW;AAAA,UAC9B,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC,KACD,oBAAoB,IAAI,IAAI;AAAA,QAChC,aAAa,sBAAsB,EAAE,IAAI,WAAW,GAAG;AAAA,UACrD,SAAS,SAAS,MAAM;AAAA,YACtB,iBAAiB,aAAa;AAAA,UAChC,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,QACD,aAAa,sBAAsB,EAAE,IAAI,WAAW,GAAG;AAAA,UACrD,SAAS,SAAS,MAAM;AAAA,YACtB,iBAAiB,cAAc;AAAA,UACjC,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488543636,
+      "end": 1726488543636,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488543636,
+      "end": 1726488543636,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488543636,
+      "end": 1726488543636,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488543636,
+      "end": 1726488543636,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488543636,
+      "end": 1726488543636,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488543637,
+      "end": 1726488543637,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488543637,
+      "end": 1726488543637,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488543638,
+      "end": 1726488543638,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488543639,
+      "end": 1726488543639,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488543639,
+      "end": 1726488543639,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488543639,
+      "end": 1726488543639,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useSanctumAuth } from '/home/saeed/w/projects/beautymap/beautyfront/node_modules/nuxt-auth-sanctum/dist/runtime/composables/useSanctumAuth.mjs';\nimport { computed } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-row justify-end whitespace-nowrap items-center gap-[48px] text-center text-[#141414] font-medium text-[16px] leading-[24px]\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"HeaderNavbar\",\n  setup(__props) {\n    const auth = useSanctumAuth();\n    const isLoggedIn = computed(() => auth.isAuthenticated.value);\n    return (_ctx, _cache) => {\n      const _component_nuxt_link = _resolveComponent(\"nuxt-link\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _unref(isLoggedIn) ? (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: 0,\n          to: \"/panel\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" داشبورد \")\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true),\n        _createVNode(_component_nuxt_link, { to: \"/aboutus\" }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" درباره ما \")\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_nuxt_link, { to: \"/support\" }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" تماس با ما \")\n          ]),\n          _: 1\n        })\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488543640,
+      "end": 1726488543651,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACb,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488543651,
+      "end": 1726488543651,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488543651,
+      "end": 1726488543651,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488543651,
+      "end": 1726488543651,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488543652,
+      "end": 1726488543652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/home/saeed/w/projects/beautymap/beautyfront/node_modules/nuxt/dist/app/components/nuxt-link\";\nimport { useSanctumAuth } from '/home/saeed/w/projects/beautymap/beautyfront/node_modules/nuxt-auth-sanctum/dist/runtime/composables/useSanctumAuth.mjs';\nimport { computed } from 'vue';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { unref as _unref, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-row justify-end whitespace-nowrap items-center gap-[48px] text-center text-[#141414] font-medium text-[16px] leading-[24px]\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"HeaderNavbar\",\n  setup(__props) {\n    const auth = useSanctumAuth();\n    const isLoggedIn = computed(() => auth.isAuthenticated.value);\n    return (_ctx, _cache) => {\n      const _component_nuxt_link = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _unref(isLoggedIn) ? (_openBlock(), _createBlock(_component_nuxt_link, {\n          key: 0,\n          to: \"/panel\"\n        }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" داشبورد \")\n          ]),\n          _: 1\n        })) : _createCommentVNode(\"\", true),\n        _createVNode(_component_nuxt_link, { to: \"/aboutus\" }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" درباره ما \")\n          ]),\n          _: 1\n        }),\n        _createVNode(_component_nuxt_link, { to: \"/support\" }, {\n          default: _withCtx(() => [\n            _createTextVNode(\" تماس با ما \")\n          ]),\n          _: 1\n        })\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488543652,
+      "end": 1726488543652,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488543652,
+      "end": 1726488543652,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488543653,
+      "end": 1726488543653,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488543653,
+      "end": 1726488543653,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/set-new-password-drawer/SetPasswordForm.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full overflow-y-auto\">\r\n    <PasswordInput title=\"کلمه عبور\" v-model=\"form.old_password\" class=\"mt-[27px]\"/>\r\n    <PasswordInput title=\"کلمه عبور جدید\" v-model=\"form.password\" class=\"mt-[27px]\"/>\r\n    <PasswordInput title=\"تکرار کلمه عبور جدید\" v-model=\"form.password_confirmation\" class=\"mt-[27px]\"/>\r\n    <MainActionButton class=\"mt-[48px] h-[44px]\" @click=\"doSetPassword\">\r\n      <div v-if=\"!pendingValue\" class=\"text-white text-center text-[14px] leading-[21px]\">\r\n        بازنشانی رمز عبور\r\n      </div>\r\n      <div v-else class=\"text-white text-center text-[14px] leading-[21px]\">\r\n        <moon-loader :loading=\"true\" :color=\"'#fff'\" :size=\"'25px'\" margin=\"10px\"></moon-loader>\r\n      </div>\r\n    </MainActionButton>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport PasswordInput from \"~/components/input/PasswordInput.vue\";\r\nimport MainActionButton from \"~/components/button/form/MainActionButton.vue\";\r\nimport {useDrawerStore} from \"~/store/Drawer\";\r\nimport {useCustomFetch} from \"~/composables/useCustomFetch\";\r\nimport MoonLoader from \"vue-spinner/src/MoonLoader.vue\";\r\n\r\nconst store = useDrawerStore()\r\nconst auth = useSanctumAuth()\r\n\r\nconst form = ref<ISetNewPasswordForm>({\r\n  old_password: '',\r\n  password: '',\r\n  password_confirmation: '',\r\n})\r\n\r\nconst pendingValue = ref<Boolean>(false)\r\n\r\nconst doSetPassword = async () => {\r\n  const res = await useCustomFetch('/own/password', {\r\n    method: \"PUT\",\r\n    body: form.value,\r\n  })\r\n  pendingValue.value = true\r\n  if (res.error.value) {\r\n    setTimeout(() => {\r\n      pendingValue.value = false\r\n    }, 500)\r\n  }\r\n  if (res.data.value) {\r\n    setTimeout(() => {\r\n      pendingValue.value = false\r\n      store.closeAllDrawers()\r\n    }, 500)\r\n  }\r\n}\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488542872,
+      "end": 1726488542939,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488542939,
+      "end": 1726488542939,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/set-new-password-drawer/SetPasswordForm.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/set-new-password-drawer/SetPasswordForm.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488542939,
+      "end": 1726488542994,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542994,
+      "end": 1726488542994,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542995,
+      "end": 1726488542995,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542995,
+      "end": 1726488542997,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542997,
+      "end": 1726488542997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542997,
+      "end": 1726488542997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542997,
+      "end": 1726488542997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542997,
+      "end": 1726488542997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488542997,
+      "end": 1726488542997,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542997,
+      "end": 1726488542998,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542998,
+      "end": 1726488542998,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542998,
+      "end": 1726488542998,
+      "order": "normal"
+    }
+  ]
+}

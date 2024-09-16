@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o,a as s}from"./entry.BtNxfFXi.js";const c={},n={width:"8",height:"14",viewBox:"0 0 8 14",fill:"none",xmlns:"http://www.w3.org/2000/svg"},r=s("path",{d:"M6.66553 12.9552L1.51992 6.77565L6.75811 0.674415",stroke:"#828282"},null,-1),_=[r];function a(i,h){return t(),o("svg",n,_)}const l=e(c,[["render",a]]);export{l as L};

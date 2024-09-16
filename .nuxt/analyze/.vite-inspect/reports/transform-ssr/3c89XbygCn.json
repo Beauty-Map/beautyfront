@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/drawer/WorkHoursDrawer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n<div\r\n    class=\"fixed flex flex-col h-full py-[30px] md:hide top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]\"\r\n    :class=\"[isOpen ? 'left-0 scale-1' : 'left-[-100%] hidden scale-0']\"\r\n>\r\n  <div class=\"flex flex-row items-center px-[28px] justify-between\">\r\n    <div></div>\r\n    <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">ساعت کاری</div>\r\n    <BackIcon @click=\"goBack\" />\r\n  </div>\r\n  <div class=\"w-full flex flex-col items-center justify-start mt-12 px-[5px] \">\r\n    <WorkHourItem\r\n      v-for=\"(w, i) in workHours\"\r\n      :key=\"i\"\r\n      :index=\"i\"\r\n      :work-hour=\"w\"\r\n      @click=\"openItemModal(w, i)\"\r\n    />\r\n  </div>\r\n  <div class=\"w-full flex flex-row gap-[5px] items-center justify-between mt-12\">\r\n    <div\r\n        @click=\"openAllModal\"\r\n        class=\"cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center\"\r\n    >\r\n      ویرایش کلی\r\n    </div>\r\n    <div\r\n        @click=\"openHoursModal\"\r\n        class=\"cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center\"\r\n    >\r\n      ویرایش ساعات\r\n    </div>\r\n    <div\r\n        @click=\"openDaysModal\"\r\n        class=\"cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center\"\r\n    >\r\n      ویرایش روز\r\n    </div>\r\n  </div>\r\n  <div class=\"w-full flex flex-row items-center justify-start mt-12\">\r\n    <p>تعطیلات رسمی آماده ارائه خدمات هستم</p>\r\n    <CheckBox v-model=\"workOnHolidays\"/>\r\n  </div>\r\n  <div class=\"mt-[80px] px-[22px] w-full flex flex-row items-center justify-center\">\r\n    <MainActionButton @click=\"doSave\">\r\n      <div class=\"text-white text-center text-[20px] leading-[30px] py-[11px]\">ذخیره اطلاعات</div>\r\n    </MainActionButton>\r\n  </div>\r\n  <ChooseHoursModal\r\n      v-if=\"showHoursModal\"\r\n      :is-open=\"showHoursModal\"\r\n      @save=\"saveHoursModal\"\r\n      @close=\"closeHoursModal\"\r\n      :start-hour=\"startHour\"\r\n      :end-hour=\"endHour\"\r\n  />\r\n  <ChooseDaysModal\r\n      v-if=\"showDaysModal\"\r\n      :is-open=\"showDaysModal\"\r\n      @save=\"saveDaysModal\"\r\n      @close=\"closeDaysModal\"\r\n      :work-hours=\"workHours\"\r\n  />\r\n  <ChooseItemModal\r\n      v-if=\"showItemModal\"\r\n      :is-open=\"showItemModal\"\r\n      @save=\"saveItemModal\"\r\n      @close=\"closeItemModal\"\r\n      :work-hour=\"item\"\r\n  />\r\n  <ChooseAllModal\r\n      v-if=\"showAllModal\"\r\n      :is-open=\"showAllModal\"\r\n      @save=\"saveAllModal\"\r\n      @close=\"closeAllModal\"\r\n      :work-hours=\"workHours\"\r\n      :is-closed=\"isClosed\"\r\n      :is-all-day-open=\"isAllDayOpen\"\r\n  />\r\n</div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport WorkHourItem from \"~/components/work-hour-drawer/WorkHourItem.vue\";\r\nimport CheckBox from \"~/components/input/CheckBox.vue\";\r\nimport ChooseAllModal from \"~/components/choose-work-hour/ChooseAllModal.vue\";\r\nimport MainActionButton from \"~/components/button/form/MainActionButton.vue\";\r\nimport ChooseItemModal from \"~/components/choose-work-hour/ChooseItemModal.vue\";\r\nimport ChooseHoursModal from \"~/components/choose-work-hour/ChooseHoursModal.vue\";\r\nimport ChooseDaysModal from \"~/components/choose-work-hour/ChooseDaysModal.vue\";\r\n\r\nconst emits = defineEmits(['close', 'update:modelValue', 'update:isClosed', 'update:isAllDayOpen', 'update:workOnHolidays'])\r\nconst props = defineProps({\r\n  isOpen: {\r\n    type: Boolean,\r\n    required: true\r\n  },\r\n  modelValue: {\r\n    type: Array<IWorkHour>,\r\n    default: () => []\r\n  },\r\n  isAllDayOpen: {\r\n    type: Boolean,\r\n    default: false\r\n  },\r\n  isClosed: {\r\n    type: Boolean,\r\n    default: false\r\n  },\r\n  workOnHolidays: {\r\n    type: Boolean,\r\n    default: false\r\n  }\r\n})\r\nconst workHours = ref<IWorkHour[]>(props.modelValue)\r\nconst showItemModal = ref(false)\r\nconst showAllModal = ref(false)\r\nconst showHoursModal = ref(false)\r\nconst showDaysModal = ref(false)\r\nconst index = ref<number>(0)\r\nconst item = ref<IWorkHour|null>(null)\r\nconst isClosed = ref<boolean>(props.isClosed)\r\nconst workOnHolidays = ref<boolean>(props.workOnHolidays)\r\nconst isAllDayOpen = ref<boolean>(props.isAllDayOpen)\r\nconst startHour = ref('')\r\nconst endHour = ref('')\r\n\r\nconst openItemModal = (w: IWorkHour, i: number) => {\r\n  item.value = w\r\n  index.value = i\r\n  showItemModal.value = true\r\n}\r\nconst closeItemModal = () => {\r\n  showItemModal.value = false\r\n  item.value = null\r\n  index.value = 0\r\n}\r\n\r\nconst saveItemModal = (w: IWorkHour) => {\r\n  workHours.value[index.value] = w\r\n  closeItemModal()\r\n}\r\n\r\nconst close = () => {\r\n  emits('close')\r\n}\r\n\r\nconst openAllModal = () => {\r\n  showAllModal.value = true\r\n}\r\nconst closeAllModal = () => {\r\n  showAllModal.value = false\r\n}\r\n\r\nconst openHoursModal = () => {\r\n  startHour.value = workHours.value.length > 0 ? workHours.value[0].start_hour : '08:00'\r\n  endHour.value = workHours.value.length > 0 ? workHours.value[0].end_hour : '20:00'\r\n  showHoursModal.value = true\r\n}\r\nconst closeHoursModal = () => {\r\n  showHoursModal.value = false\r\n  startHour.value = ''\r\n  endHour.value = ''\r\n}\r\n\r\nconst saveHoursModal = (hours: Object) => {\r\n  for (let i = 0; i < workHours.value.length; i++) {\r\n    workHours.value[i].start_hour = hours.start_hour\r\n    workHours.value[i].end_hour = hours.end_hour\r\n  }\r\n  closeHoursModal()\r\n}\r\n\r\nconst openDaysModal = () => {\r\n  showDaysModal.value = true\r\n}\r\nconst closeDaysModal = () => {\r\n  showDaysModal.value = false\r\n}\r\nconst saveDaysModal = (wh: number[]) => {\r\n  let whList: IWorkHour[] = []\r\n  let start_hour = workHours.value.length > 0 ? workHours.value[0].start_hour : '08:00'\r\n  let end_hour = workHours.value.length > 0 ? workHours.value[0].end_hour : '20:00'\r\n  const commonItems = workHours.value.filter(item => wh.includes(item.day_index));\r\n  const uniqueNewItems = wh\r\n      .filter(index => !workHours.value.some(item => item.day_index === index))\r\n      .map(index => (<IWorkHour>{ start_hour: start_hour, end_hour: end_hour, day_index: index }));\r\n\r\n  whList.push(...commonItems, ...uniqueNewItems);\r\n  whList.sort((a, b) => a.day_index - b.day_index);\r\n  workHours.value = whList\r\n  closeDaysModal()\r\n}\r\n\r\nconst saveAllModal = (data: Object) => {\r\n  let whList:IWorkHour[] = []\r\n  for (let i = 0; i < data.selected_days.length; i++) {\r\n    let w: IWorkHour = {\r\n      day_index: data.selected_days[i],\r\n      end_hour: data.end_hour,\r\n      start_hour: data.start_hour,\r\n    }\r\n    whList.push(w)\r\n  }\r\n  workHours.value = whList\r\n  closeAllModal()\r\n  isClosed.value = data.is_closed\r\n  isAllDayOpen.value = data.is_all_day_open\r\n}\r\n\r\nconst doSave = () => {\r\n  emits('update:modelValue', workHours.value)\r\n  emits('update:isClosed', isClosed.value)\r\n  emits('update:isAllDayOpen', isAllDayOpen.value)\r\n  emits('update:workOnHolidays', workOnHolidays.value)\r\n  setTimeout(() => {\r\n    close()\r\n  }, 500)\r\n}\r\n\r\nconst goBack = () => {\r\n  close()\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488556254,
+      "end": 1726488556391,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488556392,
+      "end": 1726488556392,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/WorkHoursDrawer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/WorkHoursDrawer.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/drawer/WorkHoursDrawer.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726488556392,
+      "end": 1726488556432,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488556432,
+      "end": 1726488556432,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488556433,
+      "end": 1726488556433,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556433,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488556433,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556434,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488556434,
+      "end": 1726488556434,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488556435,
+      "end": 1726488556435,
+      "order": "normal"
+    }
+  ]
+}

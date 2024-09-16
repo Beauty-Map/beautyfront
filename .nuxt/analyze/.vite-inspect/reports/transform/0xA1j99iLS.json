@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItemFooter.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"px-[14px] py-[14px] rounded-b-[20px] bg-[#F7F5C4] flex flex-row justify-between items-start w-full\" }\nconst _hoisted_2 = { class: \"flex flex-row justify-start items-center text-[15px] leading-[24px]\" }\nconst _hoisted_3 = { class: \"flex flex-row justify-start items-center text-[12px] leading-[18px]\" }\n\nimport TicketReportIcon from \"~/components/icons/TicketReportIcon.vue\";\r\nimport TicketOpenGreenIcon from \"~/components/icons/TicketOpenGreenIcon.vue\";\r\nimport TicketCloseRedIcon from \"~/components/icons/TicketCloseRedIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItemFooter',\n  props: {\r\n  status: {\r\n    type: String,\r\n    required: true\r\n  },\r\n  subject: {\r\n    type: Object,\r\n    required: true\r\n  },\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\r\nconst getStatusFa = () => {\r\n  switch (props.status) {\r\n    case 'created':\r\n    case 'open':\r\n    case 'answered':\r\n      return 'باز است';\r\n    default:\r\n      return 'بسته شده'\r\n  }\r\n}\r\n\r\nconst getStatusIsOpen = () => {\r\n  switch (props.status) {\r\n    case 'created':\r\n    case 'open':\r\n    case 'answered':\r\n      return true;\r\n    default:\r\n      return false\r\n  }\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (getStatusIsOpen())\n        ? (_openBlock(), _createBlock(TicketOpenGreenIcon, { key: 0 }))\n        : (_openBlock(), _createBlock(TicketCloseRedIcon, { key: 1 })),\n      _createElementVNode(\"span\", {\n        class: _normalizeClass([getStatusIsOpen ? 'text-[#157F3D]' : 'text-[#F44336]'])\n      }, _toDisplayString(getStatusFa()), 3)\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"span\", null, _toDisplayString(__props.subject.title), 1),\n      _createVNode(TicketReportIcon)\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1726488543396,
+      "end": 1726488543396
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488543396,
+      "end": 1726488543396,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488543396,
+      "end": 1726488543396,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488543396,
+      "end": 1726488543396,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488543396,
+      "end": 1726488543396,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { openBlock as _openBlock, createBlock as _createBlock, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"px-[14px] py-[14px] rounded-b-[20px] bg-[#F7F5C4] flex flex-row justify-between items-start w-full\" };\nconst _hoisted_2 = { class: \"flex flex-row justify-start items-center text-[15px] leading-[24px]\" };\nconst _hoisted_3 = { class: \"flex flex-row justify-start items-center text-[12px] leading-[18px]\" };\nimport TicketReportIcon from \"~/components/icons/TicketReportIcon.vue\";\nimport TicketOpenGreenIcon from \"~/components/icons/TicketOpenGreenIcon.vue\";\nimport TicketCloseRedIcon from \"~/components/icons/TicketCloseRedIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"TicketItemFooter\",\n  props: {\n    status: {\n      type: String,\n      required: true\n    },\n    subject: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const getStatusFa = () => {\n      switch (props.status) {\n        case \"created\":\n        case \"open\":\n        case \"answered\":\n          return \"باز است\";\n        default:\n          return \"بسته شده\";\n      }\n    };\n    const getStatusIsOpen = () => {\n      switch (props.status) {\n        case \"created\":\n        case \"open\":\n        case \"answered\":\n          return true;\n        default:\n          return false;\n      }\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          getStatusIsOpen() ? (_openBlock(), _createBlock(TicketOpenGreenIcon, { key: 0 })) : (_openBlock(), _createBlock(TicketCloseRedIcon, { key: 1 })),\n          _createElementVNode(\"span\", {\n            class: _normalizeClass([getStatusIsOpen ? \"text-[#157F3D]\" : \"text-[#F44336]\"])\n          }, _toDisplayString(getStatusFa()), 3)\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createElementVNode(\"span\", null, _toDisplayString(__props.subject.title), 1),\n          _createVNode(TicketReportIcon)\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726488543396,
+      "end": 1726488543506,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItemFooter.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, createVNode as _createVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"px-[14px] py-[14px] rounded-b-[20px] bg-[#F7F5C4] flex flex-row justify-between items-start w-full\" }\nconst _hoisted_2 = { class: \"flex flex-row justify-start items-center text-[15px] leading-[24px]\" }\nconst _hoisted_3 = { class: \"flex flex-row justify-start items-center text-[12px] leading-[18px]\" }\n\nimport TicketReportIcon from \"~/components/icons/TicketReportIcon.vue\";\r\nimport TicketOpenGreenIcon from \"~/components/icons/TicketOpenGreenIcon.vue\";\r\nimport TicketCloseRedIcon from \"~/components/icons/TicketCloseRedIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'TicketItemFooter',\n  props: {\r\n  status: {\r\n    type: String,\r\n    required: true\r\n  },\r\n  subject: {\r\n    type: Object,\r\n    required: true\r\n  },\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\r\nconst getStatusFa = () => {\r\n  switch (props.status) {\r\n    case 'created':\r\n    case 'open':\r\n    case 'answered':\r\n      return 'باز است';\r\n    default:\r\n      return 'بسته شده'\r\n  }\r\n}\r\n\r\nconst getStatusIsOpen = () => {\r\n  switch (props.status) {\r\n    case 'created':\r\n    case 'open':\r\n    case 'answered':\r\n      return true;\r\n    default:\r\n      return false\r\n  }\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      (getStatusIsOpen())\n        ? (_openBlock(), _createBlock(TicketOpenGreenIcon, { key: 0 }))\n        : (_openBlock(), _createBlock(TicketCloseRedIcon, { key: 1 })),\n      _createElementVNode(\"span\", {\n        class: _normalizeClass([getStatusIsOpen ? 'text-[#157F3D]' : 'text-[#F44336]'])\n      }, _toDisplayString(getStatusFa()), 3)\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createElementVNode(\"span\", null, _toDisplayString(__props.subject.title), 1),\n      _createVNode(TicketReportIcon)\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,aAAa,YAAY,eAAe,cAAyD,mBAAmB,kBAAkB,kBAAkB,iBAAiB,sBAAsB,qBAAqB,eAAe,cAAc,sBAAsB,2BAA2B;AAE3S,MAAM,aAAa,EAAE,OAAO,qGAAqG;AACjI,MAAM,aAAa,EAAE,OAAO,sEAAsE;AAClG,MAAM,aAAa,EAAE,OAAO,sEAAsE;AAElG,OAAO,sBAAsB;AAC7B,OAAO,yBAAyB;AAChC,OAAO,wBAAwB;AAG/B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,QAAQ;AAAA,MACN,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,SAAS;AAAA,MACP,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,UAAM,cAAc,MAAM;AACxB,cAAQ,MAAM,QAAQ;AAAA,QACpB,KAAK;AAAA,QACL,KAAK;AAAA,QACL,KAAK;AACH,iBAAO;AAAA,QACT;AACE,iBAAO;AAAA,MACX;AAAA,IACF;AAEA,UAAM,kBAAkB,MAAM;AAC5B,cAAQ,MAAM,QAAQ;AAAA,QACpB,KAAK;AAAA,QACL,KAAK;AAAA,QACL,KAAK;AACH,iBAAO;AAAA,QACT;AACE,iBAAO;AAAA,MACX;AAAA,IACF;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACpC,gBAAgB,KACZ,WAAW,GAAG,aAAa,qBAAqB,EAAE,KAAK,EAAE,CAAC,MAC1D,WAAW,GAAG,aAAa,oBAAoB,EAAE,KAAK,EAAE,CAAC;AAAA,UAC9D,oBAAoB,QAAQ;AAAA,YAC1B,OAAO,gBAAgB,CAAC,kBAAkB,mBAAmB,gBAAgB,CAAC;AAAA,UAChF,GAAG,iBAAiB,YAAY,CAAC,GAAG,CAAC;AAAA,QACvC,CAAC;AAAA,QACD,oBAAoB,OAAO,YAAY;AAAA,UACrC,oBAAoB,QAAQ,MAAM,iBAAiB,QAAQ,QAAQ,KAAK,GAAG,CAAC;AAAA,UAC5E,aAAa,gBAAgB;AAAA,QAC/B,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488543506,
+      "end": 1726488543506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488543506,
+      "end": 1726488543506,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488543507,
+      "end": 1726488543507,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488543507,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488543508,
+      "end": 1726488543508,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488543508,
+      "end": 1726488543515,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488543516,
+      "end": 1726488543516,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488543516,
+      "end": 1726488543516,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488543516,
+      "end": 1726488543516,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488543516,
+      "end": 1726488543516,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488543517,
+      "end": 1726488543517,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488543517,
+      "end": 1726488543517,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488543517,
+      "end": 1726488543518,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488543518,
+      "end": 1726488543518,
+      "order": "normal"
+    }
+  ]
+}

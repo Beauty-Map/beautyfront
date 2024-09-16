@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/otp-drawer/OtpResendButton.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full\">\r\n    <div class=\"flex flex-col justify-start items-center font-medium text-center text-[13px] leading-[20px] text-[#133C3E]\" v-if=\"timerEnded\">\r\n      کد را دریافت نکردید!\r\n      <span class=\"text-[#400842] font-medium underline cursor-pointer\" @click=\"resendCode\">ارسال مجدد</span>\r\n    </div>\r\n    <div v-else class=\"flex flex-col justify-start items-center font-medium text-center text-[16px] leading-[20px] text-[#133C3E]\">\r\n      <span>{{ time }}</span>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nconst emits = defineEmits(['resend'])\r\nconst props = defineProps({\r\n  period: {\r\n    type: Number,\r\n    default: 60\r\n  },\r\n  reset: {\r\n    type: Boolean,\r\n    required: true\r\n  }\r\n})\r\n\r\nconst time = ref<number>(props.period)\r\nconst timerEnded = ref<Boolean>(false)\r\ntimerEnded.value = false\r\n\r\nconst resendCode = () => {\r\n  emits('resend')\r\n}\r\n\r\nconst count = () => {\r\n  timerEnded.value = false;\r\n  const timeCounter = setInterval(() => {\r\n    if (time.value == 1) {\r\n      clearInterval(timeCounter);\r\n      timerEnded.value = true;\r\n      time.value = 60\r\n    } else {\r\n      time.value = time.value - 1\r\n    }\r\n  }, 1000);\r\n}\r\nonMounted(() => {\r\n  count()\r\n})\r\n\r\nwatch(() => props.reset, count)\r\n\r\ndefineExpose({\r\n  count\r\n});\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488542667,
+      "end": 1726488542726,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488542726,
+      "end": 1726488542726,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/otp-drawer/OtpResendButton.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/otp-drawer/OtpResendButton.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488542726,
+      "end": 1726488542789,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542789,
+      "end": 1726488542789,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542790,
+      "end": 1726488542790,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542790,
+      "end": 1726488542791,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542791,
+      "end": 1726488542791,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542791,
+      "end": 1726488542791,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542792,
+      "end": 1726488542792,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542793,
+      "end": 1726488542793,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542793,
+      "end": 1726488542793,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/ProfileBigIcon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <svg width=\"153\" height=\"153\" viewBox=\"0 0 153 153\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M107.103 61.1998C107.103 69.3153 103.879 77.0984 98.1403 82.837C92.4017 88.5755 84.6185 91.7994 76.5028 91.7994C68.3872 91.7994 60.604 88.5755 54.8654 82.837C49.1267 77.0984 45.9028 69.3153 45.9028 61.1998C45.9028 53.0842 49.1267 45.3011 54.8654 39.5625C60.604 33.824 68.3872 30.6001 76.5028 30.6001C84.6185 30.6001 92.4017 33.824 98.1403 39.5625C103.879 45.3011 107.103 53.0842 107.103 61.1998Z\" fill=\"#FF3CA0\"/>\r\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M73.3788 152.937C32.5775 151.3 0 117.702 0 76.4992C0 34.2487 34.2491 0 76.5 0C118.751 0 153 34.2487 153 76.4992C153 118.75 118.751 152.998 76.5 152.998C76.1507 153.001 75.8013 153.001 75.452 152.998C74.7596 152.998 74.0673 152.975 73.3788 152.937ZM27.41 124.77C26.838 123.128 26.6433 121.377 26.8403 119.649C27.0374 117.921 27.6211 116.26 28.5482 114.788C29.4753 113.316 30.7219 112.072 32.1955 111.149C33.6691 110.225 35.3319 109.645 37.0604 109.451C66.8801 106.15 86.3035 106.449 115.978 109.52C117.709 109.7 119.376 110.273 120.852 111.195C122.328 112.117 123.574 113.363 124.495 114.839C125.417 116.316 125.989 117.983 126.169 119.713C126.349 121.444 126.131 123.193 125.533 124.827C138.251 111.96 145.373 94.591 145.35 76.4992C145.35 38.4753 114.524 7.64992 76.5 7.64992C38.4757 7.64992 7.65 38.4753 7.65 76.4992C7.65 95.3026 15.1891 112.347 27.41 124.77Z\" fill=\"#FF3CA0\"/>\r\n  </svg>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488544121,
+      "end": 1726488544174,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488544174,
+      "end": 1726488544174,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = {\n  width: \"153\",\n  height: \"153\",\n  viewBox: \"0 0 153 153\",\n  fill: \"none\",\n  xmlns: \"http://www.w3.org/2000/svg\"\n}\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"path\", {\n  d: \"M107.103 61.1998C107.103 69.3153 103.879 77.0984 98.1403 82.837C92.4017 88.5755 84.6185 91.7994 76.5028 91.7994C68.3872 91.7994 60.604 88.5755 54.8654 82.837C49.1267 77.0984 45.9028 69.3153 45.9028 61.1998C45.9028 53.0842 49.1267 45.3011 54.8654 39.5625C60.604 33.824 68.3872 30.6001 76.5028 30.6001C84.6185 30.6001 92.4017 33.824 98.1403 39.5625C103.879 45.3011 107.103 53.0842 107.103 61.1998Z\",\n  fill: \"#FF3CA0\"\n}, null, -1)\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"path\", {\n  \"fill-rule\": \"evenodd\",\n  \"clip-rule\": \"evenodd\",\n  d: \"M73.3788 152.937C32.5775 151.3 0 117.702 0 76.4992C0 34.2487 34.2491 0 76.5 0C118.751 0 153 34.2487 153 76.4992C153 118.75 118.751 152.998 76.5 152.998C76.1507 153.001 75.8013 153.001 75.452 152.998C74.7596 152.998 74.0673 152.975 73.3788 152.937ZM27.41 124.77C26.838 123.128 26.6433 121.377 26.8403 119.649C27.0374 117.921 27.6211 116.26 28.5482 114.788C29.4753 113.316 30.7219 112.072 32.1955 111.149C33.6691 110.225 35.3319 109.645 37.0604 109.451C66.8801 106.15 86.3035 106.449 115.978 109.52C117.709 109.7 119.376 110.273 120.852 111.195C122.328 112.117 123.574 113.363 124.495 114.839C125.417 116.316 125.989 117.983 126.169 119.713C126.349 121.444 126.131 123.193 125.533 124.827C138.251 111.96 145.373 94.591 145.35 76.4992C145.35 38.4753 114.524 7.64992 76.5 7.64992C38.4757 7.64992 7.65 38.4753 7.65 76.4992C7.65 95.3026 15.1891 112.347 27.41 124.77Z\",\n  fill: \"#FF3CA0\"\n}, null, -1)\nconst _hoisted_4 = [\n  _hoisted_2,\n  _hoisted_3\n]\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"svg\", _hoisted_1, _hoisted_4))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1726488544174,
+      "end": 1726488544175,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488544175,
+      "end": 1726488544175,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488544175,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488544176,
+      "end": 1726488544176,
+      "order": "normal"
+    }
+  ]
+}

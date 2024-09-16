@@ -1,0 +1,223 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"mt-[20px] w-full flex flex-col items-start justify-start pb-[90px]\">\r\n    <div class=\"w-full relative flex flex-row items-center justify-center py-[23px] border-b border-b-[#A9A7A7]\">\r\n      <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">نمونه کار</div>\r\n      <BackIcon @click=\"goBack\" class=\"absolute left-[30px]\"/>\r\n    </div>\r\n    <div class=\"w-full flex flex-col my-[8px] px-[15px]\">\r\n      <div class=\"w-full flex flex-row gap-[10px] justify-start items-center\">\r\n        <div @click=\"openFilterDrawer\" class=\"cursor-pointer flex flex-row gap-[4px] justify-start items-center\">\r\n          <FilterIcon />\r\n          <span>فیلتر</span>\r\n          <ArrowDownIcon />\r\n        </div>\r\n      </div>\r\n      <div class=\"mt-[8px] w-full flex flex-col justify-start items-start\">\r\n        <PortfolioItem\r\n            v-for=\"(p, i) in portfolios\"\r\n            :key=\"i\"\r\n            :portfolio=\"p\"\r\n            :is-panel=\"true\"\r\n        />\r\n        <InfiniteLoading :firstload=\"true\" v-if=\"showInfiniteScroll\" class=\"mx-auto\" @infinite=\"paginateDebounce\"/>\r\n      </div>\r\n    </div>\r\n    <div class=\"fixed pt-[10px] left-0 right-0 bottom-0 pb-[40px] px-[30px] flex flex-col justify-start items-start bg-white z-[9999]\">\r\n      <nuxt-link to=\"/panel/artist/portfolios/create\" class=\"cursor-pointer flex flex-row justify-start items-center\">\r\n        <PlusButtonIcon />\r\n        <div class=\"px-[8px] py-[3px] rounded-full bg-[#E7FAF4] text-center mr-[4px] text-[#133C3E] font-medium text-[12px] leading-[18px]\">نمونه کار جدید</div>\r\n      </nuxt-link>\r\n    </div>\r\n    <FilterPortfolioDrawer @close=\"closeFilterDrawer\" @choose=\"chooseService\" :is-open=\"showFilterDrawer\" />\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport ArrowDownIcon from \"~/components/icons/ArrowDownIcon.vue\";\r\nimport FilterPortfolioDrawer from \"~/components/drawer/FilterPortfolioDrawer.vue\";\r\nimport FilterIcon from \"~/components/icons/FilterIcon.vue\";\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport PlusButtonIcon from \"~/components/icons/PlusButtonIcon.vue\";\r\nimport InfiniteLoading from \"v3-infinite-loading\";\r\n\r\ndefinePageMeta({\r\n  layout: 'artist-panel',\r\n  middleware: 'auth'\r\n})\r\n\r\nconst router = useRouter()\r\nconst portfolios = ref<IPortfolio[]>([])\r\nconst lastPage = ref<number>(1)\r\nconst page = ref<number>(1)\r\nconst showFilterDrawer = ref<Boolean>(false)\r\nconst showInfiniteScroll = ref<Boolean>(false)\r\n\r\nconst goBack = () => {\r\n  router.replace('/panel/artist')\r\n}\r\n\r\nconst openFilterDrawer = () => {\r\n  showFilterDrawer.value = true\r\n}\r\n\r\nconst closeFilterDrawer = () => {\r\n  showFilterDrawer.value = false\r\n}\r\n\r\nconst chooseService = (s: IService) => {\r\n  console.log(s, \"s\")\r\n}\r\nconst paginate = async () => {\r\n  if (page <= lastPage) {\r\n    page.value++\r\n    await getPortfolios()\r\n  }\r\n}\r\n\r\nconst paginateDebounce = useDebounce(paginate, 500)\r\n\r\nconst getPortfolios = async () => {\r\n  const res = await useCustomFetch(`/own/portfolios?limit=10&page=${page.value}`, {\r\n    method: \"get\"\r\n  })\r\n  if (res.data.value) {\r\n    let list = (res.data.value.data as IPortfolio[])\r\n    if (list.length == 0) {\r\n      showInfiniteScroll.value = false\r\n      return\r\n    }\r\n    portfolios.value = [\r\n        ...portfolios.value,\r\n        ...list\r\n    ]\r\n    lastPage.value = (res.data.value.last_page as number)\r\n    setTimeout(() => {\r\n      showInfiniteScroll.value = true\r\n    }, 300)\r\n  }\r\n}\r\nonMounted(() => {\r\n  nextTick(() => getPortfolios())\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488537656,
+      "end": 1726488538634,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488538634,
+      "end": 1726488538634,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488538634,
+      "end": 1726488538634,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488538634,
+      "end": 1726488538635,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488538635,
+      "end": 1726488538635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488538635,
+      "end": 1726488538635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488538635,
+      "end": 1726488538635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488538635,
+      "end": 1726488538635,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488538635,
+      "end": 1726488539574,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488539574,
+      "end": 1726488539574,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488539575,
+      "end": 1726488539575,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488539575,
+      "end": 1726488539576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488539576,
+      "end": 1726488539576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488539577,
+      "end": 1726488539578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488539578,
+      "end": 1726488539578,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488539580,
+      "end": 1726488539581,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488539582,
+      "end": 1726488539587,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488539587,
+      "end": 1726488539588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/portfolios/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1726488539590,
+      "end": 1726488539593,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488539593,
+      "end": 1726488539593,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488539594,
+      "end": 1726488539594,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488539595,
+      "end": 1726488539596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488539596,
+      "end": 1726488539596,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488539597,
+      "end": 1726488539598,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488539598,
+      "end": 1726488539598,
+      "order": "normal"
+    }
+  ]
+}

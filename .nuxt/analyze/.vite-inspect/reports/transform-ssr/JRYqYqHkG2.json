@@ -1,0 +1,258 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/BlueTick.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M5.73341 15L4.46675 12.8667L2.06675 12.3333L2.30008 9.86667L0.666748 8L2.30008 6.13333L2.06675 3.66667L4.46675 3.13333L5.73341 1L8.00008 1.96667L10.2667 1L11.5334 3.13333L13.9334 3.66667L13.7001 6.13333L15.3334 8L13.7001 9.86667L13.9334 12.3333L11.5334 12.8667L10.2667 15L8.00008 14.0333L5.73341 15ZM6.30008 13.3L8.00008 12.5667L9.73341 13.3L10.6667 11.7L12.5001 11.2667L12.3334 9.4L13.5667 8L12.3334 6.56667L12.5001 4.7L10.6667 4.3L9.70008 2.7L8.00008 3.43333L6.26675 2.7L5.33341 4.3L3.50008 4.7L3.66675 6.56667L2.43341 8L3.66675 9.4L3.50008 11.3L5.33341 11.7L6.30008 13.3ZM7.30008 10.3667L11.0667 6.6L10.1334 5.63333L7.30008 8.46667L5.86675 7.06667L4.93341 8L7.30008 10.3667Z\" fill=\"#2920D9\"/>\r\n  </svg>\r\n</template>\r\n",
+      "start": 1726488554418,
+      "end": 1726488554501,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<svg${_ssrRenderAttrs(_mergeProps({\n    width: \"16\",\n    height: \"16\",\n    viewBox: \"0 0 16 16\",\n    fill: \"none\",\n    xmlns: \"http://www.w3.org/2000/svg\"\n  }, _attrs))}><path d=\"M5.73341 15L4.46675 12.8667L2.06675 12.3333L2.30008 9.86667L0.666748 8L2.30008 6.13333L2.06675 3.66667L4.46675 3.13333L5.73341 1L8.00008 1.96667L10.2667 1L11.5334 3.13333L13.9334 3.66667L13.7001 6.13333L15.3334 8L13.7001 9.86667L13.9334 12.3333L11.5334 12.8667L10.2667 15L8.00008 14.0333L5.73341 15ZM6.30008 13.3L8.00008 12.5667L9.73341 13.3L10.6667 11.7L12.5001 11.2667L12.3334 9.4L13.5667 8L12.3334 6.56667L12.5001 4.7L10.6667 4.3L9.70008 2.7L8.00008 3.43333L6.26675 2.7L5.33341 4.3L3.50008 4.7L3.66675 6.56667L2.43341 8L3.66675 9.4L3.50008 11.3L5.33341 11.7L6.30008 13.3ZM7.30008 10.3667L11.0667 6.6L10.1334 5.63333L7.30008 8.46667L5.86675 7.06667L4.93341 8L7.30008 10.3667Z\" fill=\"#2920D9\"></path></svg>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/icons/BlueTick.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/icons/BlueTick.vue"
+        ],
+        "names": [],
+        "mappings": ";;;;EAAA,aAAA,gBAAA;IACO,KAAK,EAAC,IAAI;IAAC,MAAM,EAAC,IAAI;IAAC,OAAO,EAAC,WAAW;IAAC,IAAI,EAAC,MAAM;IAAC,KAAK,EAAC,4BAA4B;KADhG",
+        "sourcesContent": [
+          "<template>\r\n  <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <path d=\"M5.73341 15L4.46675 12.8667L2.06675 12.3333L2.30008 9.86667L0.666748 8L2.30008 6.13333L2.06675 3.66667L4.46675 3.13333L5.73341 1L8.00008 1.96667L10.2667 1L11.5334 3.13333L13.9334 3.66667L13.7001 6.13333L15.3334 8L13.7001 9.86667L13.9334 12.3333L11.5334 12.8667L10.2667 15L8.00008 14.0333L5.73341 15ZM6.30008 13.3L8.00008 12.5667L9.73341 13.3L10.6667 11.7L12.5001 11.2667L12.3334 9.4L13.5667 8L12.3334 6.56667L12.5001 4.7L10.6667 4.3L9.70008 2.7L8.00008 3.43333L6.26675 2.7L5.33341 4.3L3.50008 4.7L3.66675 6.56667L2.43341 8L3.66675 9.4L3.50008 11.3L5.33341 11.7L6.30008 13.3ZM7.30008 10.3667L11.0667 6.6L10.1334 5.63333L7.30008 8.46667L5.86675 7.06667L4.93341 8L7.30008 10.3667Z\" fill=\"#2920D9\"/>\r\n  </svg>\r\n</template>\r\n"
+        ]
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488554501,
+      "end": 1726488554501,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488554501,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488554502,
+      "end": 1726488554502,
+      "order": "normal"
+    }
+  ]
+}

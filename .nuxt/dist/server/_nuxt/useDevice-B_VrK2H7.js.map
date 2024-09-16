@@ -1,0 +1,1 @@
+{"version":3,"file":"useDevice-B_VrK2H7.js","sources":["../../../../node_modules/@nuxtjs/device/dist/runtime/composables/useDevice.mjs"],"sourcesContent":["import { useNuxtApp } from \"#app\";\nexport const useDevice = () => {\n  return useNuxtApp().$device;\n};\n"],"names":[],"mappings":";;;;;;AACY,MAAC,YAAY,MAAM;AAC7B,SAAO,WAAY,EAAC;AACtB;","x_google_ignoreList":[0]}

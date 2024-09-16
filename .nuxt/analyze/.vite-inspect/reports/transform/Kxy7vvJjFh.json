@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/security-drawer/SecurityLinkSideBar.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"flex flex-col justify-start items-start w-full max-w-[310px] pb-10\">\r\n    <UserBox />\r\n    <SideBarLink to=\"/security/password\" title=\"تغییر رمز عبور\" class=\"mt-8\">\r\n      <template #icon>\r\n        <ChangePasswordIcon />\r\n      </template>\r\n    </SideBarLink>\r\n    <SideBarLink to=\"/security/delete\" :is-link=\"false\" @click=\"deleteAccount\" title=\"پاک کردن حساب کاربری\">\r\n      <template #icon>\r\n        <DeleteAccountIcon />\r\n      </template>\r\n    </SideBarLink>\r\n    <SideBarLink to=\"/security/alt-number\" title=\"شماره جایگزین ورود\">\r\n      <template #icon>\r\n        <AltPhoneNumberIcon />\r\n      </template>\r\n    </SideBarLink>\r\n    <DeleteAccountModal :open=\"showDeleteAccount\" @close=\"closeDeleteAccountAlert\" @delete=\"doDeleteAccount\">\r\n      <div class=\"w-full flex flex-col items-start justify-start pb-[18px]\">\r\n        <h1 class=\"w-full font-semibold text-[#141414] text-right text-[17px] leading-[26px]\">\r\n          پاک کردن حساب کاربری\r\n        </h1>\r\n        <h4 class=\"w-full font-semibold text-[#828282] text-right text-[14px] leading-[21px]\">\r\n          آیا مطمئن هستید که می خواهید این حساب را حذف کنید؟ این عمل قابل بازگشت نیست.\r\n        </h4>\r\n        <div class=\"w-full mt-[10px] font-normal text-right text-[#133C3E] text-[10px] leading-[15px]\">\r\n        </div>\r\n      </div>\r\n    </DeleteAccountModal>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport ChangePasswordIcon from \"~/components/icons/ChangePasswordIcon.vue\";\r\nimport {useDrawerStore} from \"~/store/Drawer\";\r\nimport DeleteAccountIcon from \"~/components/icons/DeleteAccountIcon.vue\";\r\nimport AltPhoneNumberIcon from \"~/components/icons/AltPhoneNumberIcon.vue\";\r\nimport DeleteAccountModal from \"~/components/modal/DeleteAccountModal.vue\";\r\nimport UserBox from \"~/components/sidebar/UserBox.vue\";\r\nimport SideBarLinkBox from \"~/components/sidebar/SideBarLinkBox.vue\";\r\nimport SideBarLink from \"~/components/sidebar/SideBarLink.vue\";\r\nimport ProfileSmallIcon from \"~/components/icons/ProfileSmallIcon.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\n\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\nconst store = useDrawerStore()\r\nconst showDeleteAccount = ref<Boolean>(false)\r\n\r\nconst openDeleteAccountAlert = () => {\r\n  showDeleteAccount.value = true\r\n}\r\n\r\nconst closeDeleteAccountAlert = () => {\r\n  showDeleteAccount.value = false\r\n}\r\n\r\nconst doDeleteAccount = () => {\r\n  const auth = useSanctumAuth()\r\n  auth.logout()\r\n}\r\n\r\nconst deleteAccount = () => {\r\n  if (!user.value) {\r\n    store.closeAllDrawers()\r\n    store.openLoginDrawer()\r\n    return\r\n  }\r\n  openDeleteAccountAlert()\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488541731,
+      "end": 1726488541828,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488541828,
+      "end": 1726488541828,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/security-drawer/SecurityLinkSideBar.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/security-drawer/SecurityLinkSideBar.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488541828,
+      "end": 1726488542056,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542057,
+      "end": 1726488542057,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542057,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542058,
+      "end": 1726488542058,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542060,
+      "end": 1726488542060,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542065,
+      "end": 1726488542066,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542070,
+      "end": 1726488542070,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542071,
+      "end": 1726488542071,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488542071,
+      "end": 1726488542072,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542072,
+      "end": 1726488542072,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542072,
+      "end": 1726488542072,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542072,
+      "end": 1726488542072,
+      "order": "normal"
+    }
+  ]
+}

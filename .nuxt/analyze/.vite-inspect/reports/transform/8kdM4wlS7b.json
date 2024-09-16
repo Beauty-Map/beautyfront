@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/v3-infinite-loading/lib/v3-infinite-loading.es.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { nextTick as h, openBlock as E, createElementBlock as w, pushScopeId as B, popScopeId as H, createElementVNode as s, defineComponent as C, ref as m, toRefs as R, watch as b, onMounted as N, onUnmounted as O, withDirectives as V, renderSlot as u, createVNode as M, vShow as T, toDisplayString as v, createCommentVNode as g } from \"vue\";\nfunction D(e, o) {\n  const n = e.getBoundingClientRect();\n  if (!o)\n    return n.top >= 0 && n.bottom <= window.innerHeight;\n  const t = o.getBoundingClientRect();\n  return n.top >= t.top && n.bottom <= t.bottom;\n}\nasync function q(e) {\n  return await h(), e.value instanceof HTMLElement ? e.value : e.value ? document.querySelector(e.value) : null;\n}\nfunction y(e) {\n  let o = `0px 0px ${e.distance}px 0px`;\n  e.top && (o = `${e.distance}px 0px 0px 0px`);\n  const n = new IntersectionObserver(\n    (t) => {\n      t[0].isIntersecting && (e.firstload && e.emit(), e.firstload = !0);\n    },\n    { root: e.parentEl, rootMargin: o }\n  );\n  return n.observe(e.infiniteLoading.value), n;\n}\nconst x = (e, o) => {\n  const n = e.__vccOpts || e;\n  for (const [t, c] of o)\n    n[t] = c;\n  return n;\n}, P = {}, U = (e) => (B(\"data-v-d3e37633\"), e = e(), H(), e), j = { class: \"container\" }, z = /* @__PURE__ */ U(() => /* @__PURE__ */ s(\"div\", { class: \"spinner\" }, null, -1)), A = [\n  z\n];\nfunction F(e, o) {\n  return E(), w(\"div\", j, A);\n}\nconst G = /* @__PURE__ */ x(P, [[\"render\", F], [\"__scopeId\", \"data-v-d3e37633\"]]), J = { class: \"state-error\" }, K = /* @__PURE__ */ C({\n  __name: \"InfiniteLoading\",\n  props: {\n    top: { type: Boolean, default: !1 },\n    target: {},\n    distance: { default: 0 },\n    identifier: {},\n    firstload: { type: Boolean, default: !0 },\n    slots: {}\n  },\n  emits: [\"infinite\"],\n  setup(e, { emit: o }) {\n    const n = e;\n    let t = null, c = 0;\n    const d = m(null), r = m(\"\"), { top: p, firstload: I, distance: S } = n, { identifier: k, target: L } = R(n), i = {\n      infiniteLoading: d,\n      top: p,\n      firstload: I,\n      distance: S,\n      parentEl: null,\n      emit() {\n        c = (i.parentEl || document.documentElement).scrollHeight, f.loading(), o(\"infinite\", f);\n      }\n    }, f = {\n      loading() {\n        r.value = \"loading\";\n      },\n      async loaded() {\n        r.value = \"loaded\";\n        const l = i.parentEl || document.documentElement;\n        await h(), p && (l.scrollTop = l.scrollHeight - c), D(d.value, i.parentEl) && i.emit();\n      },\n      complete() {\n        r.value = \"complete\", t == null || t.disconnect();\n      },\n      error() {\n        r.value = \"error\";\n      }\n    };\n    return b(k, () => {\n      t == null || t.disconnect(), t = y(i);\n    }), N(async () => {\n      i.parentEl = await q(L), t = y(i);\n    }), O(() => {\n      t == null || t.disconnect();\n    }), (l, _) => (E(), w(\"div\", {\n      ref_key: \"infiniteLoading\",\n      ref: d,\n      style: { \"min-height\": \"1px\" }\n    }, [\n      V(s(\"div\", null, [\n        u(l.$slots, \"spinner\", {}, () => [\n          M(G)\n        ], !0)\n      ], 512), [\n        [T, r.value == \"loading\"]\n      ]),\n      r.value == \"complete\" ? u(l.$slots, \"complete\", { key: 0 }, () => {\n        var a;\n        return [\n          s(\"span\", null, v(((a = l.slots) == null ? void 0 : a.complete) || \"No more results!\"), 1)\n        ];\n      }, !0) : g(\"\", !0),\n      r.value == \"error\" ? u(l.$slots, \"error\", {\n        key: 1,\n        retry: i.emit\n      }, () => {\n        var a;\n        return [\n          s(\"span\", J, [\n            s(\"span\", null, v(((a = l.slots) == null ? void 0 : a.error) || \"Oops something went wrong!\"), 1),\n            s(\"button\", {\n              class: \"retry\",\n              onClick: _[0] || (_[0] = //@ts-ignore\n              (...$) => i.emit && i.emit(...$))\n            }, \"retry\")\n          ])\n        ];\n      }, !0) : g(\"\", !0)\n    ], 512));\n  }\n});\nconst W = /* @__PURE__ */ x(K, [[\"__scopeId\", \"data-v-a7077831\"]]);\nexport {\n  W as default\n};\n",
+      "start": 1726488541336,
+      "end": 1726488541577,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488541577,
+      "end": 1726488541577,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488541578,
+      "end": 1726488541578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488541578,
+      "end": 1726488541578,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488541578,
+      "end": 1726488541578,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488541578,
+      "end": 1726488541579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488541579,
+      "end": 1726488541579,
+      "order": "normal"
+    }
+  ]
+}

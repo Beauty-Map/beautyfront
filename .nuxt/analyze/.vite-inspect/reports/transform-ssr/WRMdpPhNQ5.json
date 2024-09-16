@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"relative w-full h-full flex flex-col justify-start items-start\">\r\n    <ArtistIntroDrawer :is-open=\"showArtistIntro\" @close=\"closeArtistIntro\"/>\r\n    <Header :avatar=\"user.avatar\" :banner=\"user.banner\" :full_name=\"user.full_name\" :plan-title=\"user.selected_plan?.title\" :rate=\"user.rating\"/>\r\n    <ArtistLinkBox class=\"mt-6 px-[15px]\" :is-profile-completed=\"user.is_artist_profile_completed\"/>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport ArtistIntroDrawer from \"~/components/drawer/ArtistIntroDrawer.vue\";\r\nimport Header from \"~/components/artist-panel/Header.vue\";\r\nimport ArtistLinkBox from \"~/components/artist-panel/ArtistLinkBox.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\ndefinePageMeta({\r\n  layout: 'artist-panel',\r\n  middleware: 'auth'\r\n})\r\nconst { isMobile } = useDevice();\r\nconst seenIntro = useCookie<boolean>('seenArtistIntro')\r\nconst router = useRouter()\r\nconst nuxt = useNuxtApp()\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\nconst showArtistIntro = ref(false)\r\nnuxt.hook('page:finish', () => {\r\n  if (isMobile && (!seenIntro || !seenIntro.value)) {\r\n    seenIntro.value = true\r\n    openArtistIntro()\r\n  }\r\n})\r\n\r\nconst openArtistIntro = () => {\r\n  showArtistIntro.value = true\r\n}\r\nconst closeArtistIntro = () => {\r\n  seenIntro.value = true\r\n  showArtistIntro.value = false\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488552189,
+      "end": 1726488552460,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488552460,
+      "end": 1726488552460,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"pages/panel/artist/index.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726488552460,
+      "end": 1726488552483,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488552483,
+      "end": 1726488552483,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488552484,
+      "end": 1726488552484,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488552484,
+      "end": 1726488552484,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488552484,
+      "end": 1726488552485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488552484,
+      "end": 1726488552485,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488552485,
+      "end": 1726488552485,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488552485,
+      "end": 1726488552485,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1726488552486,
+      "end": 1726488552486,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1726488552486,
+      "end": 1726488552486,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726488552487,
+      "end": 1726488552487,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488552487,
+      "end": 1726488552487,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488552487,
+      "end": 1726488552487,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488552487,
+      "end": 1726488552487,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488552487,
+      "end": 1726488552487,
+      "order": "normal"
+    }
+  ]
+}

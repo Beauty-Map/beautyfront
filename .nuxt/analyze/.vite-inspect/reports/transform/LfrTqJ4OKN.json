@@ -1,0 +1,219 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/jalaali-js/index.js",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "/*\n  Expose functions.\n*/\nmodule.exports =\n  { toJalaali: toJalaali\n  , toGregorian: toGregorian\n  , isValidJalaaliDate: isValidJalaaliDate\n  , isLeapJalaaliYear: isLeapJalaaliYear\n  , jalaaliMonthLength: jalaaliMonthLength\n  , jalCal: jalCal\n  , j2d: j2d\n  , d2j: d2j\n  , g2d: g2d\n  , d2g: d2g\n  , jalaaliToDateObject: jalaaliToDateObject\n  , jalaaliWeek: jalaaliWeek\n  }\n\n/*\n  Jalaali years starting the 33-year rule.\n*/\nvar breaks =  [ -61, 9, 38, 199, 426, 686, 756, 818, 1111, 1181, 1210\n  , 1635, 2060, 2097, 2192, 2262, 2324, 2394, 2456, 3178\n  ]\n\n/*\n  Converts a Gregorian date to Jalaali.\n*/\nfunction toJalaali(gy, gm, gd) {\n  if (Object.prototype.toString.call(gy) === '[object Date]') {\n    gd = gy.getDate()\n    gm = gy.getMonth() + 1\n    gy = gy.getFullYear()\n  }\n  return d2j(g2d(gy, gm, gd))\n}\n\n/*\n  Converts a Jalaali date to Gregorian.\n*/\nfunction toGregorian(jy, jm, jd) {\n  return d2g(j2d(jy, jm, jd))\n}\n\n/*\n  Checks whether a Jalaali date is valid or not.\n*/\nfunction isValidJalaaliDate(jy, jm, jd) {\n  return  jy >= -61 && jy <= 3177 &&\n          jm >= 1 && jm <= 12 &&\n          jd >= 1 && jd <= jalaaliMonthLength(jy, jm)\n}\n\n/*\n  Is this a leap year or not?\n*/\nfunction isLeapJalaaliYear(jy) {\n  return jalCalLeap(jy) === 0\n}\n\n/*\n  Number of days in a given month in a Jalaali year.\n*/\nfunction jalaaliMonthLength(jy, jm) {\n  if (jm <= 6) return 31\n  if (jm <= 11) return 30\n  if (isLeapJalaaliYear(jy)) return 30\n  return 29\n}\n\n/*\n    This function determines if the Jalaali (Persian) year is\n    leap (366-day long) or is the common year (365 days)\n\n    @param jy Jalaali calendar year (-61 to 3177)\n    @returns number of years since the last leap year (0 to 4)\n */\nfunction jalCalLeap(jy) {\n  var bl = breaks.length\n    , jp = breaks[0]\n    , jm\n    , jump\n    , leap\n    , n\n    , i\n\n  if (jy < jp || jy >= breaks[bl - 1])\n    throw new Error('Invalid Jalaali year ' + jy)\n\n  for (i = 1; i < bl; i += 1) {\n    jm = breaks[i]\n    jump = jm - jp\n    if (jy < jm)\n      break\n    jp = jm\n  }\n  n = jy - jp\n\n  if (jump - n < 6)\n    n = n - jump + div(jump + 4, 33) * 33\n  leap = mod(mod(n + 1, 33) - 1, 4)\n  if (leap === -1) {\n    leap = 4\n  }\n\n  return leap\n}\n\n/*\n  This function determines if the Jalaali (Persian) year is\n  leap (366-day long) or is the common year (365 days), and\n  finds the day in March (Gregorian calendar) of the first\n  day of the Jalaali year (jy).\n\n  @param jy Jalaali calendar year (-61 to 3177)\n  @param withoutLeap when don't need leap (true or false) default is false\n  @return\n    leap: number of years since the last leap year (0 to 4)\n    gy: Gregorian year of the beginning of Jalaali year\n    march: the March day of Farvardin the 1st (1st day of jy)\n  @see: http://www.astro.uni.torun.pl/~kb/Papers/EMP/PersianC-EMP.htm\n  @see: http://www.fourmilab.ch/documents/calendar/\n*/\nfunction jalCal(jy, withoutLeap) {\n  var bl = breaks.length\n    , gy = jy + 621\n    , leapJ = -14\n    , jp = breaks[0]\n    , jm\n    , jump\n    , leap\n    , leapG\n    , march\n    , n\n    , i\n\n  if (jy < jp || jy >= breaks[bl - 1])\n    throw new Error('Invalid Jalaali year ' + jy)\n\n  // Find the limiting years for the Jalaali year jy.\n  for (i = 1; i < bl; i += 1) {\n    jm = breaks[i]\n    jump = jm - jp\n    if (jy < jm)\n      break\n    leapJ = leapJ + div(jump, 33) * 8 + div(mod(jump, 33), 4)\n    jp = jm\n  }\n  n = jy - jp\n\n  // Find the number of leap years from AD 621 to the beginning\n  // of the current Jalaali year in the Persian calendar.\n  leapJ = leapJ + div(n, 33) * 8 + div(mod(n, 33) + 3, 4)\n  if (mod(jump, 33) === 4 && jump - n === 4)\n    leapJ += 1\n\n  // And the same in the Gregorian calendar (until the year gy).\n  leapG = div(gy, 4) - div((div(gy, 100) + 1) * 3, 4) - 150\n\n  // Determine the Gregorian date of Farvardin the 1st.\n  march = 20 + leapJ - leapG\n\n  // return with gy and march when we don't need leap\n  if (withoutLeap) return { gy: gy, march: march };\n\n\n  // Find how many years have passed since the last leap year.\n  if (jump - n < 6)\n    n = n - jump + div(jump + 4, 33) * 33\n  leap = mod(mod(n + 1, 33) - 1, 4)\n  if (leap === -1) {\n    leap = 4\n  }\n\n  return  { leap: leap\n          , gy: gy\n          , march: march\n          }\n}\n\n/*\n  Converts a date of the Jalaali calendar to the Julian Day number.\n\n  @param jy Jalaali year (1 to 3100)\n  @param jm Jalaali month (1 to 12)\n  @param jd Jalaali day (1 to 29/31)\n  @return Julian Day number\n*/\nfunction j2d(jy, jm, jd) {\n  var r = jalCal(jy, true)\n  return g2d(r.gy, 3, r.march) + (jm - 1) * 31 - div(jm, 7) * (jm - 7) + jd - 1\n}\n\n/*\n  Converts the Julian Day number to a date in the Jalaali calendar.\n\n  @param jdn Julian Day number\n  @return\n    jy: Jalaali year (1 to 3100)\n    jm: Jalaali month (1 to 12)\n    jd: Jalaali day (1 to 29/31)\n*/\nfunction d2j(jdn) {\n  var gy = d2g(jdn).gy // Calculate Gregorian year (gy).\n    , jy = gy - 621\n    , r = jalCal(jy, false)\n    , jdn1f = g2d(gy, 3, r.march)\n    , jd\n    , jm\n    , k\n\n  // Find number of days that passed since 1 Farvardin.\n  k = jdn - jdn1f\n  if (k >= 0) {\n    if (k <= 185) {\n      // The first 6 months.\n      jm = 1 + div(k, 31)\n      jd = mod(k, 31) + 1\n      return  { jy: jy\n              , jm: jm\n              , jd: jd\n              }\n    } else {\n      // The remaining months.\n      k -= 186\n    }\n  } else {\n    // Previous Jalaali year.\n    jy -= 1\n    k += 179\n    if (r.leap === 1)\n      k += 1\n  }\n  jm = 7 + div(k, 30)\n  jd = mod(k, 30) + 1\n  return  { jy: jy\n          , jm: jm\n          , jd: jd\n          }\n}\n\n/*\n  Calculates the Julian Day number from Gregorian or Julian\n  calendar dates. This integer number corresponds to the noon of\n  the date (i.e. 12 hours of Universal Time).\n  The procedure was tested to be good since 1 March, -100100 (of both\n  calendars) up to a few million years into the future.\n\n  @param gy Calendar year (years BC numbered 0, -1, -2, ...)\n  @param gm Calendar month (1 to 12)\n  @param gd Calendar day of the month (1 to 28/29/30/31)\n  @return Julian Day number\n*/\nfunction g2d(gy, gm, gd) {\n  var d = div((gy + div(gm - 8, 6) + 100100) * 1461, 4)\n      + div(153 * mod(gm + 9, 12) + 2, 5)\n      + gd - 34840408\n  d = d - div(div(gy + 100100 + div(gm - 8, 6), 100) * 3, 4) + 752\n  return d\n}\n\n/*\n  Calculates Gregorian and Julian calendar dates from the Julian Day number\n  (jdn) for the period since jdn=-34839655 (i.e. the year -100100 of both\n  calendars) to some millions years ahead of the present.\n\n  @param jdn Julian Day number\n  @return\n    gy: Calendar year (years BC numbered 0, -1, -2, ...)\n    gm: Calendar month (1 to 12)\n    gd: Calendar day of the month M (1 to 28/29/30/31)\n*/\nfunction d2g(jdn) {\n  var j\n    , i\n    , gd\n    , gm\n    , gy\n  j = 4 * jdn + 139361631\n  j = j + div(div(4 * jdn + 183187720, 146097) * 3, 4) * 4 - 3908\n  i = div(mod(j, 1461), 4) * 5 + 308\n  gd = div(mod(i, 153), 5) + 1\n  gm = mod(div(i, 153), 12) + 1\n  gy = div(j, 1461) - 100100 + div(8 - gm, 6)\n  return  { gy: gy\n          , gm: gm\n          , gd: gd\n          }\n}\n\n/**\n * Return Saturday and Friday day of current week(week start in Saturday)\n * @param {number} jy jalaali year\n * @param {number} jm jalaali month\n * @param {number} jd jalaali day\n * @returns Saturday and Friday of current week\n */\nfunction jalaaliWeek(jy, jm, jd) {\n  var dayOfWeek = jalaaliToDateObject(jy, jm, jd).getDay();\n\n  var startDayDifference = dayOfWeek == 6 ? 0 : -(dayOfWeek+1);\n  var endDayDifference = 6+startDayDifference;\n\n  return {\n    saturday: d2j(j2d(jy, jm, jd+startDayDifference)),\n    friday: d2j(j2d(jy, jm, jd+endDayDifference))\n  }\n}\n\n/**\n * Convert Jalaali calendar dates to javascript Date object\n * @param {number} jy jalaali year\n * @param {number} jm jalaali month\n * @param {number} jd jalaali day\n * @param {number} [h] hours\n * @param {number} [m] minutes\n * @param {number} [s] seconds\n * @param {number} [ms] milliseconds\n * @returns Date object of the jalaali calendar dates\n */\nfunction jalaaliToDateObject(\n  jy,\n  jm,\n  jd,\n  h,\n  m,\n  s,\n  ms\n) {\n  var gregorianCalenderDate = toGregorian(jy, jm, jd);\n\n  return new Date(\n    gregorianCalenderDate.gy,\n    gregorianCalenderDate.gm - 1,\n    gregorianCalenderDate.gd,\n    h || 0,\n    m || 0,\n    s || 0,\n    ms || 0\n  );\n}\n\n/*\n  Utility helper functions.\n*/\n\nfunction div(a, b) {\n  return ~~(a / b)\n}\n\nfunction mod(a, b) {\n  return a - ~~(a / b) * b\n}\n",
+      "start": 1726488541759,
+      "end": 1726488542082,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488542082,
+      "end": 1726488542082,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "result": "/*\n  Expose functions.\n*/\nimport * as commonjsHelpers from \"\u0000commonjsHelpers.js\";\n\nvar jalaaliJs;\nvar hasRequiredJalaaliJs;\n\nfunction requireJalaaliJs () {\n\tif (hasRequiredJalaaliJs) return jalaaliJs;\n\thasRequiredJalaaliJs = 1;\n\tjalaaliJs =\n\t  { toJalaali: toJalaali\n\t  , toGregorian: toGregorian\n\t  , isValidJalaaliDate: isValidJalaaliDate\n\t  , isLeapJalaaliYear: isLeapJalaaliYear\n\t  , jalaaliMonthLength: jalaaliMonthLength\n\t  , jalCal: jalCal\n\t  , j2d: j2d\n\t  , d2j: d2j\n\t  , g2d: g2d\n\t  , d2g: d2g\n\t  , jalaaliToDateObject: jalaaliToDateObject\n\t  , jalaaliWeek: jalaaliWeek\n\t  }\n\n\t/*\n\t  Jalaali years starting the 33-year rule.\n\t*/\n\tvar breaks =  [ -61, 9, 38, 199, 426, 686, 756, 818, 1111, 1181, 1210\n\t  , 1635, 2060, 2097, 2192, 2262, 2324, 2394, 2456, 3178\n\t  ]\n\n\t/*\n\t  Converts a Gregorian date to Jalaali.\n\t*/\n\tfunction toJalaali(gy, gm, gd) {\n\t  if (Object.prototype.toString.call(gy) === '[object Date]') {\n\t    gd = gy.getDate()\n\t    gm = gy.getMonth() + 1\n\t    gy = gy.getFullYear()\n\t  }\n\t  return d2j(g2d(gy, gm, gd))\n\t}\n\n\t/*\n\t  Converts a Jalaali date to Gregorian.\n\t*/\n\tfunction toGregorian(jy, jm, jd) {\n\t  return d2g(j2d(jy, jm, jd))\n\t}\n\n\t/*\n\t  Checks whether a Jalaali date is valid or not.\n\t*/\n\tfunction isValidJalaaliDate(jy, jm, jd) {\n\t  return  jy >= -61 && jy <= 3177 &&\n\t          jm >= 1 && jm <= 12 &&\n\t          jd >= 1 && jd <= jalaaliMonthLength(jy, jm)\n\t}\n\n\t/*\n\t  Is this a leap year or not?\n\t*/\n\tfunction isLeapJalaaliYear(jy) {\n\t  return jalCalLeap(jy) === 0\n\t}\n\n\t/*\n\t  Number of days in a given month in a Jalaali year.\n\t*/\n\tfunction jalaaliMonthLength(jy, jm) {\n\t  if (jm <= 6) return 31\n\t  if (jm <= 11) return 30\n\t  if (isLeapJalaaliYear(jy)) return 30\n\t  return 29\n\t}\n\n\t/*\n\t    This function determines if the Jalaali (Persian) year is\n\t    leap (366-day long) or is the common year (365 days)\n\n\t    @param jy Jalaali calendar year (-61 to 3177)\n\t    @returns number of years since the last leap year (0 to 4)\n\t */\n\tfunction jalCalLeap(jy) {\n\t  var bl = breaks.length\n\t    , jp = breaks[0]\n\t    , jm\n\t    , jump\n\t    , leap\n\t    , n\n\t    , i\n\n\t  if (jy < jp || jy >= breaks[bl - 1])\n\t    throw new Error('Invalid Jalaali year ' + jy)\n\n\t  for (i = 1; i < bl; i += 1) {\n\t    jm = breaks[i]\n\t    jump = jm - jp\n\t    if (jy < jm)\n\t      break\n\t    jp = jm\n\t  }\n\t  n = jy - jp\n\n\t  if (jump - n < 6)\n\t    n = n - jump + div(jump + 4, 33) * 33\n\t  leap = mod(mod(n + 1, 33) - 1, 4)\n\t  if (leap === -1) {\n\t    leap = 4\n\t  }\n\n\t  return leap\n\t}\n\n\t/*\n\t  This function determines if the Jalaali (Persian) year is\n\t  leap (366-day long) or is the common year (365 days), and\n\t  finds the day in March (Gregorian calendar) of the first\n\t  day of the Jalaali year (jy).\n\n\t  @param jy Jalaali calendar year (-61 to 3177)\n\t  @param withoutLeap when don't need leap (true or false) default is false\n\t  @return\n\t    leap: number of years since the last leap year (0 to 4)\n\t    gy: Gregorian year of the beginning of Jalaali year\n\t    march: the March day of Farvardin the 1st (1st day of jy)\n\t  @see: http://www.astro.uni.torun.pl/~kb/Papers/EMP/PersianC-EMP.htm\n\t  @see: http://www.fourmilab.ch/documents/calendar/\n\t*/\n\tfunction jalCal(jy, withoutLeap) {\n\t  var bl = breaks.length\n\t    , gy = jy + 621\n\t    , leapJ = -14\n\t    , jp = breaks[0]\n\t    , jm\n\t    , jump\n\t    , leap\n\t    , leapG\n\t    , march\n\t    , n\n\t    , i\n\n\t  if (jy < jp || jy >= breaks[bl - 1])\n\t    throw new Error('Invalid Jalaali year ' + jy)\n\n\t  // Find the limiting years for the Jalaali year jy.\n\t  for (i = 1; i < bl; i += 1) {\n\t    jm = breaks[i]\n\t    jump = jm - jp\n\t    if (jy < jm)\n\t      break\n\t    leapJ = leapJ + div(jump, 33) * 8 + div(mod(jump, 33), 4)\n\t    jp = jm\n\t  }\n\t  n = jy - jp\n\n\t  // Find the number of leap years from AD 621 to the beginning\n\t  // of the current Jalaali year in the Persian calendar.\n\t  leapJ = leapJ + div(n, 33) * 8 + div(mod(n, 33) + 3, 4)\n\t  if (mod(jump, 33) === 4 && jump - n === 4)\n\t    leapJ += 1\n\n\t  // And the same in the Gregorian calendar (until the year gy).\n\t  leapG = div(gy, 4) - div((div(gy, 100) + 1) * 3, 4) - 150\n\n\t  // Determine the Gregorian date of Farvardin the 1st.\n\t  march = 20 + leapJ - leapG\n\n\t  // return with gy and march when we don't need leap\n\t  if (withoutLeap) return { gy: gy, march: march };\n\n\n\t  // Find how many years have passed since the last leap year.\n\t  if (jump - n < 6)\n\t    n = n - jump + div(jump + 4, 33) * 33\n\t  leap = mod(mod(n + 1, 33) - 1, 4)\n\t  if (leap === -1) {\n\t    leap = 4\n\t  }\n\n\t  return  { leap: leap\n\t          , gy: gy\n\t          , march: march\n\t          }\n\t}\n\n\t/*\n\t  Converts a date of the Jalaali calendar to the Julian Day number.\n\n\t  @param jy Jalaali year (1 to 3100)\n\t  @param jm Jalaali month (1 to 12)\n\t  @param jd Jalaali day (1 to 29/31)\n\t  @return Julian Day number\n\t*/\n\tfunction j2d(jy, jm, jd) {\n\t  var r = jalCal(jy, true)\n\t  return g2d(r.gy, 3, r.march) + (jm - 1) * 31 - div(jm, 7) * (jm - 7) + jd - 1\n\t}\n\n\t/*\n\t  Converts the Julian Day number to a date in the Jalaali calendar.\n\n\t  @param jdn Julian Day number\n\t  @return\n\t    jy: Jalaali year (1 to 3100)\n\t    jm: Jalaali month (1 to 12)\n\t    jd: Jalaali day (1 to 29/31)\n\t*/\n\tfunction d2j(jdn) {\n\t  var gy = d2g(jdn).gy // Calculate Gregorian year (gy).\n\t    , jy = gy - 621\n\t    , r = jalCal(jy, false)\n\t    , jdn1f = g2d(gy, 3, r.march)\n\t    , jd\n\t    , jm\n\t    , k\n\n\t  // Find number of days that passed since 1 Farvardin.\n\t  k = jdn - jdn1f\n\t  if (k >= 0) {\n\t    if (k <= 185) {\n\t      // The first 6 months.\n\t      jm = 1 + div(k, 31)\n\t      jd = mod(k, 31) + 1\n\t      return  { jy: jy\n\t              , jm: jm\n\t              , jd: jd\n\t              }\n\t    } else {\n\t      // The remaining months.\n\t      k -= 186\n\t    }\n\t  } else {\n\t    // Previous Jalaali year.\n\t    jy -= 1\n\t    k += 179\n\t    if (r.leap === 1)\n\t      k += 1\n\t  }\n\t  jm = 7 + div(k, 30)\n\t  jd = mod(k, 30) + 1\n\t  return  { jy: jy\n\t          , jm: jm\n\t          , jd: jd\n\t          }\n\t}\n\n\t/*\n\t  Calculates the Julian Day number from Gregorian or Julian\n\t  calendar dates. This integer number corresponds to the noon of\n\t  the date (i.e. 12 hours of Universal Time).\n\t  The procedure was tested to be good since 1 March, -100100 (of both\n\t  calendars) up to a few million years into the future.\n\n\t  @param gy Calendar year (years BC numbered 0, -1, -2, ...)\n\t  @param gm Calendar month (1 to 12)\n\t  @param gd Calendar day of the month (1 to 28/29/30/31)\n\t  @return Julian Day number\n\t*/\n\tfunction g2d(gy, gm, gd) {\n\t  var d = div((gy + div(gm - 8, 6) + 100100) * 1461, 4)\n\t      + div(153 * mod(gm + 9, 12) + 2, 5)\n\t      + gd - 34840408\n\t  d = d - div(div(gy + 100100 + div(gm - 8, 6), 100) * 3, 4) + 752\n\t  return d\n\t}\n\n\t/*\n\t  Calculates Gregorian and Julian calendar dates from the Julian Day number\n\t  (jdn) for the period since jdn=-34839655 (i.e. the year -100100 of both\n\t  calendars) to some millions years ahead of the present.\n\n\t  @param jdn Julian Day number\n\t  @return\n\t    gy: Calendar year (years BC numbered 0, -1, -2, ...)\n\t    gm: Calendar month (1 to 12)\n\t    gd: Calendar day of the month M (1 to 28/29/30/31)\n\t*/\n\tfunction d2g(jdn) {\n\t  var j\n\t    , i\n\t    , gd\n\t    , gm\n\t    , gy\n\t  j = 4 * jdn + 139361631\n\t  j = j + div(div(4 * jdn + 183187720, 146097) * 3, 4) * 4 - 3908\n\t  i = div(mod(j, 1461), 4) * 5 + 308\n\t  gd = div(mod(i, 153), 5) + 1\n\t  gm = mod(div(i, 153), 12) + 1\n\t  gy = div(j, 1461) - 100100 + div(8 - gm, 6)\n\t  return  { gy: gy\n\t          , gm: gm\n\t          , gd: gd\n\t          }\n\t}\n\n\t/**\n\t * Return Saturday and Friday day of current week(week start in Saturday)\n\t * @param {number} jy jalaali year\n\t * @param {number} jm jalaali month\n\t * @param {number} jd jalaali day\n\t * @returns Saturday and Friday of current week\n\t */\n\tfunction jalaaliWeek(jy, jm, jd) {\n\t  var dayOfWeek = jalaaliToDateObject(jy, jm, jd).getDay();\n\n\t  var startDayDifference = dayOfWeek == 6 ? 0 : -(dayOfWeek+1);\n\t  var endDayDifference = 6+startDayDifference;\n\n\t  return {\n\t    saturday: d2j(j2d(jy, jm, jd+startDayDifference)),\n\t    friday: d2j(j2d(jy, jm, jd+endDayDifference))\n\t  }\n\t}\n\n\t/**\n\t * Convert Jalaali calendar dates to javascript Date object\n\t * @param {number} jy jalaali year\n\t * @param {number} jm jalaali month\n\t * @param {number} jd jalaali day\n\t * @param {number} [h] hours\n\t * @param {number} [m] minutes\n\t * @param {number} [s] seconds\n\t * @param {number} [ms] milliseconds\n\t * @returns Date object of the jalaali calendar dates\n\t */\n\tfunction jalaaliToDateObject(\n\t  jy,\n\t  jm,\n\t  jd,\n\t  h,\n\t  m,\n\t  s,\n\t  ms\n\t) {\n\t  var gregorianCalenderDate = toGregorian(jy, jm, jd);\n\n\t  return new Date(\n\t    gregorianCalenderDate.gy,\n\t    gregorianCalenderDate.gm - 1,\n\t    gregorianCalenderDate.gd,\n\t    h || 0,\n\t    m || 0,\n\t    s || 0,\n\t    ms || 0\n\t  );\n\t}\n\n\t/*\n\t  Utility helper functions.\n\t*/\n\n\tfunction div(a, b) {\n\t  return ~~(a / b)\n\t}\n\n\tfunction mod(a, b) {\n\t  return a - ~~(a / b) * b\n\t}\n\treturn jalaaliJs;\n}\n\nexport { requireJalaaliJs as __require };",
+      "start": 1726488542082,
+      "end": 1726488542086,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488542086,
+      "end": 1726488542086,
+      "order": "normal"
+    }
+  ]
+}

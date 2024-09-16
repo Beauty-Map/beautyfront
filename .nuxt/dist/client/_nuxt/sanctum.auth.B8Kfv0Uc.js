@@ -1,0 +1,1 @@
+import{ay as o,aq as s,ak as n,ad as i}from"./entry.BtNxfFXi.js";import{u as c}from"./useSanctumAuth.Qc_IFDeV.js";const l=o(a=>{const e=s(),{isAuthenticated:u}=c();if(u.value===!0)return;const t=e.redirect.onAuthOnly;if(t===!1)throw n({statusCode:403});const r={path:t};return e.redirect.keepRequestedRoute&&(r.query={redirect:a.fullPath}),i(r,{replace:!0})});export{l as default};

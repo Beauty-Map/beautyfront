@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/WebInputIcon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <svg width=\"36\" height=\"36\" viewBox=\"0 0 36 36\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <g filter=\"url(#filter0_d_600_3281)\">\r\n      <path d=\"M22.36 18C22.44 17.34 22.5 16.68 22.5 16C22.5 15.32 22.44 14.66 22.36 14H25.74C25.9 14.64 26 15.31 26 16C26 16.69 25.9 17.36 25.74 18M20.59 23.56C21.19 22.45 21.65 21.25 21.97 20H24.92C23.9512 21.6683 22.4141 22.932 20.59 23.56ZM20.34 18H15.66C15.56 17.34 15.5 16.68 15.5 16C15.5 15.32 15.56 14.65 15.66 14H20.34C20.43 14.65 20.5 15.32 20.5 16C20.5 16.68 20.43 17.34 20.34 18ZM18 23.96C17.17 22.76 16.5 21.43 16.09 20H19.91C19.5 21.43 18.83 22.76 18 23.96ZM14 12H11.08C12.0389 10.3272 13.5748 9.06149 15.4 8.44C14.8 9.55 14.35 10.75 14 12ZM11.08 20H14C14.35 21.25 14.8 22.45 15.4 23.56C13.5786 22.9317 12.0448 21.6677 11.08 20ZM10.26 18C10.1 17.36 10 16.69 10 16C10 15.31 10.1 14.64 10.26 14H13.64C13.56 14.66 13.5 15.32 13.5 16C13.5 16.68 13.56 17.34 13.64 18M18 8.03C18.83 9.23 19.5 10.57 19.91 12H16.09C16.5 10.57 17.17 9.23 18 8.03ZM24.92 12H21.97C21.657 10.7615 21.1936 9.5659 20.59 8.44C22.43 9.07 23.96 10.34 24.92 12ZM18 6C12.47 6 8 10.5 8 16C8 18.6522 9.05357 21.1957 10.9289 23.0711C11.8575 23.9997 12.9599 24.7362 14.1732 25.2388C15.3864 25.7413 16.6868 26 18 26C20.6522 26 23.1957 24.9464 25.0711 23.0711C26.9464 21.1957 28 18.6522 28 16C28 14.6868 27.7413 13.3864 27.2388 12.1732C26.7362 10.9599 25.9997 9.85752 25.0711 8.92893C24.1425 8.00035 23.0401 7.26375 21.8268 6.7612C20.6136 6.25866 19.3132 6 18 6Z\" fill=\"black\"/>\r\n    </g>\r\n    <defs>\r\n      <filter id=\"filter0_d_600_3281\" x=\"-2\" y=\"-2\" width=\"40\" height=\"40\" filterUnits=\"userSpaceOnUse\" color-interpolation-filters=\"sRGB\">\r\n        <feFlood flood-opacity=\"0\" result=\"BackgroundImageFix\"/>\r\n        <feColorMatrix in=\"SourceAlpha\" type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\" result=\"hardAlpha\"/>\r\n        <feOffset dy=\"2\"/>\r\n        <feGaussianBlur stdDeviation=\"4\"/>\r\n        <feComposite in2=\"hardAlpha\" operator=\"out\"/>\r\n        <feColorMatrix type=\"matrix\" values=\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\"/>\r\n        <feBlend mode=\"normal\" in2=\"BackgroundImageFix\" result=\"effect1_dropShadow_600_3281\"/>\r\n        <feBlend mode=\"normal\" in=\"SourceGraphic\" in2=\"effect1_dropShadow_600_3281\" result=\"shape\"/>\r\n      </filter>\r\n    </defs>\r\n  </svg>\r\n</template>\r\n",
+      "start": 1726488544258,
+      "end": 1726488544324,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488544324,
+      "end": 1726488544324,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createStaticVNode as _createStaticVNode } from \"vue\"\n\nconst _hoisted_1 = {\n  width: \"36\",\n  height: \"36\",\n  viewBox: \"0 0 36 36\",\n  fill: \"none\",\n  xmlns: \"http://www.w3.org/2000/svg\"\n}\nconst _hoisted_2 = /*#__PURE__*/_createStaticVNode(\"<g filter=\\\"url(#filter0_d_600_3281)\\\"><path d=\\\"M22.36 18C22.44 17.34 22.5 16.68 22.5 16C22.5 15.32 22.44 14.66 22.36 14H25.74C25.9 14.64 26 15.31 26 16C26 16.69 25.9 17.36 25.74 18M20.59 23.56C21.19 22.45 21.65 21.25 21.97 20H24.92C23.9512 21.6683 22.4141 22.932 20.59 23.56ZM20.34 18H15.66C15.56 17.34 15.5 16.68 15.5 16C15.5 15.32 15.56 14.65 15.66 14H20.34C20.43 14.65 20.5 15.32 20.5 16C20.5 16.68 20.43 17.34 20.34 18ZM18 23.96C17.17 22.76 16.5 21.43 16.09 20H19.91C19.5 21.43 18.83 22.76 18 23.96ZM14 12H11.08C12.0389 10.3272 13.5748 9.06149 15.4 8.44C14.8 9.55 14.35 10.75 14 12ZM11.08 20H14C14.35 21.25 14.8 22.45 15.4 23.56C13.5786 22.9317 12.0448 21.6677 11.08 20ZM10.26 18C10.1 17.36 10 16.69 10 16C10 15.31 10.1 14.64 10.26 14H13.64C13.56 14.66 13.5 15.32 13.5 16C13.5 16.68 13.56 17.34 13.64 18M18 8.03C18.83 9.23 19.5 10.57 19.91 12H16.09C16.5 10.57 17.17 9.23 18 8.03ZM24.92 12H21.97C21.657 10.7615 21.1936 9.5659 20.59 8.44C22.43 9.07 23.96 10.34 24.92 12ZM18 6C12.47 6 8 10.5 8 16C8 18.6522 9.05357 21.1957 10.9289 23.0711C11.8575 23.9997 12.9599 24.7362 14.1732 25.2388C15.3864 25.7413 16.6868 26 18 26C20.6522 26 23.1957 24.9464 25.0711 23.0711C26.9464 21.1957 28 18.6522 28 16C28 14.6868 27.7413 13.3864 27.2388 12.1732C26.7362 10.9599 25.9997 9.85752 25.0711 8.92893C24.1425 8.00035 23.0401 7.26375 21.8268 6.7612C20.6136 6.25866 19.3132 6 18 6Z\\\" fill=\\\"black\\\"></path></g><defs><filter id=\\\"filter0_d_600_3281\\\" x=\\\"-2\\\" y=\\\"-2\\\" width=\\\"40\\\" height=\\\"40\\\" filterUnits=\\\"userSpaceOnUse\\\" color-interpolation-filters=\\\"sRGB\\\"><feFlood flood-opacity=\\\"0\\\" result=\\\"BackgroundImageFix\\\"></feFlood><feColorMatrix in=\\\"SourceAlpha\\\" type=\\\"matrix\\\" values=\\\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0\\\" result=\\\"hardAlpha\\\"></feColorMatrix><feOffset dy=\\\"2\\\"></feOffset><feGaussianBlur stdDeviation=\\\"4\\\"></feGaussianBlur><feComposite in2=\\\"hardAlpha\\\" operator=\\\"out\\\"></feComposite><feColorMatrix type=\\\"matrix\\\" values=\\\"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0\\\"></feColorMatrix><feBlend mode=\\\"normal\\\" in2=\\\"BackgroundImageFix\\\" result=\\\"effect1_dropShadow_600_3281\\\"></feBlend><feBlend mode=\\\"normal\\\" in=\\\"SourceGraphic\\\" in2=\\\"effect1_dropShadow_600_3281\\\" result=\\\"shape\\\"></feBlend></filter></defs>\", 2)\nconst _hoisted_4 = [\n  _hoisted_2\n]\n\nfunction _sfc_render(_ctx, _cache) {\n  return (_openBlock(), _createElementBlock(\"svg\", _hoisted_1, _hoisted_4))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1726488544324,
+      "end": 1726488544325,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488544325,
+      "end": 1726488544325,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488544325,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488544326,
+      "end": 1726488544326,
+      "order": "normal"
+    }
+  ]
+}

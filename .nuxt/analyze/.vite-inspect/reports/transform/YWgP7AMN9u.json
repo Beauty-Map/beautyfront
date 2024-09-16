@@ -1,0 +1,223 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"pt-[20px] w-full flex flex-col items-start justify-start\">\r\n    <div class=\"relative w-full flex flex-row items-center justify-center py-[23px]\">\r\n      <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">دریافت بنر تبلیغاتی</div>\r\n      <BackIcon @click=\"goBack\" class=\"absolute left-[10px]\"/>\r\n    </div>\r\n    <div class=\"w-full text-center flex flex-col justify-start items-center px-[10px] mt-[45px]\">\r\n      <div v-for=\"(b,i) in banners\" :key=\"i\" class=\"w-full flex flex-col justify-start items-center\">\r\n        <img :src=\"b.image\" alt=\"\" class=\"w-full max-h-[242px]\"/>\r\n        <p class=\"mt-[10px] font-semibold text-[16px] leading-[24px] text-center\">www.beautymap.ir/{{ user.id }}</p>\r\n        <button @click=\"shareLink(`www.beautymap.ir/${user.id}`)\" class=\"cursor-pointer mt-[30px] w-full max-w-[260px] bg-[#1EFF81] text-[16px] leading-[24px] font-semibold text-black text-center rounded-[20px] py-[12px] px-[18px]\">اشتراک گذاری</button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\ndefinePageMeta({\r\n  layout: 'artist-panel',\r\n  middleware: 'auth'\r\n})\r\n\r\nconst router = useRouter()\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\n\r\nconst banners = ref([\r\n  {\r\n    id: 1,\r\n    image: '/panel/banner.png',\r\n  }\r\n])\r\n\r\nconst goBack = () => {\r\n  router.replace('/panel/artist')\r\n}\r\n\r\nconst shareLink = async (link: string) => {\r\n  await navigator.share({\r\n    url: link,   // URL to be shared\r\n  })\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726488537304,
+      "end": 1726488538440,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726488538440,
+      "end": 1726488538440,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726488538440,
+      "end": 1726488539574,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726488539574,
+      "end": 1726488539574,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488539575,
+      "end": 1726488539575,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726488539575,
+      "end": 1726488539576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726488539576,
+      "end": 1726488539576,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726488539577,
+      "end": 1726488539578,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726488539578,
+      "end": 1726488539578,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726488539579,
+      "end": 1726488539579,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726488539580,
+      "end": 1726488539580,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726488539581,
+      "end": 1726488539581,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726488539582,
+      "end": 1726488539587,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726488539588,
+      "end": 1726488539588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/banners/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1726488539592,
+      "end": 1726488539593,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726488539593,
+      "end": 1726488539593,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726488539594,
+      "end": 1726488539594,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726488539595,
+      "end": 1726488539596,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726488539596,
+      "end": 1726488539596,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726488539597,
+      "end": 1726488539598,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726488539598,
+      "end": 1726488539598,
+      "order": "normal"
+    }
+  ]
+}
