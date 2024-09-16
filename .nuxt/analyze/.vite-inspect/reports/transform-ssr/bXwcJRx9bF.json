@@ -1,0 +1,276 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/middleware/referral.global.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineNuxtRouteMiddleware((to, from) => {\r\n    const referralId = to.query.ref as string;\r\n\r\n    if (referralId) {\r\n        const ref = useCookie('referralId', {\r\n            maxAge: 60 * 60 * 24 * 30, // 7 days\r\n            path: '/',\r\n            sameSite: 'lax',\r\n        });\r\n        if (!ref.value) {\r\n            ref.value = referralId\r\n        }\r\n    }\r\n});",
+      "start": 1726490140298,
+      "end": 1726490140387,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490140387,
+      "end": 1726490140387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490140387,
+      "end": 1726490140387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490140387,
+      "end": 1726490140387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490140387,
+      "end": 1726490140387,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490140387,
+      "end": 1726490140387,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490140387,
+      "end": 1726490140387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineNuxtRouteMiddleware((to, from) => {\n  const referralId = to.query.ref;\n  if (referralId) {\n    const ref = useCookie(\"referralId\", {\n      maxAge: 60 * 60 * 24 * 30,\n      // 7 days\n      path: \"/\",\n      sameSite: \"lax\"\n    });\n    if (!ref.value) {\n      ref.value = referralId;\n    }\n  }\n});\n",
+      "start": 1726490140387,
+      "end": 1726490140445,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/middleware/referral.global.ts"
+        ],
+        "sourcesContent": [
+          "export default defineNuxtRouteMiddleware((to, from) => {\r\n    const referralId = to.query.ref as string;\r\n\r\n    if (referralId) {\r\n        const ref = useCookie('referralId', {\r\n            maxAge: 60 * 60 * 24 * 30, // 7 days\r\n            path: '/',\r\n            sameSite: 'lax',\r\n        });\r\n        if (!ref.value) {\r\n            ref.value = referralId\r\n        }\r\n    }\r\n});"
+        ],
+        "mappings": "AAAA,eAAe,0BAA0B,CAAC,IAAI,SAAS;AACnD,QAAM,aAAa,GAAG,MAAM;AAE5B,MAAI,YAAY;AACZ,UAAM,MAAM,UAAU,cAAc;AAAA,MAChC,QAAQ,KAAK,KAAK,KAAK;AAAA;AAAA,MACvB,MAAM;AAAA,MACN,UAAU;AAAA,IACd,CAAC;AACD,QAAI,CAAC,IAAI,OAAO;AACZ,UAAI,QAAQ;AAAA,IAChB;AAAA,EACJ;AACJ,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490140445,
+      "end": 1726490140445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490140445,
+      "end": 1726490140445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490140445,
+      "end": 1726490140445,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490140446,
+      "end": 1726490140446,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490140447,
+      "end": 1726490140447,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490140447,
+      "end": 1726490140447,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490140447,
+      "end": 1726490140447,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490140447,
+      "end": 1726490140447,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490140447,
+      "end": 1726490140448,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490140448,
+      "end": 1726490140448,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490140448,
+      "end": 1726490140448,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490140448,
+      "end": 1726490140448,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490140449,
+      "end": 1726490140449,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490140450,
+      "end": 1726490140450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490140450,
+      "end": 1726490140450,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware } from '#app/composables/router';\nimport { useCookie } from '#app/composables/cookie';\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const referralId = to.query.ref;\n  if (referralId) {\n    const ref = useCookie(\"referralId\", {\n      maxAge: 60 * 60 * 24 * 30,\n      // 7 days\n      path: \"/\",\n      sameSite: \"lax\"\n    });\n    if (!ref.value) {\n      ref.value = referralId;\n    }\n  }\n});\n",
+      "start": 1726490140450,
+      "end": 1726490140452,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtRouteMiddleware } from '#app/composables/router';\nimport { useCookie } from '#app/composables/cookie';\nexport default defineNuxtRouteMiddleware((to, from) => {\n  const referralId = to.query.ref;\n  if (referralId) {\n    const ref = useCookie(\"referralId\", {\n      maxAge: 60 * 60 * 24 * 30,\n      // 7 days\n      path: \"/\",\n      sameSite: \"lax\"\n    });\n    if (!ref.value) {\n      ref.value = referralId;\n    }\n  }\n});\n",
+      "start": 1726490140450,
+      "end": 1726490140452,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490140452,
+      "end": 1726490140453,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490140452,
+      "end": 1726490140453,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490140453,
+      "end": 1726490140453,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490140453,
+      "end": 1726490140453,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490140453,
+      "end": 1726490140453,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490140453,
+      "end": 1726490140453,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490140454,
+      "end": 1726490140454,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490140454,
+      "end": 1726490140454,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490140454,
+      "end": 1726490140454,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistDesktopTabButton.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ArtistDesktopTabButton',\n  props: {\r\n  title: {\r\n    type: Object,\r\n    required: true,\r\n  },\r\n  selected: {\r\n    type: Boolean,\r\n    default: false,\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"cursor-pointer mx-[10px] min-w-[125px] min-h-[65px] px-[30px] py-[22px] rounded-[20px] flex justify-center items-center\", [__props.selected ? 'bg-[#FF3CA0]' : 'bg-[#ECECEC]']])\n  }, [\n    _createElementVNode(\"span\", {\n      class: _normalizeClass([\"font-semibold text-[26px] leading-[45px]\", [__props.selected ? 'text-white' : 'text-[#133C3E]']])\n    }, _toDisplayString(__props.title), 3)\n  ], 2))\n}\n}\n\n})",
+      "start": 1726490133087,
+      "end": 1726490133087
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133087,
+      "end": 1726490133087,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133087,
+      "end": 1726490133087,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133087,
+      "end": 1726490133087,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133087,
+      "end": 1726490133087,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ArtistDesktopTabButton\",\n  props: {\n    title: {\n      type: Object,\n      required: true\n    },\n    selected: {\n      type: Boolean,\n      default: false\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", {\n        class: _normalizeClass([\"cursor-pointer mx-[10px] min-w-[125px] min-h-[65px] px-[30px] py-[22px] rounded-[20px] flex justify-center items-center\", [__props.selected ? \"bg-[#FF3CA0]\" : \"bg-[#ECECEC]\"]])\n      }, [\n        _createElementVNode(\"span\", {\n          class: _normalizeClass([\"font-semibold text-[26px] leading-[45px]\", [__props.selected ? \"text-white\" : \"text-[#133C3E]\"]])\n        }, _toDisplayString(__props.title), 3)\n      ], 2);\n    };\n  }\n});\n",
+      "start": 1726490133087,
+      "end": 1726490133177,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistDesktopTabButton.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, normalizeClass as _normalizeClass, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ArtistDesktopTabButton',\n  props: {\r\n  title: {\r\n    type: Object,\r\n    required: true,\r\n  },\r\n  selected: {\r\n    type: Boolean,\r\n    default: false,\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    class: _normalizeClass([\"cursor-pointer mx-[10px] min-w-[125px] min-h-[65px] px-[30px] py-[22px] rounded-[20px] flex justify-center items-center\", [__props.selected ? 'bg-[#FF3CA0]' : 'bg-[#ECECEC]']])\n  }, [\n    _createElementVNode(\"span\", {\n      class: _normalizeClass([\"font-semibold text-[26px] leading-[45px]\", [__props.selected ? 'text-white' : 'text-[#133C3E]']])\n    }, _toDisplayString(__props.title), 3)\n  ], 2))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,mBAAmB,kBAAkB,kBAAkB,iBAAiB,sBAAsB,qBAAqB,aAAa,YAAY,sBAAsB,2BAA2B;AAGtM,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,IACA,UAAU;AAAA,MACR,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO;AAAA,QAC/C,OAAO,gBAAgB,CAAC,2HAA2H,CAAC,QAAQ,WAAW,iBAAiB,cAAc,CAAC,CAAC;AAAA,MAC1M,GAAG;AAAA,QACD,oBAAoB,QAAQ;AAAA,UAC1B,OAAO,gBAAgB,CAAC,4CAA4C,CAAC,QAAQ,WAAW,eAAe,gBAAgB,CAAC,CAAC;AAAA,QAC3H,GAAG,iBAAiB,QAAQ,KAAK,GAAG,CAAC;AAAA,MACvC,GAAG,CAAC;AAAA,IACN;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133177,
+      "end": 1726490133177,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133177,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133178,
+      "end": 1726490133178,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133178,
+      "end": 1726490133179,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133179,
+      "end": 1726490133183,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133185,
+      "end": 1726490133185,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133185,
+      "end": 1726490133185,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133185,
+      "end": 1726490133185,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133185,
+      "end": 1726490133185,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133185,
+      "end": 1726490133185,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133185,
+      "end": 1726490133185,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133186,
+      "end": 1726490133186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133186,
+      "end": 1726490133186,
+      "order": "normal"
+    }
+  ]
+}

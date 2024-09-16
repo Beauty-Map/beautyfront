@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/notification-drawer/NotificationList.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport NotificationListItem from \"~/components/notification-drawer/NotificationListItem.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'NotificationList',\n  __ssrInlineRender: true,\n  props: {\r\n  notifications: {\r\n    type: Array,\r\n    default: () => []\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full h-full\" }, _attrs))}><!--[-->`)\n  _ssrRenderList(__props.notifications, (n, i) => {\n    _push(_ssrRenderComponent(NotificationListItem, {\n      key: i,\n      notification: n\n    }, null, _parent))\n  })\n  _push(`<!--]--></div>`)\n}\n}\n\n})",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/notification-drawer/NotificationList.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"w-full h-full\">\r\n    <NotificationListItem\r\n      v-for=\"(n, i) in notifications\"\r\n      :key=\"i\"\r\n      :notification=\"n\"\r\n    />\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport NotificationListItem from \"~/components/notification-drawer/NotificationListItem.vue\";\r\nconst props = defineProps({\r\n  notifications: {\r\n    type: Array,\r\n    default: () => []\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAYA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;;;;;;;;;;;;AAFtE,CAAC;AACzB,CAAC;AAED,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAKZ,CAAC;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142872,
+      "end": 1726490142872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport NotificationListItem from \"~/components/notification-drawer/NotificationListItem.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"NotificationList\",\n  __ssrInlineRender: true,\n  props: {\n    notifications: {\n      type: Array,\n      default: () => []\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full h-full\" }, _attrs))}><!--[-->`);\n      _ssrRenderList(__props.notifications, (n, i) => {\n        _push(_ssrRenderComponent(NotificationListItem, {\n          key: i,\n          notification: n\n        }, null, _parent));\n      });\n      _push(`<!--]--></div>`);\n    };\n  }\n});\n",
+      "start": 1726490142872,
+      "end": 1726490142883,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/notification-drawer/NotificationList.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport NotificationListItem from \"~/components/notification-drawer/NotificationListItem.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'NotificationList',\n  __ssrInlineRender: true,\n  props: {\r\n  notifications: {\r\n    type: Array,\r\n    default: () => []\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full h-full\" }, _attrs))}><!--[-->`)\n  _ssrRenderList(__props.notifications, (n, i) => {\n    _push(_ssrRenderComponent(NotificationListItem, {\n      key: i,\n      notification: n\n    }, null, _parent))\n  })\n  _push(`<!--]--></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,kBAAkB,iBAAiB,iBAAiB,sBAAsB;AAE9H,OAAO,0BAA0B;AAEjC,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,eAAe;AAAA,MACb,MAAM;AAAA,MACN,SAAS,MAAM,CAAC;AAAA,IAClB;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY,EAAE,OAAO,gBAAgB,GAAG,MAAM,CAAC,CAAC,WAAW;AACxF,qBAAe,QAAQ,eAAe,CAAC,GAAG,MAAM;AAC9C,cAAM,oBAAoB,sBAAsB;AAAA,UAC9C,KAAK;AAAA,UACL,cAAc;AAAA,QAChB,GAAG,MAAM,OAAO,CAAC;AAAA,MACnB,CAAC;AACD,YAAM,gBAAgB;AAAA,IACxB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142883,
+      "end": 1726490142883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142883,
+      "end": 1726490142883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490142883,
+      "end": 1726490142883,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142883,
+      "end": 1726490142883,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142883,
+      "end": 1726490142883,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142883,
+      "end": 1726490142883,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142883,
+      "end": 1726490142884,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142883,
+      "end": 1726490142884,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142884,
+      "end": 1726490142884,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142884,
+      "end": 1726490142884,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142884,
+      "end": 1726490142885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142885,
+      "end": 1726490142885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142885,
+      "end": 1726490142885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142885,
+      "end": 1726490142885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142885,
+      "end": 1726490142885,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142885,
+      "end": 1726490142885,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142885,
+      "end": 1726490142886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142886,
+      "end": 1726490142886,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142886,
+      "end": 1726490142886,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142886,
+      "end": 1726490142886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142886,
+      "end": 1726490142886,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142886,
+      "end": 1726490142891,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142886,
+      "end": 1726490142891,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142894,
+      "end": 1726490142894,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142894,
+      "end": 1726490142894,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142894,
+      "end": 1726490142894,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142894,
+      "end": 1726490142894,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142895,
+      "end": 1726490142895,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142895,
+      "end": 1726490142895,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142896,
+      "end": 1726490142896,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142896,
+      "end": 1726490142896,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142896,
+      "end": 1726490142896,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,230 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/button/Back.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Back',\n  setup(__props) {\n\r\n\r\nconst router = useRouter()\r\n\r\nconst goBack = () => {\r\n  router.back()\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createBlock(BackIcon, { onClick: goBack }))\n}\n}\n\n})",
+      "start": 1726490134186,
+      "end": 1726490134186
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134186,
+      "end": 1726490134186,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134186,
+      "end": 1726490134186,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134186,
+      "end": 1726490134186,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134186,
+      "end": 1726490134186,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Back\",\n  setup(__props) {\n    const router = useRouter();\n    const goBack = () => {\n      router.back();\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createBlock(BackIcon, { onClick: goBack });\n    };\n  }\n});\n",
+      "start": 1726490134186,
+      "end": 1726490134311,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/button/Back.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { openBlock as _openBlock, createBlock as _createBlock } from \"vue\"\n\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Back',\n  setup(__props) {\n\r\n\r\nconst router = useRouter()\r\n\r\nconst goBack = () => {\r\n  router.back()\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createBlock(BackIcon, { onClick: goBack }))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,aAAa,YAAY,eAAe,oBAAoB;AAErE,OAAO,cAAc;AAGrB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAGjB,UAAM,SAAS,UAAU;AAEzB,UAAM,SAAS,MAAM;AACnB,aAAO,KAAK;AAAA,IACd;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,aAAa,UAAU,EAAE,SAAS,OAAO,CAAC;AAAA,IAClE;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134311,
+      "end": 1726490134311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134311,
+      "end": 1726490134311,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134312,
+      "end": 1726490134312,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134313,
+      "end": 1726490134313,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134313,
+      "end": 1726490134313,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134313,
+      "end": 1726490134313,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { useRouter } from '#app/composables/router';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { openBlock as _openBlock, createBlock as _createBlock } from \"vue\";\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Back\",\n  setup(__props) {\n    const router = useRouter();\n    const goBack = () => {\n      router.back();\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createBlock(BackIcon, { onClick: goBack });\n    };\n  }\n});\n",
+      "start": 1726490134313,
+      "end": 1726490134327,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134327,
+      "end": 1726490134327,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134328,
+      "end": 1726490134328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134328,
+      "end": 1726490134328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134328,
+      "end": 1726490134328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134328,
+      "end": 1726490134328,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134329,
+      "end": 1726490134329,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134329,
+      "end": 1726490134329,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134329,
+      "end": 1726490134329,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSlider.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start main-desktop-slider\" }\n\nimport PopularArtistDesktopSliderItem from \"~/components/main/PopularArtistDesktopSliderItem.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PopularArtistDesktopSlider',\n  setup(__props) {\n\r\nconst slide = {\r\n  image: '/images/artist-slider/desktop-1.png',\r\n  main_title: 'هنرمندان محبوب',\r\n  sub_title: 'متخصصان خدمات زیبایی',\r\n  description: 'با هنرمندان محبوب خدمات خیلی خاص و همین طور تخفیفات ویژه برای کاربران دارد',\r\n  link_url: '/',\r\n  link_title: 'هنرمندان',\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(PopularArtistDesktopSliderItem, {\n      image: slide.image,\n      \"main-title\": slide.main_title,\n      \"sub-title\": slide.sub_title,\n      description: slide.description,\n      \"link-url\": slide.link_url,\n      \"link-title\": slide.link_title\n    }, null, 8, [\"image\", \"main-title\", \"sub-title\", \"description\", \"link-url\", \"link-title\"])\n  ]))\n}\n}\n\n})",
+      "start": 1726490133085,
+      "end": 1726490133085
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133085,
+      "end": 1726490133085,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133085,
+      "end": 1726490133085,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133085,
+      "end": 1726490133085,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133085,
+      "end": 1726490133085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start main-desktop-slider\" };\nimport PopularArtistDesktopSliderItem from \"~/components/main/PopularArtistDesktopSliderItem.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"PopularArtistDesktopSlider\",\n  setup(__props) {\n    const slide = {\n      image: \"/images/artist-slider/desktop-1.png\",\n      main_title: \"هنرمندان محبوب\",\n      sub_title: \"متخصصان خدمات زیبایی\",\n      description: \"با هنرمندان محبوب خدمات خیلی خاص و همین طور تخفیفات ویژه برای کاربران دارد\",\n      link_url: \"/\",\n      link_title: \"هنرمندان\"\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(PopularArtistDesktopSliderItem, {\n          image: slide.image,\n          \"main-title\": slide.main_title,\n          \"sub-title\": slide.sub_title,\n          description: slide.description,\n          \"link-url\": slide.link_url,\n          \"link-title\": slide.link_title\n        }, null, 8, [\"image\", \"main-title\", \"sub-title\", \"description\", \"link-url\", \"link-title\"])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133085,
+      "end": 1726490133117,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSlider.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start main-desktop-slider\" }\n\nimport PopularArtistDesktopSliderItem from \"~/components/main/PopularArtistDesktopSliderItem.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PopularArtistDesktopSlider',\n  setup(__props) {\n\r\nconst slide = {\r\n  image: '/images/artist-slider/desktop-1.png',\r\n  main_title: 'هنرمندان محبوب',\r\n  sub_title: 'متخصصان خدمات زیبایی',\r\n  description: 'با هنرمندان محبوب خدمات خیلی خاص و همین طور تخفیفات ویژه برای کاربران دارد',\r\n  link_url: '/',\r\n  link_title: 'هنرمندان',\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(PopularArtistDesktopSliderItem, {\n      image: slide.image,\n      \"main-title\": slide.main_title,\n      \"sub-title\": slide.sub_title,\n      description: slide.description,\n      \"link-url\": slide.link_url,\n      \"link-title\": slide.link_title\n    }, null, 8, [\"image\", \"main-title\", \"sub-title\", \"description\", \"link-url\", \"link-title\"])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,aAAa,YAAY,sBAAsB,2BAA2B;AAEhH,MAAM,aAAa,EAAE,OAAO,qEAAqE;AAEjG,OAAO,oCAAoC;AAE3C,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAAA,MACZ,OAAO;AAAA,MACP,YAAY;AAAA,MACZ,WAAW;AAAA,MACX,aAAa;AAAA,MACb,UAAU;AAAA,MACV,YAAY;AAAA,IACd;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,aAAa,gCAAgC;AAAA,UAC3C,OAAO,MAAM;AAAA,UACb,cAAc,MAAM;AAAA,UACpB,aAAa,MAAM;AAAA,UACnB,aAAa,MAAM;AAAA,UACnB,YAAY,MAAM;AAAA,UAClB,cAAc,MAAM;AAAA,QACtB,GAAG,MAAM,GAAG,CAAC,SAAS,cAAc,aAAa,eAAe,YAAY,YAAY,CAAC;AAAA,MAC3F,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133117,
+      "end": 1726490133117,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133118,
+      "end": 1726490133118,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133118,
+      "end": 1726490133123,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133124,
+      "end": 1726490133124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133124,
+      "end": 1726490133124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133124,
+      "end": 1726490133124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133124,
+      "end": 1726490133124,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133125,
+      "end": 1726490133125,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133125,
+      "end": 1726490133125,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133125,
+      "end": 1726490133125,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133126,
+      "end": 1726490133126,
+      "order": "normal"
+    }
+  ]
+}

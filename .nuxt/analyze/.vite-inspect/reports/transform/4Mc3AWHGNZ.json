@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/button/Exit.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-row justify-start items-start w-full mb-6\" }\nconst _hoisted_2 = { class: \"mt-1\" }\nconst _hoisted_3 = { class: \"flex flex-row justify-between items-center w-full mr-4 border-b border-[#A9A7A7] pb-4\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"text-[#133C3E] text-[12px] leading-[18px] font-medium\" }, \"خروج از حساب کاربری\", -1)\n\nimport LeftArrow from \"~/components/icons/LeftArrow.vue\";\r\nimport ExitIcon from \"~/components/icons/ExitIcon.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Exit',\n  setup(__props) {\n\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(ExitIcon)\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _hoisted_4,\n      _createVNode(LeftArrow)\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1726490134786,
+      "end": 1726490134786
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134786,
+      "end": 1726490134786,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134786,
+      "end": 1726490134787,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134787,
+      "end": 1726490134787,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134787,
+      "end": 1726490134787,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-row justify-start items-start w-full mb-6\" };\nconst _hoisted_2 = { class: \"mt-1\" };\nconst _hoisted_3 = { class: \"flex flex-row justify-between items-center w-full mr-4 border-b border-[#A9A7A7] pb-4\" };\nconst _hoisted_4 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"text-[#133C3E] text-[12px] leading-[18px] font-medium\" }, \"خروج از حساب کاربری\", -1);\nimport LeftArrow from \"~/components/icons/LeftArrow.vue\";\nimport ExitIcon from \"~/components/icons/ExitIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Exit\",\n  setup(__props) {\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(ExitIcon)\n        ]),\n        _createElementVNode(\"div\", _hoisted_3, [\n          _hoisted_4,\n          _createVNode(LeftArrow)\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490134787,
+      "end": 1726490134819,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/button/Exit.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-row justify-start items-start w-full mb-6\" }\nconst _hoisted_2 = { class: \"mt-1\" }\nconst _hoisted_3 = { class: \"flex flex-row justify-between items-center w-full mr-4 border-b border-[#A9A7A7] pb-4\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"text-[#133C3E] text-[12px] leading-[18px] font-medium\" }, \"خروج از حساب کاربری\", -1)\n\nimport LeftArrow from \"~/components/icons/LeftArrow.vue\";\r\nimport ExitIcon from \"~/components/icons/ExitIcon.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Exit',\n  setup(__props) {\n\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(ExitIcon)\n    ]),\n    _createElementVNode(\"div\", _hoisted_3, [\n      _hoisted_4,\n      _createVNode(LeftArrow)\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,sBAAsB,qBAAqB,aAAa,YAAY,sBAAsB,2BAA2B;AAE3J,MAAM,aAAa,EAAE,OAAO,sDAAsD;AAClF,MAAM,aAAa,EAAE,OAAO,OAAO;AACnC,MAAM,aAAa,EAAE,OAAO,wFAAwF;AACpH,MAAM,aAA0B,oCAAoB,OAAO,EAAE,OAAO,wDAAwD,GAAG,uBAAuB,EAAE;AAExJ,OAAO,eAAe;AACtB,OAAO,cAAc;AAErB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAIjB,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACrC,aAAa,QAAQ;AAAA,QACvB,CAAC;AAAA,QACD,oBAAoB,OAAO,YAAY;AAAA,UACrC;AAAA,UACA,aAAa,SAAS;AAAA,QACxB,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134819,
+      "end": 1726490134819,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134819,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134820,
+      "end": 1726490134820,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490134820,
+      "end": 1726490134825,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134826,
+      "end": 1726490134826,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134826,
+      "end": 1726490134826,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134826,
+      "end": 1726490134826,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134827,
+      "end": 1726490134827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134827,
+      "end": 1726490134827,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134827,
+      "end": 1726490134827,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134827,
+      "end": 1726490134827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134828,
+      "end": 1726490134828,
+      "order": "normal"
+    }
+  ]
+}

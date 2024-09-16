@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistBioDesktop.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full rounded-[50px] bg-white shadow-[0px_5px_30px_5px_#00000040] px-[70px] py-[40px]\" }\nconst _hoisted_2 = { class: \"w-full flex flex-row justify-start items-center pb-[25px] border-b border-b-black\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"svg\", {\n  width: \"60\",\n  height: \"60\",\n  viewBox: \"0 0 60 60\",\n  fill: \"none\",\n  xmlns: \"http://www.w3.org/2000/svg\"\n}, [\n  /*#__PURE__*/_createElementVNode(\"path\", {\n    d: \"M30 30C27.25 30 24.8958 29.0208 22.9375 27.0625C20.9792 25.1042 20 22.75 20 20C20 17.25 20.9792 14.8958 22.9375 12.9375C24.8958 10.9792 27.25 10 30 10C32.75 10 35.1042 10.9792 37.0625 12.9375C39.0208 14.8958 40 17.25 40 20C40 22.75 39.0208 25.1042 37.0625 27.0625C35.1042 29.0208 32.75 30 30 30ZM10 50V43C10 41.5833 10.3646 40.2812 11.0938 39.0938C11.8229 37.9062 12.7917 37 14 36.375C16.5833 35.0833 19.2083 34.1146 21.875 33.4688C24.5417 32.8229 27.25 32.5 30 32.5C32.75 32.5 35.4583 32.8229 38.125 33.4688C40.7917 34.1146 43.4167 35.0833 46 36.375C47.2083 37 48.1771 37.9062 48.9062 39.0938C49.6354 40.2812 50 41.5833 50 43V50H10Z\",\n    fill: \"black\"\n  })\n], -1)\nconst _hoisted_4 = { class: \"flex flex-row justify-start items-center gap-[10px] font-medium text-[36px] text-right\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"span\", null, \"درباره \", -1)\nconst _hoisted_6 = [\"innerHTML\"]\nconst _hoisted_7 = { class: \"mt-[30px] flex flex-col justify-start items-start gap-[10px] font-medium text-[26px] text-right\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"span\", null, \"مدارک و مجوز ها \", -1)\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ArtistBioDesktop',\n  props: {\r\n  user: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _hoisted_3,\n      _createElementVNode(\"div\", _hoisted_4, [\n        _hoisted_5,\n        _createElementVNode(\"span\", null, _toDisplayString(__props.user.full_name), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", {\n      class: \"gap-[10px] font-medium text-[26px] text-right text-[#828282] mt-[10px]\",\n      innerHTML: __props.user.bio\n    }, null, 8, _hoisted_6),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _hoisted_8,\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.user.licenses, (l, i) => {\n        return (_openBlock(), _createElementBlock(\"span\", { key: i }, _toDisplayString(l), 1))\n      }), 128))\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1726490133088,
+      "end": 1726490133088
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133088,
+      "end": 1726490133088,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133088,
+      "end": 1726490133088,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133088,
+      "end": 1726490133088,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133088,
+      "end": 1726490133088,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment } from \"vue\";\nconst _hoisted_1 = { class: \"w-full rounded-[50px] bg-white shadow-[0px_5px_30px_5px_#00000040] px-[70px] py-[40px]\" };\nconst _hoisted_2 = { class: \"w-full flex flex-row justify-start items-center pb-[25px] border-b border-b-black\" };\nconst _hoisted_3 = /* @__PURE__ */ _createElementVNode(\"svg\", {\n  width: \"60\",\n  height: \"60\",\n  viewBox: \"0 0 60 60\",\n  fill: \"none\",\n  xmlns: \"http://www.w3.org/2000/svg\"\n}, [\n  /* @__PURE__ */ _createElementVNode(\"path\", {\n    d: \"M30 30C27.25 30 24.8958 29.0208 22.9375 27.0625C20.9792 25.1042 20 22.75 20 20C20 17.25 20.9792 14.8958 22.9375 12.9375C24.8958 10.9792 27.25 10 30 10C32.75 10 35.1042 10.9792 37.0625 12.9375C39.0208 14.8958 40 17.25 40 20C40 22.75 39.0208 25.1042 37.0625 27.0625C35.1042 29.0208 32.75 30 30 30ZM10 50V43C10 41.5833 10.3646 40.2812 11.0938 39.0938C11.8229 37.9062 12.7917 37 14 36.375C16.5833 35.0833 19.2083 34.1146 21.875 33.4688C24.5417 32.8229 27.25 32.5 30 32.5C32.75 32.5 35.4583 32.8229 38.125 33.4688C40.7917 34.1146 43.4167 35.0833 46 36.375C47.2083 37 48.1771 37.9062 48.9062 39.0938C49.6354 40.2812 50 41.5833 50 43V50H10Z\",\n    fill: \"black\"\n  })\n], -1);\nconst _hoisted_4 = { class: \"flex flex-row justify-start items-center gap-[10px] font-medium text-[36px] text-right\" };\nconst _hoisted_5 = /* @__PURE__ */ _createElementVNode(\"span\", null, \"درباره \", -1);\nconst _hoisted_6 = [\"innerHTML\"];\nconst _hoisted_7 = { class: \"mt-[30px] flex flex-col justify-start items-start gap-[10px] font-medium text-[26px] text-right\" };\nconst _hoisted_8 = /* @__PURE__ */ _createElementVNode(\"span\", null, \"مدارک و مجوز ها \", -1);\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ArtistBioDesktop\",\n  props: {\n    user: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _hoisted_3,\n          _createElementVNode(\"div\", _hoisted_4, [\n            _hoisted_5,\n            _createElementVNode(\"span\", null, _toDisplayString(__props.user.full_name), 1)\n          ])\n        ]),\n        _createElementVNode(\"div\", {\n          class: \"gap-[10px] font-medium text-[26px] text-right text-[#828282] mt-[10px]\",\n          innerHTML: __props.user.bio\n        }, null, 8, _hoisted_6),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _hoisted_8,\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.user.licenses, (l, i) => {\n            return _openBlock(), _createElementBlock(\"span\", { key: i }, _toDisplayString(l), 1);\n          }), 128))\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133088,
+      "end": 1726490133240,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistBioDesktop.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, toDisplayString as _toDisplayString, renderList as _renderList, Fragment as _Fragment } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full rounded-[50px] bg-white shadow-[0px_5px_30px_5px_#00000040] px-[70px] py-[40px]\" }\nconst _hoisted_2 = { class: \"w-full flex flex-row justify-start items-center pb-[25px] border-b border-b-black\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"svg\", {\n  width: \"60\",\n  height: \"60\",\n  viewBox: \"0 0 60 60\",\n  fill: \"none\",\n  xmlns: \"http://www.w3.org/2000/svg\"\n}, [\n  /*#__PURE__*/_createElementVNode(\"path\", {\n    d: \"M30 30C27.25 30 24.8958 29.0208 22.9375 27.0625C20.9792 25.1042 20 22.75 20 20C20 17.25 20.9792 14.8958 22.9375 12.9375C24.8958 10.9792 27.25 10 30 10C32.75 10 35.1042 10.9792 37.0625 12.9375C39.0208 14.8958 40 17.25 40 20C40 22.75 39.0208 25.1042 37.0625 27.0625C35.1042 29.0208 32.75 30 30 30ZM10 50V43C10 41.5833 10.3646 40.2812 11.0938 39.0938C11.8229 37.9062 12.7917 37 14 36.375C16.5833 35.0833 19.2083 34.1146 21.875 33.4688C24.5417 32.8229 27.25 32.5 30 32.5C32.75 32.5 35.4583 32.8229 38.125 33.4688C40.7917 34.1146 43.4167 35.0833 46 36.375C47.2083 37 48.1771 37.9062 48.9062 39.0938C49.6354 40.2812 50 41.5833 50 43V50H10Z\",\n    fill: \"black\"\n  })\n], -1)\nconst _hoisted_4 = { class: \"flex flex-row justify-start items-center gap-[10px] font-medium text-[36px] text-right\" }\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"span\", null, \"درباره \", -1)\nconst _hoisted_6 = [\"innerHTML\"]\nconst _hoisted_7 = { class: \"mt-[30px] flex flex-col justify-start items-start gap-[10px] font-medium text-[26px] text-right\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"span\", null, \"مدارک و مجوز ها \", -1)\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ArtistBioDesktop',\n  props: {\r\n  user: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _hoisted_3,\n      _createElementVNode(\"div\", _hoisted_4, [\n        _hoisted_5,\n        _createElementVNode(\"span\", null, _toDisplayString(__props.user.full_name), 1)\n      ])\n    ]),\n    _createElementVNode(\"div\", {\n      class: \"gap-[10px] font-medium text-[26px] text-right text-[#828282] mt-[10px]\",\n      innerHTML: __props.user.bio\n    }, null, 8, _hoisted_6),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _hoisted_8,\n      (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(__props.user.licenses, (l, i) => {\n        return (_openBlock(), _createElementBlock(\"span\", { key: i }, _toDisplayString(l), 1))\n      }), 128))\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,sBAAsB,qBAAqB,aAAa,YAAY,sBAAsB,qBAAqB,mBAAmB,kBAAkB,cAAc,aAAa,YAAY,iBAAiB;AAErN,MAAM,aAAa,EAAE,OAAO,yFAAyF;AACrH,MAAM,aAAa,EAAE,OAAO,oFAAoF;AAChH,MAAM,aAA0B,oCAAoB,OAAO;AAAA,EACzD,OAAO;AAAA,EACP,QAAQ;AAAA,EACR,SAAS;AAAA,EACT,MAAM;AAAA,EACN,OAAO;AACT,GAAG;AAAA,EACY,oCAAoB,QAAQ;AAAA,IACvC,GAAG;AAAA,IACH,MAAM;AAAA,EACR,CAAC;AACH,GAAG,EAAE;AACL,MAAM,aAAa,EAAE,OAAO,yFAAyF;AACrH,MAAM,aAA0B,oCAAoB,QAAQ,MAAM,WAAW,EAAE;AAC/E,MAAM,aAAa,CAAC,WAAW;AAC/B,MAAM,aAAa,EAAE,OAAO,kGAAkG;AAC9H,MAAM,aAA0B,oCAAoB,QAAQ,MAAM,oBAAoB,EAAE;AAGxF,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,MAAM;AAAA,MACJ,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ;AAGd,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACrC;AAAA,UACA,oBAAoB,OAAO,YAAY;AAAA,YACrC;AAAA,YACA,oBAAoB,QAAQ,MAAM,iBAAiB,QAAQ,KAAK,SAAS,GAAG,CAAC;AAAA,UAC/E,CAAC;AAAA,QACH,CAAC;AAAA,QACD,oBAAoB,OAAO;AAAA,UACzB,OAAO;AAAA,UACP,WAAW,QAAQ,KAAK;AAAA,QAC1B,GAAG,MAAM,GAAG,UAAU;AAAA,QACtB,oBAAoB,OAAO,YAAY;AAAA,UACrC;AAAA,WACC,WAAW,IAAI,GAAG,oBAAoB,WAAW,MAAM,YAAY,QAAQ,KAAK,UAAU,CAAC,GAAG,MAAM;AACnG,mBAAQ,WAAW,GAAG,oBAAoB,QAAQ,EAAE,KAAK,EAAE,GAAG,iBAAiB,CAAC,GAAG,CAAC;AAAA,UACtF,CAAC,GAAG,GAAG;AAAA,QACT,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133240,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133241,
+      "end": 1726490133248,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133249,
+      "end": 1726490133249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133251,
+      "end": 1726490133251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133251,
+      "end": 1726490133251,
+      "order": "normal"
+    }
+  ]
+}

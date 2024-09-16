@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/intro/IntroItem.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-col items-center justify-start px-4 mt-5\" }\nconst _hoisted_2 = [\"src\"]\nconst _hoisted_3 = { class: \"justify-center self-center mt-11 w-full max-w-[275px]\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'IntroItem',\n  props: {\r\n  intro: {\r\n    type: Object,\r\n    default: {}\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"img\", {\n      src: __props.intro.image,\n      alt: \"\"\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"p\", _hoisted_3, _toDisplayString(__props.intro.text), 1)\n  ]))\n}\n}\n\n})",
+      "start": 1726490134176,
+      "end": 1726490134176
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134176,
+      "end": 1726490134176,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134176,
+      "end": 1726490134176,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134176,
+      "end": 1726490134176,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134176,
+      "end": 1726490134176,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"flex flex-col items-center justify-start px-4 mt-5\" };\nconst _hoisted_2 = [\"src\"];\nconst _hoisted_3 = { class: \"justify-center self-center mt-11 w-full max-w-[275px]\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"IntroItem\",\n  props: {\n    intro: {\n      type: Object,\n      default: {}\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"img\", {\n          src: __props.intro.image,\n          alt: \"\"\n        }, null, 8, _hoisted_2),\n        _createElementVNode(\"p\", _hoisted_3, _toDisplayString(__props.intro.text), 1)\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490134176,
+      "end": 1726490134243,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/intro/IntroItem.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, toDisplayString as _toDisplayString, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"flex flex-col items-center justify-start px-4 mt-5\" }\nconst _hoisted_2 = [\"src\"]\nconst _hoisted_3 = { class: \"justify-center self-center mt-11 w-full max-w-[275px]\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'IntroItem',\n  props: {\r\n  intro: {\r\n    type: Object,\r\n    default: {}\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"img\", {\n      src: __props.intro.image,\n      alt: \"\"\n    }, null, 8, _hoisted_2),\n    _createElementVNode(\"p\", _hoisted_3, _toDisplayString(__props.intro.text), 1)\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,sBAAsB,qBAAqB,mBAAmB,kBAAkB,aAAa,YAAY,sBAAsB,2BAA2B;AAEnK,MAAM,aAAa,EAAE,OAAO,qDAAqD;AACjF,MAAM,aAAa,CAAC,KAAK;AACzB,MAAM,aAAa,EAAE,OAAO,wDAAwD;AAGpF,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS,CAAC;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO;AAAA,UACzB,KAAK,QAAQ,MAAM;AAAA,UACnB,KAAK;AAAA,QACP,GAAG,MAAM,GAAG,UAAU;AAAA,QACtB,oBAAoB,KAAK,YAAY,iBAAiB,QAAQ,MAAM,IAAI,GAAG,CAAC;AAAA,MAC9E,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134244,
+      "end": 1726490134244,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134244,
+      "end": 1726490134245,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490134245,
+      "end": 1726490134249,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134250,
+      "end": 1726490134250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134251,
+      "end": 1726490134251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134251,
+      "end": 1726490134251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134251,
+      "end": 1726490134251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134251,
+      "end": 1726490134251,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134251,
+      "end": 1726490134251,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134251,
+      "end": 1726490134251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134252,
+      "end": 1726490134252,
+      "order": "normal"
+    }
+  ]
+}

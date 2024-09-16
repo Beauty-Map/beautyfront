@@ -1,0 +1,210 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/nuxt-auth-sanctum/dist/runtime/composables/useSanctumAuth.mjs",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import { computed } from \"vue\";\nimport { useSanctumClient } from \"./useSanctumClient.mjs\";\nimport { useSanctumUser } from \"./useSanctumUser.mjs\";\nimport { navigateTo, useNuxtApp, useRoute } from \"#app\";\nimport { useSanctumConfig } from \"./useSanctumConfig.mjs\";\nexport const useSanctumAuth = () => {\n  const nuxtApp = useNuxtApp();\n  const user = useSanctumUser();\n  const client = useSanctumClient();\n  const options = useSanctumConfig();\n  const isAuthenticated = computed(() => {\n    return user.value !== null;\n  });\n  async function refreshIdentity() {\n    user.value = await client(options.endpoints.user);\n  }\n  async function login(credentials) {\n    const currentRoute = useRoute();\n    if (isAuthenticated.value === true) {\n      if (options.redirectIfAuthenticated === false) {\n        throw new Error(\"User is already authenticated\");\n      }\n      if (options.redirect.onLogin === false || options.redirect.onLogin === currentRoute.path) {\n        return;\n      }\n      await nuxtApp.runWithContext(\n        () => navigateTo(options.redirect.onLogin)\n      );\n    }\n    await client(options.endpoints.login, {\n      method: \"post\",\n      body: credentials\n    });\n    await refreshIdentity();\n    if (options.redirect.keepRequestedRoute) {\n      const requestedRoute = currentRoute.query.redirect;\n      if (requestedRoute && requestedRoute !== currentRoute.path) {\n        await nuxtApp.runWithContext(\n          () => navigateTo(requestedRoute)\n        );\n        return;\n      }\n    }\n    if (options.redirect.onLogin === false || currentRoute.path === options.redirect.onLogin) {\n      return;\n    }\n    await nuxtApp.runWithContext(\n      () => navigateTo(options.redirect.onLogin)\n    );\n  }\n  async function logout() {\n    if (isAuthenticated.value === false) {\n      throw new Error(\"User is not authenticated\");\n    }\n    const currentRoute = useRoute();\n    await client(options.endpoints.logout, { method: \"post\" });\n    user.value = null;\n    if (options.redirect.onLogout === false || currentRoute.path === options.redirect.onLogout) {\n      return;\n    }\n    await nuxtApp.runWithContext(\n      () => navigateTo(options.redirect.onLogout)\n    );\n  }\n  return {\n    user,\n    isAuthenticated,\n    login,\n    logout,\n    refreshIdentity\n  };\n};\n",
+      "start": 1726490131967,
+      "end": 1726490132358,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132358,
+      "end": 1726490132358,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/input/TicketDescriptionInput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"flex flex-col items-start justify-start w-full\">\r\n    <div class=\"w-full text-[#133C3E] rounded-[12px] font-medium text-[15px] text-right leading-[23px] border border-[#A9A7A7] bg-[#F7F5C4] py-[20px] px-[20px] cursor-pointer flex flex-row justify-start items-start\">\r\n      <TicketTitleIcon />\r\n      <div class=\"flex flex-row grow mr-[10px]\">\r\n        <textarea type=\"text\" class=\"text-right h-full bg-transparent w-full outline-none focus:outline-none placeholder:text-[#133C3E]\"\r\n                  @input=\"updateTextDebounce\"\r\n                  v-model=\"value\"\r\n                  placeholder=\"توضیحات\"\r\n                  rows=\"5\"\r\n        />\r\n      </div>\r\n    </div>\r\n    <div class=\"w-full flex flex-row justify-start items-center\" v-if=\"hasError\">\r\n      <ErrorRedIcon />\r\n      <span class=\"mr-1 text-[#F44336] text-[10px] leading-[12px]\">{{errorText}}</span>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport TicketTitleIcon from \"~/components/icons/TicketTitleIcon.vue\";\r\nimport ErrorRedIcon from \"~/components/icons/ErrorRedIcon.vue\";\r\n\r\nconst emits = defineEmits(['update:modelValue'])\r\nconst props = defineProps({\r\n  modelValue: {\r\n    type: String,\r\n    default: ''\r\n  }\r\n})\r\nconst value = ref<String>(props.modelValue)\r\nconst errorText = ref<String>('')\r\nconst hasError = ref<Boolean>(false)\r\n\r\nconst updateText = ($event: Event) => {\r\n  emits('update:modelValue', $event.target?.value)\r\n}\r\n\r\nconst updateTextDebounce = useDebounce(updateText, 500)\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490133764,
+      "end": 1726490133827,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133827,
+      "end": 1726490133827,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/TicketDescriptionInput.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/TicketDescriptionInput.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490133827,
+      "end": 1726490133862,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133862,
+      "end": 1726490133862,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133863,
+      "end": 1726490133863,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133863,
+      "end": 1726490133864,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133864,
+      "end": 1726490133864,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133864,
+      "end": 1726490133864,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133865,
+      "end": 1726490133865,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133868,
+      "end": 1726490133868,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133868,
+      "end": 1726490133868,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133868,
+      "end": 1726490133868,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133868,
+      "end": 1726490133868,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133868,
+      "end": 1726490133868,
+      "order": "normal"
+    }
+  ]
+}

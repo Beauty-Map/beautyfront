@@ -1,0 +1,258 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/icons/CheckBoxCheckedIcon.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<template>\r\n  <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <rect width=\"16\" height=\"16\" fill=\"white\"/>\r\n    <rect width=\"16\" height=\"16\" rx=\"2\" fill=\"#2920D9\"/>\r\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M13.8162 4.20701C14.0701 4.47369 14.0597 4.89568 13.793 5.14954L6.08929 12.4829C5.95773 12.6081 5.78078 12.6742 5.59933 12.666C5.41788 12.6577 5.24766 12.5758 5.12803 12.4391L2.16506 9.05451C1.92254 8.77747 1.95052 8.35629 2.22755 8.11377C2.50459 7.87125 2.92577 7.89923 3.16829 8.17626L5.67342 11.0379L12.8737 4.1838C13.1404 3.92994 13.5624 3.94033 13.8162 4.20701Z\" fill=\"white\"/>\r\n  </svg>\r\n</template>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490142534,
+      "end": 1726490142640,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142640,
+      "end": 1726490142640,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs) {\n  _push(`<svg${_ssrRenderAttrs(_mergeProps({\n    width: \"16\",\n    height: \"16\",\n    viewBox: \"0 0 16 16\",\n    fill: \"none\",\n    xmlns: \"http://www.w3.org/2000/svg\"\n  }, _attrs))}><rect width=\"16\" height=\"16\" fill=\"white\"></rect><rect width=\"16\" height=\"16\" rx=\"2\" fill=\"#2920D9\"></rect><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M13.8162 4.20701C14.0701 4.47369 14.0597 4.89568 13.793 5.14954L6.08929 12.4829C5.95773 12.6081 5.78078 12.6742 5.59933 12.666C5.41788 12.6577 5.24766 12.5758 5.12803 12.4391L2.16506 9.05451C1.92254 8.77747 1.95052 8.35629 2.22755 8.11377C2.50459 7.87125 2.92577 7.89923 3.16829 8.17626L5.67342 11.0379L12.8737 4.1838C13.1404 3.92994 13.5624 3.94033 13.8162 4.20701Z\" fill=\"white\"></path></svg>`)\n}\n\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"components/icons/CheckBoxCheckedIcon.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726490142640,
+      "end": 1726490142641,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/icons/CheckBoxCheckedIcon.vue"
+        ],
+        "names": [],
+        "mappings": ";;;;EAAA,aAAA,gBAAA;IAKO,KAAK,EAAC,IAAI;IAAC,MAAM,EAAC,IAAI;IAAC,OAAO,EAAC,WAAW;IAAC,IAAI,EAAC,MAAM;IAAC,KAAK,EAAC,4BAA4B;KALhG",
+        "sourcesContent": [
+          "<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<template>\r\n  <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\r\n    <rect width=\"16\" height=\"16\" fill=\"white\"/>\r\n    <rect width=\"16\" height=\"16\" rx=\"2\" fill=\"#2920D9\"/>\r\n    <path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M13.8162 4.20701C14.0701 4.47369 14.0597 4.89568 13.793 5.14954L6.08929 12.4829C5.95773 12.6081 5.78078 12.6742 5.59933 12.666C5.41788 12.6577 5.24766 12.5758 5.12803 12.4391L2.16506 9.05451C1.92254 8.77747 1.95052 8.35629 2.22755 8.11377C2.50459 7.87125 2.92577 7.89923 3.16829 8.17626L5.67342 11.0379L12.8737 4.1838C13.1404 3.92994 13.5624 3.94033 13.8162 4.20701Z\" fill=\"white\"/>\r\n  </svg>\r\n</template>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ]
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142641,
+      "end": 1726490142641,
+      "order": "normal"
+    }
+  ]
+}

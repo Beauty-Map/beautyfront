@@ -1,0 +1,215 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/footer/Footer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"bg-[#ff3ca0] w-full flex flex-col justify-start items-start\">\r\n    <div class=\"px-[100px] py-[66px] w-full flex flex-col justify-start items-start\">\r\n      <div class=\"w-full flex flex-row flex-wrap justify-between items-center mb-[30px]\">\r\n<!--        <PolMapWhiteLogo />-->\r\n<!--        <div class=\"flex flex-row justify-end items-center gap-[10px]\">-->\r\n<!--          <nuxt-link to=\"/\">-->\r\n<!--            <InstagramWhiteIcon />-->\r\n<!--          </nuxt-link>-->\r\n<!--          <nuxt-link to=\"/\">-->\r\n<!--            <TelegramWhiteIcon />-->\r\n<!--          </nuxt-link>-->\r\n<!--          <nuxt-link to=\"/\">-->\r\n<!--            <FaceBookWhiteIcon />-->\r\n<!--          </nuxt-link>-->\r\n<!--        </div>-->\r\n      </div>\r\n      <div class=\"border-t border-t-white w-full py-[48px] flex flex-row flex-wrap justify-start items-start gap-y-[40px] gap-x-[100px]\">\r\n        <div class=\"flex flex-col justify-start items-start gap-y-[12px]\">\r\n          <h3 class=\"text-white text-right font-semibold text-[22px] leading-[27px]\">\r\n            داشبورد\r\n          </h3>\r\n          <nuxt-link class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            صفحه اصلی\r\n          </nuxt-link>\r\n          <nuxt-link class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            خدمات زیبایی\r\n          </nuxt-link>\r\n          <nuxt-link class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            کسب درآمد\r\n          </nuxt-link>\r\n          <nuxt-link class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            درباره ما\r\n          </nuxt-link>\r\n        </div>\r\n        <div class=\"flex flex-col justify-start items-start gap-y-[12px]\">\r\n          <h3 class=\"text-white text-right font-semibold text-[22px] leading-[27px]\">\r\n            قوانین و مقررات\r\n          </h3>\r\n          <nuxt-link class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            سیاست حفظ حریم خصوصی\r\n          </nuxt-link>\r\n          <nuxt-link class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            شرایط استفاده\r\n          </nuxt-link>\r\n        </div>\r\n        <div class=\"flex flex-col justify-start items-start gap-y-[12px]\">\r\n          <h3 class=\"text-white text-right font-semibold text-[22px] leading-[27px]\">\r\n            تماس باما\r\n          </h3>\r\n          <div class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            <span class=\"font-medium\">آدرس:</span>\r\n            <span>همدان,آرامگاه بوعلی,ساختمان سینا طبقه 5,واحد 521</span>\r\n          </div>\r\n          <div class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            <span class=\"font-medium\">ایمیل:</span>\r\n            <span>support@beautyMap.com</span>\r\n          </div>\r\n          <div class=\"text-white text-right font-light text-[18px] leading-[32px]\" to=\"/\">\r\n            <span class=\"font-medium\">تلفن:</span>\r\n            <span>081-826-1234 , 09181234567</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"bg-[#141414] text-center py-[20px] px-[100px] w-full\">\r\n      <span class=\"text-white font-normal leading-[36px] text-[16px]\">Copyright 2024 , BeautyMap.ir | All rights reserved.</span>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490132523,
+      "end": 1726490132585,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132585,
+      "end": 1726490132585,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "const _sfc_main = {}\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"bg-[#ff3ca0] w-full flex flex-col justify-start items-start\" }\nconst _hoisted_2 = { class: \"px-[100px] py-[66px] w-full flex flex-col justify-start items-start\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"w-full flex flex-row flex-wrap justify-between items-center mb-[30px]\" }, null, -1)\nconst _hoisted_4 = { class: \"border-t border-t-white w-full py-[48px] flex flex-row flex-wrap justify-start items-start gap-y-[40px] gap-x-[100px]\" }\nconst _hoisted_5 = { class: \"flex flex-col justify-start items-start gap-y-[12px]\" }\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-white text-right font-semibold text-[22px] leading-[27px]\" }, \" داشبورد \", -1)\nconst _hoisted_7 = { class: \"flex flex-col justify-start items-start gap-y-[12px]\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-white text-right font-semibold text-[22px] leading-[27px]\" }, \" قوانین و مقررات \", -1)\nconst _hoisted_9 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex flex-col justify-start items-start gap-y-[12px]\" }, [\n  /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-white text-right font-semibold text-[22px] leading-[27px]\" }, \" تماس باما \"),\n  /*#__PURE__*/_createElementVNode(\"div\", {\n    class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n    to: \"/\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"آدرس:\"),\n    /*#__PURE__*/_createElementVNode(\"span\", null, \"همدان,آرامگاه بوعلی,ساختمان سینا طبقه 5,واحد 521\")\n  ]),\n  /*#__PURE__*/_createElementVNode(\"div\", {\n    class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n    to: \"/\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"ایمیل:\"),\n    /*#__PURE__*/_createElementVNode(\"span\", null, \"support@beautyMap.com\")\n  ]),\n  /*#__PURE__*/_createElementVNode(\"div\", {\n    class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n    to: \"/\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"تلفن:\"),\n    /*#__PURE__*/_createElementVNode(\"span\", null, \"081-826-1234 , 09181234567\")\n  ])\n], -1)\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"bg-[#141414] text-center py-[20px] px-[100px] w-full\" }, [\n  /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-white font-normal leading-[36px] text-[16px]\" }, \"Copyright 2024 , BeautyMap.ir | All rights reserved.\")\n], -1)\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_nuxt_link = _resolveComponent(\"nuxt-link\")\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _hoisted_3,\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _hoisted_6,\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" صفحه اصلی \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" خدمات زیبایی \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" کسب درآمد \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" درباره ما \")\n            ]),\n            _: 1\n          })\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _hoisted_8,\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" سیاست حفظ حریم خصوصی \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" شرایط استفاده \")\n            ]),\n            _: 1\n          })\n        ]),\n        _hoisted_9\n      ])\n    ]),\n    _hoisted_10\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1726490132585,
+      "end": 1726490132586,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490132586,
+      "end": 1726490132586,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132586,
+      "end": 1726490132586,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490132586,
+      "end": 1726490132586,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490132586,
+      "end": 1726490132586,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490132586,
+      "end": 1726490132586,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132586,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490132587,
+      "end": 1726490132587,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490132588,
+      "end": 1726490132588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/home/saeed/w/projects/beautymap/beautyfront/node_modules/nuxt/dist/app/components/nuxt-link\";\nconst _sfc_main = {}\nimport { createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveComponent as _resolveComponent, withCtx as _withCtx, createVNode as _createVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"bg-[#ff3ca0] w-full flex flex-col justify-start items-start\" }\nconst _hoisted_2 = { class: \"px-[100px] py-[66px] w-full flex flex-col justify-start items-start\" }\nconst _hoisted_3 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"w-full flex flex-row flex-wrap justify-between items-center mb-[30px]\" }, null, -1)\nconst _hoisted_4 = { class: \"border-t border-t-white w-full py-[48px] flex flex-row flex-wrap justify-start items-start gap-y-[40px] gap-x-[100px]\" }\nconst _hoisted_5 = { class: \"flex flex-col justify-start items-start gap-y-[12px]\" }\nconst _hoisted_6 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-white text-right font-semibold text-[22px] leading-[27px]\" }, \" داشبورد \", -1)\nconst _hoisted_7 = { class: \"flex flex-col justify-start items-start gap-y-[12px]\" }\nconst _hoisted_8 = /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-white text-right font-semibold text-[22px] leading-[27px]\" }, \" قوانین و مقررات \", -1)\nconst _hoisted_9 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"flex flex-col justify-start items-start gap-y-[12px]\" }, [\n  /*#__PURE__*/_createElementVNode(\"h3\", { class: \"text-white text-right font-semibold text-[22px] leading-[27px]\" }, \" تماس باما \"),\n  /*#__PURE__*/_createElementVNode(\"div\", {\n    class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n    to: \"/\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"آدرس:\"),\n    /*#__PURE__*/_createElementVNode(\"span\", null, \"همدان,آرامگاه بوعلی,ساختمان سینا طبقه 5,واحد 521\")\n  ]),\n  /*#__PURE__*/_createElementVNode(\"div\", {\n    class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n    to: \"/\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"ایمیل:\"),\n    /*#__PURE__*/_createElementVNode(\"span\", null, \"support@beautyMap.com\")\n  ]),\n  /*#__PURE__*/_createElementVNode(\"div\", {\n    class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n    to: \"/\"\n  }, [\n    /*#__PURE__*/_createElementVNode(\"span\", { class: \"font-medium\" }, \"تلفن:\"),\n    /*#__PURE__*/_createElementVNode(\"span\", null, \"081-826-1234 , 09181234567\")\n  ])\n], -1)\nconst _hoisted_10 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"bg-[#141414] text-center py-[20px] px-[100px] w-full\" }, [\n  /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-white font-normal leading-[36px] text-[16px]\" }, \"Copyright 2024 , BeautyMap.ir | All rights reserved.\")\n], -1)\n\nfunction _sfc_render(_ctx, _cache) {\n  const _component_nuxt_link = __nuxt_component_0\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _hoisted_3,\n      _createElementVNode(\"div\", _hoisted_4, [\n        _createElementVNode(\"div\", _hoisted_5, [\n          _hoisted_6,\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" صفحه اصلی \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" خدمات زیبایی \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" کسب درآمد \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" درباره ما \")\n            ]),\n            _: 1\n          })\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _hoisted_8,\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" سیاست حفظ حریم خصوصی \")\n            ]),\n            _: 1\n          }),\n          _createVNode(_component_nuxt_link, {\n            class: \"text-white text-right font-light text-[18px] leading-[32px]\",\n            to: \"/\"\n          }, {\n            default: _withCtx(() => [\n              _createTextVNode(\" شرایط استفاده \")\n            ]),\n            _: 1\n          })\n        ]),\n        _hoisted_9\n      ])\n    ]),\n    _hoisted_10\n  ]))\n}\n\n\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render]])",
+      "start": 1726490132588,
+      "end": 1726490132588,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490132588,
+      "end": 1726490132588,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490132588,
+      "end": 1726490132588,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132588,
+      "end": 1726490132588,
+      "order": "normal"
+    }
+  ]
+}

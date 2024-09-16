@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/bookmark/Bookmark.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nimport FullBookmarkIcon from \"~/components/icons/FullBookmarkIcon.vue\";\r\nimport EmptyBookmarkIcon from \"~/components/icons/EmptyBookmarkIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Bookmark',\n  props: {\r\n  bookmarked: {\r\n    type: Boolean,\r\n    required: true,\r\n  }\r\n},\n  emits: ['bookmark'],\n  setup(__props, { emit: __emit }) {\n\r\nconst emits = __emit\r\nconst props = __props\r\n\r\nconst toggleBookmark = (e: Event) => {\r\n  e.stopPropagation()\r\n  emits('bookmark', !props.bookmarked)\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    onClick: toggleBookmark,\n    class: \"cursor-pointer\"\n  }, [\n    (__props.bookmarked)\n      ? (_openBlock(), _createBlock(FullBookmarkIcon, { key: 0 }))\n      : (_openBlock(), _createBlock(EmptyBookmarkIcon, { key: 1 }))\n  ]))\n}\n}\n\n})",
+      "start": 1726490134187,
+      "end": 1726490134187
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134187,
+      "end": 1726490134187,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134187,
+      "end": 1726490134187,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134187,
+      "end": 1726490134187,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134187,
+      "end": 1726490134187,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { openBlock as _openBlock, createBlock as _createBlock, createElementBlock as _createElementBlock } from \"vue\";\nimport FullBookmarkIcon from \"~/components/icons/FullBookmarkIcon.vue\";\nimport EmptyBookmarkIcon from \"~/components/icons/EmptyBookmarkIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"Bookmark\",\n  props: {\n    bookmarked: {\n      type: Boolean,\n      required: true\n    }\n  },\n  emits: [\"bookmark\"],\n  setup(__props, { emit: __emit }) {\n    const emits = __emit;\n    const props = __props;\n    const toggleBookmark = (e) => {\n      e.stopPropagation();\n      emits(\"bookmark\", !props.bookmarked);\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", {\n        onClick: toggleBookmark,\n        class: \"cursor-pointer\"\n      }, [\n        __props.bookmarked ? (_openBlock(), _createBlock(FullBookmarkIcon, { key: 0 })) : (_openBlock(), _createBlock(EmptyBookmarkIcon, { key: 1 }))\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490134187,
+      "end": 1726490134386,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/bookmark/Bookmark.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { openBlock as _openBlock, createBlock as _createBlock, createCommentVNode as _createCommentVNode, createElementBlock as _createElementBlock } from \"vue\"\n\nimport FullBookmarkIcon from \"~/components/icons/FullBookmarkIcon.vue\";\r\nimport EmptyBookmarkIcon from \"~/components/icons/EmptyBookmarkIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'Bookmark',\n  props: {\r\n  bookmarked: {\r\n    type: Boolean,\r\n    required: true,\r\n  }\r\n},\n  emits: ['bookmark'],\n  setup(__props, { emit: __emit }) {\n\r\nconst emits = __emit\r\nconst props = __props\r\n\r\nconst toggleBookmark = (e: Event) => {\r\n  e.stopPropagation()\r\n  emits('bookmark', !props.bookmarked)\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", {\n    onClick: toggleBookmark,\n    class: \"cursor-pointer\"\n  }, [\n    (__props.bookmarked)\n      ? (_openBlock(), _createBlock(FullBookmarkIcon, { key: 0 }))\n      : (_openBlock(), _createBlock(EmptyBookmarkIcon, { key: 1 }))\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,aAAa,YAAY,eAAe,cAAyD,sBAAsB,2BAA2B;AAE3J,OAAO,sBAAsB;AAC7B,OAAO,uBAAuB;AAG9B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,YAAY;AAAA,MACV,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,OAAO,CAAC,UAAU;AAAA,EAClB,MAAM,SAAS,EAAE,MAAM,OAAO,GAAG;AAEnC,UAAM,QAAQ;AACd,UAAM,QAAQ;AAEd,UAAM,iBAAiB,CAAC,MAAa;AACnC,QAAE,gBAAgB;AAClB,YAAM,YAAY,CAAC,MAAM,UAAU;AAAA,IACrC;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO;AAAA,QAC/C,SAAS;AAAA,QACT,OAAO;AAAA,MACT,GAAG;AAAA,QACA,QAAQ,cACJ,WAAW,GAAG,aAAa,kBAAkB,EAAE,KAAK,EAAE,CAAC,MACvD,WAAW,GAAG,aAAa,mBAAmB,EAAE,KAAK,EAAE,CAAC;AAAA,MAC/D,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134386,
+      "end": 1726490134386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134386,
+      "end": 1726490134386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490134386,
+      "end": 1726490134386,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134386,
+      "end": 1726490134386,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134386,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134387,
+      "end": 1726490134387,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134387,
+      "end": 1726490134388,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490134388,
+      "end": 1726490134394,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134395,
+      "end": 1726490134395,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134395,
+      "end": 1726490134396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134396,
+      "end": 1726490134396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134396,
+      "end": 1726490134396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134396,
+      "end": 1726490134396,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134396,
+      "end": 1726490134396,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134397,
+      "end": 1726490134397,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134397,
+      "end": 1726490134397,
+      "order": "normal"
+    }
+  ]
+}

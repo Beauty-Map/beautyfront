@@ -1,0 +1,276 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/plugins/2. format-number.server.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "export default defineNuxtPlugin((nuxtApp) => {\r\n    nuxtApp.vueApp.directive('format-price', {\r\n        mounted (el) {\r\n            const value = el.innerText;\r\n            const formattedValue = new Intl.NumberFormat('fa-IR').format(value);\r\n            el.innerText = `${formattedValue} تومان`;\r\n        },\r\n        getSSRProps (binding, vnode) {\r\n            // you can provide SSR-specific props here\r\n            return {}\r\n        }\r\n    })\r\n    nuxtApp.vueApp.directive('format-number', {\r\n        mounted (el) {\r\n            const value = el.innerText;\r\n            const formattedValue = new Intl.NumberFormat('fa-IR').format(value);\r\n            el.innerText = `${formattedValue}`;\r\n        },\r\n        getSSRProps (binding, vnode) {\r\n            // you can provide SSR-specific props here\r\n            return {}\r\n        }\r\n    })\r\n})",
+      "start": 1726490138663,
+      "end": 1726490139516,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490139516,
+      "end": 1726490139516,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490139516,
+      "end": 1726490139516,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490139516,
+      "end": 1726490139516,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490139516,
+      "end": 1726490139516,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490139516,
+      "end": 1726490139516,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490139516,
+      "end": 1726490139516,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "export default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.directive(\"format-price\", {\n    mounted(el) {\n      const value = el.innerText;\n      const formattedValue = new Intl.NumberFormat(\"fa-IR\").format(value);\n      el.innerText = `${formattedValue} تومان`;\n    },\n    getSSRProps(binding, vnode) {\n      return {};\n    }\n  });\n  nuxtApp.vueApp.directive(\"format-number\", {\n    mounted(el) {\n      const value = el.innerText;\n      const formattedValue = new Intl.NumberFormat(\"fa-IR\").format(value);\n      el.innerText = `${formattedValue}`;\n    },\n    getSSRProps(binding, vnode) {\n      return {};\n    }\n  });\n});\n",
+      "start": 1726490139516,
+      "end": 1726490139526,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/plugins/2. format-number.server.ts"
+        ],
+        "sourcesContent": [
+          "export default defineNuxtPlugin((nuxtApp) => {\r\n    nuxtApp.vueApp.directive('format-price', {\r\n        mounted (el) {\r\n            const value = el.innerText;\r\n            const formattedValue = new Intl.NumberFormat('fa-IR').format(value);\r\n            el.innerText = `${formattedValue} تومان`;\r\n        },\r\n        getSSRProps (binding, vnode) {\r\n            // you can provide SSR-specific props here\r\n            return {}\r\n        }\r\n    })\r\n    nuxtApp.vueApp.directive('format-number', {\r\n        mounted (el) {\r\n            const value = el.innerText;\r\n            const formattedValue = new Intl.NumberFormat('fa-IR').format(value);\r\n            el.innerText = `${formattedValue}`;\r\n        },\r\n        getSSRProps (binding, vnode) {\r\n            // you can provide SSR-specific props here\r\n            return {}\r\n        }\r\n    })\r\n})"
+        ],
+        "mappings": "AAAA,eAAe,iBAAiB,CAAC,YAAY;AACzC,UAAQ,OAAO,UAAU,gBAAgB;AAAA,IACrC,QAAS,IAAI;AACT,YAAM,QAAQ,GAAG;AACjB,YAAM,iBAAiB,IAAI,KAAK,aAAa,OAAO,EAAE,OAAO,KAAK;AAClE,SAAG,YAAY,GAAG,cAAc;AAAA,IACpC;AAAA,IACA,YAAa,SAAS,OAAO;AAEzB,aAAO,CAAC;AAAA,IACZ;AAAA,EACJ,CAAC;AACD,UAAQ,OAAO,UAAU,iBAAiB;AAAA,IACtC,QAAS,IAAI;AACT,YAAM,QAAQ,GAAG;AACjB,YAAM,iBAAiB,IAAI,KAAK,aAAa,OAAO,EAAE,OAAO,KAAK;AAClE,SAAG,YAAY,GAAG,cAAc;AAAA,IACpC;AAAA,IACA,YAAa,SAAS,OAAO;AAEzB,aAAO,CAAC;AAAA,IACZ;AAAA,EACJ,CAAC;AACL,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490139526,
+      "end": 1726490139526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490139526,
+      "end": 1726490139526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490139526,
+      "end": 1726490139526,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490139526,
+      "end": 1726490139526,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490139528,
+      "end": 1726490139528,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490139528,
+      "end": 1726490139528,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490139528,
+      "end": 1726490139528,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490139528,
+      "end": 1726490139528,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490139528,
+      "end": 1726490139528,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490139529,
+      "end": 1726490139529,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490139529,
+      "end": 1726490139529,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490139533,
+      "end": 1726490139534,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490139534,
+      "end": 1726490139534,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490139534,
+      "end": 1726490139534,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490139535,
+      "end": 1726490139535,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490139535,
+      "end": 1726490139536,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490139536,
+      "end": 1726490139536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490139536,
+      "end": 1726490139536,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490139536,
+      "end": 1726490139536,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490139539,
+      "end": 1726490139540,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490139539,
+      "end": 1726490139540,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.directive(\"format-price\", {\n    mounted(el) {\n      const value = el.innerText;\n      const formattedValue = new Intl.NumberFormat(\"fa-IR\").format(value);\n      el.innerText = `${formattedValue} تومان`;\n    },\n    getSSRProps(binding, vnode) {\n      return {};\n    }\n  });\n  nuxtApp.vueApp.directive(\"format-number\", {\n    mounted(el) {\n      const value = el.innerText;\n      const formattedValue = new Intl.NumberFormat(\"fa-IR\").format(value);\n      el.innerText = `${formattedValue}`;\n    },\n    getSSRProps(binding, vnode) {\n      return {};\n    }\n  });\n});\n",
+      "start": 1726490139540,
+      "end": 1726490139540,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.directive(\"format-price\", {\n    mounted(el) {\n      const value = el.innerText;\n      const formattedValue = new Intl.NumberFormat(\"fa-IR\").format(value);\n      el.innerText = `${formattedValue} تومان`;\n    },\n    getSSRProps(binding, vnode) {\n      return {};\n    }\n  });\n  nuxtApp.vueApp.directive(\"format-number\", {\n    mounted(el) {\n      const value = el.innerText;\n      const formattedValue = new Intl.NumberFormat(\"fa-IR\").format(value);\n      el.innerText = `${formattedValue}`;\n    },\n    getSSRProps(binding, vnode) {\n      return {};\n    }\n  });\n});\n",
+      "start": 1726490139540,
+      "end": 1726490139540,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490139541,
+      "end": 1726490139541,
+      "order": "normal"
+    }
+  ]
+}

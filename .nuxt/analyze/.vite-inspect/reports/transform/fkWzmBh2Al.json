@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full\">\r\n    <TicketItemHeader\r\n        :id=\"ticket.id\"\r\n        :created-at=\"ticket.created_at\"\r\n    />\r\n    <TicketItemContent\r\n        :status=\"ticket.status\"\r\n        :subject=\"ticket.subject\"\r\n    />\r\n    <TicketItemFooter\r\n        :status=\"ticket.status\"\r\n        :subject=\"ticket.subject\"\r\n    />\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport TicketItemHeader from \"~/components/support/TicketItemHeader.vue\";\r\nimport TicketItemContent from \"~/components/support/TicketItemContent.vue\";\r\nimport TicketItemFooter from \"~/components/support/TicketItemFooter.vue\";\r\nconst props = defineProps({\r\n  ticket: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490132770,
+      "end": 1726490132839,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132839,
+      "end": 1726490132839,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/support/TicketItem.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490132839,
+      "end": 1726490132860,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490132860,
+      "end": 1726490132860,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490132861,
+      "end": 1726490132861,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490132861,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132862,
+      "end": 1726490132862,
+      "order": "normal"
+    }
+  ]
+}

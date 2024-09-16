@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/search/PageHeader.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full flex flex-col\">\r\n    <div class=\"w-full flex flex-row items-center justify-start\">\r\n      <SearchInput v-model=\"searchTerm\"/>\r\n    </div>\r\n    <div class=\"w-full flex flex-row gap-[10px] justify-start items-center mt-2 py-2 \">\r\n      <div @click=\"openFilterDrawer\" class=\"cursor-pointer flex flex-row gap-[4px] justify-start items-center\">\r\n        <FilterIcon />\r\n        <span>فیلتر</span>\r\n        <ArrowDownIcon />\r\n      </div>\r\n      <div @click=\"openSortDrawer\" class=\"cursor-pointer flex flex-row gap-[4px] justify-start items-center\">\r\n        <SortIcon />\r\n        <span>مرتب سازی</span>\r\n        <ArrowDownIcon />\r\n      </div>\r\n    </div>\r\n    <FilterPortfolioDrawer @close=\"closeFilterDrawer\" @choose=\"chooseService\" :is-open=\"showFilterDrawer\" />\r\n    <SortPortfolioDrawer @close=\"closeSortDrawer\" @choose=\"chooseSort\" :is-open=\"showSortDrawer\" />\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport SearchInput from \"~/components/main/SearchInput.vue\";\r\nimport FilterIcon from \"~/components/icons/FilterIcon.vue\";\r\nimport SortIcon from \"~/components/icons/SortIcon.vue\";\r\nimport ArrowDownIcon from \"~/components/icons/ArrowDownIcon.vue\";\r\nimport FilterPortfolioDrawer from \"~/components/drawer/FilterPortfolioDrawer.vue\";\r\nimport SortPortfolioDrawer from \"~/components/drawer/SortPortfolioDrawer.vue\";\r\nimport {useSearchStore} from \"~/store/Search\";\r\n\r\nconst route = useRoute()\r\nconst router = useRouter()\r\nconst searchTerm = ref<string>(route.query.term as string ?? '')\r\n\r\nconst searchStore = useSearchStore()\r\n\r\nconst showFilterDrawer = ref<Boolean>(false)\r\nconst showSortDrawer = ref<Boolean>(false)\r\n\r\nconst openFilterDrawer = () => {\r\n  showFilterDrawer.value = true\r\n}\r\n\r\nconst closeFilterDrawer = () => {\r\n  showFilterDrawer.value = false\r\n}\r\n\r\nconst chooseService = async (s: IService) => {\r\n  let query = {\r\n    ...route.query\r\n  }\r\n  delete query.page\r\n  if (s.id == -1) {\r\n    delete query.services\r\n  } else {\r\n    query.services = s.id.toString()\r\n  }\r\n  searchStore.reset()\r\n  await router.replace({ query })\r\n}\r\n\r\nconst openSortDrawer = () => {\r\n  showSortDrawer.value = true\r\n}\r\n\r\nconst closeSortDrawer = () => {\r\n  showSortDrawer.value = false\r\n}\r\n\r\nconst chooseSort = async (s: ISort) => {\r\n  let query = {\r\n    ...route.query\r\n  }\r\n  delete query.page\r\n  switch (s.id) {\r\n    case 1:\r\n      delete query.order_by\r\n      delete query.sort_by\r\n          break\r\n    case 2:\r\n      query.order_by = 'created_at'\r\n      query.sort_by = 'desc'\r\n      break\r\n    case 3:\r\n      query.order_by = 'price'\r\n      query.sort_by = 'asc'\r\n      break\r\n    case 4:\r\n      query.order_by = 'price'\r\n      query.sort_by = 'desc'\r\n      break\r\n    case 5:\r\n      query.order_by = 'discount'\r\n      query.sort_by = 'desc'\r\n      break\r\n  }\r\n  searchStore.reset()\r\n  await router.replace({ query })\r\n}\r\n\r\nconst doSearch = async () => {\r\n  const query = route.query ?? {}\r\n  if (query.page) {\r\n    delete query.page\r\n  }\r\n  query.page = searchStore.page.toString()\r\n  const res = await useCustomFetch('/search', {\r\n    method: \"GET\",\r\n    query: query,\r\n  })\r\n  if (res.data.value) {\r\n    let list = res.data.value ? res.data.value?.data as [] : []\r\n    if (list.length == 0) {\r\n      searchStore.showInfiniteScroll = false\r\n      return\r\n    }\r\n    searchStore.portfolios = [\r\n      ...searchStore.portfolios,\r\n      ...list\r\n    ]\r\n    searchStore.lastPage = res.data.value?.last_page\r\n    setTimeout(() => {\r\n      searchStore.showInfiniteScroll = true\r\n    }, 300)\r\n  }\r\n}\r\n\r\nconst doChangeTerm = async () => {\r\n  let query = {\r\n    ...route.query\r\n  }\r\n  if (!searchTerm.value) {\r\n    delete query.term\r\n  } else {\r\n    query.term = searchTerm.value as string\r\n  }\r\n  await router.replace({ query })\r\n  await doSearch()\r\n}\r\n\r\nconst onChangePage = async () => {\r\n  await doSearch()\r\n}\r\n\r\nconst onChangeTermDebounce = useDebounce(doChangeTerm, 500)\r\nconst onChangePageDebounce = useDebounce(onChangePage, 500)\r\n\r\nwatch(() => route.query, doSearch)\r\nwatch(() => searchTerm.value, onChangeTermDebounce)\r\nwatch(() => searchStore.page, onChangePageDebounce)\r\n\r\nonMounted(() => {\r\n  nextTick(() => doSearch())\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490132788,
+      "end": 1726490132851,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132851,
+      "end": 1726490132851,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/search/PageHeader.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/search/PageHeader.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490132851,
+      "end": 1726490132872,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490132872,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490132873,
+      "end": 1726490132874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132874,
+      "end": 1726490132874,
+      "order": "normal"
+    }
+  ]
+}

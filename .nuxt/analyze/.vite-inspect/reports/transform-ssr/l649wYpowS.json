@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistAddressBox.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"text-right w-full flex flex-col gap-[5px]\">\r\n    <div class=\"w-full flex flex-row items-center\">\r\n      <HeaderLocationIcon class=\"w-[20px] h-[20px]\"/>\r\n      <div class=\"text-[#141414] font-medium text-[11px] leading-[15px]\"> {{ address }} </div>\r\n    </div>\r\n    <div class=\"w-full flex flex-row items-center flex-wrap\">\r\n      <TimeIcon class=\"w-[20px] h-[20px]\"/>\r\n      <div class=\"text-[#141414] font-medium text-[11px] leading-[15px]\">\r\n        <span>فاصله از شما</span>\r\n        <span>{{ distance }}</span>\r\n      </div>\r\n      <span class=\"mx-1\" v-if=\"workHours.length > 0\"> | </span>\r\n      <div v-if=\"workHours.length > 0\" class=\"text-[#141414] font-medium text-[11px] leading-[15px]\">\r\n        <span>{{ getStartAndEndWorkDayName() }}</span>\r\n      </div>\r\n      <span class=\"mx-1\" v-if=\"workHours.length > 0\"> | </span>\r\n      <div v-if=\"workHours.length > 0\" class=\"text-[#141414] font-medium text-[11px] leading-[15px]\">\r\n        <span>{{ getStartAndEndWorkTimeName() }}</span>\r\n      </div>\r\n      <span class=\"mx-1 text-[#1EFF81] font-medium text-[11px] leading-[15px] cursor-pointer\" v-if=\"workHours.length > 0\" @click=\"openWorkHoursBox\"> دیدن همه </span>\r\n    </div>\r\n    <div class=\"w-full flex flex-row items-center\" v-if=\"createdAtAgoFa\">\r\n      <GreenTick class=\"w-[20px] h-[20px]\"/>\r\n      <div class=\"text-[#141414] font-medium text-[11px] leading-[15px]\">\r\n        <span>سابقه عضویت:</span>\r\n        <span>{{ createdAtAgoFa }}</span>\r\n      </div>\r\n    </div>\r\n    <Modal :open=\"showWorkHoursBox\" @close=\"closeWorkHoursBox\">\r\n      <div class=\"w-full flex flex-col items-start justify-start pb-[18px]\">\r\n        <h1 class=\"w-full font-semibold text-[#141414] text-right text-[17px] leading-[26px]\">برنامه هفتگی</h1>\r\n        <div class=\"w-full mt-[10px] font-normal text-right text-[#133C3E] text-[10px] leading-[15px]\">\r\n          <div v-for=\"(w,i) in workHours\" :key=\"i\" class=\"flex flex-row justify-between items-center mb-[5px]\">\r\n            <span>{{ days[w.day_index] }}</span>\r\n            <span>{{ getDayName(w) }}</span>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </Modal>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport HeaderLocationIcon from \"~/components/icons/HeaderLocationIcon.vue\";\r\nimport TimeIcon from \"~/components/icons/TimeIcon.vue\";\r\nimport GreenTick from \"~/components/icons/GreenTick.vue\";\r\nconst props = defineProps({\r\n  address: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  distance: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  createdAtAgoFa: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  workHours: {\r\n    type: Array,\r\n    default: () => [],\r\n    required: true\r\n  }\r\n})\r\n\r\nconst days = ref<string[]>([\r\n  'شنبه',\r\n  'یک شنبه',\r\n  'دو شنبه',\r\n  'سه شنبه',\r\n  'چهار شنبه',\r\n  'پنج شنبه',\r\n  'جمعه',\r\n])\r\n\r\nconst showWorkHoursBox = ref<Boolean>(false)\r\n\r\nconst openWorkHoursBox = () => {\r\n  showWorkHoursBox.value = true\r\n}\r\n\r\nconst closeWorkHoursBox = () => {\r\n  showWorkHoursBox.value = false\r\n}\r\n\r\nconst getDayName = (workHour: IWorkHour) => {\r\n  let start = workHour.start_hour\r\n  let end = workHour.end_hour\r\n  let name = ''\r\n  name += toAMorPM(start)\r\n  name += ' - '\r\n  name += toAMorPM(end)\r\n  return name\r\n}\r\n\r\nconst getStartAndEndWorkDayName = () => {\r\n  if (props.workHours.length == 0) {\r\n    return ''\r\n  }\r\n  if (props.workHours.length == 1) {\r\n    return days.value[props.workHours[0]?.day_index]\r\n  }\r\n  if (props.workHours.length > 2) {\r\n    return `${days.value[props.workHours[0]?.day_index]} - ${days.value[props.workHours[props.workHours?.length - 1]?.day_index]}`\r\n  }\r\n}\r\n\r\nconst getStartAndEndWorkTimeName = () => {\r\n  if (props.workHours.length == 0) {\r\n    return ''\r\n  }\r\n  return `${toAMorPM(props.workHours[0]?.start_hour)} - ${toAMorPM(props.workHours[0]?.end_hour)}`\r\n}\r\n\r\nconst toAMorPM = (hour: string) => {\r\n  let name = ''\r\n  let hourInt = parseInt(hour.substring(0, 2))\r\n  if (hourInt <= 12) {\r\n    name += `${hour} صبح`\r\n  } else if (hourInt <= 19) {\r\n    name += `${hour} بعد از ظهر`\r\n  } else {\r\n    name += `${hour} شب`\r\n  }\r\n  return name\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490141939,
+      "end": 1726490142144,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142144,
+      "end": 1726490142144,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistAddressBox.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistAddressBox.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/artist/ArtistAddressBox.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726490142144,
+      "end": 1726490142287,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142287,
+      "end": 1726490142287,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142287,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142287,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142289,
+      "end": 1726490142289,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142289,
+      "end": 1726490142290,
+      "order": "normal"
+    }
+  ]
+}

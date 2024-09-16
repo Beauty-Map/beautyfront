@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/search-drawer/ChooseCityList.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full flex flex-col items-start justify-start\">\r\n    <div class=\"w-full pb-1 text-right text-[#141414] text-[14px] leading-[21px] font-medium border-b border-b-gray-300\">\r\n      {{ province ? 'انتخاب شهر:' : 'انتخاب استان:' }}\r\n    </div>\r\n    <div class=\"w-full mt-[10px] overflow-y-scroll h-[calc(100vh-140px)] relative\">\r\n      <div class=\"absolute top-0 bottom-0 w-full duration-700 transition-all\"\r\n           :class=\"[province ? 'left-[-100%] hidden' : 'left-0 block']\"\r\n      >\r\n        <div @click=\"chooseProvince(p)\" v-for=\"(p, n ) in provinces\" :key=\"n\" class=\"cursor-pointer w-full flex flex-row justify-between items-center px-[10px] py-[13px] border-b border-b-[#A9A7A7]\">\r\n          <span class=\"w-full text-[#141414] text-right text-[14px] leading-[21px] font-medium\">{{ p.name }}</span>\r\n          <LeftArrow />\r\n        </div>\r\n      </div>\r\n      <div class=\"absolute top-0 bottom-0 w-full duration-700 transition-all\"\r\n           :class=\"[province ? 'left-0 block' : 'left-[-100%] hidden']\"\r\n      >\r\n        <div @click=\"backToProvinceSelect\" class=\"cursor-pointer w-full flex flex-row justify-between items-center px-[10px] py-[13px] border-b border-b-[#A9A7A7]\">\r\n          <LeftArrow class=\"rotate-180\"/>\r\n          <span class=\"mr-[10px] w-full text-[#141414] text-right text-[14px] leading-[21px] font-medium\">بازگشت</span>\r\n        </div>\r\n        <div @click=\"chooseCity(c)\" v-for=\"(c, n ) in cities\" :key=\"n\" class=\"cursor-pointer w-full flex flex-row justify-between items-center px-[10px] py-[13px] border-b border-b-[#A9A7A7]\">\r\n          <span class=\"w-full text-[#141414] text-right text-[14px] leading-[21px] font-medium\">{{ c.name }}</span>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport LeftArrow from \"~/components/icons/LeftArrow.vue\";\r\n\r\nconst emits = defineEmits(['choose'])\r\nconst props = defineProps({\r\n  provinces: {\r\n    type: Array,\r\n    default: []\r\n  }\r\n})\r\n\r\nconst province = ref<IProvince>()\r\nconst cities = ref<ICity[]>()\r\n\r\nconst chooseProvince = (p: IProvince) => {\r\n  province.value = p\r\n  cities.value = p.cities\r\n}\r\n\r\nconst chooseCity = (c: ICity) => {\r\n  emits('choose', province.value, c)\r\n}\r\n\r\nconst backToProvinceSelect = () => {\r\n  province.value = undefined\r\n  cities.value = []\r\n}\r\n\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490142881,
+      "end": 1726490142956,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142956,
+      "end": 1726490142956,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/search-drawer/ChooseCityList.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/search-drawer/ChooseCityList.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/search-drawer/ChooseCityList.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726490142956,
+      "end": 1726490142967,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142967,
+      "end": 1726490142967,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142967,
+      "end": 1726490142967,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142967,
+      "end": 1726490142967,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142967,
+      "end": 1726490142967,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142967,
+      "end": 1726490142967,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142967,
+      "end": 1726490142967,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142968,
+      "end": 1726490142968,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142968,
+      "end": 1726490142968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142968,
+      "end": 1726490142968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142968,
+      "end": 1726490142968,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142968,
+      "end": 1726490142969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142969,
+      "end": 1726490142969,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142969,
+      "end": 1726490142970,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142969,
+      "end": 1726490142970,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142970,
+      "end": 1726490142970,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142970,
+      "end": 1726490142970,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142971,
+      "end": 1726490142971,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142971,
+      "end": 1726490142971,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142973,
+      "end": 1726490142973,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142973,
+      "end": 1726490142973,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142973,
+      "end": 1726490142973,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142973,
+      "end": 1726490142973,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142973,
+      "end": 1726490142974,
+      "order": "normal"
+    }
+  ]
+}

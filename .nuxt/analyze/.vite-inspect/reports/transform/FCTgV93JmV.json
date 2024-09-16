@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/main/NearestArtistDesktopListBox.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start bg-[#EBF3F580] py-[64px] px-[64px]\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"w-full flex justify-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"text-[#133C3E] font-semibold text-center text-[40px] max-w-[60%] w-full\" }, \" با نزدیک ترین هنرمندان شهر خود آشناشوید \")\n], -1)\nconst _hoisted_3 = { class: \"w-full mt-[40px]\" }\n\nimport {useSearchStore} from \"~/store/Search\";\r\nimport {Splide, SplideSlide} from \"@splidejs/vue-splide\";\r\nimport '@splidejs/vue-splide/css';\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'NearestArtistDesktopListBox',\n  setup(__props) {\n\r\n\r\nconst artists = ref<IArtist[]>([])\r\n\r\nconst options = ref({\r\n  direction: \"rtl\",\r\n  autoWidth: true,\r\n  pagination: false,\r\n  arrows: true,\r\n})\r\n\r\nconst search = useSearchStore()\r\n\r\nconst getArtists = async () => {\r\n  const lat = search.lat\r\n  const lng = search.lng\r\n  setTimeout(async () => {\r\n    let url = `/nearest`\r\n    if (lat && lng) {\r\n      url += `?lat=${lat}&lng=${lng}`\r\n    }\r\n    const res = await useCustomFetch(url, {\r\n      method: \"GET\"\r\n    })\r\n    if (res.data.value) {\r\n      artists.value = res.data.value?.data as IArtist[]\r\n    }\r\n  }, 500)\r\n}\r\n\r\nonMounted(() => {\r\n  nextTick(() => {\r\n    getArtists()\r\n  })\r\n})\r\n\r\nwatch(() => search.lat, getArtists)\r\nwatch(() => search.lng, getArtists)\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_ArtistDesktopItem = _resolveComponent(\"ArtistDesktopItem\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_unref(Splide), {\n        options: _unref(options),\n        \"aria-label\": \"\"\n      }, {\n        default: _withCtx(() => [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(artists), (a, i) => {\n            return (_openBlock(), _createBlock(_unref(SplideSlide), { key: i }, {\n              default: _withCtx(() => [\n                _createVNode(_component_ArtistDesktopItem, {\n                  id: a.id,\n                  artist: a\n                }, null, 8, [\"id\", \"artist\"])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]),\n        _: 1\n      }, 8, [\"options\"])\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1726490133086,
+      "end": 1726490133086
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133086,
+      "end": 1726490133086,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133086,
+      "end": 1726490133086,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133086,
+      "end": 1726490133086,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133086,
+      "end": 1726490133086,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start bg-[#EBF3F580] py-[64px] px-[64px]\" };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"w-full flex justify-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"div\", { class: \"text-[#133C3E] font-semibold text-center text-[40px] max-w-[60%] w-full\" }, \" با نزدیک ترین هنرمندان شهر خود آشناشوید \")\n], -1);\nconst _hoisted_3 = { class: \"w-full mt-[40px]\" };\nimport { useSearchStore } from \"~/store/Search\";\nimport { Splide, SplideSlide } from \"@splidejs/vue-splide\";\nimport \"@splidejs/vue-splide/css\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"NearestArtistDesktopListBox\",\n  setup(__props) {\n    const artists = ref([]);\n    const options = ref({\n      direction: \"rtl\",\n      autoWidth: true,\n      pagination: false,\n      arrows: true\n    });\n    const search = useSearchStore();\n    const getArtists = async () => {\n      const lat = search.lat;\n      const lng = search.lng;\n      setTimeout(async () => {\n        let url = `/nearest`;\n        if (lat && lng) {\n          url += `?lat=${lat}&lng=${lng}`;\n        }\n        const res = await useCustomFetch(url, {\n          method: \"GET\"\n        });\n        if (res.data.value) {\n          artists.value = res.data.value?.data;\n        }\n      }, 500);\n    };\n    onMounted(() => {\n      nextTick(() => {\n        getArtists();\n      });\n    });\n    watch(() => search.lat, getArtists);\n    watch(() => search.lng, getArtists);\n    return (_ctx, _cache) => {\n      const _component_ArtistDesktopItem = _resolveComponent(\"ArtistDesktopItem\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _hoisted_2,\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_unref(Splide), {\n            options: _unref(options),\n            \"aria-label\": \"\"\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(artists), (a, i) => {\n                return _openBlock(), _createBlock(_unref(SplideSlide), { key: i }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_ArtistDesktopItem, {\n                      id: a.id,\n                      artist: a\n                    }, null, 8, [\"id\", \"artist\"])\n                  ]),\n                  _: 2\n                }, 1024);\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"options\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133086,
+      "end": 1726490133189,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/main/NearestArtistDesktopListBox.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start bg-[#EBF3F580] py-[64px] px-[64px]\" }\nconst _hoisted_2 = /*#__PURE__*/_createElementVNode(\"div\", { class: \"w-full flex justify-center\" }, [\n  /*#__PURE__*/_createElementVNode(\"div\", { class: \"text-[#133C3E] font-semibold text-center text-[40px] max-w-[60%] w-full\" }, \" با نزدیک ترین هنرمندان شهر خود آشناشوید \")\n], -1)\nconst _hoisted_3 = { class: \"w-full mt-[40px]\" }\n\nimport {useSearchStore} from \"~/store/Search\";\r\nimport {Splide, SplideSlide} from \"@splidejs/vue-splide\";\r\nimport '@splidejs/vue-splide/css';\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'NearestArtistDesktopListBox',\n  setup(__props) {\n\r\n\r\nconst artists = ref<IArtist[]>([])\r\n\r\nconst options = ref({\r\n  direction: \"rtl\",\r\n  autoWidth: true,\r\n  pagination: false,\r\n  arrows: true,\r\n})\r\n\r\nconst search = useSearchStore()\r\n\r\nconst getArtists = async () => {\r\n  const lat = search.lat\r\n  const lng = search.lng\r\n  setTimeout(async () => {\r\n    let url = `/nearest`\r\n    if (lat && lng) {\r\n      url += `?lat=${lat}&lng=${lng}`\r\n    }\r\n    const res = await useCustomFetch(url, {\r\n      method: \"GET\"\r\n    })\r\n    if (res.data.value) {\r\n      artists.value = res.data.value?.data as IArtist[]\r\n    }\r\n  }, 500)\r\n}\r\n\r\nonMounted(() => {\r\n  nextTick(() => {\r\n    getArtists()\r\n  })\r\n})\r\n\r\nwatch(() => search.lat, getArtists)\r\nwatch(() => search.lng, getArtists)\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_ArtistDesktopItem = _resolveComponent(\"ArtistDesktopItem\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _hoisted_2,\n    _createElementVNode(\"div\", _hoisted_3, [\n      _createVNode(_unref(Splide), {\n        options: _unref(options),\n        \"aria-label\": \"\"\n      }, {\n        default: _withCtx(() => [\n          (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(artists), (a, i) => {\n            return (_openBlock(), _createBlock(_unref(SplideSlide), { key: i }, {\n              default: _withCtx(() => [\n                _createVNode(_component_ArtistDesktopItem, {\n                  id: a.id,\n                  artist: a\n                }, null, 8, [\"id\", \"artist\"])\n              ]),\n              _: 2\n            }, 1024))\n          }), 128))\n        ]),\n        _: 1\n      }, 8, [\"options\"])\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,sBAAsB,qBAAqB,SAAS,QAAQ,cAAc,aAAa,YAAY,WAAW,aAAa,YAAY,sBAAsB,qBAAqB,oBAAoB,mBAAmB,eAAe,cAAc,WAAW,UAAU,eAAe,oBAAoB;AAEvT,MAAM,aAAa,EAAE,OAAO,oFAAoF;AAChH,MAAM,aAA0B,oCAAoB,OAAO,EAAE,OAAO,6BAA6B,GAAG;AAAA,EACrF,oCAAoB,OAAO,EAAE,OAAO,0EAA0E,GAAG,2CAA2C;AAC3K,GAAG,EAAE;AACL,MAAM,aAAa,EAAE,OAAO,mBAAmB;AAE/C,SAAQ,sBAAqB;AAC7B,SAAQ,QAAQ,mBAAkB;AAClC,OAAO;AAGP,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAGjB,UAAM,UAAU,IAAe,CAAC,CAAC;AAEjC,UAAM,UAAU,IAAI;AAAA,MAClB,WAAW;AAAA,MACX,WAAW;AAAA,MACX,YAAY;AAAA,MACZ,QAAQ;AAAA,IACV,CAAC;AAED,UAAM,SAAS,eAAe;AAE9B,UAAM,aAAa,YAAY;AAC7B,YAAM,MAAM,OAAO;AACnB,YAAM,MAAM,OAAO;AACnB,iBAAW,YAAY;AACrB,YAAI,MAAM;AACV,YAAI,OAAO,KAAK;AACd,iBAAO,QAAQ,GAAG,QAAQ,GAAG;AAAA,QAC/B;AACA,cAAM,MAAM,MAAM,eAAe,KAAK;AAAA,UACpC,QAAQ;AAAA,QACV,CAAC;AACD,YAAI,IAAI,KAAK,OAAO;AAClB,kBAAQ,QAAQ,IAAI,KAAK,OAAO;AAAA,QAClC;AAAA,MACF,GAAG,GAAG;AAAA,IACR;AAEA,cAAU,MAAM;AACd,eAAS,MAAM;AACb,mBAAW;AAAA,MACb,CAAC;AAAA,IACH,CAAC;AAED,UAAM,MAAM,OAAO,KAAK,UAAU;AAClC,UAAM,MAAM,OAAO,KAAK,UAAU;AAElC,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,+BAA+B,kBAAkB,mBAAmB;AAE1E,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D;AAAA,QACA,oBAAoB,OAAO,YAAY;AAAA,UACrC,aAAa,OAAO,MAAM,GAAG;AAAA,YAC3B,SAAS,OAAO,OAAO;AAAA,YACvB,cAAc;AAAA,UAChB,GAAG;AAAA,YACD,SAAS,SAAS,MAAM;AAAA,eACrB,WAAW,IAAI,GAAG,oBAAoB,WAAW,MAAM,YAAY,OAAO,OAAO,GAAG,CAAC,GAAG,MAAM;AAC7F,uBAAQ,WAAW,GAAG,aAAa,OAAO,WAAW,GAAG,EAAE,KAAK,EAAE,GAAG;AAAA,kBAClE,SAAS,SAAS,MAAM;AAAA,oBACtB,aAAa,8BAA8B;AAAA,sBACzC,IAAI,EAAE;AAAA,sBACN,QAAQ;AAAA,oBACV,GAAG,MAAM,GAAG,CAAC,MAAM,QAAQ,CAAC;AAAA,kBAC9B,CAAC;AAAA,kBACD,GAAG;AAAA,gBACL,GAAG,IAAI;AAAA,cACT,CAAC,GAAG,GAAG;AAAA,YACT,CAAC;AAAA,YACD,GAAG;AAAA,UACL,GAAG,GAAG,CAAC,SAAS,CAAC;AAAA,QACnB,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133189,
+      "end": 1726490133189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133189,
+      "end": 1726490133189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133189,
+      "end": 1726490133189,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133189,
+      "end": 1726490133189,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133189,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133190,
+      "end": 1726490133190,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, nextTick, watch } from 'vue';\nimport { useCustomFetch } from '/home/saeed/w/projects/beautymap/beautyfront/composables/useCustomFetch.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start bg-[#EBF3F580] py-[64px] px-[64px]\" };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"w-full flex justify-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"div\", { class: \"text-[#133C3E] font-semibold text-center text-[40px] max-w-[60%] w-full\" }, \" با نزدیک ترین هنرمندان شهر خود آشناشوید \")\n], -1);\nconst _hoisted_3 = { class: \"w-full mt-[40px]\" };\nimport { useSearchStore } from \"~/store/Search\";\nimport { Splide, SplideSlide } from \"@splidejs/vue-splide\";\nimport \"@splidejs/vue-splide/css\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"NearestArtistDesktopListBox\",\n  setup(__props) {\n    const artists = ref([]);\n    const options = ref({\n      direction: \"rtl\",\n      autoWidth: true,\n      pagination: false,\n      arrows: true\n    });\n    const search = useSearchStore();\n    const getArtists = async () => {\n      const lat = search.lat;\n      const lng = search.lng;\n      setTimeout(async () => {\n        let url = `/nearest`;\n        if (lat && lng) {\n          url += `?lat=${lat}&lng=${lng}`;\n        }\n        const res = await useCustomFetch(url, {\n          method: \"GET\"\n        });\n        if (res.data.value) {\n          artists.value = res.data.value?.data;\n        }\n      }, 500);\n    };\n    onMounted(() => {\n      nextTick(() => {\n        getArtists();\n      });\n    });\n    watch(() => search.lat, getArtists);\n    watch(() => search.lng, getArtists);\n    return (_ctx, _cache) => {\n      const _component_ArtistDesktopItem = _resolveComponent(\"ArtistDesktopItem\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _hoisted_2,\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_unref(Splide), {\n            options: _unref(options),\n            \"aria-label\": \"\"\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(artists), (a, i) => {\n                return _openBlock(), _createBlock(_unref(SplideSlide), { key: i }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_ArtistDesktopItem, {\n                      id: a.id,\n                      artist: a\n                    }, null, 8, [\"id\", \"artist\"])\n                  ]),\n                  _: 2\n                }, 1024);\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"options\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133191,
+      "end": 1726490133199,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7T,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClH,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/K,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACd,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9G,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpF,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACf,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACV,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133199,
+      "end": 1726490133199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133199,
+      "end": 1726490133199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133199,
+      "end": 1726490133199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133199,
+      "end": 1726490133199,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistDesktopItem.vue\";\nimport { ref, onMounted, nextTick, watch } from 'vue';\nimport { useCustomFetch } from '/home/saeed/w/projects/beautymap/beautyfront/composables/useCustomFetch.ts';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { createElementVNode as _createElementVNode, unref as _unref, renderList as _renderList, Fragment as _Fragment, openBlock as _openBlock, createElementBlock as _createElementBlock, resolveComponent as _resolveComponent, createVNode as _createVNode, withCtx as _withCtx, createBlock as _createBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start bg-[#EBF3F580] py-[64px] px-[64px]\" };\nconst _hoisted_2 = /* @__PURE__ */ _createElementVNode(\"div\", { class: \"w-full flex justify-center\" }, [\n  /* @__PURE__ */ _createElementVNode(\"div\", { class: \"text-[#133C3E] font-semibold text-center text-[40px] max-w-[60%] w-full\" }, \" با نزدیک ترین هنرمندان شهر خود آشناشوید \")\n], -1);\nconst _hoisted_3 = { class: \"w-full mt-[40px]\" };\nimport { useSearchStore } from \"~/store/Search\";\nimport { Splide, SplideSlide } from \"@splidejs/vue-splide\";\nimport \"@splidejs/vue-splide/css\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"NearestArtistDesktopListBox\",\n  setup(__props) {\n    const artists = ref([]);\n    const options = ref({\n      direction: \"rtl\",\n      autoWidth: true,\n      pagination: false,\n      arrows: true\n    });\n    const search = useSearchStore();\n    const getArtists = async () => {\n      const lat = search.lat;\n      const lng = search.lng;\n      setTimeout(async () => {\n        let url = `/nearest`;\n        if (lat && lng) {\n          url += `?lat=${lat}&lng=${lng}`;\n        }\n        const res = await useCustomFetch(url, {\n          method: \"GET\"\n        });\n        if (res.data.value) {\n          artists.value = res.data.value?.data;\n        }\n      }, 500);\n    };\n    onMounted(() => {\n      nextTick(() => {\n        getArtists();\n      });\n    });\n    watch(() => search.lat, getArtists);\n    watch(() => search.lng, getArtists);\n    return (_ctx, _cache) => {\n      const _component_ArtistDesktopItem = __nuxt_component_0;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _hoisted_2,\n        _createElementVNode(\"div\", _hoisted_3, [\n          _createVNode(_unref(Splide), {\n            options: _unref(options),\n            \"aria-label\": \"\"\n          }, {\n            default: _withCtx(() => [\n              (_openBlock(true), _createElementBlock(_Fragment, null, _renderList(_unref(artists), (a, i) => {\n                return _openBlock(), _createBlock(_unref(SplideSlide), { key: i }, {\n                  default: _withCtx(() => [\n                    _createVNode(_component_ArtistDesktopItem, {\n                      id: a.id,\n                      artist: a\n                    }, null, 8, [\"id\", \"artist\"])\n                  ]),\n                  _: 2\n                }, 1024);\n              }), 128))\n            ]),\n            _: 1\n          }, 8, [\"options\"])\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133199,
+      "end": 1726490133200,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133200,
+      "end": 1726490133200,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133200,
+      "end": 1726490133200,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133200,
+      "end": 1726490133200,
+      "order": "normal"
+    }
+  ]
+}

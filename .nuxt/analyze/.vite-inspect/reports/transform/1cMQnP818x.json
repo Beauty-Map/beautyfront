@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/input/ChoosePriceInput.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"cursor-pointer w-full px-[14px] py-[20px] border-b border-b-[#A9A7A7] flex flex-row justify-between items-center\">\r\n    <div class=\"w-full h-full flex flex-row justify-between items-center\" @click=\"openModal\">\r\n      <span class=\" text-black text-right font-medium text-[16px] leading-[21px]\">\r\n        تنظیم قیمت\r\n      </span>\r\n      <div class=\" flex flex-col justify-start items-start\">\r\n        <span v-if=\"formattedPropPrice\" class=\"flex flex-row text-left font-medium text-[12px] leading-[18px]\"\r\n          :class=\"[formattedPropDiscountPrice ? 'text-[#ED2C25] line-through' : 'text-black']\"\r\n        >\r\n          <span>\r\n            {{ formattedPropPrice }}\r\n          </span>\r\n          <span class=\"mr-[5px]\">\r\n            تومان\r\n          </span>\r\n        </span>\r\n        <span v-if=\"formattedPropDiscountPrice\" class=\"flex flex-row text-left text-black font-medium text-[12px] leading-[18px]\">\r\n          <span>\r\n            {{ formattedPropDiscountPrice }}\r\n          </span>\r\n          <span class=\"mr-[5px]\">\r\n            تومان\r\n          </span>\r\n        </span>\r\n      </div>\r\n    </div>\r\n    <Modal :show-close=\"false\" :open=\"showModal\">\r\n      <div class=\"w-full flex flex-col justify-start items-start max-w-[340px] min-w-[250px]\">\r\n        <div class=\"text-right  text-black text-[15px] leading-[18px] font-normal \">تنظیم قیمت</div>\r\n        <div class=\"w-full flex flex-col items-start justify-start mt-[28px]\">\r\n          <div class=\"w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]\">\r\n            <span class=\"absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[14px] leading-[21px] font-medium px-[10px]\">قیمت</span>\r\n            <input placeholder=\"20,000,000\" :value=\"formattedPrice\" @input=\"onPriceInput\" type=\"text\" class=\"text-[16px] leading-[19px] w-full pl-[42px] outline-none focus:outline-none text-left dir-ltr py-[12px] px-[8px] rounded-[10px]\"/>\r\n            <span class=\"absolute left-[2px] top-[10px] text-[16px] leading-[19px] \">تومان</span>\r\n          </div>\r\n          <div v-if=\"showDiscountPrice\" class=\"mt-[27px] w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]\">\r\n            <span class=\"absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[14px] leading-[21px] font-medium px-[10px]\">قیمت با تخفیف</span>\r\n            <input placeholder=\"20,000,000\" :value=\"formattedDiscountPrice\" @input=\"onDiscountPriceInput\" type=\"text\" class=\"text-[16px] leading-[19px] w-full pl-[42px] outline-none focus:outline-none text-left dir-ltr py-[12px] px-[8px] rounded-[10px]\"/>\r\n            <span class=\"absolute left-[2px] top-[10px] text-[16px] leading-[19px] \">تومان</span>\r\n          </div>\r\n          <div v-else @click=\"openDiscountPrice\" class=\"mt-[27px] w-full cursor-pointer text-[#2920D9] text-[14px] leading-[16px] font-normal mr-[5px]\">قیمت با تخفیف</div>\r\n        </div>\r\n        <div class=\"w-full flex flex-row justify-end items-center mt-[20px] gap-[8px] grow text-[14px] leading-[21px] font-medium text-[#133C3E]\">\r\n          <span @click=\"saveModal\">ذخیره</span>\r\n          <span @click=\"closeModal\">بستن</span>\r\n        </div>\r\n      </div>\r\n    </Modal>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nconst emits = defineEmits(['update:price', 'update:discountPrice'])\r\nconst props = defineProps({\r\n  price: {\r\n    type: Number,\r\n    default: 0,\r\n  },\r\n  discountPrice: {\r\n    type: Number,\r\n    default: 0,\r\n  },\r\n})\r\n\r\nconst showModal = ref(false)\r\nconst price = ref(props.price)\r\nconst showDiscountPrice = ref(props.discountPrice != 0)\r\nconst discountPrice = ref(props.discountPrice)\r\n\r\nconst openModal = () => {\r\n  showModal.value = true\r\n}\r\n\r\nconst closeModal = () => {\r\n  showModal.value = false\r\n}\r\n\r\nconst openDiscountPrice = () => {\r\n  showDiscountPrice.value = true\r\n}\r\n\r\nconst formattedPrice = computed(() => {\r\n  if (!price.value) {\r\n    return ''\r\n  }\r\n  return price.value.toLocaleString()\r\n})\r\n\r\nconst formattedDiscountPrice = computed(() => {\r\n  if (!discountPrice.value) {\r\n    return ''\r\n  }\r\n  return discountPrice.value.toLocaleString()\r\n})\r\n\r\nconst formattedPropPrice = computed(() => {\r\n  if (!props.price) {\r\n    return ''\r\n  }\r\n  return price.value.toLocaleString()\r\n})\r\n\r\nconst formattedPropDiscountPrice = computed(() => {\r\n  if (!props.discountPrice) {\r\n    return ''\r\n  }\r\n  return discountPrice.value.toLocaleString()\r\n})\r\n\r\nconst onPriceInput = (e) => {\r\n  const value = e.target.value.replace(/[^0-9]/g, '')\r\n  price.value = value ? parseInt(value) : ''\r\n}\r\n\r\nconst onDiscountPriceInput = (e) => {\r\n  const value = e.target.value.replace(/[^0-9]/g, '')\r\n  discountPrice.value = value ? parseInt(value) : ''\r\n}\r\n\r\nconst saveModal = () => {\r\n  emits('update:price', price.value)\r\n  emits('update:discountPrice', discountPrice.value)\r\n  setTimeout(() => {\r\n    closeModal()\r\n  }, 300)\r\n}\r\n\r\nconst setValues = () => {\r\n  price.value = props.price\r\n  discountPrice.value = props.discountPrice\r\n  showDiscountPrice.value = props.discountPrice != 0\r\n}\r\n\r\nwatch(() => props.price, () => setValues())\r\nwatch(() => props.discountPrice, () => setValues())\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490132841,
+      "end": 1726490132890,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132890,
+      "end": 1726490132890,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/ChoosePriceInput.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/input/ChoosePriceInput.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490132890,
+      "end": 1726490132941,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490132941,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490132942,
+      "end": 1726490132942,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490132942,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132943,
+      "end": 1726490132943,
+      "order": "normal"
+    }
+  ]
+}

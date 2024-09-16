@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/sidebar/SideBarLinkBox.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col gap-y-[8px] justify-start items-start px-[4px] py-[8px]\" }\n\nimport SideBarLink from \"~/components/sidebar/SideBarLink.vue\";\r\nimport DashboardIcon from \"~/components/icons/SideBar/DashboardIcon.vue\";\r\nimport ProfileIcon from \"~/components/icons/SideBar/ProfileIcon.vue\";\r\nimport CourseIcon from \"~/components/icons/SideBar/CourseIcon.vue\";\r\nimport BannerIcon from \"~/components/icons/SideBar/BannerIcon.vue\";\r\nimport StatisticIcon from \"~/components/icons/SideBar/StatisticIcon.vue\";\r\nimport FinancialIcon from \"~/components/icons/SideBar/FinancialIcon.vue\";\r\nimport ContactusIcon from \"~/components/icons/SideBar/ContactusIcon.vue\";\r\nimport ProfileSmallIcon from \"~/components/icons/ProfileSmallIcon.vue\";\r\nimport ArtistPanelIcon from \"~/components/icons/ArtistPanelIcon.vue\";\r\nimport ReferralIcon from \"~/components/icons/ReferralIcon.vue\";\r\nimport SecurityIcon from \"~/components/icons/SecurityIcon.vue\";\r\nimport ContactIcon from \"~/components/icons/ContactIcon.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'SideBarLinkBox',\n  setup(__props) {\n\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(SideBarLink, {\n      to: \"/panel\",\n      title: \"پروفایل\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ProfileSmallIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/panel/artist\",\n      title: \"ورود به پنل هنرمندان\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ArtistPanelIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/panel/referral\",\n      title: \"معرفی به دوستان\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ReferralIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/security\",\n      title: \"امنیت و سیاست حفظ حریم خصوصی\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(SecurityIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/support\",\n      title: \"تماس باما\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ContactIcon)\n      ]),\n      _: 1\n    })\n  ]))\n}\n}\n\n})",
+      "start": 1726490134167,
+      "end": 1726490134167
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134167,
+      "end": 1726490134167,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134167,
+      "end": 1726490134167,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134167,
+      "end": 1726490134167,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134167,
+      "end": 1726490134167,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col gap-y-[8px] justify-start items-start px-[4px] py-[8px]\" };\nimport SideBarLink from \"~/components/sidebar/SideBarLink.vue\";\nimport ProfileSmallIcon from \"~/components/icons/ProfileSmallIcon.vue\";\nimport ArtistPanelIcon from \"~/components/icons/ArtistPanelIcon.vue\";\nimport ReferralIcon from \"~/components/icons/ReferralIcon.vue\";\nimport SecurityIcon from \"~/components/icons/SecurityIcon.vue\";\nimport ContactIcon from \"~/components/icons/ContactIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"SideBarLinkBox\",\n  setup(__props) {\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(SideBarLink, {\n          to: \"/panel\",\n          title: \"پروفایل\"\n        }, {\n          icon: _withCtx(() => [\n            _createVNode(ProfileSmallIcon)\n          ]),\n          _: 1\n        }),\n        _createVNode(SideBarLink, {\n          to: \"/panel/artist\",\n          title: \"ورود به پنل هنرمندان\"\n        }, {\n          icon: _withCtx(() => [\n            _createVNode(ArtistPanelIcon)\n          ]),\n          _: 1\n        }),\n        _createVNode(SideBarLink, {\n          to: \"/panel/referral\",\n          title: \"معرفی به دوستان\"\n        }, {\n          icon: _withCtx(() => [\n            _createVNode(ReferralIcon)\n          ]),\n          _: 1\n        }),\n        _createVNode(SideBarLink, {\n          to: \"/security\",\n          title: \"امنیت و سیاست حفظ حریم خصوصی\"\n        }, {\n          icon: _withCtx(() => [\n            _createVNode(SecurityIcon)\n          ]),\n          _: 1\n        }),\n        _createVNode(SideBarLink, {\n          to: \"/support\",\n          title: \"تماس باما\"\n        }, {\n          icon: _withCtx(() => [\n            _createVNode(ContactIcon)\n          ]),\n          _: 1\n        })\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490134167,
+      "end": 1726490134202,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/sidebar/SideBarLinkBox.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, withCtx as _withCtx, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col gap-y-[8px] justify-start items-start px-[4px] py-[8px]\" }\n\nimport SideBarLink from \"~/components/sidebar/SideBarLink.vue\";\r\nimport DashboardIcon from \"~/components/icons/SideBar/DashboardIcon.vue\";\r\nimport ProfileIcon from \"~/components/icons/SideBar/ProfileIcon.vue\";\r\nimport CourseIcon from \"~/components/icons/SideBar/CourseIcon.vue\";\r\nimport BannerIcon from \"~/components/icons/SideBar/BannerIcon.vue\";\r\nimport StatisticIcon from \"~/components/icons/SideBar/StatisticIcon.vue\";\r\nimport FinancialIcon from \"~/components/icons/SideBar/FinancialIcon.vue\";\r\nimport ContactusIcon from \"~/components/icons/SideBar/ContactusIcon.vue\";\r\nimport ProfileSmallIcon from \"~/components/icons/ProfileSmallIcon.vue\";\r\nimport ArtistPanelIcon from \"~/components/icons/ArtistPanelIcon.vue\";\r\nimport ReferralIcon from \"~/components/icons/ReferralIcon.vue\";\r\nimport SecurityIcon from \"~/components/icons/SecurityIcon.vue\";\r\nimport ContactIcon from \"~/components/icons/ContactIcon.vue\";\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'SideBarLinkBox',\n  setup(__props) {\n\r\n\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(SideBarLink, {\n      to: \"/panel\",\n      title: \"پروفایل\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ProfileSmallIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/panel/artist\",\n      title: \"ورود به پنل هنرمندان\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ArtistPanelIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/panel/referral\",\n      title: \"معرفی به دوستان\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ReferralIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/security\",\n      title: \"امنیت و سیاست حفظ حریم خصوصی\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(SecurityIcon)\n      ]),\n      _: 1\n    }),\n    _createVNode(SideBarLink, {\n      to: \"/support\",\n      title: \"تماس باما\"\n    }, {\n      icon: _withCtx(() => [\n        _createVNode(ContactIcon)\n      ]),\n      _: 1\n    })\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,WAAW,UAAU,aAAa,YAAY,sBAAsB,2BAA2B;AAErI,MAAM,aAAa,EAAE,OAAO,+EAA+E;AAE3G,OAAO,iBAAiB;AAQxB,OAAO,sBAAsB;AAC7B,OAAO,qBAAqB;AAC5B,OAAO,kBAAkB;AACzB,OAAO,kBAAkB;AACzB,OAAO,iBAAiB;AAExB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAIjB,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,aAAa,aAAa;AAAA,UACxB,IAAI;AAAA,UACJ,OAAO;AAAA,QACT,GAAG;AAAA,UACD,MAAM,SAAS,MAAM;AAAA,YACnB,aAAa,gBAAgB;AAAA,UAC/B,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,QACD,aAAa,aAAa;AAAA,UACxB,IAAI;AAAA,UACJ,OAAO;AAAA,QACT,GAAG;AAAA,UACD,MAAM,SAAS,MAAM;AAAA,YACnB,aAAa,eAAe;AAAA,UAC9B,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,QACD,aAAa,aAAa;AAAA,UACxB,IAAI;AAAA,UACJ,OAAO;AAAA,QACT,GAAG;AAAA,UACD,MAAM,SAAS,MAAM;AAAA,YACnB,aAAa,YAAY;AAAA,UAC3B,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,QACD,aAAa,aAAa;AAAA,UACxB,IAAI;AAAA,UACJ,OAAO;AAAA,QACT,GAAG;AAAA,UACD,MAAM,SAAS,MAAM;AAAA,YACnB,aAAa,YAAY;AAAA,UAC3B,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,QACD,aAAa,aAAa;AAAA,UACxB,IAAI;AAAA,UACJ,OAAO;AAAA,QACT,GAAG;AAAA,UACD,MAAM,SAAS,MAAM;AAAA,YACnB,aAAa,WAAW;AAAA,UAC1B,CAAC;AAAA,UACD,GAAG;AAAA,QACL,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134202,
+      "end": 1726490134202,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134203,
+      "end": 1726490134203,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134203,
+      "end": 1726490134203,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134203,
+      "end": 1726490134203,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134203,
+      "end": 1726490134203,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134203,
+      "end": 1726490134203,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134203,
+      "end": 1726490134203,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490134203,
+      "end": 1726490134211,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134212,
+      "end": 1726490134212,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134212,
+      "end": 1726490134212,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134212,
+      "end": 1726490134212,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134212,
+      "end": 1726490134212,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134213,
+      "end": 1726490134213,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134213,
+      "end": 1726490134213,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134213,
+      "end": 1726490134213,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134214,
+      "end": 1726490134214,
+      "order": "normal"
+    }
+  ]
+}

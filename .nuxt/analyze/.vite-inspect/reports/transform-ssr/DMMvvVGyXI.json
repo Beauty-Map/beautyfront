@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/drawer/ArtistProfileDrawer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n<div\r\n    class=\"flex flex-col fixed md:hide top-0 bottom-0 pb-[45px] px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999999999]\"\r\n    :class=\"[store.isOpenArtistProfile ? 'left-0' : 'left-[-100%]']\"\r\n>\r\n  <div class=\"flex flex-row items-center justify-between pt-[23px] pl-[3px]\">\r\n    <div></div>\r\n    <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">پروفایل</div>\r\n    <BackIcon @click=\"goBack\" />\r\n  </div>\r\n  <div class=\"w-full text-center text-[#133C3E] text-[14px] leading-[21px] font-semibold mt-[33px]\">سن شما به کاربران نمایش داده نمی شود</div>\r\n  <div class=\"flex flex-col justify-start items-start\">\r\n    <ArtistAvatar @choose=\"onUserAvatarChanged\" :avatar=\"user.avatar\" class=\"mt-[35px] mb-[22px]\"/>\r\n    <div class=\"w-full overflow-y-auto\">\r\n      <TextInput title=\"نام و نام خانوادگی\" v-model=\"form.full_name\" class=\"mt-[27px]\"/>\r\n      <EmailInput title=\"ایمیل\" v-model=\"form.email\" :disabled=\"true\" class=\"mt-[27px]\"/>\r\n      <TelInput title=\"شماره موبایل\" v-model=\"form.phone_number\" class=\"mt-[27px]\"/>\r\n      <NationalCodeInput title=\"کد ملی\" v-model=\"form.national_code\" class=\"mt-[27px]\"/>\r\n      <BirthDateInput title=\"تاریخ تولد\" v-model=\"form.birth_date\" class=\"mt-[27px]\"/>\r\n      <TelInput title=\"تلفن ثابت\" v-model=\"form.tel_number\" class=\"mt-[27px]\"/>\r\n      <ChooseCityInput title=\"شهر محل فعالیت\" v-model=\"form.city_id\" class=\"mt-[27px]\"/>\r\n      <TextInput title=\"آدرس دقیق\" v-model=\"form.address\" class=\"mt-[27px]\"/>\r\n      <ChooseLocationInput title=\"انتخاب لوکیشن\" v-model=\"form.location\" :point=\"form.location\" class=\"mt-[27px]\"/>\r\n      <ChooseWorkHourInput\r\n          title=\"ساعت کاری\"\r\n          :is-all-day-open=\"form.is_all_day_open\"\r\n          :is-closed=\"form.is_closed\"\r\n          :work-on-holidays=\"form.work_on_holidays\"\r\n          v-model=\"form.work_hours\"\r\n          @update:is-closed=\"open => form.is_closed = open\"\r\n          @update:is-all-day-open=\"open => form.is_all_day_open = open\"\r\n          class=\"mt-[27px]\"\r\n      />\r\n      <TextAreaInput title=\"تنظیم بیوگرافی\" v-model=\"form.bio\" class=\"mt-[27px]\"/>\r\n      <ChooseSocialMediaInput title=\"شبکه های اجتماعی\" v-model=\"form.social_media\" class=\"mt-[27px]\"/>\r\n      <InsertDocumentsInput title=\"بارگذاری مدارک\" v-model=\"form.documents\" class=\"mt-[27px]\"/>\r\n      <MainActionButton :disabled=\"loading\" class=\"mt-[80px]\" @click=\"doSaveProfile\">\r\n        <div v-if=\"loading\">\r\n          <LoadingComponent />\r\n        </div>\r\n        <div v-else class=\"text-white text-center text-[20px] leading-[30px]\">تکمیل ثبت نام</div>\r\n      </MainActionButton>\r\n    </div>\r\n  </div>\r\n</div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport {useDrawerStore} from \"~/store/Drawer\";\r\nimport ArtistAvatar from \"~/components/artist-profile-drawer/ArtistAvatar.vue\";\r\nimport ChooseCityInput from \"~/components/input/ChooseCityInput.vue\";\r\nimport TextInput from \"~/components/input/TextInput.vue\";\r\nimport MainActionButton from \"~/components/button/form/MainActionButton.vue\";\r\nimport BirthDateInput from \"~/components/input/BirthDateInput.vue\";\r\nimport TelInput from \"~/components/input/TelInput.vue\";\r\nimport NationalCodeInput from \"~/components/input/NationalCodeInput.vue\";\r\nimport ChooseLocationInput from \"~/components/input/ChooseLocationInput.vue\";\r\nimport ChooseWorkHourInput from \"~/components/input/ChooseWorkHourInput.vue\";\r\nimport TextAreaInput from \"~/components/input/TextAreaInput.vue\";\r\nimport ChooseSocialMediaInput from \"~/components/input/ChooseSocialMediaInput.vue\";\r\nimport {useCustomFetch} from \"~/composables/useCustomFetch\";\r\nimport InsertDocumentsInput from \"~/components/input/InsertDocumentsInput.vue\";\r\nimport EmailInput from \"~/components/input/EmailInput.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\nimport LoadingComponent from \"~/components/global/Loading.vue\";\r\n\r\nconst store = useDrawerStore()\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\nconst app = useNuxtApp()\r\nconst route = useRoute()\r\nconst loading = ref(false)\r\n\r\nconst form = ref({\r\n  full_name: user.value?.full_name,\r\n  email: user.value?.email,\r\n  phone_number: user.value?.phone_number,\r\n  national_code: user.value?.national_code,\r\n  tel_number: user.value?.tel_number,\r\n  address: user.value?.address,\r\n  city_id: user.value?.city_id,\r\n  birth_date: user.value?.birth_date,\r\n  avatar: user.value?.avatar,\r\n  location: user.value?.location,\r\n  work_hours: user.value?.work_hours,\r\n  is_all_day_open: user.value?.is_all_day_open,\r\n  work_on_holidays: user.value?.work_on_holidays,\r\n  is_closed: user.value?.is_closed,\r\n  bio: user.value?.bio,\r\n  social_media: user.value?.social_media,\r\n  documents: user.value?.documents,\r\n})\r\nconst goBack = () => {\r\n  store.closeAllDrawers()\r\n}\r\nconst onUserAvatarChanged = (newAvatar: string) => {\r\n  form.value.avatar = newAvatar\r\n}\r\n\r\nconst validated = () => {\r\n  let validated = true\r\n  if (!form.value.full_name) {\r\n    app.$toast.error('لطفا نام و نام خانوادگی خود را وارد کنید', {rtl: true})\r\n    validated = false\r\n  }\r\n  if (!form.value.phone_number) {\r\n    app.$toast.error('لطفا شماره تماس خود را وارد کنید', {rtl: true})\r\n    validated = false\r\n  }\r\n  if (!form.value.national_code) {\r\n    app.$toast.error('لطفا کد ملی خود را وارد کنید', {rtl: true})\r\n    validated = false\r\n  }\r\n  if (!form.value.birth_date) {\r\n    app.$toast.error('لطفا تاریخ تولد خود را وارد کنید', {rtl: true})\r\n    validated = false\r\n  }\r\n  if (!form.value.city_id) {\r\n    app.$toast.error('لطفا شهر محل فعالیت خود را انتخاب کنید', {rtl: true})\r\n    validated = false\r\n  }\r\n\r\n  return validated\r\n}\r\n\r\nconst doSaveProfile = async () => {\r\n  if (loading.value) return\r\n  if (!validated()) {\r\n    return\r\n  }\r\n  loading.value = true\r\n  const data = {\r\n    phone_number: form.value.phone_number,\r\n    full_name: form.value.full_name,\r\n    national_code: form.value.national_code?.toString(),\r\n    tel_number: form.value.tel_number,\r\n    address: form.value.address,\r\n    avatar: form.value.avatar,\r\n    bio: form.value.bio,\r\n    location: form.value.location,\r\n    social_media: form.value.social_media,\r\n    is_all_day_open: form.value.is_all_day_open,\r\n    is_closed: form.value.is_closed,\r\n    work_on_holidays: form.value.work_on_holidays,\r\n    city_id: form.value.city_id,\r\n    birth_date: form.value.birth_date,\r\n    work_hours: form.value.work_hours,\r\n    documents: form.value.documents,\r\n  }\r\n  const {$putRequest: putRequest}=app\r\n  putRequest('/own/artist', data)\r\n      .then(res => {\r\n        app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})\r\n        store.closeAllDrawers()\r\n        store.openArtistAgreementDrawer()\r\n        // window.location.reload()\r\n      })\r\n      .catch(err => {\r\n        const errors = Object.values(err.data.errors)\r\n        for (const k in errors) {\r\n          for (const e in errors[k]) {\r\n            app.$toast.error(errors[k][e], {rtl: true,})\r\n          }\r\n        }\r\n      })\r\n      .finally(() => {\r\n        setTimeout(() =>loading.value = false, 500)\r\n      })\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490142301,
+      "end": 1726490142363,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142363,
+      "end": 1726490142363,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/ArtistProfileDrawer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/ArtistProfileDrawer.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/drawer/ArtistProfileDrawer.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726490142363,
+      "end": 1726490142372,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142372,
+      "end": 1726490142372,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142372,
+      "end": 1726490142372,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142372,
+      "end": 1726490142372,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142373,
+      "end": 1726490142373,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142373,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142373,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142374,
+      "end": 1726490142374,
+      "order": "normal"
+    }
+  ]
+}

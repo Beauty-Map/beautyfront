@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/drawer/ChooseLadderingPortfoliosDrawer.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div\r\n      class=\"flex flex-col fixed md:hide top-0 bottom-0 w-full duration-700 ease-in-out bg-white z-[999999999]\"\r\n      :class=\"[isOpen ? 'left-0' : 'left-[-100%]']\"\r\n  >\r\n    <div class=\"relative h-screen flex flex-col justify-start items-center w-full\">\r\n      <div class=\"border-b border-b-[#A9A7A7] relative w-full flex flex-row items-center justify-center py-[23px]\">\r\n        <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">نردبان</div>\r\n        <BackIcon @click=\"goBack\" class=\"absolute left-[10px]\"/>\r\n      </div>\r\n      <div class=\"overflow-y-scroll relative px-[30px] pt-[30px] pb-[60px] h-full w-full flex flex-col gap-[10px] items-start justify-start text-right font-medium text-[#141414] text-[14px] leading-[21px]\">\r\n        <PortfolioLadderingItem\r\n            v-for=\"(p, i) in portfolios\"\r\n            :key=\"i\"\r\n            :portfolio=\"p\"\r\n            @click=\"selectItem(p.id)\"\r\n            :selected=\"isItemSelected(p.id)\"\r\n        />\r\n        <InfiniteLoading :firstload=\"true\" v-if=\"showInfiniteScroll\" class=\"mx-auto\" @infinite=\"paginateDebounce\"/>\r\n      </div>\r\n      <div class=\"absolute z-[9999999999] bottom-0 pb-[30px] right-0 left-0 bg-white px-[20px]\">\r\n        <button\r\n            @click=\"doAccept\"\r\n            class=\"cursor-pointer w-full font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white z-[999999] bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] \">\r\n          تایید\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport InfiniteLoading from \"v3-infinite-loading\";\r\nimport PortfolioLadderingItem from \"~/components/portfolio/PortfolioLadderingItem.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\nconst emits = defineEmits(['close', 'choose'])\r\nconst props = defineProps({\r\n  isOpen: {\r\n    type: Boolean,\r\n    required: true\r\n  },\r\n  title: {\r\n    type: String,\r\n    default: 'فیلتر'\r\n  },\r\n})\r\n\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\n\r\nconst portfolios = ref<IPortfolio[]>([])\r\nconst selectedItems = ref<IPortfolio[]>([])\r\nconst showInfiniteScroll = ref<Boolean>(false)\r\nconst lastPage = ref<number>(1)\r\nconst page = ref<number>(1)\r\n\r\nconst paginate = async () => {\r\n  if (page <= lastPage) {\r\n    page.value++\r\n    await getPortfolios()\r\n  }\r\n}\r\n\r\nconst paginateDebounce = useDebounce(paginate, 500)\r\n\r\nconst getPortfolios = async () => {\r\n  const res = await useCustomFetch(`/own/portfolios/laddering?limit=10&page=${page.value}`, {\r\n    method: \"GET\"\r\n  })\r\n  if (res.data.value) {\r\n    let list = (res.data.value.data as IPortfolio[])\r\n    if (list.length == 0) {\r\n      showInfiniteScroll.value = false\r\n      return\r\n    }\r\n    portfolios.value = [\r\n      ...portfolios.value,\r\n      ...list\r\n    ]\r\n    lastPage.value = (res.data.value.last_page as number)\r\n    console.log(lastPage.value, \"lastPage\")\r\n    console.log(page.value, \"lastPage\")\r\n    setTimeout(() => {\r\n      showInfiniteScroll.value = true\r\n    }, 300)\r\n  }\r\n}\r\n\r\nconst selectItem = (id: number) => {\r\n  let index = findIndex(id)\r\n  if (index > -1) {\r\n    selectedItems.value.splice(index, 1)\r\n  } else {\r\n    selectedItems.value.push(id)\r\n  }\r\n}\r\n\r\nconst isItemSelected = (id) => {\r\n  return findIndex(id) > -1\r\n}\r\n\r\nconst findIndex = (id) => {\r\n  return selectedItems.value.indexOf(id)\r\n}\r\n\r\nconst goBack = () => {\r\n  close()\r\n}\r\nconst close = () => {\r\n  portfolios.value = []\r\n  emits('close')\r\n}\r\n\r\nconst doAccept = () => {\r\n  emits('choose', selectedItems.value)\r\n  setTimeout(() => {\r\n    emits('close')\r\n  }, 200)\r\n}\r\n\r\nwatch(() => props.isOpen, () => {\r\n  if (props.isOpen) {\r\n    getPortfolios()\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490132894,
+      "end": 1726490132980,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132980,
+      "end": 1726490132980,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132980,
+      "end": 1726490132981,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132981,
+      "end": 1726490132981,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132981,
+      "end": 1726490132981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132981,
+      "end": 1726490132981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132981,
+      "end": 1726490132981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132981,
+      "end": 1726490132981,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/ChooseLadderingPortfoliosDrawer.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/drawer/ChooseLadderingPortfoliosDrawer.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490132981,
+      "end": 1726490133101,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133101,
+      "end": 1726490133101,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133101,
+      "end": 1726490133101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133101,
+      "end": 1726490133101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133101,
+      "end": 1726490133101,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133101,
+      "end": 1726490133102,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133102,
+      "end": 1726490133102,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133102,
+      "end": 1726490133102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133102,
+      "end": 1726490133102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133102,
+      "end": 1726490133102,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133103,
+      "end": 1726490133103,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133103,
+      "end": 1726490133104,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133105,
+      "end": 1726490133105,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133106,
+      "end": 1726490133106,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133109,
+      "end": 1726490133110,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133112,
+      "end": 1726490133112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133112,
+      "end": 1726490133112,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133112,
+      "end": 1726490133113,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133113,
+      "end": 1726490133113,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133113,
+      "end": 1726490133113,
+      "order": "normal"
+    }
+  ]
+}

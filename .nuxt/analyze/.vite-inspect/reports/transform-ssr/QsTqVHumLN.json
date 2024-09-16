@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/favourite/FavouriteArtistList.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport ArtistItem from \"~/components/artist/ArtistItem.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'FavouriteArtistList',\n  __ssrInlineRender: true,\n  props: {\r\n  artists: {\r\n    type: Array,\r\n    default: () => [],\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full px-[25px] py-[25px] rounded-[8px]\" }, _attrs))}><!--[-->`)\n  _ssrRenderList(__props.artists, (a, i) => {\n    _push(_ssrRenderComponent(ArtistItem, {\n      key: i,\n      artist: a\n    }, null, _parent))\n  })\n  _push(`<!--]--></div>`)\n}\n}\n\n})",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/favourite/FavouriteArtistList.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"w-full px-[25px] py-[25px] rounded-[8px]\">\r\n    <ArtistItem\r\n      v-for=\"(a, i) in artists\"\r\n      :key=\"i\"\r\n      :artist=\"a\"\r\n    />\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport ArtistItem from \"~/components/artist/ArtistItem.vue\";\r\n\r\nconst props = defineProps({\r\n  artists: {\r\n    type: Array,\r\n    default: () => [],\r\n    required: true\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAYA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7D,CAAC;;;;;;;;;;;;;AAHuB,CAAC;AACzB,CAAC;AAGD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAMZ,CAAC;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490141409,
+      "end": 1726490141409,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\";\nimport ArtistItem from \"~/components/artist/ArtistItem.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"FavouriteArtistList\",\n  __ssrInlineRender: true,\n  props: {\n    artists: {\n      type: Array,\n      default: () => [],\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full px-[25px] py-[25px] rounded-[8px]\" }, _attrs))}><!--[-->`);\n      _ssrRenderList(__props.artists, (a, i) => {\n        _push(_ssrRenderComponent(ArtistItem, {\n          key: i,\n          artist: a\n        }, null, _parent));\n      });\n      _push(`<!--]--></div>`);\n    };\n  }\n});\n",
+      "start": 1726490141409,
+      "end": 1726490141490,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/favourite/FavouriteArtistList.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs, ssrRenderList as _ssrRenderList } from \"vue/server-renderer\"\n\nimport ArtistItem from \"~/components/artist/ArtistItem.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'FavouriteArtistList',\n  __ssrInlineRender: true,\n  props: {\r\n  artists: {\r\n    type: Array,\r\n    default: () => [],\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full px-[25px] py-[25px] rounded-[8px]\" }, _attrs))}><!--[-->`)\n  _ssrRenderList(__props.artists, (a, i) => {\n    _push(_ssrRenderComponent(ArtistItem, {\n      key: i,\n      artist: a\n    }, null, _parent))\n  })\n  _push(`<!--]--></div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,kBAAkB,iBAAiB,iBAAiB,sBAAsB;AAE9H,OAAO,gBAAgB;AAGvB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,SAAS;AAAA,MACP,MAAM;AAAA,MACN,SAAS,MAAM,CAAC;AAAA,MAChB,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY,EAAE,OAAO,2CAA2C,GAAG,MAAM,CAAC,CAAC,WAAW;AACnH,qBAAe,QAAQ,SAAS,CAAC,GAAG,MAAM;AACxC,cAAM,oBAAoB,YAAY;AAAA,UACpC,KAAK;AAAA,UACL,QAAQ;AAAA,QACV,GAAG,MAAM,OAAO,CAAC;AAAA,MACnB,CAAC;AACD,YAAM,gBAAgB;AAAA,IACxB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490141490,
+      "end": 1726490141490,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490141490,
+      "end": 1726490141491,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490141491,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490141492,
+      "end": 1726490141492,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490141493,
+      "end": 1726490141497,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490141493,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490141498,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490141498,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490141498,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490141498,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490141498,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490141498,
+      "end": 1726490141498,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490141499,
+      "end": 1726490141499,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490141500,
+      "end": 1726490141500,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490141501,
+      "end": 1726490141501,
+      "order": "normal"
+    }
+  ]
+}

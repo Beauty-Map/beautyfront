@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/wallet/PaymentOptionItem.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-row justify-start items-start\" }\nconst _hoisted_2 = { class: \"flex flex-col justify-start items-center text-center grow\" }\nconst _hoisted_3 = { class: \"text-center text-black font-semibold text-[16px] leading-[25px]\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"span\", null, \"تومان\", -1)\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"button\", { class: \"bg-[#1EFF8180] font-semibold text-[12px] leading-[19px] mt-[10px] w-full text-center py-[8px] rounded-[10px] shadow-[0px_4px_4px_0px_#00000040]\" }, \" جزییات بیشتر و خرید \", -1)\n\nimport DollarGoldIcon from \"~/components/icons/DollarGoldIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PaymentOptionItem',\n  props: {\r\n  coins: {\r\n    type: Number,\r\n    default: 0,\r\n  },\r\n  price: {\r\n    type: Number,\r\n    default: 0,\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _directive_format_number = _resolveDirective(\"format-number\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(DollarGoldIcon),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"span\", null, _toDisplayString(`${__props.coins} سکه `), 1),\n        _withDirectives((_openBlock(), _createElementBlock(\"span\", null, [\n          _createTextVNode(_toDisplayString(__props.price), 1)\n        ])), [\n          [_directive_format_number]\n        ]),\n        _hoisted_4\n      ]),\n      _hoisted_5\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1726490133097,
+      "end": 1726490133097
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133097,
+      "end": 1726490133097,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133097,
+      "end": 1726490133097,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133097,
+      "end": 1726490133097,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133097,
+      "end": 1726490133097,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-row justify-start items-start\" };\nconst _hoisted_2 = { class: \"flex flex-col justify-start items-center text-center grow\" };\nconst _hoisted_3 = { class: \"text-center text-black font-semibold text-[16px] leading-[25px]\" };\nconst _hoisted_4 = /* @__PURE__ */ _createElementVNode(\"span\", null, \"تومان\", -1);\nconst _hoisted_5 = /* @__PURE__ */ _createElementVNode(\"button\", { class: \"bg-[#1EFF8180] font-semibold text-[12px] leading-[19px] mt-[10px] w-full text-center py-[8px] rounded-[10px] shadow-[0px_4px_4px_0px_#00000040]\" }, \" جزییات بیشتر و خرید \", -1);\nimport DollarGoldIcon from \"~/components/icons/DollarGoldIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"PaymentOptionItem\",\n  props: {\n    coins: {\n      type: Number,\n      default: 0\n    },\n    price: {\n      type: Number,\n      default: 0\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      const _directive_format_number = _resolveDirective(\"format-number\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(DollarGoldIcon),\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"div\", _hoisted_3, [\n            _createElementVNode(\"span\", null, _toDisplayString(`${__props.coins} سکه `), 1),\n            _withDirectives((_openBlock(), _createElementBlock(\"span\", null, [\n              _createTextVNode(_toDisplayString(__props.price), 1)\n            ])), [\n              [_directive_format_number]\n            ]),\n            _hoisted_4\n          ]),\n          _hoisted_5\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133097,
+      "end": 1726490133240,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/wallet/PaymentOptionItem.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, createTextVNode as _createTextVNode, resolveDirective as _resolveDirective, openBlock as _openBlock, createElementBlock as _createElementBlock, withDirectives as _withDirectives } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-row justify-start items-start\" }\nconst _hoisted_2 = { class: \"flex flex-col justify-start items-center text-center grow\" }\nconst _hoisted_3 = { class: \"text-center text-black font-semibold text-[16px] leading-[25px]\" }\nconst _hoisted_4 = /*#__PURE__*/_createElementVNode(\"span\", null, \"تومان\", -1)\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"button\", { class: \"bg-[#1EFF8180] font-semibold text-[12px] leading-[19px] mt-[10px] w-full text-center py-[8px] rounded-[10px] shadow-[0px_4px_4px_0px_#00000040]\" }, \" جزییات بیشتر و خرید \", -1)\n\nimport DollarGoldIcon from \"~/components/icons/DollarGoldIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PaymentOptionItem',\n  props: {\r\n  coins: {\r\n    type: Number,\r\n    default: 0,\r\n  },\r\n  price: {\r\n    type: Number,\r\n    default: 0,\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _directive_format_number = _resolveDirective(\"format-number\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(DollarGoldIcon),\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"div\", _hoisted_3, [\n        _createElementVNode(\"span\", null, _toDisplayString(`${__props.coins} سکه `), 1),\n        _withDirectives((_openBlock(), _createElementBlock(\"span\", null, [\n          _createTextVNode(_toDisplayString(__props.price), 1)\n        ])), [\n          [_directive_format_number]\n        ]),\n        _hoisted_4\n      ]),\n      _hoisted_5\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,mBAAmB,kBAAkB,sBAAsB,qBAAqB,mBAAmB,kBAAkB,oBAAoB,mBAAmB,aAAa,YAAY,sBAAsB,qBAAqB,kBAAkB,uBAAuB;AAE/S,MAAM,aAAa,EAAE,OAAO,iDAAiD;AAC7E,MAAM,aAAa,EAAE,OAAO,4DAA4D;AACxF,MAAM,aAAa,EAAE,OAAO,kEAAkE;AAC9F,MAAM,aAA0B,oCAAoB,QAAQ,MAAM,SAAS,EAAE;AAC7E,MAAM,aAA0B,oCAAoB,UAAU,EAAE,OAAO,kJAAkJ,GAAG,yBAAyB,EAAE;AAEvP,OAAO,oBAAoB;AAG3B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,IACA,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS;AAAA,IACX;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,2BAA2B,kBAAkB,eAAe;AAElE,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,aAAa,cAAc;AAAA,QAC3B,oBAAoB,OAAO,YAAY;AAAA,UACrC,oBAAoB,OAAO,YAAY;AAAA,YACrC,oBAAoB,QAAQ,MAAM,iBAAiB,GAAG,QAAQ,KAAK,OAAO,GAAG,CAAC;AAAA,YAC9E,iBAAiB,WAAW,GAAG,oBAAoB,QAAQ,MAAM;AAAA,cAC/D,iBAAiB,iBAAiB,QAAQ,KAAK,GAAG,CAAC;AAAA,YACrD,CAAC,IAAI;AAAA,cACH,CAAC,wBAAwB;AAAA,YAC3B,CAAC;AAAA,YACD;AAAA,UACF,CAAC;AAAA,UACD;AAAA,QACF,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133240,
+      "end": 1726490133240,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133241,
+      "end": 1726490133241,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133241,
+      "end": 1726490133248,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133249,
+      "end": 1726490133249,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133250,
+      "end": 1726490133250,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133251,
+      "end": 1726490133251,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133251,
+      "end": 1726490133251,
+      "order": "normal"
+    }
+  ]
+}

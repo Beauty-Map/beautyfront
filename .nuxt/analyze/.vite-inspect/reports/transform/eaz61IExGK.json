@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/support/SupportItem.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-row justify-between items-center px-[12px] py-[8px] border border-[#133C3E] rounded-[12px]\" }\nconst _hoisted_2 = { class: \"flex flex-row grow justify-start items-center\" }\nconst _hoisted_3 = { class: \"mr-[17px] font-semibold text-[#141414] text-[13px] leading-[20px] text-right\" }\n\nimport SupportItemIcon from \"~/components/icons/SupportItemIcon.vue\";\r\nimport ArrowRightIcon from \"~/components/icons/ArrowRightIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'SupportItem',\n  props: {\r\n  title: {\r\n    type: String,\r\n    required: true,\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(SupportItemIcon),\n      _createElementVNode(\"span\", _hoisted_3, _toDisplayString(__props.title), 1)\n    ]),\n    _createVNode(ArrowRightIcon)\n  ]))\n}\n}\n\n})",
+      "start": 1726490133089,
+      "end": 1726490133089
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133089,
+      "end": 1726490133089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133089,
+      "end": 1726490133089,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133089,
+      "end": 1726490133089,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133089,
+      "end": 1726490133089,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-row justify-between items-center px-[12px] py-[8px] border border-[#133C3E] rounded-[12px]\" };\nconst _hoisted_2 = { class: \"flex flex-row grow justify-start items-center\" };\nconst _hoisted_3 = { class: \"mr-[17px] font-semibold text-[#141414] text-[13px] leading-[20px] text-right\" };\nimport SupportItemIcon from \"~/components/icons/SupportItemIcon.vue\";\nimport ArrowRightIcon from \"~/components/icons/ArrowRightIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"SupportItem\",\n  props: {\n    title: {\n      type: String,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createVNode(SupportItemIcon),\n          _createElementVNode(\"span\", _hoisted_3, _toDisplayString(__props.title), 1)\n        ]),\n        _createVNode(ArrowRightIcon)\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133089,
+      "end": 1726490133203,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/support/SupportItem.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { createVNode as _createVNode, toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-row justify-between items-center px-[12px] py-[8px] border border-[#133C3E] rounded-[12px]\" }\nconst _hoisted_2 = { class: \"flex flex-row grow justify-start items-center\" }\nconst _hoisted_3 = { class: \"mr-[17px] font-semibold text-[#141414] text-[13px] leading-[20px] text-right\" }\n\nimport SupportItemIcon from \"~/components/icons/SupportItemIcon.vue\";\r\nimport ArrowRightIcon from \"~/components/icons/ArrowRightIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'SupportItem',\n  props: {\r\n  title: {\r\n    type: String,\r\n    required: true,\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createVNode(SupportItemIcon),\n      _createElementVNode(\"span\", _hoisted_3, _toDisplayString(__props.title), 1)\n    ]),\n    _createVNode(ArrowRightIcon)\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,eAAe,cAAc,mBAAmB,kBAAkB,sBAAsB,qBAAqB,aAAa,YAAY,sBAAsB,2BAA2B;AAEhM,MAAM,aAAa,EAAE,OAAO,8GAA8G;AAC1I,MAAM,aAAa,EAAE,OAAO,gDAAgD;AAC5E,MAAM,aAAa,EAAE,OAAO,+EAA+E;AAE3G,OAAO,qBAAqB;AAC5B,OAAO,oBAAoB;AAG3B,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,OAAO;AAAA,MACL,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACrC,aAAa,eAAe;AAAA,UAC5B,oBAAoB,QAAQ,YAAY,iBAAiB,QAAQ,KAAK,GAAG,CAAC;AAAA,QAC5E,CAAC;AAAA,QACD,aAAa,cAAc;AAAA,MAC7B,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133203,
+      "end": 1726490133203,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133203,
+      "end": 1726490133203,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133204,
+      "end": 1726490133204,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133205,
+      "end": 1726490133205,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133205,
+      "end": 1726490133205,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133205,
+      "end": 1726490133205,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490133205,
+      "end": 1726490133209,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133211,
+      "end": 1726490133211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133211,
+      "end": 1726490133211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133211,
+      "end": 1726490133211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133211,
+      "end": 1726490133211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490133211,
+      "end": 1726490133211,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133211,
+      "end": 1726490133211,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133212,
+      "end": 1726490133212,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133212,
+      "end": 1726490133212,
+      "order": "normal"
+    }
+  ]
+}

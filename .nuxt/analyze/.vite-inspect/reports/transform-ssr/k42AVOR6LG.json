@@ -1,0 +1,270 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/assets/css/style.scss",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "@import \"./variables\";\r\n@import \"./fontiran.css\";\r\n@import \"./monarpe.css\";\r\n\r\nhtml {\r\n  min-width: 375px !important;\r\n  max-width: 550px !important;\r\n}\r\n\r\n.splash_page {\r\n  background-color: $splash_background_color;\r\n}\r\n\r\n.page {\r\n  background-color: $page_background_color;\r\n}\r\n\r\n* {\r\n  font-family: $font_family;\r\n}\r\n\r\n.main-title {\r\n  color: $main_title_color;\r\n  font-size: $title_font_size;\r\n  font-weight: $title_font_weight;\r\n  line-height: $title_line_height;\r\n}\r\n\r\n.search-input::placeholder {\r\n  font-size: $search_input_placeholder_font_size;\r\n  font-weight: $search_input_placeholder_font_weight;\r\n  line-height: $search_input_placeholder_line_height;\r\n}\r\n.select-location {\r\n  .en-title {\r\n    font-family: $en_font_family;\r\n    font-size: $search_input_placeholder_font_size;\r\n    font-weight: $search_input_placeholder_font_weight;\r\n    line-height: $search_input_placeholder_line_height;\r\n    color: $sub_title_color;\r\n  }\r\n  .city-name {\r\n    font-size: $title_font_size;\r\n    font-weight: $title_font_weight;\r\n    line-height: $title_line_height;\r\n    color: $main_title_color;\r\n  }\r\n}\r\n\r\n.near-artist-view-box {\r\n  background: linear-gradient(260.22deg, #B2550F -20.62%, rgba(255, 255, 255, 0) 95.26%);\r\n}\r\n\r\n.ltr-dir {\r\n  direction: ltr !important;\r\n}\r\n\r\n.rotate-y-180 {\r\n  transform: rotateY(180deg);\r\n}\r\n\r\n\r\n.carousel__pagination-button::after {\r\n  background-color: #A9A7A7;\r\n}\r\n\r\n.fancybox__container {\r\n  z-index: 9999999999 !important;\r\n}\r\n\r\n.vpd-input-group {\r\n  label {\r\n    display: none !important;\r\n  }\r\n  input {\r\n    height: 38px;\r\n    outline: none;\r\n    border: none !important;\r\n    border-radius: 8px !important;\r\n  }\r\n}\r\n.Toastify__toast-container {\r\n  z-index: 9999999999 !important;\r\n}\r\n\r\n.main-desktop-slider {\r\n  width: 100%;\r\n  min-height: 70vh;\r\n  & > div {\r\n    height: 100%;\r\n    min-height: 70vh;\r\n    .main-desktop-slider-left-box {\r\n      width: 100%;\r\n      max-width: 75%;\r\n      background: linear-gradient(89.61deg, #133C3E 55.75%, rgba(19, 60, 62, 0.85) 66.03%, rgba(19, 60, 62, 0.8) 75.96%, rgba(19, 60, 62, 0.31) 84.81%, rgba(19, 60, 62, 0) 99.7%);\r\n    }\r\n  }\r\n}",
+      "start": 1726490138661,
+      "end": 1726490139499,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490139499,
+      "end": 1726490139499,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490139499,
+      "end": 1726490139499,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490139499,
+      "end": 1726490139499,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490139499,
+      "end": 1726490139499,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490139499,
+      "end": 1726490139500,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "result": "@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:10;src:url(__VITE_ASSET__BEkvqASm__) format(\"woff2\"),url(__VITE_ASSET__DR2BQCBn__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:100;src:url(__VITE_ASSET__VibwGLxK__) format(\"woff2\"),url(__VITE_ASSET__BK8KoM_m__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:200;src:url(__VITE_ASSET__DalfJXo4__) format(\"woff2\"),url(__VITE_ASSET__CA$eZMA6__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:300;src:url(__VITE_ASSET__8ROb_FJT__) format(\"woff2\"),url(__VITE_ASSET__BTWYaUqO__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:500;src:url(__VITE_ASSET__CSkVdw12__) format(\"woff2\"),url(__VITE_ASSET__DeAzGci8__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:600;src:url(__VITE_ASSET__KPwBn9Sp__) format(\"woff2\"),url(__VITE_ASSET__bNNQqvFm__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:800;src:url(__VITE_ASSET__DS5iarts__) format(\"woff2\"),url(__VITE_ASSET__CAHeFWfu__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:900;src:url(__VITE_ASSET__BxJyXkqz__) format(\"woff2\"),url(__VITE_ASSET__CvmbpVlK__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:930;src:url(__VITE_ASSET__DKwfEHqm__) format(\"woff2\"),url(__VITE_ASSET__BGqWhACq__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:960;src:url(__VITE_ASSET__huU3ZsTi__) format(\"woff2\"),url(__VITE_ASSET__BQYmIOre__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:990;src:url(../woff2/Dana-Fat.woff2) format(\"woff2\"),url(../woff/Dana-Fat.woff) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:700;src:url(__VITE_ASSET__DVGDzmRv__) format(\"woff2\"),url(__VITE_ASSET__OIaVLQ0j__) format(\"woff\")}@font-face{font-display:swap;font-family:dana;font-style:normal;font-weight:400;src:url(__VITE_ASSET__D2$i2qRq__) format(\"woff2\"),url(__VITE_ASSET__DttEw4qt__) format(\"woff\")}@font-face{font-display:swap;font-family:Manrope;font-style:normal;font-weight:400;src:local(\"Manrope Regular\"),url(__VITE_ASSET__CcLUPXVT__) format(\"woff\")}@font-face{font-display:swap;font-family:Manrope;font-style:normal;font-weight:100;src:local(\"Manrope Thin\"),url(__VITE_ASSET__DFbuII3w__) format(\"woff\")}@font-face{font-display:swap;font-family:Manrope;font-style:normal;font-weight:300;src:local(\"Manrope Light\"),url(__VITE_ASSET__gdpbfa6p__) format(\"woff\")}@font-face{font-display:swap;font-family:Manrope;font-style:normal;font-weight:500;src:local(\"Manrope Medium\"),url(__VITE_ASSET__CwsmCvlP__) format(\"woff\")}@font-face{font-display:swap;font-family:Manrope;font-style:normal;font-weight:600;src:local(\"Manrope Semibold\"),url(__VITE_ASSET__BvdzpXtg__) format(\"woff\")}@font-face{font-display:swap;font-family:Manrope;font-style:normal;font-weight:700;src:local(\"Manrope Bold\"),url(__VITE_ASSET__DVP2FSLE__) format(\"woff\")}html{max-width:550px!important;min-width:375px!important}.splash_page{background-color:#ff3ca0}.page{background-color:#fff}*{font-family:dana}.main-title{color:#141414;font-size:14px;font-weight:500;line-height:22px}.search-input::-moz-placeholder{font-size:12px;font-weight:500;line-height:17px}.search-input::placeholder{font-size:12px;font-weight:500;line-height:17px}.select-location .en-title{color:#828282;font-family:Manrope;font-size:12px;font-weight:500;line-height:17px}.select-location .city-name{color:#141414;font-size:14px;font-weight:500;line-height:22px}.near-artist-view-box{background:linear-gradient(260.22deg,#b2550f -20.62%,hsla(0,0%,100%,0) 95.26%)}.ltr-dir{direction:ltr!important}.rotate-y-180{transform:rotateY(180deg)}.carousel__pagination-button:after{background-color:#a9a7a7}.fancybox__container{z-index:9999999999!important}.vpd-input-group label{display:none!important}.vpd-input-group input{border:none!important;border-radius:8px!important;height:38px;outline:none}.Toastify__toast-container{z-index:9999999999!important}.main-desktop-slider{min-height:70vh;width:100%}.main-desktop-slider>div{height:100%;min-height:70vh}.main-desktop-slider>div .main-desktop-slider-left-box{background:linear-gradient(89.61deg,#133c3e 55.75%,rgba(19,60,62,.85) 66.03%,rgba(19,60,62,.8) 75.96%,rgba(19,60,62,.31) 84.81%,rgba(19,60,62,0) 99.7%);max-width:75%;width:100%}",
+      "start": 1726490139500,
+      "end": 1726490140477,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/home/saeed/w/projects/beautymap/beautyfront/assets/css/style.scss",
+        "mappings": "AAmBA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,cAAe,CAEf,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAgB,CAEhB,0FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAiB,CAEjB,8FAED,CACA,WAIC,iBAAkB,CAHlB,gBAAiB,CACjB,iBAAkB,CAClB,eAAmB,CAEnB,8FAED,CC1HA,WAIC,iBAAkB,CAHlB,mBAAoB,CACpB,iBAAkB,CAClB,eAAmB,CAEnB,yEACD,CAGA,WAIC,iBAAkB,CAHlB,mBAAoB,CACpB,iBAAkB,CAClB,eAAgB,CAEhB,sEACD,CAGA,WAIC,iBAAkB,CAHlB,mBAAoB,CACpB,iBAAkB,CAClB,eAAgB,CAEhB,uEACD,CAGA,WAIC,iBAAkB,CAHlB,mBAAoB,CACpB,iBAAkB,CAClB,eAAgB,CAEhB,wEACD,CAGA,WAIC,iBAAkB,CAHlB,mBAAoB,CACpB,iBAAkB,CAClB,eAAgB,CAEhB,0EACD,CAGA,WAIC,iBAAkB,CAHlB,mBAAoB,CACpB,iBAAkB,CAClB,eAAiB,CAEjB,sEACD,CC/CA,KAEE,0BADA,0BAIF,aACE,yBAGF,MACE,sBAGF,EACE,iBAGF,YACE,aCpBiB,CDqBjB,cCjBgB,CDkBhB,eCjBkB,CDkBlB,iBAGF,gCACE,cCpBmC,CDqBnC,eCpBqC,CDqBrC,iBAHF,2BACE,cCpBmC,CDqBnC,eCpBqC,CDqBrC,iBAGA,2BAKE,aCpCc,CDgCd,mBC9Ba,CD+Bb,cC3BiC,CD4BjC,eC3BmC,CD4BnC,iBAGF,4BAIE,aC3Ce,CDwCf,cCpCc,CDqCd,eCpCgB,CDqChB,iBAKJ,sBACE,+EAGF,SACE,wBAGF,cACE,0BAIF,mCACE,yBAGF,qBACE,6BAIA,uBACE,uBAEF,uBAGE,sBACA,4BAHA,YACA,aAKJ,2BACE,6BAGF,qBAEE,gBADA,WAEA,yBACE,YACA,gBACA,uDAGE,wJADA,cADA",
+        "names": [],
+        "ignoreList": [],
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/assets/css/fontiran.css",
+          "/home/saeed/w/projects/beautymap/beautyfront/assets/css/monarpe.css",
+          "/home/saeed/w/projects/beautymap/beautyfront/assets/css/style.scss",
+          "/home/saeed/w/projects/beautymap/beautyfront/assets/css/variables.scss"
+        ],
+        "sourcesContent": [
+          "/**\r\n*\r\n*\tName:\t\t\tDANA Fonts\r\n*\tVersion:\t\t\t3.0\r\n*\tAuthor:\t\t\tMoslem Ebrahimi (moslemebrahimi.com)\r\n*\tCreated on:\t\tnov 12, 2021\r\n*\tUpdated on:\t\tnov 12, 2021\r\n*\tWebsite:\t\t\thttp://fontiran.com\r\n*\tCopyright:\t\tCommercial/Proprietary Software\r\n--------------------------------------------------------------------------------------\r\nفونت دانا یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید\r\n--------------------------------------------------------------------------------------\r\nDANA fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com \r\n--------------------------------------------------------------------------------------\r\nThis set of fonts are used in this project under the license: (.....)\r\n------------------------------------------------------------------------------------- fonts/-\r\n*\t\r\n**/\r\n\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 10;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Hairline.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Hairline.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 100;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Thin.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Thin.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 200;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-UltraLight.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-UltraLight.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 300;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Light.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Light.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 500;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Medium.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Medium.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 600;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-DemiBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-DemiBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 800;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-ExtraBold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-ExtraBold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 900;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Black.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Black.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 930;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-ExtraBlack.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-ExtraBlack.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 960;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Heavy.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Heavy.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: 990;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Fat.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Fat.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: bold;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Bold.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Bold.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n@font-face {\r\n\tfont-family: dana;\r\n\tfont-style: normal;\r\n\tfont-weight: normal;\r\n\tfont-display: swap;\r\n\tsrc: url('../woff2/Dana-Regular.woff2') format('woff2'),  /* FF39+,Chrome36+, Opera24+*/\r\n\t\t url('../woff/Dana-Regular.woff') format('woff');  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/\r\n}\r\n\r\n\r\n",
+          "@font-face {\r\n\tfont-family: Manrope;\r\n\tfont-style: normal;\r\n\tfont-weight: normal;\r\n\tfont-display: swap;\r\n\tsrc: local('Manrope Regular'), url('../woff/manrope-regular.woff') format('woff');\r\n}\r\n\r\n\r\n@font-face {\r\n\tfont-family: Manrope;\r\n\tfont-style: normal;\r\n\tfont-weight: 100;\r\n\tfont-display: swap;\r\n\tsrc: local('Manrope Thin'), url('../woff/manrope-thin.woff') format('woff');\r\n}\r\n\r\n\r\n@font-face {\r\n\tfont-family: Manrope;\r\n\tfont-style: normal;\r\n\tfont-weight: 300;\r\n\tfont-display: swap;\r\n\tsrc: local('Manrope Light'), url('../woff/manrope-light.woff') format('woff');\r\n}\r\n\r\n\r\n@font-face {\r\n\tfont-family: Manrope;\r\n\tfont-style: normal;\r\n\tfont-weight: 500;\r\n\tfont-display: swap;\r\n\tsrc: local('Manrope Medium'), url('../woff/manrope-medium.woff') format('woff');\r\n}\r\n\r\n\r\n@font-face {\r\n\tfont-family: Manrope;\r\n\tfont-style: normal;\r\n\tfont-weight: 600;\r\n\tfont-display: swap;\r\n\tsrc: local('Manrope Semibold'), url('../woff/manrope-semibold.woff') format('woff');\r\n}\r\n\r\n\r\n@font-face {\r\n\tfont-family: Manrope;\r\n\tfont-style: normal;\r\n\tfont-weight: bold;\r\n\tfont-display: swap;\r\n\tsrc: local('Manrope Bold'), url('../woff/manrope-bold.woff') format('woff');\r\n}",
+          null,
+          null
+        ]
+      }
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "result": "",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490140477,
+      "end": 1726490140477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490140477,
+      "end": 1726490140478,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490140478,
+      "end": 1726490140478,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490140478,
+      "end": 1726490140478,
+      "order": "normal"
+    }
+  ]
+}

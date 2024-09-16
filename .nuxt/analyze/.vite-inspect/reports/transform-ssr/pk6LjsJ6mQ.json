@@ -1,0 +1,268 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistSocialMediaBox.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport InstagramIcon from \"~/components/icons/InstagramIcon.vue\";\r\nimport TelegramIcon from \"~/components/icons/TelegramIcon.vue\";\r\nimport BaleIcon from \"~/components/icons/BaleIcon.vue\";\r\nimport WhatsappIcon from \"~/components/icons/WhatsappIcon.vue\";\r\nimport EitaaIcon from \"~/components/icons/EitaaIcon.vue\";\r\nimport RubikaIcon from \"~/components/icons/RubikaIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ArtistSocialMediaBox',\n  __ssrInlineRender: true,\n  props: {\r\n  socials: {\r\n    type: Object,\r\n    default: () => {}\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full flex flex-row-reverse items-center justify-start py-[10px]\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(InstagramIcon, { class: \"cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(TelegramIcon, { class: \"cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(BaleIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(WhatsappIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(EitaaIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(RubikaIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n})",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistSocialMediaBox.vue"
+        ],
+        "sourcesContent": [
+          "<template>\r\n  <div class=\"w-full flex flex-row-reverse items-center justify-start py-[10px]\">\r\n    <InstagramIcon class=\"cursor-pointer\"/>\r\n    <TelegramIcon class=\"cursor-pointer\"/>\r\n    <BaleIcon class=\"mx-[5px] cursor-pointer\"/>\r\n    <WhatsappIcon class=\"mx-[5px] cursor-pointer\"/>\r\n    <EitaaIcon class=\"mx-[5px] cursor-pointer\"/>\r\n    <RubikaIcon class=\"mx-[5px] cursor-pointer\"/>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport InstagramIcon from \"~/components/icons/InstagramIcon.vue\";\r\nimport TelegramIcon from \"~/components/icons/TelegramIcon.vue\";\r\nimport BaleIcon from \"~/components/icons/BaleIcon.vue\";\r\nimport WhatsappIcon from \"~/components/icons/WhatsappIcon.vue\";\r\nimport EitaaIcon from \"~/components/icons/EitaaIcon.vue\";\r\nimport RubikaIcon from \"~/components/icons/RubikaIcon.vue\";\r\n\r\nconst props = defineProps({\r\n  socials: {\r\n    type: Object,\r\n    default: () => {}\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>"
+        ],
+        "names": [],
+        "mappings": ";;;;AAYA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACxD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAChE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5D,CAAC;;;;;;;;;;;;AAPuB,CAAC;AAQzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,OAKZ,CAAC;;;;;;;;;;;;;;"
+      }
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142434,
+      "end": 1726490142434,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { mergeProps as _mergeProps } from \"vue\";\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\";\nimport InstagramIcon from \"~/components/icons/InstagramIcon.vue\";\nimport TelegramIcon from \"~/components/icons/TelegramIcon.vue\";\nimport BaleIcon from \"~/components/icons/BaleIcon.vue\";\nimport WhatsappIcon from \"~/components/icons/WhatsappIcon.vue\";\nimport EitaaIcon from \"~/components/icons/EitaaIcon.vue\";\nimport RubikaIcon from \"~/components/icons/RubikaIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ArtistSocialMediaBox\",\n  __ssrInlineRender: true,\n  props: {\n    socials: {\n      type: Object,\n      default: () => {\n      }\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    return (_ctx, _push, _parent, _attrs) => {\n      _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full flex flex-row-reverse items-center justify-start py-[10px]\" }, _attrs))}>`);\n      _push(_ssrRenderComponent(InstagramIcon, { class: \"cursor-pointer\" }, null, _parent));\n      _push(_ssrRenderComponent(TelegramIcon, { class: \"cursor-pointer\" }, null, _parent));\n      _push(_ssrRenderComponent(BaleIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent));\n      _push(_ssrRenderComponent(WhatsappIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent));\n      _push(_ssrRenderComponent(EitaaIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent));\n      _push(_ssrRenderComponent(RubikaIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent));\n      _push(`</div>`);\n    };\n  }\n});\n",
+      "start": 1726490142434,
+      "end": 1726490142471,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/artist/ArtistSocialMediaBox.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderComponent as _ssrRenderComponent, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nimport InstagramIcon from \"~/components/icons/InstagramIcon.vue\";\r\nimport TelegramIcon from \"~/components/icons/TelegramIcon.vue\";\r\nimport BaleIcon from \"~/components/icons/BaleIcon.vue\";\r\nimport WhatsappIcon from \"~/components/icons/WhatsappIcon.vue\";\r\nimport EitaaIcon from \"~/components/icons/EitaaIcon.vue\";\r\nimport RubikaIcon from \"~/components/icons/RubikaIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ArtistSocialMediaBox',\n  __ssrInlineRender: true,\n  props: {\r\n  socials: {\r\n    type: Object,\r\n    default: () => {}\r\n  }\r\n},\n  setup(__props) {\n\r\nconst props = __props\r\n\nreturn (_ctx: any,_push: any,_parent: any,_attrs: any) => {\n  _push(`<div${_ssrRenderAttrs(_mergeProps({ class: \"w-full flex flex-row-reverse items-center justify-start py-[10px]\" }, _attrs))}>`)\n  _push(_ssrRenderComponent(InstagramIcon, { class: \"cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(TelegramIcon, { class: \"cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(BaleIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(WhatsappIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(EitaaIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(_ssrRenderComponent(RubikaIcon, { class: \"mx-[5px] cursor-pointer\" }, null, _parent))\n  _push(`</div>`)\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,cAAc,mBAAmB;AAC1C,SAAS,sBAAsB,qBAAqB,kBAAkB,uBAAuB;AAE7F,OAAO,mBAAmB;AAC1B,OAAO,kBAAkB;AACzB,OAAO,cAAc;AACrB,OAAO,kBAAkB;AACzB,OAAO,eAAe;AACtB,OAAO,gBAAgB;AAGvB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,mBAAmB;AAAA,EACnB,OAAO;AAAA,IACP,SAAS;AAAA,MACP,MAAM;AAAA,MACN,SAAS,MAAM;AAAA,MAAC;AAAA,IAClB;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAEjB,UAAM,QAAQ;AAEd,WAAO,CAAC,MAAU,OAAW,SAAa,WAAgB;AACxD,YAAM,OAAO,gBAAgB,YAAY,EAAE,OAAO,oEAAoE,GAAG,MAAM,CAAC,CAAC,GAAG;AACpI,YAAM,oBAAoB,eAAe,EAAE,OAAO,iBAAiB,GAAG,MAAM,OAAO,CAAC;AACpF,YAAM,oBAAoB,cAAc,EAAE,OAAO,iBAAiB,GAAG,MAAM,OAAO,CAAC;AACnF,YAAM,oBAAoB,UAAU,EAAE,OAAO,0BAA0B,GAAG,MAAM,OAAO,CAAC;AACxF,YAAM,oBAAoB,cAAc,EAAE,OAAO,0BAA0B,GAAG,MAAM,OAAO,CAAC;AAC5F,YAAM,oBAAoB,WAAW,EAAE,OAAO,0BAA0B,GAAG,MAAM,OAAO,CAAC;AACzF,YAAM,oBAAoB,YAAY,EAAE,OAAO,0BAA0B,GAAG,MAAM,OAAO,CAAC;AAC1F,YAAM,QAAQ;AAAA,IAChB;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142471,
+      "end": 1726490142471,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142472,
+      "end": 1726490142472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142472,
+      "end": 1726490142472,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142473,
+      "end": 1726490142473,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142473,
+      "end": 1726490142477,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142473,
+      "end": 1726490142477,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142478,
+      "end": 1726490142478,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142478,
+      "end": 1726490142478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142478,
+      "end": 1726490142478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142478,
+      "end": 1726490142478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142478,
+      "end": 1726490142478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142478,
+      "end": 1726490142478,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142480,
+      "end": 1726490142480,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142480,
+      "end": 1726490142480,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142480,
+      "end": 1726490142480,
+      "order": "normal"
+    }
+  ]
+}

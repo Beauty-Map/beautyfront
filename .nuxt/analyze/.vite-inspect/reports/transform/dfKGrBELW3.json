@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioBottomBox.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"fixed bg-white flex flex-row items-center justify-between bottom-0 left-0 right-0 px-[15px] pt-[30px] pb-[22px] border-t border-t-[#FFEA2E]\">\r\n    <div @click=\"openCallModal\" class=\"cursor-pointer text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]\">تماس</div>\r\n    <div class=\"flex flex-col\">\r\n      <div class=\"flex flex-row justify-end items-center\">\r\n        <span class=\"ml-[6px] px-[8px] text-white text-[8px] text-center leading-[12px] py-[4px] bg-[#ED2C25] rounded-[20px]\">{{calcDiscountPercent(portfolio.price, portfolio.discount_price)}}</span>\r\n        <div class=\"text-[#ED2C25] text-[11px] leading-[16px] text-left font-medium line-through\">\r\n          <span v-format-number>{{ portfolio.price }}</span>\r\n        </div>\r\n      </div>\r\n      <div class=\"text-[#000000] text-[12px] leading-[18px] text-left font-medium\">\r\n        <span v-format-price>{{ portfolio.discount_price }}</span>\r\n      </div>\r\n    </div>\r\n    <Modal :open=\"showCallModal\" @close=\"closeCallModal\">\r\n      <div class=\"w-full h-full flex flex-col gap-[13px] justify-center items-center\">\r\n        <div class=\"cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]\">\r\n          تلفن ثابت\r\n        </div>\r\n        <div class=\"cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]\">\r\n          تلفن همراه\r\n        </div>\r\n      </div>\r\n    </Modal>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nimport Modal from \"~/components/modal/Modal.vue\";\r\nimport {ceil} from \"lodash-es\";\r\n\r\nconst props = defineProps({\r\n  portfolio: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n})\r\n\r\nconst showCallModal = ref<boolean>(false)\r\n\r\nconst openCallModal = () => {\r\n  showCallModal.value = true\r\n}\r\n\r\nconst closeCallModal = () => {\r\n  showCallModal.value = false\r\n}\r\n\r\nconst calcDiscountPercent = (p: number, d: number) => {\r\n  return Math.ceil((p - d) / p * 100) + '%';\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490132800,
+      "end": 1726490132866,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490132866,
+      "end": 1726490132866,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioBottomBox.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioBottomBox.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490132866,
+      "end": 1726490132872,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490132872,
+      "end": 1726490132872,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490132873,
+      "end": 1726490132873,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490132873,
+      "end": 1726490132874,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132874,
+      "end": 1726490132874,
+      "order": "normal"
+    }
+  ]
+}

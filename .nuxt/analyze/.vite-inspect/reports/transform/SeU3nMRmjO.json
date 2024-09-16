@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/notification-drawer/NotificationListItem.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"w-full flex flex-row items-start justify-start mb-[15px]\">\r\n    <ProfileBlueIcon class=\"grow-0\"/>\r\n    <div class=\"w-full grow items-start justify-start mx-[12px]\">\r\n      <div class=\"font-semibold leading-[18px] text-[#141414]\">\r\n        {{ notification.title }}\r\n      </div>\r\n      <div class=\"font-medium text-[8px] leading-[12px] text-[#141414] mt-[3px]\">\r\n        {{ notification.description }}\r\n      </div>\r\n    </div>\r\n    <div class=\"text-[#400842] text-[10px] leading-[14px] font-light text-left whitespace-nowrap\">\r\n      {{ notification.created_at_ago_fa }}\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport ProfileBlueIcon from \"~/components/icons/ProfileBlueIcon.vue\";\r\nconst props = defineProps({\r\n  notification: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490134573,
+      "end": 1726490134589,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134589,
+      "end": 1726490134589,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/notification-drawer/NotificationListItem.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/notification-drawer/NotificationListItem.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490134589,
+      "end": 1726490134600,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134600,
+      "end": 1726490134600,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134600,
+      "end": 1726490134601,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134601,
+      "end": 1726490134601,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134601,
+      "end": 1726490134601,
+      "order": "normal"
+    }
+  ]
+}

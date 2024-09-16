@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/choose-work-hour/ChooseHoursModal.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <Modal :show-close=\"false\" :open=\"isOpen\">\r\n    <div class=\"w-full flex flex-col justify-start items-center max-w-[340px] min-w-[300px]\">\r\n      <div class=\"font-semibold text-center text-[#133C3E] text-[18px] leading-[28px]\">انتخاب ساعت</div>\r\n      <div class=\"w-full flex flex-row justify-start items-center mt-[20px]\">\r\n        <ChooseHourInput :title=\"'از ساعت'\" v-model=\"startHour\"/>\r\n        <ChooseHourInput :title=\"'تا ساعت'\" v-model=\"endHour\"/>\r\n      </div>\r\n      <div class=\"w-full flex flex-row justify-end items-center mt-[20px] gap-[8px] grow text-[14px] leading-[21px] font-medium text-[#2920D9]\">\r\n        <span @click=\"saveModal\">ذخیره</span>\r\n        <span @click=\"closeModal\">بستن</span>\r\n      </div>\r\n    </div>\r\n  </Modal>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport ChooseHourInput from \"~/components/input/ChooseHourInput.vue\";\r\nimport CheckBox from \"~/components/input/CheckBox.vue\";\r\n\r\nconst emits = defineEmits(['close', 'save'])\r\nconst props = defineProps({\r\n  isOpen: {\r\n    type: Boolean,\r\n    required: true\r\n  },\r\n  startHour: {\r\n    type: String,\r\n    required: true\r\n  },\r\n  endHour: {\r\n    type: String,\r\n    required: true\r\n  },\r\n})\r\nconst startHour = ref('08:00')\r\nconst endHour = ref('18:00')\r\nconst closeModal = () => {\r\n  emits('close')\r\n}\r\n\r\nconst saveModal = () => {\r\n  const data = {\r\n    start_hour: startHour.value,\r\n    end_hour: endHour.value,\r\n  }\r\n  emits('save', data)\r\n}\r\n\r\nonMounted(() => {\r\n  startHour.value = props.startHour\r\n  endHour.value = props.endHour\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490143144,
+      "end": 1726490143154,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490143154,
+      "end": 1726490143154,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/choose-work-hour/ChooseHoursModal.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/choose-work-hour/ChooseHoursModal.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/choose-work-hour/ChooseHoursModal.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726490143154,
+      "end": 1726490143158,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490143158,
+      "end": 1726490143158,
+      "order": "normal"
+    }
+  ]
+}

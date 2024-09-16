@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSliderItem.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"flex flex-col w-full relative bg-center\tbg-no-repeat bg-cover\" :style=\"`background-image: url(${image})`\">\r\n<!--    <img class=\"min-h-[144px]\" :src=\"image\" alt=\"\">-->\r\n    <div class=\"main-desktop-slider-left-box pt-[10px] px-[15px] md:pt-[25px] md:px-[30px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center\">\r\n      <div v-if=\"mainTitle\" class=\"text-base font-medium text-right text-[40px] leading-[60px] text-white mb-2\">{{ mainTitle }}</div>\r\n      <div v-if=\"subTitle\" class=\"text-sm font-normal text-right text-[24px] leading-[40px] text-white mb-2\">{{ subTitle }}</div>\r\n      <div v-if=\"description\" class=\"text-xs font-normal text-right text-white mb-2\">{{ description }}</div>\r\n      <a :href=\"linkUrl\" target=\"_blank\" class=\"rounded-3xl mt-[20px] py-[7px] px-[35px] flex justify-center items-center text-center bg-[#FF3CA0] text-[28px] min-h-[44px] text-white text-sm\">\r\n        {{ linkTitle ?? 'مشاهده' }}\r\n      </a>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\nconst props = defineProps({\r\n  image: {\r\n    type: String,\r\n    default: '/images/artist-slider/1.png'\r\n  },\r\n  mainTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  subTitle: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  description: {\r\n    type: String,\r\n    default: ''\r\n  },\r\n  linkUrl: {\r\n    type: String,\r\n    default: '/'\r\n  },\r\n  linkTitle: {\r\n    type: String,\r\n    default: ''\r\n  }\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490141640,
+      "end": 1726490141913,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490141913,
+      "end": 1726490141913,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSliderItem.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/main/PopularArtistDesktopSliderItem.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/main/PopularArtistDesktopSliderItem.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726490141913,
+      "end": 1726490141926,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490141926,
+      "end": 1726490141926,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490141926,
+      "end": 1726490141927,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490141927,
+      "end": 1726490141927,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490141928,
+      "end": 1726490141928,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490141928,
+      "end": 1726490141928,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490141928,
+      "end": 1726490141928,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490141928,
+      "end": 1726490141928,
+      "order": "normal"
+    }
+  ]
+}

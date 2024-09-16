@@ -1,0 +1,214 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\" w-full flex flex-col items-start justify-start\">\r\n    <div class=\"relative w-full flex flex-row items-center justify-center py-[23px]\">\r\n      <div @click=\"goToWalletPage\" class=\"absolute right-[10px] cursor-pointer px-[8px] h-[37px] flex flex-row justify-between items-center border border-[#A9A7A7] rounded-[20px] bg-white\">\r\n        <AddMoneyIcon />\r\n        <span class=\"font-medium text-[18px] leading-[28px] mx-[8px]\">{{ user.coins }}</span>\r\n        <DollarIcon />\r\n      </div>\r\n      <div class=\"font-semibold text-[16px] text-[#141414] leading-[24px]\">تبلیغات ویژه</div>\r\n      <BackIcon @click=\"goBack\" class=\"absolute left-[10px]\"/>\r\n    </div>\r\n    <div class=\"flex flex-col justify-start items-start w-full px-[20px] py-[20px]\">\r\n      <ProfileLink :to=\"'/panel/upgrade'\">\r\n        <template #icon>\r\n          <AdvIcon />\r\n        </template>\r\n        <template #title>\r\n          <span class=\"text-[16px] leading-[25px]\">ارتقا حساب کاربری</span>\r\n        </template>\r\n      </ProfileLink>\r\n      <ProfileLink :to=\"'/panel/artist/laddering'\">\r\n        <template #icon>\r\n          <CharpIcon />\r\n        </template>\r\n        <template #title>\r\n          <span class=\"text-[16px] leading-[25px]\">نردبان</span>\r\n        </template>\r\n      </ProfileLink>\r\n      <ProfileLink :to=\"'/panel/artist/wallet'\">\r\n        <template #icon>\r\n          <CoinBlackIcon />\r\n        </template>\r\n        <template #title>\r\n          <span class=\"text-[16px] leading-[25px]\">خرید سکه</span>\r\n        </template>\r\n      </ProfileLink>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport DollarIcon from \"~/components/icons/DollarIcon.vue\";\r\nimport AddMoneyIcon from \"~/components/icons/AddMoneyIcon.vue\";\r\nimport AdvIcon from \"~/components/icons/AdvIcon.vue\";\r\nimport CharpIcon from \"~/components/icons/CharpIcon.vue\";\r\nimport CoinBlackIcon from \"~/components/icons/CoinBlackIcon.vue\";\r\nimport {useAuthStore} from \"~/store/Auth\";\r\n\r\ndefinePageMeta({\r\n  layout: 'artist-panel',\r\n  middleware: 'auth'\r\n})\r\n\r\nconst router = useRouter()\r\nconst auth = useAuthStore()\r\nconst user = ref(auth.user)\r\n\r\nconst goBack = () => {\r\n  router.back()\r\n}\r\n\r\nconst goToWalletPage = () => {\r\n  router.push('/panel/artist/wallet')\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490131494,
+      "end": 1726490131562,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490131562,
+      "end": 1726490131562,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/advertisements/index.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490131562,
+      "end": 1726490131563,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490131563,
+      "end": 1726490131563,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490131563,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490131564,
+      "end": 1726490131564,
+      "order": "normal"
+    }
+  ]
+}

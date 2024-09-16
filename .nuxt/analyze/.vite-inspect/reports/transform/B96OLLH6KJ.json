@@ -1,0 +1,17 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/nuxt/dist/app/types.js",
+  "transforms": [
+    {
+      "name": "__load__",
+      "result": "",
+      "start": 1726490132175,
+      "end": 1726490132175
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490132175,
+      "end": 1726490132175,
+      "order": "normal"
+    }
+  ]
+}

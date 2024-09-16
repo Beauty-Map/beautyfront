@@ -1,0 +1,259 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/MoonLoader.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"[spinnerMoonStyle,animationStyle2]\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'MoonLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    moonSize() {\n      return parseFloat(this.size)/7\n    },\n    spinnerMoonStyle () {\n      return {\n        height: this.moonSize  + 'px',\n        width: this.moonSize  + 'px',\n        borderRadius: this.radius\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',\n        backgroundColor: this.color\n      }\n    },\n    animationStyle3 () {\n      return {\n        border: this.moonSize + 'px solid ' + this.color\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n</style>",
+      "start": 1726490142945,
+      "end": 1726490142996,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142996,
+      "end": 1726490142996,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "\nconst _sfc_main = {\n  \n  name: 'MoonLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    moonSize() {\n      return parseFloat(this.size)/7\n    },\n    spinnerMoonStyle () {\n      return {\n        height: this.moonSize  + 'px',\n        width: this.moonSize  + 'px',\n        borderRadius: this.radius\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',\n        backgroundColor: this.color\n      }\n    },\n    animationStyle3 () {\n      return {\n        border: this.moonSize + 'px solid ' + this.color\n      }\n    }\n  }\n\n}\n\nimport { mergeProps as _mergeProps } from \"vue\"\nimport { ssrRenderStyle as _ssrRenderStyle, ssrRenderAttrs as _ssrRenderAttrs } from \"vue/server-renderer\"\n\nfunction _sfc_ssrRender(_ctx, _push, _parent, _attrs, $props, $setup, $data, $options) {\n  _push(`<div${\n    _ssrRenderAttrs(_mergeProps({\n      class: \"v-spinner\",\n      style: ($props.loading) ? null : { display: \"none\" }\n    }, _attrs))\n  }><div class=\"v-moon v-moon1\" style=\"${\n    _ssrRenderStyle($data.spinnerStyle)\n  }\"><div class=\"v-moon v-moon2\" style=\"${\n    _ssrRenderStyle([$options.spinnerMoonStyle,$options.animationStyle2])\n  }\"></div><div class=\"v-moon v-moon3\" style=\"${\n    _ssrRenderStyle([$data.spinnerStyle,$options.animationStyle3])\n  }\"></div></div></div>`)\n}\n\nimport \"/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/MoonLoader.vue?vue&type=style&index=0&lang.css\"\n\nimport { useSSRContext as __vite_useSSRContext } from 'vue'\nconst _sfc_setup = _sfc_main.setup\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext()\n  ;(ssrContext.modules || (ssrContext.modules = new Set())).add(\"node_modules/vue-spinner/src/MoonLoader.vue\")\n  return _sfc_setup ? _sfc_setup(props, ctx) : undefined\n}\nimport _export_sfc from '\u0000plugin-vue:export-helper'\nexport default /*#__PURE__*/_export_sfc(_sfc_main, [['ssrRender',_sfc_ssrRender]])",
+      "start": 1726490142996,
+      "end": 1726490142998,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "file": "/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/MoonLoader.vue",
+        "names": [],
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/node_modules/vue-spinner/src/MoonLoader.vue"
+        ],
+        "sourcesContent": [
+          "<template>\n<div class=\"v-spinner\" v-show=\"loading\">\n    <div class=\"v-moon v-moon1\" v-bind:style=\"spinnerStyle\">\n    <div class=\"v-moon v-moon2\" v-bind:style=\"[spinnerMoonStyle,animationStyle2]\">\n    </div><div class=\"v-moon v-moon3\" v-bind:style=\"[spinnerStyle,animationStyle3]\">\n    </div></div>\n  </div>\n</template>\n\n<script>\nexport default {\n  \n  name: 'MoonLoader',\n\n  props: {\n    loading: {\n      type: Boolean,\n      default: true\n    },\n    color: { \n      type: String,\n      default: '#5dc596'\n    },\n    size: {\n      type: String,\n      default: '60px'\n    },\n    margin: {\n      type: String,\n      default: '2px'\n    },\n    radius: {\n      type: String,\n      default: '100%'\n    }\n  },\n  data () {\n    return {\n      spinnerStyle: {\n        height: this.size,\n        width: this.size,\n        borderRadius: this.radius\n      }\n    }\n  },\n  computed: {\n    moonSize() {\n      return parseFloat(this.size)/7\n    },\n    spinnerMoonStyle () {\n      return {\n        height: this.moonSize  + 'px',\n        width: this.moonSize  + 'px',\n        borderRadius: this.radius\n      }\n    },\n    animationStyle2 () {\n      return {\n        top: parseFloat(this.size)/2 - this.moonSize/2 + 'px',\n        backgroundColor: this.color\n      }\n    },\n    animationStyle3 () {\n      return {\n        border: this.moonSize + 'px solid ' + this.color\n      }\n    }\n  }\n\n}\n</script>\n\n<style>\n\n.v-spinner .v-moon1\n{\n\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    position: relative;\n}\n\n.v-spinner .v-moon2\n{\n    -webkit-animation: v-moonStretchDelay 0.6s 0s infinite linear;\n            animation: v-moonStretchDelay 0.6s 0s infinite linear;\n    -webkit-animation-fill-mode: forwards;\n            animation-fill-mode: forwards;\n    opacity: 0.8;\n    position: absolute;\n}\n\n.v-spinner .v-moon3\n{\n    opacity: 0.1;\n}\n\n@-webkit-keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n\n@keyframes v-moonStretchDelay\n{\n    100%\n    {\n        -webkit-transform: rotate(360deg);\n                transform: rotate(360deg);\n    }\n}\n</style>"
+        ],
+        "mappings": "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"
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142998,
+      "end": 1726490142998,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142998,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142999,
+      "end": 1726490142999,
+      "order": "normal"
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioContentHeader.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\" }\nconst _hoisted_2 = { class: \"flex flex-col items-center justify-start\" }\nconst _hoisted_3 = { class: \"font-medium text-[#141414] text-right text-[22px] leading-[34px]\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\"\n}\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-[#828282]\" }, \"دسته بندی:\", -1)\nconst _hoisted_6 = { class: \"mr-1 text-[#2920D9]\" }\nconst _hoisted_7 = { class: \"flex flex-row justify-end gap-4\" }\n\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\r\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PortfolioContentHeader',\n  props: {\r\n  id: {\r\n    type: Number,\r\n    default: '',\r\n    required: true\r\n  },\r\n  title: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  },\r\n  service: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\r\nconst getServices = () => {\r\n  let services = []\r\n  let s = props.service\r\n  while (s) {\r\n    services.push(s.title)\r\n    s = s.parent\r\n  }\r\n  return services.reverse().join(',')\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(__props.title), 1),\n      (__props.service)\n        ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            _hoisted_5,\n            _createElementVNode(\"span\", _hoisted_6, _toDisplayString(getServices()), 1)\n          ]))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _createVNode(LikeIcon),\n      _createVNode(ShareIcon)\n    ])\n  ]))\n}\n}\n\n})",
+      "start": 1726490134177,
+      "end": 1726490134177
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490134177,
+      "end": 1726490134177,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490134177,
+      "end": 1726490134177,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490134177,
+      "end": 1726490134177,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490134177,
+      "end": 1726490134177,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\" };\nconst _hoisted_2 = { class: \"flex flex-col items-center justify-start\" };\nconst _hoisted_3 = { class: \"font-medium text-[#141414] text-right text-[22px] leading-[34px]\" };\nconst _hoisted_4 = {\n  key: 0,\n  class: \"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\"\n};\nconst _hoisted_5 = /* @__PURE__ */ _createElementVNode(\"span\", { class: \"text-[#828282]\" }, \"دسته بندی:\", -1);\nconst _hoisted_6 = { class: \"mr-1 text-[#2920D9]\" };\nconst _hoisted_7 = { class: \"flex flex-row justify-end gap-4\" };\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"PortfolioContentHeader\",\n  props: {\n    id: {\n      type: Number,\n      default: \"\",\n      required: true\n    },\n    title: {\n      type: String,\n      default: \"\",\n      required: true\n    },\n    service: {\n      type: Object,\n      required: true\n    }\n  },\n  setup(__props) {\n    const props = __props;\n    const getServices = () => {\n      let services = [];\n      let s = props.service;\n      while (s) {\n        services.push(s.title);\n        s = s.parent;\n      }\n      return services.reverse().join(\",\");\n    };\n    return (_ctx, _cache) => {\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createElementVNode(\"div\", _hoisted_2, [\n          _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(__props.title), 1),\n          __props.service ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            _hoisted_5,\n            _createElementVNode(\"span\", _hoisted_6, _toDisplayString(getServices()), 1)\n          ])) : _createCommentVNode(\"\", true)\n        ]),\n        _createElementVNode(\"div\", _hoisted_7, [\n          _createVNode(LikeIcon),\n          _createVNode(ShareIcon)\n        ])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490134177,
+      "end": 1726490134254,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/portfolio/PortfolioContentHeader.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { toDisplayString as _toDisplayString, createElementVNode as _createElementVNode, openBlock as _openBlock, createElementBlock as _createElementBlock, createCommentVNode as _createCommentVNode, createVNode as _createVNode } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-row items-center justify-between px-[10px] pb-[15px] border-b border-b-[#A9A7A7]\" }\nconst _hoisted_2 = { class: \"flex flex-col items-center justify-start\" }\nconst _hoisted_3 = { class: \"font-medium text-[#141414] text-right text-[22px] leading-[34px]\" }\nconst _hoisted_4 = {\n  key: 0,\n  class: \"flex flex-row items-center justify-start text-right text-[10px] font-light leading-[14px]\"\n}\nconst _hoisted_5 = /*#__PURE__*/_createElementVNode(\"span\", { class: \"text-[#828282]\" }, \"دسته بندی:\", -1)\nconst _hoisted_6 = { class: \"mr-1 text-[#2920D9]\" }\nconst _hoisted_7 = { class: \"flex flex-row justify-end gap-4\" }\n\nimport LikeIcon from \"~/components/icons/LikeIcon.vue\";\r\nimport ShareIcon from \"~/components/icons/ShareIcon.vue\";\r\n\r\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'PortfolioContentHeader',\n  props: {\r\n  id: {\r\n    type: Number,\r\n    default: '',\r\n    required: true\r\n  },\r\n  title: {\r\n    type: String,\r\n    default: '',\r\n    required: true\r\n  },\r\n  service: {\r\n    type: Object,\r\n    required: true\r\n  }\r\n},\n  setup(__props) {\n\r\n\r\nconst props = __props\r\n\r\nconst getServices = () => {\r\n  let services = []\r\n  let s = props.service\r\n  while (s) {\r\n    services.push(s.title)\r\n    s = s.parent\r\n  }\r\n  return services.reverse().join(',')\r\n}\r\n\nreturn (_ctx: any,_cache: any) => {\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createElementVNode(\"div\", _hoisted_2, [\n      _createElementVNode(\"h1\", _hoisted_3, _toDisplayString(__props.title), 1),\n      (__props.service)\n        ? (_openBlock(), _createElementBlock(\"div\", _hoisted_4, [\n            _hoisted_5,\n            _createElementVNode(\"span\", _hoisted_6, _toDisplayString(getServices()), 1)\n          ]))\n        : _createCommentVNode(\"\", true)\n    ]),\n    _createElementVNode(\"div\", _hoisted_7, [\n      _createVNode(LikeIcon),\n      _createVNode(ShareIcon)\n    ])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,mBAAmB,kBAAkB,sBAAsB,qBAAqB,aAAa,YAAY,sBAAsB,qBAAqB,sBAAsB,qBAAqB,eAAe,oBAAoB;AAE3O,MAAM,aAAa,EAAE,OAAO,oGAAoG;AAChI,MAAM,aAAa,EAAE,OAAO,2CAA2C;AACvE,MAAM,aAAa,EAAE,OAAO,mEAAmE;AAC/F,MAAM,aAAa;AAAA,EACjB,KAAK;AAAA,EACL,OAAO;AACT;AACA,MAAM,aAA0B,oCAAoB,QAAQ,EAAE,OAAO,iBAAiB,GAAG,cAAc,EAAE;AACzG,MAAM,aAAa,EAAE,OAAO,sBAAsB;AAClD,MAAM,aAAa,EAAE,OAAO,kCAAkC;AAE9D,OAAO,cAAc;AACrB,OAAO,eAAe;AAGtB,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,OAAO;AAAA,IACP,IAAI;AAAA,MACF,MAAM;AAAA,MACN,SAAS;AAAA,MACT,UAAU;AAAA,IACZ;AAAA,IACA,OAAO;AAAA,MACL,MAAM;AAAA,MACN,SAAS;AAAA,MACT,UAAU;AAAA,IACZ;AAAA,IACA,SAAS;AAAA,MACP,MAAM;AAAA,MACN,UAAU;AAAA,IACZ;AAAA,EACF;AAAA,EACE,MAAM,SAAS;AAGjB,UAAM,QAAQ;AAEd,UAAM,cAAc,MAAM;AACxB,UAAI,WAAW,CAAC;AAChB,UAAI,IAAI,MAAM;AACd,aAAO,GAAG;AACR,iBAAS,KAAK,EAAE,KAAK;AACrB,YAAI,EAAE;AAAA,MACR;AACA,aAAO,SAAS,QAAQ,EAAE,KAAK,GAAG;AAAA,IACpC;AAEA,WAAO,CAAC,MAAU,WAAgB;AAChC,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,oBAAoB,OAAO,YAAY;AAAA,UACrC,oBAAoB,MAAM,YAAY,iBAAiB,QAAQ,KAAK,GAAG,CAAC;AAAA,UACvE,QAAQ,WACJ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,YACpD;AAAA,YACA,oBAAoB,QAAQ,YAAY,iBAAiB,YAAY,CAAC,GAAG,CAAC;AAAA,UAC5E,CAAC,KACD,oBAAoB,IAAI,IAAI;AAAA,QAClC,CAAC;AAAA,QACD,oBAAoB,OAAO,YAAY;AAAA,UACrC,aAAa,QAAQ;AAAA,UACrB,aAAa,SAAS;AAAA,QACxB,CAAC;AAAA,MACH,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490134254,
+      "end": 1726490134254,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490134254,
+      "end": 1726490134254,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490134255,
+      "end": 1726490134255,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490134255,
+      "end": 1726490134261,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490134262,
+      "end": 1726490134262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490134262,
+      "end": 1726490134262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490134262,
+      "end": 1726490134262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490134262,
+      "end": 1726490134262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490134262,
+      "end": 1726490134262,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490134263,
+      "end": 1726490134263,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490134263,
+      "end": 1726490134263,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490134263,
+      "end": 1726490134263,
+      "order": "normal"
+    }
+  ]
+}

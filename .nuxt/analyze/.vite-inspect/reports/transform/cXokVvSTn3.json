@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/main/ServiceBox.vue?vue&type=script&setup=true&lang.ts",
+  "transforms": [
+    {
+      "name": "vite:vue",
+      "result": "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ServiceBox',\n  setup(__props) {\n\r\nconst services = ref<IService[]>([])\r\nconst getServices = async () => {\r\n  const {$getRequest: getRequest}=useNuxtApp()\r\n  getRequest('/services')\r\n      .then(res => {\r\n        services.value = res.data as IService[]\r\n      })\r\n}\r\n\r\nonMounted(() => {\r\n  nextTick(() => getServices())\r\n})\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_MainTitle = _resolveComponent(\"MainTitle\")!\n  const _component_ServiceGrid = _resolveComponent(\"ServiceGrid\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_MainTitle, {\n      title: 'خدمات',\n      class: \"mb-[8px]\"\n    }),\n    _createVNode(_component_ServiceGrid, { services: _unref(services) }, null, 8, [\"services\"])\n  ]))\n}\n}\n\n})",
+      "start": 1726490133084,
+      "end": 1726490133084
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490133084,
+      "end": 1726490133084,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490133084,
+      "end": 1726490133085,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490133085,
+      "end": 1726490133085,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490133085,
+      "end": 1726490133085,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ServiceBox\",\n  setup(__props) {\n    const services = ref([]);\n    const getServices = async () => {\n      const { $getRequest: getRequest } = useNuxtApp();\n      getRequest(\"/services\").then((res) => {\n        services.value = res.data;\n      });\n    };\n    onMounted(() => {\n      nextTick(() => getServices());\n    });\n    return (_ctx, _cache) => {\n      const _component_MainTitle = _resolveComponent(\"MainTitle\");\n      const _component_ServiceGrid = _resolveComponent(\"ServiceGrid\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_MainTitle, {\n          title: \"خدمات\",\n          class: \"mb-[8px]\"\n        }),\n        _createVNode(_component_ServiceGrid, { services: _unref(services) }, null, 8, [\"services\"])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133085,
+      "end": 1726490133128,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/components/main/ServiceBox.vue?vue&type=script&setup=true&lang.ts"
+        ],
+        "sourcesContent": [
+          "import { defineComponent as _defineComponent } from 'vue'\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\"\n\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start\" }\n\n\nexport default /*#__PURE__*/_defineComponent({\n  __name: 'ServiceBox',\n  setup(__props) {\n\r\nconst services = ref<IService[]>([])\r\nconst getServices = async () => {\r\n  const {$getRequest: getRequest}=useNuxtApp()\r\n  getRequest('/services')\r\n      .then(res => {\r\n        services.value = res.data as IService[]\r\n      })\r\n}\r\n\r\nonMounted(() => {\r\n  nextTick(() => getServices())\r\n})\r\n\nreturn (_ctx: any,_cache: any) => {\n  const _component_MainTitle = _resolveComponent(\"MainTitle\")!\n  const _component_ServiceGrid = _resolveComponent(\"ServiceGrid\")!\n\n  return (_openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n    _createVNode(_component_MainTitle, {\n      title: 'خدمات',\n      class: \"mb-[8px]\"\n    }),\n    _createVNode(_component_ServiceGrid, { services: _unref(services) }, null, 8, [\"services\"])\n  ]))\n}\n}\n\n})"
+        ],
+        "mappings": "AAAA,SAAS,mBAAmB,wBAAwB;AACpD,SAAS,oBAAoB,mBAAmB,eAAe,cAAc,SAAS,QAAQ,aAAa,YAAY,sBAAsB,2BAA2B;AAExK,MAAM,aAAa,EAAE,OAAO,iDAAiD;AAG7E,eAA4B,iCAAiB;AAAA,EAC3C,QAAQ;AAAA,EACR,MAAM,SAAS;AAEjB,UAAM,WAAW,IAAgB,CAAC,CAAC;AACnC,UAAM,cAAc,YAAY;AAC9B,YAAM,EAAC,aAAa,WAAU,IAAE,WAAW;AAC3C,iBAAW,WAAW,EACjB,KAAK,SAAO;AACX,iBAAS,QAAQ,IAAI;AAAA,MACvB,CAAC;AAAA,IACP;AAEA,cAAU,MAAM;AACd,eAAS,MAAM,YAAY,CAAC;AAAA,IAC9B,CAAC;AAED,WAAO,CAAC,MAAU,WAAgB;AAChC,YAAM,uBAAuB,kBAAkB,WAAW;AAC1D,YAAM,yBAAyB,kBAAkB,aAAa;AAE9D,aAAQ,WAAW,GAAG,oBAAoB,OAAO,YAAY;AAAA,QAC3D,aAAa,sBAAsB;AAAA,UACjC,OAAO;AAAA,UACP,OAAO;AAAA,QACT,CAAC;AAAA,QACD,aAAa,wBAAwB,EAAE,UAAU,OAAO,QAAQ,EAAE,GAAG,MAAM,GAAG,CAAC,UAAU,CAAC;AAAA,MAC5F,CAAC;AAAA,IACH;AAAA,EACA;AAEA,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490133128,
+      "end": 1726490133128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490133128,
+      "end": 1726490133128,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490133128,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490133129,
+      "end": 1726490133129,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { ref, onMounted, nextTick } from 'vue';\nimport { useNuxtApp } from '#app/nuxt';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ServiceBox\",\n  setup(__props) {\n    const services = ref([]);\n    const getServices = async () => {\n      const { $getRequest: getRequest } = useNuxtApp();\n      getRequest(\"/services\").then((res) => {\n        services.value = res.data;\n      });\n    };\n    onMounted(() => {\n      nextTick(() => getServices());\n    });\n    return (_ctx, _cache) => {\n      const _component_MainTitle = _resolveComponent(\"MainTitle\");\n      const _component_ServiceGrid = _resolveComponent(\"ServiceGrid\");\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_MainTitle, {\n          title: \"خدمات\",\n          class: \"mb-[8px]\"\n        }),\n        _createVNode(_component_ServiceGrid, { services: _unref(services) }, null, 8, [\"services\"])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133129,
+      "end": 1726490133136,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";;AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1D,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9K,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC/E,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACP,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAClE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC5C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACzB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC3B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACX,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACnG,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACT,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACN,CAAC,CAAC,CAAC;AACH,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490133136,
+      "end": 1726490133136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490133136,
+      "end": 1726490133136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490133136,
+      "end": 1726490133136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490133136,
+      "end": 1726490133136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "result": "import { default as __nuxt_component_0 } from \"/home/saeed/w/projects/beautymap/beautyfront/components/global/main/Title.vue\";\nimport { default as __nuxt_component_1 } from \"/home/saeed/w/projects/beautymap/beautyfront/components/service/ServiceGrid.vue\";\nimport { ref, onMounted, nextTick } from 'vue';\nimport { useNuxtApp } from '#app/nuxt';\nimport { defineComponent as _defineComponent } from \"vue\";\nimport { resolveComponent as _resolveComponent, createVNode as _createVNode, unref as _unref, openBlock as _openBlock, createElementBlock as _createElementBlock } from \"vue\";\nconst _hoisted_1 = { class: \"w-full flex flex-col items-start justify-start\" };\nexport default /* @__PURE__ */ _defineComponent({\n  __name: \"ServiceBox\",\n  setup(__props) {\n    const services = ref([]);\n    const getServices = async () => {\n      const { $getRequest: getRequest } = useNuxtApp();\n      getRequest(\"/services\").then((res) => {\n        services.value = res.data;\n      });\n    };\n    onMounted(() => {\n      nextTick(() => getServices());\n    });\n    return (_ctx, _cache) => {\n      const _component_MainTitle = __nuxt_component_0;\n      const _component_ServiceGrid = __nuxt_component_1;\n      return _openBlock(), _createElementBlock(\"div\", _hoisted_1, [\n        _createVNode(_component_MainTitle, {\n          title: \"خدمات\",\n          class: \"mb-[8px]\"\n        }),\n        _createVNode(_component_ServiceGrid, { services: _unref(services) }, null, 8, [\"services\"])\n      ]);\n    };\n  }\n});\n",
+      "start": 1726490133136,
+      "end": 1726490133136,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490133136,
+      "end": 1726490133136,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490133136,
+      "end": 1726490133137,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490133137,
+      "end": 1726490133137,
+      "order": "normal"
+    }
+  ]
+}

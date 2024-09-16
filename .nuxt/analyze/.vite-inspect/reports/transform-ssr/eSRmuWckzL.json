@@ -1,0 +1,250 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/components/modal/DeleteAccountModal.vue",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"bg-transparent duration-500 transition-all fixed top-0 right-0 bottom-0 left-0 flex flex-col justify-end items-center z-[999999999]\" @click=\"closeModal\"\r\n      :class=\"[open ? 'flex' : 'hidden']\"\r\n  >\r\n    <div class=\"mb-[30px] mx-6 bg-white relative rounded-[12px] px-[17px] py-[17px] min-w-[150px] min-h-[150px] shadow-[0px_8px_8px_-4px_#e2e8f0]\">\r\n      <DeleteAccountAlertIcon class=\"mb-2\"/>\r\n      <div class=\"w-full flex flex-col justify-start items-start\">\r\n        <div class=\"font-semibold text-right text-[#141414] text-[17px] leading-[26px]\">\r\n          پاک کردن حساب کاربری\r\n        </div>\r\n        <div class=\"mt-[8px] font-semibold text-right text-[#828282] text-[14px] leading-[21px]\">\r\n          آیا مطمئن هستید که می خواهید این حساب را حذف کنید؟ این عمل قابل بازگشت نیست.\r\n        </div>\r\n        <div class=\"mt-[15px] w-full flex flex-row justify-between items-center font-medium text-center text-white text-[14px] leading-[21px]\">\r\n          <button @click=\"doDelete\" class=\"min-w-[130px] bg-[#ED2C25] rounded-[50px] py-[10px] px-[38px]\">\r\n            پاک کردن\r\n          </button>\r\n          <button @click=\"closeModal\" class=\"min-w-[130px] bg-[#1EFF81] rounded-[50px] py-[10px] px-[38px] text-black\">\r\n            لغو\r\n          </button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport DeleteAccountAlertIcon from \"~/components/icons/DeleteAccountAlertIcon.vue\";\r\n\r\nconst emits = defineEmits(['close', 'delete'])\r\nconst props = defineProps({\r\n  open: {\r\n    type: Boolean,\r\n    default: false,\r\n  }\r\n})\r\n\r\nconst closeModal = () => {\r\n  emits('close')\r\n}\r\n\r\nconst doDelete = () => {\r\n  emits('delete')\r\n}\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490142150,
+      "end": 1726490142333,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490142333,
+      "end": 1726490142333,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/components/modal/DeleteAccountModal.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/components/modal/DeleteAccountModal.vue?vue&type=script&setup=true&lang.ts\";\nimport { useSSRContext as __vite_useSSRContext } from \"vue\";\nconst _sfc_setup = _sfc_main.setup;\n_sfc_main.setup = (props, ctx) => {\n  const ssrContext = __vite_useSSRContext();\n  (ssrContext.modules || (ssrContext.modules = /* @__PURE__ */ new Set())).add(\"components/modal/DeleteAccountModal.vue\");\n  return _sfc_setup ? _sfc_setup(props, ctx) : void 0;\n};\nexport default _sfc_main;\n",
+      "start": 1726490142333,
+      "end": 1726490142354,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490142355,
+      "end": 1726490142355,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142355,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490142355,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-template",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490142356,
+      "end": 1726490142356,
+      "order": "normal"
+    }
+  ]
+}

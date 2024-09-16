@@ -1,0 +1,231 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/plugins/2. date-picker.client.ts",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker'\r\nexport default defineNuxtPlugin(nuxtApp => {\r\n    nuxtApp.vueApp.use(Vue3PersianDatetimePicker, {\r\n        name: 'CustomDatePicker',\r\n        props: {\r\n            format: 'YYYY-MM-DD HH:mm',\r\n            displayFormat: 'jYYYY-jMM-jDD',\r\n            editable: false,\r\n            inputClass: 'form-control my-custom-class-name',\r\n            placeholder: 'تاریخ را انتخاب کنید',\r\n            altFormat: 'YYYY-MM-DD HH:mm',\r\n            color: '#00acc1',\r\n            autoSubmit: false,\r\n        }\r\n    })\r\n})",
+      "start": 1726490129585,
+      "end": 1726490129677,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490129677,
+      "end": 1726490129677,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490129677,
+      "end": 1726490129677,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490129677,
+      "end": 1726490129677,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490129677,
+      "end": 1726490129677,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "result": "import Vue3PersianDatetimePicker from \"vue3-persian-datetime-picker\";\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.use(Vue3PersianDatetimePicker, {\n    name: \"CustomDatePicker\",\n    props: {\n      format: \"YYYY-MM-DD HH:mm\",\n      displayFormat: \"jYYYY-jMM-jDD\",\n      editable: false,\n      inputClass: \"form-control my-custom-class-name\",\n      placeholder: \"تاریخ را انتخاب کنید\",\n      altFormat: \"YYYY-MM-DD HH:mm\",\n      color: \"#00acc1\",\n      autoSubmit: false\n    }\n  });\n});\n",
+      "start": 1726490129677,
+      "end": 1726490129750,
+      "order": "normal",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          "/home/saeed/w/projects/beautymap/beautyfront/plugins/2. date-picker.client.ts"
+        ],
+        "sourcesContent": [
+          "import Vue3PersianDatetimePicker from 'vue3-persian-datetime-picker'\r\nexport default defineNuxtPlugin(nuxtApp => {\r\n    nuxtApp.vueApp.use(Vue3PersianDatetimePicker, {\r\n        name: 'CustomDatePicker',\r\n        props: {\r\n            format: 'YYYY-MM-DD HH:mm',\r\n            displayFormat: 'jYYYY-jMM-jDD',\r\n            editable: false,\r\n            inputClass: 'form-control my-custom-class-name',\r\n            placeholder: 'تاریخ را انتخاب کنید',\r\n            altFormat: 'YYYY-MM-DD HH:mm',\r\n            color: '#00acc1',\r\n            autoSubmit: false,\r\n        }\r\n    })\r\n})"
+        ],
+        "mappings": "AAAA,OAAO,+BAA+B;AACtC,eAAe,iBAAiB,aAAW;AACvC,UAAQ,OAAO,IAAI,2BAA2B;AAAA,IAC1C,MAAM;AAAA,IACN,OAAO;AAAA,MACH,QAAQ;AAAA,MACR,eAAe;AAAA,MACf,UAAU;AAAA,MACV,YAAY;AAAA,MACZ,aAAa;AAAA,MACb,WAAW;AAAA,MACX,OAAO;AAAA,MACP,YAAY;AAAA,IAChB;AAAA,EACJ,CAAC;AACL,CAAC;",
+        "names": []
+      }
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490129750,
+      "end": 1726490129750,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490129750,
+      "end": 1726490129750,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "start": 1726490129750,
+      "end": 1726490129750,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490129750,
+      "end": 1726490129750,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490129750,
+      "end": 1726490129750,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490129750,
+      "end": 1726490129751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490129751,
+      "end": 1726490129751,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490129752,
+      "end": 1726490129752,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490129752,
+      "end": 1726490129753,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490129753,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490129754,
+      "end": 1726490129754,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "result": "import { defineNuxtPlugin } from '#app/nuxt';\nimport Vue3PersianDatetimePicker from \"vue3-persian-datetime-picker\";\nexport default defineNuxtPlugin((nuxtApp) => {\n  nuxtApp.vueApp.use(Vue3PersianDatetimePicker, {\n    name: \"CustomDatePicker\",\n    props: {\n      format: \"YYYY-MM-DD HH:mm\",\n      displayFormat: \"jYYYY-jMM-jDD\",\n      editable: false,\n      inputClass: \"form-control my-custom-class-name\",\n      placeholder: \"تاریخ را انتخاب کنید\",\n      altFormat: \"YYYY-MM-DD HH:mm\",\n      color: \"#00acc1\",\n      autoSubmit: false\n    }\n  });\n});\n",
+      "start": 1726490129754,
+      "end": 1726490129757,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": ";AAAA,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrE,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC9C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC7B,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACZ,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACjC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACrC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACtD,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AAC1C,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACpC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC;AACvB,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC,CAAC,CAAC;AACL,CAAC,CAAC,CAAC;"
+      }
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490129757,
+      "end": 1726490129757,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "start": 1726490129757,
+      "end": 1726490129757,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490129757,
+      "end": 1726490129757,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490129757,
+      "end": 1726490129757,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490129757,
+      "end": 1726490129757,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490129757,
+      "end": 1726490129758,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490129758,
+      "end": 1726490129758,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490129758,
+      "end": 1726490129758,
+      "order": "normal"
+    }
+  ]
+}

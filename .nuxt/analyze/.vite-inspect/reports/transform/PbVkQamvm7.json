@@ -1,0 +1,223 @@
+{
+  "resolvedId": "/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue?macro=true",
+  "transforms": [
+    {
+      "name": "vite:load-fallback",
+      "result": "<template>\r\n  <div class=\"h-[calc(100vh+110px)] flex flex-col justify-start items-start mt-[17px]\">\r\n    <div class=\"w-full flex flex-row justify-start items-center\">\r\n      <Header />\r\n      <BackIcon @click=\"goBack\" />\r\n    </div>\r\n    <div class=\"w-full flex-col justify-start items-start mt-[35px]\">\r\n      <TicketItem\r\n        v-for=\"(t,i) in tickets\"\r\n        :key=\"i\"\r\n        :ticket=\"t\"\r\n      />\r\n    </div>\r\n  </div>\r\n</template>\r\n\r\n<script setup lang=\"ts\">\r\n\r\nimport BackIcon from \"~/components/icons/BackIcon.vue\";\r\nimport Header from \"~/components/support/Header.vue\";\r\nimport TicketItem from \"~/components/support/TicketItem.vue\";\r\nimport {useCustomFetch} from \"~/composables/useCustomFetch\";\r\ndefinePageMeta({\r\n  layout: 'ticket',\r\n  middleware: 'auth'\r\n})\r\n\r\nconst router = useRouter()\r\n\r\nconst tickets = ref<ITicket[]>([])\r\nconst page = ref(1)\r\nconst goBack = () => {\r\n  router.replace('/support')\r\n}\r\n\r\nconst paginate = () => {\r\n  page.value += 1\r\n  getTickets()\r\n}\r\n\r\nconst getTickets = async () => {\r\n  const res = await useCustomFetch(`/own/tickets?page=${page.value}&limit=10`, {\r\n    method: \"GET\",\r\n  })\r\n  if (res.data.value) {\r\n    const list = res.data.value?.data as []\r\n    tickets.value.push(...list)\r\n  }\r\n}\r\nonMounted(() => {\r\n  setTimeout(() => {\r\n    getTickets()\r\n  })\r\n\r\n})\r\n</script>\r\n\r\n<style scoped>\r\n\r\n</style>",
+      "start": 1726490130671,
+      "end": 1726490131483,
+      "sourcemaps": null
+    },
+    {
+      "name": "nuxt:layer-aliasing",
+      "start": 1726490131483,
+      "end": 1726490131483,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:server-devonly:transform",
+      "start": 1726490131483,
+      "end": 1726490131483,
+      "order": "pre"
+    },
+    {
+      "name": "nuxt:client-fallback-auto-id",
+      "start": 1726490131483,
+      "end": 1726490131483,
+      "order": "pre"
+    },
+    {
+      "name": "vite:css",
+      "start": 1726490131483,
+      "end": 1726490131483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:esbuild",
+      "start": 1726490131483,
+      "end": 1726490131483,
+      "order": "normal"
+    },
+    {
+      "name": "vite:json",
+      "start": 1726490131483,
+      "end": 1726490131484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker",
+      "start": 1726490131484,
+      "end": 1726490131484,
+      "order": "normal"
+    },
+    {
+      "name": "vite:vue",
+      "result": "import _sfc_main from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue?vue&type=script&setup=true&lang.ts\";\nexport * from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue?vue&type=script&setup=true&lang.ts\";\nexport default _sfc_main;\n",
+      "start": 1726490131484,
+      "end": 1726490131526,
+      "order": "normal",
+      "sourcemaps": {
+        "mappings": ""
+      }
+    },
+    {
+      "name": "vite:vue-jsx",
+      "start": 1726490131526,
+      "end": 1726490131526,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490131526,
+      "end": 1726490131526,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:remove-plugin-metadata",
+      "start": 1726490131526,
+      "end": 1726490131526,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:chunk-error",
+      "start": 1726490131527,
+      "end": 1726490131527,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:components:imports",
+      "start": 1726490131527,
+      "end": 1726490131528,
+      "order": "normal"
+    },
+    {
+      "name": "replace",
+      "start": 1726490131528,
+      "end": 1726490131528,
+      "order": "normal"
+    },
+    {
+      "name": "ssr-styles",
+      "start": 1726490131528,
+      "end": 1726490131528,
+      "order": "normal"
+    },
+    {
+      "name": "vite:define",
+      "start": 1726490131538,
+      "end": 1726490131538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:css-post",
+      "start": 1726490131538,
+      "end": 1726490131538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:build-html",
+      "start": 1726490131538,
+      "end": 1726490131538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:worker-import-meta-url",
+      "start": 1726490131538,
+      "end": 1726490131538,
+      "order": "normal"
+    },
+    {
+      "name": "vite:asset-import-meta-url",
+      "start": 1726490131538,
+      "end": 1726490131539,
+      "order": "normal"
+    },
+    {
+      "name": "commonjs",
+      "start": 1726490131539,
+      "end": 1726490131539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:dynamic-import-vars",
+      "start": 1726490131539,
+      "end": 1726490131539,
+      "order": "normal"
+    },
+    {
+      "name": "vite:import-glob",
+      "start": 1726490131539,
+      "end": 1726490131539,
+      "order": "normal"
+    },
+    {
+      "name": "nuxt:composable-keys",
+      "start": 1726490131539,
+      "end": 1726490131539,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:imports-transform",
+      "start": 1726490131540,
+      "end": 1726490131542,
+      "order": "post"
+    },
+    {
+      "name": "unctx:transform",
+      "start": 1726490131542,
+      "end": 1726490131542,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:pages-macros-transform",
+      "result": "export { default } from \"/home/saeed/w/projects/beautymap/beautyfront/pages/panel/artist/support/tickets/index.vue?macro=true&vue&type=script&setup=true&lang.ts\"",
+      "start": 1726490131544,
+      "end": 1726490131544,
+      "order": "post",
+      "sourcemaps": {
+        "version": 3,
+        "sources": [
+          ""
+        ],
+        "names": [],
+        "mappings": "AAAA"
+      }
+    },
+    {
+      "name": "nuxt:runtime-paths-dep",
+      "start": 1726490131544,
+      "end": 1726490131545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:route-injection-plugin",
+      "start": 1726490131545,
+      "end": 1726490131545,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:components-loader",
+      "start": 1726490131545,
+      "end": 1726490131546,
+      "order": "post"
+    },
+    {
+      "name": "nuxt:tree-shake-composables:transform",
+      "start": 1726490131546,
+      "end": 1726490131546,
+      "order": "post"
+    },
+    {
+      "name": "vite:build-import-analysis",
+      "start": 1726490131546,
+      "end": 1726490131546,
+      "order": "normal"
+    },
+    {
+      "name": "vite:reporter",
+      "start": 1726490131547,
+      "end": 1726490131547,
+      "order": "normal"
+    }
+  ]
+}
