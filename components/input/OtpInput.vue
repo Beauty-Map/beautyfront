@@ -1,7 +1,7 @@
 <template>
   <div ref="container" class="flex flex-row gap-2 items-center justify-center py-4 ltr-dir w-full px-1">
     <input
-        type="text"
+        type="number"
         class="text-center h-[46px] w-[40px] rounded-[8px] outline-none duration-300 border text-[#141414] placeholder:text-[#141414]"
         :class="[hasError ? 'border-[#FF3CA0] focus:border-[#FF3CA0] shadow-[0px_0px_5.5px_0px__#FF3CA0]' : 'border-[#A9A7A7] focus:border-[#133C3E]']"
         placeholder="_"
