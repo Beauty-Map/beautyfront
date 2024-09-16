@@ -28,27 +28,24 @@ const portfolios = ref<IPortfolio[]>([])
 const artists = ref<IArtist[]>([])
 
 const selectedTab = ref<number>(1)
+const {$getRequest: getRequest}=useNuxtApp()
 
 const goBack = () => {
   router.back()
 }
 
 const getPortfolios = async () => {
-  const res = await useCustomFetch('/api/portfolios', {
-    method: "GET"
-  })
-  if (res.data.value) {
-    portfolios.value = (res.data.value?.data as IPortfolio[])
-  }
+  getRequest('/portfolios')
+      .then((res) => {
+        portfolios.value = (res.data?.data as IPortfolio[])
+      })
 }
 
 const getArtists = async () => {
-  const res = await useCustomFetch('/api/artists', {
-    method: "GET"
-  })
-  if (res.data.value) {
-    artists.value = (res.data.value?.data as IArtist[])
-  }
+  getRequest('/artists')
+      .then((res) => {
+        artists.value = (res.data.data as IArtist[])
+      })
 }
 
 const selectTab = (i: number) => {

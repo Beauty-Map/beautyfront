@@ -27,7 +27,6 @@ const openLoginRegisterModal = () => {
 }
 
 watch(() => auth.user, () => {
-  console.log(auth.user, "i")
   user.value = auth.user
 })
 </script>
