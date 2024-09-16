@@ -11,7 +11,7 @@ const getServices = async () => {
   const {$getRequest: getRequest}=useNuxtApp()
   getRequest('/services')
       .then(res => {
-        services.value = res.data.data as IService[]
+        services.value = res.data as IService[]
       })
 }
 

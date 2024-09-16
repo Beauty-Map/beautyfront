@@ -1,1 +1,0 @@
-{"version":3,"file":"dayjs-DjHdTGjd.js","sources":["../../../../node_modules/dayjs-nuxt/dist/runtime/composables/dayjs.mjs"],"sourcesContent":["import dayjs from \"#build/dayjs.imports.mjs\";\nexport function useDayjs() {\n  return dayjs;\n}\n"],"names":[],"mappings":";;AACO,SAAS,WAAW;AACzB,SAAO;AACT;","x_google_ignoreList":[0]}
