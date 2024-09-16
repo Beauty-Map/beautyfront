@@ -1,0 +1,1 @@
+import{_ as o,o as s,c as t,P as r}from"./entry.BtNxfFXi.js";const c={},n={class:"intro_page w-full h-screen"};function a(e,_){return s(),t("div",n,[r(e.$slots,"default")])}const f=o(c,[["render",a]]);export{f as default};
