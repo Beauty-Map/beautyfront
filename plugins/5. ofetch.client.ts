@@ -2,8 +2,8 @@ import {ofetch} from "ofetch";
 
 export default defineNuxtPlugin((app) => {
     const token = useCookie("token")
-    // const baseUrl = 'https://api.beautymap.ir/api'
-    const baseUrl = 'http://127.0.0.1:8000/api'
+    const baseUrl = 'https://api.beautymap.ir/api'
+    // const baseUrl = 'http://127.0.0.1:8000/api'
 
     const get = async (url: RequestInfo) => await ofetch(url,
         {
