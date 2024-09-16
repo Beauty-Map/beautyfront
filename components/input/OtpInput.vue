@@ -39,6 +39,7 @@ const container = ref()
 const handleEnter = (e: any, n: number) => {
   const children = container.value.children
   const pressedKey = e.key.toString();
+  alert(pressedKey)
   if (n > 0 && (pressedKey == 'Backspace' || pressedKey == 'Delete')) {
     otpArray.value[n] = ''
     setTimeout(() => {
