@@ -2,8 +2,11 @@
   <div class="w-full overflow-y-auto">
     <EmailInput title="ایمیل" v-model="form.email"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
-    <MainActionButton class="mt-[24px]" @click="doRegister">
-      <div class="text-white text-center text-[20px] leading-[30px]">ارسال کد تایید</div>
+    <MainActionButton :disabled="loading" class="mt-[24px]" @click="doRegister">
+      <div v-if="loading">
+        <LoadingComponent />
+      </div>
+      <div v-else class="text-white text-center text-[20px] leading-[30px]">ارسال کد تایید</div>
     </MainActionButton>
     <BottomText class="mt-[18px]" @click="openLoginModal" title="ورود"/>
     <OtpDrawer :is-open="openDrawer"
@@ -25,11 +28,15 @@ import EmailInput from "~/components/input/EmailInput.vue";
 import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
 import PasswordInput from "~/components/input/PasswordInput.vue";
+import LoadingComponent from "~/components/global/Loading.vue";
+import {useOtpResetSignal} from "~/composables/useOtpResetSignal";
 const app = useNuxtApp()
 const router = useRouter()
+const { emitOtpResetSignal } = useOtpResetSignal();
 
 const store = useDrawerStore()
 const openDrawer = ref(false)
+const loading = ref(false)
 
 const form = ref<IRegisterForm>({
   email: '',
@@ -49,7 +56,21 @@ const changeEmail = () => {
   openDrawerClicked()
 }
 
+const validated = () => {
+  let validated = true
+  if (!form.value.email) {
+    app.$toast.error('لطفا ایمیل خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+
+  return validated
+}
 const doRegister = async () => {
+  if (loading.value) return
+  if (!validated()) {
+    return
+  }
+  loading.value = true
   const data = {
     email: form.value.email,
   }
@@ -72,27 +93,25 @@ const openLoginModal = () => {
 }
 
 const validate = async (code: string) => {
+  const {$postRequest: postRequest}=app
   const data = {
     email: form.value.email,
     code: code,
   }
-  const res = await useCustomFetch('/auth/password/otp', {
-    method: "POST",
-    body: data
-  })
-  if (res.error.value != null) {
-    app.$toast.error('کد تایید صحیح نیست', {rtl: true})
-  }
-  if (res.data.value != null) {
-    app.$toast.success('ایمیل شما تایید شد', {rtl: true})
-    if (isMd) {
-      await router.push('/')
-    } else {
-      closeDrawerClicked()
-      store.closeAllDrawers()
-
-    }
-  }
+  postRequest('/auth/password/otp', data)
+      .then(async () => {
+        app.$toast.success('ایمیل شما تایید شد', {rtl: true})
+        if (isMd) {
+          await router.push('/')
+        } else {
+          closeDrawerClicked()
+          store.closeAllDrawers()
+        }
+      })
+      .catch(err => {
+        emitOtpResetSignal();
+        app.$toast.error('کد تایید صحیح نیست', {rtl: true})
+      })
 }
 
 const resend = async (code: string) => {

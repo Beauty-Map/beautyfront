@@ -18,7 +18,7 @@
       />
     </div>
 
-    <ArtistCallBox />
+    <ArtistCallBox :artist="user"/>
   </div>
   <div class="hidden w-full md:flex flex-col h-full relative px-[60px]">
     <div class="w-full text-center flex flex-row justify-center items-center mb-[55px]">
@@ -94,7 +94,7 @@ const options = ref({
   pagination: false,
   arrows: false,
 })
-
+const app = useNuxtApp()
 const router = useRouter()
 const route = useRoute()
 const user = ref<IArtist>({
@@ -119,15 +119,12 @@ const user = ref<IArtist>({
 })
 const id = route.params.id
 const getUser = async () => {
-  const res = await useCustomFetch(`/users/${id}`, {
+  useCustomFetch(`/users/${id}`, {
     method: "GET"
   })
-  if (res.data.value) {
-    user.value = res.data.value?.data as IArtist
-  }
-  if (res.error.value) {
-    // router.back()
-  }
+      .then(res => {
+        user.value = res.data.value?.data as IArtist
+      })
 }
 
 const goBack = () => {

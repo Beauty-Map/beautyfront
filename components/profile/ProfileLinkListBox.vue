@@ -50,6 +50,7 @@ import SecurityIcon from "~/components/icons/SecurityIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import {useAuthStore} from "~/store/Auth";
 
+const app = useNuxtApp()
 const auth = useAuthStore()
 const user = ref(auth.user)
 const store = useDrawerStore()
@@ -60,6 +61,7 @@ const exit = () => {
   auth.setToken(null)
   const token = useCookie('token')
   token.value = ''
+  app.$toast.success('با موفقیت خارج شدید', {rtl: true})
   store.closeAllDrawers()
   router.replace('/')
 }

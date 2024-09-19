@@ -2,8 +2,11 @@
   <div class="w-full overflow-y-auto">
     <OtpInput :length="6" v-model="form.code" :has-error="hasOtpError" class="mt-[20px] mb-[20px]" />
     <OtpResendButton ref="otpContainer" :reset="resetOtp" @resend="resendOtp"/>
-    <MainActionButton class="mt-[24px]" @click="checkOtpCode">
-      <div class="text-white text-center text-[20px] leading-[30px]">تایید</div>
+    <MainActionButton :disabled="loading" class="mt-[24px]" @click="checkOtpCode">
+      <div v-if="loading">
+        <LoadingComponent />
+      </div>
+      <div v-else class="text-white text-center text-[20px] leading-[30px]">تایید</div>
     </MainActionButton>
   </div>
 </template>
@@ -14,6 +17,7 @@ import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import OtpInput from "~/components/input/OtpInput.vue";
 import OtpResendButton from "~/components/otp-drawer/OtpResendButton.vue";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 const emits = defineEmits(['changePhoneNumber', 'resend', 'validate'])
 const props = defineProps({
@@ -24,6 +28,7 @@ const props = defineProps({
 })
 const app = useNuxtApp()
 const store = useDrawerStore()
+const loading = ref(false)
 
 const form = ref<IVerifyRegisterForm>({
   phone_number: props.modelValue,
@@ -38,25 +43,30 @@ const checkOtpCode = () => {
     app.$toast.error('کد تایید را وارد کنید', {rtl: true,})
     return
   }
-  emits('validate', form.value.code)
+  if (loading.value) return
+  loading.value = true
+  setTimeout(() => {
+    loading.value = false
+    emits('validate', form.value.code)
+  }, 500)
 }
 
 const resendOtp = async () => {
+  if (loading.value) return
+  loading.value = true
   resetOtp.value = !resetOtp.value
 
   const data = {
     phone_number: form.value.phone_number,
   }
-  const res = await useCustomFetch('/auth/register', {
-    method: "POST",
-    body: data
-  })
-  if (res.error.value != null) {
-    app.$toast.error('کد ورود با موفقیت ارسال شد', {rtl: true})
-  }
-  if (res.data.value != null) {
-    app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
-  }
+  const {$postRequest: postRequest}=app
+  postRequest('/auth/register', data)
+      .then(res => {
+        app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
+      })
+      .finally(() => {
+        setTimeout(()=>loading.value=false, 500)
+      })
 }
 watch(() => form.value.code, () => hasOtpError.value = false)
 onMounted(() => nextTick(() => {

@@ -15,7 +15,7 @@ const emits = defineEmits(['resend'])
 const props = defineProps({
   period: {
     type: Number,
-    default: 60
+    default: 120
   },
   reset: {
     type: Boolean,
@@ -37,7 +37,7 @@ const count = () => {
     if (time.value == 1) {
       clearInterval(timeCounter);
       timerEnded.value = true;
-      time.value = 60
+      time.value = 120
     } else {
       time.value = time.value - 1
     }

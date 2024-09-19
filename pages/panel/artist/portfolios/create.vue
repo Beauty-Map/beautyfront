@@ -71,7 +71,7 @@
       @click="doSave"
       :disabled="loading"
       :class="[loading ? ' bg-[rgb(177,177,177)]' : ' bg-[#FF3CA0]']"
-      class="absolute bottom-[30px] left-[22px] right-[22px] cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
+      class="absolute bottom-[30px] w-[calc(100%-46px)] left-[22px] right-[22px] cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
     <span v-if="loading">
       <LoadingComponent />
     </span>

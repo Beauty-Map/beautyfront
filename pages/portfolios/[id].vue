@@ -10,7 +10,7 @@
     <div class="w-full h-full">
       <PortfolioSlideBox :images="portfolio.images"/>
     </div>
-    <div class="w-full h-full pt-[21px] pb-[79px]">
+    <div class="w-full h-full pt-[21px] pb-[90px]">
       <PortfolioContentBox
           :portfolio="portfolio"
       />

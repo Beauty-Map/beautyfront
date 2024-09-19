@@ -6,16 +6,21 @@
 
 <script setup lang="ts">
 
-const auth = useSanctumAuth()
+import {useAuthStore} from "~/store/Auth";
+import {useDrawerStore} from "~/store/Drawer";
+
+const app = useNuxtApp()
+const store = useDrawerStore()
+const auth = useAuthStore()
 const router = useRouter()
 const doExit = () => {
-  auth.logout()
-      .then(res => {
-        router.replace('/')
-      })
-      .catch(err => {
-        console.log(err, "err")
-      })
+  auth.setUser(null)
+  auth.setToken(null)
+  const token = useCookie('token')
+  token.value = ''
+  app.$toast.success('با موفقیت خارج شدید', {rtl: true})
+  store.closeAllDrawers()
+  router.replace('/')
 }
 </script>
 

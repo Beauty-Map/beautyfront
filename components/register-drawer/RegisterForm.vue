@@ -1,7 +1,7 @@
 <template>
   <div class="w-full overflow-y-auto">
-    <EmailInput title="ایمیل" v-model="form.email"/>
-    <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
+    <EmailInput title="ایمیل" v-model="form.email" class="px-[2px]"/>
+    <PasswordInput title="یک کلمه عبور برای خود انتخاب کنید" v-model="form.password" class="mt-[27px]"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
     <MainActionButton :disabled="loading" class="mt-[24px]" @click="doRegister">
       <div v-if="loading">
@@ -30,8 +30,12 @@ import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
 import PasswordInput from "~/components/input/PasswordInput.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
+import {useOtpResetSignal} from "~/composables/useOtpResetSignal";
+import {useAuthStore} from "~/store/Auth";
 const app = useNuxtApp()
 const router = useRouter()
+const auth = useAuthStore()
+const { emitOtpResetSignal } = useOtpResetSignal();
 
 const store = useDrawerStore()
 const openDrawer = ref(false)
@@ -95,7 +99,6 @@ const doRegister = async () => {
         app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
         const email = useCookie('email')
         email.value = form.value.email
-        app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
         if (isMd) {
           await router.push('/register/validate')
         } else {
@@ -121,26 +124,30 @@ const openLoginModal = () => {
 }
 
 const validate = async (code: string) => {
+  const {$postRequest: postRequest}=app
   const data = {
     email: form.value.email,
     code: code,
   }
-  const res = await useCustomFetch('/auth/register/otp', {
-    method: "POST",
-    body: data
-  })
-  if (res.error.value != null) {
-    app.$toast.error('کد تایید صحیح نیست', {rtl: true})
-  }
-  if (res.data.value != null) {
-    app.$toast.success('ایمیل شما تایید شد', {rtl: true})
-    if (isMd) {
-      await router.push('/')
-    } else {
-      closeDrawerClicked()
-      store.closeAllDrawers()
-    }
-  }
+  postRequest('/auth/register/otp', data)
+      .then(async res => {
+        auth.user = res.data
+        auth.token = res.data.token
+        const token = useCookie("token")
+        token.value = res.data.token
+        app.$toast.success('ایمیل شما تایید شد', {rtl: true})
+        if (isMd) {
+          await router.push('/')
+        } else {
+          closeDrawerClicked()
+          store.closeAllDrawers()
+        }
+      })
+      .catch(err => {
+        emitOtpResetSignal();
+        app.$toast.error('کد تایید صحیح نیست', {rtl: true})
+      })
+
 }
 
 const resend = async (code: string) => {

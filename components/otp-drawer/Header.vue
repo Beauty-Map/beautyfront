@@ -4,11 +4,11 @@
       کد تایید را وارد کنید
     </div>
     <div class="font-medium text-[13px] leading-[18px] text-[#133C3E] text-center mx-7 mt-[15px]">
-      <span>
+      <div>
       لطفا کد تاییدی را که به ایمیل <span>{{ email }}</span> ارسال شده
       را وارد کنید.
-        <span class="text-[#400842] font-medium underline cursor-pointer" @click="changeEmail">ویرایش ایمیل</span>
-      </span>
+      </div>
+      <div class="text-[18px] mt-[16px] text-[#400842] font-medium underline cursor-pointer" @click="changeEmail">ویرایش ایمیل</div>
     </div>
   </div>
 </template>

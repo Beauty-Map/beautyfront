@@ -1,5 +1,5 @@
 <template>
-  <div class="" @click="toggleCheckBox">
+  <div class="w-[22px] h-[22px] flex justify-center items-center" @click="toggleCheckBox">
     <input type="checkbox" hidden v-model="value">
     <CheckBoxCheckedIcon v-if="modelValue"/>
     <CheckBoxIcon v-else/>

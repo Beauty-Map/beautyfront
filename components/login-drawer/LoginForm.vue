@@ -3,7 +3,6 @@
     <EmailInput title="ایمیل" v-model="form.email"/>
     <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
     <ResetPasswordLink class="mt-[18]"/>
-    <PolicyAndRulesButton class="mt-[18px]" v-model="form.accept_policy"/>
     <MainActionButton :disabled="loading" class="mt-[18px]" @click="doLogin">
       <div v-if="loading">
         <LoadingComponent />
@@ -47,11 +46,6 @@ const validated = () => {
     app.$toast.error('لطفا پسورد خود را وارد کنید', {rtl: true})
     validated = false
   }
-  if (!form.value.accept_policy) {
-    app.$toast.error('لطفا تیک گزینه تایید قوانین را بزنید', {rtl: true})
-    validated = false
-  }
-
   return validated
 }
 
@@ -71,8 +65,13 @@ const doLogin = async () => {
         app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
         store.closeAllDrawers()
       })
-      .catch(() => {
-        app.$toast.error('متاسفانه خطایی رخ داده است. دوباره امتحان کنید', {rtl: true,})
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
       })
       .finally(() => {
         setTimeout(()=>{

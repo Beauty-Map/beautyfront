@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full text-right font-semibold text-[#828282] text-[13px] leading-[20px]" @click="openResetPasswordModal">
-    بازیابی رمز عبور
+  <div class="w-full mt-[18px] text-right font-semibold text-black text-[16px] leading-[20px]" @click="openResetPasswordModal">
+    برای بازیابی رمز عبور کلیک کنید
   </div>
 </template>
 

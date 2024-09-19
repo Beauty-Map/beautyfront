@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-start justify-start w-full px-1">
+  <div class="flex flex-col items-start justify-start w-full">
     <div v-if="title" class="text-[14px] leading-[16px] text-right mb-1 font-medium"
          :class="[hasError ? 'text-[#F44336]' : 'text-[#141414]']"
     >
@@ -8,7 +8,7 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="email" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-left rounded-[8px] outline-none focus:outline-none pl-[40px] pr-[20px] placeholder:text-[#A9A7A7]"
+      <input type="email" class="w-[100%] h-[98%] text-left rounded-[8px] outline-none focus:outline-none pl-[35px] pr-[20px] placeholder:text-[#A9A7A7]"
              @input="validateEmailDebounce"
              v-model="value"
              :disabled="disabled"

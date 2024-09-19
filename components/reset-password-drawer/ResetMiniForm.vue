@@ -2,8 +2,11 @@
   <div class="w-full overflow-y-auto">
     <EmailInput @input="onInput" title="ایمیل" v-model="form.email"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
-    <MainActionButton class="mt-[24px]" @click="doRegister">
-      <div class="text-white text-center text-[20px] leading-[30px]">ارسال کد تایید</div>
+    <MainActionButton :disabled="loading" class="mt-[24px]" @click="doRegister">
+      <div v-if="loading">
+        <LoadingComponent />
+      </div>
+      <div v-else class="text-white text-center text-[20px] leading-[30px]">ارسال کد تایید</div>
     </MainActionButton>
     <BottomText class="mt-[18px]" @click="openLoginModal" title="ورود"/>
   </div>
@@ -11,17 +14,18 @@
 
 <script setup lang="ts">
 
-import TelInput from "~/components/input/TelInput.vue";
 import PolicyAndRulesButton from "~/components/icons/AuthDrawer/PolicyAndRulesButton.vue";
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import BottomText from "~/components/icons/AuthDrawer/BottomText.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import EmailInput from "~/components/input/EmailInput.vue";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 const emits = defineEmits(['sent', 'update:modelValue'])
 const app = useNuxtApp()
 const router = useRouter()
 const store = useDrawerStore()
+const loading = ref(false)
 
 const props = defineProps({
   modelValue: {
@@ -36,7 +40,23 @@ const form = ref<IRegisterForm>({
   accept_policy: false
 })
 
+
+const validated = () => {
+  let validated = true
+  if (!form.value.email) {
+    app.$toast.error('لطفا ایمیل خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+
+  return validated
+}
 const doRegister = async () => {
+
+  if (loading.value) return
+  if (!validated()) {
+    return
+  }
+  loading.value = true
   const data = {
     email: form.value.email,
   }

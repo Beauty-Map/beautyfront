@@ -54,6 +54,7 @@ import BeautyIcon from "~/components/icons/AuthDrawer/BeautyIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import {definePageMeta} from "#imports";
 import RegisterForm from "~/components/register-drawer/RegisterForm.vue";
+import {useOtpResetSignal} from "~/composables/useOtpResetSignal";
 
 definePageMeta({
   middleware: 'guest'
@@ -63,8 +64,11 @@ const app = useNuxtApp()
 const otpSent = ref<Boolean>(false)
 const router = useRouter()
 const showSetPassword = ref<Boolean>(false)
+const { emitOtpResetSignal } = useOtpResetSignal();
+
 const form = ref<IRegisterForm>({
   email: '',
+  password: '',
   accept_policy: false,
 })
 const rememberToken = ref<String>('')
@@ -81,24 +85,22 @@ const onOtpSent = () => {
 const resendOtp = () => {
   otpSent.value = false
 }
-
 const validate = async (code: string) => {
+  const {$postRequest: postRequest}=app
   const data = {
     email: form.value.email,
-    code: code
+    code: code,
   }
-  const res = await useCustomFetch('/auth/register/otp', {
-    method: "POST",
-    body: data
-  })
-  if (res.data.value) {
-    app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
-    showSetPassword.value = true
-    rememberToken.value = res.data.value?.token as string
-  }
-  if (res.error.value) {
-    app.$toast.error('کد ورود صحیح نیست!', {rtl: true})
-  }
+  postRequest('/auth/register/otp', data)
+      .then(async res => {
+        app.$toast.success('ایمیل شما تایید شد', {rtl: true})
+        showSetPassword.value = true
+        rememberToken.value = res.data.value?.token as string
+      })
+      .catch(err => {
+        emitOtpResetSignal();
+        app.$toast.error('کد ورود صحیح نیست!', {rtl: true})
+      })
 }
 </script>
 
