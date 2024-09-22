@@ -56,7 +56,7 @@ const closeCallModal = () => {
 const openNavigation = () => {
   if (!user.value) {
     store.openLoginDrawer()
-    app.$toast.error('برای تماس با این هنرمند وارد حساب کاربری خود شوید', {rtl: true})
+    app.$toast.error('برای مسیریابی وارد حساب کاربری خود شوید', {rtl: true})
     return
   }
   if (!props.artist?.location) {
