@@ -16,8 +16,8 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
   ],
   sanctum: {
-    // baseUrl: 'https://api.beautymap.ir', // Laravel API
-    baseUrl: 'http://localhost:8000', // Laravel API
+    baseUrl: 'https://api.beautymap.ir', // Laravel API
+    // baseUrl: 'http://localhost:8000', // Laravel API
     endpoints: {
       user: '/api/own',
       login: '/api/auth/login',
@@ -50,10 +50,10 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      baseURL: 'http://localhost:8000/api',
-      uploadURL: 'http://localhost:8000/api/upload',
-      // baseURL: 'https://api.beautymap.ir/api',
-      // uploadURL: 'https://api.beautymap.ir/api/upload',
+      // baseURL: 'http://localhost:8000/api',
+      // uploadURL: 'http://localhost:8000/api/upload',
+      baseURL: 'https://api.beautymap.ir/api',
+      uploadURL: 'https://api.beautymap.ir/api/upload',
     }
   },
   devServer: {
