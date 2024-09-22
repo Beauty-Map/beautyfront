@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col px-[23px] py-[10px] h-full w-full">
-    <PageHeader :title="'سرویس ها'" class="mb-[60px]"/>
+    <PageHeader :title="'دسته بندی ها'" class="mb-[60px]"/>
     <ServiceGrid :services="serviceArray" :circle="false"/>
   </div>
 </template>

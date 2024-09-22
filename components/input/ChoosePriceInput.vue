@@ -110,13 +110,15 @@ const formattedPropDiscountPrice = computed(() => {
 })
 
 const onPriceInput = (e) => {
-  const value = e.target.value.replace(/[^0-9]/g, '')
+  const value = e.target.value.replace(/\D/g, '')
   price.value = value ? parseInt(value) : ''
+  e.target.value = price.value.toLocaleString()
 }
 
 const onDiscountPriceInput = (e) => {
-  const value = e.target.value.replace(/[^0-9]/g, '')
+  const value = e.target.value.replace(/\D/g,'')
   discountPrice.value = value ? parseInt(value) : ''
+  e.target.value = discountPrice.value.toLocaleString()
 }
 
 const saveModal = () => {

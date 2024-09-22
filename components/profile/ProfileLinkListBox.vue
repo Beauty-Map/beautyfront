@@ -6,7 +6,7 @@
       </template>
       <template #title>پروفایل</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist'">
+    <ProfileLink :is-link="false" @click="openArtistPanel">
       <template #icon>
         <ArtistPanelIcon />
       </template>
@@ -36,7 +36,7 @@
       </template>
       <template #title>تماس باما</template>
     </ProfileLink>
-    <ButtonExit @click="exit" v-if="user"/>
+    <ButtonExit @click="exit" v-if="auth.user"/>
   </div>
 </template>
 
@@ -55,6 +55,14 @@ const auth = useAuthStore()
 const user = ref(auth.user)
 const store = useDrawerStore()
 const router = useRouter()
+
+const openArtistPanel = () => {
+  if (!auth.user) {
+    store.openLoginDrawer()
+    return
+  }
+  router.push('/panel/artist')
+}
 
 const exit = () => {
   auth.setUser(null)

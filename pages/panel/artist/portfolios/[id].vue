@@ -54,7 +54,7 @@
     </div>
     <div class="w-full flex flex-col">
       <ChooseServiceInput v-model="form.service" />
-      <ChooseMaintenanceInput v-model="form.maintenance" />
+<!--      <ChooseMaintenanceInput v-model="form.maintenance" />-->
       <ChooseCallNumberInput
           :has-tel="form.has_tel"
           :has-phone-number="form.has_phone_number"

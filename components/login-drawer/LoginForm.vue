@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <EmailInput title="ایمیل" v-model="form.email"/>
+    <EmailInput title="ایمیل" v-model="form.email" class="px-2"/>
     <PasswordInput title="کلمه عبور" v-model="form.password" class="mt-[27px]"/>
     <ResetPasswordLink class="mt-[18]"/>
     <MainActionButton :disabled="loading" class="mt-[18px]" @click="doLogin">

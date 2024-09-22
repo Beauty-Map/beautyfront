@@ -20,7 +20,7 @@
       <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText}}</span>
     </div>
 
-    <Modal v-if="value" :show-close="false" :open="showModal">
+    <Modal :show-close="false" :open="showModal">
       <div class="w-full flex flex-col justify-start items-center max-w-[340px] min-w-[300px]">
         <div class="font-medium text-center text-[#133C3E] text-[22px] leading-[32px]">
           {{ getHeaderText }}

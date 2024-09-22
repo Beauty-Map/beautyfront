@@ -1,7 +1,7 @@
 <template>
   <div class="w-full overflow-y-auto">
     <EmailInput @input="onInput" title="ایمیل" v-model="form.email"/>
-    <PasswordInput title="یک کلمه عبور برای خود انتخاب کنید" v-model="form.password" class="mt-[27px]"/>
+    <PasswordInput title="یک کلمه عبور برای خود انتخاب کنید" v-model="form.password" class="px-1 mt-[27px]"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
     <MainActionButton :disabled="loading" class="mt-[24px]" @click="doRegister">
       <div v-if="loading">

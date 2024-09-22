@@ -11,14 +11,17 @@
   <div class="w-full text-center text-[#133C3E] text-[14px] leading-[21px] font-semibold mt-[33px]">سن شما به کاربران نمایش داده نمی شود</div>
   <div class="flex flex-col justify-start items-start">
     <ArtistAvatar @choose="onUserAvatarChanged" :avatar="user.avatar" class="mt-[35px] mb-[22px]"/>
+    <div class="font-semibold text-[16px] text-red-600 leading-[24px]">
+      برای تایید شدن پروفایل تمامی موارد ستاره دار را وارد کنید.
+    </div>
     <div class="w-full overflow-y-auto">
-      <TextInput title="نام و نام خانوادگی" v-model="form.full_name" class="mt-[27px]"/>
-      <EmailInput title="ایمیل" v-model="form.email" :disabled="true" class="mt-[27px]"/>
-      <TelInput title="شماره موبایل" v-model="form.phone_number" class="mt-[27px]"/>
+      <TextInput title="نام و نام خانوادگی *" v-model="form.full_name" class="mt-[27px]"/>
+      <EmailInput title="ایمیل *" v-model="form.email" :disabled="true" class="mt-[27px]"/>
+      <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
       <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>
-      <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px]"/>
+      <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
       <TelInput title="تلفن ثابت" v-model="form.tel_number" class="mt-[27px]"/>
-      <ChooseCityInput title="شهر محل فعالیت" v-model="form.city_id" class="mt-[27px]"/>
+      <ChooseCityInput title="شهر محل فعالیت *" v-model="form.city_id" class="mt-[27px]"/>
       <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
       <ChooseLocationInput title="انتخاب لوکیشن" v-model="form.location" :point="form.location" class="mt-[27px]"/>
       <ChooseWorkHourInput
@@ -31,7 +34,7 @@
           @update:is-all-day-open="open => form.is_all_day_open = open"
           class="mt-[27px]"
       />
-      <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px]"/>
+      <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px] px-2"/>
       <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
       <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.documents" class="mt-[27px]"/>
       <MainActionButton :disabled="loading" class="mt-[80px]" @click="doSaveProfile">
@@ -68,11 +71,10 @@ import LoadingComponent from "~/components/global/Loading.vue";
 
 const store = useDrawerStore()
 const auth = useAuthStore()
-const user = ref(auth.user)
+const user = computed(() => auth.user)
 const app = useNuxtApp()
 const route = useRoute()
 const loading = ref(false)
-
 const form = ref({
   full_name: user.value?.full_name,
   email: user.value?.email,
@@ -155,6 +157,7 @@ const doSaveProfile = async () => {
         app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
         store.closeAllDrawers()
         store.openArtistAgreementDrawer()
+        auth.own()
         // window.location.reload()
       })
       .catch(err => {

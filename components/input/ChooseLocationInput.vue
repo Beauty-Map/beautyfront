@@ -9,12 +9,13 @@
          :class="[hasError ? 'border-[#F44336]' : '']"
          @click="openMapDrawer"
     >
-      <div class="h-full w-full">
+      <div class="h-full w-full ltr-dir">
         <LMap
             ref="map"
             :zoom="zoom"
-            :center="getLatLng"
+            :center="[47.21322, -1.559482]"
             :options="options"
+            :use-global-leaflet="false"
             v-if="loaded"
         >
           <LTileLayer

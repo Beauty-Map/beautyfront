@@ -49,6 +49,9 @@ import ArtistLocationIcon from "~/components/icons/ArtistLocationIcon.vue";
 import 'dayjs/locale/fa'
 import localizedFormat from 'dayjs/plugin/localizedFormat'
 import jalaliday from 'jalaliday'
+import {useAuthStore} from "~/store/Auth";
+import {useDrawerStore} from "~/store/Drawer";
+const emits = defineEmits(['click', 'toggleBookmark'])
 const props = defineProps({
   artist: {
     type: Object,
@@ -56,6 +59,9 @@ const props = defineProps({
   }
 })
 
+const app = useNuxtApp()
+const auth = useAuthStore()
+const drawerStore = useDrawerStore()
 const router = useRouter()
 const dayjs = useDayjs()
 dayjs.locale('fa')
@@ -70,7 +76,16 @@ const goToPage = () => {
 }
 
 const toggleBookmark = (bookmarked: boolean) => {
-  props.artist.is_bookmarked = bookmarked
+  if (!auth.user) {
+    drawerStore.openLoginDrawer()
+    return
+  }
+  const {$postRequest:postRequest} = app
+  postRequest(`/artists/${props.artist.id}/like`, {})
+      .then(res => {
+        props.artist.is_bookmarked = !props.artist.is_bookmarked
+        emits('toggleBookmark', props.artist)
+      })
 }
 
 const getCreatedAtAgoFa = computed(() => {

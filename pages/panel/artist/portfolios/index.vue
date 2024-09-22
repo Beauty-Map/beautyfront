@@ -17,18 +17,29 @@
             v-for="(p, i) in portfolios"
             :key="i"
             :portfolio="p"
+            :is-bookmarked="p.is_bookmarked"
             :is-panel="true"
         />
         <InfiniteLoading :firstload="true" v-if="showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
       </div>
     </div>
     <div class="fixed pt-[10px] left-0 right-0 bottom-0 pb-[40px] px-[30px] flex flex-col justify-start items-start bg-white z-[9999]">
-      <nuxt-link to="/panel/artist/portfolios/create" class="cursor-pointer flex flex-row justify-start items-center">
+      <nuxt-link @click.prevent="openNewPortfolioPage" class="cursor-pointer flex flex-row justify-start items-center">
         <PlusButtonIcon />
         <div class="px-[8px] py-[3px] rounded-full bg-[#E7FAF4] text-center mr-[4px] text-[#133C3E] font-medium text-[12px] leading-[18px]">نمونه کار جدید</div>
       </nuxt-link>
     </div>
     <FilterPortfolioDrawer @close="closeFilterDrawer" @choose="chooseService" :is-open="showFilterDrawer" />
+    <Modal :show-close="false" :open="showModal">
+      <div class="w-full flex flex-col justify-start items-center max-w-[340px] min-w-[300px]">
+        <div class="w-full relative rounded-[10px] h-[50px] flex flex-col justify-start items-center mt-[20px]">
+          برای ثبت نمونه کار ابتدا اطلاعات پروفایل خود را تکمیل کنید.
+        </div>
+        <div class="w-full flex flex-row justify-end items-center mt-[20px] gap-[8px] grow text-[14px] leading-[21px] font-medium text-[#2920D9]">
+          <span @click="closeModal">متوجه شدم</span>
+        </div>
+      </div>
+    </Modal>
   </div>
 </template>
 
@@ -40,6 +51,9 @@ import FilterIcon from "~/components/icons/FilterIcon.vue";
 import BackIcon from "~/components/icons/BackIcon.vue";
 import PlusButtonIcon from "~/components/icons/PlusButtonIcon.vue";
 import InfiniteLoading from "v3-infinite-loading";
+import AtSignIcon from "~/components/icons/AtSignIcon.vue";
+import {useAuthStore} from "~/store/Auth";
+import {useDrawerStore} from "~/store/Drawer";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -47,14 +61,34 @@ definePageMeta({
 })
 
 const router = useRouter()
+const auth = useAuthStore()
+const store = useDrawerStore()
 const portfolios = ref<IPortfolio[]>([])
 const lastPage = ref<number>(1)
 const page = ref<number>(1)
 const showFilterDrawer = ref<Boolean>(false)
 const showInfiniteScroll = ref<Boolean>(false)
+const showModal = ref<Boolean>(false)
 
 const goBack = () => {
   router.replace('/panel/artist')
+}
+
+const openNewPortfolioPage = () => {
+  if (!auth.user?.is_artist_profile_completed) {
+    openModal()
+    return
+  }
+  router.push('/panel/artist/portfolios/create')
+}
+
+const openModal = () => {
+  showModal.value = true
+}
+
+const closeModal = () => {
+  showModal.value = false
+  store.openArtistProfileDrawer()
 }
 
 const openFilterDrawer = () => {

@@ -29,8 +29,11 @@
           </div>
         </div>
       </div>
-      <button @click="doPay" class="bg-[#FFEA2E] rounded-[20px] w-full text-center py-[11px] px-[18px] text-black font-semibold text-[14px] leading-[21px]">
-        پرداخت
+      <button :disabled="loading" @click="doPay" :class="[loading ? ' bg-[rgb(177,177,177)]' : ' bg-[#FFEA2E]']" class="bg-[#FFEA2E] rounded-[20px] w-full text-center py-[11px] px-[18px] text-black font-semibold text-[14px] leading-[21px]">
+        <span v-if="loading">
+          <LoadingComponent />
+        </span>
+        <span v-else>پرداخت</span>
       </button>
     </div>
     <LazyPayResultModal @close="closePayResultModal" :is-open="showPayResultModal"/>
@@ -44,6 +47,7 @@ import BackIcon from "~/components/icons/BackIcon.vue";
 import AddMoneyIcon from "~/components/icons/AddMoneyIcon.vue";
 import PaymentOptionDescIcon from "~/components/icons/PaymentOptionDescIcon.vue";
 import {useAuthStore} from "~/store/Auth";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -55,18 +59,27 @@ const auth = useAuthStore()
 const user = ref(auth.user)
 const option = ref<IPaymentOption|null>(null)
 const showPayResultModal = ref<boolean>(false)
-
+const loading = ref<boolean>(false)
+const app = useNuxtApp()
 const goBack = () => {
   router.back()
 }
 
 const doPay = () => {
-  const {$postRequest: postRequest}=useNuxtApp()
+  loading.value = true
+  const {$postRequest: postRequest}=app
   postRequest(`/payments`, {
     payment_id: option.value?.id
   })
       .then(res => {
-        console.log(res, "res")
+        window.location.href = res.payment_url
+        app.$toast.success('در حال انتقال به درگاه پرداخت می باشید. لطفا صبر کنید.', {rtl: true})
+      })
+      .catch(err => {
+
+      })
+      .finally(() => {
+        setTimeout(() => loading.value = false, 500)
       })
 }
 

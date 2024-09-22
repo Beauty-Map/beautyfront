@@ -28,7 +28,7 @@
         </div>
       </div>
       <div class="flex flex-row items-center justify-start absolute right-0 bottom-0 z-[9999]">
-        <Bookmark @bookmark="toggleBookmark" :bookmarked="portfolio.is_bookmarked" />
+        <Bookmark @bookmark="toggleBookmark" :bookmarked="isBookmarked" />
         <nuxt-link to="/" class="bg-[#085EC2] mr-[20px] rounded-[10px] px-[10px] py-[4px] text-white text-[8px] leading-[12px] cursor-pointer font-medium text-center">جزئیات دقیق</nuxt-link>
       </div>
     </div>
@@ -41,7 +41,8 @@
 <script setup lang="ts">
 import Bookmark from "~/components/bookmark/Bookmark.vue";
 import {useDrawerStore} from "~/store/Drawer";
-const emits = defineEmits(['click'])
+import {useAuthStore} from "~/store/Auth";
+const emits = defineEmits(['click', 'toggleBookmark'])
 const props = defineProps({
   portfolio: {
     type: Object,
@@ -54,14 +55,20 @@ const props = defineProps({
   isLink: {
     type: Boolean,
     default: true,
+  },
+  isBookmarked: {
+    type: Boolean,
+    default: false,
   }
 })
 
 const router = useRouter()
 const drawerStore = useDrawerStore()
+const auth = useAuthStore()
+const app = useNuxtApp()
 
-const user = useSanctumUser()
-
+const user = computed(() => auth.user)
+const isBookmarked = ref<boolean>(props.isBookmarked)
 const getThumbnail = () => {
   if (props.portfolio.images.length > 0) {
     return props.portfolio.images[0]
@@ -86,7 +93,12 @@ const toggleBookmark = (bookmarked: boolean) => {
     drawerStore.openLoginDrawer()
     return
   }
-  props.portfolio.is_bookmarked = bookmarked
+  const {$postRequest:postRequest} = app
+  postRequest(`/portfolios/${props.portfolio.id}/like`, {})
+      .then(res => {
+        isBookmarked.value = !isBookmarked.value
+        emits('toggleBookmark', props.portfolio)
+      })
 }
 
 const calcDiscountPercent = (p: number, d: number) => {

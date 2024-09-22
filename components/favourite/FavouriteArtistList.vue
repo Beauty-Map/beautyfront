@@ -4,6 +4,7 @@
       v-for="(a, i) in artists"
       :key="i"
       :artist="a"
+      @toggleBookmark="toggleBookmark"
     />
   </div>
 </template>
@@ -12,6 +13,7 @@
 
 import ArtistItem from "~/components/artist/ArtistItem.vue";
 
+const emits = defineEmits(['toggleBookmark'])
 const props = defineProps({
   artists: {
     type: Array,
@@ -19,6 +21,9 @@ const props = defineProps({
     required: true
   }
 })
+const toggleBookmark = (p) => {
+  emits('toggleBookmark', p)
+}
 </script>
 
 <style scoped>

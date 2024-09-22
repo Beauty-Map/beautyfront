@@ -4,12 +4,15 @@
       v-for="(p, i) in portfolios"
       :key="i"
       :portfolio="p"
+      :is-bookmarked="p.is_bookmarked"
+      @toggleBookmark="toggleBookmark"
     />
   </div>
 </template>
 
 <script setup lang="ts">
 
+const emits = defineEmits(['toggleBookmark'])
 const props = defineProps({
   portfolios: {
     type: Array,
@@ -17,6 +20,9 @@ const props = defineProps({
     required: true
   }
 })
+const toggleBookmark = (p) => {
+  emits('toggleBookmark', p)
+}
 </script>
 
 <style scoped>

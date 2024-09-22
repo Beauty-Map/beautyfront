@@ -8,19 +8,25 @@
       </div>
     </div>
     <div class="flex flex-row justify-end gap-4">
-      <LikeIcon />
-      <ShareIcon />
+<!--      <LikeIcon v-if="auth.user" @click="doLike"/>-->
+      <Bookmark v-if="auth.user" @click="doBookmark" :bookmarked="isBookmarked"/>
+      <ShareIcon @click="doShare"/>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 
-import LikeIcon from "~/components/icons/LikeIcon.vue";
 import ShareIcon from "~/components/icons/ShareIcon.vue";
+import {useAuthStore} from "~/store/Auth";
 
 const props = defineProps({
   id: {
+    type: Number,
+    default: '',
+    required: true
+  },
+  bookmarked: {
     type: Number,
     default: '',
     required: true
@@ -36,6 +42,10 @@ const props = defineProps({
   }
 })
 
+const app = useNuxtApp()
+const auth = useAuthStore()
+const isBookmarked = ref(props.bookmarked)
+
 const getServices = () => {
   let services = []
   let s = props.service
@@ -44,6 +54,21 @@ const getServices = () => {
     s = s.parent
   }
   return services.reverse().join(',')
+}
+
+const doBookmark = () => {
+  const {$postRequest:postRequest} = app
+  postRequest(`/portfolios/${props.id}/like`, {})
+      .then(res => {
+        isBookmarked.value = !isBookmarked.value
+      })
+}
+
+const doShare = async () => {
+  const link = window.location.href
+  await navigator.share({
+    url: link,
+  })
 }
 </script>
 

@@ -105,7 +105,7 @@ const openServicePage = () => {
 }
 
 const openArtistPlanPage = () => {
-  if (user.value) {
+  if (auth.user) {
     router.push('/panel/artist')
   } else {
     store.openLoginDrawer()
@@ -113,7 +113,11 @@ const openArtistPlanPage = () => {
 }
 
 const openFavouritePage = () => {
-  router.push('/favourites')
+  if (auth.user) {
+    router.push('/favourites')
+  } else {
+    store.openLoginDrawer()
+  }
 }
 
 const openProfilePage = () => {

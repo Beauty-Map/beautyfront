@@ -27,11 +27,11 @@
       </template>
       <template #title>تماس با پشتیبانی</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/banners'">
+    <ProfileLink :is-link="false" @click="onShareClicked">
       <template #icon>
         <BannerIcon />
       </template>
-      <template #title>دریافت بنر هنرمند</template>
+      <template #title>اشتراک گذاری</template>
     </ProfileLink>
     <ProfileLink :to="'/panel/artist/views'">
       <template #icon>
@@ -62,11 +62,26 @@ const props = defineProps({
 })
 
 const store = useDrawerStore()
+const app = useNuxtApp()
 const auth = useAuthStore()
 const user = ref(auth.user)
 
 const openArtistProfileDrawer = () => {
   store.openArtistProfileDrawer()
+}
+
+const onShareClicked = async () => {
+  if (!user.value) {
+    app.$toast.error('برای دسترسی به این بخش وارد شوید', {rtl: true})
+    store.openLoginDrawer()
+    return
+  }
+  let link = window.location.host;
+  link = `${link}/artist?ref=${user.value?.id}`
+  await navigator.share({
+    url: link,   // URL to be shared
+  })
+  app.$toast.success('برای دسترسی به این بخش وارد شوید', {rtl: true})
 }
 </script>
 

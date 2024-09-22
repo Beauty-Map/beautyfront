@@ -9,9 +9,8 @@
       </div>
       <TabHeader @select="selectTab"/>
     </div>
-    <FavouritePortfolioList :portfolios="portfolios" v-if="selectedTab == 1"/>
-    <FavouriteArtistList :artists="artists" v-if="selectedTab == 2"/>
-
+    <FavouritePortfolioList :portfolios="portfolios" v-if="selectedTab == 1" @toggle-bookmark="togglePortfolioBookmark"/>
+    <FavouriteArtistList :artists="artists" v-if="selectedTab == 2" @toggle-bookmark="toggleArtistBookmark"/>
   </div>
 </template>
 
@@ -22,29 +21,43 @@ import BackIcon from "~/components/icons/BackIcon.vue";
 import TabHeader from "~/components/favourite/TabHeader.vue";
 import FavouritePortfolioList from "~/components/favourite/FavouritePortfolioList.vue";
 
+definePageMeta({
+  middleware: 'auth',
+})
+
 const router = useRouter()
+const app = useNuxtApp()
 
 const portfolios = ref<IPortfolio[]>([])
 const artists = ref<IArtist[]>([])
 
 const selectedTab = ref<number>(1)
-const {$getRequest: getRequest}=useNuxtApp()
 
 const goBack = () => {
   router.back()
 }
 
+const togglePortfolioBookmark = () => {
+  getPortfolios()
+}
+
+const toggleArtistBookmark = () => {
+  getArtists()
+}
+
 const getPortfolios = async () => {
-  getRequest('/portfolios')
+  const {$getRequest: getRequest}=app
+  getRequest('/own/portfolios/favourite')
       .then((res) => {
-        portfolios.value = (res.data?.data as IPortfolio[])
+        portfolios.value = (res.data as IPortfolio[])
       })
 }
 
 const getArtists = async () => {
-  getRequest('/artists')
+  const {$getRequest: getRequest}=app
+  getRequest('/own/artists/favourite')
       .then((res) => {
-        artists.value = (res.data.data as IArtist[])
+        artists.value = (res.data as IArtist[])
       })
 }
 
@@ -59,3 +72,5 @@ getArtists()
 <style scoped>
 
 </style>
+<script setup lang="ts">
+</script>

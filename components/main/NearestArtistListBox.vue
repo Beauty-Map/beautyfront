@@ -6,6 +6,7 @@
           v-for="(a, i) in artists"
           :key="i"
           :artist="a"
+          @toggleBookmark="toggleBookmark"
       />
     </div>
   </div>
@@ -19,6 +20,9 @@ import {useSearchStore} from "~/store/Search";
 const artists = ref<IArtist[]>([])
 
 const search = useSearchStore()
+
+const toggleBookmark = (a) => {
+}
 
 const getArtists = async () => {
   const lat = search.lat

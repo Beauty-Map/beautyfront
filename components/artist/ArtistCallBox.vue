@@ -8,12 +8,12 @@
     </div>
     <Modal :open="showCallModal" @close="closeCallModal">
       <div class="w-full h-full flex flex-col gap-[13px] justify-center items-center">
-        <div class="cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]">
+        <a :href="`tel:${artist.tel}`" class="cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]">
           تلفن ثابت
-        </div>
-        <div class="cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]">
+        </a>
+        <a :href="`tel:${artist.phone_number}`" class="cursor-pointer flex justify-center items-center rounded-[10px] border border-[#133C3E] bg-[#085EC2] text-white text-[20px] leading-[31px] font-bold text-center px-[65px] py-[15px]">
           تلفن همراه
-        </div>
+        </a>
       </div>
     </Modal>
   </div>

@@ -40,17 +40,16 @@
               v-model="form.description"
               class="w-full px-[10px] py-[4px] mx-[10px] mt-[10px] outline-none focus:outline-none text-[16px]"
               placeholder="کراتینه مو یک روش موثر برای صافی، درخشندگی و شادابی موهای فر ..."
-              maxlength="200"
-              rows="2"
+              rows="4"
           >
           </textarea>
-          <span class="w-full text-right text-[#828282] text-[14px] font-medium leading-[21px]">200 / {{ form.description.length }}</span>
+          <span class="w-full text-right text-[#828282] text-[14px] font-medium leading-[21px]">{{ form.description.length }}</span>
         </div>
       </div>
     </div>
     <div class="w-full flex flex-col">
       <ChooseServiceInput v-model="form.service" />
-      <ChooseMaintenanceInput v-model="form.maintenance" />
+<!--      <ChooseMaintenanceInput v-model="form.maintenance" />-->
       <ChooseCallNumberInput
           :has-tel="form.has_tel"
           :has-phone-number="form.has_phone_number"
@@ -152,8 +151,8 @@ const openImageChooser = () => {
 }
 
 const onChooseImage = async (e) => {
-  selectedFiles.value = []
-  selectedImages.value = []
+  // selectedFiles.value = []
+  // selectedImages.value = []
   const files = e.target?.files
   if (files.length == 0) {
     return
@@ -161,7 +160,10 @@ const onChooseImage = async (e) => {
   for (let i = 0; i < files.length; i++) {
     const reader = new FileReader();
     reader.onload = () => {
-      selectedImages.value.push(reader.result)
+      selectedImages.value = [
+        reader.result,
+        ...selectedImages.value,
+      ]
     };
 
     reader.readAsDataURL(files[i]);
@@ -236,6 +238,10 @@ const validated = () => {
     app.$toast.error('لطفا عنوان نمونه کار را وارد کنید', {rtl: true})
     validated = false
   }
+  if (selectedImages.value.length == 0) {
+    app.$toast.error('لطفا عکس های نمونه کار را انتخاب کنید', {rtl: true})
+    validated = false
+  }
   if (!form.value.description) {
     app.$toast.error('لطفا توضیحات نمونه کار را وارد کنید', {rtl: true})
     validated = false
@@ -244,12 +250,12 @@ const validated = () => {
     app.$toast.error('لطفا دسته بندی نمونه کار را انتخاب کنید', {rtl: true})
     validated = false
   }
-  if (!form.value.price) {
-    app.$toast.error('لطفا قیمت نمونه کار را وارد کنید', {rtl: true})
+  if (!form.value.has_phone_number && !form.value.has_tel) {
+    app.$toast.error('لطفا شماره تماس رزرو نوبت را وارد کنید', {rtl: true})
     validated = false
   }
-  if (selectedImages.value.length == 0) {
-    app.$toast.error('لطفا عکس های نمونه کار را انتخاب کنید', {rtl: true})
+  if (!form.value.price) {
+    app.$toast.error('لطفا قیمت نمونه کار را وارد کنید', {rtl: true})
     validated = false
   }
 
@@ -258,9 +264,9 @@ const validated = () => {
 
 const doSave = async () => {
   if (loading.value) return
-  if (!validated()) {
-    return
-  }
+  // if (!validated()) {
+  //   return
+  // }
   loading.value = true
   const data = {
     title: form.value.title,

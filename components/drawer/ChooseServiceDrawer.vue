@@ -4,6 +4,10 @@
       :class="[isOpen ? 'left-0' : 'left-[-100%]']"
   >
     <div class="flex flex-col justify-start items-center h-full w-full relative">
+      <div class="w-full relative flex flex-row items-center justify-center py-[23px]">
+        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">خدمات</div>
+        <BackIcon @click="goBack" class="absolute left-0"/>
+      </div>
       <div class="w-full flex flex-row items-center justify-between text-right font-medium text-[#141414] text-[18px] leading-[27px]">
         <span>{{ title }}</span>
         <ArrowUpIcon />
@@ -32,6 +36,7 @@
 
 import ArrowUpIcon from "~/components/icons/ArrowUpIcon.vue";
 import DoneCheckIcon from "~/components/icons/DoneCheckIcon.vue";
+import BackIcon from "~/components/icons/BackIcon.vue";
 
 const emits = defineEmits(['close', 'choose'])
 const props = defineProps({
@@ -86,6 +91,10 @@ watch(() => props.isOpen, () => {
   }
   selectedService.value = props.selected as IService
 })
+
+const goBack = () => {
+  close()
+}
 </script>
 
 <style scoped>

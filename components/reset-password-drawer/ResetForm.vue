@@ -1,6 +1,6 @@
 <template>
   <div class="w-full overflow-y-auto">
-    <EmailInput title="ایمیل" v-model="form.email"/>
+    <EmailInput title="ایمیل" v-model="form.email" class="px-2"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
     <MainActionButton :disabled="loading" class="mt-[24px]" @click="doRegister">
       <div v-if="loading">
@@ -27,12 +27,12 @@ import {useDrawerStore} from "~/store/Drawer";
 import EmailInput from "~/components/input/EmailInput.vue";
 import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
-import PasswordInput from "~/components/input/PasswordInput.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
 import {useOtpResetSignal} from "~/composables/useOtpResetSignal";
 const app = useNuxtApp()
 const router = useRouter()
 const { emitOtpResetSignal } = useOtpResetSignal();
+const {$postRequest: postRequest}=app
 
 const store = useDrawerStore()
 const openDrawer = ref(false)
@@ -74,7 +74,6 @@ const doRegister = async () => {
   const data = {
     email: form.value.email,
   }
-  const {$postRequest: postRequest}=app
   postRequest('/auth/password/forgot', data)
       .then(res => {
         const email = useCookie('email')
@@ -85,6 +84,7 @@ const doRegister = async () => {
       .catch(err => {
         app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
       })
+      .finally(() => loading.value = false)
 }
 
 const openLoginModal = () => {
@@ -93,20 +93,20 @@ const openLoginModal = () => {
 }
 
 const validate = async (code: string) => {
-  const {$postRequest: postRequest}=app
   const data = {
     email: form.value.email,
     code: code,
   }
   postRequest('/auth/password/otp', data)
-      .then(async () => {
-        app.$toast.success('ایمیل شما تایید شد', {rtl: true})
-        if (isMd) {
-          await router.push('/')
-        } else {
-          closeDrawerClicked()
-          store.closeAllDrawers()
-        }
+      .then(async (res) => {
+        const reset = useCookie('rpt', {
+          maxAge: 60*5
+        })
+        reset.value = res.token
+        app.$toast.success('کد تایید شد. لطفا پسورد جدید را وارد کنید', {rtl: true})
+        store.closeAllDrawers()
+        openDrawer.value = false
+        store.openSetPasswordDrawer()
       })
       .catch(err => {
         emitOtpResetSignal();
@@ -118,19 +118,16 @@ const resend = async (code: string) => {
   const data = {
     email: form.value.email,
   }
-  const res = await useCustomFetch('/auth/password/forgot', {
-    method: "POST",
-    body: data
-  })
-  if (res.error.value != null) {
-    app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
-  }
-  if (res.data.value != null) {
-    const email = useCookie('email')
-    email.value = form.value.email
-    app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
-    openDrawerClicked()
-  }
+  postRequest('/auth/password/forgot',data)
+      .then(res => {
+        const email = useCookie('email')
+        email.value = form.value.email
+        app.$toast.success('کد ورود با موفقیت ارسال شد', {rtl: true})
+        openDrawerClicked()
+      })
+      .catch(err => {
+        app.$toast.error('ایمیل صحیح نیست!', {rtl: true})
+      })
 }
 
 // const isMd = computed(() => window.screen.width >= 768)
