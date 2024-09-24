@@ -39,6 +39,10 @@ const openDrawer = ref(false)
 const {$postRequest: postRequest}=app
 const {$putRequest: putRequest}=app
 const doSendCode = async () => {
+  if (loading.value) {
+    return
+  }
+  loading.value = true
   if (!form.value.alt_number) {
     errors.value.alt_number = 'شماره موبایل جایگزین را وارد کنید'
     return
@@ -55,6 +59,9 @@ const doSendCode = async () => {
             app.$toast.error(errors[k][e], {rtl: true,})
           }
         }
+      })
+      .finally(() => {
+        loading.value = false
       })
 }
 
