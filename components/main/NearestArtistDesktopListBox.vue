@@ -38,10 +38,12 @@ const search = useSearchStore()
 const getArtists = async () => {
   const lat = search.lat
   const lng = search.lng
+  const page = ref(1)
+  const limit = ref(6)
   setTimeout(async () => {
-    let url = `/nearest`
+    let url = `/nearest?page=${page.value}&limit=${limit.value}`
     if (lat && lng) {
-      url += `?lat=${lat}&lng=${lng}`
+      url += `&lat=${lat}&lng=${lng}`
     }
     const res = await useCustomFetch(url, {
       method: "GET"

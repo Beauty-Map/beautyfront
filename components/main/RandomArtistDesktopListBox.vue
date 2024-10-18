@@ -39,9 +39,9 @@ const getArtists = async () => {
   const lat = search.lat
   const lng = search.lng
   setTimeout(async () => {
-    let url = `/nearest`
+    let url = `/nearest?page=1&limit=10`
     if (lat && lng) {
-      url += `?lat=${lat}&lng=${lng}`
+      url += `&lat=${lat}&lng=${lng}`
     }
     const res = await useCustomFetch(url, {
       method: "GET"

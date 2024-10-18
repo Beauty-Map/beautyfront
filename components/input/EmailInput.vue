@@ -8,7 +8,7 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="email" class="w-[100%] h-[98%] text-left rounded-[8px] outline-none focus:outline-none pl-[35px] pr-[20px] placeholder:text-[#A9A7A7]"
+      <input name="email" type="email" class="w-[100%] h-[98%] text-left rounded-[8px] outline-none focus:outline-none pl-[35px] pr-[20px] placeholder:text-[#A9A7A7]"
              @input="validateEmailDebounce"
              v-model="value"
              :disabled="disabled"
