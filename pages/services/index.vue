@@ -15,15 +15,19 @@ definePageMeta({
 const serviceArray = ref<IService[]>([])
 
 const getServiceList = async () => {
-  const res = await useCustomFetch('/services', {
-    method: "GET"
-  })
-  if (res.data.value) {
-    serviceArray.value = res.data.value.data as IService[]
-  }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest('/services')
+      .then(res => {
+        alert('Hiiii')
+        serviceArray.value = res.data as IService[]
+      })
 }
 
-onMounted(async () => await getServiceList())
+onMounted(async () => {
+  alert('yes!!!')
+  await getServiceList()
+  alert('no!!!')
+})
 </script>
 
 <style scoped>

@@ -12,12 +12,6 @@
       </template>
       <template #title>ورود به پنل هنرمندان</template>
     </ProfileLink>
-<!--    <ProfileLink :to="'http://127.0.0.1:5000'">-->
-<!--      <template #icon>-->
-<!--        <ArtistPanelIcon />-->
-<!--      </template>-->
-<!--      <template #title>ورود به پنل بازاریاب</template>-->
-<!--    </ProfileLink>-->
     <ProfileLink v-if="auth.user" :is-link="false" @click="share">
       <template #icon>
         <ReferralIcon />

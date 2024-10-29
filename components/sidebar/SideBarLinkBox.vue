@@ -10,11 +10,6 @@
         <ArtistPanelIcon />
       </template>
     </SideBarLink>
-<!--    <SideBarLink to="http://127.0.0.1:5000" title="ورود به پنل بازاریاب">-->
-<!--      <template #icon>-->
-<!--        <ArtistPanelIcon />-->
-<!--      </template>-->
-<!--    </SideBarLink>-->
     <SideBarLink v-if="auth.user" :is-link="false" @click="share" title="معرفی به دوستان">
       <template #icon>
         <ReferralIcon />
