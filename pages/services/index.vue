@@ -18,15 +18,12 @@ const getServiceList = async () => {
   const {$getRequest: getRequest}=useNuxtApp()
   getRequest('/services')
       .then(res => {
-        alert('Hiiii')
         serviceArray.value = res.data as IService[]
       })
 }
 
 onMounted(async () => {
-  alert('yes!!!')
   await getServiceList()
-  alert('no!!!')
 })
 </script>
 
