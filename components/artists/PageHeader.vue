@@ -24,11 +24,15 @@ const doSearch = async () => {
   }
   query.page = searchStore.page.toString()
   const {$getRequest: getRequest}=useNuxtApp()
+  let queries = []
   for (const [key, value] of Object.entries(query)) {
-    console.log(key, value);
+    queries.push(`${key}=${value}`)
   }
-  console.log(query, "query")
-  getRequest('/search/artists', query)
+  let url = '/search/artists'
+  if (queries.length > 0) {
+    url += `?${queries.join('&')}`
+  }
+  getRequest(url, query)
       .then(res => {
         let list = res.data as []
         if (list.length == 0) {
