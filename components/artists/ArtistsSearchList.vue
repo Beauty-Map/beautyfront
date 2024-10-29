@@ -24,6 +24,10 @@ const paginate = async () => {
 
 const paginateDebounce = useDebounce(paginate, 500)
 
+onMounted(() => {
+  searchStore.page = 1
+  searchStore.paginate()
+})
 </script>
 
 <style scoped>
