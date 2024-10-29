@@ -12,10 +12,12 @@ interface IArtist {
     portfolios_count: number
     services_count: number
     rating: number
+    view: number
     services: IService[]
     banners: string[]
     portfolios: IPortfolio[]
     work_hours: IWorkHour[]
+    socials: Object
     licenses: string[]
 }
 

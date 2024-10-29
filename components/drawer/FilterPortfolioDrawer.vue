@@ -43,6 +43,19 @@ const props = defineProps({
   title: {
     type: String,
     default: 'فیلتر'
+  },
+  selected: {
+    type: Object,
+    default: {
+      id: -1,
+      title: 'همه خدمات',
+      image: '',
+      is_active: 0,
+      parent_id: null,
+      created_at: '',
+      updated_at: '',
+      children: []
+    }
   }
 })
 
@@ -53,16 +66,7 @@ const close = () => {
 }
 
 const serviceArray = ref<IService[]>([])
-const selectedService = ref<IService|null>({
-  id: -1,
-  title: 'همه خدمات',
-  image: '',
-  is_active: 0,
-  parent_id: null,
-  created_at: '',
-  updated_at: '',
-  children: []
-})
+const selectedService = ref<IService|null>(props.selected as IService)
 
 const selectService = (s: IService) => {
   selectedService.value = s
@@ -71,7 +75,7 @@ const selectService = (s: IService) => {
 }
 
 const getServiceList = async () => {
-  const res = await useCustomFetch('/services', {
+  const res = await useCustomFetch('/services/children', {
     method: "GET"
   })
   if (res.data.value) {
@@ -94,7 +98,7 @@ const getServiceList = async () => {
 }
 
 const initSelectedService = () => {
-  let service = route.query.services ? route.query.services as string : ''
+  let service = route.query.service ? route.query.service as string : ''
   if (!service || !(/^-?\d+$/.test(service))) {
     selectedService.value = {
       id: -1,

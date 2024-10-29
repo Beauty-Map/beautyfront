@@ -15,7 +15,7 @@
 <!--        <ArtistPanelIcon />-->
 <!--      </template>-->
 <!--    </SideBarLink>-->
-    <SideBarLink to="/panel/referral" title="معرفی به دوستان">
+    <SideBarLink v-if="auth.user" :is-link="false" @click="share" title="معرفی به دوستان">
       <template #icon>
         <ReferralIcon />
       </template>
@@ -48,6 +48,16 @@ import ArtistPanelIcon from "~/components/icons/ArtistPanelIcon.vue";
 import ReferralIcon from "~/components/icons/ReferralIcon.vue";
 import SecurityIcon from "~/components/icons/SecurityIcon.vue";
 import ContactIcon from "~/components/icons/ContactIcon.vue";
+import {useAuthStore} from "~/store/Auth";
+
+const auth = useAuthStore()
+
+const share = async () => {
+  const link = `www.beautymap.ir/?ref=${auth.user?.referral_code}`
+  await navigator.share({
+    url: link,
+  })
+}
 </script>
 
 <style scoped>

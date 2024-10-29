@@ -18,7 +18,7 @@
 <!--      </template>-->
 <!--      <template #title>ورود به پنل بازاریاب</template>-->
 <!--    </ProfileLink>-->
-    <ProfileLink :to="'/panel/referral'">
+    <ProfileLink v-if="auth.user" :is-link="false" @click="share">
       <template #icon>
         <ReferralIcon />
       </template>
@@ -49,6 +49,7 @@ import ContactIcon from "~/components/icons/ContactIcon.vue";
 import SecurityIcon from "~/components/icons/SecurityIcon.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import {useAuthStore} from "~/store/Auth";
+import SideBarLink from "~/components/sidebar/SideBarLink.vue";
 
 const app = useNuxtApp()
 const auth = useAuthStore()
@@ -77,6 +78,12 @@ const exit = () => {
 const openSecurityDrawer = () => {
   store.closeAllDrawers()
   store.openSecurityDrawer()
+}
+const share = async () => {
+  const link = `www.beautymap.ir/?ref=${auth.user?.referral_code}`
+  await navigator.share({
+    url: link,
+  })
 }
 </script>
 

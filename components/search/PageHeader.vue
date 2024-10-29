@@ -15,7 +15,7 @@
         <ArrowDownIcon />
       </div>
     </div>
-    <FilterPortfolioDrawer @close="closeFilterDrawer" @choose="chooseService" :is-open="showFilterDrawer" />
+    <FilterPortfolioDrawer @close="closeFilterDrawer" @choose="chooseService" :selected="selectedService" :is-open="showFilterDrawer" />
     <SortPortfolioDrawer @close="closeSortDrawer" @choose="chooseSort" :is-open="showSortDrawer" />
   </div>
 </template>
@@ -38,6 +38,16 @@ const searchStore = useSearchStore()
 
 const showFilterDrawer = ref<Boolean>(false)
 const showSortDrawer = ref<Boolean>(false)
+const selectedService = ref({
+  id: -1,
+  title: 'همه خدمات',
+  image: '',
+  is_active: 0,
+  parent_id: null,
+  created_at: '',
+  updated_at: '',
+  children: []
+})
 
 const openFilterDrawer = () => {
   showFilterDrawer.value = true
@@ -53,9 +63,10 @@ const chooseService = async (s: IService) => {
   }
   delete query.page
   if (s.id == -1) {
-    delete query.services
+    delete query.service
   } else {
-    query.services = s.id.toString()
+    query.service = s.id.toString()
+    selectedService.value = s
   }
   searchStore.reset()
   await router.replace({ query })
@@ -135,6 +146,7 @@ const doChangeTerm = async () => {
     delete query.term
   } else {
     query.term = searchTerm.value as string
+    searchStore.reset()
   }
   await router.replace({ query })
   await doSearch()

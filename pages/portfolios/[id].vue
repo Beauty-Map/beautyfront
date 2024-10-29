@@ -98,8 +98,12 @@ const getPortfolio = async () => {
 const goBack = () => {
   router.back()
 }
-
+const addPortfolioView = async () => {
+  const {$postRequest: postRequest}=useNuxtApp()
+  postRequest(`/portfolios/${id}/view`)
+}
 await getPortfolio()
+await addPortfolioView()
 </script>
 
 <style scoped>

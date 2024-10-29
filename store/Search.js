@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 export const useSearchStore = defineStore('search', {
     state: () => ({
         portfolios: [],
+        artists: [],
         page: 1,
         lastPage: 1,
         showInfiniteScroll: false,
@@ -11,6 +12,7 @@ export const useSearchStore = defineStore('search', {
     }),
     getters: {
         getPortfolios: (state) => state.portfolios,
+        getArtists: (state) => state.artists,
         getPage: (state) => state.page,
         getLastPage: (state) => state.lastPage,
         getShowInfiniteScroll: (state) => state.showInfiniteScroll,
@@ -25,6 +27,12 @@ export const useSearchStore = defineStore('search', {
             this.page = 1
             this.lastPage = 1
             this.portfolios = []
+        },
+        resetArtists() {
+            this.showInfiniteScroll = false
+            this.page = 1
+            this.lastPage = 1
+            this.artists = []
         },
         setUserCurrentLocation(lat, lng) {
             this.lat = lat

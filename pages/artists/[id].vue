@@ -1,10 +1,10 @@
 <template>
-  <div class="w-full flex md:hidden flex-col h-full relative pb-[100px]">
+  <div class="w-full flex flex-col h-full relative pb-[100px]">
     <div class="pl-[3px] fixed left-[23px] pt-[21px] pb-[79px] z-[999999]">
       <PortfolioPageBackIcon @click="goBack" />
     </div>
     <div class="w-full h-full">
-      <ArtistBannerSlideBox :user="user"/>
+      <ArtistBannerSlideBox :user="user" :images="user.banners"/>
     </div>
     <div class="w-full h-full px-[20px]">
       <ArtistDetailBox
@@ -20,58 +20,58 @@
 
     <ArtistCallBox :artist="user"/>
   </div>
-  <div class="hidden w-full md:flex flex-col h-full relative px-[60px]">
-    <div class="w-full text-center flex flex-row justify-center items-center mb-[55px]">
-      <h1 class="font-medium text-center text-[48px] leading-[73px]">صفحه هنرمند</h1>
-    </div>
-    <ArtistBannerDesktopSlideBox
-        :user="user"
-        class=" mb-[55px]"
-    />
-    <div class="w-full artist-tab-header mb-[55px]">
-      <Splide :options="options" aria-label="">
-        <SplideSlide>
-          <ArtistDesktopTabButton
-              title="نمونه کارها"
-              :selected="true"
-          />
-        </SplideSlide>
-        <SplideSlide>
-          <ArtistDesktopTabButton
-              title="درباره من"
-              :selected="false"
-          />
-        </SplideSlide>
-        <SplideSlide>
-          <ArtistDesktopTabButton
-              title="آدرس"
-              :selected="false"
-          />
-        </SplideSlide>
-        <SplideSlide>
-          <ArtistDesktopTabButton
-              title="ساعات کاری"
-              :selected="false"
-          />
-        </SplideSlide>
-        <SplideSlide>
-          <ArtistDesktopTabButton
-              title="شبکه های اجتماعی"
-              :selected="false"
-          />
-        </SplideSlide>
-      </Splide>
-    </div>
-    <div class="w-full mb-[55px]">
-      <ArtistPortfoliosDesktopList :user-id="user.id"/>
-    </div>
-    <div class="w-full mb-[55px]">
-      <ArtistBioDesktop :user="user"/>
-    </div>
-    <div class="w-full mb-[55px]">
-      <ArtistAddressDesktop :user="user"/>
-    </div>
-  </div>
+<!--  <div class="hidden w-full md:flex flex-col h-full relative px-[60px]">-->
+<!--    <div class="w-full text-center flex flex-row justify-center items-center mb-[55px]">-->
+<!--      <h1 class="font-medium text-center text-[48px] leading-[73px]">صفحه هنرمند</h1>-->
+<!--    </div>-->
+<!--    <ArtistBannerDesktopSlideBox-->
+<!--        :user="user"-->
+<!--        class=" mb-[55px]"-->
+<!--    />-->
+<!--    <div class="w-full artist-tab-header mb-[55px]">-->
+<!--      <Splide :options="options" aria-label="">-->
+<!--        <SplideSlide>-->
+<!--          <ArtistDesktopTabButton-->
+<!--              title="نمونه کارها"-->
+<!--              :selected="true"-->
+<!--          />-->
+<!--        </SplideSlide>-->
+<!--        <SplideSlide>-->
+<!--          <ArtistDesktopTabButton-->
+<!--              title="درباره من"-->
+<!--              :selected="false"-->
+<!--          />-->
+<!--        </SplideSlide>-->
+<!--        <SplideSlide>-->
+<!--          <ArtistDesktopTabButton-->
+<!--              title="آدرس"-->
+<!--              :selected="false"-->
+<!--          />-->
+<!--        </SplideSlide>-->
+<!--        <SplideSlide>-->
+<!--          <ArtistDesktopTabButton-->
+<!--              title="ساعات کاری"-->
+<!--              :selected="false"-->
+<!--          />-->
+<!--        </SplideSlide>-->
+<!--        <SplideSlide>-->
+<!--          <ArtistDesktopTabButton-->
+<!--              title="شبکه های اجتماعی"-->
+<!--              :selected="false"-->
+<!--          />-->
+<!--        </SplideSlide>-->
+<!--      </Splide>-->
+<!--    </div>-->
+<!--    <div class="w-full mb-[55px]">-->
+<!--      <ArtistPortfoliosDesktopList :user-id="user.id"/>-->
+<!--    </div>-->
+<!--    <div class="w-full mb-[55px]">-->
+<!--      <ArtistBioDesktop :user="user"/>-->
+<!--    </div>-->
+<!--    <div class="w-full mb-[55px]">-->
+<!--      <ArtistAddressDesktop :user="user"/>-->
+<!--    </div>-->
+<!--  </div>-->
 </template>
 
 <script setup lang="ts">
@@ -106,7 +106,7 @@ const user = ref<IArtist>({
   is_bookmarked: false,
   avatar: '/images/artist/2.png',
   has_blue_tick: true,
-  banners: ['/images/artist/banner.png', '/images/artist/banner.png'],
+  banners: [],
   rating: 4,
   address: 'همدان,پاسداران,جلالی,کوچه عقیل,بن بست 40,پلاک5,واحد 2',
   portfolios_count: 15,
@@ -115,23 +115,39 @@ const user = ref<IArtist>({
   work_hours: [],
   portfolios: [],
   licenses: [],
-  created_at_ago_fa: ''
+  socials: {
+    telegram: "",
+    instagram: "",
+    bale: "",
+    whatsapp: "",
+    eita: "",
+    rubika: "",
+    web: ""
+  },
+  created_at_ago_fa: '',
+  view: 0,
 })
 const id = route.params.id
 const getUser = async () => {
-  useCustomFetch(`/users/${id}`, {
-    method: "GET"
-  })
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest(`/users/${id}`)
       .then(res => {
-        user.value = res.data.value?.data as IArtist
+        user.value = res.data as IArtist
       })
+}
+const addUserView = async () => {
+  const {$postRequest: postRequest}=useNuxtApp()
+  postRequest(`/users/${id}/view`)
 }
 
 const goBack = () => {
   router.back()
 }
 
-await getUser()
+onMounted(() => {
+  getUser()
+  addUserView()
+})
 </script>
 
 <style scoped>

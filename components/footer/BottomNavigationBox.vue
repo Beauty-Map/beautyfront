@@ -25,7 +25,7 @@
       >
         <ChangePanelIcon />
         <template #text>
-          پنل هنرمندان
+          هنرمندان
         </template>
       </BottomNavigationButton>
       <BottomNavigationButton
@@ -82,7 +82,7 @@ const selectItem = (i: Number) => {
       break
 
     case 3:
-      openArtistPlanPage()
+      openArtistsPage()
       break
 
     case 4:
@@ -104,12 +104,8 @@ const openServicePage = () => {
   router.push('/services')
 }
 
-const openArtistPlanPage = () => {
-  if (auth.user) {
-    router.push('/panel/artist')
-  } else {
-    store.openLoginDrawer()
-  }
+const openArtistsPage = () => {
+  router.push('/artists')
 }
 
 const openFavouritePage = () => {

@@ -11,7 +11,7 @@
         </div>
       </div>
     </div>
-    <div class="text-[#141414] font-semibold text-[16px] leading-[24px] text-center mt-[5px]">تغییر پروفایل</div>
+    <div class="text-[#141414] font-semibold text-[16px] leading-[24px] text-center mt-[5px]">تغییر عکس پروفایل</div>
     <input @change="onChooseImage" accept="image/png, image/jpeg" type="file" hidden ref="image" />
   </div>
 </template>
@@ -68,8 +68,10 @@ const uploadAvatar = async (file) => {
   form.append('file', file)
   const xhr = new XMLHttpRequest()
   const xsrf = useCookie('XSRF-TOKEN')
+  const token = useCookie("token")
   xhr.open('post', config.public.uploadURL, true)
   xhr.withCredentials = true
+  xhr.setRequestHeader('Authorization', `Bearer ${token.value}`)
   xhr.setRequestHeader('accept', `application/json`)
   xhr.setRequestHeader('X-Xsrf-Token', xsrf.value)
   xhr.upload.onprogress = function (ev) {

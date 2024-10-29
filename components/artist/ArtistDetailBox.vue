@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-    <ArtistSocialMediaBox />
+    <ArtistSocialMediaBox :socials="user.socials"/>
     <ArtistAddressBox :address="user.address" :distance="user.distance" :work-hours="user.work_hours" :created-at-ago-fa="user.created_at_ago_fa"/>
   </div>
 </template>
@@ -28,7 +28,6 @@ const props = defineProps({
     required: true,
   },
 })
-
 const getServices = () => {
   let services = []
   for (let i = 0; i < props.user.services.length; i++) {
