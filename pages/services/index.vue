@@ -23,7 +23,7 @@ const getServiceList = async () => {
   }
 }
 
-getServiceList()
+onMounted(async () => await getServiceList())
 </script>
 
 <style scoped>
