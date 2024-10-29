@@ -16,7 +16,7 @@
       <template #icon >
         <AltPhoneNumberIcon class="mr-[6px] ml-[2px]"/>
       </template>
-      <template #title>شماره جایگزین ورود</template>
+      <template #title>ایمیل جایگزین ورود</template>
     </ProfileLink>
     <DeleteAccountModal :open="showDeleteAccount" @close="closeDeleteAccountAlert" @delete="doDeleteAccount">
       <div class="w-full flex flex-col items-start justify-start pb-[18px]">

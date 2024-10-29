@@ -1,19 +1,19 @@
 <template>
   <div class="w-full overflow-y-auto">
-    <TelInput :error="errors.alt_number" title="شماره موبایل" v-model="form.alt_number"/>
+    <InputEmailInput :error="errors.alt_number" title="ایمیل" v-model="form.alt_number"/>
     <MainActionButton :disabled="loading" class="mt-[48px] h-[44px]" @click="doSendCode">
       <div v-if="loading">
         <LoadingComponent />
       </div>
       <div v-else class="text-white text-center text-[14px] leading-[21px]">
-        ارسال کد
+        ثبت
       </div>
     </MainActionButton>
-    <OtpDrawer :is-open="openDrawer"
-               @close="closeDrawerClicked"
-               @change-email="changePhoneNumber"
-               @validate="validate"
-    />
+<!--    <OtpDrawer :is-open="openDrawer"-->
+<!--               @close="closeDrawerClicked"-->
+<!--               @change-email="changePhoneNumber"-->
+<!--               @validate="validate"-->
+<!--    />-->
   </div>
 </template>
 
@@ -21,16 +21,17 @@
 
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
-import TelInput from "~/components/input/TelInput.vue";
 import OtpDrawer from "~/components/drawer/OtpDrawer.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
+import {useAuthStore} from "~/store/Auth";
 
 const app = useNuxtApp()
 const store = useDrawerStore()
+const auth = useAuthStore()
 const loading = ref(false)
 
 const form = ref<ISetAltNumberForm>({
-  alt_number: '',
+  alt_number: auth.user?.alt_number,
 })
 const errors = ref({
   alt_number: ''
@@ -44,13 +45,13 @@ const doSendCode = async () => {
   }
   loading.value = true
   if (!form.value.alt_number) {
-    errors.value.alt_number = 'شماره موبایل جایگزین را وارد کنید'
+    errors.value.alt_number = 'ایمیل جایگزین را وارد کنید'
     return
   }
   postRequest('/own/alt-number', form.value)
       .then(res=> {
-        app.$toast.success('کد با موفقیت ارسال شد', {rtl: true})
-        openDrawerClicked()
+        app.$toast.success('ایمیل با موفقیت ثبت شد', {rtl: true})
+        // openDrawerClicked()
       })
       .catch(err => {
         const errors = Object.values(err.data.errors)

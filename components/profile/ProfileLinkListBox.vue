@@ -74,10 +74,12 @@ const openSecurityDrawer = () => {
   store.openSecurityDrawer()
 }
 const share = async () => {
-  const link = `www.beautymap.ir/?ref=${auth.user?.referral_code}`
+  const link = `https://www.beautymap.ir/?ref=${auth.user?.referral_code}`;
   await navigator.share({
+    title: "اشتراک‌گذاری لینک",
+    text: "از این لینک دیدن کنید",
     url: link,
-  })
+  });
 }
 </script>
 

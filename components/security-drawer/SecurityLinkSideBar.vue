@@ -11,7 +11,7 @@
         <DeleteAccountIcon />
       </template>
     </SideBarLink>
-    <SideBarLink to="/security/alt-number" title="شماره جایگزین ورود">
+    <SideBarLink to="/security/alt-email" title="ایمیل جایگزین ورود">
       <template #icon>
         <AltPhoneNumberIcon />
       </template>
