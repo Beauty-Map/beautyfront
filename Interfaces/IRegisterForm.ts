@@ -28,4 +28,5 @@ interface ICompleteProfileForm {
     full_name: string
     city_id: number
     birth_date: string
+    avatar: string
 }
