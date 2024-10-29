@@ -23,25 +23,27 @@ const doSearch = async () => {
     delete query.page
   }
   query.page = searchStore.page.toString()
-  const res = await useCustomFetch('/search/artists', {
-    method: "GET",
-    query: query,
-  })
-  if (res.data.value) {
-    let list = res.data.value ? res.data.value?.data as [] : []
-    if (list.length == 0) {
-      searchStore.showInfiniteScroll = false
-      return
-    }
-    searchStore.artists = [
-      ...searchStore.artists,
-      ...list
-    ]
-    searchStore.lastPage = res.data.value?.last_page
-    setTimeout(() => {
-      searchStore.showInfiniteScroll = true
-    }, 300)
+  const {$getRequest: getRequest}=useNuxtApp()
+  for (const [key, value] of Object.entries(query)) {
+    console.log(key, value);
   }
+  console.log(query, "query")
+  getRequest('/search/artists', query)
+      .then(res => {
+        let list = res.data as []
+        if (list.length == 0) {
+          searchStore.showInfiniteScroll = false
+          return
+        }
+        searchStore.artists = [
+          ...searchStore.artists,
+          ...list
+        ]
+        searchStore.lastPage = res.last_page
+        setTimeout(() => {
+          searchStore.showInfiniteScroll = true
+        }, 300)
+      })
 }
 
 const doChangeTerm = async () => {
