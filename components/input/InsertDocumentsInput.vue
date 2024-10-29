@@ -1,35 +1,56 @@
 <template>
   <div class="flex flex-col items-start justify-start w-full px-1">
-    <div v-if="title" class="text-[14px] leading-[16px] text-right mb-1 font-medium"
-         :class="[hasError ? 'text-[#F44336]' : 'text-[#141414]']"
-    >
-      {{ title }}
-    </div>
-    <div class="h-[40px] w-full rounded-[8px] relative border "
-         :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
-    >
-      <input type="text" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-right  rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[24px] placeholder:text-[#A9A7A7]"
-             @input="validateTextDebounce"
-             v-model="value"
-             @keyup="onKeyUpEvent"
-      >
-      <PlusSmallIcon class="absolute left-[4px] top-[8px]"/>
-    </div>
-    <div class="w-full flex flex-row justify-start items-center" v-if="hasError">
-      <ErrorRedIcon />
-      <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText}}</span>
-    </div>
+
+<!--      <input type="text" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-right  rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[24px] placeholder:text-[#A9A7A7]"-->
+<!--             @input="validateTextDebounce"-->
+<!--             v-model="value"-->
+<!--             @keyup="onKeyUpEvent"-->
+<!--      >-->
+      <div class="flex flex-row justify-between w-full">
+        <div v-if="title" class="text-[14px] leading-[16px] text-right mb-1 font-medium"
+             :class="[hasError ? 'text-[#F44336]' : 'text-[#141414]']"
+        >
+          {{ title }}
+        </div>
+        <button @click.prevent="showBox" class=" text-[12px] text-white flex flex-row justify-center items-center px-2 py-1 rounded-md bg-[#FF3CA0]">
+          <PlusSmallIcon class=""/>
+          مدرک جدید
+        </button>
+      </div>
+<!--    <div class="w-full flex flex-row justify-start items-center" v-if="hasError">-->
+<!--      <ErrorRedIcon />-->
+<!--      <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText}}</span>-->
+<!--    </div>-->
     <div class="w-full flex flex-col justify-start items-start mt-[10px] gap-y-[10px]">
       <div class="cursor-pointer text-[#141414] font-semibold text-[16px] leading-[18px] flex flex-row justify-start items-center w-full" v-for="(d,i) in documents" :key="i">
         <span>{{ d }}</span>
         <CloseSmallIcon @click="removeDocument(i)" class="mr-[10px]"/>
       </div>
     </div>
+    <Modal :show-close="false" :open="openBox">
+      <div class="w-full flex flex-col justify-start items-center max-w-[340px] min-w-[300px]">
+        <div class="font-medium text-center text-[#133C3E] text-[22px] leading-[32px]">
+          عنوان مدرک را وارد کنید
+        </div>
+        <div class="w-full relative border border-[#A9A7A7] rounded-[10px] h-[50px] flex flex-col justify-start items-center mt-[20px]">
+          <input
+              type="text"
+              class=" px-2 h-[50px] w-full pr-[10px] rounded-[10px] text-right outline-none border-none focus:outline-none focus:border-none"
+              ref="inputs"
+              v-model="value"
+          >
+        </div>
+        <div class="w-full flex flex-row justify-end items-center mt-[20px] gap-[8px] grow text-[14px] leading-[21px] font-medium text-[#2920D9]">
+          <span @click="saveDocument">ذخیره</span>
+          <span @click="closeBox">بستن</span>
+        </div>
+      </div>
+    </Modal>
+
   </div>
 </template>
 
 <script setup lang="ts">
-import ErrorRedIcon from "~/components/icons/ErrorRedIcon.vue";
 import PlusSmallIcon from "~/components/icons/PlusSmallIcon.vue";
 import CloseSmallIcon from "~/components/icons/CloseSmallIcon.vue";
 
@@ -46,8 +67,10 @@ const props = defineProps({
 })
 const value = ref<String>('')
 const errorText = ref<String>('')
+const openBox = ref<Boolean>(false)
 const hasError = ref<Boolean>(false)
 const documents = ref<String[]>([])
+const inputs = ref()
 
 onMounted(() => {
   documents.value = props.modelValue as String[]
@@ -66,6 +89,23 @@ const onKeyUpEvent = (e: Event) => {
       validateTextDebounce()
     }
   }
+}
+
+const showBox = () => {
+  openBox.value = true
+}
+const saveDocument = () => {
+  const v = value.value
+  if (v) {
+    documents.value.push(v)
+    value.value = ''
+    closeBox()
+    validateTextDebounce()
+  }
+}
+const closeBox = () => {
+  value.value = ''
+  openBox.value = false
 }
 
 const validateTextNumber = () => {

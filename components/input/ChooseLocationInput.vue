@@ -10,22 +10,23 @@
          @click="openMapDrawer"
     >
       <div class="h-full w-full ltr-dir">
-<!--        <LMap-->
-<!--            ref="map"-->
-<!--            :zoom="zoom"-->
-<!--            :center="[47.21322, -1.559482]"-->
-<!--            :options="options"-->
-<!--            :use-global-leaflet="false"-->
-<!--            v-if="loaded"-->
-<!--        >-->
-<!--          <LTileLayer-->
-<!--              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"-->
-<!--              attribution="&amp;copy; <a href=&quot;https://www.SaeedHeydari.ir/&quot;>SaeedHeydari.ir</a> contributors"-->
-<!--              layer-type="base"-->
-<!--              name="OpenStreetMap"-->
-<!--          />-->
-<!--          <LMarker :draggable="true" :lat-lng="point" v-if="point"/>-->
-<!--        </LMap>-->
+        <LMap
+            ref="map"
+            :zoom="13"
+            :center="getLatLng"
+            :options="options"
+            :use-global-leaflet="false"
+            v-if="loaded"
+        >
+          <LTileLayer
+              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              attribution="&amp;copy; <a href=&quot;https://www.SaeedHeydari.ir/&quot;>SaeedHeydari.ir</a> contributors"
+              layer-type="base"
+              name="OpenStreetMap"
+          />
+          {{point}}
+          <LMarker :draggable="true" :lat-lng="point" v-if="point"/>
+        </LMap>
       </div>
     </div>
     <div class="w-full flex flex-row justify-start items-center" v-if="hasError || error">
@@ -80,7 +81,7 @@ const map = ref()
 const showMapDrawer = ref(false)
 const point = ref(props.point)
 
-const getLatLng = computed(() => [lat.value, lng.value])
+const getLatLng: Array<number> = computed(() => [lat.value, lng.value]) as unknown as Array<number>
 
 const openMapDrawer = () => {
   showMapDrawer.value = true

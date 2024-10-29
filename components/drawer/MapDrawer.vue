@@ -42,8 +42,8 @@ const props = defineProps({
   }
 })
 
-const lat = ref(47.21322)
-const lng = ref(-1.559482)
+const lat = ref(34.79922)
+const lng = ref(48.51456)
 const zoom = ref(13)
 const map = ref()
 const getLatLng = computed(() => [lat.value, lng.value])
@@ -57,10 +57,10 @@ const close = () => {
 
 onMounted(() => {
   l.value = window.L
-  navigator.geolocation.getCurrentPosition(function(position) {
-    lat.value = position.coords.latitude
-    lng.value = position.coords.longitude
-  })
+  // navigator.geolocation.getCurrentPosition(function(position) {
+  //   lat.value = position.coords.latitude
+  //   lng.value = position.coords.longitude
+  // })
 })
 
 const onMapClicked = (event) => {

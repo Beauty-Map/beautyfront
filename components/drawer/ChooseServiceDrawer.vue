@@ -19,7 +19,7 @@
             :key="i"
             class="w-full flex flex-row items-center justify-between"
         >
-          <span>{{ s.title }}</span>
+          <span class="font-bold">{{ s.title }}</span>
           <DoneCheckIcon v-if="selectedService && selectedService.id === s.id"/>
         </div>
       </div>

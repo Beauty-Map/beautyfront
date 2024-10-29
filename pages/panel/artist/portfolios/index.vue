@@ -69,6 +69,7 @@ const page = ref<number>(1)
 const showFilterDrawer = ref<Boolean>(false)
 const showInfiniteScroll = ref<Boolean>(false)
 const showModal = ref<Boolean>(false)
+const selectedService = ref<IService|null>(null)
 
 const goBack = () => {
   router.replace('/panel/artist')
@@ -100,7 +101,12 @@ const closeFilterDrawer = () => {
 }
 
 const chooseService = (s: IService) => {
-  console.log(s, "s")
+  selectedService.value = s
+  setTimeout(async () => {
+    portfolios.value = []
+    showInfiniteScroll.value = false
+    await getPortfolios()
+  }, 500)
 }
 const paginate = async () => {
   if (page <= lastPage) {
@@ -112,24 +118,27 @@ const paginate = async () => {
 const paginateDebounce = useDebounce(paginate, 500)
 
 const getPortfolios = async () => {
-  const res = await useCustomFetch(`/own/portfolios?limit=10&page=${page.value}`, {
-    method: "get"
-  })
-  if (res.data.value) {
-    let list = (res.data.value.data as IPortfolio[])
-    if (list.length == 0) {
-      showInfiniteScroll.value = false
-      return
-    }
-    portfolios.value = [
-        ...portfolios.value,
-        ...list
-    ]
-    lastPage.value = (res.data.value.last_page as number)
-    setTimeout(() => {
-      showInfiniteScroll.value = true
-    }, 300)
+  let url = `/own/portfolios?limit=10&page=${page.value}`
+  if (selectedService.value) {
+    url += `&services=${selectedService.value.id}`
   }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest(url)
+      .then(res => {
+        let list = (res.data as IPortfolio[])
+        if (list.length == 0) {
+          showInfiniteScroll.value = false
+          return
+        }
+        portfolios.value = [
+          ...portfolios.value,
+          ...list
+        ]
+        lastPage.value = (res.last_page as number)
+        setTimeout(() => {
+          showInfiniteScroll.value = true
+        }, 300)
+      })
 }
 onMounted(() => {
   nextTick(() => getPortfolios())
