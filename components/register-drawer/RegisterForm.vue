@@ -1,7 +1,8 @@
 <template>
-  <div class="w-full overflow-y-auto">
-    <EmailInput title="ایمیل" v-model="form.email" class="px-[2px]"/>
+  <div class="w-full overflow-y-auto pb-8">
+    <EmailInput title="ایمیل خود را وارد کنید" v-model="form.email" class="px-[2px]"/>
     <PasswordInput title="یک کلمه عبور برای خود انتخاب کنید" v-model="form.password" class="px-1 mt-[27px]"/>
+    <TextInput title="کد معرف خود را وارد کنید" v-model="form.ref_code" v-if="!form.ref_code" class="px-1 mt-[27px]"/>
     <PolicyAndRulesButton class="mt-[24px]" v-model="form.accept_policy"/>
     <MainActionButton :disabled="loading" class="mt-[24px]" @click="doRegister">
       <div v-if="loading">
@@ -32,6 +33,7 @@ import PasswordInput from "~/components/input/PasswordInput.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
 import {useOtpResetSignal} from "~/composables/useOtpResetSignal";
 import {useAuthStore} from "~/store/Auth";
+import TextInput from "~/components/input/TextInput.vue";
 const app = useNuxtApp()
 const router = useRouter()
 const auth = useAuthStore()
@@ -44,7 +46,8 @@ const loading = ref(false)
 const form = ref<IRegisterForm>({
   email: '',
   password: '',
-  accept_policy: false
+  accept_policy: false,
+  ref_code: ''
 })
 
 const openDrawerClicked = () => {
@@ -69,6 +72,13 @@ const validated = () => {
     app.$toast.error('لطفا پسورد خود را وارد کنید', {rtl: true})
     validated = false
   }
+  if (!form.value.ref_code) {
+    app.$toast.error('لطفا کد معرف خود را وارد کنید', {rtl: true})
+    validated = false
+  } else if(form.value.ref_code.length != 6) {
+    app.$toast.error('کد معرف باید 6 رقم باشد', {rtl: true})
+    validated = false
+  }
   if (!form.value.accept_policy) {
     app.$toast.error('لطفا تیک گزینه تایید قوانین را بزنید', {rtl: true})
     validated = false
@@ -83,15 +93,10 @@ const doRegister = async () => {
     return
   }
   loading.value = true
-  const ref = useCookie('referralId', {
-    maxAge: 60 * 60 * 24 * 30, // 30 days
-    path: '/',
-    sameSite: 'lax',
-  });
   const data = {
     email: form.value.email,
     password: form.value.password,
-    referrer_code: ref.value?.toString(),
+    referrer_code: form.value.ref_code,
   }
   const {$postRequest: postRequest}=app
   postRequest('/auth/register', data)
@@ -176,6 +181,17 @@ const resend = async (code: string) => {
 
 // const isMd = computed(() => window.screen.width >= 768)
 const isMd = false
+
+onMounted(()=>{
+  const refC = useCookie('referralId', {
+    maxAge: 60 * 60 * 24 * 30,
+    path: '/',
+    sameSite: 'lax',
+  });
+  if (refC.value) {
+    form.value.ref_code = refC.value.toString()
+  }
+})
 
 </script>
 

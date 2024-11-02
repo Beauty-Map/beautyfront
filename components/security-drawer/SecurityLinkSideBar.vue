@@ -59,8 +59,7 @@ const closeDeleteAccountAlert = () => {
 }
 
 const doDeleteAccount = () => {
-  const auth = useSanctumAuth()
-  auth.logout()
+  const auth = useAuthStore()
 }
 
 const deleteAccount = () => {

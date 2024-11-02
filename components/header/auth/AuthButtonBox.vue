@@ -12,9 +12,10 @@
 import LoginLinkButton from "~/components/button/auth/LoginLinkButton.vue";
 import RegisterLinkButton from "~/components/button/auth/RegisterLinkButton.vue";
 import ExitLinkButton from "~/components/button/auth/ExitLinkButton.vue";
+import {useAuthStore} from "~/store/Auth";
 
-const auth = useSanctumAuth()
-const isLoggedIn = computed(() => auth.isAuthenticated.value)
+const auth = useAuthStore()
+const isLoggedIn = computed(() => !!auth.user)
 </script>
 
 <style scoped>

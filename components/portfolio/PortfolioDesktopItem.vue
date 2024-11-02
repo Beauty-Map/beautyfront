@@ -46,6 +46,7 @@
 import Bookmark from "~/components/bookmark/Bookmark.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import BlueTick from "~/components/icons/BlueTick.vue";
+import {useAuthStore} from "~/store/Auth";
 const emits = defineEmits(['click'])
 const props = defineProps({
   portfolio: {
@@ -62,7 +63,8 @@ const props = defineProps({
   }
 })
 
-const auth = useSanctumAuth()
+const auth = useAuthStore()
+const isLoggedIn = computed(() => !!auth.user)
 const router = useRouter()
 const drawerStore = useDrawerStore()
 
@@ -86,7 +88,7 @@ const goToPage = () => {
 }
 
 const toggleBookmark = (bookmarked: boolean) => {
-  if (!auth.isAuthenticated.value) {
+  if (!isLoggedIn) {
     drawerStore.openLoginDrawer()
     return
   }

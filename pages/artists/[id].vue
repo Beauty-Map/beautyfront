@@ -148,6 +148,9 @@ onMounted(() => {
   getUser()
   addUserView()
 })
+// router.beforeEach((to, from, next) => {
+//     next(false);
+// });
 </script>
 
 <style scoped>

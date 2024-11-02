@@ -13,8 +13,10 @@
 </template>
 
 <script setup lang="ts">
-const auth = useSanctumAuth()
-const isLoggedIn = computed(() => auth.isAuthenticated.value)
+import {useAuthStore} from "~/store/Auth";
+
+const auth = useAuthStore()
+const isLoggedIn = computed(() => !!auth.user)
 </script>
 
 <style scoped>

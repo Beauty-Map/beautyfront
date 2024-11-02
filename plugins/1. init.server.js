@@ -7,10 +7,12 @@ export default defineNuxtPlugin(async(nuxtApp) => {
 
         if (token.value) {
             const auth = useAuthStore()
+            const runtimeConfig = useRuntimeConfig()
+            const baseUrl = runtimeConfig.public.baseURL
             await ofetch('/own',
                 {
                     // baseURL: 'http://127.0.0.1:8000/api',
-                    baseURL: 'https://api.beautymap.ir/api',
+                    baseURL: baseUrl,
                     method: "GET",
                     parseResponse: JSON.parse,
                     headers: {

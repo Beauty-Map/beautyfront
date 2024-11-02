@@ -2,6 +2,7 @@ interface IRegisterForm {
     email: string
     password: string
     accept_policy: boolean
+    ref_code: string
 }
 
 interface IVerifyRegisterForm {

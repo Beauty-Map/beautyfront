@@ -20,7 +20,7 @@
       <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
       <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>
       <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
-      <TelInput title="تلفن ثابت" v-model="form.tel_number" class="mt-[27px]"/>
+      <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
       <ChooseCityInput title="شهر محل فعالیت *" v-model="form.city_id" class="mt-[27px]"/>
       <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
       <ChooseLocationInput title="انتخاب لوکیشن" v-model="form.location" :point="form.location" class="mt-[27px]"/>

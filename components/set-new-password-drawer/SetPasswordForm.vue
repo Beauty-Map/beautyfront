@@ -21,9 +21,10 @@ import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import {useCustomFetch} from "~/composables/useCustomFetch";
 import MoonLoader from "vue-spinner/src/MoonLoader.vue";
+import {useAuthStore} from "~/store/Auth";
 
 const store = useDrawerStore()
-const auth = useSanctumAuth()
+const auth = useAuthStore()
 
 const form = ref<ISetNewPasswordForm>({
   old_password: '',
@@ -34,22 +35,20 @@ const form = ref<ISetNewPasswordForm>({
 const pendingValue = ref<Boolean>(false)
 
 const doSetPassword = async () => {
-  const res = await useCustomFetch('/own/password', {
-    method: "PUT",
-    body: form.value,
-  })
   pendingValue.value = true
-  if (res.error.value) {
-    setTimeout(() => {
-      pendingValue.value = false
-    }, 500)
-  }
-  if (res.data.value) {
-    setTimeout(() => {
-      pendingValue.value = false
-      store.closeAllDrawers()
-    }, 500)
-  }
+  const {$putRequest: putRequest}=useNuxtApp()
+  putRequest('/own/password', form.value)
+      .then(res => {
+        setTimeout(() => {
+          pendingValue.value = false
+          store.closeAllDrawers()
+        }, 500)
+      })
+      .catch(err => {
+        setTimeout(() => {
+          pendingValue.value = false
+        }, 500)
+      })
 }
 
 </script>

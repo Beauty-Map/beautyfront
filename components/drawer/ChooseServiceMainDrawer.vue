@@ -84,7 +84,7 @@ const goBack = () => {
   close()
 }
 
-getServiceList()
+onMounted(() => nextTick(() => getServiceList()))
 </script>
 
 <style scoped>

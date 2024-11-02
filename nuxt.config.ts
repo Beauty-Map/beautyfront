@@ -9,25 +9,11 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/device',
-    'nuxt-auth-sanctum',
     '@pinia/nuxt',
     "nuxt-lodash",
     'nuxt3-leaflet',
     'dayjs-nuxt',
   ],
-  sanctum: {
-    baseUrl: 'https://api.beautymap.ir', // Laravel API
-    // baseUrl: 'http://localhost:8000', // Laravel API
-    endpoints: {
-      user: '/api/own',
-      login: '/api/auth/login',
-      logout: '/api/auth/logout',
-    },
-    client: {
-      retry: 1,
-    },
-    redirectIfAuthenticated: false,
-  },
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.scss', {injectPosition: 'first'},],
     configPath: 'tailwind.config',
