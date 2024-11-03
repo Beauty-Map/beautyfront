@@ -17,7 +17,10 @@
             >
           <span class="w-full text-right text-[#828282] text-[14px] font-medium leading-[21px]">40 / {{ form.title.length }}</span>
         </div>
-        <img @click="openImageChooser" :src="getThumbnail" alt="" class="w-[80px] h-[80px]" />
+        <div class="flex flex-col min-w-[80px]">
+          <img @click="openImageChooser" :src="getThumbnail" alt="" class="w-[80px] h-[80px]" />
+          <span class="text-[12px] text-center">افزودن تصویر</span>
+        </div>
         <input @change="onChooseImage" type="file" hidden multiple accept="image/png, images/jpeg" ref="galleryChooser">
       </div>
       <div class="w-full flex flex-row justify-start items-start gap-[12px] mt-[7px] flex-wrap">
