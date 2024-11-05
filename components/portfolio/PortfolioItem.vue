@@ -12,8 +12,8 @@
         <div class="text-[#ED2C25] text-[12px] leading-[18px] font-medium line-through">
           <span v-format-price>{{ portfolio.price }}</span>
         </div>
-        <div class="text-[#133C3E] text-[12px] leading-[18px] font-medium">
-          <span v-format-price>{{ portfolio.discount_price }}</span>
+        <div class="flex flex-row justify-start items-center text-[#133C3E] text-[12px] leading-[18px] font-medium">
+          <div v-format-price>{{ portfolio.discount_price }}</div>
           <span class="mr-[22px] px-[12px] py-[3px] bg-[#FFEA2E61] rounded-[20px]">{{calcDiscountPercent(portfolio.price, portfolio.discount_price)}}</span>
         </div>
       </div>
