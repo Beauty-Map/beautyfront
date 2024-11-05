@@ -144,9 +144,9 @@ const goBack = () => {
   router.back()
 }
 
-onMounted(() => {
-  getUser()
-  addUserView()
+onMounted(async () => {
+  await getUser()
+  await addUserView()
 })
 // router.beforeEach((to, from, next) => {
 //     next(false);

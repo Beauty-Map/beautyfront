@@ -103,8 +103,10 @@ const goBack = () => {
 const addPortfolioView = async () => {
   postRequest(`/portfolios/${id}/view`)
 }
-await getPortfolio()
-await addPortfolioView()
+onMounted(async () => {
+  await getPortfolio()
+  await addPortfolioView()
+})
 </script>
 
 <style scoped>
