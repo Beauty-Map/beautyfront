@@ -29,7 +29,8 @@ definePageMeta({
 
 const router = useRouter()
 const route = useRoute()
-const {$postRequest: postRequest}=useNuxtApp()
+const app = useNuxtApp()
+const {$postRequest: postRequest}=app
 const portfolio = ref<IPortfolio>({
   id: 1,
   title: 'خدمات ناخن',
@@ -100,7 +101,7 @@ const goBack = () => {
   router.back()
 }
 const addPortfolioView = async () => {
-  postRequest(`/portfolios/${id}/view`)
+  // postRequest(`/portfolios/${id}/view`)
 }
 await getPortfolio()
 await addPortfolioView()

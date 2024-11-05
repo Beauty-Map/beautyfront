@@ -17,7 +17,7 @@
             <span>سکه</span>
           </span>
           <span v-format-number>{{ option.price }}</span>
-          <span>تومان</span>
+          <span>TON</span>
         </div>
       </div>
       <div class="w-full px-[23px]">

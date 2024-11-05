@@ -136,7 +136,7 @@ const getUser = async () => {
       })
 }
 const addUserView = async () => {
-  const {$postRequest: postRequest}=useNuxtApp()
+  const {$postRequest: postRequest}=app
   postRequest(`/users/${id}/view`)
 }
 

@@ -12,7 +12,7 @@
             {{ formattedPropPrice }}
           </span>
           <span class="mr-[5px]">
-            تومان
+            TON
           </span>
         </span>
         <span v-if="formattedPropDiscountPrice" class="flex flex-row text-left text-black font-medium text-[12px] leading-[18px]">
@@ -20,7 +20,7 @@
             {{ formattedPropDiscountPrice }}
           </span>
           <span class="mr-[5px]">
-            تومان
+            TON
           </span>
         </span>
       </div>
@@ -31,13 +31,13 @@
         <div class="w-full flex flex-col items-start justify-start mt-[28px]">
           <div class="w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]">
             <span class="absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[14px] leading-[21px] font-medium px-[10px]">قیمت</span>
-            <input placeholder="20,000,000" :value="formattedPrice" @input="onPriceInput" type="text" class="text-[16px] leading-[19px] w-full pl-[42px] outline-none focus:outline-none text-left dir-ltr py-[12px] px-[8px] rounded-[10px]"/>
-            <span class="absolute left-[2px] top-[10px] text-[16px] leading-[19px] ">تومان</span>
+            <input placeholder="20,000,000" :value="formattedPrice" @input="onPriceInput" type="number" class="text-[16px] leading-[19px] w-full pl-[42px] outline-none focus:outline-none text-left dir-ltr py-[12px] px-[8px] rounded-[10px]"/>
+            <span class="absolute left-[2px] top-[10px] text-[16px] leading-[19px] ">TON</span>
           </div>
           <div v-if="showDiscountPrice" class="mt-[27px] w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]">
             <span class="absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[14px] leading-[21px] font-medium px-[10px]">قیمت با تخفیف</span>
-            <input placeholder="20,000,000" :value="formattedDiscountPrice" @input="onDiscountPriceInput" type="text" class="text-[16px] leading-[19px] w-full pl-[42px] outline-none focus:outline-none text-left dir-ltr py-[12px] px-[8px] rounded-[10px]"/>
-            <span class="absolute left-[2px] top-[10px] text-[16px] leading-[19px] ">تومان</span>
+            <input placeholder="20,000,000" :value="formattedDiscountPrice" @input="onDiscountPriceInput" type="number" class="text-[16px] leading-[19px] w-full pl-[42px] outline-none focus:outline-none text-left dir-ltr py-[12px] px-[8px] rounded-[10px]"/>
+            <span class="absolute left-[2px] top-[10px] text-[16px] leading-[19px] ">TON</span>
           </div>
           <div v-else @click="openDiscountPrice" class="mt-[27px] w-full cursor-pointer text-[#2920D9] text-[14px] leading-[16px] font-normal mr-[5px]">قیمت با تخفیف</div>
         </div>
