@@ -74,18 +74,34 @@
       />
     </div>
   </div>
-  <button
-      @click="doSave"
-      :disabled="loading"
-      :class="[loading ? ' bg-[rgb(177,177,177)]' : ' bg-[#FF3CA0]']"
-      class="absolute bottom-[30px] left-[22px] right-[22px] cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
+  <div class="flex flex-row gap-2 justify-between items-center absolute bottom-[30px] left-[22px] right-[22px] ">
+    <button
+        @click="doSave"
+        :disabled="loading"
+        :class="[loading ? ' bg-[rgb(177,177,177)]' : ' bg-[#FF3CA0]']"
+        class="w-1/2 cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
     <span v-if="loading">
       <LoadingComponent />
     </span>
-    <span v-else>
-      انتشار
+      <span v-else>
+      ویرایش
     </span>
-  </button>
+    </button>
+    <button
+        @click="openDelete"
+        :disabled="loadingDelete"
+        :class="[loadingDelete ? ' bg-[rgb(177,177,177)]' : ' bg-red-600']"
+        class="w-1/2 cursor-pointer font-semibold text-center text-[14px] leading-[22px] flex justify-center items-center text-white bg-[#FF3CA0] mt-[10px] rounded-full h-[44px] ">
+    <span v-if="loadingDelete">
+      <LoadingComponent />
+    </span>
+      <span v-else>
+      حذف
+    </span>
+    </button>
+  </div>
+  <DeletePortfolioModal :open="showDelete" @close="closeDeleteAlert" @delete="doDelete">
+  </DeletePortfolioModal>
 </div>
 </template>
 
@@ -99,6 +115,8 @@ import ChoosePriceInput from "~/components/input/ChoosePriceInput.vue";
 import ChooseCallNumberInput from "~/components/input/ChooseCallNumberInput.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
 import LoadingComponent from "~/components/global/Loading.vue";
+import DeleteAccountModal from "~/components/modal/DeleteAccountModal.vue";
+import DeletePortfolioModal from "~/components/modal/DeletePortfolioModal.vue";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -111,7 +129,10 @@ const route = useRoute()
 
 const id = route.params.id
 const {$putRequest: putRequest} = useNuxtApp()
+const {$deleteRequest: deleteRequest} = useNuxtApp()
 const loading = ref(false)
+const loadingDelete = ref(false)
+const showDelete = ref(false)
 
 const galleryChooser = ref()
 
@@ -137,6 +158,30 @@ const uploading = ref([])
 
 const goBack = () => {
   router.replace('/panel/artist/portfolios')
+}
+const openDelete = () => {
+  showDelete.value = true
+}
+const closeDeleteAlert = () => {
+  showDelete.value = false
+}
+const doDelete = () => {
+  deleteRequest(`/own/portfolios/${id}`)
+      .then(async res => {
+        app.$toast.success('نمونه کار با موفقیت حذف شد')
+        await router.replace('/panel/artist/portfolios')
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
+      .finally(() => {
+        loadingDelete.value = false
+      })
 }
 
 const updatePrice = (number: string) => {
