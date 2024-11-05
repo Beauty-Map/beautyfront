@@ -101,7 +101,7 @@ const goBack = () => {
   router.back()
 }
 const addPortfolioView = async () => {
-  // postRequest(`/portfolios/${id}/view`)
+  postRequest(`/portfolios/${id}/view`)
 }
 await getPortfolio()
 await addPortfolioView()
