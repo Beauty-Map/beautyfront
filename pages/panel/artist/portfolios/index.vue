@@ -103,6 +103,7 @@ const closeFilterDrawer = () => {
 const chooseService = (s: IService) => {
   selectedService.value = s
   setTimeout(async () => {
+    page.value = 1
     portfolios.value = []
     showInfiniteScroll.value = false
     await getPortfolios()
