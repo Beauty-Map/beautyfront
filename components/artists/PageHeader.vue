@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col">
     <div class="w-full flex flex-row items-center justify-start">
-      <SearchInput :placeholder="'جستجو در هنرمندان'" v-model="searchTerm"/>
+      <SearchInput :placeholder="'جستجو در هنرمندان'" v-model="searchTerm" @doSearch="doSearch"/>
     </div>
   </div>
 </template>
@@ -68,7 +68,7 @@ const onChangePage = async () => {
   await doSearch()
 }
 
-const onChangeTermDebounce = useDebounce(doChangeTerm, 500)
+const onChangeTermDebounce = useDebounce(doChangeTerm, 1500)
 const onChangePageDebounce = useDebounce(onChangePage, 500)
 
 watch(() => route.query, doSearch)

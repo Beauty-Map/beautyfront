@@ -1,6 +1,6 @@
 <template>
   <div class="w-full text-center text-[#141414] text-base font-medium">
-    نوتفیکیشن
+    نوتیفیکیشن
   </div>
 </template>
 

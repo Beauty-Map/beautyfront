@@ -165,6 +165,7 @@ watch(() => searchStore.page, onChangePageDebounce)
 
 onMounted(() => {
   nextTick(() => doSearch())
+  console.log('')
 })
 </script>
 

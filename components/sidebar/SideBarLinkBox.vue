@@ -15,12 +15,12 @@
         <ReferralIcon />
       </template>
     </SideBarLink>
-    <SideBarLink to="/security" title="امنیت و سیاست حفظ حریم خصوصی">
+    <SideBarLink :is-link="false" @click="goToSecurityPage" title="امنیت و سیاست حفظ حریم خصوصی">
       <template #icon>
         <SecurityIcon />
       </template>
     </SideBarLink>
-    <SideBarLink to="/support" title="تماس باما">
+    <SideBarLink v-if="auth.user" :is-link="false" @click="goToSupportPage" title="تماس باما">
       <template #icon>
         <ContactIcon />
       </template>
@@ -44,8 +44,11 @@ import ReferralIcon from "~/components/icons/ReferralIcon.vue";
 import SecurityIcon from "~/components/icons/SecurityIcon.vue";
 import ContactIcon from "~/components/icons/ContactIcon.vue";
 import {useAuthStore} from "~/store/Auth";
+import {useDrawerStore} from "~/store/Drawer";
 
 const auth = useAuthStore()
+const store = useDrawerStore()
+const router = useRouter()
 
 const share = async () => {
   const link = `https://www.beautymap.ir/?ref=${auth.user?.referral_code}`;
@@ -54,6 +57,18 @@ const share = async () => {
     text: "از این لینک دیدن کنید",
     url: link,
   });
+}
+
+const goToSupportPage = async () => {
+  await router.push(`/support`)
+}
+
+const goToSecurityPage = async () => {
+  if (!auth.user) {
+    store.openLoginDrawer()
+    return
+  }
+  await router.push(`/security`)
 }
 </script>
 

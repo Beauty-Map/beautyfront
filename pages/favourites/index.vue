@@ -30,6 +30,7 @@ const app = useNuxtApp()
 
 const portfolios = ref<IPortfolio[]>([])
 const artists = ref<IArtist[]>([])
+const {$getRequest: getRequest}=app
 
 const selectedTab = ref<number>(1)
 
@@ -46,7 +47,6 @@ const toggleArtistBookmark = () => {
 }
 
 const getPortfolios = async () => {
-  const {$getRequest: getRequest}=app
   getRequest('/own/portfolios/favourite')
       .then((res) => {
         portfolios.value = (res.data as IPortfolio[])
@@ -54,7 +54,6 @@ const getPortfolios = async () => {
 }
 
 const getArtists = async () => {
-  const {$getRequest: getRequest}=app
   getRequest('/own/artists/favourite')
       .then((res) => {
         artists.value = (res.data as IArtist[])
@@ -65,8 +64,11 @@ const selectTab = (i: number) => {
   selectedTab.value = i
 }
 
-getPortfolios()
-getArtists()
+onMounted(() => nextTick(async () => {
+    await getPortfolios()
+    await getArtists()
+  })
+)
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-row items-start justify-start mb-[15px]">
+  <nuxt-link :href="`/panel/notifications/${notification.id}`" class="w-full flex flex-row items-start justify-start mb-[15px]">
     <ProfileBlueIcon class="grow-0"/>
     <div class="w-full grow items-start justify-start mx-[12px]">
       <div class="font-semibold leading-[18px] text-[#141414]">
@@ -12,7 +12,7 @@
     <div class="text-[#400842] text-[10px] leading-[14px] font-light text-left whitespace-nowrap">
       {{ notification.created_at_ago_fa }}
     </div>
-  </div>
+  </nuxt-link>
 </template>
 
 <script setup lang="ts">

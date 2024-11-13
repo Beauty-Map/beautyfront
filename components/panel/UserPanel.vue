@@ -145,6 +145,9 @@ const uploadAvatar = async (file) => {
   };
   xhr.send(frm)
 }
+onMounted(()=>{
+  useAuthStore().own()
+})
 </script>
 
 <style scoped>

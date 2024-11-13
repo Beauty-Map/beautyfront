@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full flex flex-col items-start justify-start">
+  <div class="w-full flex flex-col items-start justify-start" v-if="slide">
     <MainTitle :title="'هنرمندان محبوب'" class="mb-[8px]"/>
     <PopularArtistSliderItem
       :image="slide.image"
@@ -14,14 +14,18 @@
 
 <script setup lang="ts">
 import PopularArtistSliderItem from "~/components/main/PopularArtistSliderItem.vue";
-const slide = {
-  image: '/images/artist-slider/1.png',
-  main_title: 'هنرمندان محبوب',
-  sub_title: 'متخصصان خدمات زیبایی',
-  description: 'با هنرمندان محبوب خدمات خیلی خاص و همین طور تخفیفات ویژه برای کاربران دارد',
-  link_url: '/',
-  link_title: 'هنرمندان',
+const slide = ref(null)
+
+const getArtist = async () => {
+  const {$getRequest: getRequest}=useNuxtApp()
+  let url = '/main-sliders'
+  getRequest(url)
+      .then(res => {
+        slide.value = res.data
+      })
 }
+
+onMounted(async () => await getArtist())
 </script>
 
 <style scoped>

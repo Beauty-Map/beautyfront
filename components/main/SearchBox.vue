@@ -1,7 +1,8 @@
 <template>
   <div class="flex flex-row w-full gap-4 items-center justify-start">
-    <ButtonMainSearchFilter />
-    <MainSearchInput v-model="searchTerm" @update:model-value="onSearch"/>
+<!--    <ButtonMainSearchFilter />-->
+<!--    <MainSearchInput v-model="searchTerm" @update:model-value="onSearch"/>-->
+    <MainSearchInput v-model="searchTerm" @doSearch="onSearch"/>
   </div>
 </template>
 
@@ -10,7 +11,11 @@ const router = useRouter()
 const searchTerm = ref<string>('')
 
 const onSearch = (term: string) => {
-  router.push(`/search?term=${term}`)
+  let url = `/search`
+  if (term) {
+    url += `?term=${term}`
+  }
+  router.push(url)
 }
 </script>
 

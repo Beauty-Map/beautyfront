@@ -70,6 +70,10 @@ const exit = () => {
 }
 
 const openSecurityDrawer = () => {
+  if (!auth.user) {
+    store.openLoginDrawer()
+    return
+  }
   store.closeAllDrawers()
   store.openSecurityDrawer()
 }

@@ -32,7 +32,7 @@
         <DoneBlackCheckIcon v-if="isItemSelected(n)"/>
       </div>
     </div>
-    <MainActionButton @click="doLadder" class="absolute bottom-[30px] left-[20px] right-[20px]">
+    <MainActionButton @click="doLadder" class="w-auto absolute bottom-[30px] left-[20px] right-[20px]">
       <div class="text-white text-center text-[20px] leading-[30px] py-[11px]">نردبان کن</div>
     </MainActionButton>
     <Modal :show-close="false" :open="showAcceptModal">
@@ -101,11 +101,11 @@ const items = ref([
     id: 2,
     title: 'نردبان انفرادی نمونه کارها'
   },
-  {
-    id: 3,
-    title: 'نردبان پروفایل'
-  }
 ])
+// {
+//   id: 3,
+//       title: 'نردبان پروفایل'
+// }
 const selectedItems = ref<IPortfolio[]>([])
 const selectItem = (item) => {
   selectedItem.value = item

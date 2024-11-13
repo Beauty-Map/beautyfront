@@ -33,10 +33,10 @@ const form = ref<ISetNewPasswordForm>({
 })
 
 const pendingValue = ref<Boolean>(false)
-
+const app = useNuxtApp()
 const doSetPassword = async () => {
   pendingValue.value = true
-  const {$putRequest: putRequest}=useNuxtApp()
+  const {$putRequest: putRequest}=app
   putRequest('/own/password', form.value)
       .then(res => {
         setTimeout(() => {
@@ -45,10 +45,16 @@ const doSetPassword = async () => {
         }, 500)
       })
       .catch(err => {
+          const errors = Object.values(err.data.errors)
+          for (const k in errors) {
+            for (const e in errors[k]) {
+              app.$toast.error(errors[k][e], {rtl: true,})
+            }
+          }
         setTimeout(() => {
           pendingValue.value = false
         }, 500)
-      })
+        })
 }
 
 </script>
