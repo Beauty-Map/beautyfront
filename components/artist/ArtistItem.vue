@@ -1,32 +1,34 @@
 <template>
-  <div @click="goToPage" class="min-h-[165px] min-w-[323px] w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] pb-[30px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
-    <div class="w-[50%] flex flex-col relative pb-[40px]">
+  <div @click="goToPage" class="w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
+    <div class="w-full flex flex-col relative pb-[40px]">
       <div class="w-full flex flex-row justify-start items-center">
         <BlueTick v-if="artist.has_blue_tick"/>
-        <h1 class="text-right font-medium text-[18px] leading-[28px] text-[#141414]">{{ artist.full_name }}</h1>
+        <h1 class="text-right font-medium text-[14px] leading-[18px] text-[#141414]">{{ artist.full_name }}</h1>
       </div>
-      <div class="font-medium text-[#141414] text-[7px] leading-[11px] text-right">
-        {{ getCreatedAtAgoFa }}
-      </div>
+<!--      <div class="font-medium text-[#141414] text-[9px] mt-2 leading-[11px] text-right">-->
+<!--        تاریخ عضویت: {{ getCreatedAtAgoFa }}-->
+<!--      </div>-->
       <div class="flex flex-row gap-[8px] items-center justify-start mt-[10px]">
-        <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[10px] py-[4px] rounded-[25px]">
+        <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[6px] py-[2px] rounded-[12px]">
           <span class="whitespace-nowrap">نمونه کار</span>
           <span class="mr-1">({{ artist.portfolios_count }})</span>
         </div>
-        <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[10px] py-[4px] rounded-[25px]">
+        <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[6px] py-[2px] rounded-[12px]">
           <span class="whitespace-nowrap">تخصص</span>
           <span class="mr-1">({{ artist.services_count }})</span>
         </div>
       </div>
-      <div class="flex flex-row items-center justify-start gap-[8px] mt-[10px] overflow-hidden">
+      <div class="flex flex-col items-start justify-start gap-[8px] mt-[10px] overflow-hidden">
         <div class="text-right text-[9px] text-[#141414] leading-[13px] font-medium">
           <span>محل کار</span>
-          <div class="text-ellipsis break-words">{{ artist.address }}</div>
+          <div class="text-ellipsis break-words">{{ artist.address ? artist.address : 'محل کار ثبت نشده است' }}</div>
         </div>
-        <ArtistLocationIcon />
-        <span class="text-right text-[9px] text-[#ED2C25] leading-[13px] font-medium">
-          <span>({{ artist.distance }})</span>
-        </span>
+<!--        <div class="flex flex-row">-->
+<!--          <ArtistLocationIcon />-->
+<!--          <span class="text-right text-[9px] text-[#ED2C25] leading-[13px] font-medium">-->
+<!--            <span>({{ artist.distance }})</span>-->
+<!--          </span>-->
+<!--        </div>-->
       </div>
       <div class="flex flex-row items-center justify-end pl-[10px] mt-[10px]">
         <Rating v-model="artist.rating"/>
@@ -36,9 +38,7 @@
         <nuxt-link to="/" class="bg-[#085EC2] mr-[20px] rounded-[10px] px-[10px] py-[4px] text-white text-[8px] leading-[12px] cursor-pointer font-medium text-center">بیوگرافی کامل هنرمند</nuxt-link>
       </div>
     </div>
-    <div class="w-[50%] flex flex-col relative rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]">
-      <img :src="getThumbnail" :alt="artist.full_name" class="w-full h-full min-h-[125px] min-w-[125px] rounded-[8px]"/>
-    </div>
+      <img :src="getThumbnail" :alt="artist.full_name" class="object-cover h-[125px] min-w-[125px] rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]"/>
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col h-full relative">
-    <div class="flex flex-row items-center justify-between pl-[3px] absolute left-[23px] right-[15px] pt-[21px] pb-[79px] z-[999999]">
+    <div class="flex flex-row items-center justify-between pl-[3px] absolute left-[23px] right-[15px] pt-[21px] z-[999999]">
       <PortfolioPageHeader
           :user="portfolio.user"
           :rating="portfolio.rating"

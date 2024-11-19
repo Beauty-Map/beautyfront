@@ -1,30 +1,36 @@
 <template>
   <div class="cursor-pointer w-full px-[14px] py-[20px] border-b border-b-[#A9A7A7] flex flex-row justify-between items-center">
     <div class="w-full h-full flex flex-row justify-between items-center" @click="openModal">
-      <span class="text-black text-right font-medium text-[16px] leading-[21px]">
+      <span class="text-black text-right font-medium text-[14px] leading-[21px]">
         شماره تماس رزرو نوبت
       </span>
-      <span class="w-[120px] text-ellipsis text-left overflow-hidden text-[#A9A7A7] font-light text-[16px] leading-[19px]">
+      <span class="w-[120px] text-ellipsis text-left overflow-hidden text-[#A9A7A7] font-light text-[12px] leading-[19px]">
         {{ getPhoneNumber }}
       </span>
     </div>
     <Modal :show-close="false" :open="showModal">
       <div class=" flex flex-col justify-start items-start max-w-[340px] min-w-[250px]">
-        <div class="text-right  text-black text-[15px] leading-[18px] font-normal ">تنظیم شماره</div>
-        <div class="flex flex-row justify-start items-center mt-[18px]">
+        <div class="text-right  text-black text-[14px] leading-[18px] font-normal ">تنظیم شماره</div>
+        <div v-if="user.tel_number" class="flex flex-row justify-start items-center mt-[18px]">
           <CheckBox v-model="hasTel" />
-          <span class="text-black text-[16px] leading-[19px] font-normal mr-[5px]">تلفن ثابت</span>
+          <span class="text-black text-[14px] leading-[19px] font-normal mr-[5px]">
+            <span>تلفن ثابت</span>
+            <span class="mx-2">({{ user.tel_number }})</span>
+          </span>
         </div>
-        <div class="flex flex-row justify-start items-center mt-[14px]">
+        <div v-if="user.phone_number" class="flex flex-row justify-start items-center mt-[14px]">
           <CheckBox v-model="hasPhoneNumber" />
-          <span class="text-black text-[16px] leading-[19px] font-normal mr-[5px]">شماره موبایل</span>
+          <span class="text-black text-[14px] leading-[19px] font-normal mr-[5px]">
+            <span>شماره موبایل</span>
+            <span class="mx-2">({{ user.phone_number }})</span>
+          </span>
         </div>
-        <div v-if="!(hasTel || hasPhoneNumber)" class="flex flex-row items-center mt-[28px]" :class="[showSecondPhoneNumber ? 'justify-end' : 'justify-start']">
+        <div v-if="!(hasTel || hasPhoneNumber)" class="w-full flex flex-row items-center mt-[28px]" :class="[showSecondPhoneNumber ? 'justify-end' : 'justify-start']">
           <div class="w-full flex flex-row justify-end items-center relative" v-if="showSecondPhoneNumber" >
             <svg @click="closeSecondPhoneNumber" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z" fill="#141414"/>
             </svg>
-            <input placeholder="09381412419" v-model="secondPhoneNumber" type="tel" class="mr-[5px] w-full text-left dir-ltr border border-[#A9A7A7] focus:outline-[#A9A7A7] py-[12px] px-[8px] rounded-[10px]"/>
+            <input placeholder="09381412419" v-model="secondPhoneNumber" type="tel" class="mr-[5px] w-full text-[12px] text-left dir-ltr border border-[#A9A7A7] focus:outline-[#A9A7A7] py-[8px] px-[8px] rounded-[10px]"/>
           </div>
           <div v-else @click="openSecondPhoneNumber" class="w-full cursor-pointer text-[#2920D9] text-[14px] leading-[16px] font-normal mr-[5px]">شماره دیگر</div>
         </div>

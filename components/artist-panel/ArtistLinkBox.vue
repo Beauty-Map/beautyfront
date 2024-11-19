@@ -19,7 +19,7 @@
       <template #icon>
         <AdvIcon />
       </template>
-      <template #title>تبلیغات ویژه</template>
+      <template #title>ارتقا</template>
     </ProfileLink>
     <ProfileLink :to="'/panel/artist/support'">
       <template #icon>

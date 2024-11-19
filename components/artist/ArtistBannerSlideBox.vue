@@ -3,13 +3,13 @@
     <client-only>
       <carousel ref="carouselRef" :items-to-show="1" :autoplay-timeout="2000" @slide-end="handleSlideChange" :options="slickOptions" class=" h-full">
         <slide class="relative h-full" v-for="(img, n) in getImages" :key="n" data-fancybox="gallery" @click="openImageModal(n)">
-          <img :src="img" alt="" class="h-full w-full" />
+          <img :src="img" alt="" class="w-full h-[200px] object-cover" />
         </slide>
         <template #addons>
           <div class="w-full relative mt-[-10px] bg-white px-[8px] py-[8px] border-t-[8px] border-white rounded-t-[14px]">
             <div class="flex mt-[-25px] justify-center">
               <div v-if="user" class="text-white text-[11px] leading-[17px] text-center font-medium bg-[#FF3CA0] px-[14px] py-[4px] rounded-tl-[21px] rounded-tr-0 rounded-br-[21px] rounded-bl-[21px]">
-                آماربازدید <span v-format-number>{{user.view}}</span> نفر
+                آماربازدید <span v-format-number>{{view}}</span> نفر
               </div>
             </div>
           </div>
@@ -32,6 +32,14 @@ const props = defineProps({
   user: {
     type: Object,
     default: null
+  },
+  view: {
+    type: Number,
+    default: 0
+  },
+  avatar: {
+    type: String,
+    required: true,
   }
 })
 
@@ -66,6 +74,9 @@ const openImageModal = (n:number) => {
 const getImages = computed(() => {
   if (props.images?.length > 0) {
     return props.images?.length
+  }
+  if (props.avatar) {
+    return [props.avatar]
   }
   return [window.location.origin+'/images/artist/banner.png']
 })

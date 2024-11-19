@@ -25,10 +25,21 @@ const props = defineProps({
   }
 })
 const share = (type, id) => {
-  const telegram = `https://t.me/share/url?url=${window.location.href}`
-  const bale = `https://ble.ir/share?text=${id}`
-  const instagram = `https://www.instagram.com/${id}`
-  window.location.href = telegram
+  let link = '';
+  switch (type) {
+    case 'instagram':
+      link = `https://www.instagram.com/${id}`
+      break;
+
+    case 'telegram':
+      link = `https://t.me/share/url?url=${window.location.href}`
+      break;
+
+    case 'bale':
+      link = `https://ble.ir/share?text=${id}`
+      break;
+  }
+  window.open(link, '_blank');
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="cursor-pointer w-full px-[14px] py-[20px] border-b border-b-[#A9A7A7] flex flex-row justify-between items-center">
     <div class="w-full h-full flex flex-row justify-between items-center" @click="openServiceDrawer">
-      <span class="text-black text-right font-medium text-[16px] leading-[21px]">
+      <span class="text-black text-right font-medium text-[14px] leading-[21px]">
         دسته بندی
       </span>
       <span class="text-[#828282] font-light text-[10px] leading-[15px]">
@@ -32,6 +32,7 @@ const openServiceDrawer = () => {
 
 const closeServiceDrawer = () => {
   showServiceDrawer.value = false
+  console.log(showServiceDrawer.value, "dsdsds")
 }
 
 const chooseService = async (s: IService) => {
@@ -45,7 +46,7 @@ const chooseService = async (s: IService) => {
 const getServiceName = computed(() => {
   let title = ''
   if (service.value) {
-    title = `${service.value.title},${service.value.parent?.title}`
+    title = `${service.value.title} , ${service.value.parent?.title}`
   }
   return title
 })

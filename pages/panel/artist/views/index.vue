@@ -6,46 +6,13 @@
     </div>
     <div class="w-full text-center font-semibold text-[16px] text-[#141414] leading-[24px] mt-[25px]">آمار بازدید کارت ویزیت شما</div>
     <div class="w-full gap-[20px] text-center flex flex-col justify-start items-center px-[10px] mt-[25px]">
-      <div class="bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-[25px] px-[5px] py-[10px]">
-        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">آمار یک ماه گذشته</div>
-        <client-only>
-          <LazyViewsChart :height="240" :chart-options="chartOptions" :series="series"/>
-        </client-only>
-      </div>
-      <div class="bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-[25px] px-[5px] py-[10px]">
-        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">آمار شش ماه گذشته</div>
-        <client-only>
-          <LazyViewsChart :height="240" :chart-options="chartOptions" :series="series"/>
-        </client-only>
-      </div>
-      <div class="bg-gradient-to-r from-red-500 to-orange-500 rounded-[25px] px-[5px] py-[10px]">
-        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">آمار یک سال گذشته</div>
-        <client-only>
-          <LazyViewsChart :height="240" :chart-options="chartOptions" :series="series"/>
-        </client-only>
-      </div>
-    </div>
-    <hr class=""/>
-    <div class="w-full text-center font-semibold text-[16px] text-[#141414] leading-[24px] mt-[45px]">آمار بازدید نمونه کارهای شما</div>
-    <div class="w-full gap-[20px] text-center flex flex-col justify-start items-center px-[10px] mt-[25px]">
-      <div class="bg-gradient-to-r from-emerald-400 to-cyan-400 rounded-[25px] px-[5px] py-[10px]">
-        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">آمار یک ماه گذشته</div>
-        <client-only>
-          <LazyViewsChart :height="240" :chart-options="chartOptions" :series="series"/>
-        </client-only>
-      </div>
-      <div class="bg-gradient-to-r from-fuchsia-500 to-pink-500 rounded-[25px] px-[5px] py-[10px]">
-        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">آمار شش ماه گذشته</div>
-        <client-only>
-          <LazyViewsChart :height="240" :chart-options="chartOptions" :series="series"/>
-        </client-only>
-      </div>
-      <div class="bg-gradient-to-r from-red-500 to-orange-500 rounded-[25px] px-[5px] py-[10px]">
-        <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">آمار یک سال گذشته</div>
-        <client-only>
-          <LazyViewsChart :height="240" :chart-options="chartOptions" :series="series"/>
-        </client-only>
-      </div>
+      <PortfolioItem
+          v-for="(p, i) in portfolios"
+          :key="i"
+          :portfolio="p"
+          :is-bookmarked="p.is_bookmarked"
+          :is-panel="true"
+      />
     </div>
   </div>
 </template>
@@ -64,27 +31,21 @@ const router = useRouter()
 const auth = useAuthStore()
 const user = ref(auth.user)
 
-const series = [{
-  name: "STOCK ABC",
-  data: [30, 40, 35, 50, 49, 60, 70, 91],
-}]
-const chartOptions = {
-  chart: {
-    type: 'area',
-    height: 350,
-    zoom: {
-      enabled: false
-    }
-  },
-  xaxis: {
-    categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
-  },
-}
+const portfolios = ref<IPortfolio[]>([])
 
 const goBack = () => {
   router.replace('/panel/artist')
 }
 
+const getPortfoliosView = async () => {
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest(`/own/portfolios`)
+      .then(res => {
+        portfolios.value = res.data
+      })
+}
+
+onMounted(async () => await getPortfoliosView())
 </script>
 
 <style scoped>

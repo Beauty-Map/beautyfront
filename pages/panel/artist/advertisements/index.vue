@@ -6,7 +6,7 @@
         <span class="font-medium text-[18px] leading-[28px] mx-[8px]">{{ user.coins }}</span>
         <DollarIcon />
       </div>
-      <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">تبلیغات ویژه</div>
+      <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">ارتقا</div>
       <BackIcon @click="goBack" class="absolute left-[10px]"/>
     </div>
     <div class="flex flex-col justify-start items-start w-full px-[20px] py-[20px]">

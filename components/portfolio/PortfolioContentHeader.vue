@@ -27,8 +27,8 @@ const props = defineProps({
     required: true
   },
   bookmarked: {
-    type: Number,
-    default: '',
+    type: Boolean,
+    default: false,
     required: true
   },
   title: {
@@ -44,7 +44,7 @@ const props = defineProps({
 
 const app = useNuxtApp()
 const auth = useAuthStore()
-const isBookmarked = ref(props.bookmarked)
+const isBookmarked = ref<Boolean>(props.bookmarked)
 
 const getServices = () => {
   let services = []

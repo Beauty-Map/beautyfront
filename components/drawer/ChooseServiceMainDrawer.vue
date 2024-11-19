@@ -9,7 +9,7 @@
         <BackIcon @click="goBack" class="absolute left-0"/>
       </div>
       <div
-          class="grid grid-cols-4 gap-x-2 gap-y-8 w-full mt-[50px]"
+          class="grid grid-cols-3 gap-x-2 gap-y-8 w-full mt-[50px]"
       >
         <ServiceItem
             v-for="(s, i) in serviceArray"
@@ -81,7 +81,7 @@ const chooseService = async (s: IService) => {
 }
 
 const goBack = () => {
-  close()
+  emits('close')
 }
 
 onMounted(() => nextTick(() => getServiceList()))

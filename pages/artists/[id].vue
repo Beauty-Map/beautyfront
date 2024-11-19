@@ -1,10 +1,10 @@
 <template>
   <div class="w-full flex flex-col h-full relative pb-[100px]">
-    <div class="pl-[3px] fixed left-[23px] pt-[21px] pb-[79px] z-[999999]">
+    <div class="pl-[3px] fixed left-[23px] pt-[21px] z-[999999]">
       <PortfolioPageBackIcon @click="goBack" />
     </div>
     <div class="w-full h-full">
-      <ArtistBannerSlideBox :user="user" :images="user.banners"/>
+      <ArtistBannerSlideBox :view="user.view" :avatar="user.avatar" :user="user" :images="user.banners"/>
     </div>
     <div class="w-full h-full px-[20px]">
       <ArtistDetailBox
@@ -132,7 +132,9 @@ const getUser = async () => {
   const {$getRequest: getRequest}=useNuxtApp()
   getRequest(`/users/${id}`)
       .then(res => {
-        user.value = res.data as IArtist
+        user.value = {
+          ...res.data,
+        }
       })
 }
 const addUserView = async () => {
