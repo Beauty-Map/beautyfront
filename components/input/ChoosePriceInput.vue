@@ -12,7 +12,7 @@
             {{ formattedPropPrice }}
           </span>
           <span class="mr-[5px]">
-            ریال
+            تومان
           </span>
         </span>
         <span v-if="formattedPropDiscountPrice" class="flex flex-row text-left text-black font-medium text-[12px] leading-[12px]">
@@ -20,7 +20,7 @@
             {{ formattedPropDiscountPrice }}
           </span>
           <span class="mr-[5px] text-[12px]">
-            ریال
+            تومان
           </span>
         </span>
       </div>
@@ -32,12 +32,12 @@
           <div class="w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]">
             <span class="absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[12px] leading-[21px] font-medium px-[10px]">قیمت</span>
             <input inputmode="numeric" dir="auto" placeholder="20,000,000" :value="formattedPrice" @input="onPriceInput" type="text" class="text-[14px] leading-[19px] w-full pl-[36px] outline-none focus:outline-none dir-ltr py-[12px] px-[8px] rounded-[10px]"/>
-            <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">ریال</span>
+            <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">تومان</span>
           </div>
           <div v-if="showDiscountPrice" class="mt-[27px] w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]">
             <span class="absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[12px] leading-[21px] font-medium px-[10px]">قیمت با تخفیف</span>
             <input inputmode="numeric" dir="auto" placeholder="20,000,000" :value="formattedDiscountPrice" @input="onDiscountPriceInput" type="text" class="text-[14px] leading-[19px] w-full pl-[36px] outline-none focus:outline-none text-left py-[12px] px-[8px] rounded-[10px]"/>
-            <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">ریال</span>
+            <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">تومان</span>
           </div>
           <div v-else @click="openDiscountPrice" class="mt-[27px] w-full cursor-pointer text-[#2920D9] text-[14px] leading-[16px] font-normal mr-[5px]">قیمت با تخفیف</div>
         </div>

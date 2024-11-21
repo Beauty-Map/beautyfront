@@ -3,7 +3,7 @@ export default defineNuxtPlugin((nuxtApp) => {
         mounted (el) {
             const value = el.innerText;
             const formattedValue = new Intl.NumberFormat('fa-IR').format(value);
-            el.innerText = `${formattedValue} ریال`;
+            el.innerText = `${formattedValue} تومان`;
         },
         getSSRProps (binding, vnode) {
             // you can provide SSR-specific props here
