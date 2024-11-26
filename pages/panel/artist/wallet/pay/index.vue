@@ -69,7 +69,8 @@ const doPay = () => {
   loading.value = true
   const {$postRequest: postRequest}=app
   postRequest(`/payments`, {
-    payment_id: option.value?.id
+    payment_id: option.value?.id,
+    app: 'beauty'
   })
       .then(res => {
         app.$toast.success('در حال انتقال به درگاه پرداخت می باشید. لطفا صبر کنید.', {rtl: true})
