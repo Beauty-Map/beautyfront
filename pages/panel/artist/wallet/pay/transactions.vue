@@ -33,7 +33,10 @@
         <span v-if="loading">
           <LoadingComponent />
         </span>
-        <span v-else>بررسی مجدد وضعیت</span>
+        <span v-else class="flex flex-row gap-2">
+          <span>بررسی مجدد وضعیت</span>
+          <LoadingComponent v-if="status == 'created'"/>
+        </span>
       </button>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <div class="h-full w-full flex flex-col justify-start items-start mt-[17px] md:mb-0 mb-[110px] px-[33px]">
+  <div class="h-full w-full flex flex-col justify-start items-start mt-[17px] md:mb-0 mb-[110px]">
     <div class="w-full flex flex-row justify-start items-center">
       <Header />
       <BackIcon @click="goBack" />

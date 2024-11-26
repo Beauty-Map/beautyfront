@@ -110,10 +110,10 @@ const validated = () => {
     app.$toast.error('لطفا شماره تماس خود را وارد کنید', {rtl: true})
     validated = false
   }
-  if (!form.value.birth_date) {
-    app.$toast.error('لطفا تاریخ تولد خود را وارد کنید', {rtl: true})
-    validated = false
-  }
+  // if (!form.value.birth_date) {
+  //   app.$toast.error('لطفا تاریخ تولد خود را وارد کنید', {rtl: true})
+  //   validated = false
+  // }
   if (!form.value.city_id) {
     app.$toast.error('لطفا شهر محل فعالیت خود را انتخاب کنید', {rtl: true})
     validated = false

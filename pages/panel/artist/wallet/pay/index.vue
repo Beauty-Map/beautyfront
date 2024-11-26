@@ -9,7 +9,7 @@
       <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">خرید سکه</div>
       <BackIcon @click="goBack" class="absolute left-[10px]"/>
     </div>
-    <div v-if="option" class="w-full px-[17px] mt-[40px] pb-[40px] gap-y-[60px] flex flex-col justify-start items-start">
+    <div v-if="option" class="w-full px-[17px] mt-[40px] pb-[40px] gap-y-[40px] flex flex-col justify-start items-start">
       <div class="w-full flex justify-center items-center text-center bg-[#FFEA2E33] rounded-[10px] py-[10px] px-[18px]">
         <div class="text-center text-black font-semibold text-[20x] leading-[31px]">
           <span class="ml-2">
@@ -21,7 +21,7 @@
         </div>
       </div>
       <div class="w-full px-[23px]">
-        <div class="mt-[44px] w-full gap-x-[13px] flex flex-row border border-[#A9A7A7] px-[21px] py-[15px] rounded-[12px] min-h-[335px]">
+        <div class="w-full gap-x-[13px] flex flex-row border border-[#A9A7A7] px-[21px] py-[15px] rounded-[12px] min-h-[250px]">
           <PaymentOptionDescIcon />
           <div class="w-full h-full flex gap-y-[20px] flex-col justify-start items-start text-[#133C3E] text-[15px] font-medium leading-[23px]">
             <span>هنرمند عزیز</span>

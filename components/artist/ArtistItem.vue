@@ -38,7 +38,7 @@
         <nuxt-link to="/" class="bg-[#085EC2] mr-[20px] rounded-[10px] px-[10px] py-[4px] text-white text-[8px] leading-[12px] cursor-pointer font-medium text-center">بیوگرافی کامل هنرمند</nuxt-link>
       </div>
     </div>
-      <img :src="getThumbnail" :alt="artist.full_name" class="object-cover h-[125px] min-w-[125px] rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]"/>
+      <img :src="getThumbnail" :alt="artist.full_name" class="object-cover h-[125px] w-[125px] min-w-[125px] rounded-[8px] border border-[#5CB3FF] shadow-[2px_3px_6.5px_0px_#00000040]"/>
   </div>
 </template>
 

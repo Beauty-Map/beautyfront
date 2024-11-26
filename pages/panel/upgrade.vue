@@ -103,6 +103,7 @@ definePageMeta({
   layout: 'artist-panel',
   middleware: 'auth'
 })
+const app = useNuxtApp()
 const router = useRouter()
 const auth = useAuthStore()
 const user = ref(auth.user)
@@ -133,10 +134,28 @@ const closeSelectPlanModal = () => {
 
 const doSelectPlan = () => {
   if (!selectedPlan.value) {
-    console.log(selectedPlan.value, "p")
+    app.$toast.error('لطفا یک پلن رو انتخاب کنید', {rtl: true,})
   }
-  if (selectedPlan.value?.coins < user.value?.coins) {
-
+  console.log(selectedPlan.value?.coins, auth.user?.coins)
+  if (selectedPlan.value?.coins < auth.user?.coins) {
+    const {$postRequest:postRequest} = app
+    const data = {
+      'plan_id': selectedPlan.value.id,
+    }
+    postRequest(`/own/plans`, data)
+        .then(res => {
+          app.$toast.success('پلن انتخابی برای شما ثبت شد!', {rtl: true,})
+          closeSelectPlanModal()
+          router.replace('/panel')
+        })
+        .catch(err => {
+          const errors = Object.values(err.data.errors)
+          for (const k in errors) {
+            for (const e in errors[k]) {
+              app.$toast.error(errors[k][e], {rtl: true,})
+            }
+          }
+        })
   } else {
     closeSelectPlanModal()
     router.push('/panel/artist/wallet')

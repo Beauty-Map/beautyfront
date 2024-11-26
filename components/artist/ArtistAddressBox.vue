@@ -1,10 +1,10 @@
 <template>
   <div class="text-right w-full flex flex-col gap-[5px]">
-    <div class="w-full flex flex-row items-center">
+    <div v-if="address" class="w-full flex flex-row items-center">
       <HeaderLocationIcon class="w-[20px] h-[20px]"/>
       <div class="text-[#141414] font-medium text-[11px] leading-[15px]"> {{ address }} </div>
     </div>
-    <div class="w-full flex flex-row items-center flex-wrap">
+    <div v-if="distance" class="w-full flex flex-row items-center flex-wrap">
       <TimeIcon class="w-[20px] h-[20px]"/>
       <div class="text-[#141414] font-medium text-[11px] leading-[15px]">
         <span>فاصله از شما</span>

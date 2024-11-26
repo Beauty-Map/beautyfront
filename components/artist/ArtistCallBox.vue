@@ -32,12 +32,11 @@ const props = defineProps({
 })
 const app = useNuxtApp()
 const auth = useAuthStore()
-const user = ref(auth.user)
 const store = useDrawerStore()
 const showCallModal = ref<boolean>(false)
 
 const openCallModal = () => {
-  if (!user.value) {
+  if (!auth.user) {
     store.openLoginDrawer()
     app.$toast.error('برای تماس با این هنرمند وارد حساب کاربری خود شوید', {rtl: true})
     return
@@ -54,16 +53,16 @@ const closeCallModal = () => {
 }
 
 const openNavigation = () => {
-  if (!user.value) {
+  if (!auth.user) {
     store.openLoginDrawer()
     app.$toast.error('برای مسیریابی وارد حساب کاربری خود شوید', {rtl: true})
     return
   }
-  if (!props.artist?.location) {
+  if (!props.artist?.location || (!props.artist?.location.lat || !props.artist?.location.lng)) {
     app.$toast.error('برای این هنرمند فعلا لوکیشن ثبت نشده است', {rtl: true})
     return
   }
-  window.location.href = `geo:${user.value?.location.lat},${user.value?.location.lng}`;
+  window.open(`geo:${props.artist.location.lat},${props.artist.location.lng}`, '_blank')
 }
 </script>
 

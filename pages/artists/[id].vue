@@ -4,7 +4,7 @@
       <PortfolioPageBackIcon @click="goBack" />
     </div>
     <div class="w-full h-full">
-      <ArtistBannerSlideBox :view="user.view" :avatar="user.avatar" :user="user" :images="user.banners"/>
+      <ArtistBannerSlideBox v-if="!loading" :view="user.view" :avatar="user.avatar" :user="user" :images="user.banners"/>
     </div>
     <div class="w-full h-full px-[20px]">
       <ArtistDetailBox
@@ -97,6 +97,7 @@ const options = ref({
 const app = useNuxtApp()
 const router = useRouter()
 const route = useRoute()
+const loading = ref(false)
 const user = ref<IArtist>({
   id: 1,
   full_name: "زیبا اعظمی",
@@ -129,12 +130,16 @@ const user = ref<IArtist>({
 })
 const id = route.params.id
 const getUser = async () => {
+  loading.value = true
   const {$getRequest: getRequest}=useNuxtApp()
   getRequest(`/users/${id}`)
       .then(res => {
         user.value = {
           ...res.data,
         }
+      })
+      .finally(() => {
+        loading.value = false
       })
 }
 const addUserView = async () => {
