@@ -72,10 +72,11 @@ const doPay = () => {
     payment_id: option.value?.id,
     app: 'beauty'
   })
-      .then(res => {
+      .then(async res => {
         app.$toast.success('در حال انتقال به درگاه پرداخت می باشید. لطفا صبر کنید.', {rtl: true})
+        await navigator.clipboard.writeText(res.payment_url)
         window.open(res.payment_url)
-        router.push(route.path + `/transactions?id=${res.payment_id}`)
+        await router.push(route.path + `/transactions?id=${res.payment_id}`)
       })
       .catch(err => {
 

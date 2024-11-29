@@ -60,7 +60,9 @@ const doLogin = async () => {
       .then((res) => {
         auth.user = res.data
         auth.token = res.data.token
-        const token = useCookie("token")
+        const token = useCookie("token", {
+          maxAge: 60 * 60 * 24 * 31
+        })
         token.value = res.data.token
         app.$toast.success('شما با موفقیت وارد شدید', {rtl: true,})
         store.closeAllDrawers()
