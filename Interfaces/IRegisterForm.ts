@@ -22,7 +22,7 @@ interface ISetNewPasswordForm {
 }
 
 interface ISetAltNumberForm {
-    alt_number: string
+    email: string
 }
 
 interface ICompleteProfileForm {

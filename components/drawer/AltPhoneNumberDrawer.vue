@@ -10,7 +10,7 @@
     </div>
     <div class="w-full flex flex-row justify-start items-center mt-[40px]">
       <div class="font-medium text-[13px] leading-[20px] text-[#A9A7A7] text-center mx-7">
-        شما میتوانید جهت بالا بردن امنیت حساب کاربری خود و برای دسترسی همیشگی به حساب کاربری خود یک شماره به عنوان جایگزین به حساب کاربری خود اضافه کنید
+        جهت افزایش امنیت ، میتوانید یک ایمیل پشتیبان به ما معرفی کنید تا در صورت فراموشی رمز ایمیل اصلی بتوانید با ایمیل دوم وارد حساب کاربری خود شوید.
       </div>
     </div>
     <SetAltNumberForm class="mt-[17px]" />

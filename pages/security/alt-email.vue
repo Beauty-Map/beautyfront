@@ -9,7 +9,7 @@
       </div>
     </div>
     <div class="w-full overflow-y-auto mt-[17px]" v-if="!codeSent">
-      <InputEmailInput :error="errors.alt_number" title="شماره موبایل" v-model="form.alt_number"/>
+      <InputEmailInput :error="errors.email" title="شماره موبایل" v-model="form.email"/>
       <MainActionButton class="mt-[48px] h-[44px]" @click="doSendCode">
         <div class="text-white text-center text-[14px] leading-[21px]">
           ارسال کد
@@ -35,10 +35,10 @@ definePageMeta({
 })
 
 const form = ref<ISetAltNumberForm>({
-  alt_number: '',
+  email: '',
 })
 const errors = ref({
-  alt_number: ''
+  email: ''
 })
 
 const codeSent = ref(false)
@@ -46,11 +46,11 @@ const app = useNuxtApp()
 const {$postRequest: postRequest}=app
 
 const doSendCode = async () => {
-  if (!form.value.alt_number) {
-    errors.value.alt_number = 'ایمیل را وارد کنید'
+  if (!form.value.email) {
+    errors.value.email = 'ایمیل را وارد کنید'
     return
   }
-  postRequest('/own/alt-number', form.value)
+  postRequest('/own/alt-email', form.value)
       .then(res=> {
         app.$toast.success('کد با موفقیت ارسال شد', {rtl: true})
         codeSent.value = true
@@ -61,9 +61,9 @@ const doSendCode = async () => {
 }
 
 const validate = async (code: string) => {
-  const res = await useCustomFetch('/own/alt-number', {
+  const res = await useCustomFetch('/own/alt-email', {
     method: "PUT",
-    body: {code: code, alt_number: form.value.alt_number},
+    body: {code: code, email: form.value.email},
   })
   if (res.error.value) {
   }

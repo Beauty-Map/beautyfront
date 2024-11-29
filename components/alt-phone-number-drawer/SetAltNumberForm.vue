@@ -1,6 +1,6 @@
 <template>
   <div class="w-full overflow-y-auto">
-    <InputEmailInput :error="errors.alt_number" title="ایمیل" v-model="form.alt_number"/>
+    <InputEmailInput :error="errors.email" title="ایمیل" v-model="form.email"/>
     <MainActionButton :disabled="loading" class="mt-[48px] h-[44px]" @click="doSendCode">
       <div v-if="loading">
         <LoadingComponent />
@@ -31,10 +31,10 @@ const auth = useAuthStore()
 const loading = ref(false)
 
 const form = ref<ISetAltNumberForm>({
-  alt_number: auth.user?.alt_number,
+  email: auth.user?.email,
 })
 const errors = ref({
-  alt_number: ''
+  email: ''
 })
 const openDrawer = ref(false)
 const {$postRequest: postRequest}=app
@@ -44,11 +44,11 @@ const doSendCode = async () => {
     return
   }
   loading.value = true
-  if (!form.value.alt_number) {
-    errors.value.alt_number = 'ایمیل جایگزین را وارد کنید'
+  if (!form.value.email) {
+    errors.value.email = 'ایمیل جایگزین را وارد کنید'
     return
   }
-  postRequest('/own/alt-number', form.value)
+  postRequest('/own/alt-email', form.value)
       .then(res=> {
         app.$toast.success('ایمیل با موفقیت ثبت شد', {rtl: true})
         // openDrawerClicked()
@@ -63,23 +63,6 @@ const doSendCode = async () => {
       })
       .finally(() => {
         loading.value = false
-      })
-}
-
-const validate = async (code: string) => {
-  putRequest('/own/alt-number', {code: code, alt_number: form.value.alt_number})
-      .then(res=> {
-        app.$toast.success('اطلاعات شما با موفقیت ثبت شد', {rtl: true})
-        closeDrawerClicked()
-        store.closeAllDrawers()
-      })
-      .catch(err => {
-        const errors = Object.values(err.data.errors)
-        for (const k in errors) {
-          for (const e in errors[k]) {
-            app.$toast.error(errors[k][e], {rtl: true,})
-          }
-        }
       })
 }
 
