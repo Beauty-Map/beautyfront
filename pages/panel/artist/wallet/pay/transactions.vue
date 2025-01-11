@@ -162,7 +162,7 @@ const hasDiscount = computed(() => {
 })
 
 const getDiscountPrice = computed(() => {
-  return hasDiscount.value ? parseInt((option.value?.price - (option.value?.price * plan.value?.plan.discount_number / 100)).toString()) : option.value?.price
+  return hasDiscount.value ? parseFloat((option.value?.price - (option.value?.price * plan.value?.plan.discount_number / 100)).toString()) : option.value?.price
 })
 onMounted(() => {
   nextTick(() => {

@@ -33,7 +33,7 @@ const props = defineProps({
   }
 })
 const getDiscountPrice = computed(() => {
-  return parseInt((props.price - (props.price * props.plan.plan.discount_number / 100)).toString())
+  return parseFloat((props.price - (props.price * props.plan.plan.discount_number / 100)).toString())
 })
 const hasDiscount = computed(() => {
   return (props.plan && props.plan.plan.has_discount)
