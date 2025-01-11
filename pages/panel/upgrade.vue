@@ -21,6 +21,7 @@
           :coins="p.coins"
           :key="i"
           @click="selectPlan(p)"
+          :disabled="p.id == plan.plan_id"
         />
       </div>
       <div class="w-full flex flex-col justify-start items-center mt-[50px]">
@@ -34,11 +35,11 @@
             </thead>
             <tbody>
             <tr class="border-b border-b-[#A9A7A7]">
-              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">تعداد نمونه کار</td>
+              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">تعداد نمونه کار در ماه</td>
               <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]" v-for="(p,i) in plans" :key="i">{{ `${p.portfolio_count} عدد` }}</td>
             </tr>
             <tr class="border-b border-b-[#A9A7A7]">
-              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">نردبان در ماه</td>
+              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">نردبان در 48 ساعت</td>
               <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]" v-for="(p,i) in plans" :key="i">{{ `${p.laddering_count} عدد` }}</td>
             </tr>
             <tr class="border-b border-b-[#A9A7A7]">
@@ -50,11 +51,11 @@
               <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]" v-for="(p,i) in plans" :key="i">{{ p.has_blue_tick ? 'دارد' : 'ندارد' }}</td>
             </tr>
             <tr class="border-b border-b-[#A9A7A7]">
-              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">بارگزاری عکس</td>
+              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">بارگزاری عکس برای هر نمونه کار</td>
               <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]" v-for="(p,i) in plans" :key="i">{{ `${p.image_upload_count} تصویر` }}</td>
             </tr>
             <tr class="border-b border-b-[#A9A7A7]">
-              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">نمایش تخفیف</td>
+              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">تخفیف</td>
               <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]" v-for="(p,i) in plans" :key="i">{{ p.has_discount ? 'دارد' : 'ندارد' }}</td>
             </tr>
             </tbody>
@@ -106,7 +107,8 @@ definePageMeta({
 const app = useNuxtApp()
 const router = useRouter()
 const auth = useAuthStore()
-const user = ref(auth.user)
+const user = computed(() => auth.user)
+const plan = computed(() => auth.plan)
 
 const plans = ref<IPlan[]>([])
 const selectedPlan = ref<IPlan|null>(null)
@@ -136,8 +138,7 @@ const doSelectPlan = () => {
   if (!selectedPlan.value) {
     app.$toast.error('لطفا یک پلن رو انتخاب کنید', {rtl: true,})
   }
-  console.log(selectedPlan.value?.coins, auth.user?.coins)
-  if (selectedPlan.value?.coins < auth.user?.coins) {
+  if (selectedPlan.value?.coins <= auth.user?.coins) {
     const {$postRequest:postRequest} = app
     const data = {
       'plan_id': selectedPlan.value.id,
@@ -163,13 +164,12 @@ const doSelectPlan = () => {
 }
 
 const getPlans = async () => {
-  const res = await useCustomFetch('/plans', {
-    method: "GET"
-  })
-  if (res.data.value) {
-    plans.value = res.data.value?.data as (IPlan[])
-    selectedPlan.value = plans.value[0]
-  }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest('/plans')
+      .then(res => {
+        plans.value = res.data as (IPlan[])
+        selectedPlan.value = plans.value[0]
+      })
 }
 
 const goToWalletPage = () => {
@@ -177,6 +177,7 @@ const goToWalletPage = () => {
 }
 
 onMounted(() => {
+  auth.ownPlan()
   nextTick(() => {
     getPlans()
   })

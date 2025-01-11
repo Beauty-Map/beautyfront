@@ -43,13 +43,12 @@ const paginate = () => {
 }
 
 const getTickets = async () => {
-  const res = await useCustomFetch(`/own/tickets?page=${page.value}&limit=10`, {
-    method: "GET",
-  })
-  if (res.data.value) {
-    const list = res.data.value?.data as []
-    tickets.value.push(...list)
-  }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest(`/own/tickets?page=${page.value}&limit=10`)
+      .then(res => {
+        const list = res.data as []
+        tickets.value.push(...list)
+      })
 }
 onMounted(() => {
   setTimeout(() => {

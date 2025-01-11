@@ -10,15 +10,16 @@
       <BackIcon @click="goBack" class="absolute left-[10px]"/>
     </div>
     <div class="w-full px-[17px] mt-[40px] pb-[40px] gap-y-[60px] flex flex-col justify-start items-start">
-      <div class="text-[18px] leading-[34px]">
-        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.
-      </div>
+<!--      <div class="text-[18px] leading-[34px]">-->
+<!--        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.-->
+<!--      </div>-->
       <PaymentOptionItem
           v-for="(o, i) in options"
           :key="i"
           :coins="o.coins"
           :price="o.price"
           @click="selectOption(o)"
+          :plan="plan"
       />
     </div>
   </div>
@@ -39,6 +40,7 @@ definePageMeta({
 const router = useRouter()
 const auth = useAuthStore()
 const user = ref(auth.user)
+const plan = computed(() => auth.plan)
 const options = ref<IPaymentOption[]>([])
 
 const goBack = () => {
@@ -46,12 +48,11 @@ const goBack = () => {
 }
 
 const getPaymentOptions = async () => {
-  const res = await useCustomFetch('/payment-options', {
-    method: "GET"
-  })
-  if (res.data.value) {
-    options.value = res.data.value?.data as (IPaymentOption[])
-  }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest('/payment-options')
+      .then(res => {
+        options.value = res.data as (IPaymentOption[])
+      })
 }
 
 const selectOption = (o: IPaymentOption) => {
@@ -64,6 +65,9 @@ const selectOption = (o: IPaymentOption) => {
 }
 
 onMounted(() => {
+  if (!plan.value) {
+    auth.ownPlan()
+  }
   nextTick(() => {
     getPaymentOptions()
   })

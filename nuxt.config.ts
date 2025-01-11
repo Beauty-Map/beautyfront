@@ -40,6 +40,7 @@ export default defineNuxtConfig({
       // uploadURL: 'http://localhost:8000/api/upload',
       baseURL: 'https://api.beautymap.ir/api',
       uploadURL: 'https://api.beautymap.ir/api/upload',
+      walletAddress: 'UQCz1nOgL8ys5uKkza6hT1usfk8F97JIvdyD4UvucpnTAgDd',
     }
   },
   devServer: {

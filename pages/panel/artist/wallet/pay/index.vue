@@ -11,12 +11,13 @@
     </div>
     <div v-if="option" class="w-full px-[17px] mt-[40px] pb-[40px] gap-y-[40px] flex flex-col justify-start items-start">
       <div class="w-full flex justify-center items-center text-center bg-[#FFEA2E33] rounded-[10px] py-[10px] px-[18px]">
-        <div class="text-center text-black font-semibold text-[20x] leading-[31px]">
+        <div class="text-center text-black font-semibold text-[20x] leading-[31px] flex flex-row gap-x-2 items-center">
           <span class="ml-2">
             <span v-format-number>{{ `${option.coins} ` }}</span>
             <span>سکه</span>
           </span>
-          <span v-format-number>{{ option.price }}</span>
+          <span :class="[hasDiscount ? 'line-through decoration-2 decoration-red-600 text-red-600' : '']" v-format-number>{{ option.price }}</span>
+          <span v-format-number v-if="hasDiscount">{{ getDiscountPrice }}</span>
           <span>TON</span>
         </div>
       </div>
@@ -57,6 +58,7 @@ const router = useRouter()
 const route = useRoute()
 const auth = useAuthStore()
 const user = ref(auth.user)
+const plan = computed(() => auth.plan)
 const option = ref<IPaymentOption|null>(null)
 const showPayResultModal = ref<boolean>(false)
 const loading = ref<boolean>(false)
@@ -73,9 +75,6 @@ const doPay = () => {
     app: 'beauty'
   })
       .then(async res => {
-        app.$toast.success('در حال انتقال به درگاه پرداخت می باشید. لطفا صبر کنید.', {rtl: true})
-        await navigator.clipboard.writeText(res.payment_url)
-        window.open(res.payment_url)
         await router.push(route.path + `/transactions?id=${res.payment_id}`)
       })
       .catch(err => {
@@ -104,6 +103,14 @@ const getPaymentOption = async () => {
     option.value = res.data.value?.data as (IPaymentOption)
   }
 }
+
+const hasDiscount = computed(() => {
+  return plan.value && plan.value?.plan.has_discount
+})
+
+const getDiscountPrice = computed(() => {
+  return hasDiscount.value ? parseInt((option.value?.price - (option.value?.price * plan.value?.plan.discount_number / 100)).toString()) : option.value?.price
+})
 
 onMounted(() => {
   nextTick(() => {

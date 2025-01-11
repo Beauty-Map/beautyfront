@@ -15,6 +15,12 @@
       </template>
       <template #title>نمونه کار</template>
     </ProfileLink>
+    <ProfileLink :to="'/panel/artist/help'">
+      <template #icon>
+        <PortfolioIcon />
+      </template>
+      <template #title>راهنمای استفاده</template>
+    </ProfileLink>
     <ProfileLink :to="'/panel/artist/advertisements'">
       <template #icon>
         <AdvIcon />

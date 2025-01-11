@@ -1,17 +1,17 @@
 <template>
-  <div class="flex w-full flex-col px-[23px] py-[10px] h-full md:hidden">
+  <div class="flex w-full flex-col px-[23px] py-[10px] h-full">
     <MainHeader class="mb-15"/>
     <MainSearchBox class="mb-15"/>
     <PopularArtistSlider class="mb-10"/>
     <ServiceBox class="mb-15"/>
     <NearestArtistListBox class="mb-15"/>
   </div>
-  <div class="hidden w-full flex-col h-full md:flex">
-    <PopularArtistDesktopSlider class="mb-10"/>
-    <ServiceDesktopBox class="mb-10"/>
-    <NearestArtistDesktopListBox class="mb-10"/>
-    <RandomArtistDesktopListBox class="mb-10"/>
-  </div>
+<!--  <div class="hidden w-full flex-col h-full md:flex">-->
+<!--    <PopularArtistDesktopSlider class="mb-10"/>-->
+<!--    <ServiceDesktopBox class="mb-10"/>-->
+<!--    <NearestArtistDesktopListBox class="mb-10"/>-->
+<!--    <RandomArtistDesktopListBox class="mb-10"/>-->
+<!--  </div>-->
 </template>
 
 <script setup lang="ts">

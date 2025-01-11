@@ -6,7 +6,7 @@
       </template>
       <template #title>پروفایل</template>
     </ProfileLink>
-    <ProfileLink :is-link="false" @click="openArtistPanel">
+    <ProfileLink v-if="auth.user" :is-link="false" @click="openArtistPanel">
       <template #icon>
         <ArtistPanelIcon />
       </template>

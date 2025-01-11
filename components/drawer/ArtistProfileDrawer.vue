@@ -2,6 +2,7 @@
 <div
     class="flex flex-col fixed md:hide top-0 bottom-0 pb-[45px] px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999999999]"
     :class="[store.isOpenArtistProfile ? 'left-0' : 'left-[-100%]']"
+    v-if="!loadingPage"
 >
   <div class="flex flex-row items-center justify-between pt-[23px] pl-[3px]">
     <div></div>
@@ -69,6 +70,7 @@ import EmailInput from "~/components/input/EmailInput.vue";
 import {useAuthStore} from "~/store/Auth";
 import LoadingComponent from "~/components/global/Loading.vue";
 
+const loadingPage = ref(true)
 const store = useDrawerStore()
 const auth = useAuthStore()
 const user = computed(() => auth.user)
@@ -166,6 +168,12 @@ const doSaveProfile = async () => {
         setTimeout(() =>loading.value = false, 500)
       })
 }
+onMounted(() => {
+  auth.own()
+      .then(() => {
+        loadingPage.value = false
+      })
+})
 </script>
 
 <style scoped>

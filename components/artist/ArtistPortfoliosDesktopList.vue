@@ -31,15 +31,11 @@ const options = ref({
 
 const portfolios = ref<IPortfolio[]>([])
 const getUserPortfolios = async () => {
-  const res = await useCustomFetch(`/users/${props.userId}/portfolios`, {
-    method: "GET",
-  })
-  if (res.error.value) {
-
-  }
-  if (res.data.value) {
-    portfolios.value = res.data?.value?.data as IPortfolio[]
-  }
+  const {$getRequest: getRequest}=useNuxtApp()
+  getRequest(`/users/${props.userId}/portfolios`)
+      .then(res => {
+        portfolios.value = res.data?.data as IPortfolio[]
+      })
 }
 onMounted(() => nextTick(async () => {
   await getUserPortfolios()
