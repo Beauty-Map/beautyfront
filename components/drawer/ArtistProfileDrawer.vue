@@ -145,7 +145,7 @@ const doSaveProfile = async () => {
     city_id: form.value.city_id,
     birth_date: form.value.birth_date,
     work_hours: form.value.work_hours,
-    documents: form.value.documents,
+    licenses: form.value.documents,
   }
   const {$putRequest: putRequest}=app
   putRequest('/own/artist', data)

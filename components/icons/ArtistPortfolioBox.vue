@@ -18,6 +18,7 @@
           :key="i"
           :portfolio="p"
       />
+      <div class="w-full text-center mt-4" v-if="!searchStore.showInfiniteScroll && searchStore.portfolios.length == 0">موردی یافت نشد!</div>
       <InfiniteLoading :firstload="true" v-if="searchStore.showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
     </div>
 <!--    <FilterPortfolioDrawer @close="closeFilterDrawer" @choose="chooseService" :is-open="showFilterDrawer" />-->

@@ -38,6 +38,10 @@ const share = (type, id) => {
     case 'bale':
       link = `https://ble.ir/share?text=${id}`
       break;
+
+    case 'eita':
+      link = `https://eitaa.com/${id}`
+      break;
   }
   window.open(link, '_blank');
 }

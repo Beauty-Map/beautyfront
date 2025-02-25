@@ -2,27 +2,27 @@
   <div class="text-right w-full flex flex-col gap-[5px]">
     <div v-if="address" class="w-full flex flex-row items-center">
       <HeaderLocationIcon class="w-[20px] h-[20px]"/>
-      <div class="text-[#141414] font-medium text-[11px] leading-[15px]"> {{ address }} </div>
+      <div class="text-[#141414] font-medium text-[13px] leading-[15px]"> {{ address }} </div>
     </div>
     <div v-if="distance" class="w-full flex flex-row items-center flex-wrap">
       <TimeIcon class="w-[20px] h-[20px]"/>
-      <div class="text-[#141414] font-medium text-[11px] leading-[15px]">
+      <div class="text-[#141414] font-medium text-[13px] leading-[15px]">
         <span>فاصله از شما</span>
         <span>{{ distance }}</span>
       </div>
       <span class="mx-1" v-if="workHours.length > 0"> | </span>
-      <div v-if="workHours.length > 0" class="text-[#141414] font-medium text-[11px] leading-[15px]">
+      <div v-if="workHours.length > 0" class="text-[#141414] font-medium text-[13px] leading-[15px]">
         <span>{{ getStartAndEndWorkDayName() }}</span>
       </div>
       <span class="mx-1" v-if="workHours.length > 0"> | </span>
-      <div v-if="workHours.length > 0" class="text-[#141414] font-medium text-[11px] leading-[15px]">
+      <div v-if="workHours.length > 0" class="text-[#141414] font-medium text-[13px] leading-[15px]">
         <span>{{ getStartAndEndWorkTimeName() }}</span>
       </div>
-      <span class="mx-1 text-[#1EFF81] font-medium text-[11px] leading-[15px] cursor-pointer" v-if="workHours.length > 0" @click="openWorkHoursBox"> دیدن همه </span>
+      <span class="mx-1 text-[#1EFF81] font-medium text-[13px] leading-[15px] cursor-pointer" v-if="workHours.length > 0" @click="openWorkHoursBox"> دیدن همه </span>
     </div>
     <div class="w-full flex flex-row items-center" v-if="createdAtAgoFa">
       <GreenTick class="w-[20px] h-[20px]"/>
-      <div class="text-[#141414] font-medium text-[11px] leading-[15px]">
+      <div class="text-[#141414] font-medium text-[13px] leading-[15px]">
         <span>سابقه عضویت:</span>
         <span>{{ createdAtAgoFa }}</span>
       </div>

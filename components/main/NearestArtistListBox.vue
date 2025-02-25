@@ -18,19 +18,19 @@ import ArtistItem from "~/components/artist/ArtistItem.vue";
 import {useSearchStore} from "~/store/Search";
 
 const artists = ref<IArtist[]>([])
-
-const search = useSearchStore()
+const locationCookie = useCookie('selectedLocation')
 
 const toggleBookmark = (a) => {
 }
 
 const getArtists = async () => {
-  const lat = search.lat
-  const lng = search.lng
   setTimeout(async () => {
     let url = `/nearest?page=1&limit=6`
-    if (lat && lng) {
-      url += `&lat=${lat}&lng=${lng}`
+    if (locationCookie.value?.province) {
+      url += `&province_id=${locationCookie.value?.province.id}`
+    }
+    if (locationCookie.value?.city) {
+      url += `&city_id=${locationCookie.value?.city.id}`
     }
     const res = await useCustomFetch(url, {
       method: "GET"
@@ -47,8 +47,7 @@ onMounted(() => {
   })
 })
 
-watch(() => search.lat, getArtists)
-watch(() => search.lng, getArtists)
+watch(() => locationCookie.value, getArtists)
 </script>
 
 <style scoped>

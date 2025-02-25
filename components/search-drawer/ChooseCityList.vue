@@ -3,7 +3,7 @@
     <div class="w-full pb-1 text-right text-[#141414] text-[14px] leading-[21px] font-medium border-b border-b-gray-300">
       {{ province ? 'انتخاب شهر:' : 'انتخاب استان:' }}
     </div>
-    <div class="w-full mt-[10px] overflow-y-scroll h-[calc(100vh-140px)] relative">
+    <div class="w-full mt-[10px] overflow-y-scroll h-[calc(100vh-180px)] relative">
       <div class="absolute top-0 bottom-0 w-full duration-700 transition-all"
            :class="[province ? 'left-[-100%] hidden' : 'left-0 block']"
       >

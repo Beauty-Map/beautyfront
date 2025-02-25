@@ -43,16 +43,10 @@ const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
     }
   })
 }
-const getPositionSucceed = (position) => {
-  search.setUserCurrentLocation(position.coords.latitude, position.coords.longitude)
-}
-const getPositionError = (error) => {
-}
 onMounted(() => {
   nextTick(async () => {
-    navigator.geolocation.getCurrentPosition(getPositionSucceed, getPositionError)
     if (!locationCookie.value) {
-      // openDrawerClicked()
+      openDrawerClicked()
     } else {
       const province = locationCookie.value.province
       const city = locationCookie.value.city

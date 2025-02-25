@@ -40,15 +40,15 @@ const getArtists = async () => {
   const lng = search.lng
   setTimeout(async () => {
     let url = `/nearest?page=1&limit=10`
-    if (lat && lng) {
-      url += `&lat=${lat}&lng=${lng}`
-    }
-    const res = await useCustomFetch(url, {
-      method: "GET"
-    })
-    if (res.data.value) {
-      artists.value = res.data.value?.data as IArtist[]
-    }
+    // if (lat && lng) {
+    //   url += `&lat=${lat}&lng=${lng}`
+    // }
+    // const res = await useCustomFetch(url, {
+    //   method: "GET"
+    // })
+    // if (res.data.value) {
+    //   artists.value = res.data.value?.data as IArtist[]
+    // }
   }, 500)
 }
 

@@ -8,6 +8,7 @@
       <SearchInput v-model="searchTerm" class=""/>
       <BackIcon @click="goBack" />
     </div>
+    <div class="mt-[23px]">لطفا شهر پیشفرض خود را انتخاب کنید</div>
     <OwnProvince v-if="ownCity" :city="ownCity" class="mt-[23px]"/>
     <ChooseCityList v-if="isOpen" @choose="chooseProvinceAndCity" :provinces="provinces" class="mt-[15px]"/>
   </div>

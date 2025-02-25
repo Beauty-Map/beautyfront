@@ -1,10 +1,10 @@
 <template>
   <div class="mt-[20px] w-full flex flex-col items-start justify-start">
     <div class="pb-[15px] border-b border-b-[#A9A7A7] w-full flex flex-row items-center justify-between">
-      <div @click="selectTab(0)" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
+      <div @click="selectTab(0)" :class="[index == 0 ? 'bg-[#FF3CA0]' : 'bg-[#085EC2]']" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
         بیوگرافی
       </div>
-      <div @click="selectTab(1)" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
+      <div @click="selectTab(1)" :class="[index == 1 ? 'bg-[#FF3CA0]' : 'bg-[#085EC2]']" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
         نمونه کارها
       </div>
     </div>
@@ -25,7 +25,7 @@ const props = defineProps({
   }
 })
 
-const index = ref<number>(0)
+const index = ref<number>(1)
 
 const selectTab = (i: number) => {
   index.value = i
