@@ -6,14 +6,12 @@
   </div>
 </template>
 <script setup lang="ts">
-const html = ref(`
-  <div>
-    <h1 class="">3. Clause 3</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem.
+const html = ref('')
 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Viverra condimentum eget purus in. Consectetur eget id morbi amet amet, in. Ipsum viverra pretium tellus neque. Ullamcorper suspendisse aenean leo pharetra in sit semper et. Amet quam placerat sem.
-      </p>
-  </div>
-`)
+const res = await useCustomFetch('/settings', {
+  method: "GET",
+})
+if (res.data.value) {
+  html.value = res.data.value?.rule
+}
 </script>
