@@ -34,12 +34,14 @@
             <input inputmode="numeric" dir="auto" placeholder="20,000,000" :value="formattedPrice" @input="onPriceInput" type="text" class="text-[14px] leading-[19px] w-full pl-[36px] outline-none focus:outline-none dir-ltr py-[12px] px-[8px] rounded-[10px]"/>
             <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">تومان</span>
           </div>
-          <div v-if="showDiscountPrice" class="mt-[27px] w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]">
-            <span class="absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[12px] leading-[21px] font-medium px-[10px]">قیمت با تخفیف</span>
-            <input inputmode="numeric" dir="auto" placeholder="20,000,000" :value="formattedDiscountPrice" @input="onDiscountPriceInput" type="text" class="text-[14px] leading-[19px] w-full pl-[36px] outline-none focus:outline-none text-left py-[12px] px-[8px] rounded-[10px]"/>
-            <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">تومان</span>
-          </div>
-          <div v-else @click="openDiscountPrice" class="mt-[27px] w-full cursor-pointer text-[#2920D9] text-[14px] leading-[16px] font-normal mr-[5px]">قیمت با تخفیف</div>
+         <div class="w-full flex flex-col" v-if="canShowDiscount">
+           <div v-if="showDiscountPrice" class="mt-[27px] w-full flex flex-row justify-end items-center relative border border-[#A9A7A7] focus:outline-[#A9A7A7] rounded-[10px]">
+             <span class="absolute top-[-12px] right-[12px] z-10 bg-white text-center text-black text-[12px] leading-[21px] font-medium px-[10px]">قیمت با تخفیف</span>
+             <input inputmode="numeric" dir="auto" placeholder="20,000,000" :value="formattedDiscountPrice" @input="onDiscountPriceInput" type="text" class="text-[14px] leading-[19px] w-full pl-[36px] outline-none focus:outline-none text-left py-[12px] px-[8px] rounded-[10px]"/>
+             <span class="absolute left-[4px] top-[10px] text-[14px] leading-[19px] ">تومان</span>
+           </div>
+           <div v-else @click="openDiscountPrice" class="mt-[27px] w-full cursor-pointer text-[#2920D9] text-[14px] leading-[16px] font-normal mr-[5px]">قیمت با تخفیف</div>
+         </div>
         </div>
         <div class="w-full flex flex-row justify-end items-center mt-[20px] gap-[8px] grow text-[14px] leading-[21px] font-medium text-[#133C3E]">
           <span @click="saveModal">ذخیره</span>
@@ -51,6 +53,8 @@
 </template>
 
 <script setup lang="ts">
+
+import {useAuthStore} from "~/store/Auth";
 
 const emits = defineEmits(['update:price', 'update:discountPrice'])
 const props = defineProps({
@@ -68,6 +72,7 @@ const showModal = ref(false)
 const price = ref(props.price)
 const showDiscountPrice = ref(props.discountPrice != 0)
 const discountPrice = ref(props.discountPrice)
+const auth = useAuthStore()
 
 const openModal = () => {
   showModal.value = true
@@ -75,6 +80,7 @@ const openModal = () => {
 
 const closeModal = () => {
   showModal.value = false
+  showDiscountPrice.value = false
 }
 
 const openDiscountPrice = () => {
@@ -132,6 +138,10 @@ const setValues = () => {
   discountPrice.value = props.discountPrice
   showDiscountPrice.value = props.discountPrice != 0
 }
+
+const canShowDiscount = computed(() => {
+  return auth.user?.plan?.plan.has_discount ?? false
+})
 
 watch(() => props.price, () => setValues())
 watch(() => props.discountPrice, () => setValues())

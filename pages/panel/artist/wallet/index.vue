@@ -18,6 +18,7 @@
           :key="i"
           :coins="o.coins"
           :price="o.price"
+          :discount-price="o.discount_price"
           @click="selectOption(o)"
           :plan="plan"
       />

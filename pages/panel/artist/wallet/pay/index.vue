@@ -12,12 +12,9 @@
     <div v-if="option" class="w-full px-[17px] mt-[40px] pb-[40px] gap-y-[40px] flex flex-col justify-start items-start">
       <div class="w-full flex justify-center items-center text-center bg-[#FFEA2E33] rounded-[10px] py-[10px] px-[18px]">
         <div class="text-center text-black font-semibold text-[20x] leading-[31px] flex flex-row gap-x-2 items-center">
-          <span class="ml-2">
-            <span v-format-number>{{ `${option.coins} ` }}</span>
-            <span>سکه</span>
-          </span>
-          <span :class="[hasDiscount ? 'line-through decoration-2 decoration-red-600 text-red-600' : '']" v-format-number>{{ option.price }}</span>
-          <span v-format-number v-if="hasDiscount">{{ getDiscountPrice }}</span>
+          <span >{{ `${option.coins} سکه = `}}</span>
+          <span :class="[option.discount_price > 0 ? 'line-through decoration-2 decoration-red-600 text-red-600' : '']"><span v-format-number>{{ option.price }}</span> TON</span>
+          <span v-if="option.discount_price > 0" v-format-number>{{ option.discount_price }}</span>
           <span>TON</span>
         </div>
       </div>
