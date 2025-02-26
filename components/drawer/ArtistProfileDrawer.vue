@@ -37,7 +37,7 @@
       />
       <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px] px-2"/>
       <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
-      <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.documents" class="mt-[27px]"/>
+      <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.licenses" class="mt-[27px]"/>
       <MainActionButton :disabled="loading" class="mt-[80px]" @click="doSaveProfile">
         <div v-if="loading">
           <LoadingComponent />
@@ -93,7 +93,7 @@ const form = ref({
   is_closed: user.value?.is_closed,
   bio: user.value?.bio,
   social_media: user.value?.social_media,
-  documents: user.value?.documents,
+  licenses: user.value?.licenses,
 })
 const goBack = () => {
   store.closeAllDrawers()
@@ -145,7 +145,7 @@ const doSaveProfile = async () => {
     city_id: form.value.city_id,
     birth_date: form.value.birth_date,
     work_hours: form.value.work_hours,
-    licenses: form.value.documents,
+    licenses: form.value.licenses,
   }
   const {$putRequest: putRequest}=app
   putRequest('/own/artist', data)
