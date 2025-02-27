@@ -47,6 +47,7 @@ import ProfileBigIcon from "~/components/icons/ProfileBigIcon.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
 const app = useNuxtApp()
 const store = useDrawerStore()
+const router = useRouter()
 
 const auth = useAuthStore()
 const user = ref(auth.user)
@@ -65,6 +66,7 @@ const doSaveProfile = async () => {
   putRequest('/own', form.value)
       .then(res => {
         app.$toast.success('تغییرات با موفقیت ثبت شد!', {rtl: true})
+        router.push('/')
       })
       .catch(err => {
       })

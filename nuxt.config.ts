@@ -5,13 +5,13 @@ export default defineNuxtConfig({
       htmlAttrs: { dir: 'rtl', lang: 'fa' },
     },
   },
-  css: ["@/assets/css/style.scss"],
+  css: ["@/assets/css/style.scss", "leaflet/dist/leaflet.css"],
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/device',
     '@pinia/nuxt',
     "nuxt-lodash",
-    'nuxt3-leaflet',
+    // 'nuxt3-leaflet',
     'dayjs-nuxt',
   ],
   tailwindcss: {

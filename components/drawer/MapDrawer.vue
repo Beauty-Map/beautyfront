@@ -3,75 +3,109 @@
       class="fixed flex flex-col h-full md:hide top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]"
       :class="[isOpen ? 'left-0 scale-1' : 'left-[-100%] hidden scale-0']"
   >
-    <div class="w-full h-screen">
-      <LMap
-          ref="map"
-          :zoom="zoom"
-          :center="getLatLng"
-          :options="options"
-          class="w-full h-full"
-          @click="onMapClicked"
-      >
-        <LTileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution="&amp;copy; <a href=&quot;https://www.SaeedHeydari.ir/&quot;>SaeedHeydari.ir</a> contributors"
-            layer-type="base"
-            name="OpenStreetMap"
-        />
-        <LMarker :draggable="true" :lat-lng="point" v-if="point"/>
-      </LMap>
-    </div>
+    <div id="mapDrawer" class="h-full"></div>
   </div>
 </template>
 
 <script setup lang="ts">
+import L from "leaflet";
 
-const emits = defineEmits(['close', 'choose'])
+const emits = defineEmits(["close", "choose"]);
 const props = defineProps({
   isOpen: {
     type: Boolean,
-    required: true
+    required: true,
   },
   showPoint: {
     type: Boolean,
     required: false
   },
+  lat: {
+    type: Number,
+    required: false
+  },
+  lng: {
+    type: Number,
+    required: false
+  },
   options: {
     type: Object,
-    default: { zoomControl: true, dragging: true, doubleClickZoom: true, scrollWheelZoom: true }
-  }
-})
+    default: () => ({
+      zoomControl: true,
+      dragging: true,
+      doubleClickZoom: true,
+      scrollWheelZoom: true,
+    }),
+  },
+});
 
-const lat = ref(34.79922)
-const lng = ref(48.51456)
-const zoom = ref(13)
-const map = ref()
-const getLatLng = computed(() => [lat.value, lng.value])
-const showPoint = ref(props.showPoint)
-const point = ref()
-const l = ref()
+const lat = ref(props.lat ?? 34.7999968);
+const lng = ref(props.lng ?? 48.5166646);
+const zoom = ref(15);
+const map = ref(null);
+const marker = ref(null);
 
 const close = () => {
-  emits('close')
-}
+  emits("close");
+};
 
 onMounted(() => {
-  l.value = window.L
-  // navigator.geolocation.getCurrentPosition(function(position) {
-  //   lat.value = position.coords.latitude
-  //   lng.value = position.coords.longitude
-  // })
-})
+  if (props.isOpen) {
+    initMap();
+  }
+});
 
-const onMapClicked = (event) => {
-  lat.value = event.latlng.lat
-  lng.value = event.latlng.lng
-  point.value = l.value.latLng(lat.value, lng.value)
-  showPoint.value = true
-  emits('choose', event.latlng)
-}
+const initMap = () => {
+  nextTick(() => {
+    setTimeout(() => {
+      const mapDiv = document.getElementById("mapDrawer");
+      if (!mapDiv) return;
+
+      if (!map.value) {
+        map.value = L.map(mapDiv).setView([lat.value, lng.value], zoom.value);
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+          attribution: "&copy; OpenStreetMap contributors",
+        }).addTo(map.value);
+
+        map.value.on("click", (event) => {
+          lat.value = event.latlng.lat;
+          lng.value = event.latlng.lng;
+          addMarker();
+          emits("choose", [event.latlng.lat, event.latlng.lng]);
+        });
+      }
+
+      setTimeout(() => {
+        map.value.invalidateSize();
+      }, 300);
+    }, 300);
+  });
+};
+
+const addMarker = () => {
+  if (!map.value || lat.value === null || lng.value === null) return;
+
+  if (!marker.value) {
+    marker.value = L.marker([lat.value, lng.value], { draggable: true })
+        .addTo(map.value);
+
+    marker.value.on("dragend", () => {
+      const pos = marker.value.getLatLng();
+      lat.value = pos.lat;
+      lng.value = pos.lng;
+      emits("choose", pos);
+    });
+  } else {
+    marker.value.setLatLng([lat.value, lng.value]);
+  }
+};
+
+watch(
+    () => props.isOpen,
+    (newVal) => {
+      if (newVal) {
+        initMap();
+      }
+    }
+);
 </script>
-
-<style scoped>
-
-</style>

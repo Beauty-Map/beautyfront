@@ -24,7 +24,9 @@
       <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
       <ChooseCityInput title="شهر محل فعالیت *" v-model="form.city_id" class="mt-[27px]"/>
       <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
-      <ChooseLocationInput title="انتخاب لوکیشن" v-model="form.location" :point="form.location" class="mt-[27px]"/>
+      <ClientOnly>
+        <ChooseLocationInput title="انتخاب لوکیشن" :point="getPoint" v-model="form.location" class="mt-[27px]"/>
+      </ClientOnly>
       <ChooseWorkHourInput
           title="ساعت کاری"
           :is-all-day-open="form.is_all_day_open"
@@ -173,6 +175,12 @@ onMounted(() => {
       .then(() => {
         loadingPage.value = false
       })
+})
+const getPoint = computed(() => {
+  if (!form.value.location || !form.value.location.lat || !form.value.location.lng) {
+    return null
+  }
+  return [form.value.location.lat, form.value.location.lng]
 })
 </script>
 
