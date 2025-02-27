@@ -98,6 +98,7 @@ const addMarker = () => {
   } else {
     marker.value.setLatLng([lat.value, lng.value]);
   }
+  map.value.panTo([lat.value, lng.value])
 };
 
 watch(
