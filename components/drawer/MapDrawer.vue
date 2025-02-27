@@ -20,6 +20,10 @@ const props = defineProps({
     type: Boolean,
     required: false
   },
+  point: {
+    type: Object,
+    default: null
+  },
   lat: {
     type: Number,
     required: false
@@ -66,11 +70,13 @@ const initMap = () => {
         L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
           attribution: "&copy; OpenStreetMap contributors",
         }).addTo(map.value);
-
+        if (props.point) {
+          addMarker(props.point)
+        }
         map.value.on("click", (event) => {
           lat.value = event.latlng.lat;
           lng.value = event.latlng.lng;
-          addMarker();
+          addMarker([lat.value, lng.value]);
           emits("choose", [event.latlng.lat, event.latlng.lng]);
         });
       }
@@ -82,11 +88,11 @@ const initMap = () => {
   });
 };
 
-const addMarker = () => {
-  if (!map.value || lat.value === null || lng.value === null) return;
+const addMarker = (latLng) => {
+  if (!map.value || latLng.length != 2) return;
 
   if (!marker.value) {
-    marker.value = L.marker([lat.value, lng.value], { draggable: true })
+    marker.value = L.marker(latLng, { draggable: true })
         .addTo(map.value);
 
     marker.value.on("dragend", () => {
@@ -96,9 +102,9 @@ const addMarker = () => {
       emits("choose", pos);
     });
   } else {
-    marker.value.setLatLng([lat.value, lng.value]);
+    marker.value.setLatLng(latLng);
   }
-  map.value.panTo([lat.value, lng.value])
+  map.value.panTo(latLng)
 };
 
 watch(

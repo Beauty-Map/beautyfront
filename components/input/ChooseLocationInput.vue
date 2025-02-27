@@ -18,7 +18,7 @@
         <span class="mr-1 text-[#F44336] text-[10px] leading-[12px]">{{errorText || props.error}}</span>
       </div>
       <ClientOnly>
-        <MapDrawer :lat="lat" :lng="lng" :is-open="showMapDrawer" :show-point="true" @close="closeMapDrawer" @choose="onChooseLocation"/>
+        <MapDrawer :lat="lat" :lng="lng" :point="getPoint" :is-open="showMapDrawer" :show-point="true" @close="closeMapDrawer" @choose="onChooseLocation"/>
       </ClientOnly>
     </div>
 </template>
@@ -137,6 +137,13 @@ const addMarker = (latLng) => {
   }
   map.value.panTo(latLng)
 };
+
+const getPoint = computed(() => {
+  if (!props.modelValue?.lat || !props.modelValue?.lng) {
+    return null
+  }
+  return [props.modelValue?.lat, props.modelValue?.lng]
+})
 
 </script>
 
