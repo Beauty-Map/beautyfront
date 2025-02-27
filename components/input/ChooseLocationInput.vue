@@ -135,6 +135,7 @@ const addMarker = (latLng) => {
   } else {
     marker.value.setLatLng(latLng);
   }
+  map.value.panTo(latLng)
 };
 
 </script>
