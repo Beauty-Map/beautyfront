@@ -18,7 +18,9 @@ import ArtistItem from "~/components/artist/ArtistItem.vue";
 import {useSearchStore} from "~/store/Search";
 
 const artists = ref<IArtist[]>([])
-const locationCookie = useCookie('selectedLocation')
+const locationCookie = useCookie('selectedLocation', {
+  maxAge: 256*24*60*60
+})
 
 const toggleBookmark = (a) => {
 }

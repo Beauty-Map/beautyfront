@@ -19,7 +19,9 @@ const openDrawer = ref<Boolean>(false)
 const province = ref<IProvince|null>(null)
 const city = ref<ICity|null>(null)
 const search = useSearchStore()
-const locationCookie = useCookie('selectedLocation')
+const locationCookie = useCookie('selectedLocation', {
+  maxAge: 256*24*60*60
+})
 
 const openDrawerClicked = () => {
   openDrawer.value = true
