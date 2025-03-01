@@ -33,6 +33,7 @@ export const useSearchStore = defineStore('search', {
             this.page = 1
             this.lastPage = 1
             this.artists = []
+            console.log('yes')
         },
         setUserCurrentLocation(lat, lng) {
             this.lat = lat

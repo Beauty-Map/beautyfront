@@ -23,6 +23,9 @@ const doSearch = async () => {
     delete query.page
   }
   query.page = searchStore.page.toString()
+  if (query.page == "1") {
+    useSearchStore().resetArtists()
+  }
   const {$getRequest: getRequest}=useNuxtApp()
   let queries = []
   for (const [key, value] of Object.entries(query)) {

@@ -117,6 +117,9 @@ const doSearch = async () => {
     delete query.page
   }
   query.page = searchStore.page.toString()
+  if (query.page == "1") {
+    useSearchStore().reset()
+  }
   const res = await useCustomFetch('/search', {
     method: "GET",
     query: query,
@@ -165,6 +168,7 @@ watch(() => searchTerm.value, onChangeTermDebounce)
 watch(() => searchStore.page, onChangePageDebounce)
 
 onMounted(() => {
+  useSearchStore().resetArtists()
   nextTick(() => doSearch())
 })
 </script>

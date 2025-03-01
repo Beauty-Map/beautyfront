@@ -51,6 +51,7 @@ import localizedFormat from 'dayjs/plugin/localizedFormat'
 import jalaliday from 'jalaliday'
 import {useAuthStore} from "~/store/Auth";
 import {useDrawerStore} from "~/store/Drawer";
+import {useSearchStore} from "~/store/Search";
 const emits = defineEmits(['click', 'toggleBookmark'])
 const props = defineProps({
   artist: {
@@ -72,6 +73,7 @@ const getThumbnail = computed(() => {
 })
 
 const goToPage = () => {
+  useSearchStore().resetArtists()
   router.push(`/artists/${props.artist.id}`)
 }
 

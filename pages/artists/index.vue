@@ -9,11 +9,12 @@
 
 import PageHeader from "~/components/artists/PageHeader.vue";
 import PortfolioSearchList from "~/components/artists/ArtistsSearchList.vue";
+import {useSearchStore} from "~/store/Search";
 
 definePageMeta({
   layout: 'default'
 })
-
+onMounted(() => useSearchStore().resetArtists())
 </script>
 
 <style scoped>
