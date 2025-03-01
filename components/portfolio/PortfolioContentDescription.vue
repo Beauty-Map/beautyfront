@@ -2,11 +2,11 @@
   <div class="w-full flex flex-col items-center justify-between px-[27px] py-[18px]">
     <div class="w-full flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="font-semibold text-[#141414] text-right text-[16px] leading-[23px]">جزئیات بیشتر</h1>
-      <div class="mt-[10px] font-normal text-right text-[#133C3E] text-[9px] leading-[12px]" v-html="description"></div>
+      <div class="mt-[10px] font-normal text-right text-[#133C3E] text-[14px] leading-[22px]" v-html="description"></div>
     </div>
     <div class="w-full mt-4 mx-4 flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="w-full font-semibold text-[#141414] text-right text-[17px] leading-[26px]">برنامه هفتگی</h1>
-      <div class="w-full mt-[10px] font-normal text-right text-[#133C3E] text-[10px] leading-[15px]">
+      <div class="w-full mt-[10px] font-normal text-right text-[#133C3E] text-[14px] leading-[18px]">
         <div v-for="(w,i) in workHours" :key="i" class="flex flex-row justify-between items-center mb-[5px]">
           <span>{{ days[w.day_index] }}</span>
           <span>{{ getDayName(w) }}</span>

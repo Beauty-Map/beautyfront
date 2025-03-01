@@ -5,7 +5,7 @@
         :key="i"
         :portfolio="p"
     />
-    <InfiniteLoading :firstload="true" v-if="searchStore.showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
+    <InfiniteLoading :firstload="false" v-if="searchStore.showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
   </div>
 </template>
 

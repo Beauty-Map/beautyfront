@@ -134,7 +134,7 @@ const doSearch = async () => {
     searchStore.lastPage = res.data.value?.last_page
     setTimeout(() => {
       searchStore.showInfiniteScroll = true
-    }, 300)
+    }, 500)
   }
 }
 
@@ -144,12 +144,13 @@ const doChangeTerm = async () => {
   }
   if (!searchTerm.value) {
     delete query.term
+    searchStore.reset()
   } else {
     query.term = searchTerm.value as string
     searchStore.reset()
   }
   await router.replace({ query })
-  await doSearch()
+  // await doSearch()
 }
 
 const onChangePage = async () => {
@@ -165,7 +166,6 @@ watch(() => searchStore.page, onChangePageDebounce)
 
 onMounted(() => {
   nextTick(() => doSearch())
-  console.log('')
 })
 </script>
 

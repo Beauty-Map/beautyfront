@@ -22,6 +22,7 @@ const props = defineProps({
 const search = ref()
 const onInput = (e: Event) => {
   emits('update:modelValue', e.target?.value)
+  emits('doSearch', e.target?.value)
 }
 
 const onInputDebounce = useDebounce(onInput, 1200)

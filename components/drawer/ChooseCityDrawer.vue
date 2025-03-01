@@ -32,6 +32,7 @@ const props = defineProps({
 })
 
 const provinces = ref([])
+const provinceList = ref([])
 
 const ownCity = ref<ICity|null>(null)
 
@@ -62,7 +63,12 @@ const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
   close()
 }
 
-getProvinces()
+onMounted(() => getProvinces())
+
+watch(() => searchTerm.value, (newVal) => {
+  console.log(newVal)
+})
+
 </script>
 
 <style scoped>
