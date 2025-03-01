@@ -85,7 +85,7 @@ const onShareClicked = async () => {
   let link = window.location.host;
   link = `${link}/artist?ref=${user.value?.id}`
   await navigator.share({
-    url: link,   // URL to be shared
+    url: link,
   })
   app.$toast.success('برای دسترسی به این بخش وارد شوید', {rtl: true})
 }

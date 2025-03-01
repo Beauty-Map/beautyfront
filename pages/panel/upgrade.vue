@@ -147,7 +147,7 @@ const doSelectPlan = () => {
         .then(res => {
           app.$toast.success('پلن انتخابی برای شما ثبت شد!', {rtl: true,})
           closeSelectPlanModal()
-          router.replace('/panel')
+          router.back()
         })
         .catch(err => {
           const errors = Object.values(err.data.errors)
