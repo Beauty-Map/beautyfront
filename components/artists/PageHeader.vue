@@ -46,7 +46,7 @@ const doSearch = async () => {
         searchStore.lastPage = res.last_page
         setTimeout(() => {
           searchStore.showInfiniteScroll = true
-        }, 300)
+        }, 500)
       })
 }
 
@@ -56,12 +56,13 @@ const doChangeTerm = async () => {
   }
   if (!searchTerm.value) {
     delete query.term
+    searchStore.resetArtists()
   } else {
     query.term = searchTerm.value as string
     searchStore.resetArtists()
   }
   await router.replace({ query })
-  await doSearch()
+  // await doSearch()
 }
 
 const onChangePage = async () => {
