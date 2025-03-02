@@ -63,10 +63,14 @@ const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
   close()
 }
 
-onMounted(() => getProvinces())
-
 watch(() => searchTerm.value, (newVal) => {
   console.log(newVal)
+})
+
+watch(() => props.isOpen, (newVal) => {
+  if (newVal) {
+    getProvinces()
+  }
 })
 
 </script>
