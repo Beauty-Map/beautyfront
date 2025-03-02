@@ -73,7 +73,9 @@ const documents = ref<String[]>([])
 const inputs = ref()
 
 onMounted(() => {
-  documents.value = props.modelValue as String[]
+  if (props.modelValue) {
+    documents.value = props.modelValue as String[]
+  }
 })
 
 const removeDocument = (index: number) => {
@@ -96,6 +98,7 @@ const showBox = () => {
 }
 const saveDocument = () => {
   const v = value.value
+  console.log(value.value)
   if (v) {
     documents.value.push(v)
     value.value = ''
