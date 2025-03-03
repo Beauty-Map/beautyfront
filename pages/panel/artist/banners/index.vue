@@ -7,8 +7,8 @@
     <div class="w-full text-center flex flex-col justify-start items-center px-[10px] mt-[45px]">
       <div v-for="(b,i) in banners" :key="i" class="w-full flex flex-col justify-start items-center">
         <img :src="b.image" alt="" class="w-full max-h-[242px]"/>
-        <p class="mt-[10px] font-semibold text-[16px] leading-[24px] text-center">www.beautymap.ir/{{ user.id }}</p>
-        <button @click="shareLink(`www.beautymap.ir/${user.id}`)" class="cursor-pointer mt-[30px] w-full max-w-[260px] bg-[#1EFF81] text-[16px] leading-[24px] font-semibold text-black text-center rounded-[20px] py-[12px] px-[18px]">اشتراک گذاری</button>
+        <p class="mt-[10px] font-semibold text-[16px] leading-[24px] text-center">{{ getLink() }}</p>
+        <button @click="shareLink" class="cursor-pointer mt-[30px] w-full max-w-[260px] bg-[#1EFF81] text-[16px] leading-[24px] font-semibold text-black text-center rounded-[20px] py-[12px] px-[18px]">اشتراک گذاری</button>
       </div>
     </div>
   </div>
@@ -39,9 +39,14 @@ const goBack = () => {
   router.replace('/panel/artist')
 }
 
-const shareLink = async (link: string) => {
+const getLink = () => {
+  let link = window.location.host;
+  return `${link}/artists/${user.value?.id}`
+}
+
+const shareLink = async () => {
   await navigator.share({
-    url: link,   // URL to be shared
+    url: getLink(),   // URL to be shared
   })
 }
 </script>
