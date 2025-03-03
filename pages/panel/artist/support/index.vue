@@ -12,7 +12,7 @@
             :title="'تیکت به پشتیبانی'"
             @click="openTicketPage"
         />
-        <a href="https://t.me/Modir_Foroush" target="_blank" class="w-full flex flex-row justify-between items-center px-[12px] py-[8px] border border-[#133C3E] rounded-[12px]">
+        <a href="https://t.me/Modir_Forosh" target="_blank" class="w-full flex flex-row justify-between items-center px-[12px] py-[8px] border border-[#133C3E] rounded-[12px]">
           <div class="flex flex-row grow justify-start items-center">
             <TelegramIcon />
             <span class="mr-[17px] font-semibold text-[#141414] text-[13px] leading-[20px] text-right">ارتباط مستقیم</span>
