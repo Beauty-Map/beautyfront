@@ -20,7 +20,6 @@
       </div>
       <div class="flex flex-col items-start justify-start gap-[8px] mt-[10px] overflow-hidden">
         <div class="text-right text-[9px] text-[#141414] leading-[13px] font-medium">
-          <span>محل کار</span>
           <div class="text-ellipsis break-words">{{ artist.address ? artist.address : 'محل کار ثبت نشده است' }}</div>
         </div>
 <!--        <div class="flex flex-row">-->
