@@ -21,7 +21,7 @@
           :coins="p.coins"
           :key="i"
           @click="selectPlan(p)"
-          :disabled="p.id == plan.plan_id"
+          :disabled="isDisabled(p)"
         />
       </div>
       <div class="w-full flex flex-col justify-start items-center mt-[50px]">
@@ -174,6 +174,10 @@ const getPlans = async () => {
 
 const goToWalletPage = () => {
   router.push('/panel/artist/wallet')
+}
+
+const isDisabled = (p: IPlan) => {
+  return p.id <= plan.value?.plan_id
 }
 
 onMounted(() => {
