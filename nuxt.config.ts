@@ -13,7 +13,11 @@ export default defineNuxtConfig({
     "nuxt-lodash",
     // 'nuxt3-leaflet',
     'dayjs-nuxt',
+    'nuxt-gtag',
   ],
+  gtag: {
+    id: 'google-site-verification=rqwtUhnEx1ISv68hu7b69x_a-w6OGay5W0zd-bKgCb0'
+  },
   tailwindcss: {
     cssPath: ['~/assets/css/tailwind.scss', {injectPosition: 'first'},],
     configPath: 'tailwind.config',
