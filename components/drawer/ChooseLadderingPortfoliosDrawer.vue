@@ -81,8 +81,6 @@ const getPortfolios = async () => {
       ...list
     ]
     lastPage.value = (res.data.value.last_page as number)
-    console.log(lastPage.value, "lastPage")
-    console.log(page.value, "lastPage")
     setTimeout(() => {
       showInfiniteScroll.value = true
     }, 300)

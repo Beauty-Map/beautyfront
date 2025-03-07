@@ -23,18 +23,24 @@
         </p>
       </div>
     </div>
-    <div class="text-center w-full font-bold text-[16px] text-[#085EC2] leading-[25px] mt-[20px]">
-      یکی از گزینه های زیر انتخاب کنید
-    </div>
-    <div class="flex flex-col justify-start items-start text-center w-full font-bold text-[15px] text-[#141414] leading-[23px] mt-[30px] px-[20px] gap-y-[20px]">
-      <div v-for="(n,i) in items" :key="i" @click="selectItem(n)" :class="[isItemSelected(n) ? '' : '']" class="cursor-pointer w-full flex flex-row justify-between items-center">
-        <span>{{ n.title }}</span>
-        <DoneBlackCheckIcon v-if="isItemSelected(n)"/>
+    <div class="w-full" v-if="user.portfolios_count > 0">
+      <div class="text-center w-full font-bold text-[16px] text-[#085EC2] leading-[25px] mt-[20px]">
+        یکی از گزینه های زیر انتخاب کنید
       </div>
+      <div class="flex flex-col justify-start items-start text-center w-full font-bold text-[15px] text-[#141414] leading-[23px] mt-[30px] px-[20px] gap-y-[20px]">
+        <div v-for="(n,i) in items" :key="i" @click="selectItem(n)" :class="[isItemSelected(n) ? '' : '']" class="cursor-pointer w-full flex flex-row justify-between items-center">
+          <span>{{ n.title }}</span>
+          <DoneBlackCheckIcon v-if="isItemSelected(n)"/>
+        </div>
+      </div>
+      <MainActionButton @click="doLadder" class="!w-auto absolute bottom-[30px] left-[20px] right-[20px]">
+        <div class="text-white text-center text-[20px] leading-[30px] py-[11px]">نردبان کن</div>
+      </MainActionButton>
     </div>
-    <MainActionButton @click="doLadder" class="!w-auto absolute bottom-[30px] left-[20px] right-[20px]">
-      <div class="text-white text-center text-[20px] leading-[30px] py-[11px]">نردبان کن</div>
-    </MainActionButton>
+    <div class="text-center w-full font-bold text-[16px] text-red-600 leading-[25px] mt-[20px]" v-else>
+      هنوز نمونه کاری ثبت نکرده اید!
+      <nuxt-link to="/panel/artist/portfolios/create" class="text-blue-600">ثبت اولین نمونه کار</nuxt-link>
+    </div>
     <Modal :show-close="false" :open="showAcceptModal">
       <div class="w-full h-full flex flex-col justify-start items-start">
         <div class="w-full gap-x-[40px] flex flex-row justify-between items-center">
@@ -175,64 +181,76 @@ const doLadderAll = async () => {
     type: 'all_portfolios',
     data: []
   }
-  const res = await useCustomFetch('/ladder', {
-    method: "POST",
-    body: data
-  })
-  if (res.data.value) {
-    app.$toast.success('با موفقیت انجام شد', {rtl: true,})
-    closeAcceptModal()
-    router.back()
-  }
-  if (res.error.value) {
-    app.$toast.error('متاسفانه خطایی رخ داده است', {rtl: true,})
-  }
+  const {$postRequest: postRequest}=app
+  postRequest('/ladder', data)
+      .then(res=> {
+        app.$toast.success('با موفقیت انجام شد', {rtl: true,})
+        closeAcceptModal()
+        router.back()
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
 }
 const doLadderSome = async () => {
   const data = {
     type: 'some_portfolios',
     data: selectedItems.value
   }
-  const res = await useCustomFetch('/ladder', {
-    method: "POST",
-    body: data
-  })
-  if (res.data.value) {
-    app.$toast.success('با موفقیت انجام شد', {rtl: true,})
-    closeAcceptModal()
-    router.back()
+  const {$postRequest: postRequest}=app
+  postRequest('/ladder', data)
+      .then(res=> {
+        app.$toast.success('با موفقیت انجام شد', {rtl: true,})
+        closeAcceptModal()
+        router.back()
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
   }
-  if (res.error.value) {
-    app.$toast.error('متاسفانه خطایی رخ داده است', {rtl: true,})
-  }
-}
 const doLadderProfile = async () => {
   const data = {
     type: 'profile',
     data: []
   }
-  const res = await useCustomFetch('/ladder', {
-    method: "POST",
-    body: data
-  })
-  if (res.data.value) {
-    app.$toast.success('با موفقیت انجام شد', {rtl: true,})
-    closeAcceptModal()
-    router.back()
-  }
-  if (res.error.value) {
-    app.$toast.error('متاسفانه خطایی رخ داده است', {rtl: true,})
-  }
+  const {$postRequest: postRequest}=app
+  postRequest('/ladder', data)
+      .then(res=> {
+        app.$toast.success('با موفقیت انجام شد', {rtl: true,})
+        closeAcceptModal()
+        router.back()
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
 }
 
 const requiredCoins = computed(() => {
   if (!selectedItem.value) return 0
-  if (selectedItem.value == 1) {
-    return 1000
+  if (selectedItem.value?.id == 1) {
+    // ladder all
+    return auth.user?.portfolios_count * 6
   }
-  if (selectedItem.value == 2) {
-    return 200
+  if (selectedItem.value?.id == 2) {
+    // ladder some
+    return selectedItems.value.length * 10
   }
+  // ladder profile
   return 100
 })
 

@@ -32,11 +32,22 @@ const share = (type, id) => {
       break;
 
     case 'telegram':
-      link = `https://t.me/share/url?url=${window.location.href}`
+      link = `https://t.me/${id}`
+      break;
+
+    case 'whatsapp':
+      if (id.length > 0 && id[0] == '0') {
+        id = id.substring(1, id.length)
+      }
+      link = `https://wa.me/${id}`
+      break;
+
+    case 'rubika':
+      link = `https://rubika.ir/${id}`
       break;
 
     case 'bale':
-      link = `https://ble.ir/share?text=${id}`
+      link = `https://ble.ir/${id}`
       break;
 
     case 'eita':

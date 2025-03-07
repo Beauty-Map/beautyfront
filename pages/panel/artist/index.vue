@@ -1,7 +1,7 @@
 <template>
   <div class="relative w-full h-full flex flex-col justify-start items-start">
     <ArtistIntroDrawer :is-open="showArtistIntro" @close="closeArtistIntro"/>
-    <Header :avatar="user.avatar" :banner="user.banner" :full_name="user.full_name" :plan-title="user.selected_plan?.title" :rate="user.rating"/>
+    <Header :avatar="user.avatar" :banner="user.banner" :full_name="user.full_name" :plan-title="user.selected_plan?.title" :rate="user.plan.plan.star_count"/>
     <ArtistLinkBox class="mt-6 px-[15px]" :is-profile-completed="user.is_artist_profile_completed"/>
   </div>
 </template>

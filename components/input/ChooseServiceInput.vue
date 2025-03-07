@@ -32,7 +32,6 @@ const openServiceDrawer = () => {
 
 const closeServiceDrawer = () => {
   showServiceDrawer.value = false
-  console.log(showServiceDrawer.value, "dsdsds")
 }
 
 const chooseService = async (s: IService) => {

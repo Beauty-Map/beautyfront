@@ -1,9 +1,12 @@
 <template>
-  <div class="flex flex-col h-full relative">
+  <div class="flex flex-col h-screen justify-center items-center" v-if="loading">
+    <LoadingComponent />
+  </div>
+  <div class="flex flex-col h-full relative" v-else>
     <div class="flex flex-row items-center justify-between pl-[3px] absolute left-[23px] right-[15px] pt-[21px] z-[999999]">
       <PortfolioPageHeader
           :user="portfolio.user"
-          :rating="portfolio.rating"
+          :rating="portfolio.user.plan.plan.star_count"
       />
       <PortfolioPageBackIcon @click="goBack" />
     </div>
@@ -22,6 +25,7 @@
 <script setup lang="ts">
 
 import PortfolioPageBackIcon from "~/components/icons/PortfolioPageBackIcon.vue";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 definePageMeta({
   layout: 'portfolio-single'
@@ -30,7 +34,7 @@ definePageMeta({
 const router = useRouter()
 const route = useRoute()
 const app = useNuxtApp()
-const {$postRequest: postRequest}=app
+const loading = ref(true)
 const portfolio = ref<IPortfolio>({
   id: 1,
   title: 'خدمات ناخن',
@@ -95,16 +99,20 @@ const getPortfolio = async () => {
   if (res.error.value) {
     router.back()
   }
+  setTimeout(() => {
+    loading.value = false
+  }, 500)
 }
 
 const goBack = () => {
   router.back()
 }
 const addPortfolioView = async () => {
+  const {$postRequest:postRequest} = app
   postRequest(`/portfolios/${id}/view`)
 }
+await getPortfolio()
 onMounted(async () => {
-  await getPortfolio()
   await addPortfolioView()
 })
 </script>

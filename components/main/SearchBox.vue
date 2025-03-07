@@ -11,7 +11,6 @@ const router = useRouter()
 const searchTerm = ref<string>('')
 
 const onSearch = (term: string) => {
-  console.log(term, "T")
   let url = `/search`
   if (term) {
     url += `?term=${term}`

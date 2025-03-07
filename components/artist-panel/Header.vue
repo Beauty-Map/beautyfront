@@ -26,9 +26,9 @@
               <span class="whitespace-nowrap text-ellipsis overflow-hidden max-w-[80px]">{{ full_name }}</span>
               <Rating :star-count="5" v-model="rates"/>
             </div>
-            <div class="mt-[5px] text-[#133C3E] font-light text-[14px] leading-[21px]">
-              {{ planTitle }}
-            </div>
+<!--            <div class="mt-[5px] text-[#133C3E] font-light text-[14px] leading-[21px]">-->
+<!--              {{ planTitle }}-->
+<!--            </div>-->
           </div>
         </div>
         <NotificationIcon @click="openNotificationDrawer" />

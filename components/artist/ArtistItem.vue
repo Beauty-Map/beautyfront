@@ -30,7 +30,7 @@
 <!--        </div>-->
       </div>
       <div class="flex flex-row items-center justify-end pl-[10px] mt-[10px]">
-        <Rating v-model="artist.rating"/>
+        <Rating v-model="artist.plan.plan.star_count"/>
       </div>
       <div class="flex flex-row items-center justify-start absolute right-0 bottom-0 z-[9999]">
         <Bookmark @bookmark="toggleBookmark" :bookmarked="artist.is_bookmarked" />

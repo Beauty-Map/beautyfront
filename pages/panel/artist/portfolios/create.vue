@@ -158,6 +158,8 @@ const onChooseImage = async (e) => {
   // selectedFiles.value = []
   // selectedImages.value = []
   const files = e.target?.files
+  alert(files.length)
+  alert(e.target?.files)
   if (files.length == 0) {
     return
   }

@@ -116,6 +116,17 @@ const doSearch = async () => {
   if (query.page) {
     delete query.page
   }
+  const locationCookie = useCookie('selectedLocation', {
+    maxAge: 256*24*60*60
+  })
+  if (locationCookie.value) {
+    if (locationCookie.value?.province) {
+      query.province_id = locationCookie.value?.province.id
+    }
+    if (locationCookie.value?.city) {
+      query.city_id = locationCookie.value?.city.id
+    }
+  }
   query.page = searchStore.page.toString()
   if (query.page == "1") {
     useSearchStore().reset()
