@@ -14,7 +14,7 @@
       <h1 class="w-full font-semibold text-[#141414] text-right text-[17px] leading-[26px]">برنامه هفتگی</h1>
       <div class="w-full mt-[10px] font-normal text-right text-[#133C3E] text-[16px] leading-[22px]">
         <div v-for="(w,i) in workHours" :key="i" class="flex flex-row justify-between items-center mb-[5px]">
-          <span>{{ days[w.day_index] }}</span>
+          <span>{{ days[w.day_index - 1] }}</span>
           <span>{{ getDayName(w) }}</span>
         </div>
       </div>
