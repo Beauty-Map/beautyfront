@@ -3,13 +3,13 @@
     <div @click="openCallModal" class="cursor-pointer text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">تماس</div>
     <div class="flex flex-col">
       <div class="flex flex-row justify-end items-center">
-        <span class="ml-[6px] px-[8px] text-white text-[8px] text-center leading-[12px] py-[4px] bg-[#ED2C25] rounded-[20px]">{{calcDiscountPercent(portfolio.price, portfolio.discount_price)}}</span>
-        <div class="text-[#ED2C25] text-[11px] leading-[16px] text-left font-medium line-through">
+        <span v-if="portfolio.discount_price > 0" class="ml-[6px] px-[8px] text-white text-[8px] text-center leading-[12px] py-[4px] bg-[#ED2C25] rounded-[20px]">{{calcDiscountPercent(portfolio.price, portfolio.discount_price)}}</span>
+        <div v-if="portfolio.discount_price > 0" class="text-[#ED2C25] text-[11px] leading-[16px] text-left font-medium line-through">
           <span v-format-number>{{ portfolio.price }}</span>
         </div>
       </div>
       <div class="text-[#000000] text-[12px] leading-[18px] text-left font-medium">
-        <span v-format-price>{{ portfolio.discount_price }}</span>
+        <span v-format-price>{{ portfolio.discount_price > 0 ? portfolio.discount_price : portfolio.price }}</span>
       </div>
     </div>
     <Modal :open="showCallModal" @close="closeCallModal">
