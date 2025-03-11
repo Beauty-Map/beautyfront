@@ -76,11 +76,10 @@ const getPortfolios = async () => {
 const paginateDebounce = useDebounce(paginate, 500)
 
 watch(() => searchStore.page, paginateDebounce)
-onMounted(()=> {
-  searchStore.resetArtists()
-  searchStore.reset()
-  getPortfolios()
-})
+
+searchStore.resetArtists()
+searchStore.reset()
+getPortfolios()
 </script>
 
 <style scoped>
