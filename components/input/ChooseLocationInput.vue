@@ -123,8 +123,17 @@ watch(
 const addMarker = (latLng) => {
   if (!map.value) return;
 
+  const customIcon = L.icon({
+    iconUrl: '/images/marker.png',
+    iconSize: [32, 40],
+    iconAnchor: [16, 32],
+    popupAnchor: [0, -32],
+  });
   if (!marker.value) {
-    marker.value = L.marker(latLng, { draggable: true })
+    marker.value = L.marker(latLng, {
+      icon: customIcon,
+      draggable: true
+    })
         .addTo(map.value);
 
     marker.value.on("dragend", () => {
@@ -134,6 +143,7 @@ const addMarker = (latLng) => {
     });
   } else {
     marker.value.setLatLng(latLng);
+    marker.value.setIcon(customIcon);
   }
   map.value.panTo(latLng)
 };

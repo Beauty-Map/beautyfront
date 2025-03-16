@@ -59,53 +59,61 @@ onMounted(() => {
   }
 });
 
-const initMap = () => {
-  nextTick(() => {
-    setTimeout(() => {
-      const mapDiv = document.getElementById("mapDrawer");
-      if (!mapDiv) return;
-
-      if (!map.value) {
-        map.value = L.map(mapDiv).setView([lat.value, lng.value], zoom.value);
-        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-          attribution: "&copy; OpenStreetMap contributors",
-        }).addTo(map.value);
-        if (props.point) {
-          addMarker(props.point)
-        }
-        map.value.on("click", (event) => {
-          lat.value = event.latlng.lat;
-          lng.value = event.latlng.lng;
-          addMarker([lat.value, lng.value]);
-          emits("choose", [event.latlng.lat, event.latlng.lng]);
-        });
-      }
-
+  const initMap = () => {
+    nextTick(() => {
       setTimeout(() => {
-        map.value.invalidateSize();
+        const mapDiv = document.getElementById("mapDrawer");
+        if (!mapDiv) return;
+
+        if (!map.value) {
+          map.value = L.map(mapDiv).setView([lat.value, lng.value], zoom.value);
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors",
+          }).addTo(map.value);
+          if (props.point) {
+            addMarker(props.point)
+          }
+          map.value.on("click", (event) => {
+            lat.value = event.latlng.lat;
+            lng.value = event.latlng.lng;
+            addMarker([lat.value, lng.value]);
+            emits("choose", [event.latlng.lat, event.latlng.lng]);
+          });
+        }
+
+        setTimeout(() => {
+          map.value.invalidateSize();
+        }, 300);
       }, 300);
-    }, 300);
-  });
-};
-
-const addMarker = (latLng) => {
-  if (!map.value || latLng.length != 2) return;
-
-  if (!marker.value) {
-    marker.value = L.marker(latLng, { draggable: true })
-        .addTo(map.value);
-
-    marker.value.on("dragend", () => {
-      const pos = marker.value.getLatLng();
-      lat.value = pos.lat;
-      lng.value = pos.lng;
-      emits("choose", pos);
     });
-  } else {
-    marker.value.setLatLng(latLng);
-  }
-  map.value.panTo(latLng)
-};
+  };
+
+  const addMarker = (latLng) => {
+    if (!map.value || latLng.length != 2) return;
+    const customIcon = L.icon({
+      iconUrl: '/images/marker.png',
+      iconSize: [32, 32],
+      iconAnchor: [16, 32],
+      popupAnchor: [0, -32],
+    });
+    if (!marker.value) {
+      marker.value = L.marker(latLng, {
+        icon: customIcon,
+        draggable: true
+      }).addTo(map.value);
+
+      marker.value.on("dragend", () => {
+        const pos = marker.value.getLatLng();
+        lat.value = pos.lat;
+        lng.value = pos.lng;
+        emits("choose", pos);
+      });
+    } else {
+      marker.value.setLatLng(latLng);
+      marker.value.setIcon(customIcon);
+    }
+    map.value.panTo(latLng)
+  };
 
 watch(
     () => props.isOpen,
