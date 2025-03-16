@@ -92,7 +92,7 @@ onMounted(() => {
     if (!map.value || latLng.length != 2) return;
     const customIcon = L.icon({
       iconUrl: '/images/marker.png',
-      iconSize: [32, 32],
+      iconSize: [32, 40],
       iconAnchor: [16, 32],
       popupAnchor: [0, -32],
     });
