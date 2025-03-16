@@ -56,7 +56,6 @@ const doSendCode = async () => {
         codeSent.value = true
       })
       .catch(err => {
-        console.log(err.response)
       })
 }
 

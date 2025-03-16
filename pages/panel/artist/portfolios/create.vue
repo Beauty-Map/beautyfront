@@ -158,8 +158,6 @@ const onChooseImage = async (e) => {
   // selectedFiles.value = []
   // selectedImages.value = []
   const files = e.target?.files
-  alert(files.length)
-  alert(e.target?.files)
   if (files.length == 0) {
     return
   }
@@ -280,7 +278,7 @@ const doSave = async () => {
     maintenance: form.value.maintenance,
     service_id: form.value.service?.id,
     price: form.value.price,
-    discount_price: form.value.discount_price,
+    discount_price: form.value.discount_price ? form.value.discount_price : 0,
     has_tel: form.value.has_tel,
     has_phone_number: form.value.has_phone_number,
     second_phone_number: form.value.second_phone_number,

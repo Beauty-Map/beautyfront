@@ -64,7 +64,6 @@ const chooseProvinceAndCity = (p: IProvince, c: ICity) => {
 }
 
 watch(() => searchTerm.value, (newVal) => {
-  console.log(newVal)
 })
 
 watch(() => props.isOpen, (newVal) => {

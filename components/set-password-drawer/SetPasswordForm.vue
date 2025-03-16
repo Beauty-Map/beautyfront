@@ -34,7 +34,6 @@ const validated = () => {
   let valid = true
   if (!form.value.password) {
     valid = false
-    console.log(valid, "d")
     app.$toast.error('کلمه عبور را وارد کنید', {rtl: true})
   }
   if (!form.value.password_confirmation) {

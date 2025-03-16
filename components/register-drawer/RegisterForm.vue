@@ -179,16 +179,14 @@ const resend = async (code: string) => {
 // const isMd = computed(() => window.screen.width >= 768)
 const isMd = false
 
-onMounted(()=>{
-  const refC = useCookie('referralId', {
-    maxAge: 60 * 60 * 24 * 30,
-    path: '/',
-    sameSite: 'lax',
-  });
-  if (refC.value) {
-    form.value.ref_code = refC.value.toString()
-  }
-})
+const refC = useCookie('referralId', {
+  maxAge: 60 * 60 * 24 * 30,
+  path: '/',
+  sameSite: 'lax',
+});
+if (refC.value) {
+  form.value.ref_code = refC.value.toString()
+}
 
 </script>
 

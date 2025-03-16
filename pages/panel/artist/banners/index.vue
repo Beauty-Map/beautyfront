@@ -46,7 +46,7 @@ const getLink = () => {
 
 const shareLink = async () => {
   await navigator.share({
-    url: getLink(),   // URL to be shared
+    url: getLink(),
   })
 }
 </script>

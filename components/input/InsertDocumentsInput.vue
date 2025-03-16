@@ -98,7 +98,6 @@ const showBox = () => {
 }
 const saveDocument = () => {
   const v = value.value
-  console.log(value.value)
   if (v) {
     documents.value.push(v)
     value.value = ''

@@ -29,10 +29,12 @@ const props = defineProps({
   },
 })
 const getServices = () => {
-  let services = []
+  let services: any[] = []
   for (let i = 0; i < props.user.services.length; i++) {
     let s = props.user.services[i]
-    services.push(s.title)
+    if (services.filter(i => i == s.title).length == 0) {
+      services.push(s.title)
+    }
   }
   return services.reverse().join(' , ')
 }

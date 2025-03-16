@@ -140,6 +140,7 @@ const setValues = () => {
 }
 
 const canShowDiscount = computed(() => {
+  return true
   return auth.user?.plan?.plan.has_discount ?? false
 })
 
