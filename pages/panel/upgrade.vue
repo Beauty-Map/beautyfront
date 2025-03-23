@@ -22,6 +22,7 @@
           :key="i"
           @click="selectPlan(p)"
           :disabled="isDisabled(p)"
+          :current-plan="isCurrentPlan(p)"
         />
       </div>
       <div class="w-full flex flex-col justify-start items-center mt-[50px]">
@@ -119,6 +120,9 @@ const goBack = () => {
 }
 
 const selectPlan = (p: IPlan) => {
+  if (isDisabled(p)) {
+    return
+  }
   selectedPlan.value = p
   setTimeout(() => {
     openSelectPlanModal()
@@ -178,6 +182,10 @@ const goToWalletPage = () => {
 
 const isDisabled = (p: IPlan) => {
   return p.id <= plan.value?.plan_id
+}
+
+const isCurrentPlan = (p: IPlan) => {
+  return p.id == plan.value?.plan_id
 }
 
 onMounted(() => {

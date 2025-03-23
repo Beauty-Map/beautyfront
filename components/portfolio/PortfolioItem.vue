@@ -5,7 +5,7 @@
         آماربازدید <span v-format-number>{{portfolio.getView}}</span> نفر
       </div>
       <div class="w-full flex flex-row justify-start items-start">
-        <Rating v-model="portfolio.rating"/>
+        <Rating v-model="starCountVal"/>
         <Tick />
       </div>
       <div class="w-full flex flex-row justify-start items-start">
@@ -60,6 +60,10 @@ const props = defineProps({
   isBookmarked: {
     type: Boolean,
     default: false,
+  },
+  starCount: {
+    type: Number,
+    default: 0,
   }
 })
 
@@ -70,6 +74,9 @@ const app = useNuxtApp()
 
 const user = computed(() => auth.user)
 const isBookmarked = ref<boolean>(props.isBookmarked)
+
+const starCountVal = ref<Number>(props.starCount)
+
 const getThumbnail = () => {
   if (props.portfolio.images.length > 0) {
     return props.portfolio.images[0]

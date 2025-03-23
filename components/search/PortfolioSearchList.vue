@@ -4,6 +4,7 @@
         v-for="(p,i) in searchStore.portfolios"
         :key="i"
         :portfolio="p"
+        :star-count="p.star_count"
     />
     <InfiniteLoading :firstload="false" v-if="searchStore.showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
   </div>

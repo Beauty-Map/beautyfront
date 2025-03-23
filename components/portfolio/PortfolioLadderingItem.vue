@@ -2,7 +2,7 @@
   <div @click="goToPage" :class="selected ? 'opacity-[1]' : 'opacity-[.7]'" class="w-full flex flex-row gap-[20px] rounded-[8px] px-[10px] py-[10px] shadow-[rgba(50,_50,_105,_0.15)_0px_2px_5px_0px,_rgba(0,_0,_0,_0.05)_0px_1px_1px_0px] mb-[25px]">
     <div class="w-full flex flex-col relative">
       <div class="w-full flex flex-row justify-start items-start">
-        <Rating v-model="portfolio.rating"/>
+        <Rating v-model="portfolio.star_count"/>
         <Tick />
       </div>
       <div class="w-full flex flex-row justify-start items-start">
