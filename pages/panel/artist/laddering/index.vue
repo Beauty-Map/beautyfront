@@ -186,6 +186,7 @@ const doLadderAll = async () => {
       .then(res=> {
         app.$toast.success('با موفقیت انجام شد', {rtl: true,})
         closeAcceptModal()
+        auth.own()
         router.back()
       })
       .catch(err => {
@@ -207,6 +208,7 @@ const doLadderSome = async () => {
       .then(res=> {
         app.$toast.success('با موفقیت انجام شد', {rtl: true,})
         closeAcceptModal()
+        auth.own()
         router.back()
       })
       .catch(err => {
@@ -228,6 +230,7 @@ const doLadderProfile = async () => {
       .then(res=> {
         app.$toast.success('با موفقیت انجام شد', {rtl: true,})
         closeAcceptModal()
+        auth.own()
         router.back()
       })
       .catch(err => {
