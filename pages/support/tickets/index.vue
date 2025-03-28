@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[calc(100vh+110px)] md:h-full w-full flex flex-col justify-start items-start mt-[17px]">
+  <div class="h-[calc(100vh-110px)] md:h-full w-full flex flex-col justify-start items-start mt-[17px]">
     <div class="w-full flex flex-row justify-start items-center">
       <Header />
       <BackIcon @click="goBack" />
