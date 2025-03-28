@@ -4,10 +4,15 @@
     <TicketTitleInput class="mb-[20px]" v-model="form.title"/>
     <TicketDescriptionInput class="mb-[20px]" v-model="form.description"/>
     <TicketChooseFile class="mb-[20px]" @choose="chooseFile"/>
-    <div @click="doSendTicket" class="cursor-pointer flex flex-row items-center justify-center px-[10px] py-[10px] bg-[#FF3CA0] text-white text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[62px] w-full">
-      <AddTicketIcon />
-      <span class="mr-[4px] whitespace-nowrap">ثبت تیکت</span>
-    </div>
+    <button :disabled="loading" @click="doSendTicket" :class="[loading ? ' bg-[rgb(177,177,177)] text-white' : ' bg-[#FF3CA0] text-white']" class="cursor-pointer flex flex-row items-center justify-center px-[10px] py-[10px] text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[62px] w-full">
+      <span v-if="loading">
+        <LoadingComponent />
+      </span>
+      <span v-else class="flex flex-row items-center justify-center">
+        <AddTicketIcon />
+        <span class="mr-[4px] whitespace-nowrap">ثبت تیکت</span>
+      </span>
+    </button>
   </div>
 </template>
 
@@ -18,6 +23,7 @@ import TicketDescriptionInput from "~/components/input/TicketDescriptionInput.vu
 import AddTicketIcon from "~/components/icons/AddTicketIcon.vue";
 import TicketChooseFile from "~/components/input/TicketChooseFile.vue";
 import {useCustomFetch} from "~/composables/useCustomFetch";
+import LoadingComponent from "~/components/global/Loading.vue";
 
 const router = useRouter()
 const app = useNuxtApp()
@@ -35,7 +41,13 @@ const errors = ref({
   description: '',
 })
 
+const loading = ref(false)
+
 const doSendTicket = async () => {
+  if (loading.value) {
+    return
+  }
+  loading.value = true
   if (!validateForm()) {
     const res = await useCustomFetch('/own/tickets', {
       method: "POST",
@@ -48,12 +60,14 @@ const doSendTicket = async () => {
     })
     if (res.error.value) {
       app.$toast.error('متاسفانه خطایی رخ داده است. بعدا امتحان کنید', {rtl: true})
+      loading.value = false
     }
     if (res.data.value) {
       app.$toast.error('درخواست شما با موفقیت ثبت شد', {rtl: true})
       router.back()
     }
   }
+  loading.value = false
 }
 
 const validateForm = () => {
