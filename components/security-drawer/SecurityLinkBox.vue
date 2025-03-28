@@ -46,6 +46,8 @@ import {useAuthStore} from "~/store/Auth";
 const auth = useAuthStore()
 const user = ref(auth.user)
 const store = useDrawerStore()
+const app = useNuxtApp()
+const router = useRouter()
 const showDeleteAccount = ref<Boolean>(false)
 
 const openSetAltNumberDrawer = () => {
@@ -68,6 +70,25 @@ const closeDeleteAccountAlert = () => {
 
 const doDeleteAccount = () => {
   const auth = useAuthStore()
+  const {$deleteRequest: deleteRequest}=app
+  deleteRequest('/own')
+      .then(res=> {
+        app.$toast.success('اکانت شما با موفقیت حذف شد', {rtl: true})
+        auth.setUser(null)
+        auth.setToken(null)
+        const token = useCookie('token')
+        token.value = ''
+        store.closeAllDrawers()
+        router.replace('/')
+      })
+      .catch(err => {
+        const errors = Object.values(err.data.errors)
+        for (const k in errors) {
+          for (const e in errors[k]) {
+            app.$toast.error(errors[k][e], {rtl: true,})
+          }
+        }
+      })
 }
 
 const deleteAccount = () => {
