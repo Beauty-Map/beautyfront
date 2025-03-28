@@ -26,8 +26,6 @@ const goBack = () => {
   router.back()
 }
 const getSetting = () => {
-
-
   const {$getRequest:getRequest} = useNuxtApp()
   getRequest(`/settings`)
       .then(res => {

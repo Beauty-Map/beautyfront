@@ -8,7 +8,7 @@
     <div class="h-[40px] w-full rounded-[8px] relative border "
          :class="[hasError ? 'border-[#F44336]' : 'border-[#133C3E]']"
     >
-      <input type="text" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-right  rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
+      <input :disabled="disabled" type="text" class="absolute left-[1px] right-[1px] top-[1px] bottom-[1px] text-right  rounded-[8px] outline-none focus:outline-none pr-[20px] pl-[20px] placeholder:text-[#A9A7A7]"
              @input="validateTextDebounce"
              v-model="value"
       >
@@ -32,6 +32,10 @@ const props = defineProps({
   modelValue: {
     type: String,
     default: ''
+  },
+  disabled: {
+    type: Boolean,
+    default: false
   }
 })
 const value = ref<String>(props.modelValue)

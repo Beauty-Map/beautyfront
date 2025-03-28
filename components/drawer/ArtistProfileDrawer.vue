@@ -19,6 +19,7 @@
       <TextInput title="نام و نام خانوادگی *" v-model="form.full_name" class="mt-[27px]"/>
       <EmailInput title="ایمیل *" v-model="form.email" :disabled="true" class="mt-[27px]"/>
       <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
+      <TextInput title="کد کارشناس" v-model="form.referrer_code" :disabled="hasReferrerCode" class="mt-[27px]"/>
 <!--      <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>-->
       <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
       <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
@@ -79,10 +80,15 @@ const user = computed(() => auth.user)
 const app = useNuxtApp()
 const route = useRoute()
 const loading = ref(false)
+const hasReferrerCode = ref(false)
+if (user.value?.referrer_code) {
+  hasReferrerCode.value = true
+}
 const form = ref({
   full_name: user.value?.full_name,
   email: user.value?.email,
   phone_number: user.value?.phone_number,
+  referrer_code: user.value?.referrer_code,
   tel_number: user.value?.tel_number,
   address: user.value?.address,
   city_id: user.value?.city_id,
@@ -148,6 +154,7 @@ const doSaveProfile = async () => {
     birth_date: form.value.birth_date,
     work_hours: form.value.work_hours,
     licenses: form.value.licenses,
+    referrer_code: form.value.referrer_code,
   }
   const {$putRequest: putRequest}=app
   putRequest('/own/artist', data)

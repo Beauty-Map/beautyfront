@@ -9,37 +9,37 @@
         <DangerIcon @click="openArtistProfileDrawer"/>
       </template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/portfolios'">
+    <ProfileLink :to="'/panel/artist/portfolios'" :lock="lockAll">
       <template #icon>
         <PortfolioIcon />
       </template>
       <template #title>نمونه کار</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/help'">
+    <ProfileLink :to="'/panel/artist/help'" :lock="lockAll">
       <template #icon>
         <PortfolioIcon />
       </template>
       <template #title>راهنمای استفاده</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/advertisements'">
+    <ProfileLink :to="'/panel/artist/advertisements'" :lock="lockAll">
       <template #icon>
         <AdvIcon />
       </template>
       <template #title>ارتقا</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/support'">
+    <ProfileLink :to="'/panel/artist/support'" :lock="lockAll">
       <template #icon>
         <ContactIcon />
       </template>
       <template #title>تماس با پشتیبانی</template>
     </ProfileLink>
-    <ProfileLink :is-link="false" @click="onShareClicked">
+    <ProfileLink :is-link="false" @click="onShareClicked" :lock="lockAll">
       <template #icon>
         <BannerIcon />
       </template>
       <template #title>اشتراک گذاری</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/views'">
+    <ProfileLink :to="'/panel/artist/views'" :lock="lockAll">
       <template #icon>
         <ViewIcon />
       </template>
@@ -72,6 +72,10 @@ const app = useNuxtApp()
 const auth = useAuthStore()
 const user = ref(auth.user)
 
+const lockAll = ref<boolean>(false)
+const res = await useCustomFetch('/settings', {
+  method: "GET",
+})
 const openArtistProfileDrawer = () => {
   store.openArtistProfileDrawer()
 }
@@ -89,6 +93,15 @@ const onShareClicked = async () => {
   })
   app.$toast.success('برای دسترسی به این بخش وارد شوید', {rtl: true})
 }
+
+const getSetting = () => {
+  const {$getRequest:getRequest} = useNuxtApp()
+  getRequest(`/settings`)
+      .then(res => {
+        lockAll.value = res.lock_all
+      })
+}
+onMounted(() => getSetting())
 </script>
 
 <style scoped>
