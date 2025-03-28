@@ -9,37 +9,37 @@
         <DangerIcon @click="openArtistProfileDrawer"/>
       </template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/portfolios'" :lock="lockAll">
+    <ProfileLink :to="'/panel/artist/portfolios'" :lock="isLockedAll">
       <template #icon>
         <PortfolioIcon />
       </template>
       <template #title>نمونه کار</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/help'" :lock="lockAll">
+    <ProfileLink :to="'/panel/artist/help'" :lock="isLockedAll">
       <template #icon>
         <PortfolioIcon />
       </template>
       <template #title>راهنمای استفاده</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/advertisements'" :lock="lockAll">
+    <ProfileLink :to="'/panel/artist/advertisements'" :lock="isLockedAll">
       <template #icon>
         <AdvIcon />
       </template>
       <template #title>ارتقا</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/support'" :lock="lockAll">
+    <ProfileLink :to="'/panel/artist/support'" :lock="isLockedAll">
       <template #icon>
         <ContactIcon />
       </template>
       <template #title>تماس با پشتیبانی</template>
     </ProfileLink>
-    <ProfileLink :is-link="false" @click="onShareClicked" :lock="lockAll">
+    <ProfileLink :is-link="false" @click="onShareClicked" :lock="isLockedAll">
       <template #icon>
         <BannerIcon />
       </template>
       <template #title>اشتراک گذاری</template>
     </ProfileLink>
-    <ProfileLink :to="'/panel/artist/views'" :lock="lockAll">
+    <ProfileLink :to="'/panel/artist/views'" :lock="isLockedAll">
       <template #icon>
         <ViewIcon />
       </template>
@@ -101,6 +101,11 @@ const getSetting = () => {
         lockAll.value = res.lock_all
       })
 }
+
+const isLockedAll = computed(() => {
+  return lockAll.value && !auth.user?.referrer_code
+})
+
 onMounted(() => getSetting())
 </script>
 
