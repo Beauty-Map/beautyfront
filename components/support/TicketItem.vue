@@ -1,5 +1,5 @@
 <template>
-  <div class="mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full">
+  <nuxt-link :to="`/support/tickets/${ticket.id}`" class="mb-[30px] border border-[#A9A7A7] rounded-[20px] bg-[#FDF4FF] flex flex-col justify-start items-start w-full">
     <TicketItemHeader
         :id="ticket.id"
         :created-at="ticket.created_at"
@@ -12,7 +12,7 @@
         :status="ticket.status"
         :subject="ticket.subject"
     />
-  </div>
+  </nuxt-link>
 </template>
 
 <script setup lang="ts">
