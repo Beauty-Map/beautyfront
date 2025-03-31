@@ -2,7 +2,7 @@
   <div class="w-full flex flex-col items-center justify-between px-[27px] my-[8px]">
     <div class="w-full flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="font-semibold text-[#141414] text-right text-[16px] leading-[23px]">درباره من</h1>
-      <div class="mt-[10px] font-normal text-right text-[#133C3E] text-[14px] leading-[15px]" v-html="bio"></div>
+      <div class="mt-[10px] font-normal text-right text-[#133C3E] text-[14px] leading-[21px]" v-html="bio"></div>
     </div>
     <div class="mt-4 w-full flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="font-semibold text-[#141414] text-right text-[16px] leading-[23px]">مدارک و مجوزها</h1>
