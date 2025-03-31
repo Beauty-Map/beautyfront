@@ -144,7 +144,6 @@ const doSendTicket = async () => {
         })
   }
 }
-
 const getTicket = async () => {
   const {$getRequest: getRequest}=useNuxtApp()
   getRequest(`/own/tickets/${route.params.id}`)
