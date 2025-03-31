@@ -6,7 +6,7 @@
         <textarea type="text" class="text-right h-full bg-transparent w-full outline-none focus:outline-none placeholder:text-[#133C3E]"
                   @input="updateTextDebounce"
                   v-model="value"
-                  placeholder="توضیحات"
+                  :placeholder="placeholder"
                   rows="5"
         />
       </div>
@@ -28,6 +28,10 @@ const props = defineProps({
   modelValue: {
     type: String,
     default: ''
+  },
+  placeholder: {
+    type: String,
+    default: 'توضیحات'
   }
 })
 const value = ref<String>(props.modelValue)
@@ -39,6 +43,10 @@ const updateText = ($event: Event) => {
 }
 
 const updateTextDebounce = useDebounce(updateText, 500)
+
+watch(() => props.modelValue, (v) => {
+  value.value = ''
+})
 </script>
 
 <style scoped>

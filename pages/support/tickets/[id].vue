@@ -9,15 +9,14 @@
       <BackIcon @click="goBack" />
     </div>
     <div class="w-full flex-col justify-start items-start mt-[35px] md:border md:border-gray-500 md:rounded-[50px] md:py-[25px] px-[20px]">
-      <TicketDescriptionInput class="mb-[20px]" v-model="form.description"/>
-      <TicketChooseFile class="mb-[20px]" @choose="chooseFile"/>
-      <button :disabled="loading" @click="doSendTicket" :class="[loading ? ' bg-[rgb(177,177,177)] text-white' : ' bg-[#FF3CA0] text-white']" class="cursor-pointer flex flex-row items-center justify-center px-[10px] py-[10px] text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[62px] w-full">
+      <TicketDescriptionInput :placeholder="'پاسخ'" class="mb-[20px]" v-model="form.description"/>
+      <button :disabled="loading" @click="doSendTicket" :class="[loading ? ' bg-[rgb(177,177,177)] text-white' : ' bg-[#FF3CA0] text-white']" class="cursor-pointer flex flex-row items-center justify-center px-[8px] py-[4px] text-[14px] leading-[16px] text-center font-medium rounded-[12px] h-[48px] w-full">
       <span v-if="loading">
         <LoadingComponent />
       </span>
         <span v-else class="flex flex-row items-center justify-center">
         <AddTicketIcon />
-        <span class="mr-[4px] whitespace-nowrap">ثبت تیکت</span>
+        <span class="mr-[4px] whitespace-nowrap">ثبت پاسخ</span>
       </span>
       </button>
     </div>
@@ -130,6 +129,9 @@ const doSendTicket = async () => {
     })
         .then(res=> {
           app.$toast.success('پاسخ شما با موفقیت ثبت شد', {rtl: true})
+          form.value.description = ''
+          loading.value = false
+          getTicketAnswers()
         })
         .catch(err => {
           const errors = Object.values(err.data.errors)
@@ -138,13 +140,9 @@ const doSendTicket = async () => {
               app.$toast.error(errors[k][e], {rtl: true,})
             }
           }
-        })
-        .finally(() => {
-          form.value.description = ''
           loading.value = false
         })
   }
-  loading.value = false
 }
 
 const getTicket = async () => {
