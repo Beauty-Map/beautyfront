@@ -20,58 +20,6 @@
 
     <ArtistCallBox :artist="user"/>
   </div>
-<!--  <div class="hidden w-full md:flex flex-col h-full relative px-[60px]">-->
-<!--    <div class="w-full text-center flex flex-row justify-center items-center mb-[55px]">-->
-<!--      <h1 class="font-medium text-center text-[48px] leading-[73px]">صفحه هنرمند</h1>-->
-<!--    </div>-->
-<!--    <ArtistBannerDesktopSlideBox-->
-<!--        :user="user"-->
-<!--        class=" mb-[55px]"-->
-<!--    />-->
-<!--    <div class="w-full artist-tab-header mb-[55px]">-->
-<!--      <Splide :options="options" aria-label="">-->
-<!--        <SplideSlide>-->
-<!--          <ArtistDesktopTabButton-->
-<!--              title="نمونه کارها"-->
-<!--              :selected="true"-->
-<!--          />-->
-<!--        </SplideSlide>-->
-<!--        <SplideSlide>-->
-<!--          <ArtistDesktopTabButton-->
-<!--              title="درباره من"-->
-<!--              :selected="false"-->
-<!--          />-->
-<!--        </SplideSlide>-->
-<!--        <SplideSlide>-->
-<!--          <ArtistDesktopTabButton-->
-<!--              title="آدرس"-->
-<!--              :selected="false"-->
-<!--          />-->
-<!--        </SplideSlide>-->
-<!--        <SplideSlide>-->
-<!--          <ArtistDesktopTabButton-->
-<!--              title="ساعات کاری"-->
-<!--              :selected="false"-->
-<!--          />-->
-<!--        </SplideSlide>-->
-<!--        <SplideSlide>-->
-<!--          <ArtistDesktopTabButton-->
-<!--              title="شبکه های اجتماعی"-->
-<!--              :selected="false"-->
-<!--          />-->
-<!--        </SplideSlide>-->
-<!--      </Splide>-->
-<!--    </div>-->
-<!--    <div class="w-full mb-[55px]">-->
-<!--      <ArtistPortfoliosDesktopList :user-id="user.id"/>-->
-<!--    </div>-->
-<!--    <div class="w-full mb-[55px]">-->
-<!--      <ArtistBioDesktop :user="user"/>-->
-<!--    </div>-->
-<!--    <div class="w-full mb-[55px]">-->
-<!--      <ArtistAddressDesktop :user="user"/>-->
-<!--    </div>-->
-<!--  </div>-->
 </template>
 
 <script setup lang="ts">

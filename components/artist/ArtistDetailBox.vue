@@ -8,10 +8,6 @@
           <BlueTick v-if="user.has_blue_tick" class="h-[20px] w-[20px]"/>
           <h1 class="font-semibold text-[18px] leading-[28px] text-right text-[#141414]">{{ user.full_name }}</h1>
         </div>
-        <div v-if="user.services.length > 0"  class="text-[#133C3E] font-medium text-[12px] leading-[18px] w-full">
-          <span>تخصص ها:</span>
-          <span class="mr-1">{{getServices()}}</span>
-        </div>
       </div>
     </div>
     <ArtistSocialMediaBox :socials="user.socials"/>
@@ -28,16 +24,6 @@ const props = defineProps({
     required: true,
   },
 })
-const getServices = () => {
-  let services: any[] = []
-  for (let i = 0; i < props.user.services.length; i++) {
-    let s = props.user.services[i]
-    if (services.filter(i => i == s.title).length == 0) {
-      services.push(s.title)
-    }
-  }
-  return services.reverse().join(' , ')
-}
 
 const getAvatar = computed(() => {
   if (props.user && props.user.avatar) {

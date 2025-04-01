@@ -8,7 +8,7 @@
         نمونه کارها
       </div>
     </div>
-    <ArtistBioBox :bio="user.bio" :work-hours="user.work_hours" :licenses="user.licenses" v-if="index === 0"/>
+    <ArtistBioBox :services-count="user.services_count" :services="getServices" :bio="user.bio" :work-hours="user.work_hours" :licenses="user.licenses" v-if="index === 0"/>
     <ArtistPortfolioBox v-if="index === 1"/>
   </div>
 </template>
@@ -30,6 +30,14 @@ const index = ref<number>(1)
 const selectTab = (i: number) => {
   index.value = i
 }
+const getServices = computed(() => {
+  const seenTitles = new Set();
+  return  props.user.services.filter(item => {
+    if (seenTitles.has(item.title)) return false;
+    seenTitles.add(item.title);
+    return true;
+  });
+})
 </script>
 
 <style scoped>
