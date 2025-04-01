@@ -14,8 +14,10 @@
           <span class="mr-1">({{ artist.portfolios_count }})</span>
         </div>
         <div class="font-medium text-[#141414] text-[10px] leading-[15px] text-center bg-[#FFEA2E61] border border-[#1EFF81] px-[6px] py-[2px] rounded-[12px]">
-          <span class="whitespace-nowrap">تخصص</span>
-          <span class="mr-1">({{ artist.services_count }})</span>
+<!--          <span class="whitespace-nowrap">تخصص</span>-->
+<!--          <span class="mr-1">({{ artist.services_count }})</span>-->
+          <span class="whitespace-nowrap">عضویت</span>
+          <span class="mr-1">({{ getCreatedAtAgoFa }})</span>
         </div>
       </div>
       <div class="flex flex-col items-start justify-start gap-[8px] mt-[10px] overflow-hidden">
@@ -93,6 +95,7 @@ const getCreatedAtAgoFa = computed(() => {
   if (props.artist.created_at == '')
     return '-'
   return dayjs(props.artist.created_at).locale('fa').fromNow()
+  // return dayjs().locale('fa').diff(props.artist.created_at, "year")
 })
 
 </script>
