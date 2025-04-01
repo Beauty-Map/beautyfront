@@ -72,12 +72,6 @@ const toggleBookmark = (bookmarked: boolean) => {
   props.artist.is_bookmarked = bookmarked
 }
 
-const getCreatedAtAgoFa = computed(() => {
-  if (props.artist.created_at == '')
-    return '-'
-  return dayjs(props.artist.created_at).locale('fa').fromNow()
-})
-
 const getServicesName = computed(() => {
   if (props.artist.services.length == 0)
     return 'تخصصی انتخاب نشده'

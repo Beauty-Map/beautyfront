@@ -8,6 +8,10 @@
           <BlueTick v-if="user.has_blue_tick" class="h-[20px] w-[20px]"/>
           <h1 class="font-semibold text-[18px] leading-[28px] text-right text-[#141414]">{{ user.full_name }}</h1>
         </div>
+        <div class="text-[#133C3E] font-medium text-[12px] leading-[18px] w-full">
+          <span>عضویت:</span>
+          <span class="mr-1">{{getCreatedAtAgoFa}}</span>
+        </div>
       </div>
     </div>
     <ArtistSocialMediaBox :socials="user.socials"/>
@@ -17,6 +21,12 @@
 
 <script setup lang="ts">
 import BlueTick from "~/components/icons/BlueTick.vue";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+import jalaliday from "jalaliday";
+const dayjs = useDayjs()
+dayjs.locale('fa')
+dayjs.extend(localizedFormat)
+dayjs.extend(jalaliday)
 
 const props = defineProps({
   user: {
@@ -30,6 +40,12 @@ const getAvatar = computed(() => {
     return props.user.avatar
   }
   return '/images/artist/2.png'
+})
+
+const getCreatedAtAgoFa = computed(() => {
+  if (props.user.created_at == '')
+    return '-'
+  return dayjs(props.user.created_at).locale('fa').fromNow()
 })
 </script>
 
