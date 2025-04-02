@@ -18,10 +18,6 @@ const searchTerm = ref<string>(route.query.term as string ?? '')
 const searchStore = useSearchStore()
 
 const doSearch = async () => {
-  if (searchStore.loadingArtist) {
-    return
-  }
-  searchStore.loadingArtist = true
   const query = route.query ?? {}
   if (query.page) {
     delete query.page
@@ -64,11 +60,7 @@ const doSearch = async () => {
         searchStore.lastPage = res.last_page
         setTimeout(() => {
           searchStore.showInfiniteScroll = true
-          searchStore.loadingArtist = false
         }, 500)
-      })
-      .catch(err => {
-        searchStore.loadingArtist = false
       })
 }
 
@@ -99,7 +91,7 @@ watch(() => searchTerm.value, onChangeTermDebounce)
 watch(() => searchStore.page, onChangePageDebounce)
 
 onMounted(() => {
-  nextTick(() => doSearch())
+  // nextTick(() => doSearch())
 })
 </script>
 
