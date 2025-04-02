@@ -1,6 +1,6 @@
 <template>
   <div class="w-full flex flex-col justify-start items-start">
-    <Rating v-model="user.rating"/>
+    <Rating v-model="rate"/>
     <div class="w-full flex flex-row items-start justify-start mt-2 border-b border-b-[#A9A7A7] pb-[8px]">
       <img :src="getAvatar" alt="" class=" grow-0 h-[50px] w-[50px] border-[#FFD700] rounded-[50%] border-[2px]">
       <div class="flex flex-col grow justify-between items-start mr-2">
@@ -46,6 +46,12 @@ const getCreatedAtAgoFa = computed(() => {
   if (props.user.created_at == '')
     return '-'
   return dayjs(props.user.created_at).locale('fa').fromNow()
+})
+const rate = computed(() => {
+  if (props.user.plan) {
+    return props.user.plan.plan.star_count
+  }
+  return 3
 })
 </script>
 

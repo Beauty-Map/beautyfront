@@ -17,6 +17,7 @@
           v-for="(p, i) in searchStore.portfolios"
           :key="i"
           :portfolio="p"
+          :star-count="p.star_count"
       />
       <div class="w-full text-center mt-4" v-if="!searchStore.showInfiniteScroll && searchStore.portfolios.length == 0">موردی یافت نشد!</div>
       <InfiniteLoading :firstload="true" v-if="searchStore.showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>

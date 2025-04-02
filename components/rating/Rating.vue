@@ -47,6 +47,10 @@ const calcStarCount = () => {
 }
 
 onMounted(() => calcStarCount())
+
+watch(() => props.modelValue, () => {
+  calcStarCount()
+})
 </script>
 
 <style scoped>

@@ -61,6 +61,11 @@ const user = ref<IArtist>({
   portfolios_count: 15,
   services_count: 3,
   services: [],
+  plan: {
+    plan: {
+      star_count: 4
+    }
+  },
   work_hours: [],
   portfolios: [],
   licenses: [],

@@ -7,6 +7,7 @@ export const useSearchStore = defineStore('search', {
         page: 1,
         lastPage: 1,
         showInfiniteScroll: false,
+        loadingArtist: false,
         lat: null,
         lng: null,
     }),
