@@ -91,7 +91,7 @@ watch(() => searchTerm.value, onChangeTermDebounce)
 watch(() => searchStore.page, onChangePageDebounce)
 
 onMounted(() => {
-  // nextTick(() => doSearch())
+  nextTick(() => doSearch())
 })
 </script>
 
