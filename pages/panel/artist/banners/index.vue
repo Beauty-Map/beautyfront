@@ -48,8 +48,9 @@ const getLink = () => {
 }
 
 const shareLink = async () => {
+  let link = `/artists/${user.value?.id}`
   await navigator.share({
-    url: getLink(),
+    url: link,
   })
 }
 </script>
