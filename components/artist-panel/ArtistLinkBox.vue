@@ -86,8 +86,7 @@ const onShareClicked = async () => {
     store.openLoginDrawer()
     return
   }
-  let link = window.location.host;
-  link = `/artists/${user.value?.id}`
+  let link = `/artists/${user.value?.id}`
   await navigator.share({
     url: link,
   })

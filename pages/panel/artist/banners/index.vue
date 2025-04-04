@@ -40,8 +40,11 @@ const goBack = () => {
 }
 
 const getLink = () => {
-  let link = window.location.host;
-  return `${link}/artists/${user.value?.id}`
+  if (window) {
+    let link = window.location.host;
+    return `${link}/artists/${user.value?.id}`
+  }
+  return ''
 }
 
 const shareLink = async () => {
