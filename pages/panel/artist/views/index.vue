@@ -12,6 +12,7 @@
           :portfolio="p"
           :is-bookmarked="p.is_bookmarked"
           :is-panel="true"
+          :star-count="p.star_count"
       />
     </div>
   </div>

@@ -4,6 +4,7 @@
       v-for="(p, i) in portfolios"
       :key="i"
       :portfolio="p"
+      :star-count="p.star_count"
       :is-bookmarked="p.is_bookmarked"
       @toggleBookmark="toggleBookmark"
     />

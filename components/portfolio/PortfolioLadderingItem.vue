@@ -3,6 +3,7 @@
     <div class="w-full flex flex-col relative">
       <div class="w-full flex flex-row justify-start items-start">
         <Rating v-model="portfolio.star_count"/>
+        <BlueTick v-if="portfolio.has_blue_tick"/>
         <Tick />
       </div>
       <div class="w-full flex flex-row justify-start items-start">
@@ -41,6 +42,7 @@
 
 <script setup lang="ts">
 import {useAuthStore} from "~/store/Auth";
+import BlueTick from "~/components/icons/BlueTick.vue";
 
 const emits = defineEmits(['click'])
 const props = defineProps({

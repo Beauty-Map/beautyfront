@@ -6,7 +6,8 @@
       </div>
       <div class="w-full flex flex-row justify-start items-start">
         <Rating v-model="starCountVal"/>
-        <Tick />
+        <BlueTick v-if="portfolio.has_blue_tick"/>
+        <Tick v-else/>
       </div>
       <div class="w-full flex flex-row justify-start items-start">
         <h1 class="text-right font-medium text-[14px] leading-[18px] text-[#141414]">{{ portfolio.title }}</h1>
@@ -43,6 +44,7 @@
 import Bookmark from "~/components/bookmark/Bookmark.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import {useAuthStore} from "~/store/Auth";
+import BlueTick from "~/components/icons/BlueTick.vue";
 const emits = defineEmits(['click', 'toggleBookmark'])
 const props = defineProps({
   portfolio: {
