@@ -19,7 +19,7 @@
       <TextInput title="نام و نام خانوادگی *" v-model="form.full_name" class="mt-[27px]"/>
       <EmailInput title="ایمیل *" v-model="form.email" :disabled="true" class="mt-[27px]"/>
       <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
-      <TextInput title="کد کارشناس" v-model="form.referrer_code" :disabled="hasReferrerCode" class="mt-[27px]"/>
+      <TextInput title="کد کارشناس *" v-model="form.referrer_code" :disabled="hasReferrerCode" class="mt-[27px]"/>
 <!--      <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>-->
       <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
       <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
@@ -118,6 +118,10 @@ const validated = () => {
   }
   if (!form.value.phone_number) {
     app.$toast.error('لطفا شماره تماس خود را وارد کنید', {rtl: true})
+    validated = false
+  }
+  if (!form.value.referrer_code) {
+    app.$toast.error('لطفا کد کارشناس خود را وارد کنید', {rtl: true})
     validated = false
   }
   // if (!form.value.birth_date) {
