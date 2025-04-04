@@ -87,7 +87,7 @@ const onShareClicked = async () => {
     return
   }
   let link = window.location.host;
-  link = `${link}/artists/${user.value?.id}`
+  link = `/artists/${user.value?.id}`
   await navigator.share({
     url: link,
   })
