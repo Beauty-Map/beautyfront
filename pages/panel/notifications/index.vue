@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col px-[23px] py-[10px] h-full w-full">
-    <PageHeader :title="'نوتیفیکیشن'" class="mb-[60px]"/>
+    <PageHeader :title="'اعلانات'" class="mb-[60px]"/>
     <div class="flex flex-col justify-start items-start w-full">
       <div class="w-full text-center">
 
