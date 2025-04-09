@@ -17,9 +17,6 @@ import PasswordInput from "~/components/input/PasswordInput.vue";
 import MainActionButton from "~/components/button/form/MainActionButton.vue";
 import {useDrawerStore} from "~/store/Drawer";
 import LoadingComponent from "~/components/global/Loading.vue";
-import {Buffer} from "unenv/runtime/node/buffer/_buffer";
-import from = Buffer.from;
-import {algorithms} from "iron-webcrypto";
 
 const app = useNuxtApp()
 const store = useDrawerStore()
