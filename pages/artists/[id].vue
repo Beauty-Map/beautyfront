@@ -26,11 +26,6 @@
 
 import PortfolioPageBackIcon from "~/components/icons/PortfolioPageBackIcon.vue";
 import ArtistBioAndPortfolioBox from "~/components/artist/ArtistBioAndPortfolioBox.vue";
-import {Splide, SplideSlide} from "@splidejs/vue-splide";
-import ArtistDesktopTabButton from "~/components/artist/ArtistDesktopTabButton.vue";
-import '@splidejs/vue-splide/css';
-import ArtistBioDesktop from "~/components/artist/ArtistBioDesktop.vue";
-import ArtistAddressDesktop from "~/components/artist/ArtistAddressDesktop.vue";
 
 definePageMeta({
   layout: 'artist-single'

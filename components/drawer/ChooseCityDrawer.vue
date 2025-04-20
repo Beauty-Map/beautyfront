@@ -1,9 +1,9 @@
 <template>
 <div
-    class="flex flex-col fixed md:bg-[rgba(0,0,0,0.7)] top-0 px-[17px] overflow-y-auto w-full duration-700 ease-in-out bg-white z-[999999999]"
+    class="flex flex-col fixed top-0 px-[17px] overflow-y-auto w-full duration-700 ease-in-out bg-white z-[999999999]"
     :class="[isOpen ? 'left-0' : 'left-[-100%]']"
 >
-  <div class="w-full flex flex-col justify-start items-center md:max-w-[500px] md:w-full mx-auto my-[6px] md:border md:border-[#e1e1e1] rounded-[12px] px-[10px] bg-white">
+  <div class="w-full flex flex-col justify-start items-center  mx-auto my-[6px]  rounded-[12px] px-[10px] bg-white">
     <div class="w-full flex flex-row justify-center items-center gap-x-2 mt-[30px] mr-[1px]">
       <SearchInput v-model="searchTerm" class=""/>
       <BackIcon @click="goBack" />

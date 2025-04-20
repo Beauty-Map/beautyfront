@@ -1,6 +1,6 @@
 <template>
   <div
-      class="flex flex-col fixed md:hide top-0 bottom-0 w-full duration-700 ease-in-out bg-white z-[999999999]"
+      class="flex flex-col fixed  top-0 bottom-0 w-full duration-700 ease-in-out bg-white z-[999999999]"
       :class="[isOpen ? 'left-0' : 'left-[-100%]']"
   >
     <div class="relative h-screen flex flex-col justify-start items-center w-full">

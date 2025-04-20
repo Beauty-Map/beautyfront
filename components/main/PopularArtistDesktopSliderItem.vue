@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col w-full relative bg-center	bg-no-repeat bg-cover" :style="`background-image: url(${image})`">
 <!--    <img class="min-h-[144px]" :src="image" alt="">-->
-    <div class="main-desktop-slider-left-box pt-[10px] px-[15px] md:pt-[25px] md:px-[30px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center">
+    <div class="main-desktop-slider-left-box pt-[10px] px-[15px] absolute top-0 left-0 bottom-0 flex flex-col items-center justify-center">
       <div v-if="mainTitle" class="text-base font-medium text-right text-[40px] leading-[60px] text-white mb-2">{{ mainTitle }}</div>
       <div v-if="subTitle" class="text-sm font-normal text-right text-[24px] leading-[40px] text-white mb-2">{{ subTitle }}</div>
       <div v-if="description" class="text-xs font-normal text-right text-white mb-2">{{ description }}</div>

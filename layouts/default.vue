@@ -1,23 +1,20 @@
 <template>
-  <div class="page h-full w-full flex flex-col pt-[21px] pb-[79px] md:pt-0 md:pb-0 relative">
+  <div class="page h-full w-full flex flex-col pt-[21px] pb-[79px] relative max-w-[425px] mx-auto">
     <PageLoading v-if="loading"/>
-    <ProfileDrawer class="md:hidden flex"/>
-    <LoginDrawer class="md:hidden flex"/>
-    <RegisterDrawer class="md:hidden flex"/>
-    <SetPasswordDrawer class="md:hidden flex"/>
-    <CompleteProfileDrawer class="md:hidden flex"/>
-    <NotificationDrawer class="md:hidden flex"/>
-    <SecurityDrawer class="md:hidden flex"/>
-    <SetNewPasswordDrawer class="md:hidden flex"/>
-    <ResetPasswordDrawer class="md:hidden flex"/>
-    <AltPhoneNumberDrawer class="md:hidden flex"/>
-    <MainHeaderDesktop class="md:flex hidden"/>
-<!--    <div class="w-full min-h-screen px-[34px] py-[20px] flex flex-row justify-start items-start">-->
+    <ProfileDrawer class="flex"/>
+    <LoginDrawer class="flex"/>
+    <RegisterDrawer class="flex"/>
+    <SetPasswordDrawer class="flex"/>
+    <CompleteProfileDrawer class="flex"/>
+    <NotificationDrawer class="flex"/>
+    <SecurityDrawer class="flex"/>
+    <SetNewPasswordDrawer class="flex"/>
+    <ResetPasswordDrawer class="flex"/>
+    <AltPhoneNumberDrawer class="flex"/>
     <div class="w-full min-h-screen flex flex-col justify-start items-start">
       <slot />
     </div>
-    <Footer class="hidden md:flex" />
-    <BottomNavigationBox class="md:hidden"/>
+    <BottomNavigationBox/>
   </div>
 </template>
 
@@ -34,7 +31,6 @@ import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";
 import SecurityDrawer from "~/components/drawer/SecurityDrawer.vue";
 import SetNewPasswordDrawer from "~/components/drawer/SetNewPasswordDrawer.vue";
 import AltPhoneNumberDrawer from "~/components/drawer/AltPhoneNumberDrawer.vue";
-import MainHeaderDesktop from "~/components/header/MainHeaderDesktop.vue";
 import ResetPasswordDrawer from "~/components/drawer/ResetPasswordDrawer.vue";
 const nuxt = useNuxtApp()
 const loading = ref<boolean>(true)

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full flex flex-col items-start justify-start">
     <MainTitle :title="'نزدیک ترین هنرمندان'" class="mb-[8px]"/>
-    <div class="grid grid-cols-1 md:grid-cols-2 w-full">
+    <div class="grid grid-cols-1 w-full">
       <ArtistItem
           v-for="(a, i) in artists"
           :key="i"

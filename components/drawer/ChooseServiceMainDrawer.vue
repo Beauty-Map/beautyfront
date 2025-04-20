@@ -1,6 +1,6 @@
 <template>
   <div
-      class="fixed flex flex-col h-full px-[30px] py-[30px] md:hide top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]"
+      class="fixed flex flex-col h-full px-[30px] py-[30px] top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]"
       :class="[isOpen ? 'left-0 scale-1' : 'left-[-100%] hidden scale-0']"
   >
     <div class="flex flex-col justify-start items-center w-full">

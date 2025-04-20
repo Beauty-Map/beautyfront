@@ -1,5 +1,5 @@
 <template>
-  <div class="page h-screen w-full flex flex-col relative">
+  <div class="page h-screen w-full flex flex-col relative max-w-[425px] mx-auto">
     <PageLoading v-if="loading"/>
     <ArtistProfileDrawer />
     <ArtistAgreementDrawer />

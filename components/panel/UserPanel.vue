@@ -1,6 +1,6 @@
 <template>
   <div
-      class="flex flex-col md:hide w-full h-full px-[17px] duration-700 ease-in-out bg-white"
+      class="flex flex-col w-full h-full px-[17px] duration-700 ease-in-out bg-white"
   >
     <div class="flex flex-col justify-start items-center">
       <div class="flex flex-col justify-center items-center mt-[10px]">

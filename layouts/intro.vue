@@ -1,5 +1,5 @@
 <template>
-  <div class="intro_page w-full h-screen">
+  <div class="intro_page w-full h-screen max-w-[425px] mx-auto">
     <slot />
   </div>
 </template>

@@ -5,7 +5,7 @@
   </div>
 
 </div>
-<div class="flex md:hidden flex-col justify-start items-start h-full w-full">
+<div class="flex flex-col justify-start items-start h-full w-full">
   <div class="flex flex-row justify-start items-center mt-[40px]">
     <Header />
     <BackIcon @click="goBack" />
