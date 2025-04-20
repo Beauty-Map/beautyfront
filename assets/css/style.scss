@@ -2,6 +2,11 @@
 @import "./fontiran.css";
 @import "./monarpe.css";
 
+html {
+  max-width: 425px !important;
+  margin: 0 auto;
+}
+
 .splash_page {
   background-color: $splash_background_color;
 }

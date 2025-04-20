@@ -3,12 +3,14 @@
     class="flex flex-col fixed top-0 bottom-0 px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999]"
     :class="[store.isOpenProfile ? 'left-0' : 'left-[-100%]']"
 >
-  <div class="flex flex-row items-center justify-end pt-[23px] pl-[3px]">
-    <BackIcon @click="goBack" />
-  </div>
-  <div class="flex flex-col justify-start items-start">
-    <DrawerAuthInfoBox />
-    <ProfileLinkListBox class="mt-8"/>
+  <div class="flex flex-col h-full w-full max-w-[425px] mx-auto">
+    <div class="flex flex-row items-center justify-end pt-[23px] pl-[3px]">
+      <BackIcon @click="goBack" />
+    </div>
+    <div class="flex flex-col justify-start items-start">
+      <DrawerAuthInfoBox />
+      <ProfileLinkListBox class="mt-8"/>
+    </div>
   </div>
 </div>
 </template>

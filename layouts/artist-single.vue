@@ -1,17 +1,19 @@
 <template>
-  <div class="page h-full w-full flex flex-col relative max-w-[425px] mx-auto">
-    <PageLoading v-if="loading"/>
-    <ProfileDrawer class="flex"/>
-    <LoginDrawer class="flex"/>
-    <RegisterDrawer class="flex"/>
-    <SetPasswordDrawer class="flex"/>
-    <CompleteProfileDrawer class="flex"/>
-    <NotificationDrawer class="flex"/>
-    <SecurityDrawer class="flex"/>
-    <SetNewPasswordDrawer class="flex"/>
-    <AltPhoneNumberDrawer class="flex"/>
-    <div class="w-full min-h-screen flex flex-col justify-start items-start">
-      <slot />
+  <div class="page h-full w-full flex flex-col">
+    <div class="h-full w-full flex flex-col max-w-[425px] relative mx-auto">
+      <PageLoading v-if="loading"/>
+      <ProfileDrawer class="flex"/>
+      <LoginDrawer class="flex"/>
+      <RegisterDrawer class="flex"/>
+      <SetPasswordDrawer class="flex"/>
+      <CompleteProfileDrawer class="flex"/>
+      <NotificationDrawer class="flex"/>
+      <SecurityDrawer class="flex"/>
+      <SetNewPasswordDrawer class="flex"/>
+      <AltPhoneNumberDrawer class="flex"/>
+      <div class="w-full min-h-screen flex flex-col justify-start items-start">
+        <slot />
+      </div>
     </div>
   </div>
 </template>

@@ -1,8 +1,8 @@
 <template>
-  <div class="flex flex-col h-screen justify-center items-center" v-if="loading">
+  <div class="flex flex-col h-screen justify-center items-center max-w-[425px] relative mx-auto" v-if="loading">
     <LoadingComponent />
   </div>
-  <div class="flex flex-col h-full relative" v-else>
+  <div class="flex flex-col h-full relative max-w-[425px] mx-auto" v-else>
     <div class="flex flex-row items-center justify-between pl-[3px] absolute left-[23px] right-[15px] pt-[21px] z-[999999]">
       <PortfolioPageHeader
           :user="portfolio.user"

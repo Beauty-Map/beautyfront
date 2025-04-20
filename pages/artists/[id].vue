@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full flex flex-col h-full relative pb-[100px]">
-    <div class="pl-[3px] fixed left-[23px] pt-[21px] z-[999999]">
+  <div class="w-full max-w-[425px] mx-auto flex flex-col h-full relative pb-[100px]">
+    <div class="pl-[3px] absolute left-[23px] pt-[21px] z-[999999]">
       <PortfolioPageBackIcon @click="goBack" />
     </div>
     <div class="w-full h-full">

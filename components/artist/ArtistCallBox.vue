@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed z-[99999] bg-white bottom-0 left-0 right-0 px-[15px] pt-[30px] pb-[22px] border-t border-t-[#FFEA2E] w-full flex flex-row items-center justify-between">
+  <div class=" max-w-[425px] mx-auto fixed z-[99999] bg-white bottom-0 left-0 right-0 px-[15px] pt-[30px] pb-[22px] border-t border-t-[#FFEA2E] w-full flex flex-row items-center justify-between">
     <div @click="openNavigation" class="cursor-pointer min-w-[130px] text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">
       مسیریابی
     </div>

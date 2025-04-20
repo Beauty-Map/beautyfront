@@ -1,5 +1,5 @@
 <template>
-  <div class="fixed bg-white flex flex-row items-center justify-between bottom-0 left-0 right-0 px-[15px] pt-[30px] pb-[22px] border-t border-t-[#FFEA2E]">
+  <div class="fixed bg-white  max-w-[425px] mx-auto flex flex-row items-center justify-between bottom-0 left-0 right-0 px-[15px] pt-[30px] pb-[22px] border-t border-t-[#FFEA2E]">
     <div @click="openCallModal" class="cursor-pointer text-center px-[37px] py-[6px] bg-[#085EC2] border border-[#133C3E] font-medium text-[15px] leading-[30px] text-white rounded-[25px]">تماس</div>
     <div class="flex flex-col">
       <div class="flex flex-row justify-end items-center">
