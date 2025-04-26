@@ -1,5 +1,5 @@
 <template>
-  <div class="text-xs font-medium mx-auto w-[425px] text-center fixed bottom-0 right-0 left-0 z-[9999999]">
+  <div class="text-xs font-medium mx-auto max-w-[425px] text-center fixed bottom-0 right-0 left-0 z-[9999999]">
     <div class="flex flex-row items-center justify-evenly bg-pink-600 rounded-tl-3xl rounded-tr-3xl h-[58px]">
       <BottomNavigationButton
           @click="selectItem(1)"
