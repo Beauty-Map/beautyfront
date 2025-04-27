@@ -36,7 +36,7 @@
             </thead>
             <tbody>
             <tr class="border-b border-b-[#A9A7A7]">
-              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">تعداد نمونه کار در ماه</td>
+              <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]">تعداد نمونه کار در سال</td>
               <td class="text-[#141414] text-center text-[12px] leading-[15px] font-medium py-[10px]" v-for="(p,i) in plans" :key="i">{{ `${p.portfolio_count} عدد` }}</td>
             </tr>
             <tr class="border-b border-b-[#A9A7A7]">

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
+    "@nuxtjs/sitemap": "^7.2.10",
     "@pinia/nuxt": "^0.5.1",
     "@splidejs/vue-splide": "^0.6.12",
     "apexcharts": "^3.49.1",
