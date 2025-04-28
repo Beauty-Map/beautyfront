@@ -8,7 +8,7 @@
       <div v-for="(b,i) in banners" :key="i" class="w-full flex flex-col justify-start items-center">
         <img :src="b.image" alt="" class="w-full max-h-[242px]"/>
         <p class="mt-[10px] font-semibold text-[16px] leading-[24px] text-center">{{ getLink() }}</p>
-        <button @click="shareLink" class="cursor-pointer mt-[30px] w-full max-w-[260px] bg-[#1EFF81] text-[16px] leading-[24px] font-semibold text-black text-center rounded-[20px] py-[12px] px-[18px]">اشتراک گذاری</button>
+        <button @click="shareLink" class="cursor-pointer mt-[30px] w-full max-w-[260px] bg-[#1EFF81] text-[16px] leading-[24px] font-semibold text-black text-center rounded-[20px] py-[12px] px-[18px]">اشتراک گذاری کارت ویزیت</button>
       </div>
     </div>
   </div>

@@ -37,7 +37,7 @@
       <template #icon>
         <BannerIcon />
       </template>
-      <template #title>اشتراک گذاری</template>
+      <template #title>اشتراک گذاری کارت ویزیت</template>
     </ProfileLink>
     <ProfileLink :to="'/panel/artist/views'" :lock="isLockedAll">
       <template #icon>
