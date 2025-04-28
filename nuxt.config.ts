@@ -21,7 +21,8 @@ export default defineNuxtConfig({
   ],
 
   sitemap: {
-    hostname: 'http://localhost:3000',
+    // hostname: 'http://localhost:3000',
+    hostname: 'https://beautymap.ir',
     cacheTime: 0,
     debug: true,
     defaults: {
@@ -37,7 +38,7 @@ export default defineNuxtConfig({
     urls: async () => {
       const staticRoutes = [
         '/',
-        '/about',
+        '/aboutus',
       ].map(route => ({
         loc: route,
         lastmod: new Date().toISOString(),
@@ -109,6 +110,12 @@ export default defineNuxtConfig({
 })
 
 async function getDynamicRoutesFromAPI() {
-  const { data } = await $fetch('http://localhost:8000/api/portfolios');
-  return data.map(portfolio => `/portfolios/${portfolio.id}`);
+  let routes = [];
+  for (let i = 1; i <= 2000; i++) {
+    routes[i] = `/portfolios/${i}`
+    routes[i] = `/artists/${i}`
+  }
+  return [];
+  // const { data } = await $fetch('http://localhost:8000/api/portfolios');
+  // return data.map(portfolio => `/portfolios/${portfolio.id}`);
 }
