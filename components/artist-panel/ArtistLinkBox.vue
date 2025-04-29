@@ -90,7 +90,6 @@ const onShareClicked = async () => {
   await navigator.share({
     url: link,
   })
-  app.$toast.success('برای دسترسی به این بخش وارد شوید', {rtl: true})
 }
 
 const getSetting = () => {
