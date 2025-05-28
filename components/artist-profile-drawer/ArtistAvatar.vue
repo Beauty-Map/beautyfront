@@ -18,6 +18,7 @@
 
 <script setup lang="ts">
 import ProfileBigIcon from "~/components/icons/ProfileBigIcon.vue";
+import Compressor from "compressorjs";
 const props = defineProps({
   avatar: {
     type: String,
@@ -62,6 +63,19 @@ const onChooseImage = (e) => {
   uploadAvatar(file)
 }
 const uploadAvatar = async (file) => {
+  new Compressor(file, {
+    quality: 0.6,
+    convertSize: 0,
+    mimeType: 'image/webp',
+    success: async (compressedFile) => {
+      await doUploadImage(compressedFile)
+    },
+    error: (err) => {
+      console.error('Error compressing image:', err);
+    },
+  });
+}
+const doUploadImage = async (file) => {
   const config = useRuntimeConfig()
   uploading.value = true
   const form = new FormData()
@@ -76,23 +90,27 @@ const uploadAvatar = async (file) => {
   xhr.setRequestHeader('X-Xsrf-Token', xsrf.value)
   xhr.upload.onprogress = function (ev) {
     const percentComplete = (ev.loaded / ev.total) * 100;
-    uploadPercentage.value.style.width = percentComplete + '%'
+    const displayPercent = Math.min(percentComplete * 0.9, 90);
+    uploadPercentage.value.style.width = displayPercent + '%'
   }
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-
-    }
+      console.log(xhr.readyState)
+      console.log(xhr.response)
   }
   xhr.onload = () => {
     if (xhr.status === 200) {
+      uploadPercentage.value.style.width = '100%'
       const responseData = JSON.parse(xhr.responseText);
       uploadState.value = 2
       emits('choose', responseData.url)
       setTimeout(() => {
         uploading.value = false
+        image.value = ''
       }, 1000)
     } else {
       uploadState.value = 3
+      uploading.value = false
+      image.value = ''
       console.error('Error:', xhr.statusText);
     }
   };

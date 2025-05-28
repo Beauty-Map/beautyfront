@@ -1,7 +1,7 @@
 <template>
 <div
-    class="flex flex-col fixed top-0 bottom-0 pb-[45px] px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999999999]"
-    :class="[store.isOpenArtistProfile ? 'left-0' : 'left-[-100%]']"
+    class="flex flex-col top-0 bottom-0 pb-[45px] px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999999999]"
+    :class="[store.isOpenArtistProfile ? 'fixed left-0' : 'fixed left-[-100%]']"
     v-if="!loadingPage"
 >
   <div class="flex flex-row items-center justify-between pt-[23px] pl-[3px]">

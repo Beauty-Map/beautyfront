@@ -90,10 +90,10 @@
 import BackIcon from "~/components/icons/BackIcon.vue";
 import CloseIcon from "~/components/icons/CloseIcon.vue";
 import ChooseServiceInput from "~/components/input/ChooseServiceInput.vue";
-import ChooseMaintenanceInput from "~/components/input/ChooseMaintenanceInput.vue";
 import ChoosePriceInput from "~/components/input/ChoosePriceInput.vue";
 import ChooseCallNumberInput from "~/components/input/ChooseCallNumberInput.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
+import Compressor from 'compressorjs';
 
 definePageMeta({
   layout: 'artist-panel',
@@ -155,8 +155,6 @@ const openImageChooser = () => {
 }
 
 const onChooseImage = async (e) => {
-  // selectedFiles.value = []
-  // selectedImages.value = []
   const files = e.target?.files
   if (files.length == 0) {
     return
@@ -196,9 +194,24 @@ const uploadImages = async () => {
 }
 
 const uploadImage = async (image, index) => {
+  new Compressor(image, {
+    quality: 0.6,
+    convertSize: 0,
+    mimeType: 'image/webp',
+    success: async (compressedFile) => {
+      await doUploadImage(compressedFile, index)
+    },
+    error: (err) => {
+      console.error('Error compressing image:', err);
+      app.$toast.error('خطا در فشرده‌سازی تصویر', { rtl: true });
+    },
+  });
+}
+
+const doUploadImage = async (img, index) => {
   const config = useRuntimeConfig()
   const form = new FormData()
-  form.append('file', image)
+  form.append('file', img)
   form.append('type', 'portfolio')
   const xhr = new XMLHttpRequest()
   const xsrf = useCookie('XSRF-TOKEN')
@@ -210,16 +223,14 @@ const uploadImage = async (image, index) => {
   xhr.setRequestHeader('Authorization', `Bearer ${token.value}`)
   xhr.upload.onprogress = function (ev) {
     const percentComplete = (ev.loaded / ev.total) * 100;
-    // uploadPercentage.value.style.width = percentComplete + '%'
-    uploadedFilesPercentages.value[index] = percentComplete + '%'
+    const displayPercent = Math.floor(Math.min(percentComplete * 0.9, 90));
+    uploadedFilesPercentages.value[index] = displayPercent + '%'
   }
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-
-    }
   }
   xhr.onload = () => {
     if (xhr.status === 200) {
+      uploadedFilesPercentages.value[index] = '100%'
       uploadedFiles.value[index] = JSON.parse(xhr.responseText)
       setTimeout(() => {
         uploading.value[index] = false

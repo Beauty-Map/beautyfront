@@ -6,7 +6,7 @@
     <div class="flex flex-col justify-start items-center w-full">
       <div class="w-full relative flex flex-row items-center justify-center py-[23px]">
         <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">خدمات</div>
-        <BackIcon @click="goBack" class="absolute left-0"/>
+        <BackIcon @click="goBack" class="fixed left-0"/>
       </div>
       <div
           class="grid grid-cols-3 gap-x-2 gap-y-8 w-full mt-[50px]"

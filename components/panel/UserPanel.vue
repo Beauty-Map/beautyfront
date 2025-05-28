@@ -9,7 +9,7 @@
             <img class="w-[153px] h-[153px] rounded-full" :src="tempImage" alt="" v-if="tempImage"/>
             <img :src="user.avatar" class="w-[153px] h-[153px] rounded-full" alt="" v-else-if="user.avatar"/>
             <ProfileBigIcon v-else/>
-            <div v-show="uploading" class="w-[153px] h-[153px] flex flex-col justify-center items-center px-[10px] rounded-full absolute top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,.5)]">
+            <div v-show="uploading" class="w-[153px] h-[153px] flex flex-col justify-center items-center px-[10px] rounded-full  top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,.5)]">
               <div class="h-[5px] w-full ltr-dir bg-white rounded-[5px] relative">
                 <div class="bg-green-300 rounded-[5px] h-[5px] w-0" ref="uploadPercentage"></div>
                 <div class="text-center text-white text-[12px] mt-2">{{ getUploadState }}</div>

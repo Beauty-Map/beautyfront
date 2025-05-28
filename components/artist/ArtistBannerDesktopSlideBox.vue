@@ -7,7 +7,7 @@
         </slide>
       </carousel>
     </client-only>
-    <div class="absolute left-0 right-0 top-0 bottom-0 bg-[rgba(0,0,0,0.4)] z-[1] rounded-[60px]"></div>
+    <div class="fixed left-0 right-0 top-0 bottom-0 bg-[rgba(0,0,0,0.4)] z-[1] rounded-[60px]"></div>
     <div class="absolute z-[999] left-[55px] right-[55px] top-[55px] bottom-[55px] flex flex-row justify-between items-center">
       <div class="flex flex-row gap-[5px] justify-start items-start">
         <img :src="getAvatar" alt="" class=" grow-0 h-[20vw] max-w-[250px] max-h-[250px] w-[20vw] aspect-square border-[#FFD700] rounded-[50%] border-[2px]">

@@ -1,7 +1,7 @@
 <template>
 <div
-    class="flex flex-col fixed top-0 bottom-0 px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999]"
-    :class="[isOpen ? 'left-0' : 'left-[-100%]']"
+    class="flex flex-col  top-0 bottom-0 px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999]"
+    :class="[isOpen ? 'fixed left-0' : 'fixed left-[-100%]']"
 >
   <div class="flex flex-col justify-start items-center mt-[40px]">
     <Header :email="email" @change-email="goBack"/>

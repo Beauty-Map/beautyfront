@@ -117,6 +117,7 @@ import {useCustomFetch} from "~/composables/useCustomFetch";
 import LoadingComponent from "~/components/global/Loading.vue";
 import DeleteAccountModal from "~/components/modal/DeleteAccountModal.vue";
 import DeletePortfolioModal from "~/components/modal/DeletePortfolioModal.vue";
+import Compressor from "compressorjs";
 
 definePageMeta({
   layout: 'artist-panel',
@@ -251,6 +252,20 @@ const uploadImages = async () => {
 }
 
 const uploadImage = async (image, index) => {
+  new Compressor(image, {
+    quality: 0.6,
+    convertSize: 0,
+    mimeType: 'image/webp',
+    success: async (compressedFile) => {
+      await doUploadImage(compressedFile, index)
+    },
+    error: (err) => {
+      console.error('Error compressing image:', err);
+      app.$toast.error('خطا در فشرده‌سازی تصویر', { rtl: true });
+    },
+  });
+}
+const doUploadImage = async (image, index) => {
   const config = useRuntimeConfig()
   const form = new FormData()
   form.append('file', image)
@@ -265,16 +280,14 @@ const uploadImage = async (image, index) => {
   xhr.setRequestHeader('Authorization', `Bearer ${token.value}`)
   xhr.upload.onprogress = function (ev) {
     const percentComplete = (ev.loaded / ev.total) * 100;
-    // uploadPercentage.value.style.width = percentComplete + '%'
-    uploadedFilesPercentages.value[index] = percentComplete + '%'
+    const displayPercent = Math.min(percentComplete * 0.9, 90);
+    uploadedFilesPercentages.value[index] = displayPercent + '%'
   }
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-
-    }
   }
   xhr.onload = () => {
     if (xhr.status === 200) {
+      uploadedFilesPercentages.value[index] = '100%'
       uploadedFiles.value[index] = JSON.parse(xhr.responseText)
       setTimeout(() => {
         uploading.value[index] = false

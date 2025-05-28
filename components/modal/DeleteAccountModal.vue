@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-transparent duration-500 transition-all fixed top-0 right-0 bottom-0 left-0 flex flex-col justify-end items-center z-[999999999]" @click="closeModal"
+  <div class="bg-transparent duration-500 transition-all  top-0 right-0 bottom-0 left-0 flex flex-col justify-end items-center z-[999999999]" @click="closeModal"
       :class="[open ? 'flex' : 'hidden']"
   >
     <div class="mb-[30px] mx-6 bg-white relative rounded-[12px] px-[17px] py-[17px] min-w-[150px] min-h-[150px] shadow-[0px_8px_8px_-4px_#e2e8f0]">

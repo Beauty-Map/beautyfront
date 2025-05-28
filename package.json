@@ -16,6 +16,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@splidejs/vue-splide": "^0.6.12",
     "apexcharts": "^3.49.1",
+    "compressorjs": "^1.2.1",
     "jalaliday": "^2.3.0",
     "leaflet": "^1.9.4",
     "nuxt": "^3.10.3",

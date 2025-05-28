@@ -4,7 +4,7 @@
       <carousel ref="carouselRef" :items-to-show="1" :autoplay-timeout="2000" @slide-end="handleSlideChange" :options="slickOptions" class=" h-full min-h-[200px]">
         <slide class="relative max-h-[20ppx]" v-for="(img, n) in images" :key="n" data-fancybox="gallery" @click="openImageModal(n)">
           <img :src="img" alt="" class="max-h-[200px] w-full object-cover" />
-          <div class="absolute top-0 right-0 bottom-0 left-0 w-full h-full bg-gradient-to-b from-[rgba(0,0,0,.6)] from-0% via-[rgba(0,0,0,.2)] via-80% to-[rgba(0,0,0,.1)]"></div>
+          <div class=" top-0 right-0 bottom-0 left-0 w-full h-full bg-gradient-to-b from-[rgba(0,0,0,.6)] from-0% via-[rgba(0,0,0,.2)] via-80% to-[rgba(0,0,0,.1)]"></div>
         </slide>
         <template #addons>
           <div class="absolute right-0 left-0 bottom-0 bg-white px-[8px] py-[8px] border-t-[8px] border-white rounded-t-[14px]">

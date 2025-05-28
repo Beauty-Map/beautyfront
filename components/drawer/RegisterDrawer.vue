@@ -1,7 +1,7 @@
 <template>
 <div
     class="flex flex-col fixed  top-0 bottom-0 px-[17px] overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[99999999]"
-    :class="[store.isOpenRegister ? 'left-0' : 'left-[-100%]']"
+    :class="[store.isOpenRegister ? 'fixed left-0' : 'fixed left-[-100%]']"
 >
   <div class="flex flex-row items-center justify-end pt-[23px] pl-[3px]">
     <BackIcon @click="goBack" />

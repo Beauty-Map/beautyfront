@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-[rgba(0,0,0,.4)] duration-500 transition-all fixed top-0 right-0 bottom-0 left-0 flex flex-col justify-center items-center z-[9999]" @click.stop="closeModal"
+  <div class="bg-[rgba(0,0,0,.4)] duration-500 transition-all  top-0 right-0 bottom-0 left-0 flex flex-col justify-center items-center z-[9999]" @click.stop="closeModal"
       :class="[open ? 'flex' : 'hidden']"
   >
     <div class="bg-white mx-[20px] max-h-[70%] relative rounded-[12px] min-w-[200px] min-h-[150px] shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]">
