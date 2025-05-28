@@ -3,48 +3,49 @@
     class="fixed flex flex-col h-full py-[30px] top-0 bottom-0 right-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999999]"
     :class="[isOpen ? 'left-0 scale-1' : 'left-[-100%] hidden scale-0']"
 >
-  <div class="flex flex-row items-center px-[28px] justify-between">
-    <div></div>
-    <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">ساعت کاری</div>
-    <BackIcon @click="goBack" />
-  </div>
-  <div class="w-full flex flex-col items-center justify-start mt-12 px-[5px] ">
-    <WorkHourItem
-      v-for="(w, i) in workHours"
-      :key="i"
-      :index="i"
-      :work-hour="w"
-      @click="openItemModal(w, i)"
-    />
-  </div>
-  <div class="w-full flex flex-row gap-[5px] items-center justify-between mt-12">
-    <div
-        @click="openAllModal"
-        class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
-    >
-      ویرایش کلی
+  <div class="flex flex-col max-w-[425px] mx-auto">
+    <div class="flex flex-row items-center px-[28px] justify-between">
+      <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">ساعت کاری</div>
+      <BackIcon @click="goBack" />
     </div>
-    <div
-        @click="openHoursModal"
-        class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
-    >
-      ویرایش ساعات
+    <div class="w-full flex flex-col items-center justify-start mt-12 px-[5px] ">
+      <WorkHourItem
+          v-for="(w, i) in workHours"
+          :key="i"
+          :index="i"
+          :work-hour="w"
+          @click="openItemModal(w, i)"
+      />
     </div>
-    <div
-        @click="openDaysModal"
-        class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
-    >
-      ویرایش روز
+    <div class="w-full flex flex-row gap-[5px] items-center justify-between mt-12">
+      <div
+          @click="openAllModal"
+          class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
+      >
+        ویرایش کلی
+      </div>
+      <div
+          @click="openHoursModal"
+          class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
+      >
+        ویرایش ساعات
+      </div>
+      <div
+          @click="openDaysModal"
+          class="cursor-pointer border border-[#A9A7A7] rounded-full bg-white px-[18px] py-[8px] text-[#133C3E] font-medium text-[15px] leading-[23px] text-center"
+      >
+        ویرایش روز
+      </div>
     </div>
-  </div>
-  <div class="w-full flex flex-row items-center justify-start mt-12">
-    <p>تعطیلات رسمی آماده ارائه خدمات هستم</p>
-    <CheckBox v-model="workOnHolidays"/>
-  </div>
-  <div class="mt-[80px] px-[22px] w-full flex flex-row items-center justify-center">
-    <MainActionButton @click="doSave">
-      <div class="text-white text-center text-[20px] leading-[30px] py-[11px]">ذخیره اطلاعات</div>
-    </MainActionButton>
+    <div class="w-full flex flex-row items-center justify-start mt-12">
+      <p>تعطیلات رسمی آماده ارائه خدمات هستم</p>
+      <CheckBox v-model="workOnHolidays"/>
+    </div>
+    <div class="mt-[80px] px-[22px] w-full flex flex-row items-center justify-center">
+      <MainActionButton @click="doSave">
+        <div class="text-white text-center text-[20px] leading-[30px] py-[11px]">ذخیره اطلاعات</div>
+      </MainActionButton>
+    </div>
   </div>
   <ChooseHoursModal
       v-if="showHoursModal"
