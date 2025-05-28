@@ -1,12 +1,12 @@
 <template>
 <div
     class="flex flex-col fixed px-[30px] py-[30px] top-0 bottom-0 overflow-y-scroll w-full duration-700 ease-in-out bg-white z-[999999999]"
-    :class="[isOpen ? 'fixed left-0' : 'fixed left-[-100%]']"
+    :class="[isOpen ? 'left-0' : 'left-[-100%]']"
 >
-  <div class="flex flex-col justify-start items-center">
-    <div class="w-full relative flex flex-row items-center justify-center py-[23px]">
+  <div class="flex flex-col justify-start items-center w-full max-w-[425px] mx-auto">
+    <div class="w-full relative flex flex-row items-center py-[23px] justify-between">
       <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">فیلتر ها</div>
-      <BackIcon @click="goBack" class="fixed left-0"/>
+      <BackIcon @click="goBack" class="left-0"/>
     </div>
     <div class="w-full flex flex-row items-center justify-between text-right font-medium text-[#141414] text-[18px] leading-[27px]">
       <span>{{ title }}</span>

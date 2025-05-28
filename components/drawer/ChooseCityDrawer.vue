@@ -1,6 +1,6 @@
 <template>
 <div
-    class="flex flex-col  top-0 px-[17px] overflow-y-auto w-full duration-700 ease-in-out bg-white"
+    class="flex flex-col fixed top-0 px-[17px] overflow-y-auto w-full duration-700 ease-in-out bg-white"
     :class="[isOpen ? 'left-0 z-[999999999] fixed' : 'left-[-100%] z-0 fixed']"
 >
   <div class="max-w-[425px] mx-auto w-full flex flex-col justify-start items-center my-[6px]  rounded-[12px] px-[10px] bg-white">
