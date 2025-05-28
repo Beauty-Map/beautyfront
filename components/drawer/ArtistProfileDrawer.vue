@@ -4,49 +4,50 @@
     :class="[store.isOpenArtistProfile ? 'fixed left-0' : 'fixed left-[-100%]']"
     v-if="!loadingPage"
 >
-  <div class="flex flex-row items-center justify-between pt-[23px] pl-[3px]">
-    <div></div>
-    <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">پروفایل</div>
-    <BackIcon @click="goBack" />
-  </div>
-  <div class="w-full text-center text-[#133C3E] text-[14px] leading-[21px] font-semibold mt-[33px]">سن شما به کاربران نمایش داده نمی شود</div>
-  <div class="flex flex-col justify-start items-start">
-    <ArtistAvatar @choose="onUserAvatarChanged" :avatar="user.avatar" class="mt-[35px] mb-[22px]"/>
-    <div class="font-semibold text-[16px] text-red-600 leading-[24px]">
-      برای تایید شدن پروفایل تمامی موارد ستاره دار را وارد کنید.
+  <div class="flex flex-col justify-start items-start max-w-[425px] mx-auto">
+    <div class="w-full flex flex-row items-center justify-between pt-[23px] pl-[3px]">
+      <div class="font-semibold text-[16px] text-[#141414] leading-[24px]">پروفایل</div>
+      <BackIcon @click="goBack" />
     </div>
-    <div class="w-full overflow-y-auto">
-      <TextInput title="نام و نام خانوادگی *" v-model="form.full_name" class="mt-[27px]"/>
-      <EmailInput title="ایمیل *" v-model="form.email" :disabled="true" class="mt-[27px]"/>
-      <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
-      <TextInput title="کد کارشناس *" v-model="form.referrer_code" :disabled="hasReferrerCode" class="mt-[27px]"/>
-<!--      <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>-->
-      <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
-      <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
-      <ChooseCityInput title="شهر محل فعالیت *" v-model="form.city_id" class="mt-[27px]"/>
-      <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
-      <ClientOnly>
-        <ChooseLocationInput title="انتخاب لوکیشن" :point="getPoint" v-model="form.location" class="mt-[27px]"/>
-      </ClientOnly>
-      <ChooseWorkHourInput
-          title="ساعت کاری"
-          :is-all-day-open="form.is_all_day_open"
-          :is-closed="form.is_closed"
-          :work-on-holidays="form.work_on_holidays"
-          v-model="form.work_hours"
-          @update:is-closed="open => form.is_closed = open"
-          @update:is-all-day-open="open => form.is_all_day_open = open"
-          class="mt-[27px]"
-      />
-      <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px] px-2"/>
-      <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
-      <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.licenses" class="mt-[27px]"/>
-      <MainActionButton :disabled="loading" class="mt-[80px]" @click="doSaveProfile">
-        <div v-if="loading">
-          <LoadingComponent />
-        </div>
-        <div v-else class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
-      </MainActionButton>
+    <div class="w-full text-center text-[#133C3E] text-[14px] leading-[21px] font-semibold mt-[33px]">سن شما به کاربران نمایش داده نمی شود</div>
+    <div class="flex flex-col justify-start items-start">
+      <ArtistAvatar @choose="onUserAvatarChanged" :avatar="user.avatar" class="mt-[35px] mb-[22px]"/>
+      <div class="font-semibold text-[16px] text-red-600 leading-[24px]">
+        برای تایید شدن پروفایل تمامی موارد ستاره دار را وارد کنید.
+      </div>
+      <div class="w-full overflow-y-auto">
+        <TextInput title="نام و نام خانوادگی *" v-model="form.full_name" class="mt-[27px]"/>
+        <EmailInput title="ایمیل *" v-model="form.email" :disabled="true" class="mt-[27px]"/>
+        <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
+        <TextInput title="کد کارشناس *" v-model="form.referrer_code" :disabled="hasReferrerCode" class="mt-[27px]"/>
+        <!--      <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>-->
+        <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
+        <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
+        <ChooseCityInput title="شهر محل فعالیت *" v-model="form.city_id" class="mt-[27px]"/>
+        <TextInput title="آدرس دقیق" v-model="form.address" class="mt-[27px]"/>
+        <ClientOnly>
+          <ChooseLocationInput title="انتخاب لوکیشن" :point="getPoint" v-model="form.location" class="mt-[27px]"/>
+        </ClientOnly>
+        <ChooseWorkHourInput
+            title="ساعت کاری"
+            :is-all-day-open="form.is_all_day_open"
+            :is-closed="form.is_closed"
+            :work-on-holidays="form.work_on_holidays"
+            v-model="form.work_hours"
+            @update:is-closed="open => form.is_closed = open"
+            @update:is-all-day-open="open => form.is_all_day_open = open"
+            class="mt-[27px]"
+        />
+        <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px] px-2"/>
+        <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
+        <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.licenses" class="mt-[27px]"/>
+        <MainActionButton :disabled="loading" class="mt-[80px]" @click="doSaveProfile">
+          <div v-if="loading">
+            <LoadingComponent />
+          </div>
+          <div v-else class="text-white text-center text-[20px] leading-[30px]">تکمیل ثبت نام</div>
+        </MainActionButton>
+      </div>
     </div>
   </div>
 </div>

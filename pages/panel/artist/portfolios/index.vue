@@ -24,7 +24,7 @@
         <InfiniteLoading :firstload="true" v-if="showInfiniteScroll" class="mx-auto" @infinite="paginateDebounce"/>
       </div>
     </div>
-    <div class="absolute pt-[10px] left-0 right-0 bottom-0 pb-[40px] px-[30px] flex flex-col justify-start items-start bg-white z-[9999]">
+    <div class="fixed  max-w-[425px] mx-auto  pt-[10px] left-0 right-0 bottom-0 pb-[40px] px-[30px] flex flex-col justify-start items-start bg-white z-[9999]">
       <nuxt-link @click.prevent="openNewPortfolioPage" class="cursor-pointer flex flex-row justify-start items-center">
         <PlusButtonIcon />
         <div class="px-[8px] py-[3px] rounded-full bg-[#E7FAF4] text-center mr-[4px] text-[#133C3E] font-medium text-[12px] leading-[18px]">نمونه کار جدید</div>
