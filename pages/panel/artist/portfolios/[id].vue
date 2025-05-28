@@ -51,7 +51,7 @@
               dir="auto"
           >
           </textarea>
-          <span class="w-full text-right text-[#828282] text-[12px] font-medium leading-[21px]">200 / {{ form.description.length }}</span>
+          <span class="w-full text-right text-[#828282] text-[12px] font-medium leading-[21px]">2000 / {{ form.description.length }}</span>
         </div>
       </div>
     </div>
