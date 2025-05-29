@@ -62,8 +62,31 @@ const onChooseImage = (e) => {
   reader.readAsDataURL(file);
   uploadAvatar(file)
 }
+const resizeImage = (file, maxWidth = 1280) => {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        const scale = maxWidth / img.width;
+        canvas.width = maxWidth;
+        canvas.height = img.height * scale;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob((blob) => {
+          resolve(new File([blob], file.name, { type: 'image/jpeg' }));
+        }, 'image/jpeg', 0.9);
+      };
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+};
+
 const uploadAvatar = async (file) => {
-  new Compressor(file, {
+  const resized = await resizeImage(image)
+  new Compressor(resized, {
     quality: 0.35,
     convertSize: 0,
     mimeType: 'image/webp',

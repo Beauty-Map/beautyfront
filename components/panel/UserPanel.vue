@@ -45,6 +45,7 @@ import {useDrawerStore} from "~/store/Drawer";
 import {useAuthStore} from "~/store/Auth";
 import ProfileBigIcon from "~/components/icons/ProfileBigIcon.vue";
 import LoadingComponent from "~/components/global/Loading.vue";
+import Compressor from "compressorjs";
 const app = useNuxtApp()
 const store = useDrawerStore()
 const router = useRouter()
@@ -111,7 +112,43 @@ const onChooseImage = (e) => {
   reader.readAsDataURL(file);
   uploadAvatar(file)
 }
+const resizeImage = (file, maxWidth = 1280) => {
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = function (event) {
+      const img = new Image();
+      img.onload = function () {
+        const canvas = document.createElement('canvas');
+        const scale = maxWidth / img.width;
+        canvas.width = maxWidth;
+        canvas.height = img.height * scale;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        canvas.toBlob((blob) => {
+          resolve(new File([blob], file.name, { type: 'image/jpeg' }));
+        }, 'image/jpeg', 0.9);
+      };
+      img.src = event.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+};
+
 const uploadAvatar = async (file) => {
+  const resized = await resizeImage(image)
+  new Compressor(resized, {
+    quality: 0.35,
+    convertSize: 0,
+    mimeType: 'image/webp',
+    success: async (compressedFile) => {
+      await doUploadImage(compressedFile)
+    },
+    error: (err) => {
+      console.error('Error compressing image:', err);
+    },
+  });
+}
+const doUploadImage = async (file) => {
   const config = useRuntimeConfig()
   uploading.value = true
   const frm = new FormData()
@@ -126,7 +163,8 @@ const uploadAvatar = async (file) => {
   xhr.setRequestHeader('X-Xsrf-Token', xsrf.value)
   xhr.upload.onprogress = function (ev) {
     const percentComplete = (ev.loaded / ev.total) * 100;
-    uploadPercentage.value.style.width = percentComplete + '%'
+    const displayPercent = Math.min(percentComplete * 0.9, 90);
+    uploadPercentage.value.style.width = displayPercent + '%'
   }
   xhr.onreadystatechange = function () {
     if (xhr.readyState === 4) {
