@@ -21,7 +21,7 @@
           <img @click="openImageChooser" :src="getThumbnail" alt="" class="w-[80px] h-[80px]" />
           <span class="text-[12px] text-center">افزودن تصویر</span>
         </div>
-        <input @change="onChooseImage" type="file" hidden multiple accept="image/png, images/jpeg" ref="galleryChooser">
+        <input @change="onChooseImage" type="file" hidden multiple accept="image/*" ref="galleryChooser">
       </div>
       <div class="w-full flex flex-row justify-start items-start gap-[12px] mt-[7px] flex-wrap">
         <div class="relative" v-for="(img, i) in selectedImages" :key="i">
@@ -195,10 +195,11 @@ const uploadImages = async () => {
 
 const uploadImage = async (image, index) => {
   new Compressor(image, {
-    quality: 0.6,
+    quality: 0.35,
     convertSize: 0,
     mimeType: 'image/webp',
     success: async (compressedFile) => {
+      console.log(compressedFile.size)
       await doUploadImage(compressedFile, index)
     },
     error: (err) => {

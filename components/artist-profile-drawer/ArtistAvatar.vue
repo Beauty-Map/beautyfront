@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="text-[#141414] font-semibold text-[16px] leading-[24px] text-center mt-[5px]">تغییر عکس پروفایل</div>
-    <input @change="onChooseImage" accept="image/png, image/jpeg" type="file" hidden ref="image" />
+    <input @change="onChooseImage" accept="image/*" type="file" hidden ref="image" />
   </div>
 </template>
 
@@ -64,7 +64,7 @@ const onChooseImage = (e) => {
 }
 const uploadAvatar = async (file) => {
   new Compressor(file, {
-    quality: 0.6,
+    quality: 0.35,
     convertSize: 0,
     mimeType: 'image/webp',
     success: async (compressedFile) => {
