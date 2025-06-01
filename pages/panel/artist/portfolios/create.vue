@@ -155,6 +155,7 @@ const openImageChooser = () => {
 }
 
 const onChooseImage = async (e) => {
+  alert('choose')
   const files = e.target?.files
   if (files.length == 0) {
     return
@@ -184,6 +185,7 @@ const showRemoveImage = (index) => {
 }
 
 const uploadImages = async () => {
+  alert('start uploads')
   const l = selectedFiles.value.length
   uploadedFilesPercentages.value = Array(l).fill('0%')
   uploadedFiles.value = Array(l).fill(null)
@@ -194,16 +196,19 @@ const uploadImages = async () => {
 }
 
 const uploadImage = async (image, index) => {
+  alert('start upload')
   const resized = await resizeImage(image)
+  alert('resized')
   new Compressor(resized, {
     quality: 0.35,
     convertSize: 0,
     mimeType: 'image/webp',
     success: async (compressedFile) => {
-      console.log(compressedFile.size)
+      alert('compressed')
       await doUploadImage(compressedFile, index)
     },
     error: (err) => {
+      alert('compressed error')
       console.error('Error compressing image:', err);
       app.$toast.error('خطا در فشرده‌سازی تصویر', { rtl: true });
     },
@@ -211,6 +216,7 @@ const uploadImage = async (image, index) => {
 }
 
 const doUploadImage = async (img, index) => {
+  alert('start do upload')
   const config = useRuntimeConfig()
   const form = new FormData()
   form.append('file', img)
@@ -235,6 +241,7 @@ const doUploadImage = async (img, index) => {
     if (xhr.status === 200) {
       uploadedFilesPercentages.value[index] = '100%'
       uploadedFiles.value[index] = JSON.parse(xhr.responseText)
+      alert('completed')
       setTimeout(() => {
         uploading.value[index] = false
       }, 1000)
