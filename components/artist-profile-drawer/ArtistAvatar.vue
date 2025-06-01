@@ -85,7 +85,7 @@ const resizeImage = (file, maxWidth = 1280) => {
 };
 
 const uploadAvatar = async (file) => {
-  const resized = await resizeImage(image)
+  const resized = await resizeImage(file)
   new Compressor(resized, {
     quality: 0.35,
     convertSize: 0,
