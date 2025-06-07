@@ -31,7 +31,7 @@
             type="text"
             v-model="value"
             class="w-full border border-[#A9A7A7] rounded-[10px] h-[50px] px-4 mt-4 text-right placeholder:text-[#A9A7A7]"
-            placeholder="مثلاً کارت ملی یا شناسنامه"
+            placeholder="مثال :جواز کسب یا کارت ملی یا ..."
         />
 
         <div class="w-full flex flex-col items-center mt-4">
