@@ -4,7 +4,7 @@
       <PortfolioPageBackIcon @click="goBack" />
     </div>
     <div class="w-full h-full">
-      <ArtistBannerSlideBox v-if="!loading" :view="user.view" :avatar="user.avatar" :user="user" :images="user.banners"/>
+      <ArtistBannerSlideBox v-if="!loading" :view="user.view" :avatar="user.avatar" :user="user" :images="user.galleries"/>
     </div>
     <div class="w-full h-full px-[20px]">
       <ArtistDetailBox
@@ -63,6 +63,7 @@ const user = ref<IArtist>({
   },
   work_hours: [],
   portfolios: [],
+  galleries: [],
   licenses: [],
   socials: {
     telegram: "",

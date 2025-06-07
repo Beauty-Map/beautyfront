@@ -15,6 +15,7 @@ interface IArtist {
     view: number
     services: IService[]
     banners: string[]
+    galleries: string[]
     portfolios: IPortfolio[]
     work_hours: IWorkHour[]
     socials: Object

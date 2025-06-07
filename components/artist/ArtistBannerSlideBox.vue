@@ -74,7 +74,7 @@ const openImageModal = (n:number) => {
 }
 const getImages = computed(() => {
   if (props.images?.length > 0) {
-    return props.images?.length
+    return props.images
   }
   if (props.avatar) {
     return [props.avatar]
