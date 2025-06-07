@@ -1,11 +1,16 @@
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
-    <NuxtPage />
+    <NuxtPage :key="route.fullPath" />
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
+const route = useRoute()
+onErrorCaptured((err) => {
+  console.error('Error caught:', err)
+  return false // جلوگیری از crash کامل
+})
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk ? `${titleChunk} | BeautyMap - بیوتی مپ` : 'BeautyMap - بیوتی مپ';
