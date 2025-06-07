@@ -25,7 +25,7 @@ const props = defineProps({
   }
 })
 
-const index = ref<number>(1)
+const index = ref<number>(0)
 
 const selectTab = (i: number) => {
   index.value = i

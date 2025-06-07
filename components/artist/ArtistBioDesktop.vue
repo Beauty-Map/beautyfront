@@ -14,9 +14,11 @@
     <div class="gap-[10px] font-medium text-[26px] text-right text-[#828282] mt-[10px]" v-html="user.bio"></div>
     <div class="mt-[30px] flex flex-col justify-start items-start gap-[10px] font-medium text-[26px] text-right">
       <span>مدارک و مجوز ها </span>
-      <span v-for="(l,i) in user.licenses" :key="i">
-        {{ l }}
-      </span>
+      <div v-for="(d,i) in user.licenses" :key="i"
+           class="cursor-pointer text-[#141414] font-semibold text-[16px] leading-[18px] flex flex-row justify-start items-center w-full">
+        <img :alt="d.title" v-if="d.image" :src="d.image" class="w-10 h-10 rounded ml-2 object-cover" />
+        <span>{{ d.title }}</span>
+      </div>
     </div>
 
   </div>
