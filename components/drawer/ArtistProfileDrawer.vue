@@ -42,6 +42,7 @@
         <TextAreaInput title="تنظیم بیوگرافی" v-model="form.bio" class="mt-[27px] px-2"/>
         <ChooseSocialMediaInput title="شبکه های اجتماعی" v-model="form.social_media" class="mt-[27px]"/>
         <InsertDocumentsInput title="بارگذاری مدارک" v-model="form.licenses" class="mt-[27px]"/>
+        <ChooseGalleryUploader v-model="form.galleries" class="mt-[27px]"/>
         <MainActionButton :disabled="loading" class="mt-[80px]" @click="doSaveProfile">
           <div v-if="loading">
             <LoadingComponent />
@@ -74,6 +75,7 @@ import InsertDocumentsInput from "~/components/input/InsertDocumentsInput.vue";
 import EmailInput from "~/components/input/EmailInput.vue";
 import {useAuthStore} from "~/store/Auth";
 import LoadingComponent from "~/components/global/Loading.vue";
+import ChooseGalleryUploader from "~/components/input/ChooseGalleryUploader.vue";
 
 const loadingPage = ref(true)
 const store = useDrawerStore()
@@ -114,6 +116,7 @@ const form = ref({
   social_media: user.value?.social_media,
   licenses: normalizeLicenses(user.value?.licenses),
   features: user.value?.features?.map(i => i.id),
+  galleries: user.value?.galleries || [],
 })
 const goBack = () => {
   store.closeAllDrawers()
@@ -172,6 +175,7 @@ const doSaveProfile = async () => {
     licenses: form.value.licenses,
     referrer_code: form.value.referrer_code,
     features: form.value.features,
+    galleries: form.value.galleries,
   }
   const {$putRequest: putRequest}=app
   putRequest('/own/artist', data)
