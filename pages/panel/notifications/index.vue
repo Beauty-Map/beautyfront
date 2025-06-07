@@ -26,11 +26,11 @@ const notification = ref({
 })
 
 const getNotification = async () => {
-  const {$getRequest: getRequest}=useNuxtApp()
-  getRequest(`/notifications/${route.params.id}`)
-      .then(res => {
-        notification.value = res.data
-      })
+  // const {$getRequest: getRequest}=useNuxtApp()
+  // getRequest(`/notifications/${route.params.id}`)
+  //     .then(res => {
+  //       notification.value = res.data
+  //     })
 }
 
 onMounted(async () => {

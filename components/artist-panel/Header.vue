@@ -31,7 +31,7 @@
 <!--            </div>-->
           </div>
         </div>
-        <NotificationIcon @click="openNotificationDrawer" />
+<!--        <NotificationIcon @click="openNotificationDrawer" />-->
       </div>
     </div>
   </div>

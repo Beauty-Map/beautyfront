@@ -6,7 +6,7 @@
     <RegisterDrawer class="flex"/>
     <SetPasswordDrawer class="flex"/>
     <CompleteProfileDrawer class="flex"/>
-    <NotificationDrawer class="flex"/>
+<!--    <NotificationDrawer class="flex"/>-->
     <SecurityDrawer class="flex"/>
     <SetNewPasswordDrawer class="flex"/>
     <ResetPasswordDrawer class="flex"/>
@@ -27,7 +27,6 @@ import LoginDrawer from "~/components/drawer/LoginDrawer.vue";
 import RegisterDrawer from "~/components/drawer/RegisterDrawer.vue";
 import SetPasswordDrawer from "~/components/drawer/SetPasswordDrawer.vue";
 import CompleteProfileDrawer from "~/components/drawer/CompleteProfileDrawer.vue";
-import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";
 import SecurityDrawer from "~/components/drawer/SecurityDrawer.vue";
 import SetNewPasswordDrawer from "~/components/drawer/SetNewPasswordDrawer.vue";
 import AltPhoneNumberDrawer from "~/components/drawer/AltPhoneNumberDrawer.vue";

@@ -8,7 +8,7 @@
         <span class="font-light text-[#5CB3FF] text-right text-[16px] leading-[24px]">بازاریاب</span>
       </div>
     </div>
-    <NotificationIcon class="cursor-pointer" @click="goToNotificationPage"/>
+<!--    <NotificationIcon class="cursor-pointer" @click="goToNotificationPage"/>-->
   </div>
 </template>
 

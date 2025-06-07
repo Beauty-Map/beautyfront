@@ -4,7 +4,7 @@
     <ArtistProfileDrawer />
     <ArtistAgreementDrawer />
     <ArtistAgreementResultDrawer />
-    <NotificationDrawer />
+<!--    <NotificationDrawer />-->
     <slot />
   </div>
 </template>
@@ -15,7 +15,6 @@ import PageLoading from "~/components/loading/PageLoading.vue";
 import ArtistProfileDrawer from "~/components/drawer/ArtistProfileDrawer.vue";
 import ArtistAgreementDrawer from "~/components/drawer/ArtistAgreementDrawer.vue";
 import ArtistAgreementResultDrawer from "~/components/drawer/ArtistAgreementResultDrawer.vue";
-import NotificationDrawer from "~/components/drawer/NotificationDrawer.vue";
 const nuxt = useNuxtApp()
 const loading = ref<boolean>(true)
 nuxt.hook('page:loading:start', () => {
