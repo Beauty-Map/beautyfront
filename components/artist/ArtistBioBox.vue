@@ -16,6 +16,13 @@
         <span>{{ d.title }}</span>
       </div>
     </div>
+    <div class="mt-4 w-full flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
+      <h1 class="font-semibold text-[#141414] text-right text-[16px] leading-[23px]">امکانات</h1>
+      <div v-for="(d,i) in features" :key="i"
+           class="mt-[10px] font-normal text-right text-[#133C3E] text-[16px] leading-[22px] cursor-pointer flex flex-row justify-start items-center w-full">
+        <span>{{ d.title }}</span>
+      </div>
+    </div>
     <div class="w-full mt-4 mx-4 flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="w-full font-semibold text-[#141414] text-right text-[17px] leading-[26px]">برنامه هفتگی</h1>
       <div class="w-full mt-[10px] font-normal text-right text-[#133C3E] text-[16px] leading-[22px]">
@@ -45,6 +52,11 @@ const props = defineProps({
     required: true
   },
   services: {
+    type: Array,
+    default: () => [],
+    required: true
+  },
+  features: {
     type: Array,
     default: () => [],
     required: true

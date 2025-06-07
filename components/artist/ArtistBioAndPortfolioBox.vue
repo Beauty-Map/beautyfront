@@ -8,7 +8,7 @@
         نمونه کارها
       </div>
     </div>
-    <ArtistBioBox :services-count="user.services_count" :services="getServices" :bio="user.bio" :work-hours="user.work_hours" :licenses="user.licenses" v-if="index === 0"/>
+    <ArtistBioBox :features="user.features" :services-count="user.services_count" :services="getServices" :bio="user.bio" :work-hours="user.work_hours" :licenses="user.licenses" v-if="index === 0"/>
     <ArtistPortfolioBox v-if="index === 1"/>
   </div>
 </template>
