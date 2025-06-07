@@ -78,7 +78,6 @@ const user = computed(() => auth.user)
 const isBookmarked = ref<boolean>(props.isBookmarked)
 
 const starCountVal = ref<Number>(props.starCount)
-
 const getThumbnail = () => {
   if (props.portfolio.images.length > 0) {
     return props.portfolio.images[0]

@@ -21,6 +21,7 @@
         <TelInput title="شماره موبایل *" v-model="form.phone_number" class="mt-[27px]"/>
         <TextInput title="کد کارشناس *" v-model="form.referrer_code" :disabled="hasReferrerCode" class="mt-[27px]"/>
         <!--      <NationalCodeInput title="کد ملی" v-model="form.national_code" class="mt-[27px]"/>-->
+        <InputSalonFeaturesSelector v-model="form.features" />
         <BirthDateInput title="تاریخ تولد" v-model="form.birth_date" class="mt-[27px] px-1"/>
         <TelInput title="تلفن ثابت (به همراه کد شهرستان)" v-model="form.tel_number" class="mt-[27px]"/>
         <ChooseCityInput title="شهر محل فعالیت *" v-model="form.city_id" class="mt-[27px]"/>
@@ -112,6 +113,7 @@ const form = ref({
   bio: user.value?.bio,
   social_media: user.value?.social_media,
   licenses: normalizeLicenses(user.value?.licenses),
+  features: user.value?.features?.map(i => i.id),
 })
 const goBack = () => {
   store.closeAllDrawers()
@@ -169,6 +171,7 @@ const doSaveProfile = async () => {
     work_hours: form.value.work_hours,
     licenses: form.value.licenses,
     referrer_code: form.value.referrer_code,
+    features: form.value.features,
   }
   const {$putRequest: putRequest}=app
   putRequest('/own/artist', data)
