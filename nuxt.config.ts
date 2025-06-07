@@ -103,10 +103,10 @@ export default defineNuxtConfig(async () => {
 
     runtimeConfig: {
       public: {
-        baseURL: 'http://127.0.0.1:8000/api',
-        // baseURL: 'https://api.beautymap.ir/api',
-        uploadURL: 'http://127.0.0.1:8000/api/upload',
-        // uploadURL: 'https://api.beautymap.ir/api/upload',
+        // baseURL: 'http://127.0.0.1:8000/api',
+        baseURL: 'https://api.beautymap.ir/api',
+        // uploadURL: 'http://127.0.0.1:8000/api/upload',
+        uploadURL: 'https://api.beautymap.ir/api/upload',
         walletAddress: 'UQCz1nOgL8ys5uKkza6hT1usfk8F97JIvdyD4UvucpnTAgDd'
       }
     },
