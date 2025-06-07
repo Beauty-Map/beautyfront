@@ -85,6 +85,15 @@ const hasReferrerCode = ref(false)
 if (user.value?.referrer_code) {
   hasReferrerCode.value = true
 }
+const normalizeLicenses = (licenses: any): { title: string, image?: string }[] => {
+  if (!Array.isArray(licenses)) return []
+  return licenses.map((item) => {
+    if (typeof item === 'string') {
+      return { title: item, image: '' }
+    }
+    return item
+  })
+}
 const form = ref({
   full_name: user.value?.full_name,
   email: user.value?.email,
@@ -102,7 +111,7 @@ const form = ref({
   is_closed: user.value?.is_closed,
   bio: user.value?.bio,
   social_media: user.value?.social_media,
-  licenses: user.value?.licenses,
+  licenses: normalizeLicenses(user.value?.licenses),
 })
 const goBack = () => {
   store.closeAllDrawers()

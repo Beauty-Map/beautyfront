@@ -17,7 +17,9 @@ definePageMeta({
   middleware: 'auth'
 })
 const { isMobile } = useDevice();
-const seenIntro = useCookie<boolean>('seenArtistIntro')
+const seenIntro = useCookie<boolean>('seenArtistIntro', {
+  maxAge: 256*24*60*60*100
+})
 const router = useRouter()
 const nuxt = useNuxtApp()
 const auth = useAuthStore()
