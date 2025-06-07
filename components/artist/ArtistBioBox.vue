@@ -10,7 +10,7 @@
     </div>
     <div class="mt-4 w-full flex flex-col items-start justify-start pb-[18px] border-b border-b-[#A9A7A7]">
       <h1 class="font-semibold text-[#141414] text-right text-[16px] leading-[23px]">مدارک و مجوزها</h1>
-      <div v-for="(d,i) in licenses" :key="i"
+      <div v-for="(d,i) in licensesList" :key="i"
            class="mt-[10px] font-normal text-right text-[#133C3E] text-[16px] leading-[22px] cursor-pointer flex flex-row justify-start items-center w-full">
         <img :alt="d.title" v-if="d.image" :src="d.image" class="w-10 h-10 rounded ml-2 object-cover" />
         <span>{{ d.title }}</span>
@@ -88,6 +88,19 @@ const toAMorPM = (hour: string) => {
   }
   return name
 }
+
+const normalizeLicenses = (licenses: any): { title: string, image?: string }[] => {
+  if (!Array.isArray(licenses)) return []
+  return licenses.map((item) => {
+    if (typeof item === 'string') {
+      return { title: item, image: '' }
+    }
+    return item
+  })
+}
+const licensesList = computed(()=> {
+  return normalizeLicenses(props.licenses)
+})
 </script>
 
 <style scoped>
