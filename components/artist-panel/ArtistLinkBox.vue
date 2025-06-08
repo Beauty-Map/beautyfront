@@ -4,7 +4,7 @@
       <template #icon>
         <ArtistPanelIcon />
       </template>
-      <template #title>پروفایل</template>
+      <template #title>ساخت کارت ویزیت</template>
       <template #sub-icon v-if="!user.is_artist_profile_completed">
         <DangerIcon @click="openArtistProfileDrawer"/>
       </template>

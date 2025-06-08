@@ -62,6 +62,7 @@ const doSearch = async () => {
           searchStore.showInfiniteScroll = true
         }, 500)
       })
+  searchStore.loadingArtists = false
 }
 
 const doChangeTerm = async () => {

@@ -7,6 +7,7 @@ export const useSearchStore = defineStore('search', {
         page: 1,
         lastPage: 1,
         showInfiniteScroll: false,
+        loadingArtists: false,
         lat: null,
         lng: null,
     }),
@@ -21,6 +22,7 @@ export const useSearchStore = defineStore('search', {
     actions: {
         paginate() {
             this.page++
+            this.loadingArtists = true
         },
         reset() {
             this.showInfiniteScroll = false

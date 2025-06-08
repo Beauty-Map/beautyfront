@@ -13,10 +13,10 @@
 import InfiniteLoading from "v3-infinite-loading";
 import "v3-infinite-loading/lib/style.css";
 import {useSearchStore} from "~/store/Search";
-
 const searchStore = useSearchStore()
 
 const paginate = async () => {
+  if (searchStore.loadingArtists) return
   if (searchStore.page <= searchStore.lastPage) {
     searchStore.paginate()
   }
