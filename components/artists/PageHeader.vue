@@ -1,101 +1,89 @@
 <template>
   <div class="w-full flex flex-col">
     <div class="w-full flex flex-row items-center justify-start">
-      <SearchInput :placeholder="'جستجو در هنرمندان'" v-model="searchTerm" @doSearch="doSearch"/>
+      <SearchInput :placeholder="'جستجو در هنرمندان'" v-model="searchTerm" @doSearch="doSearch" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
 import SearchInput from "~/components/main/SearchInput.vue";
-import {useSearchStore} from "~/store/Search";
+import { useSearchStore } from "~/store/Search";
 
-const route = useRoute()
-const router = useRouter()
-const searchTerm = ref<string>(route.query.term as string ?? '')
+const route = useRoute();
+const router = useRouter();
+const searchStore = useSearchStore();
 
-const searchStore = useSearchStore()
+const searchTerm = ref<string>(route.query.term as string ?? '');
+const lastQuery = ref({});
 
-const doSearch = async () => {
-  const query = route.query ?? {}
-  if (query.page) {
-    delete query.page
+const fetchArtists = async () => {
+  if (searchStore.loadingArtists) return
+  searchStore.loadingArtists = true
+  const query: any = { ...route.query };
+  if (query.page) delete query.page;
+
+  const locationCookie = useCookie('selectedLocation', { maxAge: 256 * 24 * 60 * 60 });
+  if (locationCookie.value?.province) query.province_id = locationCookie.value.province.id;
+  if (locationCookie.value?.city) query.city_id = locationCookie.value.city.id;
+
+  query.page = searchStore.page.toString();
+
+  // جلوگیری از اجرای دوباره اگر query تغییر نکرده
+  if (JSON.stringify(query) === JSON.stringify(lastQuery.value)) return;
+  lastQuery.value = { ...query };
+
+  if (query.page == "1" || query.page == 1) searchStore.resetArtists();
+
+  const { $getRequest } = useNuxtApp();
+  let url = '/search/artists?' + new URLSearchParams(query).toString();
+
+  const res = await $getRequest(url, query);
+  const list = res.data ?? [];
+
+  if (list.length === 0) {
+    searchStore.showInfiniteScroll = false;
+    searchStore.loadingArtists = false
+    return;
   }
-  const locationCookie = useCookie('selectedLocation', {
-    maxAge: 256*24*60*60
-  })
-  if (locationCookie.value) {
-    if (locationCookie.value?.province) {
-      query.province_id = locationCookie.value?.province.id
-    }
-    if (locationCookie.value?.city) {
-      query.city_id = locationCookie.value?.city.id
-    }
+
+  if (query.page == "1" || query.page == 1) {
+    searchStore.artists = list;
+  } else {
+    searchStore.artists.push(...list);
   }
-  query.page = searchStore.page.toString()
-  if (query.page == "1") {
-    useSearchStore().resetArtists()
-  }
-  const {$getRequest: getRequest}=useNuxtApp()
-  let queries = []
-  for (const [key, value] of Object.entries(query)) {
-    queries.push(`${key}=${value}`)
-  }
-  let url = '/search/artists'
-  if (queries.length > 0) {
-    url += `?${queries.join('&')}`
-  }
-  getRequest(url, query)
-      .then(res => {
-        let list = res.data as []
-        if (list.length == 0) {
-          searchStore.showInfiniteScroll = false
-          return
-        }
-        searchStore.artists = [
-          ...searchStore.artists,
-          ...list
-        ]
-        searchStore.lastPage = res.last_page
-        setTimeout(() => {
-          searchStore.showInfiniteScroll = true
-        }, 500)
-      })
+  searchStore.lastPage = res.last_page ?? 1;
+  setTimeout(() => {
+    searchStore.showInfiniteScroll = true;
+    searchStore.loadingArtists = false
+  }, 300);
+  searchStore.loadingArtists = false;
   searchStore.loadingArtists = false
-}
+};
 
 const doChangeTerm = async () => {
-  let query = {
-    ...route.query
-  }
+  const query: any = { ...route.query };
   if (!searchTerm.value) {
-    delete query.term
-    searchStore.resetArtists()
+    delete query.term;
   } else {
-    query.term = searchTerm.value as string
-    searchStore.resetArtists()
+    query.term = searchTerm.value;
   }
-  await router.replace({ query })
-  // await doSearch()
-}
+  query.page = 1;
+  searchStore.resetArtists();
+  await router.replace({ query });
+};
 
-const onChangePage = async () => {
-  await doSearch()
-}
+const onChangeTermDebounce = useDebounce(doChangeTerm, 1000);
+const onChangePageDebounce = useDebounce(fetchArtists, 300);
 
-const onChangeTermDebounce = useDebounce(doChangeTerm, 1500)
-const onChangePageDebounce = useDebounce(onChangePage, 500)
-
-watch(() => route.query, doSearch)
-watch(() => searchTerm.value, onChangeTermDebounce)
-watch(() => searchStore.page, onChangePageDebounce)
+watch(() => route.query, fetchArtists);
+watch(() => searchTerm.value, onChangeTermDebounce);
+watch(() => searchStore.page, onChangePageDebounce);
 
 onMounted(() => {
-  nextTick(() => doSearch())
-})
+  searchStore.resetArtists();
+  fetchArtists();
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

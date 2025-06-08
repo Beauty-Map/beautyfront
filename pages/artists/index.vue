@@ -1,22 +1,13 @@
 <template>
   <div class="flex flex-col px-[23px] py-[10px] h-full w-full">
-    <PageHeader class="mb-4"/>
-    <PortfolioSearchList/>
+    <PageHeader class="mb-4" />
+    <ArtistsSearchList />
   </div>
 </template>
 
 <script setup lang="ts">
-
 import PageHeader from "~/components/artists/PageHeader.vue";
-import PortfolioSearchList from "~/components/artists/ArtistsSearchList.vue";
-import {useSearchStore} from "~/store/Search";
-
-definePageMeta({
-  layout: 'default'
-})
-onMounted(() => useSearchStore().resetArtists())
+import ArtistsSearchList from "~/components/artists/ArtistsSearchList.vue";
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
