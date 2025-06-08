@@ -1,5 +1,11 @@
 <template>
-  <div class=" w-full h-full">
+  <div class=" w-full h-full relative">
+    <div  @click.prevent="openImageModal(1)" class="absolute z-10 left-2 bottom-8 cursor-pointer px-1 py-1 bg-gray-500 flex flex-row items-center justify-between gap-2">
+      <span class="text-[14px] text-white">
+        {{ getImages.length }} عکس
+      </span>
+      <ZoomIcon/>
+    </div>
     <client-only>
       <carousel ref="carouselRef" :items-to-show="1" :autoplay-timeout="2000" @slide-end="handleSlideChange" :options="slickOptions" class=" h-full">
         <slide class="relative h-full" v-for="(img, n) in getImages" :key="n" data-fancybox="gallery" @click="openImageModal(n)">
@@ -24,6 +30,7 @@ import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide } from 'vue3-carousel'
 import { Fancybox } from '@fancyapps/ui';
 import "@fancyapps/ui/dist/fancybox/fancybox.css"
+import ZoomIcon from "~/components/icons/ZoomIcon.vue";
 const props = defineProps({
   images: {
     type: Array<string>,
