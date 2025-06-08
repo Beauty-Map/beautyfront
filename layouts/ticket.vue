@@ -1,21 +1,21 @@
 <template>
   <div class="flex flex-col w-full h-full relative max-w-[425px] mx-auto">
     <PageLoading v-if="loading"/>
-    <div class="w-full min-h-screen px-[34px] py-[20px] flex flex-row justify-start items-start">
-      <div class="w-full h-full flex flex-col justify-start items-start overflow-y-scroll mb-[80px]">
-        <slot />
-        <div class="mt-[60px] w-full bg-white pb-[20px] px-[38px] flex-row justify-center gap-[20px] items-center">
-          <div @click="goToSupportPage" class="cursor-pointer flex flex-row items-center justify-start px-[10px] py-[10px] bg-white text-black border border-[#A9A7A7] text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[44px] w-[130px]">
-            <TicketListIcon />
-            <span class="mr-[4px] whitespace-nowrap">تیکت های من</span>
-          </div>
-          <div @click="goToTicketPage" class="cursor-pointer flex flex-row items-center justify-start px-[10px] py-[10px] bg-[#FF3CA0] text-white text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[44px] w-[130px]">
-            <AddTicketIcon />
-            <span class="mr-[4px] whitespace-nowrap">ثبت تیکت</span>
-          </div>
-        </div>
-      </div>
-    </div>
+<!--    <div class="w-full min-h-screen px-[34px] py-[20px] flex flex-row justify-start items-start">-->
+<!--      <div class="w-full h-full flex flex-col justify-start items-start overflow-y-scroll mb-[80px]">-->
+<!--        <slot />-->
+<!--        <div class="mt-[60px] w-full bg-white pb-[20px] px-[38px] flex-row justify-center gap-[20px] items-center">-->
+<!--          <div @click="goToSupportPage" class="cursor-pointer flex flex-row items-center justify-start px-[10px] py-[10px] bg-white text-black border border-[#A9A7A7] text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[44px] w-[130px]">-->
+<!--            <TicketListIcon />-->
+<!--            <span class="mr-[4px] whitespace-nowrap">تیکت های من</span>-->
+<!--          </div>-->
+<!--          <div @click="goToTicketPage" class="cursor-pointer flex flex-row items-center justify-start px-[10px] py-[10px] bg-[#FF3CA0] text-white text-[15px] leading-[22px] text-center font-medium rounded-[12px] h-[44px] w-[130px]">-->
+<!--            <AddTicketIcon />-->
+<!--            <span class="mr-[4px] whitespace-nowrap">ثبت تیکت</span>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
     <LazySupportTicketBottomBox class="flex"/>
 <!--    <Footer class="hidden md:flex" />-->
   </div>
