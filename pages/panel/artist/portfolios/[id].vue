@@ -47,7 +47,7 @@
               class="w-full px-[10px] py-[4px] mx-[10px] mt-[10px] outline-none focus:outline-none text-[14px]"
               placeholder="کراتینه مو یک روش موثر برای صافی، درخشندگی و شادابی موهای فر ..."
               rows="4"
-              maxlength="200"
+              maxlength="2000"
               dir="auto"
           >
           </textarea>
