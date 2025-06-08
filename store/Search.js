@@ -32,7 +32,6 @@ export const useSearchStore = defineStore('search', {
         },
         resetArtists() {
             this.showInfiniteScroll = false
-            this.loadingArtists = false
             this.page = 1
             this.lastPage = 1
             this.artists = []

@@ -18,7 +18,9 @@ const searchStore = useSearchStore()
 const paginate = async () => {
   if (searchStore.loadingArtists) return
   if (searchStore.page <= searchStore.lastPage) {
-    searchStore.paginate()
+    setTimeout(()=>{
+      searchStore.paginate()
+    }, 200)
   }
 }
 
@@ -26,6 +28,7 @@ const paginateDebounce = useDebounce(paginate, 500)
 
 onMounted(() => {
   searchStore.page = 1
+  searchStore.resetArtists()
 })
 </script>
 
