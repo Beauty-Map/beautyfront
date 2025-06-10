@@ -1,6 +1,7 @@
 <template>
   <NuxtLayout>
     <NuxtLoadingIndicator />
+    <VitePwaManifest />
     <NuxtPage :key="route.fullPath" />
   </NuxtLayout>
 </template>
@@ -72,6 +73,10 @@ useHead({
 useSeoMeta({
   keywords: 'خدمات زیبایی, آرایشگر, سالن زیبایی, پزشک زیبایی, بیوتی مپ, BeautyMap, مقایسه آرایشگاه, رزومه آرایشگران'
 })
+
+const { $pwa } = useNuxtApp()
+if ($pwa) {
+}
 </script>
 
 <style>
