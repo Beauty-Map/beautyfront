@@ -34,17 +34,20 @@ useHead({
     { property: 'og:type', content: 'website' },
     { property: 'og:locale', content: 'fa_IR' },
     { property: 'og:site_name', content: 'BeautyMap - بیوتی مپ' },
-    { property: 'og:image', content: '/images/marker.jpg' },
+    { property: 'og:image', content: '/icons/icon-512-512.png' },
 
     // Twitter
     { name: 'twitter:card', content: 'summary_large_image' },
     { name: 'twitter:title', content: 'BeautyMap - بیوتی مپ' },
-    { name: 'twitter:description', content: 'پلتفرم تخصصی معرفی خدمات زیبایی در ایران' },
-    { name: 'twitter:image', content: '/images/marker.jpg' }
+    { name: 'twitter:description', content: 'نمایش و مقایسه تخصصی نمونه کارهای فعالان صنعت زیبایی (آرایشگران، سالن داران، پزشکان) برای انتخاب آگاهانه' },
+    { name: 'twitter:image', content: '/icons/icon-512-512.png' }
   ],
   link: [
     { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-    { rel: 'apple-touch-icon', href: '/favicon.png' }
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/icons/icon-32-32.png' },
+    { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/icons/icon-192-192.png' },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: '/icons/icon-180-180.png' },
+    { rel: 'manifest', href: '/manifest.webmanifest' }
   ],
   script: [
     {
@@ -53,9 +56,9 @@ useHead({
         "@context": "https://schema.org",
         "@type": "ProfessionalService",
         "name": "BeautyMap - بیوتی مپ",
-        "description": "پلتفرم تخصصی معرفی و مقایسه خدمات زیبایی در ایران",
+        "description": "نمایش و مقایسه تخصصی نمونه کارهای فعالان صنعت زیبایی (آرایشگران، سالن داران، پزشکان) برای انتخاب آگاهانه",
         "url": "https://beautymap.ir",
-        "logo": "https://beautymap.ir/images/marker.png",
+        "logo": "https://beautymap.ir/icons/icon-192-192.png",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "IR"
